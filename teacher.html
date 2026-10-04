@@ -151,6 +151,8 @@
   <button id="bBlack" title="Притемнити телефони: «Подивіться на викладача»">Пауза <kbd>B</kbd></button>
   <span class="sp"></span>
   <button id="bClear" title="Стерти відповіді на цьому слайді">Очистити</button>
+  <button id="bKeys" title="Вибрати на комп'ютері файл teacher.js цього уроку й зберегти ключі та нотатки в захищеній базі">Ключі ⬆</button>
+  <input type="file" id="keysFile" accept=".js,.json" hidden>
   <button id="bReport" title="Завантажити таблицю: хто що відповів на кожен слайд">Звіт ⬇</button>
   <button id="bScreen" title="Відкрити вигляд для проєктора в новому вікні">Проєктор ↗</button>
   <button id="bEnd" class="danger" title="Завантажити звіт і закрити кімнату: відповіді буде стерто, телефони покажуть «Заняття завершено»">Завершити</button>
@@ -201,7 +203,7 @@
 
   const P = { idx: 0, step: 0, revealed: false, locked: false, blackout: false, shared: false, responses: {}, count: 0,
     roster: {}, present: [], walls: {} }; // walls: slideId → [{u, v}] — схвалене для показу, без імен
-  let T = null, slides = [], TEACH = {};
+  let T = null, slides = [], TEACH = {}, keysMissing = false;
 
   /* ---- таймер ---- */
   const tm = { run: false, acc: 0, start: 0 };
@@ -469,7 +471,8 @@
     $('bPrev').disabled = P.idx === 0 && P.step === 0;
     $('bNext').disabled = P.idx === slides.length - 1 && P.step >= sc;
     const B = (on, t, w) => `<span class="badge${w ? ' warn' : ''}${on ? ' on' : ''}">${t}</span>`;
-    $('badges').innerHTML = B(P.revealed, 'Відповідь відкрито') + B(P.locked, 'Приймання закрито', 1) + B(P.shared, 'Результати на телефонах') + B(P.blackout, 'Телефони притемнено', 1) + B(wn > 0, `На екрані відповідей: ${wn}`);
+    $('badges').innerHTML = (keysMissing ? '<span class="badge warn on">Ключів немає: натисніть «Ключі ⬆»</span>' : '') +
+      B(P.revealed, 'Відповідь відкрито') + B(P.locked, 'Приймання закрито', 1) + B(P.shared, 'Результати на телефонах') + B(P.blackout, 'Телефони притемнено', 1) + B(wn > 0, `На екрані відповідей: ${wn}`);
     layout();
   }
 
@@ -513,6 +516,77 @@
     $('bAgain').onclick = freshRoom;
   };
 
+  /* ---- ключі й нотатки: зберігаються в базі (teacher/<урок>), читати їх може лише викладач ---- */
+  const isFb = () => T && T.kind === 'firebase';
+  const keysRef = () => firebase.database().ref('teacher/' + lessonId);
+
+  // виконати файл teacher.js (він записує window.TEACHER) і повернути його вміст
+  async function readKeysScript(src) {
+    window.TEACHER = {};
+    try { await LS.loadScript(src); return window.TEACHER || {}; }
+    finally { window.TEACHER = {}; }
+  }
+
+  // Firebase не приймає в назвах ключів символи . # $ [ ] /
+  function badKey(o, path) {
+    if (!o || typeof o !== 'object') return null;
+    for (const k of Object.keys(o)) {
+      if (/[.#$\[\]\/]/.test(k)) return (path ? path + ' → ' : '') + k;
+      const b = badKey(o[k], (path ? path + ' → ' : '') + k);
+      if (b) return b;
+    }
+    return null;
+  }
+
+  async function saveKeys(obj) {
+    const clean = JSON.parse(JSON.stringify(obj));
+    const bad = badKey(clean, '');
+    if (bad) { alert('Не вдалося зберегти: недопустимий символ у назві «' + bad + '» (не можна . # $ [ ] /).'); return false; }
+    try { await keysRef().set(clean); }
+    catch (e) { alert('Не вдалося зберегти ключі в базі: ' + e.message + '\n\nПеревірте, чи оновлено правила бази (розділ teacher).'); return false; }
+    return true;
+  }
+
+  async function loadKeys() {
+    if (!isFb()) return; // демо-режим: ключі вже завантажено з файлу
+    let k = null;
+    try { k = (await keysRef().once('value')).val(); }
+    catch (e) { console.warn(e); alert('Не вдалося отримати ключі з бази: ' + e.message + '\n\nПеревірте, чи оновлено правила бази (розділ teacher).'); }
+    if (k) { TEACH = k; keysMissing = false; return; }
+    // перехідний режим: ключі цього уроку ще лежать відкритим файлом на сайті
+    const site = await readKeysScript(`lessons/${lessonId}/teacher.js?v=${Date.now()}`).catch(() => null);
+    if (site && Object.keys(site).length) {
+      TEACH = site; keysMissing = false;
+      if (confirm('Ключі й нотатки цього уроку лежать у відкритому файлі на сайті, і студенти можуть його прочитати.\n\nOK — перенести їх у захищену базу зараз.\nСкасувати — працювати з файлом, як раніше.')) {
+        if (await saveKeys(site)) alert('Готово: ключі збережено в захищеній базі.\n\nТепер видаліть із GitHub файл lessons/' + lessonId + '/teacher.js.');
+      }
+      return;
+    }
+    TEACH = {}; keysMissing = true;
+  }
+
+  $('bKeys').onclick = () => { $('keysFile').value = ''; $('keysFile').click(); };
+  $('keysFile').onchange = async () => {
+    const f = $('keysFile').files[0];
+    if (!f) return;
+    let obj;
+    try {
+      const text = await f.text();
+      if (/\.json$/i.test(f.name)) obj = JSON.parse(text);
+      else {
+        const url = URL.createObjectURL(new Blob([text], { type: 'text/javascript' }));
+        try { obj = await readKeysScript(url); } finally { URL.revokeObjectURL(url); }
+      }
+    } catch (e) { alert('Не вдалося прочитати файл «' + f.name + '»: ' + e.message); return; }
+    const ids = Object.keys(obj || {});
+    const match = ids.filter((id) => slides.some((s) => String(s.id) === id)).length;
+    if (!ids.length) { alert('У файлі «' + f.name + '» не знайдено ключів (очікується window.TEACHER = { … }).'); return; }
+    if (!match) { alert('Жоден запис у файлі «' + f.name + '» не відповідає слайдам уроку «' + lessonId + '». Можливо, це файл іншого уроку.'); return; }
+    if (!isFb()) { TEACH = obj; keysMissing = false; renderAll(); alert('Демо-режим: ключі завантажено лише в цю вкладку.'); return; }
+    if (!confirm('Знайдено ключі й нотатки для ' + match + ' слайдів уроку «' + lessonId + '».\n\nЗберегти їх у захищеній базі? Попередні ключі цього уроку буде замінено.')) return;
+    if (await saveKeys(obj)) { TEACH = obj; keysMissing = false; renderAll(); alert('Ключі збережено. Файл teacher.js на GitHub завантажувати не потрібно.'); }
+  };
+
   document.addEventListener('keydown', (e) => {
     if (!T || !slides.length || e.target.closest('input,textarea') || e.ctrlKey || e.metaKey || e.altKey) return;
     const k = e.key;
@@ -540,7 +614,7 @@
 
   async function start() {
     try {
-      await LS.loadLesson(lessonId, true);
+      await LS.loadLesson(lessonId, LS.isDemo); // у робочому режимі ключі беруться з бази, а не з файлу на сайті
       slides = LESSON.slides; TEACH = window.TEACHER || {};
       document.title = 'Пульт · ' + (LESSON.title || lessonId);
       $('brand').innerHTML = LS.esc(LESSON.title || lessonId) + (LS.isDemo ? '<small>демо-режим</small>' : '');
@@ -582,6 +656,7 @@
         resume = old;
       }
     }
+    await loadKeys();
     $('gate').hidden = true;
     T.onConnection((on) => $('conn').classList.toggle('on', on));
     T.onPresence((n, uids) => {
