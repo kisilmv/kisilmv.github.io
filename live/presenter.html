@@ -151,9 +151,11 @@
   <button id="bBlack" title="Притемнити телефони: «Подивіться на викладача»">Пауза <kbd>B</kbd></button>
   <span class="sp"></span>
   <button id="bClear" title="Стерти відповіді на цьому слайді">Очистити</button>
+  <button id="bKeys" title="Вибрати на комп'ютері файл teacher.js цього уроку й зберегти ключі та нотатки в захищеній базі">Ключі ⬆</button>
+  <input type="file" id="keysFile" accept=".js,.json" hidden>
   <button id="bReport" title="Завантажити таблицю: хто що відповів на кожен слайд">Звіт ⬇</button>
   <button id="bScreen" title="Відкрити вигляд для проєктора в новому вікні">Проєктор ↗</button>
-  <button id="bEnd" class="danger" title="Закрити кімнату: телефони покажуть «Заняття завершено», повторно приєднатися буде неможливо">Завершити</button>
+  <button id="bEnd" class="danger" title="Завантажити звіт і закрити кімнату: відповіді буде стерто, телефони покажуть «Заняття завершено»">Завершити</button>
 </footer>
 
 <div class="overlay" id="qrOverlay" hidden>
@@ -201,7 +203,7 @@
 
   const P = { idx: 0, step: 0, revealed: false, locked: false, blackout: false, shared: false, responses: {}, count: 0,
     roster: {}, present: [], walls: {} }; // walls: slideId → [{u, v}] — схвалене для показу, без імен
-  let T = null, slides = [], TEACH = {};
+  let T = null, slides = [], TEACH = {}, keysMissing = false;
 
   /* ---- таймер ---- */
   const tm = { run: false, acc: 0, start: 0 };
@@ -382,15 +384,21 @@
     else if (b.dataset.v) toggleWall(null, b.dataset.v);
   });
 
-  /* ---- звіт: таблиця «студент × завдання» (CSV для Excel) ---- */
-  async function report() {
+  /* ---- звіт: таблиця «студент × завдання» (CSV для Excel) ----
+     Повертає: true — файл завантажено; 'empty' — відповідей немає; false — помилка */
+  async function report(fromEnd) {
     let all;
     try { all = await T.getAllResponses(); } catch (e) { alert('Не вдалося отримати відповіді: ' + e.message); return false; }
     const tasks = slides.filter((x) => LS.isAnswerable(x) && all[x.id]);
-    if (!tasks.length) { alert('На цьому занятті ще немає жодної відповіді.'); return false; }
+    if (!tasks.length) { if (!fromEnd) alert('На цьому занятті ще немає жодної відповіді.'); return 'empty'; }
     const users = new Set(Object.keys(P.roster));
     tasks.forEach((x) => Object.keys(all[x.id]).forEach((u) => users.add(u)));
-    const q = (v) => '"' + String(v == null ? '' : v).replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"';
+    // відповідь на кшталт "=HYPERLINK(...)" Excel виконав би як формулу — записуємо її як текст
+    const q = (v) => {
+      let s = String(v == null ? '' : v).replace(/\r?\n/g, ' ');
+      if (/^[=+\-@\t]/.test(s)) s = "'" + s;
+      return '"' + s.replace(/"/g, '""') + '"';
+    };
     const plain = (h) => String(h || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
     const head = ['Студент', 'Правильно', 'Перевірних', 'Відповідей'].concat(tasks.map((x, i) => `${slides.indexOf(x) + 1}. ${plain(x.kicker || x.title || x.prompt).slice(0, 40)}`));
     const rows = Array.from(users).sort(byName).map((u) => {
@@ -415,12 +423,13 @@
       });
       return [nameOf(u), ok, keyed, n].concat(cells);
     });
-    const csv = '﻿' + [head].concat(rows).map((r) => r.map(q).join(';')).join('\r\n');
+    const csv = '\uFEFF' + [head].concat(rows).map((r) => r.map(q).join(';')).join('\r\n');
     const d = new Date(), pad = (x) => String(x).padStart(2, '0');
     const fn = `${lessonId}_${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}_${room}.csv`;
     const link = document.createElement('a');
     link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
     link.download = fn; document.body.appendChild(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(link.href), 10000);
     return true;
   }
 
@@ -462,7 +471,8 @@
     $('bPrev').disabled = P.idx === 0 && P.step === 0;
     $('bNext').disabled = P.idx === slides.length - 1 && P.step >= sc;
     const B = (on, t, w) => `<span class="badge${w ? ' warn' : ''}${on ? ' on' : ''}">${t}</span>`;
-    $('badges').innerHTML = B(P.revealed, 'Відповідь відкрито') + B(P.locked, 'Приймання закрито', 1) + B(P.shared, 'Результати на телефонах') + B(P.blackout, 'Телефони притемнено', 1) + B(wn > 0, `На екрані відповідей: ${wn}`);
+    $('badges').innerHTML = (keysMissing ? '<span class="badge warn on">Ключів немає: натисніть «Ключі ⬆»</span>' : '') +
+      B(P.revealed, 'Відповідь відкрито') + B(P.locked, 'Приймання закрито', 1) + B(P.shared, 'Результати на телефонах') + B(P.blackout, 'Телефони притемнено', 1) + B(wn > 0, `На екрані відповідей: ${wn}`);
     layout();
   }
 
@@ -485,17 +495,96 @@
   $('bNext').onclick = next; $('bPrev').onclick = prev;
   $('bReveal').onclick = reveal; $('bShare').onclick = share; $('bLock').onclick = lockR; $('bBlack').onclick = black;
   $('bClear').onclick = () => { if (confirm('Стерти всі відповіді на цьому слайді?')) { P.walls[slide().id] = []; T.clearResponses(slide().id); push(); renderPreview(); } };
-  $('bReport').onclick = () => report();
+  $('bReport').onclick = () => report(false);
   $('bScreen').onclick = () => window.open(screenUrl, 'ls-screen');
+
+  // Завершення: звіт завантажується автоматично, і лише після цього дані стираються.
+  // Якщо звіт не вдалося отримати, нічого не стирається.
   $('bEnd').onclick = async () => {
-    if (!confirm('Завершити заняття?\n\nТелефони студентів покажуть «Заняття завершено», а кімнату ' + room + ' буде закрито назавжди. Відповіді студентів буде стерто.')) return;
-    if (confirm('Завантажити звіт (хто що відповів) перед тим, як відповіді буде стерто?\n\nOK — завантажити звіт.\nСкасувати — завершити без звіту.')) { await report(); }
+    if (!confirm('Завершити заняття?\n\nСпершу буде автоматично завантажено звіт (хто що відповів). Після цього телефони студентів покажуть «Заняття завершено», кімнату ' + room + ' буде закрито назавжди, а відповіді студентів — стерто з бази.')) return;
+    const rep = await report(true);
+    if (rep === false) {
+      alert('Звіт не вдалося завантажити, тому заняття НЕ завершено і дані НЕ стерто.\n\nПеревірте інтернет і натисніть «Завершити» ще раз.');
+      return;
+    }
+    if (rep === true) await new Promise((res) => setTimeout(res, 1500)); // дати браузеру почати завантаження
     try { await T.endRoom(lessonId); }
-    catch (e) { alert('Не вдалося завершити заняття: ' + e.message); return; }
+    catch (e) { alert('Звіт завантажено, але завершити заняття не вдалося: ' + e.message); return; }
     T = null;
-    gate(`<h1>Заняття завершено</h1><p>Кімнату <b>${room}</b> закрито. Студенти з цього заняття більше не зможуть до неї приєднатися.</p>
+    gate(`<h1>Заняття завершено</h1><p>${rep === true ? 'Звіт завантажено у вашу папку «Завантаження». ' : 'Відповідей на цьому занятті не було, тож звіт не створювався. '}Кімнату <b>${room}</b> закрито, відповіді стерто. Студенти з цього заняття більше не зможуть до неї приєднатися.</p>
       <button id="bAgain">Почати нове заняття з цим уроком</button>`);
     $('bAgain').onclick = freshRoom;
+  };
+
+  /* ---- ключі й нотатки: зберігаються в базі (teacher/<урок>), читати їх може лише викладач ---- */
+  const isFb = () => T && T.kind === 'firebase';
+  const keysRef = () => firebase.database().ref('teacher/' + lessonId);
+
+  // виконати файл teacher.js (він записує window.TEACHER) і повернути його вміст
+  async function readKeysScript(src) {
+    window.TEACHER = {};
+    try { await LS.loadScript(src); return window.TEACHER || {}; }
+    finally { window.TEACHER = {}; }
+  }
+
+  // Firebase не приймає в назвах ключів символи . # $ [ ] /
+  function badKey(o, path) {
+    if (!o || typeof o !== 'object') return null;
+    for (const k of Object.keys(o)) {
+      if (/[.#$\[\]\/]/.test(k)) return (path ? path + ' → ' : '') + k;
+      const b = badKey(o[k], (path ? path + ' → ' : '') + k);
+      if (b) return b;
+    }
+    return null;
+  }
+
+  async function saveKeys(obj) {
+    const clean = JSON.parse(JSON.stringify(obj));
+    const bad = badKey(clean, '');
+    if (bad) { alert('Не вдалося зберегти: недопустимий символ у назві «' + bad + '» (не можна . # $ [ ] /).'); return false; }
+    try { await keysRef().set(clean); }
+    catch (e) { alert('Не вдалося зберегти ключі в базі: ' + e.message + '\n\nПеревірте, чи оновлено правила бази (розділ teacher).'); return false; }
+    return true;
+  }
+
+  async function loadKeys() {
+    if (!isFb()) return; // демо-режим: ключі вже завантажено з файлу
+    let k = null;
+    try { k = (await keysRef().once('value')).val(); }
+    catch (e) { console.warn(e); alert('Не вдалося отримати ключі з бази: ' + e.message + '\n\nПеревірте, чи оновлено правила бази (розділ teacher).'); }
+    if (k) { TEACH = k; keysMissing = false; return; }
+    // перехідний режим: ключі цього уроку ще лежать відкритим файлом на сайті
+    const site = await readKeysScript(`lessons/${lessonId}/teacher.js?v=${Date.now()}`).catch(() => null);
+    if (site && Object.keys(site).length) {
+      TEACH = site; keysMissing = false;
+      if (confirm('Ключі й нотатки цього уроку лежать у відкритому файлі на сайті, і студенти можуть його прочитати.\n\nOK — перенести їх у захищену базу зараз.\nСкасувати — працювати з файлом, як раніше.')) {
+        if (await saveKeys(site)) alert('Готово: ключі збережено в захищеній базі.\n\nТепер видаліть із GitHub файл lessons/' + lessonId + '/teacher.js.');
+      }
+      return;
+    }
+    TEACH = {}; keysMissing = true;
+  }
+
+  $('bKeys').onclick = () => { $('keysFile').value = ''; $('keysFile').click(); };
+  $('keysFile').onchange = async () => {
+    const f = $('keysFile').files[0];
+    if (!f) return;
+    let obj;
+    try {
+      const text = await f.text();
+      if (/\.json$/i.test(f.name)) obj = JSON.parse(text);
+      else {
+        const url = URL.createObjectURL(new Blob([text], { type: 'text/javascript' }));
+        try { obj = await readKeysScript(url); } finally { URL.revokeObjectURL(url); }
+      }
+    } catch (e) { alert('Не вдалося прочитати файл «' + f.name + '»: ' + e.message); return; }
+    const ids = Object.keys(obj || {});
+    const match = ids.filter((id) => slides.some((s) => String(s.id) === id)).length;
+    if (!ids.length) { alert('У файлі «' + f.name + '» не знайдено ключів (очікується window.TEACHER = { … }).'); return; }
+    if (!match) { alert('Жоден запис у файлі «' + f.name + '» не відповідає слайдам уроку «' + lessonId + '». Можливо, це файл іншого уроку.'); return; }
+    if (!isFb()) { TEACH = obj; keysMissing = false; renderAll(); alert('Демо-режим: ключі завантажено лише в цю вкладку.'); return; }
+    if (!confirm('Знайдено ключі й нотатки для ' + match + ' слайдів уроку «' + lessonId + '».\n\nЗберегти їх у захищеній базі? Попередні ключі цього уроку буде замінено.')) return;
+    if (await saveKeys(obj)) { TEACH = obj; keysMissing = false; renderAll(); alert('Ключі збережено. Файл teacher.js на GitHub завантажувати не потрібно.'); }
   };
 
   document.addEventListener('keydown', (e) => {
@@ -525,7 +614,7 @@
 
   async function start() {
     try {
-      await LS.loadLesson(lessonId, true);
+      await LS.loadLesson(lessonId, LS.isDemo); // у робочому режимі ключі беруться з бази, а не з файлу на сайті
       slides = LESSON.slides; TEACH = window.TEACHER || {};
       document.title = 'Пульт · ' + (LESSON.title || lessonId);
       $('brand').innerHTML = LS.esc(LESSON.title || lessonId) + (LS.isDemo ? '<small>демо-режим</small>' : '');
@@ -567,6 +656,7 @@
         resume = old;
       }
     }
+    await loadKeys();
     $('gate').hidden = true;
     T.onConnection((on) => $('conn').classList.toggle('on', on));
     T.onPresence((n, uids) => {
