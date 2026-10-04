@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Пульт викладача</title>
+<link rel="stylesheet" href="assets/slides.css">
+<style>
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: var(--sans); }
+  body { display: grid; grid-template-rows: auto 1fr auto; height: 100vh; overflow: hidden; font-size: 15px; }
+  button { font: inherit; color: inherit; cursor: pointer; }
+
+  /* ---- верхня панель ---- */
+  .top { display: flex; align-items: center; gap: 18px; padding: 10px 18px; border-bottom: 1px solid var(--line); background: var(--surface); }
+  .brand { flex: 1; min-width: 0; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand small { font-weight: 500; color: var(--ink-2); margin-left: 8px; }
+  .room { display: flex; align-items: center; gap: 8px; }
+  .room b { font-size: 22px; letter-spacing: .12em; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: var(--surface-2); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--no); }
+  .dot.on { background: var(--ok); }
+  .timer { font-variant-numeric: tabular-nums; font-weight: 700; }
+  .timer.run { color: var(--accent); }
+  .tbtn { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 6px 12px; font-weight: 600; }
+
+  /* ---- основна сітка ---- */
+  .grid { display: grid; grid-template-columns: 200px minmax(380px, 40vw) minmax(360px, 1fr); min-height: 0; }
+  .list { overflow-y: auto; border-right: 1px solid var(--line); padding: 10px 8px; }
+  .li { display: flex; gap: 8px; width: 100%; text-align: left; border: 0; background: none; padding: 8px 10px; border-radius: 10px; align-items: baseline; }
+  .li:hover { background: var(--surface-2); }
+  .li.cur { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+  .li .n { color: var(--ink-2); font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  .li .t { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .li .ty { font-size: 11px; color: var(--ink-2); }
+
+  .stage { display: flex; flex-direction: row; align-items: flex-start; justify-content: center; gap: 18px; padding: 16px 18px; min-height: 0; overflow: hidden; }
+  .frame { position: relative; overflow: hidden; background: var(--bg); border: 1px solid var(--line); box-shadow: 0 8px 30px rgba(0,0,0,.12); }
+  .frame .screen { position: absolute; top: 0; left: 0; width: 390px; height: 780px; transform-origin: 0 0; overflow: hidden; }
+  .frame .screen .slide { min-height: 780px; }
+  #curF { border-radius: 28px; border-width: 6px; border-color: var(--surface-2); }
+  #nextF { border-radius: 14px; opacity: .85; }
+  .lbl { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-2); }
+  .row { display: flex; gap: 16px; align-items: flex-end; }
+  .col { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+  .stepinfo { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+  .side { overflow-y: auto; padding: 16px 18px; display: flex; flex-direction: column; gap: 14px; border-left: 1px solid var(--line); }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+  .panel h3 { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-2); display: flex; justify-content: space-between; }
+  #notes { font-size: 18px; line-height: 1.55; }
+  #notes p { margin: 0 0 .6em; }
+  #notes ul { margin: 0 0 .6em; padding-left: 1.2em; }
+  #key { font-size: 17px; line-height: 1.5; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); }
+  .badge.on { background: var(--accent); color: #fff; }
+  .badge.warn.on { background: var(--warn); color: #000; }
+
+  .rbar { display: grid; grid-template-columns: 26px 1fr 64px; gap: 8px; align-items: center; margin: 6px 0; }
+  .rbar .l { font-weight: 700; }
+  .rbar .track { display: block; height: 26px; background: var(--surface-2); border-radius: 8px; overflow: hidden; }
+  .rbar .fill { display: block; height: 100%; background: var(--accent); border-radius: 8px; transition: width .3s; }
+  .rbar.ok .fill { background: var(--ok); }
+  .rbar .c { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .rlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; max-height: 44vh; overflow-y: auto; }
+  .rlist li { display: flex; gap: 10px; align-items: baseline; padding: 8px 10px; background: var(--surface-2); border-radius: 10px; font-size: 16px; }
+  .rlist li.ok { background: var(--ok-soft); }
+  .rlist .cnt { font-weight: 700; min-width: 2em; font-variant-numeric: tabular-nums; }
+  .empty { color: var(--ink-2); font-size: 14px; }
+  .rlist li { align-items: flex-start; }
+  .rlist .who { font-weight: 700; font-size: 14px; color: var(--ink-2); min-width: 7.5em; max-width: 9em; flex: none; overflow-wrap: anywhere; }
+  .rlist .txt { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+  .rlist li.no { background: var(--no-soft); }
+  .rlist li.onwall { outline: 2px solid var(--accent); }
+  .rlist .names { display: block; font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+  .wbtn { flex: none; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 3px 9px; font-size: 13px; font-weight: 700; }
+  .wbtn.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .rnames { font-size: 13px; color: var(--ink-2); margin: -2px 0 8px 34px; line-height: 1.4; }
+  .missing { margin-top: 10px; font-size: 14px; line-height: 1.5; }
+  .missing b { color: var(--warn); }
+  .wallinfo { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+
+  /* ---- нижня панель ---- */
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 18px; border-top: 1px solid var(--line); background: var(--surface); align-items: center; }
+  .bar button { border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 9px 14px; font-weight: 600; display: inline-flex; gap: 8px; align-items: center; }
+  .bar button kbd { font: 12px/1 var(--sans); padding: 3px 6px; border-radius: 5px; background: var(--surface-2); color: var(--ink-2); }
+  .bar button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .bar button.primary kbd { background: rgba(255,255,255,.2); color: #fff; }
+  .bar button.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  .bar button:disabled { opacity: .4; cursor: default; }
+  .bar .sp { flex: 1; }
+
+  /* ---- оверлеї ---- */
+  .overlay { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; background: var(--bg); }
+  .overlay[hidden] { display: none; }
+  .qrbox { display: flex; gap: 48px; align-items: center; padding: 24px; }
+  .qrbox .qr { background: #fff; padding: 18px; border-radius: 20px; line-height: 0; }
+  .qrbox h2 { font-family: var(--serif); font-size: 44px; margin: 0 0 12px; }
+  .qrbox .code { font-size: 88px; font-weight: 800; letter-spacing: .15em; line-height: 1; margin: 8px 0 18px; }
+  .qrbox .url { font-size: 22px; color: var(--ink-2); word-break: break-all; max-width: 520px; }
+  .qrbox .hint { margin-top: 24px; font-size: 14px; color: var(--ink-2); }
+  .gate { text-align: center; max-width: 440px; padding: 24px; }
+  .gate h1 { font-family: var(--serif); font-size: 34px; margin: 0 0 10px; }
+  .gate p { color: var(--ink-2); line-height: 1.5; }
+  .gate button { margin-top: 12px; background: var(--accent); color: #fff; border: 0; border-radius: 12px; padding: 14px 22px; font-weight: 700; font-size: 17px; }
+  .gate .err { color: var(--no); }
+  .bar button.danger { color: var(--no); }
+</style>
+<script src="firebase-config.js"></script>
+<script src="assets/qrcode.min.js"></script>
+<script src="assets/core.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand" id="brand">Пульт викладача</div>
+  <div class="room">Кімната <b id="roomCode">····</b> <button class="tbtn" id="bQR" title="Великий QR-код на екран (Q)">QR</button></div>
+  <span class="pill" title="Підключені студенти"><span class="dot" id="conn"></span><span id="count">0</span> 👥</span>
+  <button class="pill timer" id="timer" title="Таймер: T — старт/пауза, подвійний клік — скинути">00:00</button>
+  <span class="pill" id="pos">– / –</span>
+</header>
+
+<main class="grid">
+  <aside class="list" id="slideList"></aside>
+  <section class="stage" id="stage">
+    <div class="col">
+      <div class="lbl">Телефон студента</div>
+      <div class="frame" id="curF"><div class="screen" id="cur"></div></div>
+      <div class="stepinfo" id="stepInfo"></div>
+    </div>
+    <div class="col">
+      <div class="lbl">Далі</div>
+      <div class="frame" id="nextF"><div class="screen" id="next"></div></div>
+    </div>
+  </section>
+  <section class="side">
+    <div class="badges" id="badges"></div>
+    <div class="panel"><h3>Нотатки</h3><div id="notes"></div></div>
+    <div class="panel" id="keyPanel"><h3>Ключ</h3><div id="key"></div></div>
+    <div class="panel" id="respPanel"><h3><span>Відповіді</span><span id="respCount"></span></h3><div id="resp"></div></div>
+    <div class="panel"><h3><span>Учасники</span><span id="rosterCount"></span></h3><div id="roster" class="missing"></div></div>
+  </section>
+</main>
+
+<footer class="bar">
+  <button id="bPrev"><kbd>←</kbd> Назад</button>
+  <button id="bNext" class="primary">Далі <kbd>→</kbd></button>
+  <button id="bReveal" title="Показати правильну відповідь на телефонах">Відповідь <kbd>R</kbd></button>
+  <button id="bShare" title="Показати розподіл відповідей на телефонах">Результати <kbd>S</kbd></button>
+  <button id="bLock" title="Закрити / відкрити приймання відповідей">Закрити <kbd>L</kbd></button>
+  <button id="bBlack" title="Притемнити телефони: «Подивіться на викладача»">Пауза <kbd>B</kbd></button>
+  <span class="sp"></span>
+  <button id="bClear" title="Стерти відповіді на цьому слайді">Очистити</button>
+  <button id="bReport" title="Завантажити таблицю: хто що відповів на кожен слайд">Звіт ⬇</button>
+  <button id="bScreen" title="Відкрити вигляд для проєктора в новому вікні">Проєктор ↗</button>
+  <button id="bEnd" class="danger" title="Завантажити звіт і закрити кімнату: відповіді буде стерто, телефони покажуть «Заняття завершено»">Завершити</button>
+</footer>
+
+<div class="overlay" id="qrOverlay" hidden>
+  <div class="qrbox">
+    <div class="qr" id="bigQR"></div>
+    <div>
+      <h2 id="qrTitle">Приєднуйтеся до заняття</h2>
+      <div>Код кімнати</div>
+      <div class="code" id="qrCode"></div>
+      <div class="url" id="qrUrl"></div>
+      <div class="hint">Q або Esc — закрити</div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="gate">
+  <div class="gate" id="gateBox"><h1>Пульт викладача</h1><p>Завантаження…</p></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+
+  /* ---- кімната й урок ---- */
+  const lessonId = LS.params.get('lesson') || 'demo';
+  let room = (LS.params.get('room') || '').toUpperCase();
+  const roomFromUrl = LS.validRoom(room);
+  const STALE_MS = 3 * 60 * 60 * 1000; // кімната, не використовувана понад 3 год, вважається старою
+  // перезапустити пульт із новою кімнатою (той самий урок)
+  const freshRoom = () => {
+    const u = new URL(location.href);
+    u.searchParams.delete('room');
+    location.replace(u.toString().replace(/demo=(&|$)/, 'demo$1'));
+  };
+  if (!LS.validRoom(room)) {
+    room = LS.roomCode();
+    const u = new URL(location.href);
+    u.searchParams.set('room', room);
+    if (!u.searchParams.get('lesson')) u.searchParams.set('lesson', lessonId);
+    history.replaceState(null, '', u.toString().replace('demo=&', 'demo&').replace(/demo=$/, 'demo'));
+  }
+  const joinUrl = LS.joinUrl(room);
+  const screenUrl = joinUrl + '&view=screen';
+
+  const P = { idx: 0, step: 0, revealed: false, locked: false, blackout: false, shared: false, responses: {}, count: 0,
+    roster: {}, present: [], walls: {} }; // walls: slideId → [{u, v}] — схвалене для показу, без імен
+  let T = null, slides = [], TEACH = {};
+
+  /* ---- таймер ---- */
+  const tm = { run: false, acc: 0, start: 0 };
+  const fmt = (ms) => { const s = Math.floor(ms / 1000); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+  function toggleTimer() { if (tm.run) { tm.acc += Date.now() - tm.start; tm.run = false; } else { tm.start = Date.now(); tm.run = true; } $('timer').classList.toggle('run', tm.run); }
+  setInterval(() => { $('timer').textContent = fmt(tm.acc + (tm.run ? Date.now() - tm.start : 0)); }, 250);
+  $('timer').onclick = toggleTimer;
+  $('timer').ondblclick = () => { tm.acc = 0; tm.start = Date.now(); };
+
+  /* ---- стан для студентів ---- */
+  const slide = () => slides[P.idx];
+  const tdata = (s) => (s && TEACH[s.id]) || {};
+
+  function results() {
+    const s = slide();
+    if (!s || s.type !== 'mcq') return null;
+    const counts = (s.options || []).map(() => 0);
+    let total = 0;
+    for (const k in P.responses) { const i = parseInt(P.responses[k].v, 10); if (i >= 0 && i < counts.length) { counts[i]++; total++; } }
+    return { counts, total };
+  }
+
+  function publicState() {
+    const s = slide();
+    return {
+      lesson: lessonId, slide: P.idx, slideId: s.id, total: slides.length, step: P.step,
+      revealed: P.revealed, locked: P.locked, blackout: P.blackout, shared: P.shared,
+      answer: P.revealed ? (tdata(s).answer || null) : null,
+      results: P.shared ? results() : null,
+      wall: (P.walls[s.id] || []).map((x) => x.v),
+      t: Date.now(),
+    };
+  }
+
+  let pushTimer = null;
+  function push() { clearTimeout(pushTimer); pushTimer = null; T.setState(publicState()).catch((e) => { console.error(e); alert('Не вдалося оновити стан: ' + e.message); }); }
+  function pushSoon() { if (!pushTimer) pushTimer = setTimeout(push, 400); }
+
+  /* ---- навігація ---- */
+  function go(i, step) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    P.idx = i; P.step = step || 0;
+    P.revealed = false; P.locked = false; P.shared = false; P.blackout = false; P.responses = {};
+    T.watchResponses(slides[i].id, (r) => { P.responses = r; renderResponses(); if (P.shared) pushSoon(); });
+    push(); renderAll();
+  }
+  function next() {
+    if (P.step < LS.stepCount(slide())) { P.step++; push(); renderAll(); }
+    else if (P.idx < slides.length - 1) go(P.idx + 1, 0);
+  }
+  function prev() {
+    if (P.step > 0) { P.step--; push(); renderAll(); }
+    else if (P.idx > 0) go(P.idx - 1, LS.stepCount(slides[P.idx - 1]));
+  }
+  const toggle = (k) => () => {
+    const s = slide();
+    if ((k === 'revealed' || k === 'locked') && !LS.isAnswerable(s)) return;
+    if (k === 'shared' && (!s || s.type !== 'mcq')) return;
+    P[k] = !P[k];
+    if (k === 'revealed' && P.revealed) P.locked = true;
+    push(); renderAll();
+  };
+  const reveal = toggle('revealed'), share = toggle('shared'), lockR = toggle('locked'), black = toggle('blackout');
+
+  /* ---- рендер пульта ---- */
+  const fitters = [];
+  function fitFrame(frame, maxH, maxW) {
+    const k = Math.min(maxH / 780, maxW / 390);
+    frame.style.width = Math.round(390 * k) + 'px';
+    frame.style.height = Math.round(780 * k) + 'px';
+    frame.firstElementChild.style.transform = `scale(${k})`;
+  }
+  function layout() {
+    const st = $('stage');
+    const h = st.clientHeight - 80, w = st.clientWidth - 54;
+    const cw = Math.min(w * 0.66, (h / 780) * 390);
+    fitFrame($('curF'), h, cw);
+    fitFrame($('nextF'), h * 0.55, Math.max(80, w - cw));
+  }
+  window.addEventListener('resize', layout);
+
+  function renderList() {
+    $('slideList').innerHTML = slides.map((s, i) => {
+      const label = s.title || s.term || (s.prompt || '').replace(/<[^>]+>/g, '') || s.type;
+      return `<button class="li${i === P.idx ? ' cur' : ''}" data-i="${i}"><span class="n">${i + 1}</span><span class="t">${LS.esc(label)}</span><span class="ty">${s.type}</span></button>`;
+    }).join('');
+    $('slideList').querySelectorAll('.li').forEach((b) => (b.onclick = () => go(+b.dataset.i, 0)));
+    const c = $('slideList').querySelector('.cur'); if (c) c.scrollIntoView({ block: 'nearest' });
+  }
+
+  function keyHtml(s, a) {
+    if (!a) return '';
+    if (s.type === 'mcq') return `<b>${'ABCDEFGH'[a.correct]}.</b> ${s.options[a.correct]}${a.explain ? `<p class="muted">${a.explain}</p>` : ''}`;
+    if (s.type === 'gap') return `<b>${LS.esc(a.text)}</b>${a.accept && a.accept.length > 1 ? `<div class="muted">Також зараховується: ${a.accept.filter((x) => x !== a.text).map(LS.esc).join(', ')}</div>` : ''}${a.explain ? `<p class="muted">${a.explain}</p>` : ''}`;
+    return a.explain || a.text || '';
+  }
+
+  const nameOf = (u) => (P.roster[u] && P.roster[u].n) || 'без імені';
+  const byName = (a, b) => nameOf(a).localeCompare(nameOf(b), 'uk');
+  const wallOf = (s) => (P.walls[s.id] = P.walls[s.id] || []);
+  const onWall = (s, u, v) => wallOf(s).some((x) => (u ? x.u === u : LS.norm(x.v) === LS.norm(v)));
+
+  function toggleWall(u, v) {
+    const s = slide(), w = wallOf(s);
+    const i = w.findIndex((x) => (u ? x.u === u : LS.norm(x.v) === LS.norm(v)));
+    if (i >= 0) w.splice(i, 1); else w.push({ u: u || null, v });
+    push(); renderAll();
+  }
+
+  function renderRoster() {
+    const ids = Object.keys(P.roster).sort(byName);
+    const on = new Set(P.present);
+    const unnamed = P.present.filter((u) => !P.roster[u]).length;
+    $('rosterCount').textContent = ids.length ? `${ids.filter((u) => on.has(u)).length} у мережі · ${ids.length} усього` : '';
+    $('roster').innerHTML = ids.length
+      ? ids.map((u) => `<span style="${on.has(u) ? '' : 'opacity:.45'}">${LS.esc(nameOf(u))}</span>`).join(', ') + (unnamed ? ` · <b>без імені: ${unnamed}</b>` : '')
+      : (unnamed ? `<b>Підключено без імені: ${unnamed}</b> (оновіть правила бази, див. README)` : '<span class="empty">Ще ніхто не приєднався</span>');
+  }
+
+  function renderResponses() {
+    const s = slide();
+    const r = P.responses || {};
+    const uids = Object.keys(r);
+    renderRoster();
+    $('respCount').textContent = LS.isAnswerable(s) ? `${uids.length} із ${P.count}` : '';
+    if (!LS.isAnswerable(s)) { $('respPanel').hidden = true; return; }
+    $('respPanel').hidden = false;
+    const a = tdata(s).answer || {};
+    const names = (list) => list.sort(byName).map((u) => LS.esc(nameOf(u))).join(', ');
+    let h = '';
+    if (s.type === 'mcq') {
+      const res = results();
+      h = s.options.map((o, i) => {
+        const c = res.counts[i], pct = res.total ? Math.round((100 * c) / res.total) : 0;
+        const who = uids.filter((u) => parseInt(r[u].v, 10) === i);
+        return `<div class="rbar${a.correct === i ? ' ok' : ''}"><span class="l">${'ABCDEFGH'[i]}</span><span class="track"><span class="fill" style="width:${pct}%"></span></span><span class="c">${c} · ${pct}%</span></div>` +
+          (who.length ? `<div class="rnames">${names(who)}</div>` : '');
+      }).join('');
+    } else if (s.type === 'gap') {
+      const acc = (a.accept || (a.text ? [a.text] : [])).map(LS.norm);
+      const groups = {};
+      uids.forEach((u) => { const k = LS.norm(r[u].v); (groups[k] = groups[k] || { v: r[u].v, us: [] }).us.push(u); });
+      const arr = Object.entries(groups).sort((p, q) => q[1].us.length - p[1].us.length);
+      h = arr.map(([k, g]) => {
+        const ok = acc.includes(k), w = onWall(s, null, g.v);
+        const cls = [ok ? 'ok' : acc.length ? 'no' : '', w ? 'onwall' : ''].join(' ');
+        return `<li class="${cls}"><span class="cnt">${g.us.length}×</span><span class="txt">${LS.esc(g.v)}${ok ? ' ✓' : ''}<span class="names">${names(g.us)}</span></span>` +
+          `<button class="wbtn${w ? ' on' : ''}" data-v="${LS.esc(g.v)}" title="Показати цей варіант на екрані й телефонах (без імен)">${w ? 'На екрані' : 'На екран'}</button></li>`;
+      }).join('');
+      if (h) h = `<ul class="rlist">${h}</ul>`;
+    } else {
+      const arr = uids.slice().sort((p, q) => (r[q].t || 0) - (r[p].t || 0));
+      h = arr.map((u) => {
+        const w = onWall(s, u);
+        return `<li class="${w ? 'onwall' : ''}"><span class="who">${LS.esc(nameOf(u))}</span><span class="txt">${LS.esc(r[u].v)}</span>` +
+          `<button class="wbtn${w ? ' on' : ''}" data-u="${LS.esc(u)}" title="Показати на екрані й телефонах (без імені)">${w ? 'На екрані' : 'На екран'}</button></li>`;
+      }).join('');
+      if (h) h = `<ul class="rlist">${h}</ul>`;
+    }
+    const wn = wallOf(s).length;
+    const info = (s.type !== 'mcq')
+      ? `<div class="wallinfo"><span>${wn ? `На екрані: ${wn} (без імен)` : 'На екран потрапляє лише те, що ви схвалите'}</span>${wn ? '<button class="wbtn" id="wallClear">Прибрати всі</button>' : ''}</div>`
+      : '';
+    // хто в мережі, але ще не відповів
+    const miss = P.present.filter((u) => !r[u]);
+    const missHtml = miss.length ? `<div class="missing"><b>Не відповіли (${miss.length}):</b> ${names(miss)}</div>` : '';
+    $('resp').innerHTML = info + (h || '<div class="empty">Поки що відповідей немає</div>') + missHtml;
+    // оновити превʼю телефона, якщо результати показано
+    if (P.shared) renderPreview();
+  }
+
+  // один обробник на всю панель: кнопки не «зникають» з-під курсора під час оновлень
+  $('resp').addEventListener('click', (e) => {
+    const b = e.target.closest('.wbtn');
+    if (!b) return;
+    if (b.id === 'wallClear') { P.walls[slide().id] = []; push(); renderAll(); return; }
+    if (b.dataset.u) { const x = P.responses[b.dataset.u]; if (x) toggleWall(b.dataset.u, x.v); }
+    else if (b.dataset.v) toggleWall(null, b.dataset.v);
+  });
+
+  /* ---- звіт: таблиця «студент × завдання» (CSV для Excel) ----
+     Повертає: true — файл завантажено; 'empty' — відповідей немає; false — помилка */
+  async function report(fromEnd) {
+    let all;
+    try { all = await T.getAllResponses(); } catch (e) { alert('Не вдалося отримати відповіді: ' + e.message); return false; }
+    const tasks = slides.filter((x) => LS.isAnswerable(x) && all[x.id]);
+    if (!tasks.length) { if (!fromEnd) alert('На цьому занятті ще немає жодної відповіді.'); return 'empty'; }
+    const users = new Set(Object.keys(P.roster));
+    tasks.forEach((x) => Object.keys(all[x.id]).forEach((u) => users.add(u)));
+    // відповідь на кшталт "=HYPERLINK(...)" Excel виконав би як формулу — записуємо її як текст
+    const q = (v) => {
+      let s = String(v == null ? '' : v).replace(/\r?\n/g, ' ');
+      if (/^[=+\-@\t]/.test(s)) s = "'" + s;
+      return '"' + s.replace(/"/g, '""') + '"';
+    };
+    const plain = (h) => String(h || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+    const head = ['Студент', 'Правильно', 'Перевірних', 'Відповідей'].concat(tasks.map((x, i) => `${slides.indexOf(x) + 1}. ${plain(x.kicker || x.title || x.prompt).slice(0, 40)}`));
+    const rows = Array.from(users).sort(byName).map((u) => {
+      let ok = 0, keyed = 0, n = 0;
+      const cells = tasks.map((x) => {
+        const rr = (all[x.id] || {})[u];
+        const a = (TEACH[x.id] || {}).answer || {};
+        if (!rr) return '';
+        n++;
+        if (x.type === 'mcq') {
+          const i = parseInt(rr.v, 10), L = 'ABCDEFGH'[i] || rr.v;
+          if (a.correct == null) return L;
+          keyed++; if (a.correct === i) { ok++; return L + ' ✓'; } return L + ' ✗';
+        }
+        if (x.type === 'gap' && (a.accept || a.text)) {
+          keyed++;
+          const good = (a.accept || [a.text]).map(LS.norm).includes(LS.norm(rr.v));
+          if (good) ok++;
+          return rr.v + (good ? ' ✓' : ' ✗');
+        }
+        return rr.v;
+      });
+      return [nameOf(u), ok, keyed, n].concat(cells);
+    });
+    const csv = '\uFEFF' + [head].concat(rows).map((r) => r.map(q).join(';')).join('\r\n');
+    const d = new Date(), pad = (x) => String(x).padStart(2, '0');
+    const fn = `${lessonId}_${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}_${room}.csv`;
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+    link.download = fn; document.body.appendChild(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(link.href), 10000);
+    return true;
+  }
+
+  function renderPreview() {
+    const s = slide();
+    const td = tdata(s);
+    $('cur').replaceChildren(LS.render(s, {
+      step: P.step, revealed: P.revealed, answer: td.answer || null,
+      results: P.shared ? results() : null, locked: P.locked, mode: 'preview', interactive: false,
+      wall: (P.walls[s.id] || []).map((x) => x.v),
+    }));
+    const n = slides[P.idx + 1];
+    if (n) $('next').replaceChildren(LS.render(n, { step: 99, mode: 'preview' }));
+    else $('next').innerHTML = '<section class="slide"><div class="s-sub">Кінець уроку</div></section>';
+  }
+
+  function renderAll() {
+    const s = slide();
+    const td = tdata(s);
+    renderPreview();
+    $('pos').textContent = `${P.idx + 1} / ${slides.length}`;
+    const sc = LS.stepCount(s);
+    $('stepInfo').textContent = sc ? `крок ${P.step} із ${sc}` : '';
+    $('notes').innerHTML = td.notes || '<span class="empty">Нотаток до цього слайда немає</span>';
+    const kh = keyHtml(s, td.answer);
+    $('keyPanel').hidden = !kh; $('key').innerHTML = kh;
+    renderResponses();
+    renderList();
+
+    const ans = LS.isAnswerable(s), mcq = s.type === 'mcq';
+    $('bReveal').disabled = !ans; $('bLock').disabled = !ans; $('bShare').disabled = !mcq; $('bClear').disabled = !ans;
+    const wn = (P.walls[s.id] || []).length;
+    $('bReveal').classList.toggle('on', P.revealed);
+    $('bReveal').firstChild.textContent = P.revealed ? 'Сховати відповідь ' : 'Відповідь ';
+    $('bShare').classList.toggle('on', P.shared);
+    $('bLock').classList.toggle('on', P.locked);
+    $('bLock').firstChild.textContent = P.locked ? 'Відкрити ' : 'Закрити ';
+    $('bBlack').classList.toggle('on', P.blackout);
+    $('bPrev').disabled = P.idx === 0 && P.step === 0;
+    $('bNext').disabled = P.idx === slides.length - 1 && P.step >= sc;
+    const B = (on, t, w) => `<span class="badge${w ? ' warn' : ''}${on ? ' on' : ''}">${t}</span>`;
+    $('badges').innerHTML = B(P.revealed, 'Відповідь відкрито') + B(P.locked, 'Приймання закрито', 1) + B(P.shared, 'Результати на телефонах') + B(P.blackout, 'Телефони притемнено', 1) + B(wn > 0, `На екрані відповідей: ${wn}`);
+    layout();
+  }
+
+  /* ---- QR ---- */
+  function toggleQR(force) {
+    const o = $('qrOverlay');
+    const show = force !== undefined ? force : o.hidden;
+    o.hidden = !show;
+    if (show) {
+      LS.qr($('bigQR'), joinUrl, Math.min(460, Math.round(innerHeight * 0.62)));
+      $('qrCode').textContent = room;
+      $('qrUrl').textContent = joinUrl.replace(/^https?:\/\//, '');
+      $('qrTitle').textContent = (window.LESSON && LESSON.title) || 'Приєднуйтеся до заняття';
+    }
+  }
+  $('bQR').onclick = () => toggleQR();
+  $('qrOverlay').onclick = () => toggleQR(false);
+
+  /* ---- кнопки й клавіші ---- */
+  $('bNext').onclick = next; $('bPrev').onclick = prev;
+  $('bReveal').onclick = reveal; $('bShare').onclick = share; $('bLock').onclick = lockR; $('bBlack').onclick = black;
+  $('bClear').onclick = () => { if (confirm('Стерти всі відповіді на цьому слайді?')) { P.walls[slide().id] = []; T.clearResponses(slide().id); push(); renderPreview(); } };
+  $('bReport').onclick = () => report(false);
+  $('bScreen').onclick = () => window.open(screenUrl, 'ls-screen');
+
+  // Завершення: звіт завантажується автоматично, і лише після цього дані стираються.
+  // Якщо звіт не вдалося отримати, нічого не стирається.
+  $('bEnd').onclick = async () => {
+    if (!confirm('Завершити заняття?\n\nСпершу буде автоматично завантажено звіт (хто що відповів). Після цього телефони студентів покажуть «Заняття завершено», кімнату ' + room + ' буде закрито назавжди, а відповіді студентів — стерто з бази.')) return;
+    const rep = await report(true);
+    if (rep === false) {
+      alert('Звіт не вдалося завантажити, тому заняття НЕ завершено і дані НЕ стерто.\n\nПеревірте інтернет і натисніть «Завершити» ще раз.');
+      return;
+    }
+    if (rep === true) await new Promise((res) => setTimeout(res, 1500)); // дати браузеру почати завантаження
+    try { await T.endRoom(lessonId); }
+    catch (e) { alert('Звіт завантажено, але завершити заняття не вдалося: ' + e.message); return; }
+    T = null;
+    gate(`<h1>Заняття завершено</h1><p>${rep === true ? 'Звіт завантажено у вашу папку «Завантаження». ' : 'Відповідей на цьому занятті не було, тож звіт не створювався. '}Кімнату <b>${room}</b> закрито, відповіді стерто. Студенти з цього заняття більше не зможуть до неї приєднатися.</p>
+      <button id="bAgain">Почати нове заняття з цим уроком</button>`);
+    $('bAgain').onclick = freshRoom;
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (!T || !slides.length || e.target.closest('input,textarea') || e.ctrlKey || e.metaKey || e.altKey) return;
+    const k = e.key;
+    let done = true;
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(k)) next();
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k)) prev();
+    else if (k === 'Home') go(0, 0);
+    else if (k === 'End') go(slides.length - 1, 0);
+    else if (k === 'r' || k === 'R' || k === 'к' || k === 'К') reveal();
+    else if (k === 's' || k === 'S' || k === 'і' || k === 'І') share();
+    else if (k === 'l' || k === 'L' || k === 'д' || k === 'Д') lockR();
+    else if (k === 'b' || k === 'B' || k === 'и' || k === 'И' || k === '.') black();
+    else if (k === 'q' || k === 'Q' || k === 'й' || k === 'Й') toggleQR();
+    else if (k === 'Escape') toggleQR(false);
+    else if (k === 't' || k === 'T' || k === 'е' || k === 'Е') toggleTimer();
+    else done = false;
+    if (done) e.preventDefault();
+  });
+
+  // щоб пробіл/Enter не «натискали» кнопку, яка лишилася у фокусі
+  document.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) b.blur(); });
+
+  /* ---- вхід і старт ---- */
+  const gate = (html) => { $('gate').hidden = false; $('gateBox').innerHTML = html; };
+
+  async function start() {
+    try {
+      await LS.loadLesson(lessonId, true);
+      slides = LESSON.slides; TEACH = window.TEACHER || {};
+      document.title = 'Пульт · ' + (LESSON.title || lessonId);
+      $('brand').innerHTML = LS.esc(LESSON.title || lessonId) + (LS.isDemo ? '<small>демо-режим</small>' : '');
+      $('roomCode').textContent = room;
+      T = await LS.teacherTransport(room);
+    } catch (e) {
+      console.error(e);
+      gate(`<h1>Не вдалося запустити</h1><p class="err">${LS.esc(e.message)}</p>`);
+      return;
+    }
+    let user = await T.waitUser();
+    const ok = (u) => u && (u.demo || !window.TEACHER_EMAIL || (u.email || '').toLowerCase() === window.TEACHER_EMAIL.toLowerCase());
+    if (!ok(user)) {
+      gate(`<h1>Пульт викладача</h1><p>Керувати заняттям може лише викладач. Увійдіть через обліковий запис Google.</p>
+        ${user ? `<p class="err">Ви увійшли як ${LS.esc(user.email || 'анонім')}, а цей обліковий запис не має прав викладача.</p>` : ''}
+        <button id="bSignIn">Увійти через Google</button>`);
+      $('bSignIn').onclick = async () => {
+        try { if (user) await T.signOut(); user = await T.signIn(); if (ok(user)) begin(); else start(); }
+        catch (e) { gate(`<h1>Вхід не вдався</h1><p class="err">${LS.esc(e.message)}</p><button onclick="location.reload()">Спробувати ще</button>`); }
+      };
+      return;
+    }
+    begin();
+  }
+
+  async function begin() {
+    // захист від повторного використання старої кімнати (наприклад, адреса з історії браузера)
+    let resume = null;
+    if (roomFromUrl) {
+      let old = null;
+      try { old = await T.getState(); } catch (e) { console.warn(e); }
+      if (old) {
+        if (old.ended || old.lesson !== lessonId) { freshRoom(); return; }
+        const age = Date.now() - (old.t || 0);
+        if (age > STALE_MS) {
+          const when = old.t ? new Date(old.t).toLocaleString('uk-UA', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : 'давно';
+          if (confirm('Кімната ' + room + ' належить до попереднього заняття (востаннє використовувалася ' + when + ').\n\nOK — почати нове заняття з новою кімнатою (рекомендовано).\nСкасувати — продовжити стару кімнату.')) { freshRoom(); return; }
+        }
+        resume = old;
+      }
+    }
+    $('gate').hidden = true;
+    T.onConnection((on) => $('conn').classList.toggle('on', on));
+    T.onPresence((n, uids) => {
+      const ids = (uids || []).slice().sort();
+      if (n === P.count && ids.join() === P.present.slice().sort().join()) return; // нічого не змінилося
+      P.count = n; P.present = ids; $('count').textContent = n; renderResponses();
+    });
+    T.onRoster((ro) => { P.roster = ro; renderResponses(); });
+    if (resume && resume.slide >= 0 && resume.slide < slides.length) {
+      go(resume.slide, Math.min(resume.step || 0, LS.stepCount(slides[resume.slide])));
+    } else {
+      go(0, 0);
+      toggleQR(true);
+    }
+  }
+
+  start();
+})();
+</script>
+</body>
+</html>
