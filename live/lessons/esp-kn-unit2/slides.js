@@ -13,7 +13,10 @@
   const SM = (h) => '<span style="display:block;font-size:18px;line-height:1.45">' + h + '</span>';
   const term = (en, ipa, uk) => '<span style="display:block;font-size:19px;line-height:1.35"><b>' + en + '</b> ' + K(ipa) + '<br>' + uk + '</span>';
   const blankN = (n) => '<span class="blank">' + n + '</span>';
-  const EV = (en, uk) => '<span style="display:block;font-size:18px;line-height:1.4">💬 <i>' + en + '</i><br>' + K(uk) + '</span>';
+  // Розмовний приклад теж перекладають: спершу українське речення (💬), наступним кроком — англійське
+  const EV = (en, uk) => [
+    '<span style="display:block;font-size:18px;line-height:1.4">💬 ' + uk + '</span>',
+    '<span style="display:block;font-size:18px;line-height:1.4">→ <i>' + en + '</i></span>'];
 
   const PH = (f, alt, pos) => '<img src="lessons/esp-kn-unit2/' + f + '" alt="' + alt + '" style="display:block;width:100%;height:140px;object-fit:cover;object-position:' + (pos || '50% 50%') + ';border-radius:16px;margin-bottom:12px">';
   const S = [];
@@ -22,7 +25,7 @@
   // «Say it in English»: українське речення → цільове → розмовний приклад з тим самим патерном
   const SAY = (id, n, uk, en, evEn, evUk) => add({ id: 's' + n, type: 'content', reveal: true,
     kicker: 'Say it in English · ' + n + '/14', title: uk,
-    items: ['<b>' + en + '</b>', EV(evEn, evUk)] });
+    items: ['<b>' + en + '</b>', ...EV(evEn, evUk)] });
 
   // «Знайди помилку»: торкнутися хибної частини
   const FM = (id, n, sentence, parts) => add({ id, type: 'mcq', kicker: '2.4 · Find the mistake · ' + n + '/10',
@@ -114,11 +117,10 @@
       '✅ <b>much</b> faster<br>❌ <b>very</b> faster'
     ] });
   add({ id: 'g1b', type: 'content', reveal: true, kicker: 'Grammar · Rule 1 · 2/2',
-    title: 'In everyday English',
+    title: 'Now say it: everyday English',
     items: [
-      EV('My new apartment is <b>much bigger</b> than the old one.', 'Моя нова квартира набагато більша за стару.'),
-      EV('The coffee here is <b>slightly cheaper</b> than downtown.', 'Кава тут трохи дешевша, ніж у центрі.'),
-      EV('This game is <b>far more fun</b> than the first one.', 'Ця гра значно цікавіша за першу.')
+      ...EV('My new apartment is <b>much bigger</b> than the old one.', 'Моя нова квартира набагато більша за стару.'),
+      ...EV('The coffee here is <b>slightly cheaper</b> than downtown.', 'Кава тут трохи дешевша, ніж у центрі.')
     ] });
 
   const C1 = 'Choose the word.';
@@ -168,11 +170,10 @@
       '<b>The further</b> the request travels, <b>the higher</b> the latency.'
     ] });
   add({ id: 'g2b', type: 'content', reveal: true, kicker: 'Grammar · Rule 2 · 2/2',
-    title: 'In everyday English',
+    title: 'Now say it: everyday English',
     items: [
-      EV('<b>The more</b> you practice, <b>the easier</b> it gets.', 'Що більше практикуєшся, то легше стає.'),
-      EV('<b>The sooner, the better.</b>', 'Що швидше, то краще.'),
-      EV('<b>The older</b> I get, <b>the less</b> I sleep.', 'Що старшим я стаю, то менше сплю.')
+      ...EV('<b>The more</b> you practice, <b>the easier</b> it gets.', 'Що більше практикуєшся, то легше стає.'),
+      ...EV('<b>The older</b> I get, <b>the less</b> I sleep.', 'Що старшим я стаю, то менше сплю.')
     ] });
 
   const J2 = (n, a, b) => 'Join the facts: <b>' + a + '</b> <b>' + b + '</b>';
@@ -225,17 +226,15 @@
     title: 'Paying for an advantage',
     items: [
       '<b>at the cost of</b> + noun / -ing<br><b>in exchange for</b> + noun / -ing',
-      'We cut latency <b>at the cost of</b> accuracy.<br>… <b>at the cost of losing</b> accuracy.',
-      EV('I finished the project on time <b>at the cost of</b> my weekend.', 'Я вчасно завершив проєкт ціною власних вихідних.'),
-      '❌ at the cost of <b>lose</b>'
+      'We cut latency <b>at the cost of</b> accuracy.<br>… <b>at the cost of losing</b> accuracy.<br>❌ at the cost of <b>lose</b>',
+      ...EV('I finished the project on time <b>at the cost of</b> my weekend.', 'Я вчасно завершив проєкт ціною власних вихідних.')
     ] });
   add({ id: 'g3b', type: 'content', reveal: true, kicker: 'Grammar · Rule 3 · 2/2',
     title: 'Talking about compromise',
     items: [
-      '<b>a trade-off between</b> X <b>and</b> Y',
-      'There is always <b>a trade-off between</b> cost <b>and</b> latency.',
+      '<b>a trade-off between</b> X <b>and</b> Y<br>There is always <b>a trade-off between</b> cost <b>and</b> latency.',
       '<b>to come at a price</b> = to have a hidden cost',
-      EV('Cheap flights <b>come at a price</b>: no bags, no legroom.', 'Дешеві перельоти мають свою ціну: без багажу й без місця для ніг.')
+      ...EV('Cheap flights <b>come at a price</b>: no bags, no legroom.', 'Дешеві перельоти мають свою ціну: без багажу й без місця для ніг.')
     ] });
 
   add({ id: 'e23_1', type: 'gap', kicker: '2.3 · 1/6',
@@ -273,10 +272,10 @@
       '<b>Whereas a server has</b> plenty of memory, a phone does not.'
     ] });
   add({ id: 'g4b', type: 'content', reveal: true, kicker: 'Grammar · Rule 4 · 2/2',
-    title: 'In everyday English',
+    title: 'Now say it: everyday English',
     items: [
-      EV('<b>Unlike my brother</b>, I can’t stand coffee.', 'На відміну від брата, я терпіти не можу кави.'),
-      EV('<b>Whereas my brother loves</b> coffee, I can’t stand it.', 'Тоді як мій брат любить каву, я її терпіти не можу.'),
+      ...EV('<b>Unlike my brother</b>, I can’t stand coffee.', 'На відміну від брата, я терпіти не можу кави.'),
+      ...EV('<b>Whereas my brother loves</b> coffee, I can’t stand it.', 'Тоді як мій брат любить каву, я її терпіти не можу.'),
       '❌ <b>Unlike a server has</b> plenty of memory, …'
     ] });
   add({ id: 'g4q1', type: 'mcq', kicker: 'Rule 4 · Quick check · 1/2',
