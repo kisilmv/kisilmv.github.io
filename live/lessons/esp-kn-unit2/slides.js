@@ -5,9 +5,8 @@
    Принципи: лексика вводиться ДО вправ, де вона потрібна; формати чергуються
    (не більше 3 однакових слайдів поспіль); кожен патерн «Say it in English»
    має розмовний приклад; аудіо — після читання, з підготовкою й завданнями.
-   Частина 1 (≈80 хв): Lead-in · Лексика A–D · Граматика 1–4 · 2.1–2.4 (граматика)
-   Частина 2 (≈80 хв): Пастки + 2.5 · 2.4 (лексика) · Reading · Listening ·
-                       Dialogues · Speaking
+   Послідовність: Lead-in · Лексика A–D з граматикою 1–4 і 2.1–2.4 · Пастки + 2.5 ·
+   Reading · Listening · Dialogues · Speaking. Меж занять у презентації немає.
    ========================================================================= */
 (function () {
   const K = (s) => '<span class="muted">' + s + '</span>';
@@ -16,6 +15,7 @@
   const blankN = (n) => '<span class="blank">' + n + '</span>';
   const EV = (en, uk) => '<span style="display:block;font-size:18px;line-height:1.4">💬 <i>' + en + '</i><br>' + K(uk) + '</span>';
 
+  const PH = (f, alt, pos) => '<img src="lessons/esp-kn-unit2/' + f + '" alt="' + alt + '" style="display:block;width:100%;height:140px;object-fit:cover;object-position:' + (pos || '50% 50%') + ';border-radius:16px;margin-bottom:12px">';
   const S = [];
   const add = (o) => S.push(o);
 
@@ -28,7 +28,6 @@
   const FM = (id, n, sentence, parts) => add({ id, type: 'mcq', kicker: '2.4 · Find the mistake · ' + n + '/10',
     prompt: sentence + '<br><span class="muted">Tap the wrong part.</span>', options: parts });
 
-  /* ===================== ЧАСТИНА 1 ===================== */
   add({ id: 'title', type: 'title',
     kicker: 'Unit 2 · English for Computer Science',
     title: 'Edge AI and Model Deployment',
@@ -36,10 +35,10 @@
 
   /* ---------- Lead-in ---------- */
   add({ id: 'l1', type: 'mcq', kicker: 'Lead-in · 1/4',
-    prompt: 'A team trains a model <b>once</b>. Then a <b>million users</b> use it every day.<br><b>Over a year, which costs more?</b>',
+    prompt: PH('datacenter.jpg', 'A long corridor of server racks in a data center') + 'A team trains a model <b>once</b>. Then a <b>million users</b> use it every day.<br><b>Over a year, which costs more?</b>',
     options: ['training the model', 'serving it to the users', 'about the same'] });
   add({ id: 'l2', type: 'open', kicker: 'Lead-in · 2/4',
-    prompt: 'Your app calls a model <b>over the network</b>. The user goes into a <b>tunnel</b>.<br><b>What breaks?</b> Name as many things as you can.',
+    prompt: PH('metro.jpg', 'A passenger on a subway train looking at her phone', '50% 35%') + 'Your app calls a model <b>over the network</b>. The user goes into a <b>tunnel</b>.<br><b>What breaks?</b> Name as many things as you can.',
     placeholder: 'The app can’t… / The user doesn’t get…' });
   add({ id: 'l3', type: 'mcq', kicker: 'Lead-in · 3/4',
     prompt: 'A <b>code-completion</b> feature in your editor.<br><b>Which is worse?</b>',
@@ -306,18 +305,14 @@
     prompt: 'Choose <b>one</b> sentence from 2.4 and write it <b>correctly</b>.',
     placeholder: 'This endpoint is…' });
 
-  add({ id: 'p1end', type: 'end', kicker: 'End of Part 1',
-    title: 'Part 1: done',
-    text: 'Next time: words that trick you, the text, a two-minute audio brief and your recommendation.' });
-
-  /* ===================== ЧАСТИНА 2 ===================== */
-  add({ id: 'p2', type: 'end', kicker: 'Part 2',
-    title: 'Where the model runs',
-    text: 'Words that trick you · Reading · Listening · Speaking' });
-  add({ id: 'w1', type: 'mcq', kicker: 'Warm-up · 1/2',
+  /* ---------- Words that trick you ---------- */
+  add({ id: 'tsec', type: 'end', kicker: 'Vocabulary',
+    title: 'Words that trick you',
+    text: 'Small words, big mistakes' });
+  add({ id: 'w1', type: 'mcq', kicker: 'Quick review · 1/2',
     prompt: 'The ___ the request travels, the higher the latency.',
     options: ['far', 'further', 'furthest', 'more far'] });
-  add({ id: 'w2', type: 'mcq', kicker: 'Warm-up · 2/2',
+  add({ id: 'w2', type: 'mcq', kicker: 'Quick review · 2/2',
     prompt: 'The first request after a quiet period is slow. This is a …',
     options: ['rollback', 'bottleneck', 'benchmark', 'cold start'] });
 
@@ -391,7 +386,7 @@
     term('jurisdiction · to comply', '/ˌdʒʊrɪsˈdɪkʃn/ · /kəmˈplaɪ/', 'юрисдикція · дотримуватися вимог'),
     term('dull', '/dʌl/', 'нудний, буденний')] });
   add({ id: 'r0', type: 'open', kicker: 'Reading · Predict',
-    prompt: 'The text is called <b>“Where the Model Runs”</b>.<br>It names <b>three places</b> where inference can run. Which three?',
+    prompt: PH('phone.jpg', 'A smartphone with a glowing network pattern on a desk next to a laptop', '45% 60%') + 'The text is called <b>“Where the Model Runs”</b>.<br>It names <b>three places</b> where inference can run. Which three?',
     placeholder: 'on a…, in a…, on a…' });
 
   const PARA = [
@@ -561,8 +556,8 @@
 
   /* ---------- Speaking ---------- */
   add({ id: 'sp1', type: 'content', kicker: 'Speaking · One student at a time', title: 'Where should it run?', items: [
-    '<b>Listener:</b> a product manager',
-    '<b>Time:</b> 90 seconds',
+    PH('team.jpg', 'Two developers discussing a system diagram on a glass whiteboard', '45% 30%').replace('margin-bottom:12px', 'margin-bottom:0'),
+    '<b>Listener:</b> a product manager · <b>Time:</b> 90 seconds',
     '<b>Goal:</b> recommend where the model for one feature should run, and say what it costs'] });
   add({ id: 'sp2', type: 'mcq', kicker: 'Speaking · Choose your feature',
     prompt: 'Which feature will you talk about?',
