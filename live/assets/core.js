@@ -115,8 +115,10 @@
       case 'content': {
         const items = slide.items || [];
         const n = slide.reveal ? Math.min(ctx.step, items.length) : items.length;
-        const lis = items.slice(0, n).map((it, i) => `<li class="${slide.reveal && i === n - 1 ? 'is-new' : ''}">${it}</li>`).join('');
-        const left = slide.reveal && n < items.length ? `<div class="s-more">${'•'.repeat(items.length - n)}</div>` : '';
+        // ctx.ahead (лише пульт): ще не відкриті пункти видно блідими, щоб викладач бачив наперед
+        const shown = ctx.ahead ? items.length : n;
+        const lis = items.slice(0, shown).map((it, i) => `<li class="${i >= n ? 'is-ahead' : (slide.reveal && i === n - 1 ? 'is-new' : '')}">${it}</li>`).join('');
+        const left = !ctx.ahead && slide.reveal && n < items.length ? `<div class="s-more">${'•'.repeat(items.length - n)}</div>` : '';
         h = `${kicker}${slide.title ? `<h2 class="s-h">${slide.title}</h2>` : ''}<ul class="s-items">${lis}</ul>${left}`;
         break;
       }
@@ -124,9 +126,9 @@
         const st = slide.reveal === false ? 3 : ctx.step;
         h = `${kicker}<div class="v-term">${slide.term || ''}</div>
           <div class="v-meta">${slide.ipa ? `<span class="v-ipa">${slide.ipa}</span>` : ''}${slide.pos ? `<span class="v-pos">${slide.pos}</span>` : ''}</div>
-          ${st >= 1 && slide.def ? `<p class="v-def is-new">${slide.def}</p>` : ''}
-          ${st >= 2 && slide.example ? `<p class="v-ex is-new">${slide.example}</p>` : ''}
-          ${st >= 3 && slide.uk ? `<p class="v-uk is-new">${slide.uk}</p>` : ''}`;
+          ${(st >= 1 || ctx.ahead) && slide.def ? `<p class="v-def ${st >= 1 ? 'is-new' : 'is-ahead'}">${slide.def}</p>` : ''}
+          ${(st >= 2 || ctx.ahead) && slide.example ? `<p class="v-ex ${st >= 2 ? 'is-new' : 'is-ahead'}">${slide.example}</p>` : ''}
+          ${(st >= 3 || ctx.ahead) && slide.uk ? `<p class="v-uk ${st >= 3 ? 'is-new' : 'is-ahead'}">${slide.uk}</p>` : ''}`;
         break;
       }
       case 'mcq': {

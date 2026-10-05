@@ -437,7 +437,7 @@
     const s = slide();
     const td = tdata(s);
     $('cur').replaceChildren(LS.render(s, {
-      step: P.step, revealed: P.revealed, answer: td.answer || null,
+      step: P.step, ahead: true, revealed: P.revealed, answer: td.answer || null,
       results: P.shared ? results() : null, locked: P.locked, mode: 'preview', interactive: false,
       wall: (P.walls[s.id] || []).map((x) => x.v),
     }));
