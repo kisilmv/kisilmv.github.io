@@ -176,12 +176,12 @@
 .mode-screen .wall-i { font-size: clamp(20px, 2vw, 32px); }
 
 /* ---------- match: дві колонки, стрілки між парами ---------- */
-.m-wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 0 28px; margin: 4px 0 12px; }
-.m-col { display: flex; flex-direction: column; gap: 6px; }
+.m-wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 0 22px; margin: 4px 0 12px; }
+.m-col { display: flex; flex-direction: column; gap: 5px; }
 .slide--match .s-prompt { font-size: 19px; line-height: 1.35; }
 .slide--match .verdict { padding: 9px 12px; }
-.m-l, .m-r { display: flex; align-items: center; gap: 6px; padding: 7px 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font-size: 15px; line-height: 1.25; min-height: 40px; box-sizing: border-box; }
-.m-t { flex: 1; min-width: 0; overflow-wrap: break-word; hyphens: auto; }
+.m-l, .m-r { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font-size: 15px; line-height: 1.22; min-height: 38px; box-sizing: border-box; }
+.m-t { flex: 1; min-width: 0; overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
 .m-n, .m-letter { font-weight: 700; color: var(--accent); min-width: 14px; }
 .m-r.is-hit { border-color: var(--ok); background: var(--ok-soft); }
 .m-r.is-hit .m-letter { color: var(--ok); }

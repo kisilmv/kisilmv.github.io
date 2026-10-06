@@ -18,7 +18,7 @@
     '<span style="display:block;font-size:18px;line-height:1.4">💬 ' + uk + '</span>',
     '<span style="display:block;font-size:18px;line-height:1.4">→ <i>' + en + '</i></span>'];
 
-  const PH = (f, alt, pos) => '<img src="lessons/esp-kn-unit2/' + f + '" alt="' + alt + '" style="display:block;width:100%;height:140px;object-fit:cover;object-position:' + (pos || '50% 50%') + ';border-radius:16px;margin-bottom:12px">';
+  const PH = (f, alt, pos, h) => '<img src="lessons/esp-kn-unit2/' + f + '" alt="' + alt + '" style="display:block;width:100%;height:' + (h || 140) + 'px;object-fit:cover;object-position:' + (pos || '50% 50%') + ';border-radius:16px;margin-bottom:12px">';
   const S = [];
   const add = (o) => S.push(o);
 
@@ -38,7 +38,7 @@
 
   /* ---------- Lead-in ---------- */
   add({ id: 'l1', type: 'mcq', kicker: 'Lead-in · 1/4',
-    prompt: PH('datacenter.jpg', 'A long corridor of server racks in a data center') + 'A team trains a model <b>once</b>. Then a <b>million users</b> use it every day.<br><b>Over a year, which costs more?</b>',
+    prompt: PH('datacenter.jpg', 'A long corridor of server racks in a data center', '50% 50%', 108) + 'A team trains a model <b>once</b>. A <b>million users</b> use it every day.<br><b>Which costs more in a year?</b>',
     options: ['training the model', 'serving it to the users', 'about the same'] });
   add({ id: 'l2', type: 'open', kicker: 'Lead-in · 2/4',
     prompt: PH('metro.jpg', 'A passenger on a subway train looking at her phone', '50% 35%') + 'Your app calls a model <b>over the network</b>. The user goes into a <b>tunnel</b>.<br><b>What breaks?</b> Name as many things as you can.',
@@ -68,19 +68,22 @@
   add({ id: 'v0', type: 'content', kicker: 'Vocabulary · A', title: 'Where can a model run?', items: [
     PLACES,
     K('American spelling and pronunciation, as in industry documentation.')] });
-  add({ id: 'vA1', type: 'content', kicker: 'Vocabulary · A · 1/2', title: 'Where inference runs', items: [
-    term('edge device', '/ˈedʒ dɪˌvaɪs/', 'периферійний (кінцевий) пристрій'),
+  add({ id: 'vA1', type: 'content', kicker: 'Vocabulary · A · 1/3', title: 'Where inference runs', items: [
+    term('inference', '/ˈɪnfərəns/', 'висновування, виконання моделі'),
     term('on-device inference', '/ˌɑːn dɪˌvaɪs ˈɪnfərəns/', 'висновування на пристрої'),
+    term('edge device', '/ˈedʒ dɪˌvaɪs/', 'периферійний (кінцевий) пристрій')] });
+  add({ id: 'vA2', type: 'content', kicker: 'Vocabulary · A · 2/3', title: 'Where inference runs', items: [
     term('endpoint', '/ˈendpɔɪnt/', 'кінцева точка (служби)'),
-    term('round trip', '/ˌraʊnd ˈtrɪp/', 'повний цикл «запит — відповідь»')] });
-  add({ id: 'vA2', type: 'content', kicker: 'Vocabulary · A · 2/2', title: 'Where inference runs', items: [
+    term('round trip', '/ˌraʊnd ˈtrɪp/', 'повний цикл «запит — відповідь»'),
     term('latency', '/ˈleɪtnsi/', 'затримка'),
-    term('bandwidth', '/ˈbændwɪdθ/', 'ширина смуги пропускання'),
-    term('deployment target', '/dɪˈplɔɪmənt ˌtɑːrɡət/', 'цільове середовище розгортання'),
-    term('to scale to zero', '/ˌskeɪl tə ˈzɪroʊ/', 'масштабуватися до нуля')] });
+    term('bandwidth', '/ˈbændwɪdθ/', 'ширина смуги пропускання')] });
   add({ id: 'vAq1', type: 'mcq', kicker: 'A · Quick check · 1/2',
     prompt: 'The phone answers the user <b>without the network</b>.<br><b>This is …</b>',
     options: ['an endpoint', 'a round trip', 'on-device inference', 'bandwidth'] });
+  add({ id: 'vA3', type: 'content', kicker: 'Vocabulary · A · 3/3', title: 'Where inference runs', items: [
+    term('deployment target', '/dɪˈplɔɪmənt ˌtɑːrɡət/', 'цільове середовище розгортання'),
+    term('serverless', '/ˈsɝːvərləs/', 'безсерверний (сервери орендуються лише на час запиту)'),
+    term('to scale to zero', '/ˌskeɪl tə ˈzɪroʊ/', 'масштабуватися до нуля')] });
   add({ id: 'vAq2', type: 'gap', kicker: 'A · Quick check · 2/2',
     instruction: 'Type the word.',
     prompt: 'No users at night, so the service shuts down all its servers. It can ___ to zero.',
@@ -88,7 +91,6 @@
 
   /* ---------- Vocabulary B ---------- */
   add({ id: 'vB1', type: 'content', kicker: 'Vocabulary · B · 1/2', title: 'Performance and constraints', items: [
-    term('inference', '/ˈɪnfərəns/', 'висновування, виконання моделі'),
     term('throughput', '/ˈθruːpʊt/', 'пропускна спроможність'),
     term('cold start', '/ˌkoʊld ˈstɑːrt/', 'холодний старт'),
     term('memory footprint', '/ˈmeməri ˌfʊtprɪnt/', 'обсяг займаної пам’яті')] });
@@ -178,7 +180,7 @@
 
   const J2 = (n, a, b) => 'Join the facts: <b>' + a + '</b> <b>' + b + '</b>';
   add({ id: 'e22_1', type: 'gap', kicker: '2.2 · 1/6',
-    instruction: J2(1, 'The model is small.', 'The inference is cheap.') + '<br>Type both words: <b>1, 2</b>',
+    instruction: K('Example: The phone is old. The battery is weak. → <b>older, weaker</b>') + '<br>' + J2(1, 'The model is small.', 'The inference is cheap.') + '<br>Type both words: <b>1, 2</b>',
     prompt: 'The ' + blankN(1) + ' the model, the ' + blankN(2) + ' the inference.<br>1, 2 → ___', placeholder: 'word 1, word 2' });
   add({ id: 'e22_2', type: 'gap', kicker: '2.2 · 2/6',
     instruction: J2(2, 'The request travels far.', 'The latency is high.') + '<br>Type both words: <b>1, 2</b>',
@@ -193,8 +195,8 @@
     'The further a request travels, the more likely it is to be intercepted.',
     '<b>The later</b> you book, <b>the more expensive</b> the tickets get.', 'Що пізніше бронюєш, то дорожчі квитки.');
   add({ id: 'e22_4', type: 'mcq', kicker: '2.2 · 4/6',
-    prompt: '<b>The project has many dependencies. The build is slow.</b><br>Which sentence is correct?',
-    options: ['The more dependencies the project has, the slowest the build.', 'More dependencies the project has, the slower the build.', 'The more dependencies the project has, the slower the build.'] });
+    prompt: '<b>The project has many files. The build is slow.</b><br>Which sentence is correct?',
+    options: ['The more files the project has, the slowest the build.', 'More files the project has, the slower the build.', 'The more files the project has, the slower the build.'] });
   add({ id: 'e22_5', type: 'mcq', kicker: '2.2 · 5/6',
     prompt: '<b>The cache is warm. The response is fast.</b><br>Which sentence is correct?',
     options: ['The warmer the cache, the faster the response.', 'The warmer the cache, the more fast the response.', 'The cache is warmer, the response is faster.'] });
@@ -293,13 +295,19 @@
     ['Unlike a server has', 'unlimited memory,', 'a phone has strict limits']);
   FM('e24_2', 2, 'This endpoint is very faster than the previous one.',
     ['This endpoint is', 'very faster', 'than the previous one']);
+  add({ id: 'gW', type: 'content', reveal: true, kicker: 'Grammar · Word order',
+    title: 'Where does the adverb go?',
+    items: [
+      'verb (+ object) + <b>adverb</b><br>She <b>works hard</b>. · He tests the code <b>carefully</b>.',
+      '✅ He <b>works hard</b>.<br>❌ He <b>hard works</b>.',
+      K('Ukrainian puts it first («наполегливо працює»); English puts it after the verb.')] });
   add({ id: 'e24_6', type: 'gap', kicker: '2.4 · Correct it · 3/10',
     instruction: '<s>He hard works on the deployment script.</s><br>Write the verb and the adverb in the right order.',
     prompt: 'He ___ on the deployment script.', placeholder: 'two words' });
   FM('e24_7', 4, 'The latency is more better after caching.',
     ['The latency is', 'more better', 'after caching']);
-  FM('e24_8', 5, 'This approach is more efficient as the previous one.',
-    ['This approach', 'is more efficient', 'as the previous one']);
+  FM('e24_8', 5, 'This approach is more reliable as the previous one.',
+    ['This approach', 'is more reliable', 'as the previous one']);
   add({ id: 'e24_fix', type: 'open', kicker: '2.4 · Your turn',
     prompt: 'Choose <b>one</b> sentence from 2.4 and write it <b>correctly</b>.',
     placeholder: 'This endpoint is…' });
@@ -314,6 +322,14 @@
   add({ id: 'w2', type: 'mcq', kicker: 'Quick review · 2/2',
     prompt: 'The first request after a quiet period is slow. This is a …',
     options: ['rollback', 'bottleneck', 'benchmark', 'cold start'] });
+
+  const MP = 'What does each word (1–4) mean? Two options (a–f) are extra.';
+  add({ id: 'm1', type: 'match', kicker: 'Quick review · Match · 1/2', prompt: MP,
+    left: ['edge device', 'deployment target', 'cost per request', 'inference engine'],
+    right: ['runs the models', 'delay before reply', 'phone or sensor', 'price of one call', 'saved model file', 'where it runs'] });
+  add({ id: 'm2', type: 'match', kicker: 'Quick review · Match · 2/2', prompt: MP,
+    left: ['to fine-tune', 'floating-point', 'embeddings', 'dependency'],
+    right: ['restore old version', 'meaning as vectors', 'train it further', 'needed library', 'cut extra weights', 'decimal numbers'] });
 
   /* ---------- Terminological traps, interleaved with 2.5 ---------- */
   const trap = (pair, uk, ex) => SM('<b>' + pair + '</b><br>' + K(uk) + '<br><i>' + ex + '</i>');
@@ -380,10 +396,10 @@
 
   /* ---------- Reading ---------- */
   add({ id: 'rv', type: 'content', kicker: 'Reading · Before you read', title: 'Four more words', items: [
-    term('serverless', '/ˈsɜːrvərləs/', 'безсерверний (сервери орендуються лише на час запиту)'),
     term('an afterthought', '/ˈæftərθɔːt/', 'запізніла думка, щось другорядне'),
     term('jurisdiction · to comply', '/ˌdʒʊrɪsˈdɪkʃn/ · /kəmˈplaɪ/', 'юрисдикція · дотримуватися вимог'),
-    term('dull', '/dʌl/', 'нудний, буденний')] });
+    term('dull', '/dʌl/', 'нудний, буденний'),
+    term('can afford (to)', '/əˈfɔːrd/', 'може дозволити собі')] });
   add({ id: 'r0', type: 'open', kicker: 'Reading · Predict',
     prompt: PH('phone.jpg', 'A smartphone with a glowing network pattern on a desk next to a laptop', '45% 60%') + 'The text is called <b>“Where the Model Runs”</b>.<br>It names <b>three places</b> where inference can run. Which three?',
     placeholder: 'on a…, in a…, on a…' });
@@ -447,6 +463,9 @@
   add({ id: 'e27_1', type: 'gap', kicker: '2.7 · 1/6', instruction: FIND, prompt: 'the delay affecting the first request after a period of inactivity → ___' });
   add({ id: 'e27_2', type: 'gap', kicker: '2.7 · 2/6', instruction: FIND, prompt: 'the packaged file that a trained model is deployed as → ___' });
   add({ id: 'e27_3', type: 'gap', kicker: '2.7 · 3/6', instruction: FIND, prompt: 'a complete journey from the client to the server and back → ___' });
+  add({ id: 'm3', type: 'match', kicker: '2.7 · Words before the text · Match', prompt: MP,
+    left: ['an afterthought', 'jurisdiction', 'to comply', 'dull'],
+    right: ['break the rules', 'boring, ordinary', 'where a law applies', 'easy to understand', 'added later', 'follow the rules'] });
   SAY('s7', 7, 'Холодний старт додає кілька сотень мілісекунд.',
     'A cold start adds several hundred milliseconds.',
     'The traffic <b>adds</b> half an hour to my commute.', 'Затори додають пів години до моєї дороги на роботу.');
@@ -465,7 +484,7 @@
     term('a brief', '/briːf/', 'стислий огляд, брифінг'),
     term('kind of like · No way!', '/ˈkaɪnd əv laɪk/ · /ˌnoʊ ˈweɪ/', 'щось на кшталт · Та ні в якому разі!'),
     term('gas · cell signal ' + K('AmE'), '/ɡæs/ · /ˈsel ˌsɪɡnəl/', 'пальне · мобільний зв’язок'),
-    term('to figure out · to afford', '/ˌfɪɡjər ˈaʊt/ · /əˈfɔːrd/', 'з’ясувати · дозволити собі')] });
+    term('to figure out', '/ˌfɪɡjər ˈaʊt/', 'з’ясувати')] });
   add({ id: 'a3', type: 'content', kicker: 'Listening · Before you listen · 3/3', title: 'While you listen', items: [
     '<b>1.</b> What <b>two everyday things</b> does the speaker compare training and inference to?',
     '<b>2.</b> Why do engineers move the model <b>onto the phone</b>? Two reasons.',
@@ -504,6 +523,10 @@
   add({ id: 'L9', type: 'open', kicker: 'After listening · 9/9',
     prompt: 'The speaker explains with comparisons. <b>Your turn.</b><br>Finish: <b>A cold start is like …</b>',
     placeholder: 'A cold start is like…, because…' });
+
+  add({ id: 'm4', type: 'match', kicker: 'After listening · Words from the audio', prompt: 'What does each expression (1–4) mean? Two options (a–f) are extra.',
+    left: ['a brief', 'No way!', 'to figure out', 'can afford'],
+    right: ['a long report', 'to allow yourself', 'Definitely not!', 'a short update', 'to waste money', 'to find the answer'] });
 
   /* ---------- Dialogues ---------- */
   const L = (who, t) => SM('<b>' + who + ':</b> ' + t);
@@ -560,7 +583,7 @@
     '<b>Goal:</b> recommend where the model for one feature should run, and say what it costs'] });
   add({ id: 'sp2', type: 'mcq', kicker: 'Speaking · Choose your feature',
     prompt: 'Which feature will you talk about?',
-    options: ['an offline translator in a metro app', 'a fraud check in a banking app', 'code completion in an editor', 'photo search in a gallery app', 'a voice assistant in a car'] });
+    options: ['offline translator (metro)', 'fraud check (bank app)', 'code completion (editor)', 'photo search (gallery)', 'voice assistant (car)'] });
   add({ id: 'sp3', type: 'content', reveal: true, kicker: 'Speaking · Five moves', title: 'Your plan', items: [
     '<b>1.</b> <b>Recommend</b>: server, browser, device or hybrid.',
     '<b>2.</b> <b>Compare</b>: much / slightly + comparative.',
@@ -585,6 +608,21 @@
   add({ id: 'end', type: 'end', kicker: 'Unit 2',
     title: 'Which machine runs it, how often, and who pays for the electricity?',
     text: 'That is most of the engineering work you will actually do.' });
+
+  // Логіка подачі для check_lesson.js (рушій ці поля ігнорує): що пояснює слайд правила, на яке правило спирається вправа.
+  // Лексику скрипт перевіряє сам за term(...); тут — граматика й пастки.
+  const R1 = 'rule 1: much / slightly + comparative', R2 = 'rule 2: the more…, the more…', R3 = 'rule 3: at the cost of · in exchange for',
+    R3B = 'rule 3: a trade-off · come at a price', R4 = 'rule 4: unlike · whereas', RW = 'word order: adverbs',
+    TR1 = 'traps: accuracy · efficient', TR2 = 'traps: actual · implement', TR3 = 'traps: software · ability', TR4 = 'traps: technique · information';
+  const TEACHES = { g1a: [R1], g2a: [R2], g3a: [R3], g3b: [R3B], g4a: [R4], gW: [RW], t1: [TR1], t2: [TR2], t3: [TR3], t4: [TR4] };
+  const NEEDS = { e23_3: [R3B], e23_4: [R3B], g4q1: [R4], g4q2: [R4], e24_1: [R4], e24_2: [R1], e24_6: [RW], e24_7: [R1], e24_8: [R1],
+    e24_3: [TR3], e24_4: [TR2], e24_10: [TR4], e24_5: [TR2], e24_9: [TR3], w1: [R2], e25_1: [TR1], e25_2: [TR1], e25_8: [TR1],
+    e25_3: [TR2], e25_4: [TR2], e25_5: [TR3], e25_7: [TR3], e25_6: [TR4], L8: [R1], e28_1: [R3, R3B], sp5: [R3] };
+  S.forEach((s) => {
+    if (TEACHES[s.id]) s.teaches = TEACHES[s.id];
+    if (!['mcq', 'gap', 'open', 'match'].includes(s.type)) return;
+    s.needs = NEEDS[s.id] || (/^e21_/.test(s.id) ? [R1] : /^e22_/.test(s.id) ? [R2] : /^e23_/.test(s.id) ? [R3] : []);
+  });
 
   window.LESSON = {
     id: 'esp-kn-unit2',

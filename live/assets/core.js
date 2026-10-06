@@ -220,8 +220,8 @@
           verdict = `<div class="verdict ${ok === n ? 'is-ok' : 'is-no'}">${ok === n ? '✓ Усі пари правильні' : `Правильно: <b>${ok} з ${n}</b>`}</div>`;
         }
         h = `${kicker}${slide.prompt ? `<div class="s-prompt">${slide.prompt}</div>` : ''}<div class="m-wrap">
-          <div class="m-col">${L.map((t, i) => `<div class="m-l" data-i="${i}"><span class="m-n">${i + 1}</span><span class="m-t">${t}</span>${chip(i)}</div>`).join('')}</div>
-          <div class="m-col">${Rt.map((t, j) => `<div class="m-r${hit(j)}" data-j="${j}"><span class="m-letter">${LETTERS[j].toLowerCase()}</span><span class="m-t">${t}</span></div>`).join('')}</div></div>
+          <div class="m-col">${L.map((t, i) => `<div class="m-l" data-i="${i}"><span class="m-n">${i + 1}</span><span class="m-t" lang="en">${t}</span>${chip(i)}</div>`).join('')}</div>
+          <div class="m-col">${Rt.map((t, j) => `<div class="m-r${hit(j)}" data-j="${j}"><span class="m-letter">${LETTERS[j].toLowerCase()}</span><span class="m-t" lang="en">${t}</span></div>`).join('')}</div></div>
           ${form}${statusLine(slide, ctx)}${verdict}${explain}`;
         el._links = links;
         break;
