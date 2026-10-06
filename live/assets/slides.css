@@ -174,3 +174,28 @@
 .mode-screen .wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 1.4vh 1.4vw; }
 .mode-screen .wall-h { grid-column: 1 / -1; font-size: clamp(14px, 1.2vw, 20px); }
 .mode-screen .wall-i { font-size: clamp(20px, 2vw, 32px); }
+
+/* ---------- match: дві колонки, стрілки між парами ---------- */
+.m-wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 0 28px; margin: 4px 0 12px; }
+.m-col { display: flex; flex-direction: column; gap: 6px; }
+.slide--match .s-prompt { font-size: 19px; line-height: 1.35; }
+.slide--match .verdict { padding: 9px 12px; }
+.m-l, .m-r { display: flex; align-items: center; gap: 6px; padding: 7px 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font-size: 15px; line-height: 1.25; min-height: 40px; box-sizing: border-box; }
+.m-t { flex: 1; min-width: 0; overflow-wrap: break-word; hyphens: auto; }
+.m-n, .m-letter { font-weight: 700; color: var(--accent); min-width: 14px; }
+.m-r.is-hit { border-color: var(--ok); background: var(--ok-soft); }
+.m-r.is-hit .m-letter { color: var(--ok); }
+.m-sel { font: inherit; font-size: 16px; font-weight: 700; border: 1.5px solid var(--accent); border-radius: 8px; background: var(--surface); color: var(--accent); padding: 4px 0; min-width: 40px; min-height: 36px; }
+.m-chip { min-width: 26px; text-align: center; font-weight: 700; border-radius: 8px; padding: 2px 6px; border: 1.5px dashed var(--line); min-height: 22px; }
+.m-chip.is-ok { border: 0; background: var(--ok-soft); color: var(--ok); }
+.m-chip.is-mine { border: 1.5px solid var(--accent); color: var(--accent); }
+svg.m-links { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; }
+svg.m-links path { fill: none; stroke-width: 2.4; stroke-linecap: round; }
+svg.m-links .ok path { stroke: var(--ok); } svg.m-links .ok polygon { fill: var(--ok); }
+svg.m-links .mine path { stroke: var(--accent); } svg.m-links .mine polygon { fill: var(--accent); }
+svg.m-links .wrong path { stroke: var(--no); stroke-dasharray: 4 5; stroke-width: 1.8; } svg.m-links .wrong polygon { fill: var(--no); }
+svg.m-links .ghost path { stroke: var(--ink-2); stroke-dasharray: 4 6; stroke-width: 1.4; opacity: .55; } svg.m-links .ghost polygon { fill: var(--ink-2); opacity: .55; }
+.m-form { justify-content: flex-end; }
+.mode-screen .m-wrap { gap: 0 90px; }
+.mode-screen .m-l, .mode-screen .m-r { font-size: 20px; min-height: 48px; }
+.mode-screen.slide--match .s-prompt { font-size: clamp(22px, 2.3vw, 36px); }

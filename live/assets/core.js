@@ -72,7 +72,28 @@
     return 0;
   };
 
-  LS.isAnswerable = (s) => !!s && ['mcq', 'gap', 'open'].includes(s.type);
+  LS.isAnswerable = (s) => !!s && ['mcq', 'gap', 'open', 'match'].includes(s.type);
+
+  // match: відповідь студента — рядок індексів правої колонки через кому ("2,0,,1"; порожньо = не обрано)
+  LS.parseMatch = (v, n) => { const a = String(v == null ? '' : v).split(','); return Array.from({ length: n }, (_, i) => { const k = parseInt(a[i], 10); return Number.isInteger(k) && k >= 0 ? k : -1; }); };
+  LS.matchScore = (v, pairs) => { const m = LS.parseMatch(v, pairs.length); return m.filter((k, i) => k === pairs[i]).length; };
+
+  // стрілки між парами: малюються після вставки слайда в DOM (розміри відносно .m-wrap, тож масштаб пульта не заважає)
+  LS.drawMatch = (el) => {
+    const w = el && el.querySelector('.m-wrap'); if (!w || !el._links) return;
+    const old = w.querySelector('svg.m-links'); if (old) old.remove();
+    if (!w.offsetWidth) return;
+    const pos = (x) => { let l = 0, t = 0, e = x; while (e && e !== w) { l += e.offsetLeft; t += e.offsetTop; e = e.offsetParent; } return { l, t, w: x.offsetWidth, h: x.offsetHeight }; };
+    let g = '';
+    el._links.forEach(({ i, j, cls }) => {
+      const a = w.querySelector(`.m-l[data-i="${i}"]`), b = w.querySelector(`.m-r[data-j="${j}"]`);
+      if (!a || !b) return;
+      const p = pos(a), q = pos(b);
+      const x1 = p.l + p.w + 2, y1 = p.t + p.h / 2, x2 = q.l - 3, y2 = q.t + q.h / 2, dx = Math.max(10, (x2 - x1) * 0.5);
+      g += `<g class="${cls}"><path d="M${x1} ${y1} C${x1 + dx} ${y1} ${x2 - dx} ${y2} ${x2 - 7} ${y2}"/><polygon points="${x2} ${y2} ${x2 - 8} ${y2 - 4.5} ${x2 - 8} ${y2 + 4.5}"/></g>`;
+    });
+    if (g) w.insertAdjacentHTML('beforeend', `<svg class="m-links" width="${w.offsetWidth}" height="${w.offsetHeight}" aria-hidden="true">${g}</svg>`);
+  };
 
   /* ---------- рендер ----------
      ctx: { step, revealed, answer, results, mine, locked, interactive,
@@ -174,6 +195,37 @@
         h = `${kicker}<div class="s-prompt">${slide.prompt || ''}</div>${form}${mine}${statusLine(slide, ctx)}${explain}${wallHtml(ctx)}`;
         break;
       }
+      case 'match': {
+        const L = slide.left || [], Rt = slide.right || [], n = L.length;
+        const mine = LS.parseMatch(ctx.mine, n);
+        const pairs = a && Array.isArray(a.pairs) ? a.pairs : null;
+        const ghost = !pairs && ctx.ahead && ctx.answer && Array.isArray(ctx.answer.pairs) ? ctx.answer.pairs : null;
+        const links = [];
+        L.forEach((_, i) => {
+          if (pairs) { if (pairs[i] >= 0) links.push({ i, j: pairs[i], cls: 'ok' }); if (mine[i] >= 0 && mine[i] !== pairs[i] && ctx.mode !== 'preview') links.push({ i, j: mine[i], cls: 'wrong' }); }
+          else if (ghost) { if (ghost[i] >= 0) links.push({ i, j: ghost[i], cls: 'ghost' }); }
+          else if (mine[i] >= 0 && ctx.mode === 'phone') links.push({ i, j: mine[i], cls: 'mine' });
+        });
+        const chip = (i) => {
+          if (ctx.canAnswer) return `<select class="m-sel" data-i="${i}" aria-label="${i + 1}"><option value="">–</option>${Rt.map((_, j) => `<option value="${j}"${mine[i] === j ? ' selected' : ''}>${LETTERS[j].toLowerCase()}</option>`).join('')}</select>`;
+          if (pairs) return `<span class="m-chip is-ok">${LETTERS[pairs[i]] ? LETTERS[pairs[i]].toLowerCase() : ''}</span>`;
+          if (mine[i] >= 0 && ctx.mode === 'phone') return `<span class="m-chip is-mine">${LETTERS[mine[i]].toLowerCase()}</span>`;
+          return '<span class="m-chip"></span>';
+        };
+        const hit = (j) => (pairs && pairs.includes(j) ? ' is-hit' : '');
+        const form = ctx.canAnswer ? '<form class="ans m-form"><button class="ans-btn" type="submit">Надіслати</button></form>' : '';
+        let verdict = '';
+        if (pairs && ctx.mine != null && ctx.mode !== 'preview') {
+          const ok = LS.matchScore(ctx.mine, pairs);
+          verdict = `<div class="verdict ${ok === n ? 'is-ok' : 'is-no'}">${ok === n ? '✓ Усі пари правильні' : `Правильно: <b>${ok} з ${n}</b>`}</div>`;
+        }
+        h = `${kicker}${slide.prompt ? `<div class="s-prompt">${slide.prompt}</div>` : ''}<div class="m-wrap">
+          <div class="m-col">${L.map((t, i) => `<div class="m-l" data-i="${i}"><span class="m-n">${i + 1}</span><span class="m-t">${t}</span>${chip(i)}</div>`).join('')}</div>
+          <div class="m-col">${Rt.map((t, j) => `<div class="m-r${hit(j)}" data-j="${j}"><span class="m-letter">${LETTERS[j].toLowerCase()}</span><span class="m-t">${t}</span></div>`).join('')}</div></div>
+          ${form}${statusLine(slide, ctx)}${verdict}${explain}`;
+        el._links = links;
+        break;
+      }
       case 'end':
       default:
         h = `${kicker}<h1 class="s-title">${slide.title || ''}</h1>${slide.text ? `<p class="s-sub">${slide.text}</p>` : ''}`;
@@ -186,9 +238,29 @@
       el.querySelector('.s-join-url').textContent = ctx.joinUrl.replace(/^https?:\/\//, '');
     }
 
+    if (slide.type === 'match') {
+      const redraw = () => LS.drawMatch(el);
+      requestAnimationFrame(() => requestAnimationFrame(redraw));
+      if (window.ResizeObserver) { const ro = new ResizeObserver(redraw); ro.observe(el); }
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
+      if (ctx.canAnswer) {
+        const sels = el.querySelectorAll('.m-sel');
+        sels.forEach((x) => x.addEventListener('change', () => {
+          el._links = Array.from(sels).filter((y) => y.value !== '').map((y) => ({ i: +y.dataset.i, j: +y.value, cls: 'mine' }));
+          redraw();
+        }));
+        const f = el.querySelector('form.m-form');
+        if (f && ctx.onRespond) f.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const v = Array.from(sels).map((y) => y.value).join(',');
+          if (v.replace(/,/g, '')) ctx.onRespond(v);
+        });
+      }
+    }
+
     if (ctx.canAnswer && ctx.onRespond) {
       el.querySelectorAll('.opt').forEach((b) => b.addEventListener('click', () => ctx.onRespond(b.dataset.v)));
-      const f = el.querySelector('form.ans');
+      const f = el.querySelector('form.ans:not(.m-form)');
       if (f) {
         const inp = f.querySelector('.ans-in');
         f.addEventListener('submit', (e) => {

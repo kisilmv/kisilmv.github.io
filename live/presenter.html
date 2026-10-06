@@ -298,6 +298,8 @@
     if (!a) return '';
     if (s.type === 'mcq') return `<b>${'ABCDEFGH'[a.correct]}.</b> ${s.options[a.correct]}${a.explain ? `<p class="muted">${a.explain}</p>` : ''}`;
     if (s.type === 'gap') return `<b>${LS.esc(a.text)}</b>${a.accept && a.accept.length > 1 ? `<div class="muted">Також зараховується: ${a.accept.filter((x) => x !== a.text).map(LS.esc).join(', ')}</div>` : ''}${a.explain ? `<p class="muted">${a.explain}</p>` : ''}`;
+    if (s.type === 'match' && Array.isArray(a.pairs)) return a.pairs.map((j, i) => `<div><b>${i + 1} → ${'abcdefgh'[j] || '?'}</b> ${s.left[i]} — ${s.right[j] || ''}</div>`).join('') +
+      (s.right.length > a.pairs.length ? `<div class="muted">Зайві: ${s.right.map((_, j) => j).filter((j) => !a.pairs.includes(j)).map((j) => 'abcdefgh'[j]).join(', ')}</div>` : '') + (a.explain ? `<p class="muted">${a.explain}</p>` : '');
     return a.explain || a.text || '';
   }
 
@@ -342,6 +344,19 @@
         return `<div class="rbar${a.correct === i ? ' ok' : ''}"><span class="l">${'ABCDEFGH'[i]}</span><span class="track"><span class="fill" style="width:${pct}%"></span></span><span class="c">${c} · ${pct}%</span></div>` +
           (who.length ? `<div class="rnames">${names(who)}</div>` : '');
       }).join('');
+    } else if (s.type === 'match') {
+      const pairs = Array.isArray(a.pairs) ? a.pairs : null;
+      if (pairs) h = s.left.map((l, i) => {
+        const okU = uids.filter((u) => LS.parseMatch(r[u].v, pairs.length)[i] === pairs[i]);
+        const pct = uids.length ? Math.round((100 * okU.length) / uids.length) : 0;
+        return `<div class="rbar ok"><span class="l">${i + 1}</span><span class="track"><span class="fill" style="width:${pct}%"></span></span><span class="c">${okU.length} · ${pct}%</span></div>`;
+      }).join('');
+      const L = 'abcdefgh';
+      const lis = uids.slice().sort(byName).map((u) => {
+        const m = LS.parseMatch(r[u].v, s.left.length), sc = pairs ? LS.matchScore(r[u].v, pairs) : null;
+        return `<li class="${pairs ? (sc === pairs.length ? 'ok' : 'no') : ''}"><span class="who">${LS.esc(nameOf(u))}</span><span class="txt">${m.map((j, i) => `${i + 1}${j >= 0 ? L[j] : '–'}`).join(' ')}${sc != null ? ` · ${sc}/${pairs.length}` : ''}</span></li>`;
+      }).join('');
+      if (lis) h += `<ul class="rlist">${lis}</ul>`;
     } else if (s.type === 'gap') {
       const acc = (a.accept || (a.text ? [a.text] : [])).map(LS.norm);
       const groups = {};
@@ -364,7 +379,7 @@
       if (h) h = `<ul class="rlist">${h}</ul>`;
     }
     const wn = wallOf(s).length;
-    const info = (s.type !== 'mcq')
+    const info = (s.type !== 'mcq' && s.type !== 'match')
       ? `<div class="wallinfo"><span>${wn ? `На екрані: ${wn} (без імен)` : 'На екран потрапляє лише те, що ви схвалите'}</span>${wn ? '<button class="wbtn" id="wallClear">Прибрати всі</button>' : ''}</div>`
       : '';
     // хто в мережі, але ще не відповів
@@ -412,6 +427,12 @@
           const i = parseInt(rr.v, 10), L = 'ABCDEFGH'[i] || rr.v;
           if (a.correct == null) return L;
           keyed++; if (a.correct === i) { ok++; return L + ' ✓'; } return L + ' ✗';
+        }
+        if (x.type === 'match' && Array.isArray(a.pairs)) {
+          keyed++;
+          const sc = LS.matchScore(rr.v, a.pairs);
+          if (sc === a.pairs.length) ok++;
+          return LS.parseMatch(rr.v, a.pairs.length).map((j, i) => `${i + 1}${j >= 0 ? 'abcdefgh'[j] : '–'}`).join(' ') + ` (${sc}/${a.pairs.length})`;
         }
         if (x.type === 'gap' && (a.accept || a.text)) {
           keyed++;

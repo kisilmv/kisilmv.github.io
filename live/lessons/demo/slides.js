@@ -1,7 +1,7 @@
 /* =========================================================================
    ПУБЛІЧНА частина уроку: те, що бачать студенти.
    Нотаток і ключів тут НЕМАЄ — вони в teacher.js.
-   Типи слайдів: title · content · vocab · mcq · gap · open · end
+   Типи слайдів: title · content · vocab · mcq · gap · open · match · end
    ========================================================================= */
 window.LESSON = {
   id: 'demo',
@@ -34,7 +34,7 @@ window.LESSON = {
       uk: 'мабуть, цілком можна стверджувати, що…'
     },
     {
-      id: 's4', type: 'mcq',
+      id: 's4', type: 'mcq', needs: [],
       kicker: 'Quick check',
       prompt: 'Which sentence makes the <b>most cautious</b> claim?',
       options: [
@@ -45,7 +45,14 @@ window.LESSON = {
       ]
     },
     {
-      id: 's5', type: 'gap',
+      id: 's4m', type: 'match', needs: ['arguably'],
+      kicker: 'Match',
+      prompt: 'What does each expression (1–4) do? Two options (a–f) are extra.',
+      left: ['prove', 'may be', 'appear to', 'arguably'],
+      right: ['marks a possibility', 'gives an example', 'reasoned but debatable', 'presents a certainty', 'sums up', 'shows how it looks']
+    },
+    {
+      id: 's5', type: 'gap', needs: [],
       kicker: 'Fill the gap',
       instruction: 'Use the verb in brackets. Make the claim more tentative than the plain Present Simple.',
       prompt: 'The findings ___ (seem) to indicate a shift in public opinion.',
