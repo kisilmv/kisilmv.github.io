@@ -18,7 +18,7 @@
 
         "presence": {
           "$uid": {
-            ".write": "auth != null && auth.uid == $uid",
+            ".write": "auth != null && auth.uid == $uid && (!newData.exists() || (root.child('rooms').child($room).child('roster').child($uid).exists() && root.child('rooms').child($room).child('state').exists() && root.child('rooms').child($room).child('state/ended').val() != true))",
             ".validate": "newData.isBoolean()"
           }
         },
@@ -26,7 +26,7 @@
         "roster": {
           "$uid": {
             ".read": "auth != null && auth.uid == $uid",
-            ".write": "auth != null && auth.uid == $uid && !data.exists()",
+            ".write": "auth != null && auth.uid == $uid && !data.exists() && root.child('rooms').child($room).child('state').exists() && root.child('rooms').child($room).child('state/ended').val() != true",
             ".validate": "newData.hasChildren(['n', 't']) && newData.child('n').isString() && newData.child('n').val().length >= 3 && newData.child('n').val().length <= 60 && newData.child('t').val() == now",
             "n": { ".validate": true },
             "t": { ".validate": true },
