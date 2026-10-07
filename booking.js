@@ -91,8 +91,12 @@ const CANCEL_MIN_HOURS = 1;
 
   document.querySelectorAll('[data-cancel-hours]').forEach((el) => { el.textContent = CANCEL_MIN_HOURS; });
 
-  if (params.has('cancel') && params.has('token')) {
-    initCancelView(params.get('cancel'), params.get('token'));
+  // cancel і token забирає з адреси скрипт у <head> booking.html (до запуску аналітики)
+  const cancelLink = window.BOOKING_CANCEL ||
+    (params.has('cancel') ? { key: params.get('cancel'), token: params.get('token') } : null);
+
+  if (cancelLink && cancelLink.key && cancelLink.token) {
+    initCancelView(cancelLink.key, cancelLink.token);
   } else {
     initScheduleView();
   }

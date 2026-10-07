@@ -2,6 +2,20 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
+  <script>
+    /* Посилання скасування з листа містить секретний токен. Прибираємо cancel і token
+       з адреси до запуску аналітики, а booking.js отримує їх через window.BOOKING_CANCEL. */
+    (function () {
+      if (!window.location.search || !window.URLSearchParams || !window.history.replaceState) return;
+      var params = new URLSearchParams(window.location.search);
+      if (!params.has('cancel') && !params.has('token')) return;
+      window.BOOKING_CANCEL = { key: params.get('cancel'), token: params.get('token') };
+      params.delete('cancel');
+      params.delete('token');
+      var query = params.toString();
+      window.history.replaceState(null, '', window.location.pathname + (query ? '?' + query : '') + window.location.hash);
+    })();
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-495CR8HH3T"></script>
   <script>
@@ -39,7 +53,7 @@
   <link rel="stylesheet" href="styles.css?v=20260928d">
   <link rel="stylesheet" href="booking.css?v=20260928a">
   <script src="script.js?v=20260928" defer></script>
-  <script src="booking.js?v=20261001a" defer></script>
+  <script src="booking.js?v=20261007a" defer></script>
 </head>
 <body class="booking-page">
   <a class="skip-link" href="#main">Перейти до основного вмісту</a>
