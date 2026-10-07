@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Сторінку не знайдено — Микола Кісіль</title>
+  <!-- GitHub Pages показує цей файл для будь-якої неіснуючої адреси, зокрема вкладеної,
+       тому всі шляхи тут абсолютні (від кореня сайту). -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#faf8f4">
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = window.localStorage.getItem('theme'); } catch (error) { theme = null; }
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="/styles.css?v=20261007a">
+  <link rel="stylesheet" href="/booking.css?v=20260928a">
+  <script src="/script.js?v=20260928" defer></script>
+</head>
+<body class="booking-page">
+  <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Микола Кісіль — на головну сторінку">
+        <span class="brand-mark" aria-hidden="true">МК</span>
+        <span class="brand-text">
+          <span class="brand-name">Микола Кісіль</span>
+          <span class="brand-role">англійська мова · переклад · термінознавство</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" type="button" aria-pressed="false" aria-label="Темна тема" title="Перемкнути тему">
+          <svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="section booking-section" aria-labelledby="notfound-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-kicker">Помилка 404</p>
+          <h1 class="section-title" id="notfound-title">Такої сторінки немає</h1>
+          <p class="section-intro">
+            Можливо, адресу введено з помилкою або сторінку перенесено. Поверніться на головну
+            чи одразу оберіть зручний час для заняття з англійської в Zoom.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="/">На головну</a>
+            <a class="btn btn--secondary" href="/booking.html">Записатися</a>
+          </div>
+        </header>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a class="brand brand--small" href="/" aria-label="Микола Кісіль — на головну сторінку">
+        <span class="brand-mark" aria-hidden="true">МК</span>
+        <span class="brand-name">Микола Кісіль</span>
+      </a>
+      <nav class="footer-nav" aria-label="Навігація в підвалі">
+        <ul>
+          <li><a href="/#lessons">Заняття</a></li>
+          <li><a href="/#about">Про мене</a></li>
+          <li><a href="/#contacts">Контакти</a></li>
+          <li><a href="/booking.html">Розклад</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">© <span data-current-year>2026</span> Микола Кісіль. Усі права захищено.</p>
+    </div>
+  </footer>
+</body>
+</html>

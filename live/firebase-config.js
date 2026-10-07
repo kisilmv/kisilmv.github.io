@@ -12,5 +12,5 @@ window.FIREBASE_CONFIG = {
 };
 
 /* Ваш Google-акаунт — лише він відкриває пульт викладача.
-   Ту саму адресу вкажіть у database.rules.json (двічі). */
+   Ту саму адресу вкажіть у database.rules.json (чотири рази: вузли teacher і rooms). */
 window.TEACHER_EMAIL = "kisilmv@gmail.com";

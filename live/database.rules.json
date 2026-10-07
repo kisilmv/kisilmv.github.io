@@ -1,5 +1,12 @@
 {
   "rules": {
+    "teacher": {
+      "$lesson": {
+        ".read": "auth != null && auth.token.email == 'kisilmv@gmail.com' && auth.token.email_verified == true",
+        ".write": "auth != null && auth.token.email == 'kisilmv@gmail.com' && auth.token.email_verified == true"
+      }
+    },
+
     "rooms": {
       "$room": {
         ".read": "auth != null && auth.token.email == 'kisilmv@gmail.com' && auth.token.email_verified == true",
