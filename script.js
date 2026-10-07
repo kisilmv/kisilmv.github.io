@@ -303,7 +303,7 @@ function initPublicationFilters() {
 }
 
 /* --------------------------------------------------------------------------
-   Форма зворотного зв'язку: валідація та підготовка листа (mailto)
+   Форма зворотного зв'язку: валідація та надсилання через Apps Script (дія lead)
    -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -312,7 +312,9 @@ function initContactForm() {
   }
 
   const status = form.querySelector('.form-status');
-  const recipient = form.dataset.recipient || '';
+  const recipient = form.dataset.recipient || 'kisilmv@gmail.com';
+  const endpoint = form.dataset.endpoint || '';
+  const submitButton = form.querySelector('[type="submit"]');
   const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const rules = {
@@ -387,7 +389,7 @@ function initContactForm() {
     });
   });
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const invalidFields = fields.filter((field) => !validateField(field));
@@ -398,28 +400,46 @@ function initContactForm() {
       return;
     }
 
-    if (!recipient) {
-      setStatus('Адресу отримувача не налаштовано.', 'error');
+    if (!endpoint) {
+      setStatus(`Форму не налаштовано. Напишіть, будь ласка, напряму на ${recipient}.`, 'error');
       return;
     }
 
     const formData = new FormData(form);
-    const name = String(formData.get('name') || '').trim();
-    const email = String(formData.get('email') || '').trim();
-    const topic = String(formData.get('topic') || 'Інше').trim();
-    const format = String(formData.get('format') || '').trim();
-    const message = String(formData.get('message') || '').trim();
+    const payload = {
+      action: 'lead',
+      name: String(formData.get('name') || '').trim(),
+      email: String(formData.get('email') || '').trim(),
+      topic: String(formData.get('topic') || 'Інше').trim(),
+      message: String(formData.get('message') || '').trim(),
+      website: String(formData.get('website') || '')
+    };
 
-    const subject = `[Сайт] ${topic}: ${name}`;
-    const formatLine = format ? `Формат занять: ${format}\n\n` : '';
-    const body = `${formatLine}${message}\n\n—\n${name}\n${email}`;
-    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+    setStatus('Надсилаю…');
 
-    window.location.href = mailtoUrl;
+    try {
+      // text/plain — «простий» запит без CORS-preflight, який Apps Script не підтримує
+      const response = await fetch(endpoint, { method: 'POST', body: JSON.stringify(payload) });
+      const result = await response.json();
 
-    setStatus(`Лист підготовлено у вашому поштовому клієнті. Якщо він не відкрився, напишіть напряму на ${recipient}.`, 'success');
-    form.reset();
-    fields.forEach((field) => setFieldError(field, ''));
+      if (result && result.ok) {
+        setStatus(`Дякую! Повідомлення надіслано. Я відповім на ${payload.email}.`, 'success');
+        form.reset();
+        fields.forEach((field) => setFieldError(field, ''));
+      } else {
+        const reason = result && result.error === 'invalid' && result.message ? `${result.message} ` : '';
+        setStatus(`${reason || 'Не вдалося надіслати повідомлення. '}Можна написати напряму на ${recipient}.`, 'error');
+      }
+    } catch (error) {
+      setStatus(`Не вдалося надіслати повідомлення: перевірте з’єднання або напишіть напряму на ${recipient}.`, 'error');
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
   });
 }
 

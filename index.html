@@ -99,8 +99,8 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261007b">
-  <script src="script.js?v=20260928" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261007c">
+  <script src="script.js?v=20261007" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до основного вмісту</a>
@@ -1039,7 +1039,8 @@
             </ul>
           </div>
 
-          <form class="contact-form" id="contact-form" data-recipient="kisilmv@gmail.com" novalidate aria-labelledby="form-title" aria-describedby="form-note">
+          <!-- data-endpoint — той самий Apps Script, що й у booking.js (BOOKING_API_URL) -->
+          <form class="contact-form" id="contact-form" data-endpoint="https://script.google.com/macros/s/AKfycbxwFvc62jbwy0SwopM_iJz9kLkHGP0PJJqpf4sn1YCTv0kDJBPv7LUBgyS6vvxdeTeY/exec" data-recipient="kisilmv@gmail.com" novalidate aria-labelledby="form-title" aria-describedby="form-note">
             <h3 class="contact-heading" id="form-title">Написати повідомлення</h3>
 
             <div class="form-row">
@@ -1076,8 +1077,13 @@
               <p class="field-error" id="contact-message-error"></p>
             </div>
 
+            <div class="hp-field" aria-hidden="true">
+              <label for="contact-website">Не заповнюйте це поле</label>
+              <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form-footer">
-              <p class="form-note" id="form-note">Поля, позначені *, обов’язкові. Після надсилання відкриється ваш поштовий клієнт із заповненим листом.</p>
+              <p class="form-note" id="form-note">Поля, позначені *, обов’язкові. Повідомлення надійде мені на пошту, а відповідь — на вказаний вами email.</p>
               <button class="btn btn--primary" type="submit">Надіслати</button>
             </div>
 

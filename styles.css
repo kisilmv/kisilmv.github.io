@@ -1289,6 +1289,15 @@ button {
   color: var(--color-text-muted);
 }
 
+/* Пастка для ботів: поле приховане від людей, боти його заповнюють */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-status {
   font-size: var(--fs-sm);
   font-weight: 600;

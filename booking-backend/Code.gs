@@ -7,6 +7,7 @@
  *  • Студент бронює слот на сайті → подія стає «Зайнято: Ім'я», студент отримує лист
  *    із посиланням на Zoom і посиланням для скасування, ви — сповіщення.
  *  • Студент скасовує за посиланням з листа → подія знову стає «Вільно».
+ *  • Форма контактів на головній сторінці (дія lead) надсилає вам лист і, за потреби, Telegram-сповіщення.
  *
  * Розгортання: Розгорнути → Нове розгортання → Вебзастосунок,
  *   «Виконувати як» — Я, «Хто має доступ» — Усі.
@@ -61,6 +62,9 @@ const GOALS = [
   'Інше'
 ];
 
+/* Теми форми контактів на головній сторінці (мають збігатися з <select id="contact-topic">) */
+const LEAD_TOPICS = GOALS.concat(['Наукова співпраця']);
+
 /* ==========================================================================
    Точки входу
    ========================================================================== */
@@ -96,6 +100,8 @@ function doPost(e) {
         return json_(withLock_(() => book_(body)));
       case 'cancel':
         return json_(withLock_(() => cancel_(body.key, body.token)));
+      case 'lead':
+        return json_(lead_(body));
       default:
         return json_(fail_('bad_action', 'Невідома дія.'));
     }
@@ -217,6 +223,34 @@ function cancel_(key, token) {
 }
 
 /* ==========================================================================
+   Форма контактів
+   ========================================================================== */
+function lead_(body) {
+  // Та сама пастка для ботів, що й у бронюванні
+  if (body.website) return fail_('bad_request', 'Некоректний запит.');
+
+  const name = clean_(body.name, 80);
+  const email = clean_(body.email, 120).toLowerCase();
+  const topic = LEAD_TOPICS.indexOf(body.topic) >= 0 ? body.topic : 'Інше';
+  const message = cleanMultiline_(body.message, 3000);
+
+  if (name.length < 2) return fail_('invalid', 'Вкажіть, будь ласка, ім’я.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail_('invalid', 'Перевірте адресу електронної пошти.');
+  if (message.length < 10) return fail_('invalid', 'Напишіть повідомлення (щонайменше 10 символів).');
+
+  sendTeacher_('✉️ Повідомлення з сайту: ' + topic + ' — ' + name, [
+    '✉️ Повідомлення з сайту',
+    'Тема: ' + topic,
+    'Ім’я: ' + name,
+    'Email: ' + email,
+    '',
+    message
+  ].join('\n'), email);
+
+  return { ok: true };
+}
+
+/* ==========================================================================
    Листи та сповіщення
    ========================================================================== */
 function sendStudentConfirmation_(ev, name, email, cancelUrl) {
@@ -267,8 +301,11 @@ function notifyTeacher_(title, ev, name, email, goal, note) {
     goal ? 'Мета: ' + goal : '',
     note ? 'Коментар: ' + note : ''
   ].filter(Boolean);
-  const text = lines.join('\n');
+  sendTeacher_(title + ': ' + humanWhen_(ev), lines.join('\n'), email);
+}
 
+/* Лист вам (і Telegram, якщо налаштовано). replyTo — щоб «Відповісти» йшло студентові. */
+function sendTeacher_(subject, text, replyTo) {
   const props = PropertiesService.getScriptProperties();
   const botToken = props.getProperty('TELEGRAM_BOT_TOKEN');
   const chatId = props.getProperty('TELEGRAM_CHAT_ID');
@@ -282,9 +319,9 @@ function notifyTeacher_(title, ev, name, email, goal, note) {
 
   MailApp.sendEmail({
     to: Session.getEffectiveUser().getEmail(),
-    subject: title + ': ' + humanWhen_(ev),
+    subject: subject,
     body: text,
-    replyTo: email || undefined
+    replyTo: replyTo || undefined
   });
 }
 
@@ -404,6 +441,12 @@ function buildIcs_(ev) {
 
 function clean_(value, max) {
   return String(value == null ? '' : value).replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, max);
+}
+
+/* Як clean_, але зберігає переноси рядків (для тексту повідомлення) */
+function cleanMultiline_(value, max) {
+  return String(value == null ? '' : value).replace(/\r\n?/g, '\n')
+    .replace(/[\u0000-\u0009\u000b-\u001f\u007f]/g, ' ').replace(/\n{3,}/g, '\n\n').trim().slice(0, max);
 }
 
 function esc_(s) {
