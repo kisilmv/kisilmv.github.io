@@ -27,9 +27,12 @@
   <meta property="og:site_name" content="Микола Кісіль">
   <meta property="og:title" content="Микола Кісіль — репетитор з англійської мови онлайн">
   <meta property="og:description" content="Індивідуальні заняття онлайн у Zoom: НМТ, Cambridge English, ділова та IT-англійська. Доцент ІФНТУНГ, понад 30 років викладання.">
-  <meta property="og:image" content="https://kisilmv.github.io/photo.jpg">
-  <meta property="og:image:alt" content="Микола Кісіль, репетитор з англійської мови">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://kisilmv.github.io/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Микола Кісіль — репетитор з англійської онлайн: НМТ, Cambridge, IT-англійська, Zoom">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:locale" content="uk_UA">
   <script type="application/ld+json">
   {
@@ -99,8 +102,8 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261007a">
-  <script src="script.js?v=20260928" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261007c">
+  <script src="script.js?v=20261007" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до основного вмісту</a>
@@ -1039,7 +1042,8 @@
             </ul>
           </div>
 
-          <form class="contact-form" id="contact-form" data-recipient="kisilmv@gmail.com" novalidate aria-labelledby="form-title" aria-describedby="form-note">
+          <!-- data-endpoint — той самий Apps Script, що й у booking.js (BOOKING_API_URL) -->
+          <form class="contact-form" id="contact-form" data-endpoint="https://script.google.com/macros/s/AKfycbxwFvc62jbwy0SwopM_iJz9kLkHGP0PJJqpf4sn1YCTv0kDJBPv7LUBgyS6vvxdeTeY/exec" data-recipient="kisilmv@gmail.com" novalidate aria-labelledby="form-title" aria-describedby="form-note">
             <h3 class="contact-heading" id="form-title">Написати повідомлення</h3>
 
             <div class="form-row">
@@ -1076,12 +1080,18 @@
               <p class="field-error" id="contact-message-error"></p>
             </div>
 
+            <div class="hp-field" aria-hidden="true">
+              <label for="contact-website">Не заповнюйте це поле</label>
+              <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form-footer">
-              <p class="form-note" id="form-note">Поля, позначені *, обов’язкові. Після надсилання відкриється ваш поштовий клієнт із заповненим листом.</p>
+              <p class="form-note" id="form-note">Поля, позначені *, обов’язкові. Повідомлення надійде мені на пошту, а відповідь — на вказаний вами email.</p>
               <button class="btn btn--primary" type="submit">Надіслати</button>
             </div>
 
             <p class="form-status" role="status" aria-live="polite"></p>
+            <p class="form-privacy">Надсилаючи форму, ви погоджуєтеся на обробку імені та email для відповіді. Докладніше — у <a href="privacy.html">політиці конфіденційності</a>.</p>
           </form>
         </div>
       </div>
@@ -1104,6 +1114,7 @@
           <li><a href="#experience">Досвід</a></li>
           <li><a href="#contacts">Контакти</a></li>
           <li><a href="booking.html">Розклад</a></li>
+          <li><a href="privacy.html">Конфіденційність</a></li>
         </ul>
       </nav>
 

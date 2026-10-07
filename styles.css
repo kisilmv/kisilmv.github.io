@@ -1289,6 +1289,15 @@ button {
   color: var(--color-text-muted);
 }
 
+/* Пастка для ботів: поле приховане від людей, боти його заповнюють */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-status {
   font-size: var(--fs-sm);
   font-weight: 600;
@@ -1644,6 +1653,45 @@ button {
 }
 
 .footer-copy {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* Сторінка «Політика конфіденційності» */
+.legal {
+  max-width: 44em;
+}
+
+.legal h2 {
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-xl);
+}
+
+.legal h3 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-size: var(--fs-lg);
+}
+
+.legal p,
+.legal li {
+  font-size: var(--fs-md);
+}
+
+.legal ul {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: 1.25em;
+}
+
+.legal-updated {
+  margin-top: var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.form-privacy {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
 }
