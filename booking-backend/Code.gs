@@ -40,6 +40,7 @@ const CONFIG = {
   MIN_LEAD_HOURS: 1,                           // не можна забронювати слот, що починається раніше ніж за N год
   CANCEL_MIN_HOURS: 1,                         // студент може скасувати не пізніше ніж за N год
   MAX_ACTIVE_PER_EMAIL: 5,                     // скільки майбутніх занять може мати одна адреса
+  MAX_BOOKINGS_PER_HOUR: 5,                    // загальний ліміт бронювань через сайт за останні 60 хв (захист від спаму)
   ZOOM_LINK: 'https://zoom.us/j/ВАШ_ІДЕНТИФІКАТОР', // постійне посилання на вашу конференцію
   ZOOM_NOTE: '',                               // напр. 'Ідентифікатор: 123 456 7890, код: 1234'
   BOOKING_PAGE_URL: 'https://kisilmv.github.io/booking.html',
@@ -83,7 +84,7 @@ function doGet(e) {
     }
   } catch (err) {
     console.error(err);
-    return json_(serverError_(err));
+    return json_(serverError_());
   }
 }
 
@@ -107,7 +108,7 @@ function doPost(e) {
     }
   } catch (err) {
     console.error(err);
-    return json_(serverError_(err));
+    return json_(serverError_());
   }
 }
 
@@ -151,6 +152,13 @@ function book_(body) {
     return fail_('taken', 'На жаль, цей час щойно зайняли або він уже недоступний. Оберіть інший слот.');
   }
 
+  const cache = CacheService.getScriptCache();
+  const recent = recentBookings_(cache);
+  if (recent.length >= CONFIG.MAX_BOOKINGS_PER_HOUR) {
+    alertBookingLimit_(cache, recent);
+    return fail_('rate_limit', 'Зараз забагато бронювань. Спробуйте трохи пізніше або напишіть мені напряму.');
+  }
+
   if (countActiveBookings_(email) >= CONFIG.MAX_ACTIVE_PER_EMAIL) {
     return fail_('limit', 'На цю адресу вже заброньовано максимальну кількість занять (' +
       CONFIG.MAX_ACTIVE_PER_EMAIL + '). Напишіть мені, якщо потрібно більше.');
@@ -170,6 +178,9 @@ function book_(body) {
   ev.setTag('email', email);
   ev.setTag('name', name);
 
+  recent.push(Date.now());
+  cache.put(BOOKINGS_CACHE_KEY, JSON.stringify(recent), 3600);
+
   const key = makeKey_(ev);
   const cancelUrl = CONFIG.BOOKING_PAGE_URL + '?cancel=' + encodeURIComponent(key) +
     '&token=' + encodeURIComponent(token);
@@ -178,6 +189,36 @@ function book_(body) {
   safe_(() => notifyTeacher_('✅ Нове бронювання', ev, name, email, goal, note));
 
   return { ok: true, start: ev.getStartTime().toISOString(), end: ev.getEndTime().toISOString(), email: email };
+}
+
+/* Загальний ліміт бронювань за годину. Мітки часу успішних бронювань зберігаються
+   в CacheService (живуть 1 год); book_ виконується під блокуванням, тож гонок немає. */
+const BOOKINGS_CACHE_KEY = 'bookings-last-hour';
+const LIMIT_ALERT_CACHE_KEY = 'bookings-limit-alert';
+
+function recentBookings_(cache) {
+  let list = [];
+  try {
+    list = JSON.parse(cache.get(BOOKINGS_CACHE_KEY) || '[]');
+  } catch (err) {
+    list = [];
+  }
+  const cutoff = Date.now() - 3600 * 1000;
+  return Array.isArray(list) ? list.filter((t) => typeof t === 'number' && t > cutoff) : [];
+}
+
+/* Сповіщення вам — не частіше ніж раз на годину */
+function alertBookingLimit_(cache, recent) {
+  if (cache.get(LIMIT_ALERT_CACHE_KEY)) return;
+  cache.put(LIMIT_ALERT_CACHE_KEY, '1', 3600);
+  const reopens = new Date(Math.min.apply(null, recent) + 3600 * 1000);
+  safe_(() => sendTeacher_('⚠️ Ліміт бронювань за годину', [
+    '⚠️ Ліміт бронювань за годину',
+    'За останні 60 хв через сайт заброньовано ' + recent.length + ' занять (ліміт — ' +
+      CONFIG.MAX_BOOKINGS_PER_HOUR + ').',
+    'Нові бронювання відхиляються приблизно до ' + fmt_(reopens, 'HH:mm') + ' за київським часом.',
+    'Перегляньте календар «' + CONFIG.CALENDAR_NAME + '»: якщо це спам, звільніть зайві слоти.'
+  ].join('\n')));
 }
 
 /* ==========================================================================
@@ -338,10 +379,9 @@ function getCalendar_() {
   return cals[0];
 }
 
-function serverError_(err) {
-  const res = fail_('server', 'Сталася помилка на сервері. Спробуйте пізніше.');
-  res.detail = String((err && err.message) || err);
-  return res;
+/* Подробиці помилки лише в журналі виконань (console.error у точках входу), не у відповіді */
+function serverError_() {
+  return fail_('server', 'Сталася помилка на сервері. Спробуйте пізніше.');
 }
 
 function isFree_(ev) {
