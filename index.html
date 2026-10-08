@@ -174,10 +174,39 @@
               "itemOffered": {
                 "@type": "Service",
                 "@id": "https://kisilmv.github.io/#lessons-exams",
-                "name": "Підготовка до IELTS, TOEFL та ЄВІ",
+                "name": "Підготовка до IELTS і TOEFL",
                 "serviceType": "Підготовка до міжнародних іспитів з англійської мови",
-                "description": "Стратегія, таймінг і критерії оцінювання іспитів IELTS, TOEFL iBT та ЄВІ з англійської.",
+                "description": "Стратегія, таймінг і критерії оцінювання іспитів IELTS і TOEFL iBT.",
                 "url": "https://kisilmv.github.io/#lessons",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/evi.html#service",
+                "name": "Підготовка до ЄВІ з англійської мови для вступу в магістратуру",
+                "serviceType": "Підготовка до єдиного вступного іспиту з іноземної мови",
+                "description": "Блок «Іноземна мова» єдиного вступного іспиту до магістратури: читання й використання мови у форматі тесту.",
+                "url": "https://kisilmv.github.io/evi.html",
                 "provider": {
                   "@id": "https://kisilmv.github.io/#person"
                 },
@@ -466,7 +495,10 @@
               <li>TOEFL iBT, ЄВІ</li>
               <li>індивідуальний графік до дати іспиту</li>
             </ul>
-            <a class="service-cta" href="#contacts" data-topic="IELTS, TOEFL та інші іспити">Записатися</a>
+            <div class="service-actions">
+              <a class="service-cta" href="evi.html">Детальніше про ЄВІ</a>
+              <a class="service-cta" href="#contacts" data-topic="IELTS, TOEFL та інші іспити">Записатися</a>
+            </div>
           </article>
 
           <article class="service-card">
