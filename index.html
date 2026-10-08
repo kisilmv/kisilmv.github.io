@@ -71,22 +71,214 @@
           "https://www.threads.com/@mykola_kisil",
           "https://nung.edu.ua/person/kisil-mykola-vasylovych"
         ],
-        "makesOffer": {
-          "@type": "Offer",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "minPrice": 15,
-            "priceCurrency": "USD",
-            "unitText": "заняття 60 хв"
-          },
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Індивідуальні онлайн-заняття з англійської мови",
-            "serviceType": "Репетиторство з англійської мови",
-            "description": "Заняття в Zoom тривалістю 60 хвилин: загальна англійська A2–C2, підготовка до НМТ, IELTS, TOEFL, ЄВІ, Cambridge English, англійська для IT і бізнесу.",
-            "areaServed": { "@type": "Country", "name": "Україна" },
-            "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "https://kisilmv.github.io/#contacts" }
-          }
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Онлайн-заняття з англійської мови в Zoom",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/#lessons-general",
+                "name": "Індивідуальні заняття з англійської мови",
+                "serviceType": "Загальна англійська",
+                "description": "Індивідуальні заняття в Zoom тривалістю 60 хвилин: розмовна практика, граматика, лексика, вимова, письмо.",
+                "url": "https://kisilmv.github.io/#lessons",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/nmt.html#service",
+                "name": "Підготовка до НМТ з англійської мови",
+                "serviceType": "Підготовка до національного мультипредметного тесту з англійської мови",
+                "description": "Завдання у форматі НМТ: читання, лексика й граматика в контексті, розбір типових пасток, словниковий запас рівня B1–B2.",
+                "url": "https://kisilmv.github.io/nmt.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/cambridge.html#service",
+                "name": "Підготовка до іспитів Cambridge English: B2 First і C1 Advanced",
+                "serviceType": "Підготовка до міжнародних іспитів з англійської мови",
+                "description": "Робота з форматом усіх частин іспиту, особлива увага до Speaking і Writing.",
+                "url": "https://kisilmv.github.io/cambridge.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/#lessons-exams",
+                "name": "Підготовка до IELTS і TOEFL",
+                "serviceType": "Підготовка до міжнародних іспитів з англійської мови",
+                "description": "Стратегія, таймінг і критерії оцінювання іспитів IELTS і TOEFL iBT.",
+                "url": "https://kisilmv.github.io/#lessons",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/evi.html#service",
+                "name": "Підготовка до ЄВІ з англійської мови для вступу в магістратуру",
+                "serviceType": "Підготовка до єдиного вступного іспиту з іноземної мови",
+                "description": "Блок «Іноземна мова» єдиного вступного іспиту до магістратури: читання й використання мови у форматі тесту.",
+                "url": "https://kisilmv.github.io/evi.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/it-english.html#service",
+                "name": "Англійська для IT-фахівців",
+                "serviceType": "Англійська мова для професійної комунікації в IT",
+                "description": "Технічна лексика й американський варіант мови, підготовка до співбесід з англомовними клієнтами, мітинги, стендапи, листування.",
+                "url": "https://kisilmv.github.io/it-english.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/business-english.html#service",
+                "name": "Ділова англійська",
+                "serviceType": "Англійська мова для ділової комунікації",
+                "description": "Переговори, листування, презентації, ділова термінологія.",
+                "url": "https://kisilmv.github.io/business-english.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            }
+          ]
         }
       }
     ]
@@ -102,7 +294,7 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261007c">
+  <link rel="stylesheet" href="styles.css?v=20261008c">
   <script src="script.js?v=20261007" defer></script>
 </head>
 <body>
@@ -139,7 +331,7 @@
           <ul class="nav-list">
             <li><a class="nav-link" href="#lessons">Заняття</a></li>
             <li><a class="nav-link" href="#about">Про мене</a></li>
-            <li><a class="nav-link" href="#publications">Публікації</a></li>
+            <li><a class="nav-link" href="publications.html">Публікації</a></li>
             <li><a class="nav-link" href="#experience">Досвід</a></li>
             <li><a class="nav-link" href="#contacts">Контакти</a></li>
             <li><a class="nav-link nav-link--accent" href="booking.html">Розклад</a></li>
@@ -245,7 +437,6 @@
             <ul class="service-points">
               <li>діагностика рівня на старті</li>
               <li>план із конкретними етапами</li>
-              <li>письмовий фідбек до домашніх завдань</li>
             </ul>
             <a class="service-cta" href="#contacts" data-topic="Індивідуальні заняття">Записатися</a>
           </article>
@@ -261,10 +452,12 @@
             <p class="service-text">Системна підготовка до національного мультипредметного тесту з англійської: формат завдань, стратегії, повторення граматики й лексики.</p>
             <ul class="service-points">
               <li>усі типи завдань НМТ</li>
-              <li>пробні тести з детальним розбором</li>
               <li>робота з типовими помилками</li>
             </ul>
-            <a class="service-cta" href="#contacts" data-topic="Підготовка до НМТ">Записатися</a>
+            <div class="service-actions">
+              <a class="service-cta" href="nmt.html">Детальніше про НМТ</a>
+              <a class="service-cta" href="#contacts" data-topic="Підготовка до НМТ">Записатися</a>
+            </div>
           </article>
 
           <article class="service-card">
@@ -281,7 +474,10 @@
               <li>письмові роботи з оцінюванням за критеріями</li>
               <li>усна частина в режимі іспиту</li>
             </ul>
-            <a class="service-cta" href="#contacts" data-topic="Cambridge English">Записатися</a>
+            <div class="service-actions">
+              <a class="service-cta" href="cambridge.html">Детальніше про Cambridge</a>
+              <a class="service-cta" href="#contacts" data-topic="Cambridge English">Записатися</a>
+            </div>
           </article>
 
           <article class="service-card">
@@ -299,7 +495,10 @@
               <li>TOEFL iBT, ЄВІ</li>
               <li>індивідуальний графік до дати іспиту</li>
             </ul>
-            <a class="service-cta" href="#contacts" data-topic="IELTS, TOEFL та інші іспити">Записатися</a>
+            <div class="service-actions">
+              <a class="service-cta" href="evi.html">Детальніше про ЄВІ</a>
+              <a class="service-cta" href="#contacts" data-topic="IELTS, TOEFL та інші іспити">Записатися</a>
+            </div>
           </article>
 
           <article class="service-card">
@@ -317,7 +516,11 @@
               <li>мітинги, презентації, листування</li>
               <li>професійна термінологія</li>
             </ul>
-            <a class="service-cta" href="#contacts" data-topic="Англійська для IT і бізнесу">Записатися</a>
+            <div class="service-actions">
+              <a class="service-cta" href="it-english.html">Англійська для IT</a>
+              <a class="service-cta" href="business-english.html">Ділова англійська</a>
+              <a class="service-cta" href="#contacts" data-topic="Англійська для IT і бізнесу">Записатися</a>
+            </div>
           </article>
 
           <article class="service-card service-card--accent">
@@ -351,13 +554,55 @@
             </li>
             <li class="step">
               <h4 class="step-title">Регулярна робота</h4>
-              <p class="step-text">Заняття, домашні завдання та письмовий фідбек до кожної роботи — без «води».</p>
+              <p class="step-text">Заняття, підготовлені саме під вас: інтерактивні вправи на екрані й багато говоріння — без «води».</p>
             </li>
             <li class="step">
               <h4 class="step-title">Контроль результату</h4>
-              <p class="step-text">Пробні тести, аналіз прогресу й коригування плану до досягнення мети.</p>
+              <p class="step-text">Аналіз прогресу й коригування плану відповідно до вашої мети.</p>
             </li>
           </ol>
+        </div>
+
+        <div class="home-faq" id="faq">
+          <h3 class="process-title" id="faq-title">Питання та відповіді</h3>
+          <div class="faq">
+            <details class="faq-item">
+              <summary>Який формат і тривалість занять?</summary>
+              <div class="faq-answer">
+                <p>Заняття відбуваються лише онлайн у Zoom, індивідуально — тільки ви і я. Одне заняття триває 60 хвилин.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Скільки коштує заняття?</summary>
+              <div class="faq-answer">
+                <p>Від $15 за заняття тривалістю 60 хвилин. Точну ціну називаю після знайомства — вона залежить від формату й мети.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Як записатися й скасувати заняття?</summary>
+              <div class="faq-answer">
+                <p>Оберіть вільний час в <a href="booking.html">онлайн-розкладі</a> і забронюйте його. На пошту прийде лист-підтвердження з посиланням на Zoom і посиланням для скасування. Бронювати й скасовувати заняття можна не пізніше ніж за годину до початку.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Що потрібно технічно?</summary>
+              <div class="faq-answer">
+                <p>Комп’ютер або планшет, встановлений Zoom і навушники з мікрофоном. Вправи я показую на екрані в інтерактивній презентації.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Як будуються заняття?</summary>
+              <div class="faq-answer">
+                <p>Кожне заняття я готую під конкретного студента — його професію, цілі й теми, які для нього важливі. Головне — говоріння: не діалоги за підручником, а те, як саме ви формулюєте власну думку англійською. Для цього використовую:</p><ul><li>вправи на автоматизацію мовлення в стилі методу Каллана;</li><li>нарощування фрази від короткої до розгорнутої відповіді;</li><li>побудову речень за ключовими словами;</li><li>переклад з української на англійську, щоб активізувати слова, які ви розумієте, але не вживаєте;</li><li>автентичні тексти й глосарії з транскрипцією.</li></ul><p>Граматику пояснюю до того, як її доводиться вживати.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Для яких рівнів підходять заняття?</summary>
+              <div class="faq-answer">
+                <p>Працюю з рівнями від A2 до C2. Підготовка до <a href="nmt.html">НМТ</a> орієнтується на рівні B1–B2, до <a href="cambridge.html">Cambridge</a> — на B2 First і C1 Advanced; <a href="it-english.html">англійську для IT</a> і <a href="business-english.html">ділову англійську</a> добираю під ваш рівень і завдання.</p>
+              </div>
+            </details>
+          </div>
         </div>
 
         <div class="cta-band">
@@ -431,291 +676,80 @@
           <p class="section-kicker">03</p>
           <h2 class="section-title" id="publications-title">Публікації та проєкти</h2>
           <p class="section-intro">
-            Добірка праць останніх років і ключових публікацій попередніх періодів.
-            Повний перелік із понад 60 позицій — за посиланням нижче.
+            Три найновіші праці. Повну бібліографію з пошуком і фільтрами за типом, темою та роками
+            зібрано на окремій сторінці.
           </p>
         </header>
 
-        <div class="filter-bar" role="group" aria-label="Фільтр за категорією">
-          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Усі</button>
-          <button class="filter-btn" type="button" data-filter="articles" aria-pressed="false">Статті</button>
-          <button class="filter-btn" type="button" data-filter="conferences" aria-pressed="false">Конференції</button>
-          <button class="filter-btn" type="button" data-filter="teaching" aria-pressed="false">Навчальні видання</button>
-          <button class="filter-btn" type="button" data-filter="media" aria-pressed="false">Медіапроєкти</button>
-        </div>
-        <p class="filter-status" id="filter-status" aria-live="polite"></p>
-
+        <!-- publications:latest:start (генерується scripts/build-publications.js) -->
+        <h3 class="publications-subtitle">Найновіші праці</h3>
         <div class="card-grid">
+          <article class="card">
+            <div class="card-meta">
+              <span class="card-type">Матеріали конференції</span>
+              <span>2026</span>
+            </div>
+            <h4 class="card-title">Лексема mind та її українські відповідники у перекладі Тараса Бойка (на матеріалі роману Вірджинії Вулф «Місіс Делловей»)</h4>
+            <p class="card-authors">Кісіль М. В.</p>
+            <p class="card-venue">Сучасний філологічний дискурс: теорія і практика. 2026. С. 90–94</p>
+            <ul class="tag-list" aria-label="Теми">
+              <li class="tag">Переклад</li>
+            </ul>
+            <a class="card-link" href="https://doi.org/10.32839/fil.2026-09-22" target="_blank" rel="noopener noreferrer">
+              DOI: 10.32839/fil.2026-09-22<span class="visually-hidden"> (відкриється в новій вкладці)</span>
+            </a>
+          </article>
 
-          <!-- Статті -->
-          <article class="card" data-category="articles">
+          <article class="card">
             <div class="card-meta">
               <span class="card-type">Стаття</span>
-              <time datetime="2026">2026</time>
+              <span>2026</span>
             </div>
-            <h3 class="card-title" lang="en">Lost in compression: the rendering of the pragmatic marker <i>well</i> in the Ukrainian Netflix subtitles of <i>How to Get to Heaven from Belfast</i></h3>
+            <h4 class="card-title" lang="en">Lost in compression: the rendering of the pragmatic marker well in the Ukrainian Netflix subtitles of How to Get to Heaven from Belfast</h4>
             <p class="card-authors">Кісіль М. В., Штогрин М. В.</p>
             <p class="card-venue">Закарпатські філологічні студії. 2026. Вип. 47, т. 1. С. 125–130</p>
-            <p class="card-text">Як стиснення тексту в субтитрах впливає на відтворення прагматичного маркера <i lang="en">well</i> в українському перекладі.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">переклад субтитрів</li>
-              <li class="tag">прагматика</li>
+            <ul class="tag-list" aria-label="Теми">
+              <li class="tag">Переклад</li>
             </ul>
             <a class="card-link" href="https://doi.org/10.32782/tps2663-4880/2026.47.20" target="_blank" rel="noopener noreferrer">
               DOI: 10.32782/tps2663-4880/2026.47.20<span class="visually-hidden"> (відкриється в новій вкладці)</span>
             </a>
           </article>
 
-          <article class="card" data-category="articles">
+          <article class="card">
             <div class="card-meta">
-              <span class="card-type">Стаття</span>
-              <time datetime="2025">2025</time>
+              <span class="card-type">Матеріали конференції</span>
+              <span>2026</span>
             </div>
-            <h3 class="card-title">Точність у термінознавстві: епістемологічні засади та когнітивна перспектива</h3>
+            <h4 class="card-title">Термінологічна грамотність як складник комунікативної компетентності публічних службовців в умовах євроінтеграції</h4>
             <p class="card-authors">Кісіль М. В.</p>
-            <p class="card-venue">Наукові записки. Серія: Філологічні науки. 2025. Вип. 4 (215). С. 159–170</p>
-            <p class="card-text">Точність розглянуто як критерій якості терміна на перетині термінознавства, теорії пізнання та когнітивної лінгвістики.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">термінознавство</li>
-              <li class="tag">епістемологія</li>
+            <p class="card-venue">Публічне управління та адміністрування в Україні: євроінтеграційний поступ. 2026. Т. 1. С. 395–398</p>
+            <ul class="tag-list" aria-label="Теми">
+              <li class="tag">Термінознавство</li>
             </ul>
-            <a class="card-link" href="https://doi.org/10.32782/2522-4077-2025-215-20" target="_blank" rel="noopener noreferrer">
-              DOI: 10.32782/2522-4077-2025-215-20<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
+            <a class="card-link" href="publications.html#pub-62">У повному списку публікацій</a>
           </article>
+        </div>
+        <!-- publications:latest:end -->
 
-          <article class="card" data-category="articles">
-            <div class="card-meta">
-              <span class="card-type">Стаття</span>
-              <time datetime="2014">2014</time>
-            </div>
-            <h3 class="card-title">Визначення поняття забезпечення якості вищої освіти</h3>
-            <p class="card-authors">Кісіль М. В.</p>
-            <p class="card-venue">Гілея: науковий вісник. 2014. Вип. 90 (11). С. 323–327</p>
-            <p class="card-text">Аналіз змісту поняття «забезпечення якості» в контексті європейського простору вищої освіти.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">якість вищої освіти</li>
-              <li class="tag">філософія освіти</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
+        <div class="publications-more">
+          <a class="btn btn--primary" href="publications.html">Усі публікації</a>
+          <a class="btn btn--secondary" href="https://scholar.google.com.ua/citations?user=8DQ0Q4oAAAAJ&amp;hl=uk" target="_blank" rel="noopener noreferrer">
+            Google Scholar<span class="visually-hidden"> (відкриється в новій вкладці)</span>
+          </a>
+          <a class="btn btn--secondary" href="https://orcid.org/0009-0003-3382-9229" target="_blank" rel="noopener noreferrer">
+            ORCID<span class="visually-hidden"> (відкриється в новій вкладці)</span>
+          </a>
+        </div>
 
-          <article class="card" data-category="articles">
-            <div class="card-meta">
-              <span class="card-type">Стаття</span>
-              <time datetime="2012">2012</time>
-            </div>
-            <h3 class="card-title">Європейська вища освіта в трикутнику знань</h3>
-            <p class="card-authors">Кісіль М. В.</p>
-            <p class="card-venue">Науковий часопис НПУ імені М. П. Драгоманова. Серія 7. 2012. Вип. 29 (42). С. 61–66</p>
-            <p class="card-text">Взаємозв’язок освіти, досліджень та інновацій як основа європейської освітньої політики.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">вища освіта</li>
-              <li class="tag">європейська інтеграція</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="articles">
-            <div class="card-meta">
-              <span class="card-type">Дисертація</span>
-              <time datetime="2008">2008</time>
-            </div>
-            <h3 class="card-title">Якість вищої освіти як предмет філософського аналізу</h3>
-            <p class="card-authors">Кісіль М. В.</p>
-            <p class="card-venue">Автореферат дисертації канд. філос. наук: 09.00.10. Інститут вищої освіти АПН України. Київ, 2008</p>
-            <p class="card-text">Філософське осмислення категорії якості вищої освіти та критеріїв її оцінювання.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">філософія освіти</li>
-              <li class="tag">09.00.10</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <!-- Конференції -->
-          <article class="card" data-category="conferences">
-            <div class="card-meta">
-              <span class="card-type">Доповідь</span>
-              <time datetime="2026-05-29">травень 2026</time>
-            </div>
-            <h3 class="card-title">Термінологічна грамотність як складник комунікативної компетентності публічних службовців в умовах євроінтеграції</h3>
-            <p class="card-authors">Кісіль М. В.</p>
-            <p class="card-venue">Публічне управління та адміністрування в Україні: євроінтеграційний поступ : матеріали ІІІ Всеукр. наук.-практ. конф. Івано-Франківськ : ІФНТУНГ, 2026. Т. 1. С. 395–398</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">публічне управління</li>
-              <li class="tag">термінологічна грамотність</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="conferences">
-            <div class="card-meta">
-              <span class="card-type">Доповідь</span>
-              <time datetime="2026-05-25">травень 2026</time>
-            </div>
-            <h3 class="card-title" lang="en">Translation of English IT/AI Terminology into Ukrainian: Strategies and Challenges</h3>
-            <p class="card-authors">Kisil M.</p>
-            <p class="card-venue">Applied Linguistics-3D: Language, IT, ELT : V Міжнар. наук.-практ. конф. Житомир : Житомирська політехніка, 2026. P. 167–171</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">IT-термінологія</li>
-              <li class="tag">переклад</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="conferences">
-            <div class="card-meta">
-              <span class="card-type">Доповідь</span>
-              <time datetime="2026-05-08">травень 2026</time>
-            </div>
-            <h3 class="card-title">Інформація чи знання? Епістемологічний статус виходів генеративного штучного інтелекту</h3>
-            <p class="card-authors">Кісіль М. В.</p>
-            <p class="card-venue">Інформація та документ у сучасному науковому дискурсі : матеріали IX Всеукр. дистанц. наук.-практ. конф. Івано-Франківськ : ІФНТУНГ, 2026. С. 73–77</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">генеративний ШІ</li>
-              <li class="tag">епістемологія</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="conferences">
-            <div class="card-meta">
-              <span class="card-type">Доповідь</span>
-              <time datetime="2026-02-25">лютий 2026</time>
-            </div>
-            <h3 class="card-title" lang="en">Epistemological Limits of Generative AI in Terminological Standardization: Implications for Foreign Language Education</h3>
-            <p class="card-authors">Кісіль М. В.</p>
-            <p class="card-venue">XII Міжнар. наук.-практ. конф. Київ : Держ. ун-т «Київський авіаційний інститут» ; Ломжа : MANS w Łomży, 2026. С. 208–212</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">стандартизація</li>
-              <li class="tag">генеративний ШІ</li>
-            </ul>
-            <a class="card-link" href="https://doi.org/10.58246/ACXO8286" target="_blank" rel="noopener noreferrer">
-              DOI: 10.58246/ACXO8286<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="conferences">
-            <div class="card-meta">
-              <span class="card-type">Доповідь</span>
-              <time datetime="2025-11-24">листопад 2025</time>
-            </div>
-            <h3 class="card-title">Термінологічна аномія в епоху штучного інтелекту: перехід до керованої дескриптивної стандартизації (на прикладі платформи OSDU в нафтогазовій галузі)</h3>
-            <p class="card-authors">Кісіль М.</p>
-            <p class="card-venue">Innovations in Science: From Theoretical Foundations to Practical Impact : 3rd Int. Sci. and Pract. Conf. Antwerp, 2025. P. 309–317</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">нафтогазова термінологія</li>
-              <li class="tag">OSDU</li>
-            </ul>
-            <a class="card-link" href="https://doi.org/10.70286/EOSS-24.11.2025.008" target="_blank" rel="noopener noreferrer">
-              DOI: 10.70286/EOSS-24.11.2025.008<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="conferences">
-            <div class="card-meta">
-              <span class="card-type">Доповідь</span>
-              <time datetime="2025-10-29">жовтень 2025</time>
-            </div>
-            <h3 class="card-title">Філософські засади точності: термінологія між ясністю та неоднозначністю</h3>
-            <p class="card-authors">Кісіль М.</p>
-            <p class="card-venue">Міжкультурна комунікація в мультимодальному середовищі : матеріали Всеукр. наук.-практ. онлайн-конф. Івано-Франківськ : ІФНТУНГ, 2025. С. 13–16</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">філософія мови</li>
-              <li class="tag">неоднозначність</li>
-            </ul>
-            <a class="card-link" href="https://doi.org/10.31471/mkms2025" target="_blank" rel="noopener noreferrer">
-              DOI: 10.31471/mkms2025<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <!-- Навчальні видання -->
-          <article class="card" data-category="teaching">
-            <div class="card-meta">
-              <span class="card-type">Посібник · гриф МОН</span>
-              <time datetime="2012">2012</time>
-            </div>
-            <h3 class="card-title">Ділова англійська мова</h3>
-            <p class="card-authors">Кісіль М. В., Щербак Н. В.</p>
-            <p class="card-venue">Навчальний посібник. 2-ге вид., переробл. і доповн. Івано-Франківськ : Місто НВ, 2012. 332 с.</p>
-            <p class="card-text">Перше видання — 2010 р., 468 с.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">Business English</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="teaching">
-            <div class="card-meta">
-              <span class="card-type">Посібник</span>
-              <time datetime="2013">2013</time>
-            </div>
-            <h3 class="card-title" lang="en">Information Challenges</h3>
-            <p class="card-authors">Малик Г. Д., Кісіль М. В.</p>
-            <p class="card-venue">Навчальний посібник. Івано-Франківськ, 2013. 251 с.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">англійська мова</li>
-              <li class="tag">інформаційні технології</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="teaching">
-            <div class="card-meta">
-              <span class="card-type">Конспект лекцій</span>
-              <time datetime="2014">2014</time>
-            </div>
-            <h3 class="card-title">Науково-технічна інформація</h3>
-            <p class="card-authors">Мельник В. Д., Кісіль М. В.</p>
-            <p class="card-venue">Конспект лекцій. Івано-Франківськ : Видавництво ІФНТУНГ, 2014. 75 с.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">науково-технічна інформація</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <article class="card" data-category="teaching">
-            <div class="card-meta">
-              <span class="card-type">Практикум</span>
-              <time datetime="2007">2007</time>
-            </div>
-            <h3 class="card-title">Англійська мова: практикум з пунктуації та орфографії <span lang="en">(English Punctuation and Mechanics)</span></h3>
-            <p class="card-authors">Кісіль М., Малик Г.</p>
-            <p class="card-venue">Івано-Франківськ : Факел, 2007. 106 с.</p>
-            <ul class="tag-list" aria-label="Теги">
-              <li class="tag">пунктуація</li>
-              <li class="tag">орфографія</li>
-            </ul>
-            <a class="card-link" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-              У повному списку публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-            </a>
-          </article>
-
-          <!-- Медіапроєкти -->
-          <article class="card" data-category="media">
+        <h3 class="publications-subtitle">Медіапроєкти</h3>
+        <div class="card-grid">
+          <article class="card">
             <div class="card-meta">
               <span class="card-type">Telegram-канал</span>
               <span>англійська</span>
             </div>
-            <h3 class="card-title">@enfol</h3>
+            <h4 class="card-title">@enfol</h4>
             <p class="card-venue">Англійська для рівня B2+</p>
             <p class="card-text">Фразові дієслова, ідіоми, колокації та граматичні пастки з поясненнями українською.</p>
             <ul class="tag-list" aria-label="Теги">
@@ -727,12 +761,12 @@
             </a>
           </article>
 
-          <article class="card" data-category="media">
+          <article class="card">
             <div class="card-meta">
               <span class="card-type">Telegram-канал</span>
               <span>наука</span>
             </div>
-            <h3 class="card-title">@svitohliad</h3>
+            <h4 class="card-title">@svitohliad</h4>
             <p class="card-venue">Світогляд</p>
             <p class="card-text">Наука, психологія, філософія й технології — стисло, з першоджерелами і без «води».</p>
             <ul class="tag-list" aria-label="Теги">
@@ -744,12 +778,12 @@
             </a>
           </article>
 
-          <article class="card" data-category="media">
+          <article class="card">
             <div class="card-meta">
               <span class="card-type">Telegram-канал</span>
               <span>аналітика</span>
             </div>
-            <h3 class="card-title">@ohliad</h3>
+            <h4 class="card-title">@ohliad</h4>
             <p class="card-venue">Огляд</p>
             <p class="card-text">Геополітична аналітика: фаховий переказ і контекст матеріалів провідних аналітичних центрів.</p>
             <ul class="tag-list" aria-label="Теги">
@@ -760,20 +794,6 @@
               Відкрити канал<span class="visually-hidden"> (відкриється в новій вкладці)</span>
             </a>
           </article>
-        </div>
-
-        <p class="cards-empty" hidden>У цій категорії поки немає матеріалів.</p>
-
-        <div class="publications-more">
-          <a class="btn btn--secondary" href="https://kisilmv.blogspot.com/p/blog-page_13.html" target="_blank" rel="noopener noreferrer">
-            Повний список публікацій<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-          </a>
-          <a class="btn btn--secondary" href="https://scholar.google.com.ua/citations?user=8DQ0Q4oAAAAJ&amp;hl=uk" target="_blank" rel="noopener noreferrer">
-            Google Scholar<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-          </a>
-          <a class="btn btn--secondary" href="https://orcid.org/0009-0003-3382-9229" target="_blank" rel="noopener noreferrer">
-            ORCID<span class="visually-hidden"> (відкриється в новій вкладці)</span>
-          </a>
         </div>
       </div>
     </section>
@@ -1110,7 +1130,7 @@
         <ul>
           <li><a href="#lessons">Заняття</a></li>
           <li><a href="#about">Про мене</a></li>
-          <li><a href="#publications">Публікації</a></li>
+          <li><a href="publications.html">Публікації</a></li>
           <li><a href="#experience">Досвід</a></li>
           <li><a href="#contacts">Контакти</a></li>
           <li><a href="booking.html">Розклад</a></li>
