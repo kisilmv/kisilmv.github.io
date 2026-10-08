@@ -153,6 +153,9 @@ function dstuSegments(pub) {
   } else if (pub.url) {
     push(' URL: ');
     push(pub.url, 'url');
+    if (pub.accessed) {
+      push(` (дата звернення: ${pub.accessed}).`);
+    }
   }
 
   return segments;

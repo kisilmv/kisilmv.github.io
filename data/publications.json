@@ -229,6 +229,25 @@
       "topics": []
     },
     {
+      "id": "pub-53",
+      "sourceNo": 53,
+      "type": "conference",
+      "marked": false,
+      "authors": ["Кісіль М."],
+      "title": "Термінологія між універсалізмом і культурною специфікою: філософські засади перекладацької точності",
+      "container": "Global trends in science and education",
+      "containerInfo": "Proceedings of the 9th International scientific and practical conference",
+      "places": [{ "city": "Kyiv", "publisher": "SPC «Sci-conf.com.ua»" }],
+      "year": 2025,
+      "pagesPrefix": "P.",
+      "pages": "507–514",
+      "doi": null,
+      "url": "https://sci-conf.com.ua/wp-content/uploads/2025/09/GLOBAL-TRENDS-IN-SCIENCE-AND-EDUCATION-22-24.09.2025.pdf",
+      "accessed": "22.12.2025",
+      "language": ["uk"],
+      "topics": ["terminology", "translation"]
+    },
+    {
       "id": "pub-52",
       "sourceNo": 52,
       "type": "conference",
@@ -262,7 +281,7 @@
       "year": 2016,
       "pages": null,
       "doi": null,
-      "url": null,
+      "url": "http://www.inter-nauka.com/issues/conf-2016/november/1730",
       "language": ["uk"],
       "topics": ["education"]
     },
