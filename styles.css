@@ -1509,6 +1509,20 @@ button {
   transform: translateX(3px);
 }
 
+.service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-5);
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.service-actions .service-cta {
+  min-height: 2.75rem;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .process {
   margin-top: var(--space-16);
 }
