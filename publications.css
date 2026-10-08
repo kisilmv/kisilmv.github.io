@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Сторінка «Публікації» (publications.html)
+   Використовує дизайн-токени зі styles.css
+   ========================================================================== */
+
+.publications-page .section-header {
+  margin-bottom: var(--space-8);
+}
+
+.pub-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.pub-summary li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: var(--space-1) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.pub-summary strong {
+  margin-left: 0.3em;
+  color: var(--color-heading);
+}
+
+.pub-summary a {
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+/* Панель фільтрів */
+.pub-filters {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+
+.pub-field {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.pub-field label,
+.pub-field legend {
+  padding: 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.pub-field input,
+.pub-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--fs-base);
+}
+
+.pub-field input:focus,
+.pub-field select:focus {
+  border-color: var(--color-accent);
+}
+
+.pub-years {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
+
+.pub-years legend {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-2);
+}
+
+.pub-filters-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.pub-count {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+/* Групи та записи */
+.pub-group + .pub-group {
+  margin-top: var(--space-12);
+}
+
+.pub-group-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  font-size: var(--fs-xl);
+}
+
+.pub-group-count {
+  padding: 0.1rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.pub-list {
+  display: grid;
+  gap: var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.pub {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  scroll-margin-top: calc(var(--header-h) + var(--space-4));
+}
+
+.pub:target {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-soft);
+}
+
+.pub-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.pub-kind {
+  color: var(--color-accent);
+}
+
+.pub-ref {
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.pub-self {
+  color: var(--color-heading);
+  font-weight: 700;
+  background-image: linear-gradient(transparent 62%, var(--color-accent-soft) 62%);
+}
+
+.pub-title {
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.pub-inline-link {
+  overflow-wrap: anywhere;
+}
+
+.pub-tags {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.pub-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color var(--duration) var(--ease), border-color var(--duration) var(--ease), color var(--duration) var(--ease);
+}
+
+.pub-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.pub-btn--doi {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.pub-btn--doi:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-accent-contrast);
+}
+
+.pub-btn.is-copied {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.pub-empty {
+  margin-top: var(--space-6);
+}
+
+/* Вузькі екрани (від 320 px): кнопки на всю ширину рядка */
+@media (max-width: 30rem) {
+  .pub {
+    padding: var(--space-4);
+  }
+
+  .pub-actions .pub-btn {
+    flex: 1 1 auto;
+  }
+
+  .pub-filters {
+    padding: var(--space-4);
+  }
+
+  .pub-reset {
+    width: 100%;
+  }
+}
+
+@media (min-width: 48em) {
+  .pub-filters {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    align-items: end;
+  }
+
+  .pub-field--search {
+    grid-column: 1 / -1;
+  }
+
+  .pub-field:not(.pub-field--search):not(.pub-years) {
+    grid-column: span 2;
+  }
+
+  .pub-years {
+    grid-column: span 2;
+  }
+
+  .pub-filters-footer {
+    grid-column: 1 / -1;
+  }
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .pub-filters,
+  .pub-actions {
+    display: none !important;
+  }
+
+  .pub {
+    break-inside: avoid;
+    border: 0;
+    padding: 0;
+  }
+}

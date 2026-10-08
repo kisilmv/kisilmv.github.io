@@ -1054,6 +1054,23 @@ button {
   background-color: var(--color-surface);
 }
 
+.publications-more .btn--primary {
+  background-color: var(--color-accent);
+}
+
+.publications-more .btn--primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.publications-subtitle {
+  margin-bottom: var(--space-5);
+  font-size: var(--fs-xl);
+}
+
+.publications-more + .publications-subtitle {
+  margin-top: var(--space-16);
+}
+
 /* ==========================================================================
    9. Досвід та освіта
    ========================================================================== */
