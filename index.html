@@ -71,22 +71,185 @@
           "https://www.threads.com/@mykola_kisil",
           "https://nung.edu.ua/person/kisil-mykola-vasylovych"
         ],
-        "makesOffer": {
-          "@type": "Offer",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "minPrice": 15,
-            "priceCurrency": "USD",
-            "unitText": "заняття 60 хв"
-          },
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Індивідуальні онлайн-заняття з англійської мови",
-            "serviceType": "Репетиторство з англійської мови",
-            "description": "Заняття в Zoom тривалістю 60 хвилин: загальна англійська A2–C2, підготовка до НМТ, IELTS, TOEFL, ЄВІ, Cambridge English, англійська для IT і бізнесу.",
-            "areaServed": { "@type": "Country", "name": "Україна" },
-            "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "https://kisilmv.github.io/#contacts" }
-          }
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Онлайн-заняття з англійської мови в Zoom",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/#lessons-general",
+                "name": "Індивідуальні заняття з англійської мови",
+                "serviceType": "Загальна англійська",
+                "description": "Індивідуальні заняття в Zoom тривалістю 60 хвилин: розмовна практика, граматика, лексика, вимова, письмо.",
+                "url": "https://kisilmv.github.io/#lessons",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/nmt.html#service",
+                "name": "Підготовка до НМТ з англійської мови",
+                "serviceType": "Підготовка до національного мультипредметного тесту з англійської мови",
+                "description": "Завдання у форматі НМТ: читання, лексика й граматика в контексті, розбір типових пасток, словниковий запас рівня B1–B2.",
+                "url": "https://kisilmv.github.io/nmt.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/cambridge.html#service",
+                "name": "Підготовка до іспитів Cambridge English: B2 First і C1 Advanced",
+                "serviceType": "Підготовка до міжнародних іспитів з англійської мови",
+                "description": "Робота з форматом усіх частин іспиту, особлива увага до Speaking і Writing.",
+                "url": "https://kisilmv.github.io/cambridge.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/#lessons-exams",
+                "name": "Підготовка до IELTS, TOEFL та ЄВІ",
+                "serviceType": "Підготовка до міжнародних іспитів з англійської мови",
+                "description": "Стратегія, таймінг і критерії оцінювання іспитів IELTS, TOEFL iBT та ЄВІ з англійської.",
+                "url": "https://kisilmv.github.io/#lessons",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/it-english.html#service",
+                "name": "Англійська для IT-фахівців",
+                "serviceType": "Англійська мова для професійної комунікації в IT",
+                "description": "Технічна лексика й американський варіант мови, підготовка до співбесід з англомовними клієнтами, мітинги, стендапи, листування.",
+                "url": "https://kisilmv.github.io/it-english.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://kisilmv.github.io/booking.html",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": 15,
+                "priceCurrency": "USD",
+                "unitText": "заняття 60 хв"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://kisilmv.github.io/business-english.html#service",
+                "name": "Ділова англійська",
+                "serviceType": "Англійська мова для ділової комунікації",
+                "description": "Переговори, листування, презентації, ділова термінологія.",
+                "url": "https://kisilmv.github.io/business-english.html",
+                "provider": {
+                  "@id": "https://kisilmv.github.io/#person"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Україна"
+                },
+                "availableChannel": {
+                  "@type": "ServiceChannel",
+                  "serviceUrl": "https://kisilmv.github.io/booking.html"
+                }
+              }
+            }
+          ]
         }
       }
     ]
