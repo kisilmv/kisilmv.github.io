@@ -237,9 +237,9 @@
               "passage": {
                 "title": "Why Boredom Is Good for You",
                 "paragraphs": [
-                  "Most of us do everything we can to avoid being bored. As {{9}} as we have a free minute, we reach for our phones. Yet psychologists say that boredom may be good {{10}} us.",
-                  "When we are bored, our minds start to wander, and this is {{11}} new ideas often appear. In one well-known experiment, people who had first done a dull task, {{12}} as copying numbers from a phone book, later came up with more creative uses for everyday objects than people who had not.",
-                  "{{13}} this does not mean we should spend hours doing nothing, it does suggest that we should not fill every empty moment. Next time you are waiting for a bus, try leaving your phone in your pocket and let your thoughts go wherever they want. You may be surprised {{14}} what you think of. You might even find that you look forward {{15}} these quiet moments instead of trying to get rid {{16}} them."
+                  "Most of us do everything we can to avoid being bored. As {{9}} as we have a free minute, we reach for our phones. Yet psychologists say that boredom may actually be good {{10}} our brains.",
+                  "When we are bored, our minds start to wander, {{11}} is exactly when new ideas tend to appear. In one well-known experiment, people who had first done a dull task, {{12}} as copying numbers from a phone book, later came up with more creative uses for everyday objects than people who had not.",
+                  "{{13}} course, this does not mean we should spend hours doing nothing. But it does suggest that we should not fill every empty moment. Next time you are waiting for a bus, try leaving your phone in your pocket and let your thoughts go wherever they want {{14}}. You might even find that you look forward {{15}} these quiet moments instead of trying to get rid {{16}} them."
                 ]
               },
               "questions": [
@@ -257,17 +257,15 @@
                     "for"
                   ],
                   "trap": "to",
-                  "explanation": "Be good for someone — «бути корисним для когось». Пастка — «to»: be good to someone означає «бути добрим до когось», тобто про ставлення, а не про користь."
+                  "explanation": "Be good for something — «бути корисним для чогось»: нудьга корисна для мозку. Пастка — «to»: be good to означає «бути добрим до когось» і стосується ставлення до людей, а не користі для мозку."
                 },
                 {
                   "number": 11,
                   "answers": [
-                    "when",
-                    "where",
-                    "how"
+                    "which"
                   ],
-                  "trap": "which",
-                  "explanation": "Після this is потрібне сполучне слово, що вводить обставину: this is when (а також where чи how) new ideas appear — «саме тоді й так з’являються нові ідеї». Пастка — «which»: which потребує іменника, до якого відсилає, а тут речення без нього неповне."
+                  "trap": "what",
+                  "explanation": "Which після коми відсилає до всієї попередньої думки (розум починає блукати): which is exactly when… Пастка — «what»: what не відсилає до попереднього речення, тож «…wander, what is exactly when» неможливе."
                 },
                 {
                   "number": 12,
@@ -280,22 +278,18 @@
                 {
                   "number": 13,
                   "answers": [
-                    "although",
-                    "though",
-                    "while",
-                    "whilst"
+                    "of"
                   ],
-                  "trap": "despite",
-                  "explanation": "Потрібен сполучник допусту перед цілим реченням із підметом і присудком: although this does not mean… Пастка — «despite»: після despite стоїть іменник або форма на -ing, а не речення."
+                  "trap": "in",
+                  "explanation": "Of course — «звісно»: автор визнає очевидне застереження перед головною думкою, яку вводить But. Пастка — «in»: виразу «in course» немає, а in due course означає «згодом»."
                 },
                 {
                   "number": 14,
                   "answers": [
-                    "at",
-                    "by"
+                    "to"
                   ],
-                  "trap": "of",
-                  "explanation": "Be surprised at або by something — «дивуватися чомусь»; обидва прийменники правильні. Пастка — «of»: «surprised of» — калька, такої сполуки в англійській немає."
+                  "trap": "it",
+                  "explanation": "У кінці речення після want лишається частка to, яка замінює повторене дієслово: wherever they want to (go). Пастка — «it»: want it означало б «хотіти чогось», але it тут ні до чого не відсилає."
                 },
                 {
                   "number": 15,
@@ -325,7 +319,7 @@
                 "title": "The Rise of Running Clubs",
                 "paragraphs": [
                   "Running used to be seen as a rather lonely activity, but running clubs are becoming {{17}} popular. For many members, the club is {{18}} about socialising rather than sport. ‘I joined because I wanted to get fit, but I stayed because the other members were so {{19}},’ says Lena, 35.",
-                  "Most clubs welcome runners of all {{20}}, from complete beginners to people training for marathons. Sessions are usually led by a qualified coach, whose {{21}} can help runners avoid injury. Running with others also makes people more {{22}} to keep going on cold, dark evenings. ‘On my own, I’d find an excuse to stay at home,’ admits Lena. ‘But it would be {{23}} to let the group down.’",
+                  "Most clubs welcome runners of all ages, from complete beginners to {{20}} athletes training for marathons. Sessions are usually led by a qualified coach, whose {{21}} can help runners avoid injury. Running with others also makes people more {{22}} to keep going on cold, dark evenings. ‘On my own, I’d find an excuse to stay at home,’ admits Lena. ‘But it would be {{23}} to let the group down.’",
                   "In fact, research suggests that people who exercise in groups report lower levels of stress and greater {{24}} with life than those who train alone."
                 ]
               },
@@ -359,12 +353,12 @@
                 },
                 {
                   "number": 20,
-                  "stem": "ABLE",
+                  "stem": "EXPERIENCE",
                   "answers": [
-                    "abilities"
+                    "experienced"
                   ],
-                  "trap": "ability",
-                  "explanation": "Після of all потрібен іменник у множині: runners of all abilities — «бігуни будь-якого рівня». Пастка — «ability»: однина тут не узгоджується з all і з переліком від початківців до марафонців."
+                  "trap": "experiencing",
+                  "explanation": "Перед іменником athletes потрібен прикметник: experienced athletes — «досвідчені спортсмени», протилежність complete beginners. Пастка — «experiencing»: форма на -ing означає дію, що відбувається зараз, і не описує рівень спортсмена."
                 },
                 {
                   "number": 21,
@@ -476,8 +470,8 @@
                       ]
                     }
                   ],
-                  "trap": "us to not touch",
-                  "explanation": "У непрямій мові заборону передають як told someone not to do something. Пастка — «us to not touch»: за нормою, на яку орієнтується іспит, not ставлять перед to, а не між to й дієсловом.",
+                  "trap": "us don't touch",
+                  "explanation": "У непрямій мові заборону передають як told someone not to do something. Пастка — «us don't touch»: форму наказу don’t у непрямій мові не зберігають, після told потрібен інфінітив not to touch.",
                   "points": 2
                 },
                 {
@@ -648,7 +642,7 @@
                     },
                     {
                       "letter": "C",
-                      "text": "Maya’s confidence"
+                      "text": "the door"
                     },
                     {
                       "letter": "D",
@@ -656,8 +650,8 @@
                     }
                   ],
                   "key": "B",
-                  "trap": "C",
-                  "explanation": "Займенник it відсилає до найближчого відповідного іменника: Мая репетирувала «a cheerful introduction», і саме ця промова «had disappeared». Пастка — C: упевненість Маї справді зникла, але граматично it стосується вступної промови, а слова confidence у тексті немає.",
+                  "trap": "A",
+                  "explanation": "Займенник it відсилає до того, що Мая репетирувала, — «a cheerful introduction», і саме ця промова «had disappeared», щойно вона увійшла. Пастка — A: the bus journey стоїть у тому самому реченні, але зникнути «between the door and the counter» могла промова, а не поїздка, яка вже скінчилася.",
                   "points": 2
                 },
                 {
@@ -1175,9 +1169,9 @@
               "passage": {
                 "title": "What Is Your Cat Thinking?",
                 "paragraphs": [
-                  "Cats have lived alongside humans {{9}} at least ten thousand years, but scientists are only now beginning to understand how they think. For a long time, it was believed that cats, unlike dogs, paid little attention to their owners. Recent research, {{10}}, suggests otherwise.",
+                  "Cats have lived alongside humans {{9}} at least ten thousand years, but scientists are only now beginning to understand how they think. For a long time, it was believed that cats, unlike dogs, paid little attention to their owners. Recent research, however, suggests {{10}} opposite.",
                   "In one study, cats were able to recognise {{11}} own names, even when they were spoken by strangers. In another, they were more likely to approach an unfamiliar object if their owner looked happy than if he or she looked afraid. In other words, cats do notice how we feel — they just don’t always {{12}} it obvious.",
-                  "This may explain {{13}} so many people believe cats are unfriendly. Unlike dogs, {{14}} were bred over centuries to work closely with people, cats have mostly looked after themselves. As a {{15}}, they tend to show affection in quieter ways, such as slowly closing their eyes when they look at you. So next time your cat ignores you, don’t take it personally. It probably knows exactly who you are — it simply has better things to do than come running every {{16}} you call."
+                  "{{13}} dogs, which were bred over centuries to work closely with people, cats have mostly looked after {{14}}. {{15}} a result, they tend to show affection in quieter ways, such as slowly closing their eyes when they look at you. So next time your cat ignores you, don’t take it personally. It probably knows exactly who you are — it simply has better things to do than come running every {{16}} you call."
                 ]
               },
               "questions": [
@@ -1192,11 +1186,10 @@
                 {
                   "number": 10,
                   "answers": [
-                    "however",
-                    "though"
+                    "the"
                   ],
-                  "trap": "but",
-                  "explanation": "Слово між комами вводить протиставлення попередньому реченню: Recent research, however, suggests otherwise. Пастка — «but»: but з’єднує частини речення й не може стояти між комами в середині речення."
+                  "trap": "an",
+                  "explanation": "Suggest the opposite — «свідчити про протилежне»; протилежне твердження одне, тож потрібен означений артикль. Пастка — «an»: неозначений артикль перед opposite у цьому значенні не вживають."
                 },
                 {
                   "number": 11,
@@ -1217,28 +1210,26 @@
                 {
                   "number": 13,
                   "answers": [
-                    "why"
+                    "unlike"
                   ],
-                  "trap": "because",
-                  "explanation": "Після explain потрібне питальне слово, що вводить підрядне речення: explain why many people believe… Пастка — «because»: «explain because» — помилка, бо після explain ставлять why, how чи what."
+                  "trap": "like",
+                  "explanation": "Unlike — «на відміну від»: котів протиставлено собакам, яких століттями виводили для роботи з людьми. Пастка — «like»: граматично можливе, але означало б, що коти схожі на собак, і суперечить решті речення."
                 },
                 {
                   "number": 14,
                   "answers": [
-                    "which",
-                    "who"
+                    "themselves"
                   ],
-                  "trap": "that",
-                  "explanation": "Після коми потрібне сполучне слово відокремленого підрядного речення: dogs, which were bred…; про тварин можна сказати й who. Пастка — «that»: that не вживають у підрядних реченнях, відокремлених комами."
+                  "trap": "them",
+                  "explanation": "Look after yourself / themselves — «дбати про себе»; підмет cats, тож потрібен зворотний займенник themselves. Пастка — «them»: them означав би інших тварин чи людей, а не самих котів."
                 },
                 {
                   "number": 15,
                   "answers": [
-                    "result",
-                    "consequence"
+                    "as"
                   ],
-                  "trap": "reason",
-                  "explanation": "As a result (або as a consequence) — «внаслідок цього»: спосіб життя котів пояснює, чому вони виявляють прихильність тихо. Пастка — «reason»: виразу «as a reason» у значенні «тому» немає."
+                  "trap": "for",
+                  "explanation": "As a result — «внаслідок цього»: спосіб життя котів пояснює, чому вони виявляють прихильність тихо. Пастка — «for»: «for a result» не є усталеним виразом, на відміну від as a result."
                 },
                 {
                   "number": 16,
@@ -1260,7 +1251,7 @@
                 "title": "Volunteering Abroad",
                 "paragraphs": [
                   "Every year, thousands of young people spend part of their gap year {{17}} abroad. Many describe it as one of the most {{18}} experiences of their lives. However, experts warn that not all projects are equally {{19}} to the communities they claim to help.",
-                  "Some organisations are {{20}} about where volunteers’ money actually goes, and some send young people to do jobs for which they have no {{21}} at all, such as building schools or teaching. Before choosing a project, it is worth reading reviews by previous volunteers, which are often more {{22}} than an organisation’s own website.",
+                  "Some organisations are {{20}} about where volunteers’ money actually goes, and some send young people to do jobs for which they are not {{21}} at all, such as building schools or teaching. Before choosing a project, it is worth reading reviews by previous volunteers, which are often more {{22}} than an organisation’s own website.",
                   "A good organisation will explain its costs {{23}} and will make sure that its projects continue {{24}} after the volunteers have gone home."
                 ]
               },
@@ -1305,11 +1296,10 @@
                   "number": 21,
                   "stem": "QUALIFY",
                   "answers": [
-                    "qualifications",
-                    "qualification"
+                    "qualified"
                   ],
-                  "trap": "qualified",
-                  "explanation": "Після have no потрібен іменник: no qualifications — «жодної кваліфікації». Пастка — «qualified»: прикметник не може стояти після have no без іменника."
+                  "trap": "qualification",
+                  "explanation": "Після are not потрібен прикметник: jobs for which they are not qualified — «для яких вони не мають кваліфікації». Пастка — «qualification»: іменник не може стояти після are not без артикля й не описує людей."
                 },
                 {
                   "number": 22,
@@ -1374,7 +1364,7 @@
                   "lead": "Nobody in our class is taller than Max.",
                   "keyword": "tallest",
                   "before": "Max",
-                  "after": "in our class.",
+                  "after": "student in our class.",
                   "answers": [
                     {
                       "parts": [
@@ -1382,17 +1372,13 @@
                           "is the"
                         ],
                         [
-                          "tallest",
-                          "tallest person",
-                          "tallest student",
-                          "tallest one",
-                          "tallest pupil"
+                          "tallest"
                         ]
                       ]
                     }
                   ],
                   "trap": "is tallest",
-                  "explanation": "Найвищий ступінь порівняння вживають з означеним артиклем: Max is the tallest in our class. Пастка — «is tallest»: перед найвищим ступенем у такій позиції потрібен артикль the.",
+                  "explanation": "Найвищий ступінь порівняння перед іменником вживають з означеним артиклем: Max is the tallest student in our class. Пастка — «is tallest»: без the конструкція неправильна, бо далі стоїть іменник student.",
                   "points": 2
                 },
                 {
@@ -1442,39 +1428,24 @@
                 },
                 {
                   "number": 29,
-                  "lead": "‘I’ll never tell anyone your secret,’ Paul said to me.",
-                  "keyword": "promised",
-                  "before": "Paul",
-                  "after": "my secret to anyone.",
+                  "lead": "Could you help me carry these boxes, please?",
+                  "keyword": "mind",
+                  "before": "Would",
+                  "after": "me carry these boxes, please?",
                   "answers": [
                     {
                       "parts": [
                         [
-                          "promised"
+                          "you mind"
                         ],
                         [
-                          "never to tell",
-                          "not to tell",
-                          "he would never tell",
-                          "he would not tell",
-                          "he'd never tell"
-                        ]
-                      ]
-                    },
-                    {
-                      "parts": [
-                        [
-                          "promised me"
-                        ],
-                        [
-                          "never to tell",
-                          "not to tell"
+                          "helping"
                         ]
                       ]
                     }
                   ],
-                  "trap": "promised never telling",
-                  "explanation": "Обіцянку в непрямій мові передають як promised (not / never) to do something або promised he would never… Пастка — «promised never telling»: після promise вживають інфінітив із to, а не форму на -ing.",
+                  "trap": "you mind to help",
+                  "explanation": "Ввічливе прохання would you mind вимагає форми на -ing: Would you mind helping me…? Пастка — «you mind to help»: після mind не вживають інфінітив із to.",
                   "points": 2
                 },
                 {
