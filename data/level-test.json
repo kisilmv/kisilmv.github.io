@@ -1,0 +1,1137 @@
+{
+  "version": 1,
+  "meta": {
+    "exam": "level-test",
+    "title": "Тест рівня англійської",
+    "language": "en",
+    "maxScore": 40,
+    "durationMinutes": 20,
+    "levels": [
+      {
+        "id": "A1",
+        "pass": 6,
+        "description": "Ви розумієте й уживаєте прості щоденні вирази: можете представитися, поставити й відповісти на прості запитання про себе та своє оточення."
+      },
+      {
+        "id": "A2",
+        "pass": 6,
+        "description": "Ви розумієте речення й поширені вирази на знайомі теми — родина, покупки, робота — і можете спілкуватися в простих повсякденних ситуаціях."
+      },
+      {
+        "id": "B1",
+        "pass": 6,
+        "description": "Ви розумієте головне в чітких текстах на знайомі теми, можете впоратися з більшістю ситуацій у поїздці та розповісти про досвід, події й плани."
+      },
+      {
+        "id": "B2",
+        "pass": 6,
+        "description": "Ви розумієте основний зміст складних текстів і можете спілкуватися досить вільно, чітко висловлюючи думку на широке коло тем."
+      },
+      {
+        "id": "C1",
+        "pass": 6,
+        "description": "Ви розумієте довгі складні тексти, помічаєте непрямі значення й гнучко користуєтеся мовою в навчанні та роботі. Вищих рівнів цей тест не розрізняє."
+      }
+    ],
+    "belowLevels": {
+      "title": "Рівень A1 ще не підтверджено",
+      "description": "Тест показав, що навчання варто почати з основ: базової граматики й найуживанішої лексики."
+    },
+    "unevenNote": "Ви також упоралися з розділом вищого рівня, хоча пропустили нижчий, тож результат нерівний: справжній рівень може бути вищим, ніж показує тест."
+  },
+  "variants": [
+    {
+      "id": "1",
+      "title": "Тест рівня",
+      "level": "A1–C1",
+      "parts": [
+        {
+          "id": "level-test",
+          "title": "Тест рівня",
+          "label": "Тест рівня",
+          "tasks": [
+            {
+              "id": "part-1",
+              "label": "Частина 1",
+              "level": "A1",
+              "type": "multiple-choice",
+              "instruction": "Choose the correct answer (A, B, C or D).",
+              "questions": [
+                {
+                  "number": 1,
+                  "prompt": "My sister ___ a teacher.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "am"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "is"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "are"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "be"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "З підметом в однині третьої особи (my sister = she) дієслово to be має форму is. Пастка — C: are вживають із you, we, they та іменниками в множині."
+                },
+                {
+                  "number": 2,
+                  "prompt": "___ you like coffee?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "Do"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "Does"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Are"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Is"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Питання в Present Simple зі смисловим дієсловом like утворюють за допомогою do, а з you — саме Do. Пастка — C: are — форма to be, і в питанні з дієсловом like вона не вживається."
+                },
+                {
+                  "number": 3,
+                  "prompt": "There ___ two cats in the garden.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "is"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "are"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "am"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "be"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Після there перед іменником у множині (two cats) потрібне are. Пастка — A: there is вживають з одниною: there is a cat."
+                },
+                {
+                  "number": 4,
+                  "prompt": "I usually get up ___ seven o’clock.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "in"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "on"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "at"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "to"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Перед точним часом уживають прийменник at: at seven o’clock. Пастка — A: in вживають із частинами доби, місяцями й роками (in the morning, in May)."
+                },
+                {
+                  "number": 5,
+                  "prompt": "These are my parents. ___ names are Olga and Petro.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "Their"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "There"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "They’re"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Them"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Their — присвійний займенник «їхній», що стоїть перед іменником names. Пастка — B: there звучить так само, але означає «там» або вводить конструкцію there is / there are."
+                },
+                {
+                  "number": 6,
+                  "prompt": "She ___ TV every evening.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "watch"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "watches"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "watching"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "is watch"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "У Present Simple з she, he, it дієслово має закінчення -s/-es: she watches. Пастка — A: watch без закінчення вживають з I, you, we, they."
+                },
+                {
+                  "number": 7,
+                  "prompt": "It’s very cold today. Put on your ___.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "coat"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "shorts"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "sunglasses"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "swimsuit"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "У холодну погоду вдягають пальто — coat. Пастка — C: sunglasses (сонцезахисні окуляри) пов’язані з погодою, але не з холодом."
+                },
+                {
+                  "number": 8,
+                  "text": {
+                    "title": "A message from Lena",
+                    "body": [
+                      "Hi Tom, I can’t come to the cinema tonight. I’ve got a bad headache. Can we go on Saturday instead?",
+                      "Lena"
+                    ]
+                  },
+                  "prompt": "Why can’t Lena go to the cinema tonight?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "She feels ill."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "She has to work."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "She doesn’t like films."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "She has no money."
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Лена пише, що в неї сильно болить голова (a bad headache), тобто вона погано почувається. Пастка — B: Лена пропонує перенести похід на суботу, але про роботу не згадує."
+                }
+              ]
+            },
+            {
+              "id": "part-2",
+              "label": "Частина 2",
+              "level": "A2",
+              "type": "multiple-choice",
+              "instruction": "Choose the correct answer (A, B, C or D).",
+              "questions": [
+                {
+                  "number": 9,
+                  "prompt": "I ___ to London last summer.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "go"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "went"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "have gone"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "was go"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Обставина last summer вказує на завершений період у минулому, тож потрібен Past Simple: went. Пастка — C: Present Perfect не поєднується з точними маркерами минулого часу."
+                },
+                {
+                  "number": 10,
+                  "prompt": "My brother is ___ than me.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "tall"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "taller"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "tallest"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "more tall"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Перед than потрібен вищий ступінь, а короткий прикметник tall утворює його закінченням -er: taller. Пастка — D: more вживають із довгими прикметниками (more expensive), а «more tall» — помилка."
+                },
+                {
+                  "number": 11,
+                  "prompt": "How ___ sugar do you want in your tea?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "much"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "many"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "lot"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "few"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Sugar — незлічуваний іменник, тож питають how much. Пастка — B: how many вживають зі злічуваними іменниками в множині (how many cups)."
+                },
+                {
+                  "number": 12,
+                  "prompt": "Have you ever ___ sushi?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "eaten"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "ate"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "eat"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "eating"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Present Perfect утворюють за допомогою have і третьої форми дієслова: have you ever eaten. Пастка — B: ate — друга форма, її вживають у Past Simple без have."
+                },
+                {
+                  "number": 13,
+                  "prompt": "At our school, you ___ wear a uniform. It’s a rule.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "must"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "mustn’t"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "can"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "don’t have to"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Правило, яке зобов’язує щось робити, передає must. Пастка — D: don’t have to означає «не обов’язково» і суперечить словам «It’s a rule»."
+                },
+                {
+                  "number": 14,
+                  "prompt": "Can you ___ me your pen, please? I’ve forgotten mine.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "lend"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "borrow"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "give back"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "take"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Lend — «позичати комусь», тобто давати на час: can you lend me your pen. Пастка — B: borrow — «позичати в когось», тобто брати: can I borrow your pen."
+                },
+                {
+                  "number": 15,
+                  "prompt": "I’m not interested ___ football.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "in"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "on"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "at"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "about"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Прикметник interested поєднується з прийменником in: interested in football. Пастка — D: about здається логічним через «цікавитися про», але після interested його не вживають."
+                },
+                {
+                  "number": 16,
+                  "text": {
+                    "title": "SUMMER JOB",
+                    "body": [
+                      "Green Park Café needs a waiter or waitress for the summer.",
+                      "Weekends only, 9 am – 3 pm. No experience needed.",
+                      "You must be 16 or older. Call Sam on 555-0123."
+                    ]
+                  },
+                  "prompt": "Who can apply for this job?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "a 15-year-old with experience"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "a 17-year-old without experience"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "someone who can work only on weekdays"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "someone who wants to work in the evenings"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Оголошення вимагає вік від 16 років і не вимагає досвіду, тож підходить сімнадцятирічний кандидат без досвіду. Пастка — A: досвід не завадить, але п’ятнадцятирічному робота не підходить за віком."
+                }
+              ]
+            },
+            {
+              "id": "part-3",
+              "label": "Частина 3",
+              "level": "B1",
+              "type": "multiple-choice",
+              "instruction": "Choose the correct answer (A, B, C or D).",
+              "questions": [
+                {
+                  "number": 17,
+                  "prompt": "If I ___ more free time, I would learn to play the guitar.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "have"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "had"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "would have"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "will have"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Уявна ситуація в теперішньому (умовне речення другого типу) вимагає Past Simple після if: if I had. Пастка — A: have вживають у першому типі разом із will (If I have time, I will…), а тут у головній частині would."
+                },
+                {
+                  "number": 18,
+                  "prompt": "This bridge ___ in 1890.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "built"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "was built"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "has built"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "was building"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Міст не будує сам — його збудували, тож потрібен пасив у Past Simple: was built. Пастка — A: built в активному стані означало б, що міст сам щось збудував."
+                },
+                {
+                  "number": 19,
+                  "prompt": "We have lived in this flat ___ 2015.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "for"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "since"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "from"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "during"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "У Present Perfect початкову точку в часі вводить since: since 2015. Пастка — A: for вживають із тривалістю (for ten years), а не з роком."
+                },
+                {
+                  "number": 20,
+                  "prompt": "She asked me ___ I could help her with her homework.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "if"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "that"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "what"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "so"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Загальне запитання в непрямій мові вводять if: she asked me if I could help. Пастка — B: that вводить ствердження, а не запитання."
+                },
+                {
+                  "number": 21,
+                  "prompt": "I’m looking forward to ___ you next week.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "see"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "seeing"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "saw"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "seen"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "У виразі look forward to слово to — прийменник, тому після нього потрібна форма на -ing: looking forward to seeing you. Пастка — A: to тут не частка інфінітива, тож «to see» — помилка."
+                },
+                {
+                  "number": 22,
+                  "prompt": "The film was so ___ that I fell asleep.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "boring"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "bored"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "exciting"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "interested"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Прикметник на -ing описує те, що викликає почуття: фільм був нудний — boring. Пастка — B: bored описує стан людини (I was bored), а не фільм."
+                },
+                {
+                  "number": 23,
+                  "prompt": "Could you ___ the music down? I’m trying to sleep.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "turn"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "put"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "take"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "get"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Turn down — «зробити тихіше» (про музику, звук, телевізор). Пастка — B: put down означає «покласти» або «записати» і з музикою в цьому значенні не вживається."
+                },
+                {
+                  "number": 24,
+                  "text": {
+                    "title": "An email from Marta",
+                    "body": [
+                      "Thanks so much for inviting me to your birthday party! I’d love to come, but I’ve promised to help my grandparents move house that weekend.",
+                      "Could we meet the following week instead? I’d really like to celebrate with you."
+                    ]
+                  },
+                  "prompt": "What does Marta want to do?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "go to the party"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "help organise the party"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "see her friend on another day"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "move to a new house"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Марта не може прийти на вечірку й пропонує зустрітися наступного тижня (the following week). Пастка — D: переїжджають її бабуся й дідусь, а не вона сама."
+                }
+              ]
+            },
+            {
+              "id": "part-4",
+              "label": "Частина 4",
+              "level": "B2",
+              "type": "multiple-choice",
+              "instruction": "Choose the correct answer (A, B, C or D).",
+              "questions": [
+                {
+                  "number": 25,
+                  "prompt": "By the time we arrived at the cinema, the film ___.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "already started"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "had already started"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "has already started"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "already starts"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Дія завершилася раніше за іншу минулу дію (by the time we arrived), тож потрібен Past Perfect: had already started. Пастка — A: Past Simple не показує, що фільм почався ще до нашого приходу."
+                },
+                {
+                  "number": 26,
+                  "prompt": "I wish I ___ so much money on clothes last month.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "didn’t spend"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "hadn’t spent"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "wouldn’t spend"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "haven’t spent"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Жаль про минуле (last month) після wish передають Past Perfect: I wish I hadn’t spent. Пастка — A: Past Simple після wish стосується теперішньої ситуації, а не минулої."
+                },
+                {
+                  "number": 27,
+                  "prompt": "He denied ___ the window.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "to break"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "breaking"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "break"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "that broke"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Після deny вживають форму на -ing: he denied breaking the window. Пастка — A: інфінітив із to після deny не вживається."
+                },
+                {
+                  "number": 28,
+                  "prompt": "It ___ have been Tom that you saw — he’s in Spain this week.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "can’t"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "mustn’t"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "shouldn’t"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "needn’t"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Логічну впевненість, що чогось не могло бути в минулому, передає can’t have + третя форма. Пастка — B: mustn’t означає заборону, а для висновку «не може бути» вживають can’t."
+                },
+                {
+                  "number": 29,
+                  "prompt": "The man ___ car was stolen called the police.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "who"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "whose"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "which"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "whom"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Whose — «чий», вказує на належність: the man whose car was stolen. Пастка — A: who не може стояти перед іменником car, бо не означає належності."
+                },
+                {
+                  "number": 30,
+                  "prompt": "The company had to ___ 200 workers because of falling sales.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "lay off"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "put off"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "take off"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "call off"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Lay off — «звільнити працівників через скорочення». Пастка — D: call off означає «скасувати» (захід чи зустріч), а про людей так не кажуть."
+                },
+                {
+                  "number": 31,
+                  "prompt": "She has ___ a lot of progress with her English this year.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "made"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "done"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "taken"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "got"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Make progress — стала сполука «робити поступ». Пастка — B: do здається природним через «робити», але з progress поєднується лише make."
+                },
+                {
+                  "number": 32,
+                  "text": {
+                    "title": "Working from home",
+                    "body": [
+                      "Although working from home saves the time that would otherwise be spent commuting, many employees report that the line between work and private life has become blurred. Some find themselves answering emails late into the evening, simply because their laptop is always within reach."
+                    ]
+                  },
+                  "prompt": "What problem does the text describe?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "Commuting to work takes too long."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "People work longer because work is always close by."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Laptops are too expensive for many employees."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Employees refuse to answer emails in the evening."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "У тексті сказано, що люди відповідають на листи допізна, бо ноутбук завжди під рукою, тобто працюють довше. Пастка — A: дорогу на роботу згадано як те, на чому робота вдома заощаджує час, а не як проблему."
+                }
+              ]
+            },
+            {
+              "id": "part-5",
+              "label": "Частина 5",
+              "level": "C1",
+              "type": "multiple-choice",
+              "instruction": "Choose the correct answer (A, B, C or D).",
+              "questions": [
+                {
+                  "number": 33,
+                  "prompt": "___ I known about the delay, I would have taken a later train.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "Had"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "If"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Should"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Were"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Умову в минулому можна виразити інверсією без if: Had I known = If I had known. Пастка — B: після If потрібне had (If I had known), а «If I known» граматично неправильне."
+                },
+                {
+                  "number": 34,
+                  "prompt": "Not only ___ late, but he also forgot the tickets.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "he was"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "was he"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "he did"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "did he be"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Після not only на початку речення потрібна інверсія — дієслово стоїть перед підметом: Not only was he late. Пастка — A: прямий порядок слів після not only на початку речення є помилкою."
+                },
+                {
+                  "number": 35,
+                  "prompt": "She is said ___ three languages fluently.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "to speak"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "speaking"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "that she speaks"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "speak"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Конструкція is said to + інфінітив передає загальну думку: she is said to speak — «кажуть, що вона розмовляє». Пастка — C: that she speaks можливе лише з it на початку (It is said that she speaks), а після she is said — ні."
+                },
+                {
+                  "number": 36,
+                  "prompt": "No sooner had we sat down ___ the lights went out.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "than"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "when"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "that"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "then"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Вираз no sooner… than («ледве… як») має сталу пару than. Пастка — B: when вживають у парі з hardly чи scarcely (hardly had we sat down when), але не з no sooner."
+                },
+                {
+                  "number": 37,
+                  "prompt": "The minister’s speech was deliberately ___, so nobody could say exactly what she had promised.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "vague"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "obvious"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "precise"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "blunt"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Vague — «розмитий, невиразний»: промова була навмисно нечіткою, тож ніхто не міг сказати, що саме пообіцяли. Пастка — C: precise — «точний», протилежне значення, яке суперечить другій частині речення."
+                },
+                {
+                  "number": 38,
+                  "prompt": "After months of talks, the two sides finally reached a ___.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "compromise"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "promise"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "commitment"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "concession"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Reach a compromise — «дійти компромісу»: дієслово reach поєднується саме з compromise. Пастка — D: concession — «поступка», її роблять (make a concession), а не досягають."
+                },
+                {
+                  "number": 39,
+                  "prompt": "His story didn’t quite ___ up: the dates he gave were different every time.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "add"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "make"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "sum"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "take"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Not add up — «не сходитися, не мати сенсу»: дати в розповіді щоразу різні. Пастка — C: sum up означає «підсумовувати» і не описує, чи правдоподібна розповідь."
+                },
+                {
+                  "number": 40,
+                  "text": {
+                    "title": "From a book review",
+                    "body": [
+                      "The author’s claim that social media has ‘ruined’ public debate is, at best, an oversimplification. While it is true that online discussions often reward outrage over nuance, much the same could have been said of popular newspapers a century ago."
+                    ]
+                  },
+                  "prompt": "What is the reviewer’s attitude to the author’s claim?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "They fully agree with it."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "They think it is too simple."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "They think it is completely false."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "They are not interested in it."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "«At best, an oversimplification» означає, що твердження надто спрощене, хоча частково правдиве (it is true that…). Пастка — C: рецензент визнає частину правди, тож не вважає твердження цілком хибним."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

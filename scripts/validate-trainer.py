@@ -5,7 +5,7 @@
   python3 scripts/validate-trainer.py                      # обидва файли з data/
   python3 scripts/validate-trainer.py data/b2-first-trainer.json
 
-Формат визначає поле meta.exam: "nmt-2026" або "b2-first".
+Формат визначає поле meta.exam: "nmt-2026", "b2-first" або "level-test".
 Повертає код 1 і список помилок, якщо щось не так.
 """
 import json
@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_FILES = [ROOT / "data" / "nmt-trainer.json", ROOT / "data" / "b2-first-trainer.json"]
+DEFAULT_FILES = [ROOT / "data" / "nmt-trainer.json", ROOT / "data" / "b2-first-trainer.json", ROOT / "data" / "level-test.json"]
 
 # (частина, тип, номери, кількість варіантів, балів за запитання, зайвих варіантів)
 LAYOUTS = {
@@ -42,6 +42,13 @@ LAYOUTS = {
             ("reading-use-of-english", "gapped-text", range(37, 43), 7, 2, 1),
             ("reading-use-of-english", "multiple-matching", range(43, 53), 0, 1, None),
         ],
+    },
+    # Тест рівня: по 8 завдань на рівні A1, A2, B1, B2, C1
+    "level-test": {
+        "maxScore": 40,
+        "passageOptional": True,
+        "levels": ["A1", "A2", "B1", "B2", "C1"],
+        "tasks": [("level-test", "multiple-choice", range(n, n + 8), 4, 1, None) for n in (1, 9, 17, 25, 33)],
     },
 }
 
@@ -134,7 +141,7 @@ def check_variant(variant, layout, errors):
             gaps = [int(n) for n in GAP_RE.findall(text)]
             if gaps != list(exp_numbers):
                 errors.append(f"{tw}: пропуски в тексті {gaps}, очікувалося {list(exp_numbers)}")
-        if exp_type == "multiple-choice" and not (task.get("passage") or {}).get("paragraphs"):
+        if exp_type == "multiple-choice" and not layout.get("passageOptional") and not (task.get("passage") or {}).get("paragraphs"):
             errors.append(f"{tw}: немає тексту")
 
         # Спільні варіанти (відповідність, речення в тексті, розділи тексту)
@@ -237,6 +244,11 @@ def check_variant(variant, layout, errors):
                 errors.append(f"{qw}: немає тексту для відповідності")
             check_explanation(qw, q, errors, q.get("trap"))
 
+    if layout.get("levels"):
+        got = [task.get("level") for _, task in tasks]
+        if got != layout["levels"]:
+            errors.append(f"{where}: рівні частин {got}, очікувалося {layout['levels']}")
+
     if total != layout["maxScore"]:
         errors.append(f"{where}: сума балів {total}, очікувалося {layout['maxScore']}")
 
@@ -255,6 +267,12 @@ def validate(path):
     for field in ("maxScore", "durationMinutes"):
         if not isinstance(meta.get(field), int):
             errors.append(f"meta.{field} має бути цілим числом")
+    if layout.get("levels"):
+        ids = [lv.get("id") for lv in meta.get("levels", [])]
+        if ids != layout["levels"] or any(not lv.get("description") or not isinstance(lv.get("pass"), int) for lv in meta["levels"]):
+            errors.append("meta.levels має містити рівні A1–C1 з полями pass і description")
+        if not (meta.get("belowLevels") or {}).get("description"):
+            errors.append("немає meta.belowLevels")
     if meta.get("maxScore") != layout["maxScore"]:
         errors.append(f"meta.maxScore має бути {layout['maxScore']}")
 

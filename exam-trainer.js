@@ -22,8 +22,14 @@
   const config = {
     src: app.dataset.src,
     storageKey: app.dataset.storageKey || 'exam-trainer',
-    event: app.dataset.event || ''
+    event: app.dataset.event || '',
+    // data-modes="test": лише один режим, тож назву режиму ніде не показуємо.
+    testOnly: app.dataset.modes === 'test'
   };
+
+  function modeLabel(mode) {
+    return config.testOnly ? '' : ', ' + MODE_LABELS[mode];
+  }
 
   const ui = {
     setup: $('trn-setup'),
@@ -50,6 +56,7 @@
     next: $('trn-next'),
     result: $('trn-result'),
     resultTitle: $('trn-result-title'),
+    level: $('trn-level'),
     resultScore: $('trn-result-score'),
     resultComment: $('trn-result-comment'),
     breakdown: $('trn-breakdown'),
@@ -313,6 +320,10 @@
     document.querySelectorAll('[data-trn-threshold]').forEach((n) => { n.textContent = data.meta.thresholdScore; });
     document.querySelectorAll('[data-trn-max]').forEach((n) => { n.textContent = data.meta.maxScore; });
 
+    // Якщо варіант один, вибирати нема з чого.
+    const variantFieldset = ui.variantList.closest('fieldset');
+    if (variantFieldset) variantFieldset.hidden = data.variants.length === 1;
+
     syncTimerOption();
     renderBest();
     renderResume();
@@ -321,6 +332,7 @@
   }
 
   function syncTimerOption() {
+    if (!ui.timerInput) return;
     const mode = ui.form.elements.mode.value;
     ui.timerInput.disabled = mode !== 'test';
     if (mode !== 'test') ui.timerInput.checked = false;
@@ -334,7 +346,7 @@
       if (!entry) return;
       ['test', 'practice'].forEach((mode) => {
         if (typeof entry[mode] !== 'number') return;
-        ui.bestList.appendChild(el('li', null, v.title + ', ' + MODE_LABELS[mode] + ': ' + entry[mode] + ' з ' + variantMax(v)));
+        ui.bestList.appendChild(el('li', null, v.title + modeLabel(mode) + ': ' + entry[mode] + ' з ' + variantMax(v)));
       });
     });
     ui.best.hidden = !ui.bestList.children.length;
@@ -348,7 +360,7 @@
       return;
     }
     const answered = Object.keys(saved.answers).filter((n) => String(saved.answers[n] || '').trim()).length;
-    ui.resumeText.textContent = 'У вас є незавершена спроба: ' + v.title + ', ' + MODE_LABELS[saved.mode] +
+    ui.resumeText.textContent = 'У вас є незавершена спроба: ' + v.title + modeLabel(saved.mode) +
       ', відповіді на ' + answered + ' ' + plural(answered, 'завдання', 'завдання', 'завдань') + '.';
     ui.resume.hidden = false;
   }
@@ -389,7 +401,7 @@
      Виконання
      ------------------------------------------------------------------ */
   function openRunner() {
-    ui.runnerTitle.textContent = variant.title + ' · ' + MODE_LABELS[session.mode];
+    ui.runnerTitle.textContent = variant.title + (config.testOnly ? '' : ' · ' + MODE_LABELS[session.mode]);
     ui.finish.textContent = session.mode === 'test' ? 'Завершити тест' : 'Завершити';
     warned = {};
     renderTabs();
@@ -851,6 +863,14 @@
     else if (share >= 0.5) comment += 'Добра основа. Подивіться, у яких частинах найбільше втрачених балів: з них і варто почати.';
     else comment += 'Є над чим попрацювати. Розбір нижче пояснює кожну пастку, а повторна спроба через кілька днів покаже, що вже засвоєно.';
     if (bestScore != null && bestScore > score) comment += ' Ваш найкращий результат у цьому режимі — ' + bestScore + ' з ' + maxScore + '.';
+
+    // Тест рівня: замість загального коментаря — орієнтовний рівень за правилом із meta.levels.
+    const estimate = estimateLevel();
+    if (estimate && ui.level) {
+      ui.level.textContent = estimate.title;
+      ui.level.hidden = false;
+      comment = (timeUp ? 'Час вичерпано, тож зараховано відповіді, дані до цього моменту. ' : '') + estimate.description;
+    }
     ui.resultComment.textContent = comment;
 
     renderBreakdown();
@@ -861,6 +881,27 @@
     focusHeading(ui.resultTitle);
   }
 
+  /* Рівень зараховано, якщо в його розділі й у всіх нижчих набрано щонайменше level.pass балів. */
+  function estimateLevel() {
+    const levels = data.meta.levels;
+    if (!Array.isArray(levels) || !levels.length) return null;
+    const scoreAt = (id) => tasks.reduce((sum, { task }) => sum + (task.level === id
+      ? task.questions.reduce((s, q) => s + scoreOf(q.number).points, 0) : 0), 0);
+    let reached = null;
+    let broken = false;
+    let uneven = false;
+    levels.forEach((level) => {
+      const passed = scoreAt(level.id) >= level.pass;
+      if (!broken && passed) reached = level;
+      else if (!passed) broken = true;
+      else uneven = true;
+    });
+    const base = reached || data.meta.belowLevels;
+    let description = base.description;
+    if (uneven && data.meta.unevenNote) description += ' ' + data.meta.unevenNote;
+    return { title: reached ? 'Орієнтовний рівень: ' + reached.id : base.title, description };
+  }
+
   function renderBreakdown() {
     if (!ui.breakdown) return;
     ui.breakdown.innerHTML = '';
@@ -868,7 +909,7 @@
       const got = task.questions.reduce((s, q) => s + scoreOf(q.number).points, 0);
       const max = task.questions.reduce((s, q) => s + pointsOf(q), 0);
       const li = el('li');
-      li.appendChild(el('span', 'trn-breakdown-label', task.label || ''));
+      li.appendChild(el('span', 'trn-breakdown-label', task.level || task.label || ''));
       li.appendChild(el('span', 'trn-breakdown-score', got + ' / ' + max));
       ui.breakdown.appendChild(li);
     });
@@ -941,7 +982,7 @@
   ui.form.addEventListener('submit', (event) => {
     event.preventDefault();
     const variantId = ui.form.elements.variant.value;
-    startSession(variantId, ui.form.elements.mode.value, ui.timerInput.checked);
+    startSession(variantId, ui.form.elements.mode.value, Boolean(ui.timerInput && ui.timerInput.checked));
   });
 
   ui.resumeContinue.addEventListener('click', resumeSession);
@@ -956,7 +997,7 @@
   ui.finish.addEventListener('click', requestFinish);
 
   ui.again.addEventListener('click', () => startSession(session.variantId, session.mode, session.timer));
-  ui.choose.addEventListener('click', () => {
+  if (ui.choose) ui.choose.addEventListener('click', () => {
     renderBest();
     renderResume();
     show(ui.setup);

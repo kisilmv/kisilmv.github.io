@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kisilmv.github.io/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://kisilmv.github.io/level-test.html</loc>
+    <lastmod>2026-10-11</lastmod>
   </url>
   <url>
     <loc>https://kisilmv.github.io/nmt.html</loc>
@@ -50,6 +54,6 @@
   </url>
   <url>
     <loc>https://kisilmv.github.io/privacy.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
 </urlset>
