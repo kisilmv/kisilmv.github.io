@@ -1,0 +1,1860 @@
+{
+  "version": 1,
+  "meta": {
+    "exam": "b2-first",
+    "title": "Тренажер B2 First: Reading and Use of English",
+    "language": "en",
+    "maxScore": 70,
+    "durationMinutes": 75,
+    "formatSource": "B2 First Handbook for Teachers (Cambridge University Press & Assessment), Reading and Use of English"
+  },
+  "variants": [
+    {
+      "id": "1",
+      "title": "Варіант 1",
+      "level": "B2",
+      "parts": [
+        {
+          "id": "reading-use-of-english",
+          "title": "Reading and Use of English",
+          "label": "Reading and Use of English",
+          "tasks": [
+            {
+              "id": "part-1",
+              "label": "Part 1",
+              "subtitle": "Multiple-choice cloze",
+              "type": "cloze",
+              "instruction": "For questions 1–8, read the text below and decide which answer (A, B, C or D) best fits each gap.",
+              "passage": {
+                "title": "The Return of the Board Game",
+                "paragraphs": [
+                  "Not long ago, many people believed that board games would soon {{1}} out of fashion, replaced completely by video games and apps. Instead, the opposite has happened. Board game cafés have {{2}} up in cities all over the world, and sales of new games have risen steadily for more than a decade.",
+                  "So what {{3}} for their popularity? Part of the answer is that people are looking for ways to spend time together without staring at a screen. A board game {{4}} players to sit around the same table, talk to each other and pay {{5}} to the people they are with, rather than to their phones.",
+                  "The games themselves have also changed. Modern designers {{6}} a lot of effort into creating games in which players work together against the game instead of competing {{7}} each other. This means that nobody has to {{8}} the evening feeling like a loser."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 1,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "go"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "get"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "put"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "bring"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Go out of fashion — сталий вираз «вийти з моди». Пастка — B: get out of означає «вибратися, уникнути чогось», а «get out of fashion» в англійській не вживають."
+                },
+                {
+                  "number": 2,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "popped"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "jumped"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "raised"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "lifted"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Pop up — фразове дієслово «раптово з’являтися, виникати», саме так кажуть про нові кав’ярні чи крамниці. Пастка — B: jump up означає «підскочити», і про заклади так не говорять."
+                },
+                {
+                  "number": 3,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "accounts"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "explains"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "causes"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "reasons"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Account for something — «пояснювати, бути причиною»; саме з for і вживається це дієслово. Пастка — B: explain має потрібне значення, але після нього не ставлять for: what explains their popularity."
+                },
+                {
+                  "number": 4,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "encourages"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "makes"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "lets"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "has"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Після пропуску стоїть to sit, а з частками to поєднується encourage someone to do something. Пастка — B: make вимагає інфінітива без to (makes players sit), тож «makes players to sit» — граматична помилка."
+                },
+                {
+                  "number": 5,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "attention"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "interest"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "notice"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "care"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Pay attention to — сталий вираз «звертати увагу». Пастка — B: pay interest означає «сплачувати відсотки», тож у цьому контексті сполука не має сенсу."
+                },
+                {
+                  "number": 6,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "put"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "make"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "give"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "take"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Put effort into something — «вкладати зусилля в щось»; саме прийменник into підказує дієслово put. Пастка — B: make an effort існує, але без into: «make effort into creating» неможливо."
+                },
+                {
+                  "number": 7,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "against"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "over"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "between"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "towards"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Compete against each other — «змагатися одне з одним»; against тут підкреслює протистояння, яке протиставлено спільній грі. Пастка — C: between вживають із назвою учасників (competition between teams), а не після дієслова compete перед each other."
+                },
+                {
+                  "number": 8,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "end"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "stop"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "quit"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "leave"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "End the evening — «завершити вечір», і саме це дієслово поєднується з evening. Пастка — B: stop означає «припинити дію», але «stop the evening» англійською так не кажуть."
+                }
+              ]
+            },
+            {
+              "id": "part-2",
+              "label": "Part 2",
+              "subtitle": "Open cloze",
+              "type": "open-cloze",
+              "instruction": "For questions 9–16, read the text below and think of the word which best fits each gap. Use only one word in each gap.",
+              "passage": {
+                "title": "Why Boredom Is Good for You",
+                "paragraphs": [
+                  "Most of us do everything we can to avoid being bored. As {{9}} as we have a free minute, we reach for our phones. Yet psychologists say that boredom may actually be good {{10}} our brains.",
+                  "When we are bored, our minds start to wander, {{11}} is exactly when new ideas tend to appear. In one well-known experiment, people who had first done a dull task, {{12}} as copying numbers from a phone book, later came up with more creative uses for everyday objects than people who had not.",
+                  "{{13}} course, this does not mean we should spend hours doing nothing. But it does suggest that we should not fill every empty moment. Next time you are waiting for a bus, try leaving your phone in your pocket and let your thoughts go wherever they want {{14}}. You might even find that you look forward {{15}} these quiet moments instead of trying to get rid {{16}} them."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 9,
+                  "answers": [
+                    "soon"
+                  ],
+                  "trap": "long",
+                  "explanation": "As soon as — «щойно, як тільки»: ми хапаємо телефон одразу, коли з’являється вільна хвилина. Пастка — «long»: as long as означає «за умови, що», і така умова тут не має сенсу."
+                },
+                {
+                  "number": 10,
+                  "answers": [
+                    "for"
+                  ],
+                  "trap": "to",
+                  "explanation": "Be good for something — «бути корисним для чогось»: нудьга корисна для мозку. Пастка — «to»: be good to означає «бути добрим до когось» і стосується ставлення до людей, а не користі для мозку."
+                },
+                {
+                  "number": 11,
+                  "answers": [
+                    "which"
+                  ],
+                  "trap": "what",
+                  "explanation": "Which після коми відсилає до всієї попередньої думки (розум починає блукати): which is exactly when… Пастка — «what»: what не відсилає до попереднього речення, тож «…wander, what is exactly when» неможливе."
+                },
+                {
+                  "number": 12,
+                  "answers": [
+                    "such"
+                  ],
+                  "trap": "so",
+                  "explanation": "Such as — «як-от, наприклад»: вводить приклад нудного завдання. Пастка — «so»: so as вживають лише перед to (so as to do something) зі значенням мети."
+                },
+                {
+                  "number": 13,
+                  "answers": [
+                    "of"
+                  ],
+                  "trap": "in",
+                  "explanation": "Of course — «звісно»: автор визнає очевидне застереження перед головною думкою, яку вводить But. Пастка — «in»: виразу «in course» немає, а in due course означає «згодом»."
+                },
+                {
+                  "number": 14,
+                  "answers": [
+                    "to"
+                  ],
+                  "trap": "it",
+                  "explanation": "У кінці речення після want лишається частка to, яка замінює повторене дієслово: wherever they want to (go). Пастка — «it»: want it означало б «хотіти чогось», але it тут ні до чого не відсилає."
+                },
+                {
+                  "number": 15,
+                  "answers": [
+                    "to"
+                  ],
+                  "trap": "for",
+                  "explanation": "Look forward to something — «чекати з нетерпінням»; to тут прийменник, тому далі іменник these quiet moments. Пастка — «for»: look for означає «шукати», а «look forward for» — помилка."
+                },
+                {
+                  "number": 16,
+                  "answers": [
+                    "of"
+                  ],
+                  "trap": "from",
+                  "explanation": "Get rid of something — сталий вираз «позбутися чогось». Пастка — «from»: прийменник from здається логічним через значення «відокремлення», але у виразі вживають лише of."
+                }
+              ]
+            },
+            {
+              "id": "part-3",
+              "label": "Part 3",
+              "subtitle": "Word formation",
+              "type": "word-formation",
+              "instruction": "For questions 17–24, read the text below. Use the word given in capitals to form a word that fits in the gap.",
+              "passage": {
+                "title": "The Rise of Running Clubs",
+                "paragraphs": [
+                  "Running used to be seen as a rather lonely activity, but running clubs are becoming {{17}} popular. For many members, the club is {{18}} about socialising rather than sport. ‘I joined because I wanted to get fit, but I stayed because the other members were so {{19}},’ says Lena, 35.",
+                  "Most clubs welcome runners of all ages, from complete beginners to {{20}} athletes training for marathons. Sessions are usually led by a qualified coach, whose {{21}} can help runners avoid injury. Running with others also makes people more {{22}} to keep going on cold, dark evenings. ‘On my own, I’d find an excuse to stay at home,’ admits Lena. ‘But it would be {{23}} to let the group down.’",
+                  "In fact, research suggests that people who exercise in groups report lower levels of stress and greater {{24}} with life than those who train alone."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 17,
+                  "stem": "INCREASE",
+                  "answers": [
+                    "increasingly"
+                  ],
+                  "trap": "increasing",
+                  "explanation": "Перед прикметником popular потрібен прислівник: increasingly popular — «дедалі популярніші». Пастка — «increasing»: це прикметник, і він не може означати інший прикметник."
+                },
+                {
+                  "number": 18,
+                  "stem": "MAIN",
+                  "answers": [
+                    "mainly"
+                  ],
+                  "trap": "main",
+                  "explanation": "Між is і about стоїть прислівник: the club is mainly about socialising — «клуб передусім про спілкування». Пастка — «main»: прикметник main стоїть лише перед іменником (the main reason), а не перед прийменником."
+                },
+                {
+                  "number": 19,
+                  "stem": "FRIEND",
+                  "answers": [
+                    "friendly"
+                  ],
+                  "trap": "friendship",
+                  "explanation": "Після were so потрібен прикметник, що описує людей: so friendly — «такі привітні». Пастка — «friendship»: це іменник, а після so прикметник, тож «so friendship» неможливе."
+                },
+                {
+                  "number": 20,
+                  "stem": "EXPERIENCE",
+                  "answers": [
+                    "experienced"
+                  ],
+                  "trap": "experiencing",
+                  "explanation": "Перед іменником athletes потрібен прикметник: experienced athletes — «досвідчені спортсмени», протилежність complete beginners. Пастка — «experiencing»: форма на -ing означає дію, що відбувається зараз, і не описує рівень спортсмена."
+                },
+                {
+                  "number": 21,
+                  "stem": "ADVISE",
+                  "answers": [
+                    "advice"
+                  ],
+                  "trap": "advise",
+                  "explanation": "Після whose потрібен іменник: whose advice — «чиї поради». Пастка — «advise»: це дієслово, і хоча воно звучить майже так само, іменник пишеться з c."
+                },
+                {
+                  "number": 22,
+                  "stem": "MOTIVATE",
+                  "answers": [
+                    "motivated"
+                  ],
+                  "trap": "motivating",
+                  "explanation": "Прикметник на -ed описує стан людини: people are more motivated to keep going — «люди мають більше мотивації». Пастка — «motivating»: прикметник на -ing описує те, що мотивує інших (a motivating coach), а не самих людей."
+                },
+                {
+                  "number": 23,
+                  "stem": "THINK",
+                  "answers": [
+                    "unthinkable"
+                  ],
+                  "trap": "thinkable",
+                  "explanation": "Лена пояснює, що підвести групу для неї неможливо уявити: it would be unthinkable — «було б немислимо». Пастка — «thinkable»: без заперечного префікса значення протилежне, і речення суперечить її словам про відмовки."
+                },
+                {
+                  "number": 24,
+                  "stem": "SATISFY",
+                  "answers": [
+                    "satisfaction"
+                  ],
+                  "trap": "satisfied",
+                  "explanation": "Після greater потрібен іменник, якого стосується with life: greater satisfaction with life — «більше задоволення життям». Пастка — «satisfied»: прикметник описує людину, а тут після greater потрібен іменник, паралельний до levels of stress."
+                }
+              ]
+            },
+            {
+              "id": "part-4",
+              "label": "Part 4",
+              "subtitle": "Key word transformation",
+              "type": "transformation",
+              "instruction": "For questions 25–30, complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Do not change the word given. You must use between two and five words, including the word given.",
+              "questions": [
+                {
+                  "number": 25,
+                  "lead": "I haven’t been to the cinema for three months.",
+                  "keyword": "last",
+                  "before": "The",
+                  "after": "to the cinema was three months ago.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "last time"
+                        ],
+                        [
+                          "I went",
+                          "that I went"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "last I went",
+                  "explanation": "Конструкція the last time I went… was… ago передає, коли відбулася остання дія. Пастка — «last I went»: без time речення граматично неповне, бо після the потрібен іменник.",
+                  "points": 2
+                },
+                {
+                  "number": 26,
+                  "lead": "Tom started learning Spanish two years ago.",
+                  "keyword": "been",
+                  "before": "Tom",
+                  "after": "Spanish for two years.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "has been",
+                          "'s been"
+                        ],
+                        [
+                          "learning",
+                          "studying"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "was learning",
+                  "explanation": "Дія почалася в минулому й триває досі, а for two years вимагає Present Perfect Continuous: has been learning. Пастка — «was learning»: Past Continuous не пов’язує минуле з теперішнім і не містить ключового слова been.",
+                  "points": 2
+                },
+                {
+                  "number": 27,
+                  "lead": "‘Don’t touch the paintings,’ the guide told us.",
+                  "keyword": "not",
+                  "before": "The guide told",
+                  "after": "the paintings.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "us not"
+                        ],
+                        [
+                          "to touch"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "us don't touch",
+                  "explanation": "У непрямій мові заборону передають як told someone not to do something. Пастка — «us don't touch»: форму наказу don’t у непрямій мові не зберігають, після told потрібен інфінітив not to touch.",
+                  "points": 2
+                },
+                {
+                  "number": 28,
+                  "lead": "I’m sure Anna didn’t see the message.",
+                  "keyword": "can't",
+                  "before": "Anna",
+                  "after": "the message.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "cannot have"
+                        ],
+                        [
+                          "seen",
+                          "read"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "can't see",
+                  "explanation": "Упевненість у тому, що чогось не було в минулому, передає can’t have + третя форма: can’t have seen. Пастка — «can't see»: без have seen речення стосується теперішнього, а не минулого.",
+                  "points": 2
+                },
+                {
+                  "number": 29,
+                  "lead": "The concert was so popular that all the tickets sold out in an hour.",
+                  "keyword": "such",
+                  "before": "It was",
+                  "after": "that all the tickets sold out in an hour.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "such a"
+                        ],
+                        [
+                          "popular concert"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "such popular concert",
+                  "explanation": "Після such перед злічуваним іменником в однині потрібен неозначений артикль: such a popular concert. Пастка — «such popular concert»: без a конструкція неправильна, бо concert — злічуваний іменник.",
+                  "points": 2
+                },
+                {
+                  "number": 30,
+                  "lead": "Maria regrets not studying harder for her exams.",
+                  "keyword": "wishes",
+                  "before": "Maria",
+                  "after": "harder for her exams.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "wishes she",
+                          "wishes that she"
+                        ],
+                        [
+                          "had studied",
+                          "had worked"
+                        ]
+                      ]
+                    },
+                    {
+                      "parts": [
+                        [
+                          "wishes she'd",
+                          "wishes that she'd"
+                        ],
+                        [
+                          "studied",
+                          "worked"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "wishes she studied",
+                  "explanation": "Жаль про минуле передає wish + Past Perfect: wishes she had studied. Пастка — «wishes she studied»: Past Simple після wish стосується теперішнього, а Марія шкодує про минулі іспити.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-5",
+              "label": "Part 5",
+              "subtitle": "Multiple choice",
+              "type": "multiple-choice",
+              "instruction": "You are going to read an extract from a novel about a teenager starting a summer job. For questions 31–36, choose the answer (A, B, C or D) which you think fits best according to the text.",
+              "passage": {
+                "title": "The Harbour Café",
+                "paragraphs": [
+                  "The bell above the door rang as I pushed it open, and for a moment I considered turning round and walking straight back out. The café was smaller than it had looked in the photos on its website, and much darker. Behind the counter, a tall man with grey hair was drying cups with the kind of concentration most people save for brain surgery. He did not look up.",
+                  "‘You must be Maya,’ he said eventually. ‘You’re early.’ It did not sound like a compliment. I had spent the whole bus journey practising a cheerful introduction, but it had disappeared somewhere between the door and the counter, and all I managed was a nod.",
+                  "Mr Kerr — my aunt had warned me never to call him anything else — put down the cup and looked at me properly for the first time. ‘Your aunt says you’re good with people,’ he said. ‘Are you?’ I thought about my last school report, which had described me as ‘quiet but reliable’. ‘I’m good at listening to them,’ I said, which was true, if not quite the same thing. To my surprise, the corner of his mouth moved slightly. On another face, it might have been the beginning of a smile.",
+                  "He showed me round in about four minutes. There was not much to see: six tables, a coffee machine that he referred to as ‘the old lady’ and treated with more respect than any of his customers, and a tiny kitchen where a radio was quietly playing classical music. ‘Rule one,’ he said, pointing at the machine. ‘Nobody touches her except me. Not yet.’ The ‘not yet’ stayed with me all morning. It suggested a future I had not expected to have.",
+                  "The first customers arrived at nine: two fishermen who sat at the window and ordered without looking at the menu. I carried their plates across the room so carefully that one of them laughed and told me I looked like I was walking a tightrope. My face went hot, but when I glanced back at the counter, Mr Kerr was not watching me at all. He was writing something in a small notebook, and I decided, for the sake of my nerves, that it had nothing to do with me.",
+                  "By lunchtime I had broken nothing, forgotten only one order and learned that the regular customers preferred being ignored to being chatted to. It was, I realised, a café made for people like me. At three o’clock, when the last table was empty, Mr Kerr handed me the notebook. On the first page, in neat capital letters, he had written a list: the names of every customer who had come in that day, and next to each one, what they always ordered. ‘Learn it by Friday,’ he said. Then, after a pause: ‘You’ll do.’",
+                  "On the bus home, I read the list three times. It was not exactly a warm welcome. But I had a feeling that, from Mr Kerr, it was the closest thing to one that anybody ever got."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 31,
+                  "prompt": "What was Maya’s first reaction when she entered the café?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "She was impressed by how cosy it looked."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "She wondered whether to leave immediately."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "She was disappointed that nobody greeted her."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "She thought she had come to the wrong address."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Мая прямо пише, що «considered turning round and walking straight back out», тобто думала одразу піти. Пастка — D: кав’ярня здалася меншою, ніж на фото, але про хибну адресу не йдеться.",
+                  "points": 2
+                },
+                {
+                  "number": 32,
+                  "prompt": "What impression of Mr Kerr does the writer give in the first two paragraphs?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "He was annoyed that Maya had arrived late."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "He was too busy to notice Maya come in."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "He seemed unfriendly at first."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "He had forgotten that Maya was coming."
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Містер Керр не підводить очей, а його «You’re early» «did not sound like a compliment» — перше враження неприязне. Пастка — A: він каже, що Мая прийшла рано, а не запізнилася.",
+                  "points": 2
+                },
+                {
+                  "number": 33,
+                  "prompt": "In the second paragraph, what does ‘it’ in ‘it had disappeared’ refer to?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "the bus journey"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "a cheerful introduction"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "the door"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "the counter"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Займенник it відсилає до того, що Мая репетирувала, — «a cheerful introduction», і саме ця промова «had disappeared», щойно вона увійшла. Пастка — A: the bus journey стоїть у тому самому реченні, але зникнути «between the door and the counter» могла промова, а не поїздка, яка вже скінчилася.",
+                  "points": 2
+                },
+                {
+                  "number": 34,
+                  "prompt": "Why does Maya say ‘I’m good at listening to them’?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "She wanted to give an honest answer."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "She hoped to make Mr Kerr laugh."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "She disagreed with her aunt’s opinion of her."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "She believed listening was more important than talking."
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Мая коментує власну відповідь: «which was true, if not quite the same thing», тобто вона не хотіла перебільшувати й сказала правду. Пастка — C: вона не заперечує слів тітки, а лише уточнює їх.",
+                  "points": 2
+                },
+                {
+                  "number": 35,
+                  "prompt": "What does the writer suggest by saying that the ‘not yet’ ‘stayed with’ her?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "She was worried she would break the coffee machine."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "She was encouraged by the idea that she might be trusted later."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "She was offended by Mr Kerr’s rule."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "She did not understand what Mr Kerr meant."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Слова «not yet» натякають, що згодом їй дозволять працювати з машиною, і Мая бачить у цьому «a future I had not expected to have». Пастка — A: машина згадана, але Мая думає не про те, щоб її зламати, а про довіру в майбутньому.",
+                  "points": 2
+                },
+                {
+                  "number": 36,
+                  "prompt": "How does Maya feel about Mr Kerr’s words at the end of the day?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "She is hurt that he did not thank her."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "She is confused by his list."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "She believes they show his approval."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "She is worried about learning the list by Friday."
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Мая визнає, що це «not exactly a warm welcome», але вважає, що від містера Керра це найтепліше схвалення, яке можна отримати. Пастка — A: відсутність подяки вона помічає, проте не ображається, а тлумачить «You’ll do» як похвалу.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-6",
+              "label": "Part 6",
+              "subtitle": "Gapped text",
+              "type": "gapped-text",
+              "instruction": "You are going to read an article about a teenager who organised a river clean-up. Six sentences have been removed from the article. Choose from the sentences A–G the one which fits each gap (37–42). There is one extra sentence which you do not need to use.",
+              "passage": {
+                "title": "One Bag at a Time",
+                "paragraphs": [
+                  "When 16-year-old Sofia Marino first walked along the river near her new home, she was shocked by the amount of rubbish on its banks. Plastic bottles, shopping bags and even an old bicycle lay half-buried in the mud. {{37}} Sofia, however, decided that she could not simply look the other way.",
+                  "The following Saturday, she went back with a pair of gloves and a roll of bin bags. In two hours she filled six bags. {{38}} So she posted a photo of the bags on social media, together with a simple message: ‘Same place, same time next week. Who’s coming?’",
+                  "To her surprise, eleven people turned up the next Saturday. Some were classmates, but most were complete strangers, including a retired teacher and a family with two small children. {{39}} Within two months, the group had grown to more than forty regular volunteers.",
+                  "As the group grew, so did the problems. Sofia had to make sure everyone knew where to meet, which areas still needed cleaning and what to do with the rubbish once it had been collected. {{40}} The local council agreed to collect the full bags from three points along the river every Monday morning.",
+                  "Sofia also began to keep a record of everything the volunteers found. After six months, the list showed that more than half of the rubbish was plastic packaging from takeaway food. {{41}} Several cafés near the river have since started offering a discount to customers who bring their own cups and containers.",
+                  "Today, the river looks very different, and fish have been seen in parts of it where there were none before. Sofia, now 18, is about to leave home to study environmental science. {{42}} ‘If I’ve learned one thing,’ she says, ‘it’s that you don’t need permission to start. You just need a pair of gloves.’"
+                ]
+              },
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "She contacted the town hall to ask for help with this last problem."
+                },
+                {
+                  "letter": "B",
+                  "text": "Most people who used the path had clearly stopped noticing it."
+                },
+                {
+                  "letter": "C",
+                  "text": "Unfortunately, the weather was so bad that nobody came."
+                },
+                {
+                  "letter": "D",
+                  "text": "Even so, she has promised to join the Saturday clean-ups whenever she is home."
+                },
+                {
+                  "letter": "E",
+                  "text": "Word quickly spread, and each week a few more people joined them."
+                },
+                {
+                  "letter": "F",
+                  "text": "It was hard, dirty work, and she knew she could never finish the job alone."
+                },
+                {
+                  "letter": "G",
+                  "text": "She decided to share these figures with local businesses."
+                }
+              ],
+              "questions": [
+                {
+                  "number": 37,
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Займенник it відсилає до rubbish, а протиставлення «Sofia, however» має сенс лише після речення про байдужість інших людей. Пастка — C: тут ідеться про погоду й про людей, яких ще ніхто не кликав, тож речення не пов’язане ні з попереднім, ні з наступним.",
+                  "points": 2
+                },
+                {
+                  "number": 38,
+                  "key": "F",
+                  "trap": "C",
+                  "explanation": "Думка про те, що сама Софія не впорається, пояснює, чому далі вона кличе людей у соцмережах (So she posted…). Пастка — C: «nobody came» тут нелогічне, бо Софія ще нікого не запрошувала, а наступного тижня прийшло одинадцять людей.",
+                  "points": 2
+                },
+                {
+                  "number": 39,
+                  "key": "E",
+                  "trap": "B",
+                  "explanation": "Them відсилає до волонтерів, які прийшли першого разу, а «each week a few more» підводить до сорока учасників через два місяці. Пастка — B: речення про людей, що перестали помічати сміття, стосується початку історії, а не зростання групи.",
+                  "points": 2
+                },
+                {
+                  "number": 40,
+                  "key": "A",
+                  "trap": "G",
+                  "explanation": "«This last problem» — останнє з трьох завдань (what to do with the rubbish), а «the town hall» пояснює, чому далі з’являється міська рада. Пастка — G: «these figures» нема до чого віднести, бо записи про знахідки з’являються лише в наступному абзаці.",
+                  "points": 2
+                },
+                {
+                  "number": 41,
+                  "key": "G",
+                  "trap": "A",
+                  "explanation": "«These figures» — дані про те, що половина сміття є упаковкою з-під їжі, а «local businesses» пояснює реакцію кав’ярень. Пастка — A: речення про звернення до міськради теж говорить про допомогу, але кав’ярні — не міська влада, а «this last problem» тут не має відповідника.",
+                  "points": 2
+                },
+                {
+                  "number": 42,
+                  "key": "D",
+                  "trap": "E",
+                  "explanation": "«Even so» протиставляє від’їзд на навчання обіцянці й далі приходити на прибирання. Пастка — E: «a few more people joined» описує ранній етап, а не теперішнє, коли Софії вже 18.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-7",
+              "label": "Part 7",
+              "subtitle": "Multiple matching",
+              "type": "multiple-matching",
+              "instruction": "You are going to read an article in which four students describe their first year at university. For questions 43–52, choose from the students (A–D). The students may be chosen more than once.",
+              "title": "My First Year at University",
+              "stem": "Which student",
+              "sections": [
+                {
+                  "letter": "A",
+                  "title": "Daniel, Engineering",
+                  "paragraphs": [
+                    "Before I arrived, I was most worried about the work, but that turned out to be the easy part. What I hadn’t expected was how much I would miss home in the first few weeks — I phoned my parents almost every evening, which is a bit embarrassing to admit now. Things improved when I joined the climbing club. I’d never climbed before, but nobody seemed to care, and after a couple of months I was confident on the walls. The other surprise was how little time we spent in lectures. I had twelve hours a week, so I had to learn to organise the rest of my time without anyone telling me what to do. I’m still not perfect at it."
+                  ]
+                },
+                {
+                  "letter": "B",
+                  "title": "Priya, History",
+                  "paragraphs": [
+                    "Everyone warned me that there would be a lot of reading, but I still wasn’t ready for the reading lists — some weeks I had to get through four or five books. I quickly realised I couldn’t read everything properly, so I learned to pick out the chapters that really mattered. To pay my rent, I got a job in the university library, putting books back on the shelves three evenings a week. I thought it would be boring, but it’s where I met most of my friends, because the other student assistants were from completely different courses. If I had stayed only with people from my own subject, my first year would have been much less interesting."
+                  ]
+                },
+                {
+                  "letter": "C",
+                  "title": "Tom, Medicine",
+                  "paragraphs": [
+                    "I decided to keep living with my family and travel in every day, mainly to save money. It was the right decision financially, but I sometimes felt I was missing out. Most social events happened in the evenings, after my last train had gone. In the second term I started staying over at a friend’s flat once a week, which helped a lot. The course itself was even harder than I had imagined, especially anatomy, which involves memorising hundreds of names. What kept me going was a study group of five of us who met every Sunday. We tested each other until we knew everything by heart."
+                  ]
+                },
+                {
+                  "letter": "D",
+                  "title": "Olena, Computer Science",
+                  "paragraphs": [
+                    "My English was good on paper, but in the first seminar I understood maybe half of what people said — everyone spoke so fast, and with accents I had never heard before. I was too shy to ask anyone to repeat things. Luckily, one of my tutors noticed and suggested listening to the lecture recordings, which are all available online. Hearing them again in the evenings made a huge difference. By December I was confident enough to volunteer at the university’s coding club for school pupils. Explaining things in simple English to twelve-year-olds turned out to be the best language lesson I’ve ever had."
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "number": 43,
+                  "prompt": "admits to something they now find slightly embarrassing?",
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Деніел пише, що щовечора телефонував батькам, «which is a bit embarrassing to admit now». Пастка — D: Олена згадує сором’язливість, але йдеться про почуття тоді, а не про те, що їй ніяково тепер."
+                },
+                {
+                  "number": 44,
+                  "prompt": "found a way to cope with having too much to read?",
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Прія не встигала прочитати все й навчилася вибирати найважливіші розділи. Пастка — C: Том теж мав важкий курс, але його проблема — запам’ятовування назв, а не обсяг читання."
+                },
+                {
+                  "number": 45,
+                  "prompt": "made a decision about where to live mainly to save money?",
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Том лишився жити з родиною «mainly to save money». Пастка — B: Прія теж думала про гроші, але влаштувалася на роботу, щоб платити оренду, тобто рішення стосувалося заробітку, а не місця проживання."
+                },
+                {
+                  "number": 46,
+                  "prompt": "benefited from a suggestion made by a member of staff?",
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Олені порадив слухати записи лекцій викладач (one of my tutors), і це дуже допомогло. Пастка — A: Деніел теж мав труднощі, але впорався сам, без чиєїсь поради."
+                },
+                {
+                  "number": 47,
+                  "prompt": "took up an activity they had never tried before?",
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Деніел пішов у клуб скелелазіння, хоча «I’d never climbed before». Пастка — D: Олена теж почала волонтерити, але не каже, що ніколи раніше цього не робила; слова «never… before» є лише в тексті Деніела."
+                },
+                {
+                  "number": 48,
+                  "prompt": "says that mixing with students from other subjects made their year better?",
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Прія познайомилася з друзями з інших спеціальностей і каже, що без них перший рік був би нецікавим. Пастка — C: Том теж мав компанію, але його навчальна група складалася з однокурсників-медиків."
+                },
+                {
+                  "number": 49,
+                  "prompt": "regularly tested their knowledge with other students?",
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Група Тома щонеділі перевіряла одне одного (We tested each other). Пастка — D: Олена теж повторювала матеріал, але сама, слухаючи записи вечорами."
+                },
+                {
+                  "number": 50,
+                  "prompt": "found that helping young people improved their own skills?",
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Олена пояснювала програмування дванадцятирічним школярам, і це стало для неї «the best language lesson». Пастка — A: Деніел говорить лише про власне навчання скелелазінню, а не про допомогу молодшим."
+                },
+                {
+                  "number": 51,
+                  "prompt": "had less time in class with teachers than they had expected?",
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Для Деніела несподіванкою стало те, як мало часу займали лекції — лише дванадцять годин на тиждень. Пастка — C: Том говорить про брак часу на вечірні події, а не про кількість занять."
+                },
+                {
+                  "number": 52,
+                  "prompt": "found it difficult to take part in evening social activities?",
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Більшість подій були ввечері, коли останній потяг Тома вже пішов. Пастка — A: Деніел теж мав складні вечори, але через сум за домом, а не через те, що не міг прийти на події."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Варіант 2",
+      "level": "B2",
+      "parts": [
+        {
+          "id": "reading-use-of-english",
+          "title": "Reading and Use of English",
+          "label": "Reading and Use of English",
+          "tasks": [
+            {
+              "id": "part-1",
+              "label": "Part 1",
+              "subtitle": "Multiple-choice cloze",
+              "type": "cloze",
+              "instruction": "For questions 1–8, read the text below and decide which answer (A, B, C or D) best fits each gap.",
+              "passage": {
+                "title": "Learning a Language with Podcasts",
+                "paragraphs": [
+                  "Language learners have more ways to practise than ever before, and podcasts have {{1}} one of the most popular. Unlike a textbook, a podcast can be listened to almost anywhere: on the bus, at the gym or while doing the washing-up. Many learners say that this {{2}} them to fit study into even the busiest day.",
+                  "However, teachers point {{3}} that simply having a podcast playing in the background is not enough. To make real progress, learners need to listen {{4}}, noticing new words and expressions and, ideally, writing some of them down. It also {{5}} sense to choose podcasts that are slightly above your level, {{6}} than ones you can understand completely.",
+                  "Another advantage is that podcasts expose learners to a {{7}} range of accents. Hearing how real people speak, with all their hesitations and mistakes, can {{8}} learners for conversations in the real world far better than carefully recorded textbook dialogues."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 1,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "become"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "grown"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "turned"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "got"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Після have потрібна третя форма дієслова, що поєднується з іменником без прийменника: have become one of the most popular. Пастка — C: turned у значенні «стати» вимагає into (have turned into one of…)."
+                },
+                {
+                  "number": 2,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "allows"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "lets"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "makes"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "gives"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Після пропуску стоїть them to fit, а частку to вимагає саме allow someone to do something. Пастка — B: let поєднується з інфінітивом без to (lets them fit), тож «lets them to fit» — помилка."
+                },
+                {
+                  "number": 3,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "out"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "at"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "to"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "on"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Point out that… — фразове дієслово «звертати увагу, наголошувати», після якого може стояти підрядне речення. Пастка — B: point at означає «показувати пальцем на щось» і не вводить речення з that."
+                },
+                {
+                  "number": 4,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "actively"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "busily"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "strongly"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "heavily"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Listen actively — «слухати уважно, свідомо», і далі текст пояснює, що це означає: помічати нові слова й записувати їх. Пастка — B: busily означає «заклопотано, метушливо» й не поєднується з listen."
+                },
+                {
+                  "number": 5,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "makes"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "gives"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "has"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "takes"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Make sense — сталий вираз «мати сенс». Пастка — C: «have sense» — калька з «мати сенс», такого виразу в цьому значенні немає."
+                },
+                {
+                  "number": 6,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "rather"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "other"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "more"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "better"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Rather than — «а не, замість»: подкасти трохи складніші, а не повністю зрозумілі. Пастка — B: other than означає «окрім», і порівняння двох варіантів не виражає."
+                },
+                {
+                  "number": 7,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "wide"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "long"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "tall"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "deep"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "A wide range — стала сполука «широкий спектр, велике розмаїття». Пастка — B: long описує довжину й не поєднується з range у значенні «розмаїття»."
+                },
+                {
+                  "number": 8,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "prepare"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "practise"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "get"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "learn"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Prepare someone for something — «готувати когось до чогось»: подкасти готують до справжніх розмов. Пастка — B: practise вживають без особи-додатка (learners practise speaking), тож «practise learners for conversations» неможливе."
+                }
+              ]
+            },
+            {
+              "id": "part-2",
+              "label": "Part 2",
+              "subtitle": "Open cloze",
+              "type": "open-cloze",
+              "instruction": "For questions 9–16, read the text below and think of the word which best fits each gap. Use only one word in each gap.",
+              "passage": {
+                "title": "What Is Your Cat Thinking?",
+                "paragraphs": [
+                  "Cats have lived alongside humans {{9}} at least ten thousand years, but scientists are only now beginning to understand how they think. For a long time, it was believed that cats, unlike dogs, paid little attention to their owners. Recent research, however, suggests {{10}} opposite.",
+                  "In one study, cats were able to recognise {{11}} own names, even when they were spoken by strangers. In another, they were more likely to approach an unfamiliar object if their owner looked happy than if he or she looked afraid. In other words, cats do notice how we feel — they just don’t always {{12}} it obvious.",
+                  "{{13}} dogs, which were bred over centuries to work closely with people, cats have mostly looked after {{14}}. {{15}} a result, they tend to show affection in quieter ways, such as slowly closing their eyes when they look at you. So next time your cat ignores you, don’t take it personally. It probably knows exactly who you are — it simply has better things to do than come running every {{16}} you call."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 9,
+                  "answers": [
+                    "for"
+                  ],
+                  "trap": "since",
+                  "explanation": "Після «have lived» тривалість періоду вводить for: for at least ten thousand years. Пастка — «since»: since вживають із точкою відліку (since 2010), а не з тривалістю."
+                },
+                {
+                  "number": 10,
+                  "answers": [
+                    "the"
+                  ],
+                  "trap": "an",
+                  "explanation": "Suggest the opposite — «свідчити про протилежне»; протилежне твердження одне, тож потрібен означений артикль. Пастка — «an»: неозначений артикль перед opposite у цьому значенні не вживають."
+                },
+                {
+                  "number": 11,
+                  "answers": [
+                    "their"
+                  ],
+                  "trap": "its",
+                  "explanation": "Займенник узгоджується з підметом cats у множині: recognise their own names. Пастка — «its»: однина не узгоджується з cats, хоча про одну тварину так сказали б."
+                },
+                {
+                  "number": 12,
+                  "answers": [
+                    "make"
+                  ],
+                  "trap": "do",
+                  "explanation": "Make something obvious — «показувати щось явно»: дієслово make + додаток + прикметник. Пастка — «do»: do не вживають у конструкції «зробити щось якимось»."
+                },
+                {
+                  "number": 13,
+                  "answers": [
+                    "unlike"
+                  ],
+                  "trap": "like",
+                  "explanation": "Unlike — «на відміну від»: котів протиставлено собакам, яких століттями виводили для роботи з людьми. Пастка — «like»: граматично можливе, але означало б, що коти схожі на собак, і суперечить решті речення."
+                },
+                {
+                  "number": 14,
+                  "answers": [
+                    "themselves"
+                  ],
+                  "trap": "them",
+                  "explanation": "Look after yourself / themselves — «дбати про себе»; підмет cats, тож потрібен зворотний займенник themselves. Пастка — «them»: them означав би інших тварин чи людей, а не самих котів."
+                },
+                {
+                  "number": 15,
+                  "answers": [
+                    "as"
+                  ],
+                  "trap": "for",
+                  "explanation": "As a result — «внаслідок цього»: спосіб життя котів пояснює, чому вони виявляють прихильність тихо. Пастка — «for»: «for a result» не є усталеним виразом, на відміну від as a result."
+                },
+                {
+                  "number": 16,
+                  "answers": [
+                    "time"
+                  ],
+                  "trap": "when",
+                  "explanation": "Every time — «щоразу, коли»: кіт не біжить щоразу, коли ви кличете. Пастка — «when»: «every when» неможливе, бо після every потрібен іменник."
+                }
+              ]
+            },
+            {
+              "id": "part-3",
+              "label": "Part 3",
+              "subtitle": "Word formation",
+              "type": "word-formation",
+              "instruction": "For questions 17–24, read the text below. Use the word given in capitals to form a word that fits in the gap.",
+              "passage": {
+                "title": "Volunteering Abroad",
+                "paragraphs": [
+                  "Every year, thousands of young people spend part of their gap year {{17}} abroad. Many describe it as one of the most {{18}} experiences of their lives. However, experts warn that not all projects are equally {{19}} to the communities they claim to help.",
+                  "Some organisations are {{20}} about where volunteers’ money actually goes, and some send young people to do jobs for which they are not {{21}} at all, such as building schools or teaching. Before choosing a project, it is worth reading reviews by previous volunteers, which are often more {{22}} than an organisation’s own website.",
+                  "A good organisation will explain its costs {{23}} and will make sure that its projects continue {{24}} after the volunteers have gone home."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 17,
+                  "stem": "VOLUNTEER",
+                  "answers": [
+                    "volunteering"
+                  ],
+                  "trap": "volunteers",
+                  "explanation": "Після spend time (тут part of their gap year) дієслово вживається у формі на -ing: spend time volunteering. Пастка — «volunteers»: іменник у множині тут не поєднується зі spend part of their gap year."
+                },
+                {
+                  "number": 18,
+                  "stem": "MEMORY",
+                  "answers": [
+                    "memorable"
+                  ],
+                  "trap": "memorial",
+                  "explanation": "Перед experiences потрібен прикметник «незабутній»: one of the most memorable experiences. Пастка — «memorial»: це «меморіальний, пам’ятний» (a memorial service) і стосується вшанування померлих."
+                },
+                {
+                  "number": 19,
+                  "stem": "BENEFIT",
+                  "answers": [
+                    "beneficial"
+                  ],
+                  "trap": "benefit",
+                  "explanation": "Після are equally потрібен прикметник, а to the communities підтверджує сполуку beneficial to — «корисний для». Пастка — «benefit»: іменник чи дієслово не можуть стояти після equally в цій позиції."
+                },
+                {
+                  "number": 20,
+                  "stem": "HONEST",
+                  "answers": [
+                    "dishonest"
+                  ],
+                  "trap": "honest",
+                  "explanation": "Абзац перелічує попередження експертів, тож потрібне негативне значення: some organisations are dishonest — «нечесні». Пастка — «honest»: форма правильна граматично, але суперечить змістові попередження."
+                },
+                {
+                  "number": 21,
+                  "stem": "QUALIFY",
+                  "answers": [
+                    "qualified"
+                  ],
+                  "trap": "qualification",
+                  "explanation": "Після are not потрібен прикметник: jobs for which they are not qualified — «для яких вони не мають кваліфікації». Пастка — «qualification»: іменник не може стояти після are not без артикля й не описує людей."
+                },
+                {
+                  "number": 22,
+                  "stem": "INFORM",
+                  "answers": [
+                    "informative"
+                  ],
+                  "trap": "informed",
+                  "explanation": "Відгуки самі дають інформацію, тож потрібен прикметник «інформативний»: more informative than the website. Пастка — «informed»: informed означає «поінформований» і описує людину, а не текст."
+                },
+                {
+                  "number": 23,
+                  "stem": "CLEAR",
+                  "answers": [
+                    "clearly"
+                  ],
+                  "trap": "clear",
+                  "explanation": "Дієслово explain описується прислівником: explain its costs clearly. Пастка — «clear»: прикметник не може означати дієслово explain; clear вжили б у конструкції make its costs clear."
+                },
+                {
+                  "number": 24,
+                  "stem": "SUCCESS",
+                  "answers": [
+                    "successfully"
+                  ],
+                  "trap": "successful",
+                  "explanation": "Дієслово continue описується прислівником: projects continue successfully — «проєкти успішно тривають». Пастка — «successful»: прикметник після continue означав би «лишатися успішним» і звучить неприродно в цьому реченні."
+                }
+              ]
+            },
+            {
+              "id": "part-4",
+              "label": "Part 4",
+              "subtitle": "Key word transformation",
+              "type": "transformation",
+              "instruction": "For questions 25–30, complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Do not change the word given. You must use between two and five words, including the word given.",
+              "questions": [
+                {
+                  "number": 25,
+                  "lead": "It’s possible that Sam missed the bus.",
+                  "keyword": "may",
+                  "before": "Sam",
+                  "after": "the bus.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "may have"
+                        ],
+                        [
+                          "missed"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "may miss",
+                  "explanation": "Припущення про минуле передає may have + третя форма: may have missed. Пастка — «may miss»: так говорять про можливість у майбутньому, а не про те, що вже сталося.",
+                  "points": 2
+                },
+                {
+                  "number": 26,
+                  "lead": "Nobody in our class is taller than Max.",
+                  "keyword": "tallest",
+                  "before": "Max",
+                  "after": "student in our class.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "is the"
+                        ],
+                        [
+                          "tallest"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "is tallest",
+                  "explanation": "Найвищий ступінь порівняння перед іменником вживають з означеним артиклем: Max is the tallest student in our class. Пастка — «is tallest»: без the конструкція неправильна, бо далі стоїть іменник student.",
+                  "points": 2
+                },
+                {
+                  "number": 27,
+                  "lead": "I didn’t go to the party because I was ill.",
+                  "keyword": "if",
+                  "before": "I would have gone to the party",
+                  "after": "ill.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "if I had"
+                        ],
+                        [
+                          "not been"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "if I wasn't",
+                  "explanation": "Умова в минулому, протилежна дійсності, вимагає Past Perfect: if I hadn’t been ill (if I had not been). Пастка — «if I wasn't»: Past Simple належить до другого типу умовних речень і не узгоджується з would have gone.",
+                  "points": 2
+                },
+                {
+                  "number": 28,
+                  "lead": "They are building a new sports centre near my school.",
+                  "keyword": "being",
+                  "before": "A new sports centre",
+                  "after": "near my school.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "is being",
+                          "'s being"
+                        ],
+                        [
+                          "built"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "is built",
+                  "explanation": "Дія триває зараз, тож потрібен пасив у Present Continuous: is being built. Пастка — «is built»: Present Simple Passive описує звичну дію чи стан і не містить ключового слова being.",
+                  "points": 2
+                },
+                {
+                  "number": 29,
+                  "lead": "Could you help me carry these boxes, please?",
+                  "keyword": "mind",
+                  "before": "Would",
+                  "after": "me carry these boxes, please?",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "you mind"
+                        ],
+                        [
+                          "helping"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "you mind to help",
+                  "explanation": "Ввічливе прохання would you mind вимагає форми на -ing: Would you mind helping me…? Пастка — «you mind to help»: після mind не вживають інфінітив із to.",
+                  "points": 2
+                },
+                {
+                  "number": 30,
+                  "lead": "I’d prefer to stay at home tonight.",
+                  "keyword": "rather",
+                  "before": "I",
+                  "after": "at home tonight.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "would rather",
+                          "'d rather"
+                        ],
+                        [
+                          "stay"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "would rather to stay",
+                  "explanation": "Would rather вимагає інфінітива без to: I would rather stay at home. Пастка — «would rather to stay»: частку to додають під впливом prefer to, але після rather вона не вживається.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-5",
+              "label": "Part 5",
+              "subtitle": "Multiple choice",
+              "type": "multiple-choice",
+              "instruction": "You are going to read an article by a young wildlife photographer. For questions 31–36, choose the answer (A, B, C or D) which you think fits best according to the text.",
+              "passage": {
+                "title": "The Bird on the Car Park Roof",
+                "paragraphs": [
+                  "People often assume that wildlife photographers spend their lives in rainforests and deserts, waiting days for a single picture of a rare animal. Some do. My own favourite photograph, however, was taken on the roof of a multi-storey car park in the middle of Leeds, between a recycling bin and a broken parking machine.",
+                  "I was fifteen at the time and had just been given my grandfather’s old camera. It was heavy, slow and, by modern standards, almost useless. I couldn’t afford to travel anywhere interesting, so I started photographing whatever I could find near home: pigeons, mostly, and the occasional crow. My friends found this hilarious. One of them asked whether I was planning an exhibition called ‘Fifty Shades of Grey Feathers’.",
+                  "Then, one evening in May, I noticed a bird I didn’t recognise circling above the car park. It was fast — much faster than any pigeon — and it dropped through the air in a way that made my heart race. When I got home, I spent two hours searching online before I was sure: it was a peregrine falcon, the fastest animal on the planet. I had no idea that they lived in cities, let alone in mine.",
+                  "Over the next few weeks, I went back to the car park almost every day after school. I learned that the falcons were nesting on a ledge of the office building next door, and that they hunted mainly in the early morning and late evening. I also learned a great deal about patience. For every photo worth keeping, there were hundreds that showed nothing but an empty sky, or a grey blur that might have been a bird or might have been my thumb.",
+                  "The picture that eventually changed things for me shows one of the adult falcons landing on the edge of the roof, wings fully open, with the city lights just coming on behind it. It is not technically perfect. The focus is slightly soft, and there is a lamp post in the corner that I would remove if I could. But when I entered it in a national competition for young photographers, it won first prize in its category, and a local newspaper printed it on its front page.",
+                  "What I am proudest of, though, is not the prize. After the newspaper story, the council set up a camera on the nest so that anyone could watch the chicks grow up online. Thousands of people did, including several of the friends who had laughed at my pigeons. Nature, it turns out, is not something you have to travel to find. Sometimes it is right above your head, if you remember to look up."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 31,
+                  "prompt": "What point does the writer make in the first paragraph?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "Most wildlife photographers work in difficult conditions."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "Good wildlife photos can be taken in unexpected places."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Car parks are a common subject for photographers."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Rare animals are the most rewarding subjects to photograph."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Автор протиставляє звичне уявлення про дощові ліси власному найкращому фото, зробленому на даху автостоянки. Пастка — A: про складні умови згадано лише як про поширену думку, з якою автор частково погоджується («Some do»), але це не головна думка абзацу.",
+                  "points": 2
+                },
+                {
+                  "number": 32,
+                  "prompt": "What does the writer say about the camera?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "It had been badly damaged."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "It was old-fashioned and slow to use."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "It was too expensive to take on trips."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "It had belonged to a famous photographer."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Камера була «heavy, slow and, by modern standards, almost useless», тобто застаріла й повільна. Пастка — C: про гроші сказано в наступному реченні, але йдеться про те, що автор не міг дозволити собі подорожувати, а не про ціну камери.",
+                  "points": 2
+                },
+                {
+                  "number": 33,
+                  "prompt": "The writer’s friends reacted to the pigeon photographs by",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "offering to help organise an exhibition."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "making fun of the writer’s choice of subject."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "suggesting more interesting birds to photograph."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "encouraging the writer to keep going."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Друзям було смішно (found this hilarious), а жарт про виставку «Fifty Shades of Grey Feathers» висміює голубів як тему. Пастка — A: виставку згадано лише в жарті, ніхто не пропонував допомогти її влаштувати.",
+                  "points": 2
+                },
+                {
+                  "number": 34,
+                  "prompt": "What does ‘let alone’ in the third paragraph show?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "The writer was even more surprised that falcons lived in their own city."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "The writer already knew that falcons lived in other cities."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "The writer did not want falcons in their city."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "The writer was not sure which city the falcons lived in."
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Let alone означає «а тим паче»: автор не знав, що соколи живуть у містах узагалі, і ще менше чекав побачити їх у своєму. Пастка — B: вираз підкреслює подвійне незнання, тож автор не знав і про інші міста.",
+                  "points": 2
+                },
+                {
+                  "number": 35,
+                  "prompt": "What does the writer emphasise in the fourth paragraph?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "how dangerous it was to work on the roof"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "how much time and effort good photos required"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "how easy it was to find the falcons’ nest"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "how much the old camera limited what they could do"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Автор приходив майже щодня й пише, що на кожне вдале фото припадали сотні невдалих, — абзац про терпіння. Пастка — D: розмиті кадри згадано, але причиною названо порожнє небо й власний палець, а не стару камеру.",
+                  "points": 2
+                },
+                {
+                  "number": 36,
+                  "prompt": "What is the writer most proud of?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "winning a national competition"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "having a photo printed in a newspaper"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "helping many people discover wildlife close to home"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "proving that their friends had been wrong"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Автор прямо каже, що пишається не нагородою, а тим, що тисячі людей почали стежити за пташенятами онлайн і побачили природу поруч. Пастка — D: друзі, які сміялися, теж дивилися трансляцію, але автор не говорить, що хотів довести їхню неправоту.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-6",
+              "label": "Part 6",
+              "subtitle": "Gapped text",
+              "type": "gapped-text",
+              "instruction": "You are going to read an article about songs that get stuck in our heads. Six sentences have been removed from the article. Choose from the sentences A–G the one which fits each gap (37–42). There is one extra sentence which you do not need to use.",
+              "passage": {
+                "title": "That Song Again!",
+                "paragraphs": [
+                  "You hear a few seconds of a song in a shop, and for the rest of the day it plays in your head, over and over again. Psychologists call this an ‘earworm’, and it is one of the most common experiences in the world. {{37}} Most people, however, find them more annoying than worrying.",
+                  "So why do certain songs get stuck while others do not? Researchers who studied thousands of reported earworms found that they tend to have a few things in common. {{38}} They are also usually quite fast and have a melody that rises and falls in a fairly predictable way, like many children’s songs.",
+                  "Our own state of mind matters too. Earworms often appear when we are doing something that does not require much concentration, such as walking or having a shower. {{39}} This may be why so many people report them late at night, when they are trying to fall asleep.",
+                  "Trying hard not to think about the song usually makes things worse. {{40}} Fortunately, scientists have found some simple ways to get rid of an earworm.",
+                  "One is to listen to the whole song from beginning to end. Earworms are usually just a short part of a tune, and the brain seems to want to ‘finish’ it. {{41}} Another surprising cure is chewing gum, which appears to interfere with the parts of the brain we use to ‘hear’ music in our heads.",
+                  "If all else fails, there is some comfort in the research. {{42}} In other words, if you can’t stop singing that song, you are probably in very good company."
+                ]
+              },
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "They are also more likely to appear when we are tired or stressed."
+                },
+                {
+                  "letter": "B",
+                  "text": "Studies suggest that around nine out of ten people have them at least once a week."
+                },
+                {
+                  "letter": "C",
+                  "text": "In rare cases, they can last for weeks and become a serious problem."
+                },
+                {
+                  "letter": "D",
+                  "text": "Slow songs, on the other hand, rarely get stuck in this way."
+                },
+                {
+                  "letter": "E",
+                  "text": "Hearing the complete version can give it the ending it is looking for."
+                },
+                {
+                  "letter": "F",
+                  "text": "The first is that they are usually songs people already know well and have heard recently."
+                },
+                {
+                  "letter": "G",
+                  "text": "The more we try to push it away, the more our brain seems to return to it."
+                }
+              ],
+              "questions": [
+                {
+                  "number": 37,
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Речення про рідкісні тривалі й серйозні випадки створює контраст із наступним «Most people, however, find them more annoying than worrying». Пастка — B: статистика про дев’ять із десяти людей нічого тривожного не містить, тож however після неї не має чого протиставляти.",
+                  "points": 2
+                },
+                {
+                  "number": 38,
+                  "key": "F",
+                  "trap": "D",
+                  "explanation": "«The first is…» відкриває перелік спільних рис, оголошений у попередньому реченні, а «They are also…» його продовжує. Пастка — D: повільні пісні пов’язані з темпом, але «on the other hand» тут нема з чим протиставити, а наступне «They are also usually quite fast» тоді стосувалося б повільних пісень.",
+                  "points": 2
+                },
+                {
+                  "number": 39,
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Втома пояснює наступне речення: «This may be why so many people report them late at night». Пастка — B: частота нав’язливих мелодій не пояснює, чому про них часто говорять саме вночі.",
+                  "points": 2
+                },
+                {
+                  "number": 40,
+                  "key": "G",
+                  "trap": "D",
+                  "explanation": "Речення розвиває попередню думку: що більше ми намагаємося не думати про пісню, то частіше мозок до неї повертається. Пастка — D: повільні пісні не мають стосунку до спроб позбутися мелодії, а «on the other hand» тут ні з чим не контрастує.",
+                  "points": 2
+                },
+                {
+                  "number": 41,
+                  "key": "E",
+                  "trap": "A",
+                  "explanation": "«The complete version» відсилає до прослуховування пісні від початку до кінця, а «the ending it is looking for» — до бажання мозку «завершити» мелодію. Пастка — A: «They are also more likely…» стосується причин появи мелодії, а не способів її позбутися.",
+                  "points": 2
+                },
+                {
+                  "number": 42,
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Статистика про дев’ять із десяти людей і є тією розрадою (comfort), а «In other words… in very good company» її перефразовує. Пастка — C: речення про серйозні випадки нікого не втішить і не узгоджується з «good company».",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-7",
+              "label": "Part 7",
+              "subtitle": "Multiple matching",
+              "type": "multiple-matching",
+              "instruction": "You are going to read an article in which four teenagers talk about their part-time jobs. For questions 43–52, choose from the teenagers (A–D). The teenagers may be chosen more than once.",
+              "title": "My Part-Time Job",
+              "stem": "Which teenager",
+              "sections": [
+                {
+                  "letter": "A",
+                  "title": "Lucas, dog walker",
+                  "paragraphs": [
+                    "I started walking dogs for neighbours when I was sixteen, and now I have eight regular clients. The money’s good, but the best thing is that I’m outside in the fresh air instead of stuck indoors. It isn’t always easy, though. Some dogs pull so hard that by the end of a walk my arms ache, and one of them once ran off after a squirrel and took twenty minutes to find. I’ve learned to be very organised: I keep a calendar of every walk and a list of each dog’s habits, like which ones mustn’t meet other dogs. Running it like a small business has taught me more than any school project."
+                  ]
+                },
+                {
+                  "letter": "B",
+                  "title": "Mia, café assistant",
+                  "paragraphs": [
+                    "I work weekends in a busy café near the station. The first month was a disaster — I dropped a whole tray of drinks on my second day, in front of a queue of about twenty people. My manager just laughed and handed me a mop, which I really appreciated. What I like most now is the team; we’re all about the same age and we often go out together after closing. The downside is that I have to be up at six on Saturdays, which my friends find very funny. The tips are a nice bonus, and I’m saving them for a trip to Japan next summer."
+                  ]
+                },
+                {
+                  "letter": "C",
+                  "title": "Arjun, online tutor",
+                  "paragraphs": [
+                    "I give online maths lessons to younger students, mostly aged eleven to fourteen. I had never thought about teaching until my cousin asked me to help her before an exam, and she did really well. Now I have six students a week. The hardest part is explaining something in a different way when the first explanation doesn’t work. It’s made me realise how much I actually understand — or don’t — myself. The hours are flexible, so I can fit lessons around my own studies, which is important because I’m preparing for university entrance exams."
+                  ]
+                },
+                {
+                  "letter": "D",
+                  "title": "Hanna, cinema assistant",
+                  "paragraphs": [
+                    "My job at the local cinema involves selling tickets and snacks, and checking the screens are clean between films. It’s not exactly exciting, and the evening shifts can finish quite late. I took the job mainly because staff get free tickets, and I’m a huge film fan — I’ve probably seen more films this year than in the rest of my life. I’ve also had to deal with some difficult customers, which was scary at first. Now I’m much better at staying calm when someone’s shouting at me about the price of popcorn."
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "number": 43,
+                  "prompt": "had an embarrassing accident soon after starting?",
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Мія на другий день упустила тацю з напоями перед чергою з двадцяти людей. Пастка — A: у Лукаса собака втік, але це сталося не одразу після початку роботи й не з його необережності на очах у людей."
+                },
+                {
+                  "number": 44,
+                  "prompt": "chose the job mainly for a reason other than the pay?",
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Ганна влаштувалася в кінотеатр «mainly because staff get free tickets». Пастка — A: Лукасові найбільше подобається свіже повітря, але він не каже, що обрав роботу саме через це."
+                },
+                {
+                  "number": 45,
+                  "prompt": "has become better at dealing with conflict?",
+                  "key": "D",
+                  "trap": "B",
+                  "explanation": "Ганна навчилася зберігати спокій, коли клієнти на неї кричать. Пастка — B: Мія розповідає про конфуз із тацею, але конфлікту з людьми там немає."
+                },
+                {
+                  "number": 46,
+                  "prompt": "got started after helping a member of their family?",
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Арджун почав навчати після того, як допоміг двоюрідній сестрі підготуватися до іспиту. Пастка — B: Мія згадує друзів, але не родину, і не пояснює, як почала працювати."
+                },
+                {
+                  "number": 47,
+                  "prompt": "values being able to fit work around other commitments?",
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Арджунові важливий гнучкий графік, бо він готується до вступних іспитів. Пастка — D: Ганна говорить про пізні вечірні зміни, тобто про незручний графік, а не гнучкий."
+                },
+                {
+                  "number": 48,
+                  "prompt": "appreciated how someone in charge reacted to a mistake?",
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Менеджер Мії засміявся й подав їй швабру, і вона це оцінила (which I really appreciated). Пастка — C: Арджун говорить про помилки в поясненнях, але ні про кого з керівників."
+                },
+                {
+                  "number": 49,
+                  "prompt": "keeps detailed records to help them do the job?",
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Лукас веде календар прогулянок і список звичок кожного собаки. Пастка — C: Арджун має шість учнів на тиждень, але не згадує жодних записів."
+                },
+                {
+                  "number": 50,
+                  "prompt": "says the job has shown them gaps in their own knowledge?",
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Арджун зрозумів, як багато він насправді знає — «or don’t», тобто побачив власні прогалини. Пастка — A: Лукас каже, що робота багато його навчила, але йдеться про організованість, а не про прогалини в знаннях."
+                },
+                {
+                  "number": 51,
+                  "prompt": "enjoys spending time with colleagues outside work?",
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Мія з колегами часто кудись ходить після закриття кав’ярні. Пастка — D: Ганна згадує, що дивиться багато фільмів, але не каже, що робить це з колегами."
+                },
+                {
+                  "number": 52,
+                  "prompt": "says the work can be physically tiring?",
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Деякі собаки тягнуть так сильно, що в Лукаса болять руки після прогулянки. Пастка — B: Мії доводиться рано вставати по суботах, але про фізичну втому вона не каже."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
