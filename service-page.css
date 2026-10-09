@@ -1021,3 +1021,20 @@
 .trn-sections p + p {
   margin-top: var(--space-3);
 }
+
+/* Тест рівня */
+.trn-rules {
+  margin: 0 0 var(--space-6);
+}
+
+.trn-level {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+  color: var(--color-heading);
+}
+
+.trn-level + .quiz-result-score {
+  font-size: var(--fs-xl);
+}

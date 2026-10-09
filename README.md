@@ -21,10 +21,11 @@ Here are some ideas to get you started:
 |---|---|---|---|
 | `nmt-trainer.html` | `data/nmt-trainer.json` | `nmt-trainer` | `nmt_trainer_complete` |
 | `b2-first-trainer.html` | `data/b2-first-trainer.json` | `b2-first-trainer` | `b2_first_trainer_complete` |
+| `level-test.html` | `data/level-test.json` | `level-test` | `level_test_complete` |
 
 Обидві сторінки працюють на спільному рушії `exam-trainer.js`; стилі — розділ «Тренажери» в `service-page.css`
 плюс `quiz/quiz.css`. Сторінка передає рушію налаштування атрибутами `data-src`, `data-storage-key` і `data-event`
-на `#trn-app`. Код лише відображає завдання з JSON, тому новий варіант додається без змін у коді.
+на `#trn-app`; `data-modes="test"` вимикає режим тренування (так працює тест рівня). Код лише відображає завдання з JSON, тому новий варіант додається без змін у коді.
 
 **Структура JSON:** `meta` (`exam`, `maxScore`, `durationMinutes`, для НМТ ще `thresholdScore`) і
 `variants[]` → `parts[]` → `tasks[]` → `questions[]`. У кожного запитання є `number`, `trap` (найімовірніша пастка)
@@ -58,6 +59,14 @@ Here are some ideas to get you started:
 `{"parts": [["has been", "'s been"], ["learning"]]}`. Повна відповідь — перша частина + друга; кожна частина
 окремо дає 1 бал, як у Cambridge. Без ключового слова або з довжиною поза межами 2–5 слів — 0 балів.
 Перед порівнянням відповідь зводиться до малих літер, а скорочення розгортаються (didn’t → did not, can’t → cannot).
+
+### Тест рівня (`meta.exam: "level-test"`)
+
+П’ять частин `multiple-choice` по 8 завдань; у кожної частини є поле `level` (A1, A2, B1, B2, C1). Завдання з коротким
+текстом мають поле `text`, як у НМТ. Рівень визначає `meta.levels`: рівень зараховано, якщо в його частині й у всіх
+нижчих набрано щонайменше `pass` балів (зараз 6 із 8); `description` — що означає рівень. Якщо не зараховано
+жодного, показується `meta.belowLevels`, а `meta.unevenNote` додається, коли вищий рівень пройдено попри
+непройдений нижчий. Поріг і описи можна змінювати в JSON без змін у коді.
 
 ### Як додати варіант
 
