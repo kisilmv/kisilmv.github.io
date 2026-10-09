@@ -28,7 +28,7 @@
               "options": [
                 {
                   "letter": "A",
-                  "text": "borrow equipment for free"
+                  "text": "hire equipment for a few days"
                 },
                 {
                   "letter": "B",
@@ -72,7 +72,7 @@
                   },
                   "key": "C",
                   "trap": "A",
-                  "explanation": "Волонтери покажуть, як полагодити річ власноруч, і ви підете «with a new skill», тобто оголошення пропонує навчитися практичного вміння. Пастка — A: «Tools provided» означає, що інструментами користуються на місці, а не позичають їх додому."
+                  "explanation": "Волонтери покажуть, як полагодити річ власноруч, і ви підете «with a new skill», тобто оголошення пропонує навчитися практичного вміння. Пастка — A: «Tools provided» означає лише, що інструменти дають на місці під час майстер-класу; брати обладнання напрокат на кілька днів тут не пропонують."
                 },
                 {
                   "number": 2,
@@ -114,7 +114,7 @@
                   },
                   "key": "D",
                   "trap": "A",
-                  "explanation": "«Rent a table… and sell the clothes, books and games you no longer use» — ярмарок для тих, хто хоче продати непотрібні речі. Пастка — A: стіл не позичають безкоштовно, а орендують за £5."
+                  "explanation": "«Rent a table… and sell the clothes, books and games you no longer use» — ярмарок для тих, хто хоче продати непотрібні речі. Пастка — A: стіл орендують лише на кілька годин ярмарку, щоб продати власні речі, а не беруть напрокат обладнання."
                 },
                 {
                   "number": 5,
@@ -165,7 +165,7 @@
                     },
                     {
                       "letter": "D",
-                      "text": "to describe a typical teenager’s morning routine"
+                      "text": "to explain how much sleep teenagers need"
                     }
                   ],
                   "key": "B",
@@ -538,7 +538,7 @@
                     },
                     {
                       "letter": "D",
-                      "text": "rest"
+                      "text": "pay"
                     }
                   ],
                   "key": "A",
@@ -648,7 +648,7 @@
                     },
                     {
                       "letter": "D",
-                      "text": "was creating"
+                      "text": "will create"
                     }
                   ],
                   "key": "C",
@@ -684,11 +684,11 @@
                   "options": [
                     {
                       "letter": "A",
-                      "text": "was"
+                      "text": "is"
                     },
                     {
                       "letter": "B",
-                      "text": "were"
+                      "text": "will be"
                     },
                     {
                       "letter": "C",
@@ -700,8 +700,8 @@
                     }
                   ],
                   "key": "C",
-                  "trap": "B",
-                  "explanation": "Друга частина речення — would have found, отже, це умовне речення третього типу про уявне минуле, і після if потрібен Past Perfect: had been. Пастка — B: were вживають в умовних реченнях другого типу про теперішнє, а тут ідеться про те, що вже минуло (back then)."
+                  "trap": "D",
+                  "explanation": "Друга частина речення — would have found, отже, це умовне речення третього типу про уявне минуле, і після if потрібен Past Perfect: had been. Пастка — D: has been пов’язує минуле з теперішнім, а тут ідеться про уявну ситуацію в минулому (back then), яка вже не може змінитися."
                 },
                 {
                   "number": 31,
@@ -776,7 +776,7 @@
               "options": [
                 {
                   "letter": "A",
-                  "text": "invite people to a free class"
+                  "text": "invite beginners to a weekly club"
                 },
                 {
                   "letter": "B",
@@ -854,12 +854,12 @@
                     "title": "CHECKMATE!",
                     "body": [
                       "Fancy learning to play chess? Join our beginners’ club at the Youth Centre every Thursday at 5 pm.",
-                      "Your first lesson is free, boards and clocks are provided, and no experience is needed — just bring your curiosity!"
+                      "Boards and clocks are provided, and no experience is needed — just bring your curiosity!"
                     ]
                   },
                   "key": "A",
                   "trap": "G",
-                  "explanation": "Шаховий клуб запрошує початківців, і перше заняття безкоштовне (Your first lesson is free). Пастка — G: «Join our beginners’ club» схоже на набір людей, але клуб шукає учнів, а не волонтерів."
+                  "explanation": "Клуб щочетверга запрошує початківців навчитися грати в шахи (Join our beginners’ club… every Thursday). Пастка — G: «Join our club» схоже на набір людей, але клуб шукає учнів, а не волонтерів."
                 },
                 {
                   "number": 5,
@@ -1162,7 +1162,7 @@
                 },
                 {
                   "letter": "C",
-                  "text": "which often left me tired the next morning"
+                  "text": "so I often felt tired the next morning"
                 },
                 {
                   "letter": "D",
@@ -1190,7 +1190,7 @@
                   "number": 17,
                   "key": "A",
                   "trap": "C",
-                  "explanation": "«Without even thinking about it» пояснює, що телефон брали автоматично, за звичкою, і це логічно веде до «only to remember that there was nothing to check». Пастка — C: which можна приєднати до phone, але втома зранку пов’язана з вечірнім сидінням в екрані, про яке йдеться в третьому абзаці."
+                  "explanation": "«Without even thinking about it» пояснює, що телефон брали автоматично, за звичкою, і це логічно веде до «only to remember that there was nothing to check». Пастка — C: so I often felt tired… говорить про втому зранку, а не про те, як брали телефон, і розриває зв’язок із «only to remember»."
                 },
                 {
                   "number": 18,
@@ -1202,13 +1202,13 @@
                   "number": 19,
                   "key": "C",
                   "trap": "A",
-                  "explanation": "Which відсилає до всієї попередньої дії (сидіти в екрані до пізньої ночі) і називає її наслідок — утому вранці, що контрастує з наступним реченням про відпочинок. Пастка — A: «without even thinking about it» граматично можливе, але не пояснює, чому головним сюрпризом став саме сон."
+                  "explanation": "So вводить наслідок попередньої дії (сидіти в екрані до пізньої ночі) — утому вранці, що контрастує з наступним реченням про відпочинок. Пастка — A: «without even thinking about it» граматично можливе, але не пояснює, чому головним сюрпризом став саме сон."
                 },
                 {
                   "number": 20,
                   "key": "D",
                   "trap": "C",
-                  "explanation": "Because пояснює причину: запрошення надіслали лише онлайн, і без соцмереж про вечірку не дізналися. Пастка — C: which often left me tired… граматично приєднується, але не пояснює, чому вечірку пропустили."
+                  "explanation": "Because пояснює причину: запрошення надіслали лише онлайн, і без соцмереж про вечірку не дізналися. Пастка — C: so I often felt tired… описує звичну втому, а не причину, чому пропустили одну конкретну вечірку."
                 },
                 {
                   "number": 21,
@@ -1462,16 +1462,16 @@
                     },
                     {
                       "letter": "C",
-                      "text": "until"
+                      "text": "unless"
                     },
                     {
                       "letter": "D",
-                      "text": "unless"
+                      "text": "despite"
                     }
                   ],
                   "key": "A",
-                  "trap": "C",
-                  "explanation": "Панелі накопичують енергію вдень, тож лавка працює навіть після того, як стемніє, — even after it gets dark. Пастка — C: until означає «доки не», а «працює навіть доки не стемніє» суперечить думці про накопичену енергію."
+                  "trap": "D",
+                  "explanation": "Панелі накопичують енергію вдень, тож лавка працює навіть після того, як стемніє, — even after it gets dark. Пастка — D: despite означає «попри», але після нього вживають іменник або форму на -ing (despite the darkness), а не речення з підметом і присудком."
                 },
                 {
                   "number": 32,
@@ -1482,7 +1482,7 @@
                     },
                     {
                       "letter": "B",
-                      "text": "installs"
+                      "text": "installed"
                     },
                     {
                       "letter": "C",
