@@ -1,6 +1,7 @@
 {
   "version": 1,
   "meta": {
+    "exam": "nmt-2026",
     "title": "Тренажер НМТ з англійської мови",
     "language": "en",
     "maxScore": 32,
