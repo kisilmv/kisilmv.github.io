@@ -1,5 +1,6 @@
 /* ==========================================================================
    Сторінки напрямів (nmt.html, cambridge.html, it-english.html, business-english.html)
+   і тренажер НМТ (nmt-trainer.html)
    Використовує дизайн-токени та компоненти зі styles.css і booking.css
    ========================================================================== */
 
@@ -152,4 +153,717 @@
   .svc-section .step {
     padding: var(--space-5) var(--space-5) var(--space-5) 4.25rem;
   }
+}
+
+/* ==========================================================================
+   Тренажер НМТ (nmt-trainer.html)
+   Доповнює компоненти з quiz/quiz.css: .quiz-letter, .quiz-verdict, .quiz-note, .quiz-result
+   ========================================================================== */
+
+.nmt-app {
+  max-width: 48rem;
+  margin-bottom: var(--space-12);
+}
+
+.nmt-screen[hidden],
+.nmt-app [hidden] {
+  display: none !important;
+}
+
+.nmt-screen-title {
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-xl);
+}
+
+.nmt-screen-title:focus,
+.nmt-task-title:focus,
+.nmt-feedback:focus {
+  outline: none;
+}
+
+.nmt-status {
+  color: var(--color-text-muted);
+}
+
+.nmt-status.is-error {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+/* Вибір варіанта й режиму */
+.nmt-resume {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.nmt-resume .booking-actions {
+  margin-top: var(--space-4);
+}
+
+.nmt-fieldset {
+  min-width: 0;
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  border: 0;
+}
+
+.nmt-fieldset legend {
+  margin-bottom: var(--space-3);
+  padding: 0;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.nmt-choices {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 40em) {
+  .nmt-choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.nmt-choice {
+  position: relative;
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease), background-color var(--duration) var(--ease);
+}
+
+.nmt-choice:hover {
+  border-color: var(--color-accent);
+}
+
+.nmt-choice input {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--color-accent);
+}
+
+.nmt-choice:has(input:checked) {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+.nmt-choice-body {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.nmt-choice-title {
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.nmt-choice-text {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.nmt-check {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  margin-top: var(--space-4);
+  font-size: var(--fs-base);
+  cursor: pointer;
+}
+
+.nmt-check input {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0.2rem 0 0;
+  accent-color: var(--color-accent);
+}
+
+.nmt-check:has(input:disabled) {
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+.nmt-best {
+  margin-top: var(--space-8);
+}
+
+.nmt-best-title {
+  margin-bottom: var(--space-2);
+  font-size: var(--fs-md);
+}
+
+.nmt-best-list {
+  margin: 0;
+  padding-left: var(--space-5);
+  color: var(--color-text-muted);
+}
+
+/* Панель під час виконання */
+.nmt-toolbar {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin: 0 calc(-1 * var(--space-2));
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.nmt-runner-title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-lg);
+}
+
+.nmt-counter,
+.nmt-timer {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.nmt-timer {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.nmt-timer.is-low {
+  color: var(--color-error);
+}
+
+.nmt-toolbar .btn {
+  margin-left: auto;
+}
+
+.nmt-task-nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nmt-tab {
+  display: inline-grid;
+  justify-items: center;
+  min-width: 4.5rem;
+  min-height: 2.75rem;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.nmt-tab:hover {
+  border-color: var(--color-accent);
+}
+
+.nmt-tab:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.nmt-tab-label {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.nmt-tab-range {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.nmt-tab.is-done {
+  border-color: var(--color-accent);
+}
+
+.nmt-tab.is-done .nmt-tab-label::after {
+  content: " ✓";
+  color: var(--color-accent);
+}
+
+.nmt-tab[aria-current="step"] {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.nmt-tab[aria-current="step"] .nmt-tab-range,
+.nmt-tab[aria-current="step"] .nmt-tab-label::after {
+  color: inherit;
+}
+
+/* Завдання */
+.nmt-task {
+  margin-top: var(--space-6);
+}
+
+.nmt-part {
+  margin: 0 0 var(--space-1);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent-strong);
+}
+
+.nmt-task-title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-xl);
+  scroll-margin-top: calc(var(--header-h) + 7rem);
+}
+
+.nmt-instruction {
+  margin: 0 0 var(--space-5);
+  font-weight: 600;
+}
+
+.nmt-set-title,
+.nmt-passage-title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-lg);
+  text-align: center;
+}
+
+.nmt-passage {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+.nmt-passage p + p {
+  margin-top: var(--space-3);
+}
+
+.nmt-gap {
+  padding: 0 0.15em;
+  border-radius: 0.25rem;
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+}
+
+.nmt-gap.is-filled {
+  font-style: italic;
+}
+
+.nmt-gap-num {
+  font-family: var(--font-sans);
+  font-size: 0.85em;
+}
+
+.nmt-gap-line {
+  letter-spacing: -0.05em;
+}
+
+.nmt-options-box {
+  margin-bottom: var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-alt);
+}
+
+.nmt-options-title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.nmt-stem {
+  margin: 0 0 var(--space-2);
+  font-weight: 600;
+}
+
+.nmt-options-list {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nmt-options-list li {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.nmt-options-letter {
+  flex: none;
+  width: 1.25rem;
+  color: var(--color-accent-strong);
+}
+
+.nmt-questions {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nmt-q {
+  padding: var(--space-5) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 40em) {
+  .nmt-q {
+    padding: var(--space-6);
+  }
+}
+
+.nmt-text-card {
+  position: relative;
+  margin-bottom: var(--space-5);
+  padding: var(--space-4) var(--space-4) var(--space-4) 3rem;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  overflow-wrap: break-word;
+}
+
+.nmt-text-num {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-weight: 700;
+  color: var(--color-accent-strong);
+}
+
+.nmt-text-title {
+  margin: 0 0 var(--space-2);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-heading);
+}
+
+.nmt-text-line {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.nmt-text-line + .nmt-text-line {
+  margin-top: var(--space-2);
+}
+
+.nmt-q-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.nmt-q-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin-bottom: var(--space-3);
+  padding: 0;
+  color: var(--color-heading);
+}
+
+.nmt-q-num {
+  font-weight: 700;
+  color: var(--color-accent-strong);
+}
+
+.nmt-q-prompt {
+  font-weight: 600;
+}
+
+/* Радіокнопки: сама кнопка прихована, але лишається у фокусі клавіатури */
+.nmt-radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+}
+
+.nmt-letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.nmt-letter,
+.nmt-opt {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease), background-color var(--duration) var(--ease);
+}
+
+.nmt-letter {
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.nmt-letter .quiz-letter {
+  border: 0;
+  font-size: var(--fs-sm);
+}
+
+.nmt-opts {
+  display: grid;
+  gap: var(--space-2);
+}
+
+@media (min-width: 40em) {
+  .nmt-opts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.nmt-opt {
+  gap: var(--space-3);
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-4);
+  line-height: 1.4;
+}
+
+.nmt-opt-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.nmt-letter:hover,
+.nmt-opt:hover {
+  border-color: var(--color-accent);
+}
+
+.nmt-radio:focus-visible + .quiz-letter {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.nmt-radio:checked + .quiz-letter {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.nmt-letter:has(.nmt-radio:checked),
+.nmt-opt:has(.nmt-radio:checked) {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+.nmt-letter:has(.nmt-radio:disabled),
+.nmt-opt:has(.nmt-radio:disabled) {
+  cursor: default;
+}
+
+.nmt-letter.is-correct,
+.nmt-opt.is-correct {
+  border-color: var(--color-success);
+  background-color: color-mix(in srgb, var(--color-success) 14%, var(--color-surface));
+}
+
+.nmt-letter.is-correct .quiz-letter,
+.nmt-opt.is-correct .quiz-letter {
+  border-color: var(--color-success);
+  background-color: var(--color-success);
+  color: var(--color-surface);
+}
+
+.nmt-letter.is-wrong,
+.nmt-opt.is-wrong {
+  border-color: var(--color-error);
+  background-color: color-mix(in srgb, var(--color-error) 12%, var(--color-surface));
+}
+
+.nmt-letter.is-wrong .quiz-letter,
+.nmt-opt.is-wrong .quiz-letter {
+  border-color: var(--color-error);
+  background-color: var(--color-error);
+  color: var(--color-surface);
+}
+
+.nmt-q-actions {
+  margin-top: var(--space-4);
+}
+
+.nmt-feedback {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.nmt-feedback p {
+  margin: 0 0 var(--space-3);
+}
+
+.nmt-feedback p:last-child {
+  margin-bottom: 0;
+}
+
+.nmt-pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.nmt-pager #nmt-next {
+  margin-left: auto;
+}
+
+/* Результат і розбір */
+.nmt-result-box {
+  margin-top: 0;
+}
+
+.nmt-result-note {
+  max-width: 34rem;
+  margin: 0 auto;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.nmt-result-note a,
+.nmt-cta a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.nmt-cta {
+  margin: var(--space-5) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.nmt-review {
+  margin-top: var(--space-10);
+}
+
+.nmt-review-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+}
+
+.nmt-review-head .nmt-check {
+  margin-top: 0;
+}
+
+.nmt-review-title {
+  margin: 0;
+  font-size: var(--fs-xl);
+}
+
+.nmt-review-task {
+  margin-top: var(--space-6);
+}
+
+.nmt-review-task-title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-md);
+}
+
+.nmt-review-items {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nmt-review-item {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-success);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+
+.nmt-review-item.is-wrong {
+  border-left-color: var(--color-error);
+}
+
+.nmt-review-item p {
+  margin: 0;
+}
+
+.nmt-review-item p + p {
+  margin-top: var(--space-2);
+}
+
+.nmt-review-head-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.nmt-review-num {
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.nmt-review-status {
+  font-weight: 600;
+}
+
+.nmt-review-context {
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.is-only-wrong .nmt-review-item.is-right,
+.is-only-wrong .nmt-review-task.is-all-right {
+  display: none;
+}
+
+.nmt-about {
+  margin-bottom: var(--space-12);
+}
+
+.nmt-about .svc-note + p {
+  margin-top: var(--space-4);
 }
