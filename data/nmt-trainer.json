@@ -1,0 +1,1507 @@
+{
+  "version": 1,
+  "meta": {
+    "title": "Тренажер НМТ з англійської мови",
+    "language": "en",
+    "maxScore": 32,
+    "thresholdScore": 5,
+    "durationMinutes": 60,
+    "formatSource": "Загальна характеристика сертифікаційної роботи НМТ 2026 року (частина «Англійська мова»), УЦОЯО"
+  },
+  "variants": [
+    {
+      "id": "1",
+      "title": "Варіант 1",
+      "level": "B1–B2",
+      "parts": [
+        {
+          "id": "reading",
+          "title": "Читання",
+          "titleEn": "Reading",
+          "tasks": [
+            {
+              "id": "task-1",
+              "label": "Task 1",
+              "type": "matching",
+              "instruction": "Read the texts below. Match choices (A–H) to (1–5). There are three choices you do not need to use.",
+              "stem": "This notice is mainly for people who want to ___.",
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "hire equipment for a few days"
+                },
+                {
+                  "letter": "B",
+                  "text": "find a part-time job"
+                },
+                {
+                  "letter": "C",
+                  "text": "learn a practical skill"
+                },
+                {
+                  "letter": "D",
+                  "text": "sell things they no longer need"
+                },
+                {
+                  "letter": "E",
+                  "text": "take part in a sports competition"
+                },
+                {
+                  "letter": "F",
+                  "text": "help animals"
+                },
+                {
+                  "letter": "G",
+                  "text": "give their opinion in a survey"
+                },
+                {
+                  "letter": "H",
+                  "text": "find a place to live"
+                }
+              ],
+              "questions": [
+                {
+                  "number": 1,
+                  "text": {
+                    "title": "REPAIR CAFÉ",
+                    "body": [
+                      "Broken toaster? Torn jacket? Wobbly chair? Don’t throw it away!",
+                      "Bring it to the Repair Café at Oak Street Community Centre, every first Saturday of the month, 10 am – 2 pm.",
+                      "Our volunteer fixers will show you, step by step, how to mend it yourself. Tools provided. You’ll leave with your item working again — and with a new skill!"
+                    ]
+                  },
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Волонтери покажуть, як полагодити річ власноруч, і ви підете «with a new skill», тобто оголошення пропонує навчитися практичного вміння. Пастка — A: «Tools provided» означає лише, що інструменти дають на місці під час майстер-класу; брати обладнання напрокат на кілька днів тут не пропонують."
+                },
+                {
+                  "number": 2,
+                  "text": {
+                    "title": "FLATMATE WANTED",
+                    "body": [
+                      "Friendly second-year medical student is looking for a tidy, quiet person to share a two-bedroom flat, 10 minutes’ walk from the university.",
+                      "• own room, shared kitchen and bathroom\n• £420 a month, bills included\n• available from 1 September",
+                      "No smokers, please. Text Olena: 07700 900123"
+                    ]
+                  },
+                  "key": "H",
+                  "trap": "B",
+                  "explanation": "«Flatmate wanted», окрема кімната та «£420 a month, bills included» — це пошук сусіда в квартиру, отже, оголошення для тих, хто шукає житло. Пастка — B: студентка й щомісячна сума нагадують вакансію, але гроші тут — плата за оренду, а не заробіток."
+                },
+                {
+                  "number": 3,
+                  "text": {
+                    "title": "PET PALS ANIMAL SHELTER NEEDS YOU!",
+                    "body": [
+                      "We are looking for weekend dog walkers. No experience needed — just two free hours on a Saturday or Sunday morning and a love of animals.",
+                      "The role is unpaid, but our dogs will thank you with lots of tail-wagging!",
+                      "Sign up at the shelter reception."
+                    ]
+                  },
+                  "key": "F",
+                  "trap": "B",
+                  "explanation": "Притулок шукає людей, які вигулюватимуть собак, тобто оголошення для тих, хто хоче допомагати тваринам. Пастка — B: «We are looking for… dog walkers» звучить як вакансія, але слово unpaid прямо вказує, що платні за це немає."
+                },
+                {
+                  "number": 4,
+                  "text": {
+                    "title": "SWAP & SELL MARKET",
+                    "body": [
+                      "Clear out your wardrobe and make some pocket money!",
+                      "Saturday 12 October, 9 am – 1 pm, Riverside School gym.",
+                      "Rent a table for just £5 and sell the clothes, books and games you no longer use. All table fees go to the school library."
+                    ]
+                  },
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "«Rent a table… and sell the clothes, books and games you no longer use» — ярмарок для тих, хто хоче продати непотрібні речі. Пастка — A: стіл орендують лише на кілька годин ярмарку, щоб продати власні речі, а не беруть напрокат обладнання."
+                },
+                {
+                  "number": 5,
+                  "text": {
+                    "title": "HAVE YOUR SAY!",
+                    "body": [
+                      "The city council is planning new cycle lanes in the Riverside district. Before any work begins, we want to hear from the people who live and travel here.",
+                      "Answer ten short questions online at riverside-council.example/cycle before 30 November. It only takes five minutes."
+                    ]
+                  },
+                  "key": "G",
+                  "trap": "E",
+                  "explanation": "«Have your say» і прохання відповісти на десять запитань онлайн означають, що міська рада збирає думки мешканців, тобто проводить опитування. Пастка — E: cycle lanes асоціюються зі спортом, але йдеться про велодоріжки, а не про змагання."
+                }
+              ]
+            },
+            {
+              "id": "task-2",
+              "label": "Task 2",
+              "type": "multiple-choice",
+              "instruction": "Read the text below. For questions (6–10) choose the correct answer (A, B, C or D).",
+              "passage": {
+                "title": "Night Owls by Nature",
+                "paragraphs": [
+                  "Every school morning, millions of parents fight the same battle: a teenager who simply will not get out of bed. It is easy to blame late-night phone use or plain laziness, but scientists say the real reason is far less obvious. Much of it is written into the teenage body itself.",
+                  "Our sleep is controlled by an internal clock that tells us when to feel sleepy and when to wake up. One of its signals is melatonin, a hormone that rises in the evening and makes us drowsy. In young children, melatonin levels rise early in the evening, which is one reason why a seven-year-old is often asleep by eight. During puberty, however, this rise happens one to two hours later. As a result, many teenagers do not feel tired until eleven o’clock or even midnight, no matter how early they go to bed.",
+                  "The problem is that the school day does not move with them. Experts recommend that teenagers get eight to ten hours of sleep a night. A student who cannot fall asleep before midnight but has to get up at half past six is losing at least two hours every night. By Friday, that adds up to a whole night of missed sleep. Catching up at the weekend helps a little, but sleeping until noon on Sunday makes it even harder to fall asleep that evening — and the cycle starts again.",
+                  "Lack of sleep affects more than mood. Tired students find it harder to concentrate and to remember what they learned the day before, and they are more likely to have accidents on the way to school. Some researchers also link poor sleep to anxiety and to unhealthy eating habits.",
+                  "So what can be done? Some schools have experimented with starting lessons later, at half past eight or nine instead of eight. Where this has been tried, students have generally slept longer and arrived at class more alert, although the change is not always popular with parents who start work early. Teenagers can also help themselves: switching off screens an hour before bed, getting up at the same time every day and spending time in daylight in the morning can all move the body clock a little earlier."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 6,
+                  "prompt": "What is the main purpose of PARAGRAPH 1?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "to criticise parents for being too strict"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "to suggest that a common explanation may be wrong"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "to show that phones are the main cause of the problem"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "to explain how much sleep teenagers need"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Автор згадує телефони й лінощі як звичне пояснення, а тоді каже, що справжня причина «far less obvious» і закладена в самому організмі. Пастка — C: телефони в абзаці є, але саме як версія, яку автор ставить під сумнів."
+                },
+                {
+                  "number": 7,
+                  "prompt": "Why do teenagers feel sleepy later than young children?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "They spend more time in front of screens."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "Their bodies start producing melatonin later in the evening."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Their bodies produce less melatonin than children’s bodies."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "They have more homework to do in the evening."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "У тексті сказано, що під час статевого дозрівання рівень мелатоніну зростає на одну-дві години пізніше (this rise happens one to two hours later). Пастка — C: про меншу кількість мелатоніну не йдеться, змінюється лише час, коли він з’являється."
+                },
+                {
+                  "number": 8,
+                  "prompt": "What does the author say about sleeping late at the weekend?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "It fully makes up for the sleep lost during the week."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "It is the main reason why teenagers feel tired."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "It can make it harder to fall asleep on Sunday night."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "It is recommended by most sleep experts."
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Автор пише, що сон до полудня в неділю «makes it even harder to fall asleep that evening», тобто заважає заснути наступного вечора. Пастка — A: відсипання «helps a little», отже, допомагає лише трохи, а не повністю компенсує втрачений сон."
+                },
+                {
+                  "number": 9,
+                  "prompt": "The author mentions all of the following effects of sleep loss EXCEPT ___.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "difficulty remembering new information"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "a higher risk of accidents"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "lower marks in physical education"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "unhealthy eating habits"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "У четвертому абзаці названо труднощі з концентрацією й запам’ятовуванням, ризик нещасних випадків, тривожність і нездорове харчування, а про оцінки з фізкультури не сказано нічого. Пастка — D: нездорове харчування здається несподіваним наслідком недосипу, проте його названо прямо (unhealthy eating habits)."
+                },
+                {
+                  "number": 10,
+                  "prompt": "What is said about starting school later?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "It has been introduced in most schools."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "It helps students but is not welcomed by everyone."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Most students are against it."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "It makes students sleep less at the weekend."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Пізніший початок уроків допомагає учням висипатися, але «is not always popular with parents», тобто подобається не всім. Пастка — C: невдоволення висловлюють батьки, які рано починають роботу, а не учні."
+                }
+              ]
+            },
+            {
+              "id": "task-3",
+              "label": "Task 3",
+              "type": "matching",
+              "instruction": "Read the texts below. Match choices (A–H) to (11–16). There are two choices you do not need to use.",
+              "title": "Summer Jobs for Students",
+              "stem": "This job ___.",
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "is open only to people with previous experience"
+                },
+                {
+                  "letter": "B",
+                  "text": "is done mostly at night"
+                },
+                {
+                  "letter": "C",
+                  "text": "offers free meals as well as a wage"
+                },
+                {
+                  "letter": "D",
+                  "text": "can be done from home"
+                },
+                {
+                  "letter": "E",
+                  "text": "involves looking after young children"
+                },
+                {
+                  "letter": "F",
+                  "text": "requires a driving licence"
+                },
+                {
+                  "letter": "G",
+                  "text": "includes training before the season starts"
+                },
+                {
+                  "letter": "H",
+                  "text": "pays according to how much you produce"
+                }
+              ],
+              "questions": [
+                {
+                  "number": 11,
+                  "text": {
+                    "title": "Fruit picker, Kent",
+                    "body": [
+                      "From June to August, farms in the south of England need thousands of extra hands to pick strawberries and cherries. Work starts early in the morning, before the sun gets too hot. Pickers earn a set amount for every kilo they fill, so fast workers can take home much more than slow ones. Accommodation is in shared caravans on the farm."
+                    ]
+                  },
+                  "key": "H",
+                  "trap": "B",
+                  "explanation": "Збирачі отримують фіксовану суму за кожен кілограм (a set amount for every kilo), тож заробіток залежить від того, скільки зібрано. Пастка — B: робота починається рано-вранці, ще до спеки, але це не нічна зміна."
+                },
+                {
+                  "number": 12,
+                  "text": {
+                    "title": "Camp counsellor, USA",
+                    "body": [
+                      "Summer camps in the USA hire young people from all over the world to look after groups of children aged seven to twelve. Counsellors lead games, swimming lessons and campfire evenings, and sleep in a cabin with their group. You don’t need any previous experience — just energy, patience and a sense of humour."
+                    ]
+                  },
+                  "key": "E",
+                  "trap": "A",
+                  "explanation": "Вожаті опікуються групами дітей віком від семи до дванадцяти років, тобто доглядають малих дітей. Пастка — A: про досвід у тексті згадано, але навпаки — «You don’t need any previous experience»."
+                },
+                {
+                  "number": 13,
+                  "text": {
+                    "title": "Lifeguard, city pools",
+                    "body": [
+                      "Before the outdoor pools open in June, all new lifeguards complete a five-day course in rescue skills and first aid, paid for by the city. After that, you work six-hour shifts, watching swimmers of all ages and keeping the pool area safe."
+                    ]
+                  },
+                  "key": "G",
+                  "trap": "E",
+                  "explanation": "Перед відкриттям басейнів у червні всі нові рятувальники проходять п’ятиденний курс із рятування та першої допомоги. Пастка — E: серед відвідувачів басейну бувають діти, але рятувальник стежить за плавцями будь-якого віку (swimmers of all ages)."
+                },
+                {
+                  "number": 14,
+                  "text": {
+                    "title": "Photo editor, online shop",
+                    "body": [
+                      "An online shop selling handmade jewellery is looking for a student to edit product photos and write short descriptions. You work on your own laptop, there is no office to travel to, and you can organise your hours as you like. The shop pays a fixed weekly fee."
+                    ]
+                  },
+                  "key": "D",
+                  "trap": "H",
+                  "explanation": "Працюють на власному ноутбуці, і «there is no office to travel to», тож цю роботу можна виконувати вдома. Пастка — H: крамниця платить фіксовану суму щотижня (a fixed weekly fee), а не за кількість оброблених фото."
+                },
+                {
+                  "number": 15,
+                  "text": {
+                    "title": "Kitchen assistant, the Carpathians",
+                    "body": [
+                      "Mountain hotels in the Carpathians get busy in July and August and need kitchen assistants to wash dishes, prepare vegetables and keep the kitchen clean. As well as a weekly wage, staff get breakfast, lunch and dinner in the hotel canteen at no cost."
+                    ]
+                  },
+                  "key": "C",
+                  "trap": "H",
+                  "explanation": "Окрім тижневої зарплати, працівники безкоштовно (at no cost) снідають, обідають і вечеряють у готельній їдальні. Пастка — H: зарплата тут фіксована, тижнева, і від обсягу виконаної роботи не залежить."
+                },
+                {
+                  "number": 16,
+                  "text": {
+                    "title": "Bakery assistant, city centre",
+                    "body": [
+                      "Fresh bread for the city’s cafés has to be ready by 6 am, so the shift at our bakery starts at 11 pm and ends at 5:30 am. Assistants shape dough, load the ovens and pack orders into boxes. The bread is delivered by our own drivers, so you do not need a driving licence."
+                    ]
+                  },
+                  "key": "B",
+                  "trap": "F",
+                  "explanation": "Зміна триває з 23:00 до 5:30, тобто робота здебільшого нічна. Пастка — F: у тексті є водії, проте сказано прямо: «you do not need a driving licence»."
+                }
+              ]
+            },
+            {
+              "id": "task-4",
+              "label": "Task 4",
+              "type": "gapped-text",
+              "instruction": "Read the text below. Choose from (A–H) the one which best fits each space (17–22). There are two choices you do not need to use.",
+              "passage": {
+                "title": "The Library That Lends Things",
+                "paragraphs": [
+                  "When Marta needed a drill to put up a shelf, she did not go to a DIY shop. Instead, she went to her local library, {{17}}. For a small yearly fee, members of the Library of Things in her town can borrow more than 300 items, from sewing machines and tents to projectors and board games.",
+                  "The idea is simple. Most of us own objects {{18}}. An electric drill, for example, is often used for just a few minutes in its whole life. Sharing such things saves money and space at home, and it also means {{19}}.",
+                  "The first libraries of this kind appeared more than ten years ago, and the idea has spread quickly. Today they can be found in cities across the world, {{20}}.",
+                  "Borrowing works much like borrowing a book. You choose an item online, collect it at the counter and return it a few days later. Every object is checked after use, and anything broken is repaired by the volunteers {{21}}.",
+                  "For Marta, the experience was a pleasant surprise. ‘I expected the drill to be old and cheap,’ she says, ‘but it was better than my neighbour’s. Now I check the library first {{22}}.’"
+                ]
+              },
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "where a whole room is full of tools and equipment"
+                },
+                {
+                  "letter": "B",
+                  "text": "that we use only a few times a year"
+                },
+                {
+                  "letter": "C",
+                  "text": "fewer new products have to be made"
+                },
+                {
+                  "letter": "D",
+                  "text": "and many of them are run entirely by volunteers"
+                },
+                {
+                  "letter": "E",
+                  "text": "before it goes back on the shelf"
+                },
+                {
+                  "letter": "F",
+                  "text": "whenever I need something for a project"
+                },
+                {
+                  "letter": "G",
+                  "text": "because books are no longer popular"
+                },
+                {
+                  "letter": "H",
+                  "text": "which they bought in a hurry and never opened"
+                }
+              ],
+              "questions": [
+                {
+                  "number": 17,
+                  "key": "A",
+                  "trap": "G",
+                  "explanation": "Після «her local library,» потрібне підрядне речення з where, яке пояснює, навіщо Марта туди пішла: там є кімната з інструментами. Пастка — G: граматично речення можливе, але суперечить змістові, бо бібліотека не занепадає, а пропонує понад 300 речей."
+                },
+                {
+                  "number": 18,
+                  "key": "B",
+                  "trap": "H",
+                  "explanation": "Підрядне «that we use only a few times a year» узгоджується з «Most of us» і підводить до прикладу з дрилем, яким користуються лічені хвилини. Пастка — H: зміст схожий, але займенник they не узгоджується з us (Most of us own objects which they bought…), тож речення стає неправильним."
+                },
+                {
+                  "number": 19,
+                  "key": "C",
+                  "trap": "G",
+                  "explanation": "Після «it also means» потрібне повне речення з підметом і присудком: «fewer new products have to be made» додає ще одну перевагу спільного користування. Пастка — G: після means не може стояти сполучник because, тож «it also means because…» граматично неможливе."
+                },
+                {
+                  "number": 20,
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Сполучник and приєднує ще одне твердження про такі бібліотеки, а them відсилає до libraries з попереднього речення. Пастка — A: where після «across the world» формально можливе, але одна кімната з інструментами не може бути «в містах по всьому світу»."
+                },
+                {
+                  "number": 21,
+                  "key": "E",
+                  "trap": "F",
+                  "explanation": "Займенник it відсилає до «anything broken», а before показує послідовність: спершу ремонт, потім річ повертається на полицю. Пастка — F: whenever I need… сказано від першої особи, а в цьому абзаці правила бібліотеки описано безособово."
+                },
+                {
+                  "number": 22,
+                  "key": "F",
+                  "trap": "E",
+                  "explanation": "Марта пояснює, що тепер спершу перевіряє бібліотеку щоразу, коли їй щось потрібно для справи, і займенник I в її репліці це підтримує. Пастка — E: before it goes back… тут не підходить, бо в репліці «Now I check the library first» займенникові it немає до чого відсилати."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "use-of-english",
+          "title": "Використання мови",
+          "titleEn": "Use of English",
+          "tasks": [
+            {
+              "id": "task-5",
+              "label": "Task 5",
+              "type": "cloze",
+              "instruction": "Read the text below. For questions (23–27) choose the correct answer (A, B, C or D).",
+              "passage": {
+                "title": "Cooking for Yourself at University",
+                "paragraphs": [
+                  "Moving into student accommodation is exciting, but for many first-year students it is also the first time they have to {{23}} care of themselves. Cooking is often the biggest challenge. Some students {{24}} on instant noodles and takeaways for weeks, which quickly becomes expensive and unhealthy. One way to {{25}} this problem is to plan meals for the week and to go shopping with a list. Cooking together with flatmates can also {{26}} a big difference: you share the costs, learn new recipes and have a good {{27}} at the end of a busy day."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 23,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "take"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "make"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "do"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "have"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Take care of yourself — сталий вираз «дбати про себе», і вжити тут можна лише дієслово take. Пастка — B: make поєднується з decision, mistake, effort, а «make care of» — калька, якої в англійській немає."
+                },
+                {
+                  "number": 24,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "live"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "spend"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "base"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "pay"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Live on something означає «харчуватися переважно чимось, жити на чомусь» — саме про локшину й їжу на виніс. Пастка — B: spend on теж поєднується з on, але потребує додатка (spend money on noodles), тож без нього речення неповне."
+                },
+                {
+                  "number": 25,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "solve"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "reply"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "achieve"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "succeed"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Solve a problem — стала сполука «розв’язати проблему». Пастка — C: achieve перекладають як «досягти», і воно поєднується з метою чи результатом (achieve a goal), а не з проблемою."
+                },
+                {
+                  "number": 26,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "make"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "do"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "take"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "give"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Make a difference — сталий вираз «суттєво вплинути, змінити на краще». Пастка — B: do здається природним через «робити різницю», але з difference у цьому значенні поєднується лише make."
+                },
+                {
+                  "number": 27,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "time"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "moment"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "hour"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "period"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Have a good time — «добре провести час», і цей вираз відповідає спільній вечері з сусідами. Пастка — B: moment перекладають як «мить», але «have a good moment» не є усталеним виразом."
+                }
+              ]
+            },
+            {
+              "id": "task-6",
+              "label": "Task 6",
+              "type": "cloze",
+              "instruction": "Read the text below. For questions (28–32) choose the correct answer (A, B, C or D).",
+              "passage": {
+                "title": "Teen’s App Brings Lost Pets Home",
+                "paragraphs": [
+                  "Last year, 16-year-old Danylo Kovalenko from Vinnytsia {{28}} an app that helps people find lost pets. He got the idea when his own cat, Pixel, went missing for three days. ‘Finding a lost cat is often {{29}} than finding a dog, because cats hide in quiet places,’ he explains. ‘If there {{30}} an app like this back then, we would have found Pixel in a few hours.’ Since its launch, the app {{31}} by more than 20,000 people, and around 600 animals have returned home. Danylo now hopes to add a feature {{32}} will send alerts to local vets."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 28,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "creates"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "has created"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "created"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "will create"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Обставина last year вказує на завершений момент у минулому, тому потрібен Past Simple — created. Пастка — B: Present Perfect не вживають з точними маркерами минулого часу на кшталт last year, yesterday, in 2024."
+                },
+                {
+                  "number": 29,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "more difficult"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "most difficult"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "difficulter"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "the more difficult"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Слово than вимагає вищого ступеня порівняння, а багатоскладовий прикметник difficult утворює його лише з more. Пастка — C: закінчення -er додають до коротких прикметників (harder, easier), тож форми difficulter не існує."
+                },
+                {
+                  "number": 30,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "is"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "will be"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "had been"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "has been"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Друга частина речення — would have found, отже, це умовне речення третього типу про уявне минуле, і після if потрібен Past Perfect: had been. Пастка — D: has been пов’язує минуле з теперішнім, а тут ідеться про уявну ситуацію в минулому (back then), яка вже не може змінитися."
+                },
+                {
+                  "number": 31,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "has downloaded"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "has been downloaded"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "was downloading"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "downloads"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Застосунок не завантажує сам — його завантажують люди (by more than 20,000 people), тому потрібен пасив, а since its launch вимагає Present Perfect: has been downloaded. Пастка — A: час правильний, але активний стан означав би, що застосунок сам щось завантажив."
+                },
+                {
+                  "number": 32,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "who"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "what"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "which"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "where"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Which вводить означальне підрядне речення й відсилає до неживого іменника feature. Пастка — B: what не вживають як сполучне слово після іменника, тож «a feature what will send…» — типова помилка."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Варіант 2",
+      "level": "B1–B2",
+      "parts": [
+        {
+          "id": "reading",
+          "title": "Читання",
+          "titleEn": "Reading",
+          "tasks": [
+            {
+              "id": "task-1",
+              "label": "Task 1",
+              "type": "matching",
+              "instruction": "Read the texts below. Match choices (A–H) to (1–5). There are three choices you do not need to use.",
+              "stem": "The main purpose of this notice is to ___.",
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "invite beginners to a weekly club"
+                },
+                {
+                  "letter": "B",
+                  "text": "announce new opening hours"
+                },
+                {
+                  "letter": "C",
+                  "text": "warn people about a danger"
+                },
+                {
+                  "letter": "D",
+                  "text": "ask for donations"
+                },
+                {
+                  "letter": "E",
+                  "text": "offer a discount"
+                },
+                {
+                  "letter": "F",
+                  "text": "find a lost item"
+                },
+                {
+                  "letter": "G",
+                  "text": "recruit volunteers"
+                },
+                {
+                  "letter": "H",
+                  "text": "advertise a holiday home"
+                }
+              ],
+              "questions": [
+                {
+                  "number": 1,
+                  "text": {
+                    "title": "CITY SWIMMING POOL — PLEASE NOTE",
+                    "body": [
+                      "From Monday 3 March, while the heating system is being replaced, the pool will open at 7:00 instead of 6:30 and close at 21:00 instead of 22:00.",
+                      "Weekend times stay the same. We apologise for any inconvenience."
+                    ]
+                  },
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Оголошення повідомляє, що басейн відчинятиметься о 7:00 замість 6:30 і зачинятиметься о 21:00 замість 22:00, тобто про новий розклад роботи. Пастка — C: заміна системи опалення — лише причина змін, а не попередження про небезпеку."
+                },
+                {
+                  "number": 2,
+                  "text": {
+                    "title": "LOST!",
+                    "body": [
+                      "A small black backpack, left on a bench near the bus station on Tuesday afternoon. Inside: a blue water bottle and a sketchbook.",
+                      "The drawings in it are a whole year of my work! If you have found it, please hand it in at the Art College reception or email iryna.art@example.com.",
+                      "Reward offered."
+                    ]
+                  },
+                  "key": "F",
+                  "trap": "D",
+                  "explanation": "Оголошення описує рюкзак, залишений на лавці, і просить повернути його, якщо хтось знайшов, — мета в тому, щоб відшукати загублену річ. Пастка — D: слово reward означає винагороду, яку обіцяють за знахідку, а не прохання пожертвувати гроші."
+                },
+                {
+                  "number": 3,
+                  "text": {
+                    "title": "CAUTION",
+                    "body": [
+                      "The riverside footpath between Mill Bridge and Central Park is CLOSED after last week’s flooding.",
+                      "The ground is unstable, and parts of the path may collapse without warning. Please use the route along Green Street until further notice."
+                    ]
+                  },
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Слова caution, «the ground is unstable» і «may collapse without warning» — пряме попередження про небезпеку. Пастка — B: оголошення справді повідомляє про зміну, але це закрита стежка й інший маршрут, а не години роботи."
+                },
+                {
+                  "number": 4,
+                  "text": {
+                    "title": "CHECKMATE!",
+                    "body": [
+                      "Fancy learning to play chess? Join our beginners’ club at the Youth Centre every Thursday at 5 pm.",
+                      "Boards and clocks are provided, and no experience is needed — just bring your curiosity!"
+                    ]
+                  },
+                  "key": "A",
+                  "trap": "G",
+                  "explanation": "Клуб щочетверга запрошує початківців навчитися грати в шахи (Join our beginners’ club… every Thursday). Пастка — G: «Join our club» схоже на набір людей, але клуб шукає учнів, а не волонтерів."
+                },
+                {
+                  "number": 5,
+                  "text": {
+                    "title": "STUDENT WEEK AT BOOKNOOK",
+                    "body": [
+                      "Show your student card at the till and get 20% off all dictionaries, exam guides and stationery.",
+                      "Offer valid 1–7 September only. Cannot be combined with other offers."
+                    ]
+                  },
+                  "key": "E",
+                  "trap": "B",
+                  "explanation": "Студенти отримують знижку 20 % (get 20% off) на словники, посібники й канцтовари — це реклама знижки. Пастка — B: дати 1–7 вересня визначають, скільки діє пропозиція, а не нові години роботи книгарні."
+                }
+              ]
+            },
+            {
+              "id": "task-2",
+              "label": "Task 2",
+              "type": "multiple-choice",
+              "instruction": "Read the text below. For questions (6–10) choose the correct answer (A, B, C or D).",
+              "passage": {
+                "title": "Bees in the City",
+                "paragraphs": [
+                  "Look up at the roofs of hotels, office blocks or even railway stations in many European cities and you may see something surprising: rows of wooden beehives. Over the last fifteen years, urban beekeeping has grown from an unusual hobby into a popular trend, and honey from city rooftops is now sold in cafés and shops as a local speciality.",
+                  "At first, this might seem strange. Cities are full of traffic, concrete and noise — hardly the natural home of a bee. Yet beekeepers say that city bees often do surprisingly well. Parks, gardens, balconies and street trees offer a wide variety of flowers that bloom at different times of the year, and many towns use fewer chemicals in their green spaces than farmers use on their fields.",
+                  "However, not everyone is enthusiastic. Some scientists warn that the rise in honeybees may be bad news for wild bees. Europe has hundreds of species of wild bee, and many of them are already in danger. Honeybees live in huge colonies of tens of thousands of insects, and when too many hives are placed in one area, they can collect most of the nectar and pollen, leaving little for smaller wild species. In other words, keeping honeybees is not the same as helping nature.",
+                  "For this reason, experts suggest that people who want to support bees should start by planting, not by buying a hive. A window box of lavender, a corner of the garden left to grow wild or a ‘bee hotel’ made from hollow sticks can provide food and shelter for many species. Cities can help too, by cutting the grass in parks less often and choosing local flowers.",
+                  "Beekeeping in the city is still possible, of course, but it takes training, time and good relations with the neighbours. As one rooftop beekeeper in Paris puts it: ‘The bees are the easy part. The hard part is convincing the people downstairs that they are not going to be attacked.’"
+                ]
+              },
+              "questions": [
+                {
+                  "number": 6,
+                  "prompt": "According to PARAGRAPH 1, honey from city rooftops ___.",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "is cheaper than honey from farms"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "is sold as a local product"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "is produced mainly at railway stations"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "has been popular for centuries"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "У першому абзаці сказано, що мед із міських дахів продають у кафе й крамницях «as a local speciality», тобто як місцевий продукт. Пастка — D: міське бджільництво стало модним лише за останні п’ятнадцять років, а не століття тому."
+                },
+                {
+                  "number": 7,
+                  "prompt": "Why do city bees often do well, according to the text?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "Cities are warmer than the countryside."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "They can find many kinds of flowers through the year."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "There is less noise on the roofs of buildings."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Farmers in cities do not use chemicals."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Автор пояснює, що парки, сади, балкони й дерева дають багато різних квітів, які цвітуть у різний час року. Пастка — A: те, що в містах тепліше, звучить правдоподібно, але в тексті цього немає, а відповідь має спиратися лише на текст."
+                },
+                {
+                  "number": 8,
+                  "prompt": "What problem do some scientists point out?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "Honeybees may spread diseases to people."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "Too many honeybees can leave less food for wild bees."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Wild bees often attack honeybee colonies."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Honey from cities is often of poor quality."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Учені застерігають: коли вуликів забагато, медоносні бджоли збирають більшу частину нектару й пилку, і диким видам лишається мало. Пастка — A: хвороби — поширена тема в розмовах про бджіл, але в тексті про них не йдеться."
+                },
+                {
+                  "number": 9,
+                  "prompt": "According to the experts, what is the best first step for people who want to help bees?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "buying a beehive"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "growing plants that bees can use"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "cutting the grass more often"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "joining a beekeeping course"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Експерти радять починати з рослин, а не з вулика: «start by planting, not by buying a hive». Пастка — C: у тексті сказано, що місто має косити траву рідше (less often), а не частіше."
+                },
+                {
+                  "number": 10,
+                  "prompt": "What does the beekeeper from Paris mean?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "Bees are dangerous for people who live nearby."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "Dealing with the neighbours’ fears is harder than looking after bees."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "The neighbours often help to look after the hives."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Keeping bees on roofs is not allowed in Paris."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "У цитаті сказано, що бджоли — «the easy part», а найважче — переконати сусідів знизу, що на них не нападуть. Пастка — A: про напад ідеться лише як про страх сусідів, а не як про реальну небезпеку від бджіл."
+                }
+              ]
+            },
+            {
+              "id": "task-3",
+              "label": "Task 3",
+              "type": "matching",
+              "instruction": "Read the texts below. Match choices (A–H) to (11–16). There are two choices you do not need to use.",
+              "title": "Unusual Museums",
+              "stem": "This museum ___.",
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "was founded by one private collector"
+                },
+                {
+                  "letter": "B",
+                  "text": "lets visitors touch the exhibits"
+                },
+                {
+                  "letter": "C",
+                  "text": "is located underground"
+                },
+                {
+                  "letter": "D",
+                  "text": "is open only for part of the year"
+                },
+                {
+                  "letter": "E",
+                  "text": "is devoted to a single everyday object"
+                },
+                {
+                  "letter": "F",
+                  "text": "offers free entry on certain days"
+                },
+                {
+                  "letter": "G",
+                  "text": "was originally built for another purpose"
+                },
+                {
+                  "letter": "H",
+                  "text": "can be visited only on a guided tour"
+                }
+              ],
+              "questions": [
+                {
+                  "number": 11,
+                  "text": {
+                    "title": "The Pencil House, Northfield",
+                    "body": [
+                      "Few people think twice about the pencil in their bag, but this small museum tells its whole story: how graphite was first discovered, how pencils were made by hand and later by machine, and why so many of them are painted yellow. The collection contains more than 2,000 pencils from 40 countries. Tickets are half price for students and children."
+                    ]
+                  },
+                  "key": "E",
+                  "trap": "F",
+                  "explanation": "Увесь музей присвячено олівцю: від історії графіту до колекції з понад 2000 олівців. Пастка — F: квитки для студентів і дітей коштують половину ціни, тобто вхід дешевший, але не безкоштовний."
+                },
+                {
+                  "number": 12,
+                  "text": {
+                    "title": "The Salt Mine Museum, Brennholt",
+                    "body": [
+                      "A lift takes visitors 120 metres down into an old salt mine, where the museum fills a network of tunnels and halls cut by miners over three centuries. You can explore at your own pace with an audio guide. The temperature stays at 14°C all year round, so bring a warm jacket."
+                    ]
+                  },
+                  "key": "C",
+                  "trap": "H",
+                  "explanation": "Ліфт опускає відвідувачів на 120 метрів у стару соляну шахту, де музей займає тунелі й зали. Пастка — H: аудіогід — це не екскурсія з провідником; навпаки, сказано, що оглядати музей можна у власному темпі."
+                },
+                {
+                  "number": 13,
+                  "text": {
+                    "title": "The Hands-On Toy Museum, Bristow",
+                    "body": [
+                      "There are no glass cases here. Children and adults are encouraged to wind up the clockwork trains, roll marbles down wooden tracks and build towers from blocks made in the 1920s. The staff ask only one thing: put everything back where you found it."
+                    ]
+                  },
+                  "key": "B",
+                  "trap": "E",
+                  "explanation": "Тут немає вітрин, і відвідувачів заохочують заводити механічні потяги, котити кульки й будувати з кубиків, тобто експонати можна торкатися. Пастка — E: іграшки — звичні речі, але музей присвячено багатьом різним іграшкам, а не одному предмету."
+                },
+                {
+                  "number": 14,
+                  "text": {
+                    "title": "Old Fire Station Museum, Marley",
+                    "body": [
+                      "When the town’s fire brigade moved to a modern base in 2015, its old station on Market Street became the local history museum. The red doors through which fire engines once rushed out are still there, and the brass pole firefighters slid down now stands in the middle of the café. Most of the exhibits were donated by local families."
+                    ]
+                  },
+                  "key": "G",
+                  "trap": "A",
+                  "explanation": "Музей міститься в будівлі старої пожежної частини, звідки колись виїжджали пожежні машини, тобто будівлю зводили з іншою метою. Пастка — A: експонати подарувало багато місцевих родин (local families), а не один колекціонер."
+                },
+                {
+                  "number": 15,
+                  "text": {
+                    "title": "Lighthouse Keepers’ Museum, Skerry Island",
+                    "body": [
+                      "This museum tells the story of the families who kept the island’s lighthouse working for 150 years. It stands next to the lighthouse in a modern wooden building. Because ferries to the island run only from May to September, the museum is closed for the rest of the year."
+                    ]
+                  },
+                  "key": "D",
+                  "trap": "G",
+                  "explanation": "Пороми на острів курсують лише з травня до вересня, тож решту року музей зачинено. Пастка — G: музей стоїть поруч із маяком, але в сучасній дерев’яній будівлі, а не в колишньому маяку."
+                },
+                {
+                  "number": 16,
+                  "text": {
+                    "title": "Halden Art Gallery",
+                    "body": [
+                      "All 300 paintings in this gallery were bought by one man, the businessman Erik Halden, who spent fifty years building his collection. Before his death, he left the paintings to the town, and a new glass gallery was built by the lake to display them."
+                    ]
+                  },
+                  "key": "A",
+                  "trap": "G",
+                  "explanation": "Усі 300 картин придбав один бізнесмен, Ерік Гальден, який п’ятдесят років збирав колекцію. Пастка — G: для картин збудували нову скляну галерею, тож будівлю від початку зводили саме як музей."
+                }
+              ]
+            },
+            {
+              "id": "task-4",
+              "label": "Task 4",
+              "type": "gapped-text",
+              "instruction": "Read the text below. Choose from (A–H) the one which best fits each space (17–22). There are two choices you do not need to use.",
+              "passage": {
+                "title": "A Month Without Social Media",
+                "paragraphs": [
+                  "Last spring, I deleted every social media app from my phone for a month. At first, it was harder than I had expected. In the first few days, I kept picking up my phone {{17}}, only to remember that there was nothing to check.",
+                  "By the end of the first week, however, something had changed. I noticed {{18}}. Without endless scrolling, I finished two novels I had started months before and even began cooking dinner for my family twice a week.",
+                  "The biggest surprise was my sleep. I used to look at my screen in bed until well after midnight, {{19}}. Now I was falling asleep before eleven and waking up rested.",
+                  "Not everything was easy. I missed a friend’s birthday party {{20}}, and I felt left out when my classmates were laughing about videos I had not seen.",
+                  "When the month was over, I reinstalled only one app, {{21}}. I still use it, but I have set a limit of thirty minutes a day.",
+                  "My advice to anyone {{22}} is simple: you don’t have to give up social media for ever, but even a short break can show you how much time you really have."
+                ]
+              },
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "without even thinking about it"
+                },
+                {
+                  "letter": "B",
+                  "text": "that I had much more free time than before"
+                },
+                {
+                  "letter": "C",
+                  "text": "so I often felt tired the next morning"
+                },
+                {
+                  "letter": "D",
+                  "text": "because the invitation was sent only online"
+                },
+                {
+                  "letter": "E",
+                  "text": "the one I use to talk to my grandparents"
+                },
+                {
+                  "letter": "F",
+                  "text": "who feels their phone is taking over their life"
+                },
+                {
+                  "letter": "G",
+                  "text": "who had never used social media"
+                },
+                {
+                  "letter": "H",
+                  "text": "that I would never use my phone again"
+                }
+              ],
+              "questions": [
+                {
+                  "number": 17,
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "«Without even thinking about it» пояснює, що телефон брали автоматично, за звичкою, і це логічно веде до «only to remember that there was nothing to check». Пастка — C: so I often felt tired… говорить про втому зранку, а не про те, як брали телефон, і розриває зв’язок із «only to remember»."
+                },
+                {
+                  "number": 18,
+                  "key": "B",
+                  "trap": "H",
+                  "explanation": "Після noticed потрібне підрядне з that про те, що змінилося, а наступне речення про дочитані романи й готування вечері підтверджує: вільного часу стало більше. Пастка — H: «that I would never use my phone again» граматично підходить, але суперечить фіналу, адже після місяця один застосунок установили знову."
+                },
+                {
+                  "number": 19,
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "So вводить наслідок попередньої дії (сидіти в екрані до пізньої ночі) — утому вранці, що контрастує з наступним реченням про відпочинок. Пастка — A: «without even thinking about it» граматично можливе, але не пояснює, чому головним сюрпризом став саме сон."
+                },
+                {
+                  "number": 20,
+                  "key": "D",
+                  "trap": "C",
+                  "explanation": "Because пояснює причину: запрошення надіслали лише онлайн, і без соцмереж про вечірку не дізналися. Пастка — C: so I often felt tired… описує звичну втому, а не причину, чому пропустили одну конкретну вечірку."
+                },
+                {
+                  "number": 21,
+                  "key": "E",
+                  "trap": "F",
+                  "explanation": "«The one I use to talk to my grandparents» уточнює, який саме застосунок (one app) повернули, — one і the one утворюють пару. Пастка — F: who вживають щодо людей, а не застосунків, тож «one app, who feels…» неможливе."
+                },
+                {
+                  "number": 22,
+                  "key": "F",
+                  "trap": "G",
+                  "explanation": "«Who feels their phone is taking over their life» описує людину, якій і адресовано пораду. Пастка — G: «who had never used social media» граматично підходить до anyone, але порада зробити перерву не має сенсу для того, хто соцмережами ніколи не користувався."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "use-of-english",
+          "title": "Використання мови",
+          "titleEn": "Use of English",
+          "tasks": [
+            {
+              "id": "task-5",
+              "label": "Task 5",
+              "type": "cloze",
+              "instruction": "Read the text below. For questions (23–27) choose the correct answer (A, B, C or D).",
+              "passage": {
+                "title": "Choosing a University",
+                "paragraphs": [
+                  "Choosing where to study is one of the most important decisions young people {{23}} at the end of school. Some students {{24}} their choice mainly on a university’s reputation, while others care more about the city or the cost of living. Before you decide, it is a good idea to {{25}} an open day, talk to current students and look carefully at the courses on {{26}}. Remember that you will spend at least four years there, so it should be a place where you feel {{27}}."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 23,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "make"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "do"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "give"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "put"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Make a decision — стала сполука «ухвалити рішення»; у тексті вона стоїть у формі decisions young people make. Пастка — B: do поєднується з роботою чи завданнями (do homework, do a job), а з decision — ні."
+                },
+                {
+                  "number": 24,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "base"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "stand"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "put"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "set"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Base something on something — «ґрунтувати щось на чомусь»: додаток their choice стоїть між дієсловом і прийменником on. Пастка — C: put on означає «вдягати» або «класти на щось», тож «put their choice on the reputation» не має потрібного значення."
+                },
+                {
+                  "number": 25,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "attend"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "assist"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "participate"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "present"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Attend an open day — «відвідати день відкритих дверей»; attend поєднується з подіями без прийменника. Пастка — C: participate має близьке значення, але вимагає прийменника in (participate in an open day)."
+                },
+                {
+                  "number": 26,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "offer"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "sale"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "order"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "purpose"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Вираз on offer означає «доступний, запропонований», і саме так говорять про курси, які пропонує університет. Пастка — B: on sale означає «у продажу» й стосується товарів, а не навчальних програм."
+                },
+                {
+                  "number": 27,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "comfortable"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "convenient"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "comforting"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "comfort"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Після feel потрібен прикметник, що описує стан людини: feel comfortable — «почуватися затишно». Пастка — B: convenient означає «зручний» щодо часу, місця чи речей (a convenient time), але не описує, як почувається людина."
+                }
+              ]
+            },
+            {
+              "id": "task-6",
+              "label": "Task 6",
+              "type": "cloze",
+              "instruction": "Read the text below. For questions (28–32) choose the correct answer (A, B, C or D).",
+              "passage": {
+                "title": "Students Build a Solar Bench",
+                "paragraphs": [
+                  "Students at a technical college in Poltava {{28}} a solar-powered bench in the city park last month. The bench, {{29}} was designed during a two-week project, lets people charge their phones for free. ‘We wanted to make something {{30}} for everyone who uses the park,’ explains Anna, one of the students. The panels store energy during the day, so the bench keeps working even {{31}} it gets dark. If the idea proves popular, the city {{32}} ten more benches next year."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 28,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "install"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "installed"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "have installed"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "are installing"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Маркер last month вимагає Past Simple — installed. Пастка — C: Present Perfect не поєднується з точною вказівкою на завершений минулий період."
+                },
+                {
+                  "number": 29,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "that"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "which"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "what"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "who"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Після коми, у відокремленому означальному підрядному реченні, про предмет говорять which. Пастка — A: that вживають щодо предметів лише в означальних підрядних без коми."
+                },
+                {
+                  "number": 30,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "useful"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "usefully"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "use"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "using"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Прикметник, що означає неозначений займенник something, стоїть після нього: something useful. Пастка — B: usefully — прислівник, а прислівник не може означати займенник."
+                },
+                {
+                  "number": 31,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "after"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "since"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "unless"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "despite"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Панелі накопичують енергію вдень, тож лавка працює навіть після того, як стемніє, — even after it gets dark. Пастка — D: despite означає «попри», але після нього вживають іменник або форму на -ing (despite the darkness), а не речення з підметом і присудком."
+                },
+                {
+                  "number": 32,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "will install"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "installed"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "would install"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "has installed"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Це умовне речення першого типу: після if — Present Simple (proves), у головній частині — will + інфінітив. Пастка — C: would install належить до другого типу й описує уявну, малоймовірну ситуацію, що не узгоджується з proves."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
