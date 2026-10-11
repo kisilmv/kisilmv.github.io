@@ -30,7 +30,9 @@ function testSetup() {
    НАЛАШТУВАННЯ — змініть під себе
    ========================================================================== */
 const CONFIG = {
-  CALENDAR_ID: 'aa02fa94f6ddabfb6f3753a185713e93a3e38d55ecd09c5422515919b8d8ef04@group.calendar.google.com', // ідентифікатор календаря «Приватні заняття»
+  // Справжній ідентифікатор зберігається лише в редакторі Apps Script.
+  // Під час перенесення коду в редактор цю заглушку туди не вставляти — лишіть наявне значення.
+  CALENDAR_ID: 'ВАШ_ІДЕНТИФІКАТОР_КАЛЕНДАРЯ@group.calendar.google.com', // ідентифікатор календаря «Приватні заняття»
   CALENDAR_NAME: 'Приватні заняття',          // запасний варіант: пошук за назвою
   FREE_TITLE: 'Вільно',                        // назва події, що означає відкритий слот
   BOOKED_PREFIX: 'Зайнято: ',                  // префікс назви заброньованої події
@@ -371,7 +373,8 @@ function sendTeacher_(subject, text, replyTo) {
    ========================================================================== */
 function getCalendar_() {
   if (CONFIG.CALENDAR_ID) {
-    const byId = CalendarApp.getCalendarById(CONFIG.CALENDAR_ID);
+    let byId = null;
+    try { byId = CalendarApp.getCalendarById(CONFIG.CALENDAR_ID); } catch (e) { /* заглушка чи недійсний ідентифікатор — шукаємо за назвою */ }
     if (byId) return byId;
   }
   const cals = CalendarApp.getCalendarsByName(CONFIG.CALENDAR_NAME);
