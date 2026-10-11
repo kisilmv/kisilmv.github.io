@@ -463,7 +463,7 @@ ${jsonLd()}
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261008">
+  <link rel="stylesheet" href="styles.css?v=20261011">
   <link rel="stylesheet" href="booking.css?v=20261007">
   <link rel="stylesheet" href="publications.css?v=${ASSET_VERSION}">
   <script src="script.js?v=20261007" defer></script>
