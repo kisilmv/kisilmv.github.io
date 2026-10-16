@@ -305,3 +305,10 @@
   margin-top: var(--space-6);
   color: var(--color-error);
 }
+
+.quiz-result-next {
+  max-width: 32rem;
+  margin: var(--space-5) auto 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}

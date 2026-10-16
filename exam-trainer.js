@@ -57,6 +57,7 @@
     result: $('trn-result'),
     resultTitle: $('trn-result-title'),
     level: $('trn-level'),
+    levelNext: $('trn-level-next'),
     resultScore: $('trn-result-score'),
     resultComment: $('trn-result-comment'),
     breakdown: $('trn-breakdown'),
@@ -870,6 +871,7 @@
       ui.level.textContent = estimate.title;
       ui.level.hidden = false;
       comment = (timeUp ? 'Час вичерпано, тож зараховано відповіді, дані до цього моменту. ' : '') + estimate.description;
+      renderLevelNext(estimate.next);
     }
     ui.resultComment.textContent = comment;
 
@@ -899,7 +901,23 @@
     const base = reached || data.meta.belowLevels;
     let description = base.description;
     if (uneven && data.meta.unevenNote) description += ' ' + data.meta.unevenNote;
-    return { title: reached ? 'Орієнтовний рівень: ' + reached.id : base.title, description };
+    return { title: reached ? 'Орієнтовний рівень: ' + reached.id : base.title, description, next: base.next };
+  }
+
+  /* Посилання на заняття, що відповідають рівню (meta.levels[].next). */
+  function renderLevelNext(next) {
+    if (!ui.levelNext) return;
+    ui.levelNext.textContent = '';
+    ui.levelNext.hidden = !Array.isArray(next) || !next.length;
+    if (ui.levelNext.hidden) return;
+    ui.levelNext.appendChild(document.createTextNode('Що підійде на цьому рівні: '));
+    next.forEach((item, index) => {
+      if (index) ui.levelNext.appendChild(document.createTextNode(', '));
+      const link = el('a', null, item.label);
+      link.href = item.href;
+      ui.levelNext.appendChild(link);
+    });
+    ui.levelNext.appendChild(document.createTextNode('.'));
   }
 
   function renderBreakdown() {

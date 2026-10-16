@@ -13,7 +13,7 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Тест рівня англійської онлайн — Микола Кісіль</title>
-  <meta name="description" content="Безкоштовний тест рівня англійської: 40 завдань із граматики, лексики й читання від A1 до C1, орієнтовний рівень за шкалою CEFR і розбір кожної відповіді українською.">
+  <meta name="description" content="Безкоштовний тест рівня англійської: 40 завдань із граматики, лексики й читання від A1 до C1, рівень за шкалою CEFR і розбір відповідей українською.">
   <link rel="canonical" href="https://kisilmv.github.io/level-test.html">
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -26,7 +26,7 @@
   <meta property="og:url" content="https://kisilmv.github.io/level-test.html">
   <meta property="og:site_name" content="Микола Кісіль">
   <meta property="og:title" content="Тест рівня англійської онлайн — Микола Кісіль">
-  <meta property="og:description" content="Безкоштовний тест рівня англійської: 40 завдань із граматики, лексики й читання від A1 до C1, орієнтовний рівень за шкалою CEFR і розбір кожної відповіді українською.">
+  <meta property="og:description" content="Безкоштовний тест рівня англійської: 40 завдань із граматики, лексики й читання від A1 до C1, рівень за шкалою CEFR і розбір відповідей українською.">
   <meta property="og:image" content="https://kisilmv.github.io/og-image.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
@@ -38,6 +38,12 @@
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://kisilmv.github.io/#person",
+        "name": "Микола Кісіль",
+        "url": "https://kisilmv.github.io/"
+      },
       {
         "@type": "LearningResource",
         "@id": "https://kisilmv.github.io/level-test.html#trainer",
@@ -91,12 +97,12 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261011">
-  <link rel="stylesheet" href="booking.css?v=20261007">
-  <link rel="stylesheet" href="quiz/quiz.css?v=20261005a">
-  <link rel="stylesheet" href="service-page.css?v=20261011">
+  <link rel="stylesheet" href="styles.css?v=20261016">
+  <link rel="stylesheet" href="booking.css?v=20261016">
+  <link rel="stylesheet" href="quiz/quiz.css?v=20261016">
+  <link rel="stylesheet" href="service-page.css?v=20261016">
   <script src="script.js?v=20261007" defer></script>
-  <script src="exam-trainer.js?v=20261010" defer></script>
+  <script src="exam-trainer.js?v=20261016" defer></script>
 </head>
 <body class="booking-page service-page level-test-page">
   <a class="skip-link" href="#main">Перейти до основного вмісту</a>
@@ -152,7 +158,7 @@
           </ul>
         </header>
 
-        <div class="trn-app" id="trn-app" data-src="data/level-test.json?v=20261011" data-storage-key="level-test" data-event="level_test_complete" data-modes="test">
+        <div class="trn-app" id="trn-app" data-src="data/level-test.json?v=20261016" data-storage-key="level-test" data-event="level_test_complete" data-modes="test">
           <noscript><p class="quiz-noscript">Щоб пройти тренажер, увімкніть JavaScript у браузері.</p></noscript>
 
           <!-- Початок тесту -->
@@ -221,6 +227,7 @@
               <p class="trn-level" id="trn-level" hidden></p>
               <p class="quiz-result-score" id="trn-result-score"></p>
               <p class="quiz-result-comment" id="trn-result-comment"></p>
+              <p class="trn-cta" id="trn-level-next" hidden></p>
               <ul class="trn-breakdown" id="trn-breakdown" aria-label="Правильні відповіді за рівнями"></ul>
               <p class="trn-result-note">
                 Рівень зараховано, якщо в його частині й у всіх нижчих правильних відповідей щонайменше 6 із 8.

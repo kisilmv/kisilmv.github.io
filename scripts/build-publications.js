@@ -18,7 +18,7 @@ const PAGE_PATH = path.join(ROOT, 'publications.html');
 const INDEX_PATH = path.join(ROOT, 'index.html');
 const SITE_URL = 'https://kisilmv.github.io/';
 const PERSON_ID = `${SITE_URL}#person`;
-const ASSET_VERSION = '20261008';
+const ASSET_VERSION = '20261016';
 
 const LATEST_START = '<!-- publications:latest:start (генерується scripts/build-publications.js) -->';
 const LATEST_END = '<!-- publications:latest:end -->';
@@ -339,6 +339,12 @@ function jsonLd() {
         }))
       }
     },
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}#person`,
+      name: 'Микола Кісіль',
+      url: SITE_URL
+    },
     ...publications.map(jsonLdWork)
   ];
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2).replace(/</g, '\\u003c');
@@ -402,6 +408,19 @@ function renderOptions(entries) {
   return entries.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join('');
 }
 
+/* Узгодження іменника з числом: 1 праця, 2–4 праці, 5+ праць (11–14 — праць). */
+function pluralWorks(count) {
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (mod10 === 1 && mod100 !== 11) {
+    return 'праця';
+  }
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+    return 'праці';
+  }
+  return 'праць';
+}
+
 function renderPage() {
   const total = publications.length;
   const years = [...new Set(publications.map((pub) => pub.year))].sort((a, b) => a - b);
@@ -411,7 +430,7 @@ function renderPage() {
   const topicOptions = renderOptions([['', 'Усі теми'], ...Object.entries(data.topics)]);
   const yearFrom = years.map((year) => `<option value="${year}"${year === minYear ? ' selected' : ''}>${year}</option>`).join('');
   const yearTo = years.map((year) => `<option value="${year}"${year === maxYear ? ' selected' : ''}>${year}</option>`).join('');
-  const description = `Повна бібліографія Миколи Кісіля: ${total} праць ${minYear}–${maxYear} рр. — статті, матеріали конференцій, навчальні посібники. Термінознавство, переклад, ШІ і мова, якість вищої освіти.`;
+  const description = `Бібліографія Миколи Кісіля: ${total} ${pluralWorks(total)} ${minYear}–${maxYear} рр. Статті, тези конференцій і навчальні посібники: термінознавство, переклад, ШІ і мова, вища освіта.`;
 
   return `<!DOCTYPE html>
 <html lang="uk">
@@ -463,8 +482,8 @@ ${jsonLd()}
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261011">
-  <link rel="stylesheet" href="booking.css?v=20261007">
+  <link rel="stylesheet" href="styles.css?v=20261016">
+  <link rel="stylesheet" href="booking.css?v=20261016">
   <link rel="stylesheet" href="publications.css?v=${ASSET_VERSION}">
   <script src="script.js?v=20261007" defer></script>
   <script src="publications.js?v=${ASSET_VERSION}" defer></script>
