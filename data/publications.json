@@ -5,7 +5,7 @@
     "selfAuthorPrefixes": ["Кісіль", "Kisil"]
   },
   "source": "https://kisilmv.blogspot.com/p/blog-page_13.html",
-  "updated": "2026-10-08",
+  "updated": "2026-10-15",
   "types": {
     "article": "Статті у фахових виданнях і журналах",
     "conference": "Матеріали конференцій",
@@ -22,6 +22,25 @@
     "methodology": "Методика викладання англійської"
   },
   "publications": [
+    {
+      "id": "pub-65",
+      "sourceNo": 65,
+      "type": "conference",
+      "marked": false,
+      "authors": ["Кісіль М. В."],
+      "title": "Представлення синонімії в міжнародних машиночитних термінологійних ресурсах: CFIHOS RDL і PCA PLM RDL",
+      "container": "Проблеми української термінології",
+      "containerInfo": "зб. наук. пр. учасн. XIX наук.-практ. конф. СловоСвіт 2026",
+      "event": "м. Львів, 8–10 жовт. 2026 р.",
+      "places": [{ "city": "Львів", "publisher": "Вид-во Львів. політехніки" }],
+      "year": 2026,
+      "pages": "47–50",
+      "doi": null,
+      "url": "https://tc-terminology.lpnu.ua/ZIP/ConfSSXIX/Zbirnyk_XIX_NPK_SlovoSvit2026.pdf",
+      "accessed": "15.10.2026",
+      "language": ["uk"],
+      "topics": ["terminology"]
+    },
     {
       "id": "pub-64",
       "sourceNo": 64,
