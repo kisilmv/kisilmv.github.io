@@ -9,6 +9,9 @@
 }
 
 .booking-home-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   margin-right: var(--space-2);
   font-size: var(--fs-sm);
   font-weight: 600;
@@ -76,7 +79,7 @@
 }
 
 .btn--sm {
-  min-height: 2.25rem;
+  min-height: 2.75rem;
   padding: var(--space-2) var(--space-4);
   font-size: var(--fs-sm);
 }
