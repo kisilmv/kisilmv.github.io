@@ -33,8 +33,8 @@
                 "title": "Back from the Brink",
                 "paragraphs": [
                   "After an absence of some four hundred years, the Eurasian beaver is once again making its {{1}} felt in British rivers. Hunted to extinction for its fur, the animal was reintroduced on a small scale in the early 2000s, and its return has {{2}} a fierce debate between conservationists and landowners.",
-                  "Supporters describe beavers as nature’s engineers. By building dams, they slow the {{3}} of water, reducing the risk of flooding further downstream, and create wetlands that {{4}} host to a remarkable variety of wildlife, from dragonflies to otters.",
-                  "Farmers, on the other hand, have {{5}} concern that the same dams can flood valuable farmland, and that beavers fell trees without {{6}} to their age or value. The government has now attempted to {{7}} a balance between these competing interests: beavers may be released into the wild, but only under licence, and landowners whose property is damaged will be offered support. Whether this compromise will {{8}} the test of time remains to be seen."
+                  "Supporters describe beavers as nature’s engineers. Their dams hold back water during heavy rain, helping to keep floods at {{3}} in towns further downstream, and create wetlands that {{4}} host to a remarkable variety of wildlife, from dragonflies to otters.",
+                  "Farmers, on the other hand, have {{5}} concern that the same dams can flood valuable farmland, and that beavers fell trees {{6}} of their age or value. The government has now attempted to {{7}} a balance between these competing interests: beavers may be released into the wild, but only under licence, and landowners whose property is damaged will be offered support. Whether this compromise will {{8}} the test of time remains to be seen."
                 ]
               },
               "questions": [
@@ -43,7 +43,7 @@
                   "options": [
                     {
                       "letter": "A",
-                      "text": "existence"
+                      "text": "attendance"
                     },
                     {
                       "letter": "B",
@@ -51,7 +51,7 @@
                     },
                     {
                       "letter": "C",
-                      "text": "attendance"
+                      "text": "residence"
                     },
                     {
                       "letter": "D",
@@ -91,24 +91,24 @@
                   "options": [
                     {
                       "letter": "A",
-                      "text": "flow"
+                      "text": "bay"
                     },
                     {
                       "letter": "B",
-                      "text": "stream"
+                      "text": "heart"
                     },
                     {
                       "letter": "C",
-                      "text": "current"
+                      "text": "hand"
                     },
                     {
                       "letter": "D",
-                      "text": "course"
+                      "text": "large"
                     }
                   ],
                   "key": "A",
                   "trap": "C",
-                  "explanation": "The flow of water — рух, потік води, який гребля сповільнює. Пастка — C: current — це течія певного напрямку (річкова, морська), і сполука slow the current of water звучить неприродно."
+                  "explanation": "Keep something at bay — «тримати на відстані, не підпускати»: греблі стримують повені в містах нижче за течією. Пастка — C: at hand означає «під рукою, поруч», і з keep floods цей вираз не має сенсу."
                 },
                 {
                   "number": 4,
@@ -163,24 +163,24 @@
                   "options": [
                     {
                       "letter": "A",
-                      "text": "regard"
+                      "text": "regardless"
                     },
                     {
                       "letter": "B",
-                      "text": "respect"
+                      "text": "despite"
                     },
                     {
                       "letter": "C",
-                      "text": "attention"
+                      "text": "however"
                     },
                     {
                       "letter": "D",
-                      "text": "notice"
+                      "text": "although"
                     }
                   ],
                   "key": "A",
                   "trap": "B",
-                  "explanation": "Without regard to (for) — «не зважаючи на, не беручи до уваги». Пастка — B: with respect to означає «щодо, стосовно», а сполуки without respect to з таким значенням немає."
+                  "explanation": "Regardless of — «незалежно від, не зважаючи на»: бобри валять дерева, не зважаючи на їхній вік і цінність. Пастка — B: despite ніколи не вживають із прийменником of, хоча українське «попри» підштовхує до такої помилки."
                 },
                 {
                   "number": 7,
@@ -195,7 +195,7 @@
                     },
                     {
                       "letter": "C",
-                      "text": "hold"
+                      "text": "beat"
                     },
                     {
                       "letter": "D",
@@ -241,18 +241,18 @@
               "passage": {
                 "title": "The Unwritten Rules of the Queue",
                 "paragraphs": [
-                  "Few social rituals are taken {{9}} seriously in Britain than the queue. Visitors are often struck by the patience with {{10}} people wait their turn, even when there is no official system in place. Yet researchers argue that queuing has less to do with national character than with a deep-rooted sense of fairness. {{11}} upsets people most, it seems, is not the wait itself but the suspicion that someone else has been served first without good reason.",
-                  "Interestingly, people are prepared to tolerate surprisingly long waits, {{12}} long as they know roughly how long they will be standing there. This is {{13}} many theme parks display estimated waiting times, which are often deliberately exaggerated so that visitors feel pleasantly surprised when they reach the front. Nor {{14}} the length of the wait matter as much as how it feels: time spent doing nothing seems to pass far more slowly than time spent occupied. {{15}} this reason, lifts in tall buildings are often fitted with mirrors, giving people something to look at, {{16}} only themselves."
+                  "The queue is {{9}} of the most enduring British social rituals. Visitors are often struck by the patience with {{10}} people wait their turn, even when there is no official system in place. Yet researchers argue that queuing has less to do with national character than with a deep-rooted sense of fairness. {{11}} upsets people most, it seems, is not the wait itself but the suspicion that someone else has been served first without good reason.",
+                  "Interestingly, people are prepared to tolerate surprisingly long waits, {{12}} long as they know roughly how long they will be standing there. This is {{13}} many theme parks display estimated waiting times, which are often deliberately exaggerated so that visitors feel pleasantly surprised when they reach the front. In fact, it is not so much the length of the wait that matters {{14}} how it feels: time spent doing nothing seems to pass far more slowly than time spent occupied. {{15}} this reason, lifts in tall buildings are often fitted with mirrors so {{16}} people have something to look at, even if it is only themselves."
                 ]
               },
               "questions": [
                 {
                   "number": 9,
                   "answers": [
-                    "more"
+                    "one"
                   ],
-                  "trap": "most",
-                  "explanation": "Після прислівника seriously стоїть than, отже, потрібен вищий ступінь порівняння: more seriously than. Пастка — «most»: найвищий ступінь не поєднується з than."
+                  "trap": "some",
+                  "explanation": "One of the most + прикметник + іменник у множині — «один із найбільш…». Пастка — «some»: some of the most вимагало б дієслова в множині (are), а присудок is стоїть в однині."
                 },
                 {
                   "number": 10,
@@ -290,10 +290,10 @@
                 {
                   "number": 14,
                   "answers": [
-                    "does"
+                    "as"
                   ],
-                  "trap": "is",
-                  "explanation": "Після заперечного nor на початку речення відбувається інверсія з допоміжним дієсловом: Nor does the length of the wait matter. Пастка — «is»: смислове дієслово matter потребує допоміжного does, а з is конструкція неграматична."
+                  "trap": "than",
+                  "explanation": "Зворот not so much A as B означає «не стільки A, скільки B»: важить не тривалість очікування, а те, як воно відчувається. Пастка — «than»: після so much у цьому звороті вживають as, а не than."
                 },
                 {
                   "number": 15,
@@ -306,10 +306,10 @@
                 {
                   "number": 16,
                   "answers": [
-                    "if"
+                    "that"
                   ],
-                  "trap": "even",
-                  "explanation": "If only тут означає «хай навіть лише»: дзеркало дає людям на що подивитися — бодай на самих себе. Пастка — «even»: сполука even only неграматична, а even if потребувало б двох слів у пропуску."
+                  "trap": "as",
+                  "explanation": "So that — «щоб»: дзеркала встановлюють, щоб людям було на що подивитися. Пастка — «as»: so as вимагає інфінітива (so as to give), а не підрядного речення з власним підметом people."
                 }
               ]
             },
@@ -322,7 +322,7 @@
               "passage": {
                 "title": "Why We Should Talk About Failure",
                 "paragraphs": [
-                  "In most workplaces, admitting a mistake is still regarded as a sign of {{17}}. Employees who live in fear of {{18}} tend to conceal their errors, which means that the same problems recur and nobody learns from them. A growing body of research, however, suggests that the most {{19}} companies are precisely those in which failure is discussed openly.",
+                  "In most workplaces, admitting a mistake is still regarded as a sign of {{17}}. Employees who are afraid of being {{18}} tend to conceal their errors, which means that the same problems recur and nobody learns from them. A growing body of research, however, suggests that the most {{19}} companies are precisely those in which failure is discussed openly.",
                   "Some firms have gone as far as holding regular ‘failure meetings’, at which staff describe projects that went wrong. Far from being {{20}}, these sessions are reported to strengthen team spirit. Managers who are willing to share their own mistakes come across as more {{21}}, and junior colleagues become less {{22}} about raising concerns at an early stage.",
                   "Of course, openness about failure is not the same as {{23}} of carelessness. The aim is to distinguish between mistakes that result from {{24}} behaviour, such as ignoring safety procedures, and those that are the inevitable price of experimentation."
                 ]
@@ -341,16 +341,18 @@
                   "number": 18,
                   "stem": "CRITIC",
                   "answers": [
-                    "criticism"
+                    "criticised",
+                    "criticized"
                   ],
-                  "trap": "critical",
-                  "explanation": "Після прийменника of потрібен іменник: in fear of criticism — «у страху перед критикою». Пастка — «critical»: це прикметник, і після прийменника без іменника він стояти не може."
+                  "trap": "criticism",
+                  "explanation": "Після being потрібна пасивна форма дієслова: afraid of being criticised — «бояться, що їх критикуватимуть». Пастка — «criticism»: іменник тут неможливий, бо працівники не можуть «бути критикою»."
                 },
                 {
                   "number": 19,
                   "stem": "INNOVATE",
                   "answers": [
-                    "innovative"
+                    "innovative",
+                    "innovatory"
                   ],
                   "trap": "innovating",
                   "explanation": "Між the most і companies потрібен прикметник: the most innovative companies — «найбільш інноваційні компанії». Пастка — «innovating»: форму на -ing у цьому значенні не вживають як означення до companies."
@@ -421,7 +423,8 @@
                       "parts": [
                         [
                           "has a reputation",
-                          "has the reputation"
+                          "has the reputation",
+                          "has got a reputation"
                         ],
                         [
                           "for being",
@@ -445,11 +448,13 @@
                       "parts": [
                         [
                           "had any idea",
+                          "had an idea",
                           "had the slightest idea",
                           "had the faintest idea"
                         ],
                         [
-                          "how"
+                          "how",
+                          "of how"
                         ]
                       ]
                     }
@@ -469,7 +474,9 @@
                       "parts": [
                         [
                           "was put off",
-                          "was put back"
+                          "was put back",
+                          "had been put off",
+                          "had been put back"
                         ],
                         [
                           "owing",
@@ -493,8 +500,10 @@
                       "parts": [
                         [
                           "at the insistence",
+                          "on the insistence",
                           "because of the insistence",
-                          "owing to the insistence"
+                          "owing to the insistence",
+                          "due to the insistence"
                         ],
                         [
                           "of"
@@ -548,7 +557,8 @@
                     {
                       "parts": [
                         [
-                          "rather you"
+                          "rather you",
+                          "rather that you"
                         ],
                         [
                           "did not"
@@ -1043,8 +1053,8 @@
               "passage": {
                 "title": "The Four-Day Week",
                 "paragraphs": [
-                  "When a handful of companies first trialled a four-day working week, many observers {{1}} the idea off as a gimmick that would never survive contact with the real economy. Yet the results of several large-scale trials have given even the sceptics {{2}} for thought. In most cases, output was maintained, while staff reported lower levels of stress and {{3}} fewer days off sick. Employers, for their part, found it easier to {{4}} and retain talented staff.",
-                  "Critics, however, have {{5}} questions about how far these findings can be applied, pointing out that most of the companies involved had volunteered to take part and were therefore more {{6}} to succeed than a typical firm. Hospitals, schools and factories, where work cannot simply be {{7}} into fewer hours, present a far greater challenge. For now, at least, the four-day week remains the {{8}} rather than the rule."
+                  "When a handful of companies first trialled a four-day working week, many observers {{1}} the idea off as a gimmick that would never survive contact with the real economy. Yet the results of several large-scale trials have given even the sceptics {{2}} for thought. In most cases, output was maintained, while staff reported lower levels of stress and {{3}} fewer days off sick. Employers, for their part, found it easier to {{4}} on to talented staff.",
+                  "Critics, however, have {{5}} questions about how far these findings can be applied, pointing out that most of the companies involved had volunteered to take part and were therefore more {{6}} to succeed than a typical firm. Hospitals, care homes and factories, which must remain open round the {{7}}, present a far greater challenge. For now, at least, the four-day week remains the {{8}} rather than the rule."
                 ]
               },
               "questions": [
@@ -1081,7 +1091,7 @@
                     },
                     {
                       "letter": "B",
-                      "text": "matter"
+                      "text": "meal"
                     },
                     {
                       "letter": "C",
@@ -1125,24 +1135,24 @@
                   "options": [
                     {
                       "letter": "A",
-                      "text": "appeal"
+                      "text": "keep"
                     },
                     {
                       "letter": "B",
-                      "text": "attract"
+                      "text": "hold"
                     },
                     {
                       "letter": "C",
-                      "text": "draw"
+                      "text": "stay"
                     },
                     {
                       "letter": "D",
-                      "text": "tempt"
+                      "text": "stick"
                     }
                   ],
                   "key": "B",
                   "trap": "A",
-                  "explanation": "Attract and retain staff — стала пара «залучати й утримувати працівників». Пастка — A: appeal — неперехідне дієслово, і йому потрібен прийменник: appeal to talented staff."
+                  "explanation": "Hold on to someone — «утримати когось, не відпустити»: компаніям легше втримати цінних працівників. Пастка — A: keep має схоже значення, але сполуки keep on to в англійській немає."
                 },
                 {
                   "number": 5,
@@ -1197,24 +1207,24 @@
                   "options": [
                     {
                       "letter": "A",
-                      "text": "pushed"
+                      "text": "hour"
                     },
                     {
                       "letter": "B",
-                      "text": "pressed"
+                      "text": "day"
                     },
                     {
                       "letter": "C",
-                      "text": "crushed"
+                      "text": "time"
                     },
                     {
                       "letter": "D",
-                      "text": "squeezed"
+                      "text": "clock"
                     }
                   ],
                   "key": "D",
                   "trap": "B",
-                  "explanation": "Squeeze something into fewer hours — «втиснути щось у коротший час». Пастка — B: be pressed into означає «бути змушеним щось робити» (pressed into service), а не «вміститися» в менший проміжок часу."
+                  "explanation": "Round the clock — «цілодобово»: лікарні й заводи мають працювати без перерви. Пастка — B: day трапляється у виразах all day long чи day and night, а round the day не є сталим виразом."
                 },
                 {
                   "number": 8,
@@ -1354,7 +1364,8 @@
                   "number": 18,
                   "stem": "PARTICIPATE",
                   "answers": [
-                    "participants"
+                    "participants",
+                    "participators"
                   ],
                   "trap": "participation",
                   "explanation": "Після the number of потрібен злічуваний іменник у множині, що позначає людей: participants — «учасники». Пастка — «participation»: «участь» — незлічуваний іменник, тож із the number of він не поєднується."
@@ -1480,7 +1491,9 @@
                         ],
                         [
                           "sorry",
-                          "apologetic"
+                          "apologetic",
+                          "regretful",
+                          "remorseful"
                         ]
                       ]
                     }
@@ -1560,7 +1573,10 @@
                           "returned",
                           "had returned",
                           "got",
+                          "got back",
                           "came",
+                          "came back",
+                          "went",
                           "arrived"
                         ]
                       ]
@@ -1851,7 +1867,7 @@
                 },
                 {
                   "letter": "B",
-                  "text": "Ashby is quick to stress that these gains were not part of the original plan. ‘We did it for the stars,’ she says. ‘Everything else was a bonus.’ But it was these practical arguments, she admits, that finally brought the last of the doubters round."
+                  "text": "Ashby is quick to stress that the savings and the wildlife were not part of the original plan. ‘We did it for the stars,’ she says. ‘Everything else was a bonus.’ But it was these practical arguments, she admits, that finally brought the last of the doubters round."
                 },
                 {
                   "letter": "C",
@@ -1859,7 +1875,7 @@
                 },
                 {
                   "letter": "D",
-                  "text": "Astronomers have been warning for decades that light pollution is increasing worldwide, and some estimates suggest that a third of humanity can no longer see the Milky Way from where they live. Even so, few expected a village of fewer than a thousand people to do anything about it."
+                  "text": "Astronomers have been warning for decades that light pollution is increasing worldwide, and some estimates suggest that a third of humanity can no longer see the Milky Way from where they live. For years, Ellerby seemed destined to remain part of that statistic."
                 },
                 {
                   "letter": "E",
@@ -1907,14 +1923,14 @@
                   "number": 45,
                   "key": "B",
                   "trap": "E",
-                  "explanation": "These gains в абзаці B — це менший рахунок за електроенергію й повернення метеликів і кажанів, про які йдеться перед пропуском. Пастка — E: Ешбі там теж говорить від першої особи, але цей абзац підсумовує всю історію, а не пояснює вигоди.",
+                  "explanation": "Абзац B згадує заощадження й повернення дикої природи, тобто менший рахунок за електроенергію й метеликів і кажанів, про яких ідеться перед пропуском. Пастка — E: Ешбі там теж говорить від першої особи, але цей абзац підсумовує всю історію, а не пояснює вигоди.",
                   "points": 2
                 },
                 {
                   "number": 46,
                   "key": "E",
                   "trap": "D",
-                  "explanation": "Абзац E завершує статтю: Ешбі досі виходить уночі з телескопом і підсумовує, що село повернуло собі небо. Пастка — D: світова статистика світлового забруднення не продовжує розповіді про туристів і не годиться для завершення.",
+                  "explanation": "Абзац E завершує статтю: Ешбі досі виходить уночі з телескопом і підсумовує, що село повернуло собі небо. Пастка — D: слова про те, що Еллербі, здавалося, приречене лишатися частиною сумної статистики, суперечать щасливому фіналу історії.",
                   "points": 2
                 }
               ]
@@ -1946,7 +1962,7 @@
                   "letter": "C",
                   "title": "Amira Haddad, learning Italian",
                   "paragraphs": [
-                    "People assume it must be harder to learn a language at sixty-two, and in some ways it is: new words take longer to stick. But I have advantages I lacked at twenty. I have time, I have no exams to pass, and I’m no longer worried about looking silly, which frees me to try things out. Most of my learning happens on my tablet: an app for vocabulary every morning, Italian radio in the afternoon and a video call with a conversation partner in Bologna twice a week. What I hadn’t expected was how much it would make me look again at my own background. Seeing how Italians talk about family and food made me notice things about the way I was brought up in Lebanon that I had always taken for granted."
+                    "People assume it must be harder to learn a language at sixty-two, and in some ways it is: new words take longer to stick. But I have advantages I lacked at twenty. I have time, I have no exams to pass, and I’m no longer worried about looking silly, which frees me to try things out. Most of my learning happens on my tablet: an app for vocabulary every morning, Italian radio in the afternoon and an online lesson with a tutor in Bologna twice a week. What I hadn’t expected was how much it would make me look again at my own background. Seeing how Italians talk about family and food made me notice things about the way I was brought up in Lebanon that I had always taken for granted."
                   ]
                 },
                 {
@@ -1977,7 +1993,7 @@
                   "prompt": "credits a particular person with keeping them motivated?",
                   "key": "D",
                   "trap": "C",
-                  "explanation": "Кофі прямо пише, що не кинув навчання лише завдяки репетиторці фрау Беккер. Пастка — C: Аміра двічі на тиждень розмовляє з партнером із Болоньї, але не стверджує, що саме ця людина підтримує її мотивацію."
+                  "explanation": "Кофі прямо пише, що не кинув навчання лише завдяки репетиторці фрау Беккер. Пастка — C: Аміра теж займається з викладачем із Болоньї, але не стверджує, що саме ця людина підтримує її мотивацію."
                 },
                 {
                   "number": 50,
@@ -2019,7 +2035,7 @@
                   "prompt": "describes technology as central to the way they learn?",
                   "key": "C",
                   "trap": "D",
-                  "explanation": "Аміра щодня працює із застосунком, слухає італійське радіо й двічі на тиждень розмовляє по відеозв’язку, тож техніка лежить в основі її навчання. Пастка — D: Кофі теж користується застосунком, але лише «now and then», а головну роль відіграли розмови з репетиторкою."
+                  "explanation": "Аміра щодня працює із застосунком, слухає італійське радіо й двічі на тиждень має онлайн-урок, тож планшет лежить в основі її навчання. Пастка — D: Кофі теж користується застосунком, але лише «now and then», а головну роль відіграли розмови з репетиторкою."
                 },
                 {
                   "number": 56,
