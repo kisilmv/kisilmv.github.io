@@ -1,0 +1,1492 @@
+{
+  "level": "B2",
+  "title": "Граматика рівня B2",
+  "description": "Конструкції, що відрізняють упевнене мовлення від базового: оповідні часи, *Present Perfect Continuous*, *Future Perfect*, третій і змішаний типи умовних речень, *wish*, усі форми пасиву, непряма мова, модальні дієслова здогаду, дієслова зі зміною значення, складні підрядні означальні, артиклі та *used to / be used to*.",
+  "topics": [
+    {
+      "id": "narrative-tenses",
+      "title": "Оповідні часи: Past Perfect Simple і Continuous",
+      "titleEn": "Narrative tenses: Past Perfect Simple and Continuous",
+      "summary": "Як показати, що одна минула подія передувала іншій.",
+      "theory": {
+        "intro": "У розповіді про минуле *Past Simple* передає основні події, *Past Continuous* — тло, а *Past Perfect* — «передісторію», тобто те, що сталося ще раніше.",
+        "blocks": [
+          {
+            "title": "Past Perfect Simple: had + V3",
+            "text": "Дія, що завершилася до іншої минулої дії або моменту. Типові маркери: *by the time, before, after, already, just, never … before*.",
+            "examples": [
+              ["By the time we got there, the concert had started.", "Коли ми дісталися, концерт уже почався."],
+              ["I had never seen snow before I moved north.", "До переїзду на північ я ніколи не бачив снігу."]
+            ]
+          },
+          {
+            "title": "Past Perfect Continuous: had been + -ing",
+            "text": "Тривала дія, що відбувалася до певного моменту в минулому; часто пояснює наслідок, який було видно тоді.",
+            "examples": [
+              ["She was tired because she had been working all day.", "Вона була втомлена, бо працювала весь день."],
+              ["We had been walking for hours when we saw the village.", "Ми йшли вже кілька годин, коли побачили село."]
+            ]
+          },
+          {
+            "title": "Одна сполучна — різний зміст",
+            "text": "Час дієслова показує порядок подій. Якщо послідовність і так очевидна (наприклад, після *after*), *Past Perfect* не обов’язковий.",
+            "examples": [
+              ["When I arrived, the film had started.", "Коли я прийшов, фільм уже йшов (почався раніше)."],
+              ["When I arrived, the film started.", "Коли я прийшов, фільм почався (одразу після мого приходу)."]
+            ]
+          }
+        ],
+        "traps": [
+          "*Past Perfect* — не «давноминулий час» для всього, що було давно. Він потрібен лише тоді, коли треба показати, що одна подія передувала іншій.",
+          "«Я ніколи раніше такого не бачив» у розповіді про минуле — *I had never seen anything like it*, а не *I have never seen*.",
+          "Дієслова стану не вживаються в *Continuous*: *I had known him for years*, а не *had been knowing*.",
+          "Не ставте *Past Perfect* для обох подій поспіль: *When I arrived, I realized I had forgotten…*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "By the time we got to the station, the train ___.",
+          "options": ["had left", "left", "has left"],
+          "answer": 0,
+          "explanation": "Потяг пішов раніше, ніж ми прийшли: *by the time* + *Past Simple* у підрядній, а попередня дія — *Past Perfect*: *had left*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "She was exhausted because she ___ all day.",
+          "options": ["had been working", "has been working", "was worked"],
+          "answer": 0,
+          "explanation": "Тривала дія до минулого моменту, що пояснює тодішній стан (втома), — *Past Perfect Continuous*: *had been working*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "I ___ such a beautiful sunset before that evening.",
+          "options": ["had never seen", "have never seen", "was never seeing"],
+          "answer": 0,
+          "explanation": "Досвід до певного моменту в минулому (*before that evening*) — *Past Perfect*. *Have never seen* відраховує досвід до сьогодні."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "When I arrived at the party, most guests ___ home — only a few people were still there.",
+          "options": ["had gone", "went", "were going"],
+          "answer": 0,
+          "explanation": "Гості пішли ще до мого приходу — *Past Perfect*: *had gone*. *Went* означало б, що вони пішли, щойно я прийшов."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "His eyes were red. It was obvious he ___.",
+          "options": ["had been crying", "has been crying", "had cried for"],
+          "answer": 0,
+          "explanation": "Видимий у минулому наслідок тривалої дії — *Past Perfect Continuous*: *had been crying*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "We ___ (walk) for hours before we finally found a café.",
+          "answers": ["had been walking", "had walked"],
+          "explanation": "Тривала дія до іншої минулої події. Найприродніше — *had been walking* (наголос на тривалості); *had walked* теж можливе."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "At the airport, she realized she ___ (leave) her passport at home.",
+          "answers": ["had left"],
+          "explanation": "Залишила паспорт ще до того, як це усвідомила: *Past Perfect* — *had left*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "It ___ (rain) all night, so the streets were flooded in the morning.",
+          "answers": ["had been raining", "had rained"],
+          "explanation": "Тривала дія до ранку пояснює наслідок (затоплені вулиці): *had been raining*. Варіант *had rained* також граматично правильний."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "When I [[had arrived]] at the office, I [[realized]] I [[had forgotten]] my keys.",
+          "answer": 0,
+          "fix": "arrived",
+          "explanation": "Прийшов і зрозумів — дві послідовні події, обидві в *Past Simple*. *Past Perfect* потрібен лише для того, що сталося раніше: *had forgotten*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "They [[have been]] married for ten years when they [[moved]] [[to]] Canada.",
+          "answer": 0,
+          "fix": "had been",
+          "explanation": "Період тривав до певного моменту в минулому (переїзду), тож *Past Perfect*: *They had been married for ten years when…*"
+        }
+      ]
+    },
+    {
+      "id": "present-perfect-continuous",
+      "title": "Present Perfect Continuous",
+      "titleEn": "Present Perfect Continuous vs Simple",
+      "summary": "Процес і тривалість проти результату й кількості; how long, for, since.",
+      "theory": {
+        "intro": "*Present Perfect Continuous* (*have / has been* + *-ing*) описує дію, що почалася в минулому й триває досі, або щойно завершену тривалу дію, наслідки якої помітні зараз.",
+        "blocks": [
+          {
+            "title": "Дія триває досі",
+            "text": "Типові маркери: *how long, for, since, all day, lately, recently*.",
+            "examples": [
+              ["I’ve been learning English for three years.", "Я вчу англійську три роки."],
+              ["How long have you been waiting?", "Скільки ти вже чекаєш?"]
+            ]
+          },
+          {
+            "title": "Видимий наслідок недавньої дії",
+            "text": "Дія щойно скінчилася, але її «сліди» видно зараз.",
+            "examples": [
+              ["You’re out of breath. Have you been running?", "Ти засапався. Ти бігав?"]
+            ]
+          },
+          {
+            "title": "Simple чи Continuous",
+            "text": "*Present Perfect Simple* — результат, кількість, завершеність (*how many, how much, three times*). *Continuous* — процес і тривалість (*how long, all morning*).",
+            "examples": [
+              ["I’ve written three emails.", "Я написав три листи (результат)."],
+              ["I’ve been writing emails all morning.", "Я весь ранок пишу листи (процес)."]
+            ]
+          },
+          {
+            "title": "Дієслова стану — лише Simple",
+            "text": "*know, have* (у значенні «мати»), *own, believe, like, be* тощо не вживаються в *Continuous*.",
+            "examples": [
+              ["We’ve known each other since school.", "Ми знайомі ще зі школи."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Я вчу англійську три роки» — *I’ve been learning English for three years*, а не *I learn* і не *I am learning*.",
+          "Якщо названо кількість, обирайте *Simple*: *I’ve read three chapters*, а не *I’ve been reading three chapters*.",
+          "Дієслова стану: *I’ve had this car for years*, а не *I’ve been having*.",
+          "Питання про тривалість — *How long have you been…?*, а не *How long are you…?*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "How long ___ for the bus? — About twenty minutes.",
+          "options": ["have you been waiting", "are you waiting", "did you wait"],
+          "answer": 0,
+          "explanation": "Дія почалася в минулому й триває досі, питання про тривалість — *How long have you been waiting?*"
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "I ___ three chapters of the book so far.",
+          "options": ["have read", "have been reading", "am reading"],
+          "answer": 0,
+          "explanation": "Названо кількість (*three chapters*) — наголос на результаті, тож *Present Perfect Simple*: *have read*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Your hands are covered in paint! What ___?",
+          "options": ["have you been doing", "have you done", "are you done"],
+          "answer": 0,
+          "explanation": "Видимий наслідок недавньої тривалої дії — *Present Perfect Continuous*: *What have you been doing?*"
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "We ___ each other since elementary school.",
+          "options": ["have known", "have been knowing", "know"],
+          "answer": 0,
+          "explanation": "*Know* — дієслово стану, тож лише *Present Perfect Simple*: *have known*. *Know* із *since* — калька з української."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "She ___ Japanese for six years, and she still loves it.",
+          "options": ["has been learning", "learns", "is learning"],
+          "answer": 0,
+          "explanation": "Процес почався шість років тому й триває досі: *has been learning*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "It ___ (snow) since early morning, and it hasn’t stopped yet.",
+          "answers": ["has been snowing", "'s been snowing"],
+          "explanation": "Тривала дія від точки в минулому до тепер — *Present Perfect Continuous*: *has been snowing*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I ___ (write) five emails this morning, and I still have two more to send.",
+          "answers": ["have written", "'ve written"],
+          "explanation": "Кількість (*five emails*) — результат, тому *Present Perfect Simple*: *have written*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "They look upset. They ___ (argue) for hours.",
+          "answers": ["have been arguing", "'ve been arguing"],
+          "explanation": "Тривала дія, наслідок якої видно зараз, — *have been arguing*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[am living]] in this city [[since]] I [[was]] eighteen.",
+          "answer": 0,
+          "fix": "have been living",
+          "explanation": "Дія триває від моменту в минулому до тепер — *Present Perfect Continuous* (або *Simple*): *I have been living / have lived here since…*"
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "I [[have been owning]] this car [[for]] [[almost]] ten years.",
+          "answer": 0,
+          "fix": "have owned",
+          "explanation": "*Own* — дієслово стану (володіння), тож *Continuous* неможливий: *I have owned this car for almost ten years*."
+        }
+      ]
+    },
+    {
+      "id": "future-continuous-perfect",
+      "title": "Future Continuous і Future Perfect",
+      "titleEn": "Future Continuous and Future Perfect",
+      "summary": "Що відбуватиметься в певний момент і що вже завершиться до нього.",
+      "theory": {
+        "intro": "Ці часи дивляться на майбутнє з конкретної точки: що саме тоді триватиме (*Future Continuous*) і що на той момент уже буде зроблено (*Future Perfect*).",
+        "blocks": [
+          {
+            "title": "Future Continuous: will be + -ing",
+            "text": "Дія в процесі в певний момент майбутнього; також ввічливе питання про чужі плани й подія, що станеться «сама собою» в звичному перебігу.",
+            "examples": [
+              ["This time tomorrow I’ll be flying to Lisbon.", "Завтра о цій порі я летітиму до Лісабона."],
+              ["Will you be using the car tonight?", "Ти сьогодні ввечері братимеш машину? (ввічливо)"]
+            ]
+          },
+          {
+            "title": "Future Perfect: will have + V3",
+            "text": "Дія завершиться до певного моменту в майбутньому. Маркери: *by, by the time, before, by then*.",
+            "examples": [
+              ["By Friday, I will have finished the report.", "До п’ятниці я закінчу звіт."]
+            ]
+          },
+          {
+            "title": "Future Perfect Continuous: will have been + -ing",
+            "text": "Скільки часу триватиме дія на певний момент у майбутньому.",
+            "examples": [
+              ["Next year she will have been teaching for thirty years.", "Наступного року виповниться тридцять років, як вона викладає."]
+            ]
+          },
+          {
+            "title": "by the time + Present Simple",
+            "text": "У підрядних часу майбутнє, як і раніше, передаємо теперішнім часом.",
+            "examples": [
+              ["By the time you get home, I’ll have cooked dinner.", "Поки ти прийдеш додому, я вже приготую вечерю."]
+            ]
+          }
+        ],
+        "traps": [
+          "*By* + момент майже завжди сигналізує *Future Perfect*: *by Monday I will have done it*.",
+          "*By the time she will arrive* — помилка: *by the time she arrives*.",
+          "«Завтра о восьмій я буду працювати» — *I’ll be working*, а не *I’ll work*.",
+          "*By* («до, не пізніше») і *until* («аж до») — різні слова: *I’ll be here until six*, але *I’ll be done by six*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "This time tomorrow, I ___ over the Atlantic.",
+          "options": ["will be flying", "will fly", "will have flown"],
+          "answer": 0,
+          "explanation": "Дія в процесі в конкретний момент майбутнього (*this time tomorrow*) — *Future Continuous*: *will be flying*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "By the end of the month, we ___ the project.",
+          "options": ["will have finished", "will be finishing", "finish"],
+          "answer": 0,
+          "explanation": "Завершиться до певного моменту (*by the end of the month*) — *Future Perfect*: *will have finished*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "___ the car this evening? If not, I’d like to borrow it.",
+          "options": ["Will you be using", "Will you have used", "Are you use"],
+          "answer": 0,
+          "explanation": "Ввічливе питання про чужі плани — *Future Continuous*: *Will you be using…?* Воно звучить делікатніше, ніж *Will you use…?*"
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "By the time you get home, I ___ dinner.",
+          "options": ["will have cooked", "will cook", "cook"],
+          "answer": 0,
+          "explanation": "Вечеря буде готова до вашого приходу — дія завершиться до моменту в майбутньому: *will have cooked*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Next year my parents ___ married for forty years.",
+          "options": ["will have been", "will be being", "are being"],
+          "answer": 0,
+          "explanation": "Тривалість стану на момент у майбутньому — *Future Perfect*: *will have been married*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Don’t call me at eight — I ___ (have) dinner with clients then.",
+          "answers": ["will be having", "'ll be having"],
+          "explanation": "О восьмій вечеря триватиме — *Future Continuous*: *will be having*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "By the time the guests arrive, we ___ (clean) the whole house.",
+          "answers": ["will have cleaned", "'ll have cleaned"],
+          "explanation": "Прибирання завершиться до приходу гостей — *Future Perfect*: *will have cleaned*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "By the time she retires, she ___ (teach) for over thirty years.",
+          "answers": ["will have been teaching", "will have taught"],
+          "explanation": "Тривалість дії на момент у майбутньому: *will have been teaching* (наголос на процесі) або *will have taught*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "By the time we [[will arrive]], the movie [[will have started]], so [[let’s]] hurry.",
+          "answer": 0,
+          "fix": "arrive",
+          "explanation": "Після *by the time* майбутнє передаємо *Present Simple*: *By the time we arrive*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[At]] this time next week, I [[will lie]] on a beach [[somewhere]] warm.",
+          "answer": 1,
+          "fix": "will be lying",
+          "explanation": "Дія в процесі в конкретний момент майбутнього — *Future Continuous*: *I will be lying on a beach*."
+        }
+      ]
+    },
+    {
+      "id": "conditionals-third-mixed",
+      "title": "Третій і змішаний типи умовних речень",
+      "titleEn": "Third and mixed conditionals",
+      "summary": "Уявне минуле та його наслідки в теперішньому.",
+      "theory": {
+        "intro": "Третій тип описує уявну зміну в минулому, якої вже не можна виправити. Змішаний поєднує часові плани: минула умова — теперішній наслідок, або постійна риса — минулий наслідок.",
+        "blocks": [
+          {
+            "title": "Третій тип",
+            "text": "*If* + *Past Perfect*, *would have* + *V3*. Замість *would* можливі *could have* і *might have*.",
+            "examples": [
+              ["If I had known, I would have helped.", "Якби я знав, то допоміг би (але не знав)."],
+              ["We might have won if we had trained harder.", "Ми, можливо, виграли б, якби тренувалися більше."]
+            ]
+          },
+          {
+            "title": "Змішаний: минула умова → теперішній наслідок",
+            "text": "*If* + *Past Perfect*, *would* + інфінітив.",
+            "examples": [
+              ["If I had taken that job, I would be living in Berlin now.", "Якби я тоді погодився на ту роботу, то зараз жив би в Берліні."]
+            ]
+          },
+          {
+            "title": "Змішаний: постійна риса → минулий наслідок",
+            "text": "*If* + *Past Simple*, *would have* + *V3*.",
+            "examples": [
+              ["If he weren’t so shy, he would have asked her out.", "Якби він не був таким сором’язливим, то запросив би її на побачення."]
+            ]
+          }
+        ],
+        "traps": [
+          "*If I would have known* — помилка: у частині з *if* лише *If I had known*.",
+          "*would of* — помилка письма, що виникла з вимови *would’ve*: правильно *would have*.",
+          "Українське «якби» не розрізняє часів, тому щоразу визначайте: умова стосується минулого чи теперішнього? Наслідок — тоді чи зараз?",
+          "Заперечення: *If you hadn’t reminded me…*, а не *If you didn’t remind me…*, коли йдеться про конкретну минулу ситуацію."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "If I had known about the traffic, I ___ earlier.",
+          "options": ["would have left", "would leave", "had left"],
+          "answer": 0,
+          "explanation": "Уявне минуле з обох боків — третій тип: *would have left*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "If she ___ harder, she would have passed the exam.",
+          "options": ["had studied", "studied", "would have studied"],
+          "answer": 0,
+          "explanation": "У головній частині *would have passed*, отже умова теж у минулому: *If she had studied*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "If I had taken that job, I ___ in Berlin now.",
+          "options": ["would be living", "would have lived", "will live"],
+          "answer": 0,
+          "explanation": "Умова в минулому, а наслідок — зараз (*now*): змішаний тип, *would* + інфінітив: *would be living*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "If he weren’t so shy, he ___ to her at the party last night.",
+          "options": ["would have spoken", "would speak", "had spoken"],
+          "answer": 0,
+          "explanation": "Сором’язливість — постійна риса (*weren’t*), а наслідок стосується минулого (*last night*): *would have spoken*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "We ___ the match if our goalkeeper hadn’t been injured.",
+          "options": ["might have won", "might win", "had won"],
+          "answer": 0,
+          "explanation": "Третій тип із відтінком невпевненості: *might have* + *V3*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "If you ___ (not / remind) me, I would have forgotten her birthday.",
+          "answers": ["had not reminded", "hadn't reminded"],
+          "explanation": "Третій тип: в *if*-частині — *Past Perfect*: *If you hadn’t reminded me*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "If I had saved more money, I ___ (be) able to buy a house now.",
+          "answers": ["would be"],
+          "explanation": "Минула умова, теперішній наслідок (*now*) — змішаний тип: *would be able*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "If they had left on time, they ___ (not / miss) the flight.",
+          "answers": ["would not have missed", "wouldn't have missed"],
+          "explanation": "Третій тип, заперечення в головній частині: *wouldn’t have missed*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "If I [[would have known]] you were ill, I [[would have visited]] [[you]].",
+          "answer": 0,
+          "fix": "had known",
+          "explanation": "*Would have* стоїть лише в головній частині. В *if*-частині третього типу — *Past Perfect*: *If I had known*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "If we [[had booked]] earlier, we [[would of]] got [[better]] seats.",
+          "answer": 1,
+          "fix": "would have",
+          "explanation": "*Would of* — поширена помилка письма через вимову *would’ve*. Граматично правильно лише *would have*."
+        }
+      ]
+    },
+    {
+      "id": "wishes",
+      "title": "Wish і if only",
+      "titleEn": "Wish and if only",
+      "summary": "Жаль про теперішнє й минуле; wish + would.",
+      "theory": {
+        "intro": "*Wish* і *if only* виражають жаль або бажання, щоб усе було інакше. Час дієслова після них «зсувається» на крок у минуле.",
+        "blocks": [
+          {
+            "title": "Теперішнє: wish + Past Simple",
+            "text": "Бажання, щоб теперішня ситуація була іншою. Для вміння — *could*; у нормативній мові *I wish I were*.",
+            "examples": [
+              ["I wish I knew the answer.", "Шкода, що я не знаю відповіді."],
+              ["I wish I could swim.", "Шкода, що я не вмію плавати."]
+            ]
+          },
+          {
+            "title": "Минуле: wish + Past Perfect",
+            "text": "Жаль про те, що вже сталося або не сталося.",
+            "examples": [
+              ["I wish I hadn’t said that.", "Шкода, що я це сказав."],
+              ["If only we had left earlier!", "Якби ж ми вийшли раніше!"]
+            ]
+          },
+          {
+            "title": "wish + would",
+            "text": "Роздратування чужою поведінкою або бажання змін, на які ми не впливаємо. Про себе *wish I would* не кажуть.",
+            "examples": [
+              ["I wish you would stop interrupting me.", "Перестань, будь ласка, мене перебивати."],
+              ["I wish it would stop raining.", "Хоч би вже дощ припинився."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Шкода, що я не знаю» — *I wish I knew*, а не *I wish I know*.",
+          "Заперечення «перевертається»: «Шкода, що я сказав» — *I wish I hadn’t said*; «Шкода, що я не пішов» — *I wish I had gone*.",
+          "*I wish I would…* — помилка; про власні можливості — *I wish I could…*",
+          "*If only* — емоційніший синонім *I wish*, з тими самими часами."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I wish I ___ how to fix this — I’d do it myself.",
+          "options": ["knew", "know", "would know"],
+          "answer": 0,
+          "explanation": "Жаль про теперішнє — *wish* + *Past Simple*: *I wish I knew*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "I wish I ___ so much last night. I feel terrible.",
+          "options": ["hadn’t eaten", "didn’t eat", "wouldn’t eat"],
+          "answer": 0,
+          "explanation": "Жаль про минуле (*last night*) — *wish* + *Past Perfect*: *I wish I hadn’t eaten*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "I wish you ___ interrupting me — it’s really annoying.",
+          "options": ["would stop", "stopped", "had stopped"],
+          "answer": 0,
+          "explanation": "Роздратування чужою поведінкою і бажання, щоб вона змінилася, — *wish* + *would*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "If only I ___ more time to finish the essay!",
+          "options": ["had", "have", "would have"],
+          "answer": 0,
+          "explanation": "*If only* + *Past Simple* — бажання змінити теперішню ситуацію: *If only I had more time*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "She wishes she ___ play a musical instrument.",
+          "options": ["could", "can", "would"],
+          "answer": 0,
+          "explanation": "Жаль про відсутність уміння — *wish* + *could*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "I wish it ___ (be) warmer today.",
+          "answers": ["were", "was"],
+          "explanation": "Теперішнє — *wish* + форма минулого. Нормативно *were*, у розмовній мові поширене *was*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I wish I ___ (not / sell) my old guitar — I really miss it.",
+          "answers": ["had not sold", "hadn't sold"],
+          "explanation": "Жаль про вчинок у минулому — *Past Perfect*: *I wish I hadn’t sold*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "If only he ___ (listen) to me back then!",
+          "answers": ["had listened"],
+          "explanation": "*Back then* — минуле, тож *If only* + *Past Perfect*: *had listened*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[wish]] I [[would have]] a bigger apartment [[with]] a garden.",
+          "answer": 1,
+          "fix": "had",
+          "explanation": "Бажання щодо теперішнього — *wish* + *Past Simple*: *I wish I had a bigger apartment*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "My brother [[wishes]] he [[has]] studied medicine [[instead of]] law.",
+          "answer": 1,
+          "fix": "had",
+          "explanation": "Жаль про минулий вибір — *wish* + *Past Perfect*: *he wishes he had studied*."
+        }
+      ]
+    },
+    {
+      "id": "passive-causative",
+      "title": "Пасив у всіх часах і have something done",
+      "titleEn": "The passive in all tenses; causative have / get",
+      "summary": "is being done, had been done, should have been done; have / get something done.",
+      "theory": {
+        "intro": "Пасив існує майже в усіх часах: змінюється лише форма *be*, а основне дієслово завжди стоїть у третій формі. Каузатив *have / get something done* показує, що роботу для нас виконав хтось інший.",
+        "blocks": [
+          {
+            "title": "Складніші форми пасиву",
+            "text": "*Continuous*: *is / was being repaired*. *Past Perfect*: *had been sent*. *Future Perfect*: *will have been finished*. Модальні в минулому: *should / could / must have been done*.",
+            "examples": [
+              ["The road is being repaired.", "Дорогу саме ремонтують."],
+              ["The report should have been sent yesterday.", "Звіт мали надіслати ще вчора."]
+            ]
+          },
+          {
+            "title": "Пасив із двома додатками",
+            "text": "Із *give, offer, send, show, tell* підметом пасивного речення зазвичай стає людина.",
+            "examples": [
+              ["She was offered a promotion.", "Їй запропонували підвищення."]
+            ]
+          },
+          {
+            "title": "have / get something done",
+            "text": "*have* + додаток + *V3*: послугу виконав хтось інший. *Get* — розмовніший варіант. Та сама конструкція описує неприємність, що з нами сталася.",
+            "examples": [
+              ["I had my hair cut.", "Я підстригся (у перукаря)."],
+              ["We’re getting the roof repaired.", "Нам ремонтують дах."],
+              ["She had her bag stolen.", "У неї вкрали сумку."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Я підстригся» в перукарні — *I had my hair cut*; *I cut my hair* означає, що ви підстригли себе самі.",
+          "Порядок слів: *have* + що + *V3*: *I had my car washed*, а не *I had washed my car*.",
+          "Процес у пасиві — *is being built*, а не *is building* (будинок не будує сам себе).",
+          "У пасиві з модальним у минулому не губіть *been*: *should have been done*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "The road is closed because it ___.",
+          "options": ["is being repaired", "is repairing", "has repaired"],
+          "answer": 0,
+          "explanation": "Дорогу ремонтують саме зараз — пасив у *Present Continuous*: *is being repaired*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "I ___ my eyes tested last week.",
+          "options": ["had", "made", "did"],
+          "answer": 0,
+          "explanation": "Послугу виконав фахівець — каузатив *have something done*: *I had my eyes tested*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "The report should ___ yesterday.",
+          "options": ["have been sent", "be sent", "have sent"],
+          "answer": 0,
+          "explanation": "Критика минулого в пасиві: *should have been* + *V3*. *Have sent* означало б, що звіт сам щось надіслав."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "When we arrived, the room ___ cleaned.",
+          "options": ["was still being", "was still", "had still being"],
+          "answer": 0,
+          "explanation": "Прибирання тривало в момент нашого приходу — пасив у *Past Continuous*: *was still being cleaned*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "We’re ___ a new kitchen installed next month.",
+          "options": ["having", "making", "doing"],
+          "answer": 0,
+          "explanation": "Кухню встановлять майстри — каузатив: *We’re having a new kitchen installed*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Our car ___ (service) at the moment, so we’re taking the bus.",
+          "answers": ["is being serviced"],
+          "explanation": "Процес зараз у пасиві — *is being* + *V3*: *is being serviced*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "He had his phone ___ (steal) on the train.",
+          "answers": ["stolen"],
+          "explanation": "Неприємна подія в конструкції *have something done*: *had his phone stolen*. *Steal — stole — stolen*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "By the time the police arrived, the money ___ (hide).",
+          "answers": ["had been hidden"],
+          "explanation": "Дія завершилася до іншої минулої події, а гроші — об’єкт: пасив у *Past Perfect*: *had been hidden*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[cut my hair]] at a new salon [[near]] [[my office]] yesterday.",
+          "answer": 0,
+          "fix": "had my hair cut",
+          "explanation": "У салоні стриже майстер, тож потрібен каузатив: *I had my hair cut*. *I cut my hair* — «я сам себе підстриг»."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "The new bridge [[is]] [[building]] [[right]] now.",
+          "answer": 1,
+          "fix": "being built",
+          "explanation": "Міст не будує сам себе: пасив у *Present Continuous* — *is being built*."
+        }
+      ]
+    },
+    {
+      "id": "reported-speech",
+      "title": "Непряма мова",
+      "titleEn": "Reported speech",
+      "summary": "Зсув часів, питання й накази в непрямій мові, дієслова для передачі мовлення.",
+      "theory": {
+        "intro": "Передаючи чужі слова, ми зазвичай «зсуваємо» час на крок у минуле, змінюємо займенники й слова на позначення часу та місця, а питання перетворюємо на розповідні речення.",
+        "blocks": [
+          {
+            "title": "Зсув часів",
+            "text": "*Present* → *Past*; *Past* і *Present Perfect* → *Past Perfect*; *will* → *would*; *can* → *could*; *must* → *had to*. Якщо сказане й досі правдиве або дієслово-вступ стоїть у теперішньому часі, зсув необов’язковий.",
+            "examples": [
+              ["“I’m tired.” → She said (that) she was tired.", "«Я втомилася». → Вона сказала, що втомилася."],
+              ["“I’ll call you.” → He said he would call me.", "«Я подзвоню». → Він сказав, що подзвонить."]
+            ]
+          },
+          {
+            "title": "Час і місце",
+            "text": "*today* → *that day*, *tomorrow* → *the next day*, *yesterday* → *the day before*, *here* → *there*, *this* → *that*.",
+            "examples": [
+              ["“I saw him yesterday.” → She said she had seen him the day before.", "«Я бачила його вчора». → Вона сказала, що бачила його напередодні."]
+            ]
+          },
+          {
+            "title": "Питання й накази",
+            "text": "У непрямих питаннях — прямий порядок слів і без *do / did*; загальні питання вводимо через *if / whether*. Накази й прохання — *tell / ask* + особа + (*not*) *to* + інфінітив.",
+            "examples": [
+              ["He asked me where I lived.", "Він запитав, де я живу."],
+              ["She asked if I could help.", "Вона запитала, чи можу я допомогти."],
+              ["The teacher told us not to be late.", "Учитель сказав нам не запізнюватися."]
+            ]
+          },
+          {
+            "title": "Дієслова передачі мовлення",
+            "text": "*suggest doing*, *advise someone to do*, *offer to do*, *refuse to do*, *apologize for doing*, *deny doing*, *warn someone not to do*.",
+            "examples": [
+              ["She apologized for being late.", "Вона перепросила за запізнення."]
+            ]
+          }
+        ],
+        "traps": [
+          "*Say* і *tell*: *tell* + особа (*He told me*), *say* + що сказали (*He said that…*, *He said to me*). *He said me* — помилка.",
+          "Непряме питання без інверсії: *She asked where I lived*, а не *where did I live*.",
+          "«Чи» в непрямому питанні — *if / whether*, а не *that*.",
+          "*suggested me to go* — помилка: *suggested that I go* або *suggested going*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "“I’m tired,” she said. → She said that she ___ tired.",
+          "options": ["was", "is being", "were"],
+          "answer": 0,
+          "explanation": "Після *said* теперішній час зсувається в минулий: *am* → *was*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "He asked me where ___.",
+          "options": ["I lived", "did I live", "do I live"],
+          "answer": 0,
+          "explanation": "У непрямому питанні — прямий порядок слів без *did*: *where I lived*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "The doctor ___ me to drink more water.",
+          "options": ["told", "said", "suggested"],
+          "answer": 0,
+          "explanation": "Конструкція «особа + *to* + інфінітив» можлива з *told*. *Said* не поєднується з особою без *to*, а *suggested me to* — помилка."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "She asked ___ I could help her with the boxes.",
+          "options": ["if", "that", "what"],
+          "answer": 0,
+          "explanation": "Загальне питання («Чи можеш ти…?») у непрямій мові вводиться через *if* або *whether*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "He apologized ___ late.",
+          "options": ["for being", "to be", "that being"],
+          "answer": 0,
+          "explanation": "*Apologize for* + *-ing*: *He apologized for being late*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "“I will call you tomorrow.” → She said she ___ call me the next day.",
+          "answers": ["would"],
+          "explanation": "*Will* у непрямій мові зсувається в *would*; *tomorrow* → *the next day*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть два слова.",
+          "prompt": "“Don’t touch the wire!” → The electrician warned us ___ touch the wire.",
+          "answers": ["not to"],
+          "explanation": "Заборона в непрямій мові: *warn someone not to do something*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "“Have you finished?” → She asked me whether I ___ (finish).",
+          "answers": ["had finished"],
+          "explanation": "*Present Perfect* зсувається в *Past Perfect*: *whether I had finished*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "He [[said me]] that he [[had]] already [[seen]] the film.",
+          "answer": 0,
+          "fix": "told me",
+          "explanation": "З особою вживаємо *tell*: *He told me that…* (або *He said to me that…*)."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "She [[asked]] me [[what time]] [[does the train leave]].",
+          "answer": 2,
+          "fix": "the train left",
+          "explanation": "У непрямому питанні немає інверсії й допоміжного *does*, а час зсувається: *what time the train left*."
+        }
+      ]
+    },
+    {
+      "id": "modals-deduction",
+      "title": "Модальні дієслова здогаду",
+      "titleEn": "Modals of deduction: present and past",
+      "summary": "must, can’t, might / may / could — про теперішнє й минуле.",
+      "theory": {
+        "intro": "Модальні дієслова допомагають робити висновки на підставі фактів: наскільки ми впевнені, що щось є або було правдою.",
+        "blocks": [
+          {
+            "title": "Теперішнє",
+            "text": "*must* — «напевно так» (≈ 90 %); *can’t / couldn’t* — «напевно ні»; *might / may / could* — «можливо». Для дії в процесі — *must be doing*.",
+            "examples": [
+              ["The lights are off. They must be asleep.", "Світло вимкнене. Вони, мабуть, сплять."],
+              ["That can’t be Anna — she’s abroad.", "Це не може бути Анна — вона за кордоном."],
+              ["He might be in a meeting.", "Можливо, він на нараді."]
+            ]
+          },
+          {
+            "title": "Минуле: модальне + have + V3",
+            "text": "*must have done*, *can’t / couldn’t have done*, *might / may / could have done*.",
+            "examples": [
+              ["The street is wet. It must have rained.", "Вулиця мокра. Мабуть, ішов дощ."],
+              ["She can’t have forgotten — I reminded her.", "Не може бути, щоб вона забула: я їй нагадав."],
+              ["They might have missed the bus.", "Можливо, вони запізнилися на автобус."]
+            ]
+          }
+        ],
+        "traps": [
+          "Протилежність *must* у здогаді — *can’t*, а не *mustn’t*: *mustn’t* означає заборону.",
+          "«Він, мабуть, спить» — *He must be sleeping*; «мабуть, спав» — *He must have been sleeping*.",
+          "Після модального — *have* + *V3*, а не *had*: *must have seen*, не *must had seen*.",
+          "*Could have done* має два значення: «можливо, зробив» і «міг би зробити, але не зробив» — розрізняйте за контекстом."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "The lights are off and nobody’s answering. They ___ be out.",
+          "options": ["must", "can’t", "mustn’t"],
+          "answer": 0,
+          "explanation": "Факти вказують на висновок «напевно так» — *must*. *Mustn’t* — заборона, а не здогад."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "That ___ be Anna at the door — she’s on vacation in Peru.",
+          "options": ["can’t", "mustn’t", "must"],
+          "answer": 0,
+          "explanation": "Упевненість, що щось неможливо, — *can’t*. *Mustn’t* у значенні здогаду не вживається."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "I can’t find my keys. I ___ left them at the office.",
+          "options": ["might have", "must", "might"],
+          "answer": 0,
+          "explanation": "Припущення про минуле — модальне + *have* + *V3*: *might have left*. *Must left* і *might left* граматично неможливі."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "He ___ the email — he replied within minutes.",
+          "options": ["must have read", "can’t have read", "must read"],
+          "answer": 0,
+          "explanation": "Швидка відповідь — підстава для впевненого висновку про минуле: *must have read*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "She ___ have taken the bus — there are no buses on Sundays.",
+          "options": ["can’t", "mustn’t", "must"],
+          "answer": 0,
+          "explanation": "Неможливість у минулому — *can’t have* + *V3*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Висловіть упевненість (два слова).",
+          "prompt": "You ___ (be) exhausted after such a long flight.",
+          "answers": ["must be"],
+          "explanation": "Логічний висновок про теперішнє з упевненістю — *must be*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Висловіть упевнений здогад про минуле.",
+          "prompt": "The road is wet. It ___ (rain) during the night.",
+          "answers": ["must have rained"],
+          "explanation": "Висновок про минуле з упевненістю: *must have* + *V3* — *must have rained*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Висловіть припущення (не впевненість) про минуле.",
+          "prompt": "I’m not sure where Tom is. He ___ (go) to the gym.",
+          "answers": ["might have gone", "may have gone", "could have gone"],
+          "explanation": "Невпевнене припущення про минуле — *might / may / could have gone*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "She [[mustn’t]] have [[forgotten]] the meeting — I reminded her [[twice]].",
+          "answer": 0,
+          "fix": "can’t",
+          "explanation": "Упевнений заперечний здогад — *can’t have forgotten*. *Mustn’t* передає заборону."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "You [[must]] [[had]] a great time [[in]] Rome!",
+          "answer": 1,
+          "fix": "have had",
+          "explanation": "Після модального — *have* + *V3*: *You must have had a great time*."
+        }
+      ]
+    },
+    {
+      "id": "verb-patterns",
+      "title": "Дієслова, що змінюють значення: -ing чи to",
+      "titleEn": "Verb patterns with a change in meaning",
+      "summary": "remember, forget, stop, try, regret, mean; make і let.",
+      "theory": {
+        "intro": "Після деяких дієслів можлива і форма з *-ing*, і інфінітив з *to*, але зміст речення змінюється. Здебільшого *to* дивиться вперед (на дію, яку треба виконати), а *-ing* — назад (на те, що вже відбувалося).",
+        "blocks": [
+          {
+            "title": "remember / forget",
+            "text": "*remember / forget to do* — не забути / забути зробити. *remember / forget doing* — пам’ятати / забути, що робив.",
+            "examples": [
+              ["Remember to lock the door.", "Не забудь замкнути двері."],
+              ["I remember locking the door.", "Я пам’ятаю, що замкнув двері."]
+            ]
+          },
+          {
+            "title": "stop",
+            "text": "*stop doing* — припинити; *stop to do* — зупинитися, щоб щось зробити.",
+            "examples": [
+              ["He stopped smoking.", "Він кинув палити."],
+              ["He stopped to buy water.", "Він зупинився, щоб купити води."]
+            ]
+          },
+          {
+            "title": "try, regret, mean",
+            "text": "*try to do* — намагатися; *try doing* — спробувати як експеримент. *regret doing* — шкодувати, що зробив; *regret to say / inform* — з жалем повідомити. *mean to do* — мати намір; *mean doing* — означати, передбачати.",
+            "examples": [
+              ["Try restarting the computer.", "Спробуй перезавантажити комп’ютер."],
+              ["We regret to inform you…", "З жалем повідомляємо…"],
+              ["A new job means moving to another city.", "Нова робота означає переїзд."]
+            ]
+          },
+          {
+            "title": "make і let",
+            "text": "*make / let* + особа + інфінітив без *to*. У пасиві з *make* з’являється *to*: *was made to do*.",
+            "examples": [
+              ["My parents let me stay up late.", "Батьки дозволяли мені пізно лягати."],
+              ["We were made to wait for an hour.", "Нас змусили чекати годину."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Не забудь вимкнути світло» — *Don’t forget to turn off*, а не *turning off*.",
+          "«Я кинув палити» — *I stopped smoking*; *I stopped to smoke* — «я зупинився, щоб покурити».",
+          "*made me to do* — помилка: *made me do*. Але в пасиві — *I was made to do*.",
+          "*let me to go* — помилка: *let me go*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Don’t forget ___ the lights when you leave.",
+          "options": ["to turn off", "turning off", "turn off"],
+          "answer": 0,
+          "explanation": "Нагадування про дію, яку ще треба виконати, — *forget to do*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "I’ll never forget ___ the ocean for the first time.",
+          "options": ["seeing", "to see", "see"],
+          "answer": 0,
+          "explanation": "Спогад про те, що вже відбулося, — *forget doing*: *I’ll never forget seeing*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "He felt sleepy while driving, so he stopped ___ a coffee.",
+          "options": ["to have", "having", "have"],
+          "answer": 0,
+          "explanation": "Зупинився з метою — *stop to do*. *Stopped having a coffee* означало б «перестав пити каву»."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "If the printer doesn’t work, try ___ it off and on again.",
+          "options": ["turning", "to turn", "turn"],
+          "answer": 0,
+          "explanation": "Порада випробувати певний спосіб — *try doing*. *Try to do* означає «докласти зусиль», а вимкнути принтер нескладно."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "My parents didn’t let me ___ out late.",
+          "options": ["stay", "to stay", "staying"],
+          "answer": 0,
+          "explanation": "Після *let* + особа — інфінітив без *to*: *let me stay*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "I remember ___ (lock) the door, so I’m sure it’s locked.",
+          "answers": ["locking"],
+          "explanation": "Спогад про виконану дію — *remember doing*: *I remember locking the door*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "We regret ___ (inform) you that the event has been canceled.",
+          "answers": ["to inform"],
+          "explanation": "Офіційна формула «з жалем повідомляємо» — *regret to inform*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "As a child, I was made ___ (practice) the piano every day.",
+          "answers": ["to practice", "to practise"],
+          "explanation": "У пасиві з *make* з’являється *to*: *was made to practice*. В активі — *They made me practice*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "My boss [[made]] me [[to rewrite]] the [[whole]] report.",
+          "answer": 1,
+          "fix": "rewrite",
+          "explanation": "Після *make* + особа в активному стані — інфінітив без *to*: *made me rewrite*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "I [[meant]] [[calling]] you yesterday, but I [[completely]] forgot.",
+          "answer": 1,
+          "fix": "to call",
+          "explanation": "«Мав намір» — *mean to do*: *I meant to call you*. *Mean doing* означає «передбачати, означати»."
+        }
+      ]
+    },
+    {
+      "id": "relative-clauses-advanced",
+      "title": "Підрядні означальні: складніші випадки",
+      "titleEn": "Non-defining and complex relative clauses",
+      "summary": "Відокремлені означальні, which про ціле речення, прийменник + whom / which, most of whom.",
+      "theory": {
+        "intro": "Відокремлене (неозначальне) підрядне додає інформацію, без якої речення залишається зрозумілим. Воно виділяється комами, а *that* у ньому не вживається.",
+        "blocks": [
+          {
+            "title": "Відокремлені означальні",
+            "text": "Займенник не можна пропустити, а *that* заборонено. Інформація додаткова: її можна взяти в дужки.",
+            "examples": [
+              ["My grandfather, who is ninety, still swims every day.", "Мій дідусь, якому дев’яносто, досі щодня плаває."],
+              ["Kyiv, where my sister lives, is beautiful in spring.", "Київ, де живе моя сестра, прекрасний навесні."]
+            ]
+          },
+          {
+            "title": "which про все речення",
+            "text": "Коли «що» стосується всієї попередньої думки, вживаємо *which* після коми.",
+            "examples": [
+              ["She passed all her exams, which surprised everyone.", "Вона склала всі іспити, що всіх здивувало."]
+            ]
+          },
+          {
+            "title": "Прийменник на початку і кількісні вирази",
+            "text": "В офіційному стилі прийменник ставлять перед займенником: *to whom, in which*. Після прийменника про людей — лише *whom*. Кількісні вирази: *some / most / all / none of whom / which*.",
+            "examples": [
+              ["The person to whom I spoke was very helpful.", "Людина, з якою я говорив, дуже допомогла."],
+              ["He has three sisters, all of whom are doctors.", "У нього три сестри, і всі вони лікарки."]
+            ]
+          },
+          {
+            "title": "Скорочені підрядні",
+            "text": "Підрядне можна замінити дієприкметником: *-ing* (активне значення) або *V3* (пасивне).",
+            "examples": [
+              ["The woman sitting by the window is my aunt.", "Жінка, що сидить біля вікна, — моя тітка."],
+              ["Most of the goods sold here are local.", "Більшість товарів, що тут продаються, місцеві."]
+            ]
+          }
+        ],
+        "traps": [
+          "Після коми *that* не вживається: *My brother, who lives in Lviv,…*, а не *My brother, that lives…*",
+          "«…що було дуже неввічливо» про цілу дію — *which was very rude*, а не *what was very rude*.",
+          "Після прийменника — *whom*, не *who*: *to whom*, *with whom*.",
+          "*all of them* після коми утворює окреме речення; у підрядному — *all of whom*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "My grandfather, ___ is ninety, still swims every day.",
+          "options": ["who", "that", "which"],
+          "answer": 0,
+          "explanation": "Відокремлене підрядне про людину — *who*. *That* після коми не вживається."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "She passed all her exams, ___ surprised everyone.",
+          "options": ["which", "that", "what"],
+          "answer": 0,
+          "explanation": "Займенник стосується всієї попередньої думки — *which* після коми."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "The colleague ___ I was talking turned out to be the new director.",
+          "options": ["to whom", "to who", "whom"],
+          "answer": 0,
+          "explanation": "*Talk to someone*: прийменник переходить на початок підрядного, а після нього вживаємо лише *whom*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "He has three sisters, all of ___ are doctors.",
+          "options": ["whom", "them", "who"],
+          "answer": 0,
+          "explanation": "Кількісний вираз + *of whom* утворює підрядне: *all of whom*. *All of them* вимагало б окремого речення."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "The woman ___ next to the window is my aunt.",
+          "options": ["sitting", "sat", "who sitting"],
+          "answer": 0,
+          "explanation": "Скорочене підрядне з активним значенням — дієприкметник на *-ing*: *the woman sitting* (= *who is sitting*)."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне чи два слова.",
+          "prompt": "Paris, ___ I lived for two years, is my favorite city.",
+          "answers": ["where", "in which"],
+          "explanation": "Місце у відокремленому підрядному — *where* або формальніше *in which*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "I received dozens of applications, most ___ which were excellent.",
+          "answers": ["of"],
+          "explanation": "Кількісний вираз у підрядному: *most of which*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "The house, ___ roof was damaged in the storm, is being repaired.",
+          "answers": ["whose"],
+          "explanation": "«Чий дах» — *whose*; про предмети *whose* теж уживається."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "My best friend, [[that]] [[lives]] in Lviv, [[is coming]] to visit.",
+          "answer": 0,
+          "fix": "who",
+          "explanation": "У відокремленому підрядному (між комами) *that* не вживається: *My best friend, who lives in Lviv,…*"
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "He didn’t call me back, [[what]] was [[rather]] [[rude]].",
+          "answer": 0,
+          "fix": "which",
+          "explanation": "Коли «що» стосується цілої попередньої думки, вживаємо *which*: *…, which was rather rude*."
+        }
+      ]
+    },
+    {
+      "id": "articles",
+      "title": "Артиклі",
+      "titleEn": "Articles: a / an, the, zero article",
+      "summary": "Перша згадка й відоме, загальні поняття, географічні назви, усталені звороти.",
+      "theory": {
+        "intro": "В українській артиклів немає, тому саме тут найбільше «невидимих» помилок. Основне питання: чи знає співрозмовник, про який саме предмет ідеться?",
+        "blocks": [
+          {
+            "title": "a / an",
+            "text": "Один із багатьох, перша згадка, професія. *An* — перед голосним звуком, а не літерою: *an hour*, але *a university*.",
+            "examples": [
+              ["She’s an engineer.", "Вона інженерка."],
+              ["I saw a fox in the garden.", "Я бачив у саду лисицю (якусь)."]
+            ]
+          },
+          {
+            "title": "the",
+            "text": "Відоме обом або вже згадане; єдине у своєму роді (*the sun*); з найвищим ступенем і порядковими числівниками; з музичними інструментами (*play the guitar*); з назвами океанів, річок, гірських хребтів і країн-об’єднань (*the United States, the Netherlands*); *the* + прикметник для групи людей (*the elderly*).",
+            "examples": [
+              ["This is the best book I’ve ever read.", "Це найкраща книжка з усіх, що я читав."],
+              ["The Danube flows into the Black Sea.", "Дунай впадає в Чорне море."]
+            ]
+          },
+          {
+            "title": "Без артикля",
+            "text": "Загальні поняття (незлічувані іменники й множина в загальному значенні); більшість країн, міст і континентів; прийоми їжі; *by bus / by train*; *go to bed / school / work* у прямому призначенні.",
+            "examples": [
+              ["Life is full of surprises.", "Життя сповнене несподіванок."],
+              ["Dogs are loyal animals.", "Собаки — віддані тварини (загалом)."],
+              ["We traveled by train.", "Ми подорожували потягом."]
+            ]
+          }
+        ],
+        "traps": [
+          "Найчастіше пропускають *a* перед професією: *He’s a doctor*, а не *He’s doctor*.",
+          "Не ставте *the* перед загальними поняттями: *Life is beautiful*, а не *The life is beautiful*.",
+          "*go to school* (учитися) і *go to the school* (прийти до будівлі, наприклад на батьківські збори) — різні значення.",
+          "*An* залежить від звука: *an hour, an honest man*, але *a university, a one-way ticket*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "My sister is ___ architect.",
+          "options": ["an", "a", "the"],
+          "answer": 0,
+          "explanation": "Професія — з неозначеним артиклем; *architect* починається з голосного звука, тож *an*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "___ life is full of surprises.",
+          "options": ["— (без артикля)", "The", "A"],
+          "answer": 0,
+          "explanation": "Загальне абстрактне поняття — без артикля: *Life is full of surprises*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "This is ___ best pizza I’ve ever had.",
+          "options": ["the", "a", "— (без артикля)"],
+          "answer": 0,
+          "explanation": "З найвищим ступенем порівняння — *the*: *the best*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "We traveled across Europe by ___ train.",
+          "options": ["— (без артикля)", "a", "the"],
+          "answer": 0,
+          "explanation": "Спосіб пересування *by train, by car, by plane* — без артикля."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "It took us ___ hour to get there.",
+          "options": ["an", "a", "the"],
+          "answer": 0,
+          "explanation": "У слові *hour* літера *h* не вимовляється, слово починається з голосного звука — *an hour*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть артикль.",
+          "prompt": "She plays ___ violin in an orchestra.",
+          "answers": ["the"],
+          "explanation": "З назвами музичних інструментів після *play* вживаємо *the*: *play the violin*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть артикль.",
+          "prompt": "Have you ever been to ___ United States?",
+          "answers": ["the"],
+          "explanation": "Назви держав зі словами *States, Kingdom, Republic* і в множині вживаються з *the*: *the United States*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть артикль або поставте прочерк (-), якщо артикль не потрібен.",
+          "prompt": "___ honesty is the best policy.",
+          "answers": ["-", "—", "–", "0"],
+          "explanation": "*Honesty* — абстрактне поняття в загальному значенні, тож без артикля."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[The dogs]] are often called [[man’s]] best friend [[because]] of their loyalty.",
+          "answer": 0,
+          "fix": "Dogs",
+          "explanation": "Ідеться про собак загалом, а не про конкретних: множина в загальному значенні — без артикля."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "He’s [[a]] [[university]] student and wants to become [[engineer]].",
+          "answer": 2,
+          "fix": "an engineer",
+          "explanation": "Перед назвою професії потрібен неозначений артикль: *become an engineer*. *A university* правильне: слово починається зі звука [j]."
+        }
+      ]
+    },
+    {
+      "id": "used-to-be-used-to",
+      "title": "used to, would, be used to, get used to",
+      "titleEn": "used to, would, be used to, get used to",
+      "summary": "Колишні звички і стани проти «бути звиклим» і «звикати».",
+      "theory": {
+        "intro": "Ці чотири конструкції схожі на вигляд, але різні за значенням і будовою. Після *be / get used to* слово *to* — прийменник, тож далі йде іменник або *-ing*.",
+        "blocks": [
+          {
+            "title": "used to + інфінітив",
+            "text": "Колишні звички й стани, яких тепер немає.",
+            "examples": [
+              ["I used to have long hair.", "Колись у мене було довге волосся."]
+            ]
+          },
+          {
+            "title": "would + інфінітив",
+            "text": "Повторювані дії в минулому, часто в ностальгійних спогадах. Для станів (*have, be, live, know*) *would* не вживається.",
+            "examples": [
+              ["Every summer we would swim in the lake.", "Щоліта ми плавали в озері."]
+            ]
+          },
+          {
+            "title": "be used to + іменник / -ing",
+            "text": "Бути звиклим до чогось, не відчувати труднощів.",
+            "examples": [
+              ["I’m used to working late.", "Я звик працювати допізна."]
+            ]
+          },
+          {
+            "title": "get used to + іменник / -ing",
+            "text": "Звикати, поступово призвичаюватися.",
+            "examples": [
+              ["You’ll soon get used to the noise.", "Ти швидко звикнеш до шуму."],
+              ["I can’t get used to driving on the left.", "Ніяк не звикну до лівостороннього руху."]
+            ]
+          }
+        ],
+        "traps": [
+          "*I’m used to work* — помилка: після *be used to* — *-ing*: *I’m used to working*.",
+          "*would* не описує колишніх станів: *I used to have a dog*, а не *I would have a dog*.",
+          "«Я ніяк не звикну» — *I can’t get used to…*, а не *I can’t use to…*",
+          "У запереченні: *I didn’t use to*, але *I’m not used to*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I ___ getting up early — I’ve done it for years.",
+          "options": ["am used to", "used to", "use to"],
+          "answer": 0,
+          "explanation": "Бути звиклим до чогось зараз — *be used to* + *-ing*: *I am used to getting up early*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "It took me months to ___ driving on the left.",
+          "options": ["get used to", "used to", "be use to"],
+          "answer": 0,
+          "explanation": "Процес звикання — *get used to* + *-ing*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "When we were kids, we ___ build sandcastles every summer.",
+          "options": ["would", "were used to", "got used to"],
+          "answer": 0,
+          "explanation": "Повторювана дія в минулому — *would* + інфінітив (так само можливо *used to*)."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I ___ have long hair, but I cut it short a few years ago.",
+          "options": ["used to", "would", "was used to"],
+          "answer": 0,
+          "explanation": "Колишній стан (*have long hair*) — лише *used to*. *Would* для станів не вживається."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "She isn’t used to ___ in such a noisy city.",
+          "options": ["living", "live", "have lived"],
+          "answer": 0,
+          "explanation": "Після *be used to* слово *to* — прийменник, тож далі *-ing*: *used to living*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Don’t worry, you’ll soon get used to ___ (work) night shifts.",
+          "answers": ["working"],
+          "explanation": "*Get used to* + *-ing*: *get used to working*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "There ___ to be a movie theater on this corner.",
+          "answers": ["used"],
+          "explanation": "Колишній стан: *There used to be…* — «колись тут був…»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "I’m not used ___ spicy food, so please don’t add chili.",
+          "answers": ["to"],
+          "explanation": "*Be used to* + іменник: *I’m not used to spicy food*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[would]] [[have]] a dog called Max [[when]] I was a child.",
+          "answer": 0,
+          "fix": "used to",
+          "explanation": "Володіння — стан, а для станів *would* не вживається: *I used to have a dog*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "He [[was]] used to [[drive]] long distances, [[so]] the trip didn’t tire him.",
+          "answer": 1,
+          "fix": "driving",
+          "explanation": "Після *be used to* — *-ing*: *He was used to driving long distances*."
+        }
+      ]
+    }
+  ]
+}

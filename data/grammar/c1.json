@@ -1,0 +1,1273 @@
+{
+  "level": "C1",
+  "title": "Граматика рівня C1",
+  "description": "Засоби, що роблять мовлення виразним і стилістично гнучким: інверсія, підсилювальні конструкції, безособовий пасив, дієприкметникові звороти, «нереальне минуле», тонкощі модальних дієслів, інвертовані умовні речення, заміщення й еліпсис, майбутнє в минулому та засоби допустовості й контрасту.",
+  "topics": [
+    {
+      "id": "inversion",
+      "title": "Інверсія після заперечних і обмежувальних слів",
+      "titleEn": "Inversion after negative and limiting adverbials",
+      "summary": "Never have I…, No sooner… than, Hardly… when, Not only…, Only then…",
+      "theory": {
+        "intro": "Коли речення починається із заперечного чи обмежувального виразу, підмет і допоміжне дієслово міняються місцями, як у питанні. Така інверсія характерна для писемного, ораторського й художнього стилю й додає вислову ваги.",
+        "blocks": [
+          {
+            "title": "Схема",
+            "text": "Вираз + допоміжне дієслово (*do / does / did, have, be*, модальне) + підмет + основне дієслово. Якщо допоміжного немає, додаємо *do / does / did*.",
+            "examples": [
+              ["Never have I seen such a crowd.", "Ніколи я не бачив такого натовпу."],
+              ["Rarely do we get a chance like this.", "Нечасто випадає така нагода."]
+            ]
+          },
+          {
+            "title": "Пари, які легко сплутати",
+            "text": "*Hardly / Scarcely … when* і *No sooner … than* — «ледве…, як»; обидві частини зазвичай у *Past Perfect* і *Past Simple*. *Not only …, but (also)* — «не лише…, а й».",
+            "examples": [
+              ["Hardly had I sat down when the phone rang.", "Ледве я сів, як задзвонив телефон."],
+              ["No sooner had she left than it started to rain.", "Щойно вона пішла, як почався дощ."],
+              ["Not only is he talented, but he is also hard-working.", "Він не лише талановитий, а й працьовитий."]
+            ]
+          },
+          {
+            "title": "Only…, Not until…: інверсія в головній частині",
+            "text": "Після *Only after / Only when / Not until* + підрядне інверсія з’являється лише в головній частині речення.",
+            "examples": [
+              ["Only when I got home did I realize my mistake.", "Лише вдома я усвідомив свою помилку."],
+              ["Not until the end of the film do we learn the truth.", "Аж наприкінці фільму ми дізнаємося правду."]
+            ]
+          },
+          {
+            "title": "Інші вирази",
+            "text": "*Under no circumstances, At no time, In no way, On no account, Little, Seldom, Nowhere*.",
+            "examples": [
+              ["Under no circumstances should you share your password.", "За жодних обставин не повідомляйте свій пароль."],
+              ["Little did she know what was waiting for her.", "Вона й гадки не мала, що на неї чекає."]
+            ]
+          }
+        ],
+        "traps": [
+          "*No sooner … than*, але *Hardly / Scarcely … when*: не змішуйте пари.",
+          "Після *Not until / Only after* + підрядне інвертується друга, головна частина: *Not until I got home did I notice…*",
+          "Без допоміжного дієслова інверсія неможлива: *Little did I know*, а не *Little knew I*.",
+          "Інверсія — ознака офіційного або виразного стилю; у звичайній розмові природніше *I’ve never seen…*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Never ___ such a breathtaking view.",
+          "options": ["have I seen", "I have seen", "I saw"],
+          "answer": 0,
+          "explanation": "Речення починається з *Never*, тож потрібна інверсія: допоміжне *have* стоїть перед підметом — *Never have I seen*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "No sooner had we sat down ___ the phone rang.",
+          "options": ["than", "when", "then"],
+          "answer": 0,
+          "explanation": "*No sooner* утворює пару з *than*. *When* поєднується з *hardly / scarcely*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Hardly had the meeting started ___ the fire alarm went off.",
+          "options": ["when", "than", "that"],
+          "answer": 0,
+          "explanation": "*Hardly … when* — «ледве…, як». *Than* — пара до *no sooner*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Not only ___ the exam, but she also got the highest score.",
+          "options": ["did she pass", "she passed", "she did pass"],
+          "answer": 0,
+          "explanation": "*Not only* на початку речення вимагає інверсії з допоміжним *did*: *Not only did she pass*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Only after the guests had left ___ how tired she was.",
+          "options": ["did she realize", "she realized", "realized she"],
+          "answer": 0,
+          "explanation": "Після *Only after* + підрядне інверсія з’являється в головній частині: *did she realize*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне модальне дієслово.",
+          "prompt": "Under no circumstances ___ you open this door.",
+          "answers": ["should", "must"],
+          "explanation": "*Under no circumstances* вимагає інверсії; модальне *should* або *must* стає перед підметом."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Little ___ he know that his life was about to change.",
+          "answers": ["did"],
+          "explanation": "*Little* на початку речення означає «зовсім не»; інверсія потребує допоміжного *did*: *Little did he know*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Rarely ___ we see such dedication in young athletes.",
+          "answers": ["do"],
+          "explanation": "Після *Rarely* — інверсія; у *Present Simple* допоміжне дієслово *do*: *Rarely do we see*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "Not until I [[got]] home [[I noticed]] that my wallet [[was]] missing.",
+          "answer": 1,
+          "fix": "did I notice",
+          "explanation": "Після *Not until* + підрядне головна частина інвертується: *Not until I got home did I notice…*"
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "Seldom [[I have]] [[met]] anyone [[so]] generous.",
+          "answer": 0,
+          "fix": "have I",
+          "explanation": "*Seldom* на початку речення вимагає інверсії: *Seldom have I met anyone so generous*."
+        }
+      ]
+    },
+    {
+      "id": "cleft-sentences",
+      "title": "Підсилювальні (розщеплені) речення",
+      "titleEn": "Cleft sentences",
+      "summary": "It is… that…, What I need is…, All I want is…, It wasn’t until… that…",
+      "theory": {
+        "intro": "Українська виділяє важливе порядком слів і словами «саме», «якраз». Англійська, з її жорсткішим порядком слів, часто «розщеплює» речення на дві частини, щоб наголосити на одному елементі.",
+        "blocks": [
+          {
+            "title": "It-cleft: It is / was … that / who …",
+            "text": "Виділяє будь-який член речення: підмет, додаток, обставину.",
+            "examples": [
+              ["It was my grandmother who taught me to cook.", "Саме бабуся навчила мене готувати."],
+              ["It’s on Fridays that the market is busiest.", "Найлюдніше на ринку саме в п’ятницю."]
+            ]
+          },
+          {
+            "title": "Wh-cleft: What … is / was …",
+            "text": "Спершу створює очікування, потім розкриває головне. Якщо виділяємо дію — *What I did was (to) call…*",
+            "examples": [
+              ["What I need is a long vacation.", "Що мені потрібно, то це довга відпустка."],
+              ["What she did was call the police.", "Вона просто викликала поліцію."]
+            ]
+          },
+          {
+            "title": "Інші моделі",
+            "text": "*All I want is…*, *The reason (why) … is that…*, *The thing that … is…*, *It wasn’t until … that…* («аж тоді, коли…»).",
+            "examples": [
+              ["All I want is some peace and quiet.", "Усе, чого я хочу, — трохи тиші й спокою."],
+              ["It wasn’t until midnight that we finished.", "Ми закінчили аж опівночі."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Саме він це зробив» — *It was he / him who did it*, а не *Exactly he did it*.",
+          "Після *What … * у підсилювальному реченні дієслово-зв’язка зазвичай в однині: *What I like is…*",
+          "*The reason is because* — розмовне; в офіційному стилі — *The reason is that…*",
+          "*It wasn’t until … that*, а не *It wasn’t until … when*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "It was my grandmother ___ taught me to cook.",
+          "options": ["who", "which", "what"],
+          "answer": 0,
+          "explanation": "Виділено людину, тож після *It was …* — *who* (або *that*). *What* у цій конструкції не вживається."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "___ I need right now is a long vacation.",
+          "options": ["What", "That", "Which"],
+          "answer": 0,
+          "explanation": "Wh-cleft: *What I need … is…* — «те, що мені потрібно, — це…»."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "It wasn’t until midnight ___ we finally finished.",
+          "options": ["that", "when", "than"],
+          "answer": 0,
+          "explanation": "Усталена модель *It wasn’t until … that…* — «аж тоді…»."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "What she did ___ call the police immediately.",
+          "options": ["was", "did", "that"],
+          "answer": 0,
+          "explanation": "У виділенні дії зв’язкою слугує *was*: *What she did was (to) call…*"
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "All I want ___ a bit of peace and quiet.",
+          "options": ["is", "are", "that"],
+          "answer": 0,
+          "explanation": "*All I want* — «усе, чого я хочу» — граматично однина: *All I want is…*"
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "___ was in this very room that the agreement was signed.",
+          "answers": ["it"],
+          "explanation": "It-cleft виділяє обставину місця: *It was in this very room that…*"
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "The reason I called is ___ I need your advice.",
+          "answers": ["that"],
+          "explanation": "Нормативна модель — *The reason … is that…*. Варіант *is because* звучить розмовно."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "What happened ___ that the train broke down.",
+          "answers": ["was"],
+          "explanation": "*What happened was that…* — «а сталося ось що: …»."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[What]] I like about this city [[are]] [[that]] it’s so green.",
+          "answer": 1,
+          "fix": "is",
+          "explanation": "Підсилювальна частина *What I like about this city* граматично однина: *What I like … is that…*"
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "It was my teacher [[which]] [[inspired]] me [[to study]] languages.",
+          "answer": 0,
+          "fix": "who",
+          "explanation": "Виділено людину, тож *who* (або *that*), а не *which*."
+        }
+      ]
+    },
+    {
+      "id": "impersonal-passive",
+      "title": "Безособовий пасив",
+      "titleEn": "Impersonal passive: It is said that… / He is said to…",
+      "summary": "Як передати чутки, думки й повідомлення без указівки на джерело.",
+      "theory": {
+        "intro": "Безособовий пасив дозволяє передати поширену думку, чутку чи офіційне повідомлення, не називаючи джерела. Це типово для новин, наукових текстів і ділового стилю.",
+        "blocks": [
+          {
+            "title": "It is said that + підрядне",
+            "text": "Із дієсловами *say, believe, think, report, expect, know, consider, estimate*.",
+            "examples": [
+              ["It is believed that the castle was built by monks.", "Вважають, що замок збудували ченці."],
+              ["It is expected that prices will rise.", "Очікують, що ціни зростуть."]
+            ]
+          },
+          {
+            "title": "Підмет + is said + інфінітив",
+            "text": "Форма інфінітива показує час: *to be / to do* — одночасно; *to be doing* — процес зараз; *to have done* — раніше.",
+            "examples": [
+              ["He is said to be very rich.", "Кажуть, він дуже багатий."],
+              ["She is thought to be working on a new book.", "Вважають, що вона зараз пише нову книжку."],
+              ["The painting is believed to have been stolen.", "Вважають, що картину викрали."]
+            ]
+          },
+          {
+            "title": "There is said to be",
+            "text": "Безособова конструкція з *there* узгоджується з наступним іменником.",
+            "examples": [
+              ["There are thought to be over a hundred species here.", "Вважають, що тут понад сотню видів."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Кажуть, що він багатий» — *He is said to be rich* або *It is said that he is rich*, але не *He is said that he is rich*.",
+          "Попередню дію передає перфектний інфінітив: *She is said to have left*, а не *is said to left*.",
+          "Час дієслова *say / believe* і час інфінітива — незалежні: *was thought to be* (тоді вважали про тоді) і *is thought to have been* (зараз вважають про минуле).",
+          "В українській частіше вживають «кажуть», «вважають»; у формальному англійському тексті *people say* звучить надто розмовно."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "The painting is believed ___ in the sixteenth century.",
+          "options": ["to have been painted", "to be painted", "to have painted"],
+          "answer": 0,
+          "explanation": "Дію виконали в минулому, а картина — її об’єкт: перфектний пасивний інфінітив *to have been painted*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "It ___ that the new bridge will open next spring.",
+          "options": ["is expected", "expects", "is expecting"],
+          "answer": 0,
+          "explanation": "Безособова конструкція *It is expected that…* — «очікують, що…»."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "He is said ___ on a new novel at the moment.",
+          "options": ["to be working", "to work", "to have worked"],
+          "answer": 0,
+          "explanation": "Процес, що триває зараз (*at the moment*), — тривалий інфінітив *to be working*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "There ___ to be over a thousand species of birds in the region.",
+          "options": ["are thought", "is thought", "thinks"],
+          "answer": 0,
+          "explanation": "*There* узгоджується з іменником після нього: *over a thousand species* — множина, тож *There are thought to be*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "The suspect is reported ___ the country last week.",
+          "options": ["to have left", "to leave", "leaving"],
+          "answer": 0,
+          "explanation": "Дія відбулася раніше за повідомлення (*last week*) — перфектний інфінітив *to have left*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "It ___ (believe) that the castle was built by monks.",
+          "answers": ["is believed"],
+          "explanation": "Безособовий пасив у теперішньому часі: *It is believed that…*"
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "The company is said ___ (lose) millions last year.",
+          "answers": ["to have lost"],
+          "explanation": "Втрати сталися в минулому щодо моменту, коли «кажуть», — *to have lost*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Honey ___ said to have healing properties.",
+          "answers": ["is"],
+          "explanation": "Особова форма безособового пасиву: *Honey is said to have…*"
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "The ancient city [[is thought]] [[to be destroyed]] by an earthquake [[centuries]] ago.",
+          "answer": 1,
+          "fix": "to have been destroyed",
+          "explanation": "Руйнування сталося задовго до моменту мовлення, а місто — об’єкт дії: *to have been destroyed*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[It]] is known [[that]] dolphins [[to communicate]] using clicks and whistles.",
+          "answer": 2,
+          "fix": "communicate",
+          "explanation": "Після *It is known that* іде звичайне підрядне з особовим дієсловом: *that dolphins communicate*. Інфінітив можливий у моделі *Dolphins are known to communicate*."
+        }
+      ]
+    },
+    {
+      "id": "participle-clauses",
+      "title": "Дієприкметникові звороти",
+      "titleEn": "Participle clauses",
+      "summary": "Feeling tired…, Having finished…, Built in…; «висячий» дієприкметник.",
+      "theory": {
+        "intro": "Дієприкметникові звороти стискають підрядне речення, роблячи текст щільнішим і стилістично вищим. Головне правило: підмет звороту має збігатися з підметом головного речення.",
+        "blocks": [
+          {
+            "title": "-ing: одночасність або причина",
+            "text": "Дія відбувається одночасно з головною або пояснює її. Заперечення — *Not* перед дієприкметником.",
+            "examples": [
+              ["Feeling tired, she went to bed early.", "Відчуваючи втому, вона рано лягла спати."],
+              ["Not knowing what to say, he stayed silent.", "Не знаючи, що сказати, він мовчав."]
+            ]
+          },
+          {
+            "title": "Having + V3: попередня дія",
+            "text": "Дія завершилася до головної.",
+            "examples": [
+              ["Having finished the report, she went home.", "Закінчивши звіт, вона пішла додому."]
+            ]
+          },
+          {
+            "title": "V3: пасивне значення",
+            "text": "Підмет головного речення зазнає дії.",
+            "examples": [
+              ["Written in plain language, the book is easy to follow.", "Книжка, написана простою мовою, легко читається."]
+            ]
+          },
+          {
+            "title": "Після сполучників",
+            "text": "*while, when, after, before, since* + *-ing*.",
+            "examples": [
+              ["While waiting for the bus, I met an old classmate.", "Чекаючи на автобус, я зустрів однокласника."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Висячий» дієприкметник: *Walking down the street, the rain started* — помилка, бо йшов не дощ. Правильно: *Walking down the street, I got caught in the rain*.",
+          "Пасивне значення — *V3*: *Written in…*, а не *Writing in…*",
+          "Для дії, що передувала головній, — *Having + V3*.",
+          "Українські дієприслівники («закінчивши», «знаючи») — найближчий відповідник, і правило те саме: дія належить підметові речення."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "___ the report, she sent it to her manager.",
+          "options": ["Having finished", "Finished", "Having been finished"],
+          "answer": 0,
+          "explanation": "Спершу закінчила, потім надіслала; підмет (*she*) — виконавиця дії: *Having finished*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "___ in simple language, the book is perfect for beginners.",
+          "options": ["Written", "Writing", "Having written"],
+          "answer": 0,
+          "explanation": "Книжку написали, а не вона написала: пасивне значення — *V3*: *Written*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "___ what to say, he just stood there in silence.",
+          "options": ["Not knowing", "Knowing not", "Didn’t know"],
+          "answer": 0,
+          "explanation": "Заперечення в дієприкметниковому звороті — *not* перед дієприкметником: *Not knowing*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "___ by the noise, the baby started to cry.",
+          "options": ["Frightened", "Frightening", "Having frightened"],
+          "answer": 0,
+          "explanation": "Дитину налякав шум — пасивне значення: *Frightened by the noise*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "While ___ for the bus, I met an old classmate.",
+          "options": ["waiting", "waited", "I waiting"],
+          "answer": 0,
+          "explanation": "Після *while* — дієприкметник на *-ing*: *While waiting*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "___ (live) abroad for years, she speaks three languages fluently.",
+          "answers": ["having lived"],
+          "explanation": "Тривалий досвід, що передує теперішньому результату, — *Having lived*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "___ (feel) unwell, I decided to stay at home.",
+          "answers": ["feeling"],
+          "explanation": "Причина, одночасна з рішенням, — *Feeling unwell*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "All the dishes ___ (serve) in this restaurant are made from local produce.",
+          "answers": ["served"],
+          "explanation": "Страви подають (пасивне значення): *dishes served* = *dishes which are served*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[Having eaten]] lunch, [[the waiter]] brought [[us]] the bill.",
+          "answer": 0,
+          "fix": "After we had eaten",
+          "explanation": "«Висячий» дієприкметник: виходить, що обідав офіціант. Зворот треба розгорнути: *After we had eaten lunch, the waiter brought us the bill*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "The castle, [[building]] [[in]] the fourteenth century, [[attracts]] thousands of visitors.",
+          "answer": 0,
+          "fix": "built",
+          "explanation": "Замок збудували (пасивне значення), тож *V3*: *built in the fourteenth century*."
+        }
+      ]
+    },
+    {
+      "id": "unreal-past",
+      "title": "«Нереальне минуле»: it’s time, would rather, as if",
+      "titleEn": "Unreal past: it’s time, would rather, as if, suppose",
+      "summary": "Форми минулого часу для теперішніх і уявних ситуацій.",
+      "theory": {
+        "intro": "Після низки виразів форма минулого часу описує не минуле, а уявне або бажане в теперішньому. Це те саме явище, що й у *wish* та в другому типі умовних речень.",
+        "blocks": [
+          {
+            "title": "It’s (high / about) time + Past Simple",
+            "text": "«Давно пора»; *high* і *about* підсилюють докір. Без підмета — *It’s time to do*.",
+            "examples": [
+              ["It’s high time we made a decision.", "Нам давно пора ухвалити рішення."]
+            ]
+          },
+          {
+            "title": "would rather",
+            "text": "Той самий підмет — інфінітив без *to*. Інший підмет — *Past Simple* (теперішнє) або *Past Perfect* (минуле).",
+            "examples": [
+              ["I’d rather stay at home.", "Я краще залишуся вдома."],
+              ["I’d rather you didn’t tell anyone.", "Я волів би, щоб ти нікому не казав."],
+              ["I’d rather you hadn’t told her.", "Краще б ти їй не казав."]
+            ]
+          },
+          {
+            "title": "as if / as though",
+            "text": "*Past Simple* — ситуація уявна; теперішній час — цілком можлива.",
+            "examples": [
+              ["He talks as if he were the boss.", "Він говорить так, ніби він начальник (а це не так)."],
+              ["It looks as if it’s going to rain.", "Схоже, що буде дощ (цілком імовірно)."]
+            ]
+          },
+          {
+            "title": "suppose / supposing, I’d prefer it if",
+            "text": "Уявна ситуація: *Suppose you won…*; ввічливе прохання: *I’d prefer it if you called first*.",
+            "examples": [
+              ["Suppose you lost your job — what would you do?", "Припустімо, ти втратиш роботу, що робитимеш?"]
+            ]
+          }
+        ],
+        "traps": [
+          "*It’s time we go* — помилка: *It’s time we went*.",
+          "*I’d rather you don’t smoke* — помилка: *I’d rather you didn’t smoke*.",
+          "Після *would rather* із тим самим підметом немає *to*: *I’d rather walk*, а не *I’d rather to walk*.",
+          "Порівнюючи, вживайте *than*: *I’d rather walk than take the bus*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "It’s high time we ___ a decision.",
+          "options": ["made", "make", "will make"],
+          "answer": 0,
+          "explanation": "Після *It’s high time* + підмет — *Past Simple*, хоча йдеться про теперішнє: *we made*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "I’d rather you ___ anyone about this.",
+          "options": ["didn’t tell", "don’t tell", "not to tell"],
+          "answer": 0,
+          "explanation": "*Would rather* + інший підмет — *Past Simple*: *I’d rather you didn’t tell anyone*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "I’d rather ___ at home tonight.",
+          "options": ["stay", "to stay", "staying"],
+          "answer": 0,
+          "explanation": "Той самий підмет — інфінітив без *to*: *I’d rather stay*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "He talks as if he ___ the boss, but he’s only an intern.",
+          "options": ["were", "is being", "will be"],
+          "answer": 0,
+          "explanation": "Ситуація уявна (він не начальник) — після *as if* форма минулого: *were*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Suppose you ___ the lottery — what would you do first?",
+          "options": ["won", "win", "will win"],
+          "answer": 0,
+          "explanation": "*Suppose* + *Past Simple* описує уявну ситуацію, як у другому типі умовних: *Suppose you won*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "It’s time the children ___ (go) to bed.",
+          "answers": ["went"],
+          "explanation": "*It’s time* + підмет + *Past Simple*: *It’s time the children went to bed*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I’d rather you ___ (not / come) yesterday — the house was a mess.",
+          "answers": ["had not come", "hadn't come"],
+          "explanation": "*Would rather* + інший підмет про минуле — *Past Perfect*: *I’d rather you hadn’t come*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "I’d prefer it if you ___ (call) before visiting.",
+          "answers": ["called"],
+          "explanation": "*I’d prefer it if* + *Past Simple* — ввічливе прохання щодо теперішнього чи майбутнього."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "It’s about time you [[start]] [[taking]] your health [[seriously]].",
+          "answer": 0,
+          "fix": "started",
+          "explanation": "Після *It’s about time* + підмет — *Past Simple*: *you started*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "I’d rather [[to walk]] than [[take]] such a [[crowded]] bus.",
+          "answer": 0,
+          "fix": "walk",
+          "explanation": "Після *would rather* — інфінітив без *to*: *I’d rather walk than take…*"
+        }
+      ]
+    },
+    {
+      "id": "advanced-modals",
+      "title": "Модальні дієслова: тонкощі",
+      "titleEn": "Advanced modals: needn’t have, should have, may well, be bound to",
+      "summary": "needn’t have і didn’t need to; критика минулого; імовірність і неминучість.",
+      "theory": {
+        "intro": "На рівні C1 модальні дієслова передають тонкі відтінки: зайву дію в минулому, докір, високу ймовірність, неминучість, очікування.",
+        "blocks": [
+          {
+            "title": "needn’t have done і didn’t need to do",
+            "text": "*Needn’t have done* — дію виконали, але вона виявилася зайвою. *Didn’t need to do* — потреби не було (і, найімовірніше, дію не виконували).",
+            "examples": [
+              ["I needn’t have cooked so much.", "Даремно я наготувала стільки (а наготувала)."],
+              ["I didn’t need to cook — we ate out.", "Мені не довелося готувати: ми вечеряли в ресторані."]
+            ]
+          },
+          {
+            "title": "should have / could have",
+            "text": "*Should have done* — докір або жаль: треба було, але не зробили. *Could have done* — була можливість, але не скористалися.",
+            "examples": [
+              ["You should have told me.", "Треба було мені сказати."],
+              ["We could have won.", "Ми могли б виграти."]
+            ]
+          },
+          {
+            "title": "may / might well і may / might as well",
+            "text": "*may well* — «цілком імовірно». *might as well* — «можна й…, кращого варіанту немає».",
+            "examples": [
+              ["It may well rain later.", "Пізніше цілком може піти дощ."],
+              ["The bus has gone — we might as well walk.", "Автобус поїхав — можна й пішки."]
+            ]
+          },
+          {
+            "title": "be bound to і be supposed to",
+            "text": "*be bound to* — неодмінно станеться. *be supposed to* — очікування, правило, домовленість.",
+            "examples": [
+              ["They’re bound to find out.", "Вони неодмінно дізнаються."],
+              ["You’re not supposed to park here.", "Тут не можна паркуватися (за правилами)."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Даремно я купив квитки» (купив) — *I needn’t have bought the tickets*; «не треба було купувати» (не купував) — *I didn’t need to buy*.",
+          "Після модального в минулому — *have* + *V3*: *should have come*, а не *should have came* чи *should had come*.",
+          "*be supposed to* (очікується) і *suppose* (припускати) — різні значення.",
+          "*may well* і *might as well* легко сплутати: перше — ймовірність, друге — вимушений вибір."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "We ___ so much food — half of it was left over.",
+          "options": ["needn’t have cooked", "didn’t need to cook", "mustn’t have cooked"],
+          "answer": 0,
+          "explanation": "Їжу приготували, але її виявилося забагато: зайва, проте виконана дія — *needn’t have cooked*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "I ___ take a taxi because a friend gave me a ride, so I saved some money.",
+          "options": ["didn’t need to", "needn’t have", "mustn’t"],
+          "answer": 0,
+          "explanation": "Таксі не брали, бо не було потреби — *didn’t need to*. *Needn’t have taken* означало б, що таксі все ж узяли."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "You ___ me you were coming — I would have picked you up.",
+          "options": ["should have told", "should told", "must have told"],
+          "answer": 0,
+          "explanation": "Докір щодо минулого — *should have* + *V3*. *Must have told* означало б упевнений здогад, а не докір."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Don’t worry, they’re ___ find out sooner or later.",
+          "options": ["bound to", "bound", "due"],
+          "answer": 0,
+          "explanation": "Неминучість — *be bound to* + інфінітив."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "The last bus has gone, so we ___ as well walk.",
+          "options": ["might", "should", "must"],
+          "answer": 0,
+          "explanation": "Усталений вираз вимушеного вибору — *might / may as well*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть заперечну форму be (одне чи два слова).",
+          "prompt": "You ___ supposed to park here — it’s a fire lane.",
+          "answers": ["are not", "aren't"],
+          "explanation": "Правило, заборона — *be not supposed to*: *You aren’t supposed to park here*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне модальне дієслово.",
+          "prompt": "It ___ well rain later, so take an umbrella.",
+          "answers": ["may", "might", "could"],
+          "explanation": "*may / might / could well* — «цілком імовірно»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "I ___ (could / win) the race if I hadn’t fallen.",
+          "answers": ["could have won"],
+          "explanation": "Нереалізована можливість у минулому — *could have* + *V3*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[needn’t have]] [[gone]] to the store because we [[had]] plenty of milk, so I stayed at home.",
+          "answer": 0,
+          "fix": "didn’t need to",
+          "explanation": "Людина нікуди не ходила (*I stayed at home*), тож *didn’t need to go*. *Needn’t have gone* означає, що сходили даремно."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "You [[should]] [[have]] [[came]] to the party — it was great!",
+          "answer": 2,
+          "fix": "come",
+          "explanation": "Після *should have* — третя форма: *come — came — come*, отже *should have come*."
+        }
+      ]
+    },
+    {
+      "id": "inverted-conditionals",
+      "title": "Інвертовані умовні речення та інші способи вираження умови",
+      "titleEn": "Inverted conditionals and alternatives to if",
+      "summary": "Had I known…, Should you need…, Were it not for…, But for…, provided that, in case.",
+      "theory": {
+        "intro": "В офіційному стилі *if* можна опустити, поставивши допоміжне дієслово перед підметом. Крім того, умову передають *provided, as long as, but for, otherwise*.",
+        "blocks": [
+          {
+            "title": "Три інвертовані моделі",
+            "text": "*Had* + підмет + *V3* = *If … had*. *Should* + підмет + інфінітив = *If … should* (малоймовірна умова; типово в листах). *Were* + підмет + *to do* / *Were it not for* = *If … were*.",
+            "examples": [
+              ["Had I known, I would have come.", "Якби я знав, то прийшов би."],
+              ["Should you need anything, call me.", "Якщо раптом щось знадобиться, телефонуйте."],
+              ["Were it not for her help, I would give up.", "Якби не її допомога, я б здався."]
+            ]
+          },
+          {
+            "title": "Заперечення в інверсії",
+            "text": "*not* ставиться після підмета, без скорочення.",
+            "examples": [
+              ["Had she not called, I would have missed it.", "Якби вона не подзвонила, я б це пропустив."]
+            ]
+          },
+          {
+            "title": "but for, provided, otherwise, in case",
+            "text": "*But for* + іменник = «якби не». *Provided / providing (that), as long as, on condition that* = «за умови, що». *Otherwise* = «інакше». *In case* = «на випадок, якщо» (запобіжний захід, а не умова).",
+            "examples": [
+              ["But for the rain, it would have been perfect.", "Якби не дощ, усе було б ідеально."],
+              ["You can go provided you’re back by ten.", "Можеш іти, якщо повернешся до десятої."],
+              ["Take an umbrella in case it rains.", "Візьми парасольку на випадок дощу."]
+            ]
+          }
+        ],
+        "traps": [
+          "*If had I known* — помилка: інверсія замінює *if*, а не доповнює його.",
+          "Заперечення: *Had I not known*, а не *Hadn’t I known*.",
+          "*in case* ≠ *if*: *I’ll take an umbrella in case it rains* — візьму в будь-якому разі, про всяк випадок.",
+          "Після *provided / as long as* — теперішній час, а не *will*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "___ I known about the delay, I would have taken a later train.",
+          "options": ["Had", "If", "Should"],
+          "answer": 0,
+          "explanation": "Інвертований третій тип: *Had I known* = *If I had known*. *If I known* граматично неможливе."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "___ you need any further information, please do not hesitate to contact us.",
+          "options": ["Should", "Would", "Had"],
+          "answer": 0,
+          "explanation": "Офіційна формула листа: *Should you need…* = *If you (should) need…*"
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "___ it not for your help, I would never manage to finish on time.",
+          "options": ["Were", "Had", "Should"],
+          "answer": 0,
+          "explanation": "*Were it not for* = *If it weren’t for* — «якби не». *Had it not* вимагало б *been*: *Had it not been for…*"
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "___ the rain, we would have had a perfect day.",
+          "options": ["But for", "Except", "Unless"],
+          "answer": 0,
+          "explanation": "*But for* + іменник = «якби не». *Unless* вимагає підрядного речення, а не іменника."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "You can borrow my car ___ you return it by Sunday.",
+          "options": ["provided", "unless", "in case"],
+          "answer": 0,
+          "explanation": "Умова дозволу — *provided (that)* = «за умови, що». *In case* означає запобіжний захід."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "___ she not missed the train, she would have arrived on time.",
+          "answers": ["had"],
+          "explanation": "Інвертований третій тип із запереченням: *Had she not missed* = *If she hadn’t missed*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "___ the government to raise taxes, there would be protests.",
+          "answers": ["were"],
+          "explanation": "*Were* + підмет + *to do* — інвертована гіпотетична умова: *Were the government to raise taxes…*"
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть два слова: «на випадок, якщо».",
+          "prompt": "Take a paper map ___ your phone battery dies.",
+          "answers": ["in case"],
+          "explanation": "Запобіжний захід — *in case*: беремо мапу про всяк випадок."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[Hadn’t I]] [[seen]] it with my own eyes, I [[wouldn’t have]] believed it.",
+          "answer": 0,
+          "fix": "Had I not",
+          "explanation": "В інвертованій умові заперечення не скорочується й стоїть після підмета: *Had I not seen…*"
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[If had we]] left earlier, we [[would have]] [[avoided]] the traffic.",
+          "answer": 0,
+          "fix": "Had we",
+          "explanation": "Інверсія замінює *if*: *Had we left earlier…* або без інверсії *If we had left earlier…*"
+        }
+      ]
+    },
+    {
+      "id": "emphasis-substitution",
+      "title": "Підсилення, заміщення й еліпсис",
+      "titleEn": "Emphatic do, substitution and ellipsis",
+      "summary": "I do like it; I hope so / I hope not; So do I / Neither do I; one, ones.",
+      "theory": {
+        "intro": "Носії рідко повторюють уже сказане: замінюють його словами *so, not, one, do* або допоміжним дієсловом. Підсилювальне *do* додає емоційного наголосу.",
+        "blocks": [
+          {
+            "title": "Підсилювальне do / does / did",
+            "text": "Перед базовою формою дієслова: заперечує сумнів або наполягає.",
+            "examples": [
+              ["I did tell you — you just forgot.", "Я ж тобі казав — ти просто забув."],
+              ["Do sit down.", "Сідайте, будь ласка (наполегливо-ввічливо)."]
+            ]
+          },
+          {
+            "title": "so і not замість підрядного",
+            "text": "Після *think, hope, expect, suppose, guess, be afraid*. Заперечення: *I hope not, I’m afraid not*; з *think* частіше *I don’t think so*.",
+            "examples": [
+              ["Will they come? — I hope so.", "Вони прийдуть? — Сподіваюся."],
+              ["Is it serious? — I hope not.", "Це серйозно? — Сподіваюся, що ні."]
+            ]
+          },
+          {
+            "title": "Короткі відповіді з допоміжним дієсловом",
+            "text": "*So + допоміжне + підмет* — «я теж»; *Neither / Nor + допоміжне + підмет* — «я теж ні». Допоміжне дієслово відповідає часу першого речення.",
+            "examples": [
+              ["I love jazz. — So do I.", "Я люблю джаз. — Я теж."],
+              ["She can’t drive. — Neither can I.", "Вона не вміє водити. — Я теж."]
+            ]
+          },
+          {
+            "title": "one / ones",
+            "text": "Замінюють злічуваний іменник, щоб не повторювати його.",
+            "examples": [
+              ["These shoes are too small. Do you have bigger ones?", "Ці туфлі замалі. Є більші?"]
+            ]
+          }
+        ],
+        "traps": [
+          "«Сподіваюся, що ні» — *I hope not*, а не *I don’t hope so*.",
+          "«Я теж» після заперечення — *Neither do I*, а не *So don’t I*; *Me neither* — розмовний варіант.",
+          "Допоміжне дієслово має відповідати першому реченню: *I’m tired. — So am I*, але *I love it. — So do I*.",
+          "Після підсилювального *did* — базова форма: *I did tell you*, а не *I did told you*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Will it rain tomorrow? — I hope ___.",
+          "options": ["not", "no", "don’t"],
+          "answer": 0,
+          "explanation": "Заперечне заміщення після *hope* — *I hope not*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "I don’t like horror films. — Neither ___ I.",
+          "options": ["do", "am", "don’t"],
+          "answer": 0,
+          "explanation": "Перше речення в *Present Simple* із *do*, тож *Neither do I*. Після *neither* дієслово стверджувальне."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "I ___ tell you about the meeting — you just forgot!",
+          "options": ["did", "do", "was"],
+          "answer": 0,
+          "explanation": "Підсилювальне *did* + базова форма заперечує сумнів: *I did tell you*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Is the store still open? — I’m afraid ___.",
+          "options": ["not", "no", "it isn’t so"],
+          "answer": 0,
+          "explanation": "Ввічлива заперечна відповідь — *I’m afraid not*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "These boots are too small. Do you have any bigger ___?",
+          "options": ["ones", "one", "them"],
+          "answer": 0,
+          "explanation": "Замінюємо злічуваний іменник у множині (*boots*) — *ones*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "She has visited Japan, and so ___ her brother.",
+          "answers": ["has"],
+          "explanation": "У першій частині *has visited*, тож коротка форма — *so has her brother*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "I can’t swim, and ___ can my sister.",
+          "answers": ["neither", "nor"],
+          "explanation": "«Я теж ні» — *neither / nor* + допоміжне + підмет: *neither can my sister*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Is he coming? — I don’t think ___.",
+          "answers": ["so"],
+          "explanation": "Після *think* у запереченні — *I don’t think so*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "Will the meeting run late? — I [[don’t hope so]]; I [[have]] a train [[to catch]].",
+          "answer": 0,
+          "fix": "hope not",
+          "explanation": "З *hope* заперечення переходить на заміщувальне слово: *I hope not*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "I love jazz. — [[So]] [[am]] [[I]]!",
+          "answer": 1,
+          "fix": "do",
+          "explanation": "*I love* — *Present Simple* без допоміжного *be*, тож відповідь *So do I*."
+        }
+      ]
+    },
+    {
+      "id": "future-in-the-past",
+      "title": "Майбутнє в минулому",
+      "titleEn": "Future in the past",
+      "summary": "was going to, would, was about to, was to, was due to.",
+      "theory": {
+        "intro": "Коли ми розповідаємо про минуле, а йдеться про те, що тоді ще мало статися, вживаємо «майбутнє в минулому». Ці форми часто передають нездійснені плани.",
+        "blocks": [
+          {
+            "title": "was going to і would",
+            "text": "*was going to* — тодішній намір, нерідко нездійснений. *would* — майбутнє з погляду минулого (у непрямій мові й розповіді).",
+            "examples": [
+              ["I was going to call you, but I forgot.", "Я збирався тобі подзвонити, але забув."],
+              ["She knew she would never forget that day.", "Вона знала, що ніколи не забуде того дня."]
+            ]
+          },
+          {
+            "title": "was about to / on the point of / on the verge of",
+            "text": "Ось-ось мало статися.",
+            "examples": [
+              ["We were about to leave when it started to pour.", "Ми вже виходили, коли полило як із відра."],
+              ["They were on the verge of giving up.", "Вони були на межі того, щоб здатися."]
+            ]
+          },
+          {
+            "title": "was to / was to have done; was due to",
+            "text": "*was to do* — так судилося або було заплановано. *was to have done* — план, що не здійснився. *was due to* — за розкладом.",
+            "examples": [
+              ["He was to become a famous scientist.", "Йому судилося стати відомим ученим."],
+              ["The ceremony was to have taken place outdoors.", "Церемонія мала відбутися надворі (але не відбулася)."],
+              ["The train was due to arrive at noon.", "Потяг мав прибути опівдні."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Я якраз збирався тобі дзвонити» — *I was just about to call you*.",
+          "У розповіді про минуле *will* зсувається в *would*: *She said she would help*.",
+          "*was to have done* завжди означає, що план зірвався.",
+          "*on the point of* і *on the verge of* — з *-ing*: *on the point of leaving*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I ___ call you, but my phone died.",
+          "options": ["was going to", "am going to", "will"],
+          "answer": 0,
+          "explanation": "Намір у минулому, що не здійснився, — *was going to*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "We were just ___ leave when it started to pour.",
+          "options": ["about to", "going", "due"],
+          "answer": 0,
+          "explanation": "«Ось-ось мали» — *be about to*: *We were just about to leave*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "She knew she ___ never see him again.",
+          "options": ["would", "will", "is going to"],
+          "answer": 0,
+          "explanation": "Майбутнє з погляду минулого моменту (*she knew*) — *would*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Little did they know that this small shop ___ become a global company.",
+          "options": ["was to", "is to", "will"],
+          "answer": 0,
+          "explanation": "«Їй судилося стати» — *was to* + інфінітив."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "The ceremony ___ outdoors, but it was moved inside because of the storm.",
+          "options": ["was to have taken place", "will have taken place", "has taken place"],
+          "answer": 0,
+          "explanation": "Запланована подія, що не відбулася, — *was to have taken place*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "I thought the exam ___ (be) easy, but it was really hard.",
+          "answers": ["would be", "was going to be"],
+          "explanation": "Тодішнє очікування про майбутнє — *would be* (або *was going to be*)."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "They were on the ___ of giving up when they finally found the answer.",
+          "answers": ["point", "verge"],
+          "explanation": "*on the point / verge of doing* — «на межі того, щоб…»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "The train was ___ to arrive at noon, but it was delayed.",
+          "answers": ["due", "supposed", "scheduled"],
+          "explanation": "За розкладом — *was due to arrive* (також *supposed / scheduled to*)."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[was]] going [[to call]] you, but I [[have forgotten]].",
+          "answer": 2,
+          "fix": "forgot",
+          "explanation": "Розповідь про минулу ситуацію, тож *Past Simple*: *but I forgot*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "Last week she said she [[will]] [[help]] us [[the next day]].",
+          "answer": 0,
+          "fix": "would",
+          "explanation": "Майбутнє з погляду минулого в непрямій мові — *would*: *she said she would help us*."
+        }
+      ]
+    },
+    {
+      "id": "concession-contrast",
+      "title": "Допустовість і контраст",
+      "titleEn": "Concession and contrast: although, despite, however, whereas",
+      "summary": "although і despite, however між реченнями і в значенні «хоч як», whereas, even if і even though.",
+      "theory": {
+        "intro": "Більшість помилок тут структурні: одні слова вводять речення, інші — іменник, треті поєднують окремі речення. Значення в них близьке, а граматика різна.",
+        "blocks": [
+          {
+            "title": "although / though / even though + речення",
+            "text": "Після них — підмет і присудок. *Even though* підсилює контраст.",
+            "examples": [
+              ["Although he had trained for months, he didn’t win.", "Хоча він тренувався кілька місяців, він не виграв."]
+            ]
+          },
+          {
+            "title": "despite / in spite of + іменник або -ing",
+            "text": "Щоб ввести речення, потрібне *despite the fact that*.",
+            "examples": [
+              ["Despite the rain, we went out.", "Попри дощ, ми вийшли."],
+              ["In spite of feeling ill, she went to work.", "Попри нездужання, вона пішла на роботу."]
+            ]
+          },
+          {
+            "title": "however, nevertheless, whereas",
+            "text": "*However / Nevertheless* поєднують окремі речення (після крапки або крапки з комою й з комою після себе). *Whereas / while* протиставляють дві частини одного речення.",
+            "examples": [
+              ["The plan was risky. However, it worked.", "План був ризикований. Проте він спрацював."],
+              ["He loves crowds, whereas I prefer quiet places.", "Він любить натовп, тоді як я віддаю перевагу тихим місцям."]
+            ]
+          },
+          {
+            "title": "however + прикметник, much as, even if",
+            "text": "*However hard / much* — «хоч як». *Much as* — «хоч і, попри те що». *Even if* — гіпотетично («навіть якщо»), *even though* — про факт («хоча»).",
+            "examples": [
+              ["However hard she tried, she couldn’t open the jar.", "Хоч як вона старалася, банку відкрити не змогла."],
+              ["Much as I like him, I can’t agree.", "Хоч він мені й подобається, погодитися не можу."],
+              ["I’ll go even if it rains.", "Я піду, навіть якщо буде дощ."]
+            ]
+          }
+        ],
+        "traps": [
+          "*despite of* — помилка: *despite* або *in spite of*.",
+          "*Although the rain…* — помилка: після *although* потрібне речення; з іменником — *despite*.",
+          "*However* не з’єднує двох частин через кому, як *but*: *It was late; however, we stayed* або дві окремі фрази.",
+          "*even if* ≠ *even though*: перше — про можливе, друге — про реальне."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "___ the heavy rain, the match went ahead.",
+          "options": ["Despite", "Although", "Despite of"],
+          "answer": 0,
+          "explanation": "Далі іменникова група (*the heavy rain*), тож *Despite*. *Although* потребує речення, а *despite of* не існує."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "___ he had trained for months, he didn’t win.",
+          "options": ["Although", "Despite", "In spite of"],
+          "answer": 0,
+          "explanation": "Далі повне речення з підметом і присудком (*he had trained*) — потрібен сполучник *Although*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "The plan was risky. ___, it worked perfectly.",
+          "options": ["However", "Although", "Despite"],
+          "answer": 0,
+          "explanation": "Зв’язок між двома окремими реченнями — прислівник *However* із комою."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "My brother loves crowds, ___ I prefer quiet places.",
+          "options": ["whereas", "despite", "however"],
+          "answer": 0,
+          "explanation": "Протиставлення двох частин одного речення — *whereas* («тоді як»)."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "___ hard she tried, she couldn’t open the jar.",
+          "options": ["However", "Although", "Despite"],
+          "answer": 0,
+          "explanation": "*However* + прикметник / прислівник = «хоч як»: *However hard she tried*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "In spite ___ feeling ill, she went to work.",
+          "answers": ["of"],
+          "explanation": "Повна форма прийменника — *in spite of*, далі *-ing*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Despite the fact ___ it was late, nobody wanted to leave.",
+          "answers": ["that"],
+          "explanation": "Щоб після *despite* ввести речення, потрібне *the fact that*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть два слова: «навіть якщо».",
+          "prompt": "I’ll go to the beach tomorrow ___ it rains.",
+          "answers": ["even if"],
+          "explanation": "Гіпотетична умова — *even if*. *Even though* означало б, що дощ уже точно йде."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[Despite of]] [[his]] age, he [[runs]] marathons.",
+          "answer": 0,
+          "fix": "Despite",
+          "explanation": "*Despite* уживається без *of*; з *of* — лише *in spite of*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[Although]] the traffic, we [[arrived]] [[on time]].",
+          "answer": 0,
+          "fix": "Despite",
+          "explanation": "Після *although* має бути речення; з іменником — *Despite the traffic* або *Although the traffic was heavy*."
+        }
+      ]
+    }
+  ]
+}

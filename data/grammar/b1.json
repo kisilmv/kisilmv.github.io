@@ -1,0 +1,1291 @@
+{
+  "level": "B1",
+  "title": "Граматика рівня B1",
+  "description": "Опорні часи й конструкції, без яких не обійтися в повсякденному спілкуванні: теперішні й минулі часи, *Present Perfect*, способи говорити про майбутнє, модальні дієслова, умовні речення, пасив, злічувані й незлічувані іменники, герундій та інфінітив, підрядні означальні.",
+  "topics": [
+    {
+      "id": "present-simple-continuous",
+      "title": "Present Simple чи Present Continuous",
+      "titleEn": "Present Simple vs Present Continuous",
+      "summary": "Загальне й регулярне проти того, що відбувається зараз або тимчасово; дієслова стану.",
+      "theory": {
+        "intro": "*Present Simple* описує те, що правдиве загалом або регулярно повторюється. *Present Continuous* — те, що відбувається в момент мовлення або тимчасово, «у цей період».",
+        "blocks": [
+          {
+            "title": "Present Simple: факти, звички, розклади",
+            "text": "Утворюється від базової форми дієслова; у 3-й особі однини додається *-s / -es*. Типові маркери: *usually, often, every day, never, on Mondays*.",
+            "examples": [
+              ["Water boils at 100 degrees Celsius.", "Вода кипить за 100 градусів Цельсія."],
+              ["She works in a hospital.", "Вона працює в лікарні (постійна робота)."],
+              ["The museum opens at nine.", "Музей відчиняється о дев’ятій (розклад)."]
+            ]
+          },
+          {
+            "title": "Present Continuous: зараз і тимчасово",
+            "text": "*am / is / are* + дієслово з *-ing*. Маркери: *now, right now, at the moment, this week, these days*. Також описує зміни й тенденції.",
+            "examples": [
+              ["Be quiet — the baby is sleeping.", "Тихіше — дитина спить (саме зараз)."],
+              ["I’m staying with my aunt until I find an apartment.", "Я живу в тітки, доки не знайду квартиру (тимчасово)."],
+              ["The city is getting more crowded.", "Місто стає дедалі людніше (тенденція)."]
+            ]
+          },
+          {
+            "title": "Дієслова стану",
+            "text": "Дієслова, що позначають знання, думки, почуття, належність і сприйняття, зазвичай не вживаються в *Continuous*: *know, understand, believe, want, need, like, love, hate, prefer, belong, seem, mean*. Деякі мають два значення: у значенні дії *Continuous* можливий.",
+            "examples": [
+              ["I think you’re right.", "Я вважаю, що ти маєш рацію (думка — стан)."],
+              ["I’m thinking about changing jobs.", "Я обмірковую зміну роботи (процес — дія)."],
+              ["We have two cats. / We’re having dinner.", "У нас двоє котів (володіння). / Ми вечеряємо (дія)."]
+            ]
+          },
+          {
+            "title": "always + Continuous: роздратування",
+            "text": "Коли мовець скаржиться на звичку, що дратує, вживають *always* з *Present Continuous*.",
+            "examples": [
+              ["He’s always leaving his socks on the floor!", "Він вічно розкидає шкарпетки по підлозі!"]
+            ]
+          }
+        ],
+        "traps": [
+          "В українській «я читаю» відповідає і *I read*, і *I’m reading*: щоразу запитуйте себе, чи це відбувається зараз, чи загалом.",
+          "Не губіть закінчення 3-ї особи: *She speaks*, *It costs*, *He doesn’t know* (а не *doesn’t knows*).",
+          "*I am agree* — помилка: *agree* — дієслово, тож правильно *I agree*.",
+          "«Я тут живу п’ять років» — це не *Present Simple*, а *I have lived here for five years* (див. тему про *Present Perfect*)."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Water ___ at zero degrees Celsius.",
+          "options": ["freezes", "is freezing", "freeze"],
+          "answer": 0,
+          "explanation": "Закон природи, загальна істина — *Present Simple*. Підмет *water* — третя особа однини, тому потрібне закінчення *-s*: *freezes*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Can you call back later? I ___ dinner right now.",
+          "options": ["am cooking", "cook", "cooks"],
+          "answer": 0,
+          "explanation": "*Right now* вказує на дію в момент мовлення, тож потрібен *Present Continuous*: *I am cooking*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "This soup ___ delicious. What’s in it?",
+          "options": ["tastes", "is tasting", "taste"],
+          "answer": 0,
+          "explanation": "*Taste* у значенні «мати смак» — дієслово стану, у *Continuous* не вживається. Порівняйте: *I’m tasting the soup* — «я куштую суп» (дія, тут *Continuous* можливий)."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I ___ what you mean, but I don’t agree.",
+          "options": ["understand", "am understanding", "understands"],
+          "answer": 0,
+          "explanation": "*Understand* — дієслово розумового стану, тому *Present Simple* навіть тоді, коли йдеться про «зараз». Форма *understands* не узгоджується з *I*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "My brother usually drives to work, but this week he ___ the bus.",
+          "options": ["is taking", "takes", "take"],
+          "answer": 0,
+          "explanation": "*This week* і протиставлення з *usually* показують тимчасову ситуацію — *Present Continuous*. Звичну дію описує перша частина речення: *usually drives*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Look outside! It ___ (snow).",
+          "answers": ["is snowing", "'s snowing"],
+          "explanation": "*Look outside!* — сніг іде просто зараз, тож *Present Continuous*: *It is snowing*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "She ___ (not / eat) meat — she’s a vegetarian.",
+          "answers": ["does not eat", "doesn't eat"],
+          "explanation": "Постійна характеристика людини — *Present Simple*. Заперечення в 3-й особі однини: *does not* + базова форма (*eat* без *-s*)."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "Sorry, she can’t come to the phone — she ___ (have) a shower.",
+          "answers": ["is having", "'s having"],
+          "explanation": "*Have a shower* — дія, а не володіння, тож *Continuous* можливий: вона саме зараз у душі — *is having*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[am agreeing]] with you [[completely]], but we [[need]] more facts.",
+          "answer": 0,
+          "fix": "agree",
+          "explanation": "*Agree* — дієслово стану (думка), у *Continuous* не вживається: *I agree with you completely*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "My sister [[is]] a nurse. She [[work]] night shifts [[twice]] a week.",
+          "answer": 1,
+          "fix": "works",
+          "explanation": "Регулярна дія — *Present Simple*, а підмет *she* вимагає закінчення *-s*: *She works night shifts twice a week*."
+        }
+      ]
+    },
+    {
+      "id": "past-simple-continuous",
+      "title": "Past Simple, Past Continuous і used to",
+      "titleEn": "Past Simple, Past Continuous and used to",
+      "summary": "Завершені події проти процесів у минулому; when і while; колишні звички.",
+      "theory": {
+        "intro": "*Past Simple* розповідає, що сталося. *Past Continuous* показує, що тривало в певний момент минулого, і часто створює фон для іншої події. *Used to* описує колишні звички та стани, яких тепер немає.",
+        "blocks": [
+          {
+            "title": "Past Simple: завершені дії та послідовність подій",
+            "text": "Правильні дієслова отримують *-ed*, неправильні мають окрему форму (*go — went, buy — bought*). У питаннях і запереченнях — *did* + базова форма.",
+            "examples": [
+              ["She opened the door, turned on the light and sat down.", "Вона відчинила двері, увімкнула світло й сіла."],
+              ["We didn’t see the sign.", "Ми не побачили знака."]
+            ]
+          },
+          {
+            "title": "Past Continuous: дія в процесі",
+            "text": "*was / were* + дієслово з *-ing*. Описує дію, що тривала в конкретний момент, або фон, на який «накладається» коротка подія.",
+            "examples": [
+              ["At eight o’clock I was having breakfast.", "О восьмій я снідав."],
+              ["I was walking home when it started to rain.", "Я йшов додому, коли почався дощ."],
+              ["While I was cooking, my husband was setting the table.", "Поки я готувала, чоловік накривав на стіл (дві паралельні дії)."]
+            ]
+          },
+          {
+            "title": "when і while",
+            "text": "*While* здебільшого вводить тривалу дію (*Past Continuous*), *when* — коротку подію (*Past Simple*). Якщо обидві дії в *Past Simple*, вони відбулися одна за одною.",
+            "examples": [
+              ["When I arrived, she was cooking.", "Коли я прийшов, вона готувала (вже була в процесі)."],
+              ["When I arrived, she cooked dinner.", "Коли я прийшов, вона приготувала вечерю (почала після мого приходу)."]
+            ]
+          },
+          {
+            "title": "used to",
+            "text": "*used to* + базова форма — те, що регулярно відбувалося або було правдою раніше, але вже ні. У питаннях і запереченнях — *did … use to* (без *-d*).",
+            "examples": [
+              ["I used to play the piano.", "Колись я грав на піаніно (тепер ні)."],
+              ["Did you use to live here?", "Ви раніше тут жили?"]
+            ]
+          }
+        ],
+        "traps": [
+          "«Коли я прийшов, вона готувала» — *she was cooking*, а не *she cooked*: друга форма означала б, що вона почала готувати після вашого приходу.",
+          "*Did you used to…?* — помилка: після *did* потрібна базова форма — *Did you use to…?*",
+          "Дієслова стану не вживаються в *Continuous* і в минулому: *I knew*, а не *I was knowing*.",
+          "Не плутайте *used to do* (колишня звичка) з *be used to doing* (бути звиклим до чогось) — це тема рівня B2."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I ___ a shower when the phone rang.",
+          "options": ["was taking", "took", "am taking"],
+          "answer": 0,
+          "explanation": "Тривала дія (душ), яку перервала коротка подія (дзвінок): тривала — *Past Continuous*, коротка — *Past Simple*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "When the teacher came in, the students ___ talking immediately.",
+          "options": ["stopped", "were stopping", "stop"],
+          "answer": 0,
+          "explanation": "Дві послідовні події: учитель зайшов — учні одразу замовкли. Послідовність коротких дій — *Past Simple*; *immediately* це підкреслює."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "At nine o’clock last night I ___ a movie with my family.",
+          "options": ["was watching", "have watched", "am watching"],
+          "answer": 0,
+          "explanation": "Конкретний момент у минулому (*at nine o’clock last night*), у який дія тривала, — *Past Continuous*. *Present Perfect* не поєднується з *last night*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "We ___ live in a small village, but now we live in the city.",
+          "options": ["used to", "use to", "were used to"],
+          "answer": 0,
+          "explanation": "Колишній стан, який змінився, — *used to* + базова форма. *Were used to* означало б «були звиклі» і вимагало б *-ing*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "___ you use to walk to school when you were a child?",
+          "options": ["Did", "Were", "Used"],
+          "answer": 0,
+          "explanation": "Питання з *used to* будується з допоміжним *did*: *Did you use to…?* Після *did* — форма *use* без *-d*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "She ___ (buy) a new bicycle last week.",
+          "answers": ["bought"],
+          "explanation": "*Last week* — завершений період у минулому, тож *Past Simple*. *Buy* — неправильне дієслово: *buy — bought — bought*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "While I ___ (cook) dinner, my roommate was setting the table.",
+          "answers": ["was cooking"],
+          "explanation": "Дві паралельні тривалі дії в минулому, з’єднані *while*, — обидві в *Past Continuous*: *was cooking … was setting*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "They ___ (not / see) the sign because it was dark.",
+          "answers": ["did not see", "didn't see"],
+          "explanation": "Заперечення в *Past Simple*: *did not* + базова форма. Форма *saw* після *didn’t* — типова помилка."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "When I [[was]] a child, I [[was used to]] spend every summer [[at]] my grandparents’ house.",
+          "answer": 1,
+          "fix": "used to",
+          "explanation": "Колишня звичка — *used to* + базова форма: *I used to spend*. Конструкція *be used to* означає «бути звиклим» і вимагає *-ing*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "I [[was knowing]] the answer, but I [[didn’t]] want to [[say]] it.",
+          "answer": 0,
+          "fix": "knew",
+          "explanation": "*Know* — дієслово стану, у *Continuous* не вживається навіть у минулому: *I knew the answer*."
+        }
+      ]
+    },
+    {
+      "id": "present-perfect-past-simple",
+      "title": "Present Perfect чи Past Simple",
+      "titleEn": "Present Perfect vs Past Simple",
+      "summary": "Досвід, результат і незавершений період проти конкретного моменту в минулому; for і since; been і gone.",
+      "theory": {
+        "intro": "*Present Perfect* (*have / has* + третя форма дієслова) пов’язує минуле з теперішнім: важливий результат, досвід або період, що триває досі. *Past Simple* описує подію, яка завершилася в конкретний момент минулого.",
+        "blocks": [
+          {
+            "title": "Коли вживати Present Perfect",
+            "text": "Досвід без точного часу (*ever, never, before*); результат, помітний зараз; щойно завершені дії (*just, already, yet*); період, що триває до сьогодні (*for, since, so far*).",
+            "examples": [
+              ["Have you ever been to Japan?", "Ти коли-небудь був у Японії? (досвід)"],
+              ["I’ve lost my keys.", "Я загубив ключі (і досі не маю їх)."],
+              ["She has worked here since she graduated.", "Вона працює тут відтоді, як закінчила навчання."]
+            ]
+          },
+          {
+            "title": "Коли вживати Past Simple",
+            "text": "Є конкретний минулий момент або період, що вже закінчився: *yesterday, last year, two days ago, when I was a student*. Питання *When…?* теж вимагає *Past Simple*.",
+            "examples": [
+              ["We went to Lisbon two years ago.", "Ми їздили до Лісабона два роки тому."],
+              ["When did you arrive?", "Коли ти приїхав?"]
+            ]
+          },
+          {
+            "title": "for і since",
+            "text": "*For* + тривалість (*for ten years, for a week*), *since* + точка відліку (*since Monday, since 9 a.m., since we met*).",
+            "examples": [
+              ["We’ve been friends for ten years.", "Ми дружимо десять років."],
+              ["I’ve known her since we were six.", "Я знаю її відтоді, як нам було шість."]
+            ]
+          },
+          {
+            "title": "been і gone",
+            "text": "*Has been to* — побував і повернувся; *has gone to* — поїхав і зараз там.",
+            "examples": [
+              ["She’s been to Italy twice.", "Вона двічі була в Італії."],
+              ["She’s gone to Italy.", "Вона поїхала до Італії (зараз її тут немає)."]
+            ]
+          },
+          {
+            "title": "Американська розмовна норма",
+            "text": "В американській розмовній англійській із *just, already, yet* часто вживають *Past Simple*: *Did you eat yet?* У тестах і формальному мовленні безпечніше обирати *Present Perfect*.",
+            "examples": [
+              ["I’ve already eaten. / I already ate. (AmE, informal)", "Я вже поїв."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Я живу тут п’ять років» — *I have lived here for five years*, а не *I live here for five years*: період триває досі.",
+          "*Present Perfect* не поєднується з точним минулим часом: *I saw him yesterday*, а не *I have seen him yesterday*.",
+          "*Since* вимагає точки відліку: *since Monday*, але *for three days*, а не *since three days*.",
+          "«Коли ти приїхав?» — *When did you arrive?*, а не *When have you arrived?*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "She ___ for this company since she graduated.",
+          "options": ["has worked", "works", "worked"],
+          "answer": 0,
+          "explanation": "*Since* + точка відліку означає період, що триває досі, — *Present Perfect*: *has worked*. *Works* із *since* — типова калька з української."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "We ___ to Lisbon two years ago.",
+          "options": ["went", "have gone", "have been"],
+          "answer": 0,
+          "explanation": "*Two years ago* — конкретний минулий момент, тож лише *Past Simple*. *Present Perfect* із *ago* не вживається."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Where’s Tom? — He ___ to the store. He’ll be back in ten minutes.",
+          "options": ["has gone", "has been", "goes"],
+          "answer": 0,
+          "explanation": "Том поїхав і ще не повернувся — *has gone*. *Has been to the store* означало б, що він уже сходив і повернувся. В американській розмовній мові можливо й *He went to the store*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I’ve known my best friend ___ we were six.",
+          "options": ["since", "for", "from"],
+          "answer": 0,
+          "explanation": "*We were six* — точка відліку, а не тривалість, тому *since*. *From* у цьому значенні з *Present Perfect* не вживається."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "When ___ your first job?",
+          "options": ["did you get", "have you got", "have you gotten"],
+          "answer": 0,
+          "explanation": "Питання *When…?* стосується конкретного моменту в минулому, тож потрібен *Past Simple*: *When did you get…?*"
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Have you finished the report? — Not ___. I’ll send it tomorrow.",
+          "answers": ["yet"],
+          "explanation": "*Yet* вживається в запереченнях і питаннях із *Present Perfect*: *not yet* — «ще ні»."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "She ___ (live) in three different countries so far.",
+          "answers": ["has lived", "'s lived"],
+          "explanation": "*So far* — «досі, на цей момент»: життєвий досвід, що триває, — *Present Perfect*: *has lived*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "I ___ (lose) my keys. Can you help me look for them?",
+          "answers": ["have lost", "'ve lost"],
+          "explanation": "Результат важливий зараз: ключів досі немає. Тому *Present Perfect*: *I have lost*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[have met]] him [[at]] a conference [[last]] month.",
+          "answer": 0,
+          "fix": "met",
+          "explanation": "*Last month* — завершений минулий період, тож *Past Simple*: *I met him*. *Present Perfect* із такими маркерами не поєднується."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "We have been friends [[since]] [[ten]] [[years]].",
+          "answer": 0,
+          "fix": "for",
+          "explanation": "*Ten years* — тривалість, а не точка відліку, тому *for ten years*. *Since* вживаємо з моментом: *since school*."
+        }
+      ]
+    },
+    {
+      "id": "future-forms",
+      "title": "Як говорити про майбутнє",
+      "titleEn": "Future forms: will, be going to, Present Continuous",
+      "summary": "Рішення, наміри, домовленості й розклади; майбутнє в підрядних часу.",
+      "theory": {
+        "intro": "В англійській немає однієї «майбутньої форми»: вибір залежить від того, чи це спонтанне рішення, намір, домовленість, прогноз або розклад.",
+        "blocks": [
+          {
+            "title": "will",
+            "text": "Спонтанні рішення в момент мовлення, обіцянки, пропозиції, прогнози на основі думки (*I think, probably*).",
+            "examples": [
+              ["The phone’s ringing. — I’ll get it.", "Телефон дзвонить. — Я візьму."],
+              ["I think it will be a great evening.", "Думаю, вечір буде чудовий."]
+            ]
+          },
+          {
+            "title": "be going to",
+            "text": "Намір, ухвалений заздалегідь, і прогноз на основі того, що ми бачимо зараз.",
+            "examples": [
+              ["I’m going to learn Spanish next year.", "Наступного року я збираюся вчити іспанську."],
+              ["Look at those clouds — it’s going to rain.", "Подивись на хмари — буде дощ."]
+            ]
+          },
+          {
+            "title": "Present Continuous і Present Simple",
+            "text": "*Present Continuous* — особисті домовленості, коли вже узгоджено час чи місце. *Present Simple* — розклади й графіки.",
+            "examples": [
+              ["I’m meeting my dentist at four.", "О четвертій у мене прийом у стоматолога."],
+              ["The train leaves at 6:15.", "Потяг відправляється о 6:15."]
+            ]
+          },
+          {
+            "title": "Майбутнє в підрядних часу",
+            "text": "Після *when, after, before, as soon as, until* майбутню дію передаємо *Present Simple*, а не *will*.",
+            "examples": [
+              ["I’ll call you when I get home.", "Я подзвоню, коли прийду додому."],
+              ["Wait until the light turns green.", "Зачекай, доки засвітиться зелене."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Я подзвоню, коли приїду» — *when I arrive*, а не *when I will arrive*.",
+          "Спонтанне рішення: «Я відчиню!» — *I’ll get it*, а не *I’m going to get it*.",
+          "Для домовленостей із точним часом носії рідко вживають *will*: *I’m seeing the doctor on Friday*.",
+          "*Shall I…?* у пропозиціях звучить по-британському; в американській англійській частіше *Should I…?* або *Do you want me to…?*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "The phone’s ringing. — OK, I ___ it.",
+          "options": ["’ll get", "’m going to get", "get"],
+          "answer": 0,
+          "explanation": "Рішення ухвалюється в момент мовлення — *will*. *Going to* означав би, що ви вирішили це заздалегідь."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Look at that sky! It ___ rain.",
+          "options": ["’s going to", "will to", "rains"],
+          "answer": 0,
+          "explanation": "Прогноз на основі того, що видно зараз (темне небо), — *be going to*. *Will to* граматично неможливе."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "I ___ my cousin at the airport at six tomorrow — we arranged it last week.",
+          "options": ["’m meeting", "meet", "will meeting"],
+          "answer": 0,
+          "explanation": "Особиста домовленість із конкретним часом — *Present Continuous*: *I’m meeting*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "The concert ___ at 8 p.m., so let’s leave at seven.",
+          "options": ["starts", "starting", "will be start"],
+          "answer": 0,
+          "explanation": "Офіційний розклад заходу — *Present Simple* навіть для майбутнього: *The concert starts at 8 p.m.*"
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "I’ll text you as soon as I ___ home.",
+          "options": ["get", "will get", "am going to get"],
+          "answer": 0,
+          "explanation": "Після *as soon as* (як і після *when, until, after*) майбутнє передаємо *Present Simple*: *as soon as I get home*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть дієслово у формі be going to.",
+          "prompt": "We’ve made up our minds: we ___ (sell) our car and buy bikes.",
+          "answers": ["are going to sell", "'re going to sell"],
+          "explanation": "Рішення ухвалене заздалегідь (*we’ve made up our minds*) — намір, тож *be going to*: *we are going to sell*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "Don’t worry, I ___ (not / tell) anyone your secret. I promise.",
+          "answers": ["will not tell", "won't tell"],
+          "explanation": "Обіцянка — *will*: *I won’t tell anyone*. *Won’t* — скорочення від *will not*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "Please wait here until the doctor ___ (call) you.",
+          "answers": ["calls"],
+          "explanation": "Після *until* майбутню дію передаємо *Present Simple*; підмет *the doctor* — третя особа однини: *calls*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I [[will phone]] you when I [[will arrive]] [[at]] the hotel.",
+          "answer": 1,
+          "fix": "arrive",
+          "explanation": "У підрядній після *when* не вживаємо *will*: *when I arrive*. У головній частині *will phone* правильне."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "What are you doing this weekend? — I [[visit]] my parents. I [[booked]] the tickets [[yesterday]].",
+          "answer": 0,
+          "fix": "am visiting",
+          "explanation": "Квитки вже куплені — це домовленість, тож *Present Continuous*: *I’m visiting my parents*. *Present Simple* для таких планів не вживається."
+        }
+      ]
+    },
+    {
+      "id": "modals",
+      "title": "Модальні дієслова: обов’язок, заборона, порада, уміння",
+      "titleEn": "Modals: must, have to, should, can, could, be able to",
+      "summary": "must і have to, mustn’t і don’t have to, should, can / could / be able to.",
+      "theory": {
+        "intro": "Модальні дієслова додають до дії ставлення мовця: необхідність, заборону, пораду, можливість. Після *must, should, can, could* іде інфінітив без *to*, а самі вони не мають закінчення *-s*.",
+        "blocks": [
+          {
+            "title": "must і have to",
+            "text": "*Must* — обов’язок, який відчуває сам мовець, або офіційне правило (часто в письмових інструкціях). *Have to* — необхідність, зумовлена обставинами. У розмовній американській англійській *have to* вживають значно частіше. Минуле для обох — *had to*.",
+            "examples": [
+              ["I must call my mother tonight.", "Мені треба подзвонити мамі ввечері (я так вирішив)."],
+              ["I have to wear a uniform at work.", "На роботі я мушу носити форму (такі правила)."]
+            ]
+          },
+          {
+            "title": "mustn’t і don’t have to",
+            "text": "Протилежні значення! *Mustn’t* — заборона («не можна»), *don’t have to* — відсутність необхідності («не обов’язково»).",
+            "examples": [
+              ["You mustn’t use your phone during the exam.", "Під час іспиту не можна користуватися телефоном."],
+              ["You don’t have to come if you’re busy.", "Можеш не приходити, якщо зайнятий."]
+            ]
+          },
+          {
+            "title": "should / ought to",
+            "text": "Порада, рекомендація. *Ought to* формальніше й рідше.",
+            "examples": [
+              ["You should see a doctor.", "Тобі варто піти до лікаря."]
+            ]
+          },
+          {
+            "title": "can, could, be able to",
+            "text": "*Can* — уміння зараз, *could* — загальне вміння в минулому. Якщо йдеться про одноразовий успіх у конкретній ситуації, кажуть *was able to* або *managed to*. У запереченні *couldn’t* підходить для обох випадків.",
+            "examples": [
+              ["She could read when she was four.", "Вона вміла читати вже в чотири роки."],
+              ["The road was icy, but we were able to get home.", "Дорога була слизька, але нам вдалося дістатися додому."]
+            ]
+          }
+        ],
+        "traps": [
+          "*You don’t must* — такої форми немає. Заборона — *mustn’t*, відсутність потреби — *don’t have to*.",
+          "Після *can, must, should* — без *to*: *She can swim*, а не *She can to swim*; і без *-s*: не *He cans*.",
+          "«Мені вдалося знайти квартиру» — *I managed to / was able to find*, а не *I could find*.",
+          "Минулого від *must* у значенні обов’язку немає: «мусив» — *had to*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "You ___ smoke here — it’s a hospital.",
+          "options": ["mustn’t", "don’t have to", "needn’t to"],
+          "answer": 0,
+          "explanation": "У лікарні палити заборонено — *mustn’t*. *Don’t have to* означало б «не обов’язково», а *needn’t to* — неправильна форма (*needn’t* без *to*)."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Tomorrow is a holiday, so I ___ get up early.",
+          "options": ["don’t have to", "mustn’t", "haven’t to"],
+          "answer": 0,
+          "explanation": "Немає потреби, а не заборона: *don’t have to*. *Mustn’t* означало б, що вставати рано заборонено."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "You look exhausted. You ___ take a break.",
+          "options": ["should", "must to", "ought"],
+          "answer": 0,
+          "explanation": "Порада — *should* + інфінітив без *to*. *Ought* потребує *to* (*ought to take*), а *must to* — помилка."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "The fire spread fast, but everyone ___ get out of the building.",
+          "options": ["was able to", "could", "can"],
+          "answer": 0,
+          "explanation": "Одноразовий успіх у конкретній ситуації — *was able to* (або *managed to*). Стверджувальне *could* описує загальне вміння, а не те, що вдалося зробити один раз."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "When I was five, I ___ already read.",
+          "options": ["could", "was able", "can"],
+          "answer": 0,
+          "explanation": "Загальне вміння в минулому — *could*. *Was able* без *to* граматично неповне."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Yesterday I ___ (have to) work until midnight.",
+          "answers": ["had to"],
+          "explanation": "Минула необхідність — *had to*. У *must* окремої минулої форми з цим значенням немає."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне модальне дієслово, щоб попросити дозволу.",
+          "prompt": "___ I open the window? It’s hot in here.",
+          "answers": ["can", "could", "may"],
+          "explanation": "Дозвіл просимо з *Can I…?* (нейтрально), *Could I…?* (ввічливіше) або *May I…?* (найформальніше)."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "She ___ (not / have to) wear a uniform at her new school.",
+          "answers": ["does not have to", "doesn't have to"],
+          "explanation": "*Have to* змінюється як звичайне дієслово: заперечення в 3-й особі однини — *does not have to*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "You [[don’t must]] [[tell]] anyone — it’s [[a]] secret.",
+          "answer": 0,
+          "fix": "mustn’t",
+          "explanation": "Модальне *must* не утворює заперечення з *do*. Заборона — *You mustn’t tell anyone*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "My grandmother [[can]] [[to speak]] three languages [[fluently]].",
+          "answer": 1,
+          "fix": "speak",
+          "explanation": "Після *can* іде інфінітив без *to*: *can speak*."
+        }
+      ]
+    },
+    {
+      "id": "conditionals",
+      "title": "Умовні речення: нульовий, перший і другий типи",
+      "titleEn": "Zero, first and second conditionals",
+      "summary": "Загальні істини, реальні умови в майбутньому й уявні ситуації; unless; If I were you.",
+      "theory": {
+        "intro": "Тип умовного речення залежить від того, наскільки реальна ситуація: загальна закономірність, цілком можлива подія чи уявна, малоймовірна обставина.",
+        "blocks": [
+          {
+            "title": "Нульовий тип: завжди так",
+            "text": "*If* + *Present Simple*, *Present Simple*. Закони природи, загальні правила, «якщо — то завжди».",
+            "examples": [
+              ["If you heat ice, it melts.", "Якщо нагріти лід, він тане."]
+            ]
+          },
+          {
+            "title": "Перший тип: реальна можливість",
+            "text": "*If* + *Present Simple*, *will* + інфінітив. Цілком можлива подія в майбутньому. *Unless* = *if … not*.",
+            "examples": [
+              ["If it rains, we’ll stay at home.", "Якщо буде дощ, ми залишимося вдома."],
+              ["We’ll be late unless we hurry.", "Ми запізнимося, якщо не поспішимо."]
+            ]
+          },
+          {
+            "title": "Другий тип: уявна ситуація",
+            "text": "*If* + *Past Simple*, *would* + інфінітив. Нереальне або малоймовірне в теперішньому чи майбутньому. Форма минулого тут не означає минулого часу. У нормативній мові *If I / he / she were*; *was* — розмовний варіант.",
+            "examples": [
+              ["If I had more time, I would learn to paint.", "Якби я мав більше часу, я навчився б малювати."],
+              ["If I were you, I’d accept the offer.", "На твоєму місці я прийняв би пропозицію."]
+            ]
+          },
+          {
+            "title": "Кома",
+            "text": "Якщо речення починається з *if*-частини, після неї ставимо кому; якщо *if* у середині — коми немає.",
+            "examples": [
+              ["If you need help, call me. / Call me if you need help.", "Якщо потрібна допомога, телефонуй."]
+            ]
+          }
+        ],
+        "traps": [
+          "*If it will rain* — помилка: у частині з *if* майбутнє не вживається, лише *If it rains*.",
+          "*If I would have money* — помилка: *would* стоїть у головній частині, а в *if*-частині — *If I had money*.",
+          "«На твоєму місці…» — *If I were you…*",
+          "*Unless* уже містить заперечення: *unless you hurry* (= якщо не поспішиш), а не *unless you don’t hurry*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "If you mix blue and yellow, you ___ green.",
+          "options": ["get", "will got", "would got"],
+          "answer": 0,
+          "explanation": "Закономірність, що діє завжди, — нульовий тип: *Present Simple* в обох частинах. *Will got* і *would got* граматично неможливі: після модального — базова форма."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "If it ___ tomorrow, we’ll cancel the picnic.",
+          "options": ["rains", "will rain", "would rain"],
+          "answer": 0,
+          "explanation": "Перший тип: у частині з *if* — *Present Simple*, навіть коли йдеться про завтра: *If it rains*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "If I ___ you, I’d apologize.",
+          "options": ["were", "am", "will be"],
+          "answer": 0,
+          "explanation": "Усталений зворот поради — *If I were you*. Ситуація уявна (я не ви), тож другий тип."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "If she had a car, she ___ drive to work.",
+          "options": ["would", "will", "does"],
+          "answer": 0,
+          "explanation": "*If she had* — уявна ситуація (машини в неї немає), другий тип: у головній частині *would* + інфінітив."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "We’ll miss the bus ___ we leave now.",
+          "options": ["unless", "if", "when"],
+          "answer": 0,
+          "explanation": "Зміст — «якщо ми не вийдемо зараз». *Unless* = *if … not*: *unless we leave now*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "If I ___ (win) a lot of money, I would travel around the world.",
+          "answers": ["won"],
+          "explanation": "У головній частині *would travel* — отже, другий тип; в *if*-частині — *Past Simple*: *won*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "If you ___ (not / water) the plants, they will die.",
+          "answers": ["do not water", "don't water"],
+          "explanation": "Перший тип: *if* + *Present Simple*. Заперечення — *don’t water*; *won’t water* у частині з *if* не вживається."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "What would you do if you ___ (find) a wallet on the street?",
+          "answers": ["found"],
+          "explanation": "Уявна ситуація з *would* — другий тип; в *if*-частині *Past Simple*: *found*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "If I [[will see]] her, I [[will give]] her [[your]] message.",
+          "answer": 0,
+          "fix": "see",
+          "explanation": "У частині з *if* майбутнє не вживається: *If I see her, I will give her your message*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "If I [[would have]] more free time, I [[would join]] a [[choir]].",
+          "answer": 0,
+          "fix": "had",
+          "explanation": "*Would* належить головній частині. У частині з *if* другого типу — *Past Simple*: *If I had more free time*."
+        }
+      ]
+    },
+    {
+      "id": "passive-basics",
+      "title": "Пасивний стан: основи",
+      "titleEn": "The passive: basics",
+      "summary": "be + третя форма дієслова в теперішньому, минулому, Present Perfect і з модальними.",
+      "theory": {
+        "intro": "У пасиві в центрі уваги — не той, хто діє, а те, що з предметом або людиною відбувається. Пасив будується так: форма *be* у потрібному часі + третя форма дієслова (*V3*).",
+        "blocks": [
+          {
+            "title": "Форми",
+            "text": "*Present Simple*: *is / are made*. *Past Simple*: *was / were built*. *Present Perfect*: *has / have been sent*. З модальними: *can / must / should be done*. Майбутнє: *will be delivered*.",
+            "examples": [
+              ["Paper is made from wood.", "Папір виготовляють із деревини."],
+              ["The bridge was built over a century ago.", "Міст збудували понад століття тому."],
+              ["Your order has been sent.", "Ваше замовлення відправлено."],
+              ["This medicine must be kept in a cool place.", "Ці ліки треба зберігати в прохолодному місці."]
+            ]
+          },
+          {
+            "title": "Коли вживати",
+            "text": "Виконавець невідомий, неважливий або очевидний; або ми хочемо почати речення з того, про що вже йде мова. Виконавця, якщо він важливий, вводимо через *by*.",
+            "examples": [
+              ["My bike has been stolen.", "У мене вкрали велосипед (хто — невідомо)."],
+              ["The novel was written by a teenager.", "Роман написав підліток."]
+            ]
+          },
+          {
+            "title": "Лише перехідні дієслова",
+            "text": "Пасив можливий лише від дієслів, що мають додаток. *Happen, arrive, die, consist of, belong* пасиву не утворюють.",
+            "examples": [
+              ["The accident happened at night.", "Аварія сталася вночі."]
+            ]
+          }
+        ],
+        "traps": [
+          "*The accident was happened* — помилка: *happen* не має пасиву.",
+          "Українські неозначено-особові речення («тут продають…», «мені подарували…») часто відповідають англійському пасиву: *Tickets are sold here*, *I was given…*",
+          "Перевіряйте третю форму неправильних дієслів: *written, built, stolen, given, sent*.",
+          "Не пропускайте *be*: *The letter was sent*, а не *The letter sent*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "This bridge ___ more than a hundred years ago.",
+          "options": ["was built", "built", "is built"],
+          "answer": 0,
+          "explanation": "Міст не будує сам себе, тож потрібен пасив; *more than a hundred years ago* — *Past Simple*: *was built*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Coffee ___ in many tropical countries.",
+          "options": ["is grown", "grows up", "is growing up"],
+          "answer": 0,
+          "explanation": "Каву вирощують люди — загальний факт у пасиві: *is grown*. *Grow up* означає «дорослішати» і про рослини не вживається."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "My bike ___! I left it outside for five minutes.",
+          "options": ["has been stolen", "has stolen", "was stealing"],
+          "answer": 0,
+          "explanation": "Велосипед — об’єкт дії, а результат важливий зараз: *Present Perfect* у пасиві — *has been stolen*. *Has stolen* означало б, що велосипед щось украв."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "The results ___ by email next week.",
+          "options": ["will be sent", "will send", "will sent"],
+          "answer": 0,
+          "explanation": "Результати надсилають, а не вони надсилають: майбутній пасив — *will be* + *V3*: *will be sent*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "The accident ___ on a busy road.",
+          "options": ["happened", "was happened", "has been happened"],
+          "answer": 0,
+          "explanation": "*Happen* — неперехідне дієслово, пасиву не утворює. Правильно лише *happened*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "English ___ (speak) all over the world.",
+          "answers": ["is spoken"],
+          "explanation": "Загальний факт у пасиві: *Present Simple* — *is* + *V3*. *Speak — spoke — spoken*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "The packages ___ (deliver) yesterday morning.",
+          "answers": ["were delivered"],
+          "explanation": "*Yesterday* — *Past Simple*; підмет у множині (*packages*), тож *were delivered*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "This form must ___ (complete) in black ink.",
+          "answers": ["be completed"],
+          "explanation": "Пасив із модальним дієсловом: *must be* + *V3* — *must be completed*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "The museum [[is]] [[visit]] by thousands of tourists [[every]] year.",
+          "answer": 1,
+          "fix": "visited",
+          "explanation": "У пасиві після *be* потрібна третя форма: *is visited*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "I [[was]] [[gave]] a lovely present [[for]] my birthday.",
+          "answer": 1,
+          "fix": "given",
+          "explanation": "Пасив вимагає третьої форми: *give — gave — given*, отже *I was given*."
+        }
+      ]
+    },
+    {
+      "id": "quantifiers",
+      "title": "Злічувані й незлічувані іменники, кількість",
+      "titleEn": "Countable and uncountable nouns, quantifiers",
+      "summary": "much / many / a lot of, few / a few, little / a little, some / any; advice, information, news.",
+      "theory": {
+        "intro": "Чимало іменників, злічуваних в українській, в англійській незлічувані: їх не вживають у множині й з артиклем *a / an*. Від цього залежить вибір слів на позначення кількості.",
+        "blocks": [
+          {
+            "title": "Незлічувані «пастки»",
+            "text": "*advice, information, news, furniture, luggage, equipment, research, homework, knowledge, progress, money, traffic*. Окрему одиницю позначаємо через *a piece of*, *an item of*.",
+            "examples": [
+              ["She gave me some good advice.", "Вона дала мені кілька добрих порад."],
+              ["The news is surprising.", "Новини дивовижні (дієслово в однині)."],
+              ["Here’s a useful piece of information.", "Ось корисна інформація (один факт)."]
+            ]
+          },
+          {
+            "title": "much, many, a lot of",
+            "text": "*Many* — зі злічуваними в множині, *much* — з незлічуваними (переважно в запереченнях і питаннях). *A lot of / lots of* підходить до обох.",
+            "examples": [
+              ["How many languages do you speak?", "Скількома мовами ти володієш?"],
+              ["We don’t have much time.", "У нас небагато часу."]
+            ]
+          },
+          {
+            "title": "few / a few, little / a little",
+            "text": "*A few* (злічувані) і *a little* (незлічувані) — «кілька, трохи» з позитивним відтінком. *Few* і *little* — «мало, замало».",
+            "examples": [
+              ["I have a few friends here, so I’m not lonely.", "У мене тут є кілька друзів, тож я не самотній."],
+              ["Few people understood the joke.", "Мало хто зрозумів жарт."],
+              ["There’s a little milk left.", "Трохи молока ще залишилося."]
+            ]
+          },
+          {
+            "title": "some і any",
+            "text": "*Some* — у стверджувальних реченнях, а також у пропозиціях і проханнях. *Any* — у запереченнях і питаннях; у ствердженні *any* означає «будь-який».",
+            "examples": [
+              ["Would you like some tea?", "Хочеш чаю?"],
+              ["Are there any questions?", "Є запитання?"],
+              ["Call me any time.", "Телефонуй будь-коли."]
+            ]
+          }
+        ],
+        "traps": [
+          "*advices, informations, furnitures* — таких форм немає; *news* поєднується з дієсловом в однині: *The news is…*",
+          "«Багато грошей» — *a lot of money* або *much money*, але не *many money*.",
+          "«Мало часу» — *little time*, «трохи часу» — *a little time*: артикль змінює зміст.",
+          "*An information*, *an advice* — помилка: замість артикля — *a piece of*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Could you give me some ___ about the course?",
+          "options": ["information", "informations", "an information"],
+          "answer": 0,
+          "explanation": "*Information* в англійській незлічуване: без множини й без *an*. Правильно *some information*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "How ___ furniture do you need for the new office?",
+          "options": ["much", "many", "few"],
+          "answer": 0,
+          "explanation": "*Furniture* — незлічуваний іменник, тому *How much*. *Many* і *few* поєднуються лише зі злічуваними."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Don’t worry, we still have ___ time before the train leaves.",
+          "options": ["a little", "a few", "few"],
+          "answer": 0,
+          "explanation": "*Time* у значенні «час» незлічуване, а зміст позитивний («ще трохи є»), тож *a little*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Very ___ people know the real story.",
+          "options": ["few", "little", "a little"],
+          "answer": 0,
+          "explanation": "*People* — злічуване, зміст негативний («мало хто»): *very few*. *Little* і *a little* — з незлічуваними."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Would you like ___ tea?",
+          "options": ["some", "any", "many"],
+          "answer": 0,
+          "explanation": "У пропозиціях і проханнях вживаємо *some*, навіть у формі питання: *Would you like some tea?*"
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть потрібну форму be (одне слово).",
+          "prompt": "The news ___ better than we expected.",
+          "answers": ["was", "is"],
+          "explanation": "*News* — незлічуваний іменник, попри закінчення *-s*, тож дієслово в однині: *was* (або *is*), але не *were / are*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "There aren’t ___ eggs left — I’ll buy some.",
+          "answers": ["any", "many"],
+          "explanation": "У запереченні зі злічуваними в множині — *any* («жодних») або *many* («небагато»). *Some* у запереченні тут не вживається."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Let me give you a ___ of advice: always back up your files.",
+          "answers": ["piece", "bit"],
+          "explanation": "*Advice* незлічуване; одну пораду позначаємо як *a piece of advice* (розмовно — *a bit of advice*)."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "She gave me [[some]] useful [[advices]] about [[the]] interview.",
+          "answer": 1,
+          "fix": "advice",
+          "explanation": "*Advice* не має множини: *some useful advice*. Множину значення передають через *pieces of advice*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "We don’t have [[many]] [[money]], so we [[can’t]] eat out tonight.",
+          "answer": 0,
+          "fix": "much",
+          "explanation": "*Money* — незлічуване, тож *much money* (або *a lot of money*)."
+        }
+      ]
+    },
+    {
+      "id": "gerund-infinitive",
+      "title": "Герундій чи інфінітив",
+      "titleEn": "Gerund or infinitive",
+      "summary": "enjoy doing, decide to do; -ing після прийменників; to для мети.",
+      "theory": {
+        "intro": "Деякі дієслова вимагають після себе форми з *-ing* (герундія), інші — інфінітива з *to*. Здебільшого це треба запам’ятати, але є кілька надійних правил.",
+        "blocks": [
+          {
+            "title": "Дієслово + -ing",
+            "text": "*enjoy, mind, avoid, finish, suggest, keep, practice, consider, imagine, miss, can’t stand*.",
+            "examples": [
+              ["I enjoy cooking for friends.", "Я люблю готувати для друзів."],
+              ["Would you mind waiting a moment?", "Ви не проти трохи зачекати?"]
+            ]
+          },
+          {
+            "title": "Дієслово + to + інфінітив",
+            "text": "*want, decide, hope, plan, agree, refuse, promise, learn, manage, afford, offer, seem*.",
+            "examples": [
+              ["We decided to stay at home.", "Ми вирішили залишитися вдома."],
+              ["I can’t afford to buy a car.", "Я не можу дозволити собі купити машину."]
+            ]
+          },
+          {
+            "title": "Після прийменника — завжди -ing",
+            "text": "*interested in, good at, tired of, before, after, without, instead of, look forward to*. У *look forward to* слово *to* — прийменник, а не частка інфінітива.",
+            "examples": [
+              ["She’s good at solving problems.", "Вона вміє розв’язувати проблеми."],
+              ["I look forward to meeting you.", "З нетерпінням чекаю на зустріч із вами."]
+            ]
+          },
+          {
+            "title": "Герундій як підмет і інфінітив мети",
+            "text": "Дія в ролі підмета — зазвичай герундій. Мету («щоб») передаємо інфінітивом із *to*, а не *for*.",
+            "examples": [
+              ["Swimming is good for your back.", "Плавання корисне для спини."],
+              ["I went to the store to buy bread.", "Я пішов у магазин, щоб купити хліба."]
+            ]
+          }
+        ],
+        "traps": [
+          "«Щоб купити» — *to buy*, а не *for buy* чи *for to buy*.",
+          "*I look forward to see you* — помилка: *to seeing you*.",
+          "*suggest to do* — помилка: *suggest doing* або *suggest that we do*.",
+          "Після *like, love, hate, start, begin* можливі обидві форми майже без різниці в значенні: *I like reading / to read*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I really enjoy ___ in the mountains.",
+          "options": ["hiking", "to hike", "hike"],
+          "answer": 0,
+          "explanation": "Після *enjoy* вживаємо лише герундій: *enjoy hiking*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "We decided ___ a taxi because it was late.",
+          "options": ["to take", "taking", "take"],
+          "answer": 0,
+          "explanation": "Після *decide* — інфінітив із *to*: *decided to take*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "She’s very good at ___ people feel welcome.",
+          "options": ["making", "to make", "make"],
+          "answer": 0,
+          "explanation": "Після прийменника (*at*) — завжди *-ing*: *good at making*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I’m looking forward to ___ from you.",
+          "options": ["hearing", "hear", "have heard"],
+          "answer": 0,
+          "explanation": "У *look forward to* слово *to* — прийменник, тому далі герундій: *to hearing*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "He went to the bank ___ some money.",
+          "options": ["to get", "for get", "for getting"],
+          "answer": 0,
+          "explanation": "Мету дії («щоб») передає інфінітив із *to*: *to get some money*. *For* + дієслово в цьому значенні — калька."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Would you mind ___ (close) the door?",
+          "answers": ["closing"],
+          "explanation": "Після *mind* — герундій: *Would you mind closing…?* — ввічливе прохання."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "They can’t afford ___ (buy) a new house right now.",
+          "answers": ["to buy"],
+          "explanation": "Після *afford* — інфінітив із *to*: *can’t afford to buy*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "___ (read) before bed helps me relax.",
+          "answers": ["reading"],
+          "explanation": "Дія в ролі підмета речення — герундій: *Reading before bed helps me relax*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "She [[suggested]] [[to go]] to the beach [[instead]].",
+          "answer": 1,
+          "fix": "going",
+          "explanation": "Після *suggest* — герундій (*suggested going*) або підрядне (*suggested that we go*), але не інфінітив."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "I’m thinking [[about]] [[to change]] my job [[next]] year.",
+          "answer": 1,
+          "fix": "changing",
+          "explanation": "Після прийменника *about* — герундій: *thinking about changing*."
+        }
+      ]
+    },
+    {
+      "id": "relative-clauses",
+      "title": "Підрядні означальні",
+      "titleEn": "Defining relative clauses",
+      "summary": "who, which, that, where, whose, when; коли займенник можна пропустити.",
+      "theory": {
+        "intro": "Підрядне означальне уточнює, про кого чи про що йдеться: *the woman who lives next door*. Без нього речення втратило б потрібну інформацію, тому комами його не відокремлюють.",
+        "blocks": [
+          {
+            "title": "Відносні займенники",
+            "text": "*who* — люди; *which* — речі й тварини; *that* — і люди, і речі (дуже поширене в розмовній мові); *where* — місця; *when* — час; *whose* — «чий, чия».",
+            "examples": [
+              ["The man who fixed our roof was very professional.", "Чоловік, який полагодив наш дах, був справжнім професіоналом."],
+              ["This is the town where I was born.", "Це місто, де я народився."],
+              ["I met a girl whose father is a pilot.", "Я познайомився з дівчиною, чий батько — пілот."]
+            ]
+          },
+          {
+            "title": "Коли займенник можна пропустити",
+            "text": "Якщо займенник — додаток (після нього є свій підмет), його можна опустити. Якщо займенник — підмет, пропускати не можна.",
+            "examples": [
+              ["The book (that) I bought is great.", "Книжка, яку я купив, чудова (that можна опустити)."],
+              ["The man who called you is here.", "Чоловік, який тобі дзвонив, тут (who не опускаємо)."]
+            ]
+          },
+          {
+            "title": "Прийменник у кінці",
+            "text": "У розмовній мові прийменник зазвичай стоїть наприкінці підрядного; займенник при цьому не дублюємо.",
+            "examples": [
+              ["That’s the house (that) I grew up in.", "Це будинок, у якому я виріс."]
+            ]
+          }
+        ],
+        "traps": [
+          "*What* не вживається після іменника як «який»: *the film that we saw*, а не *the film what we saw*.",
+          "Про людей — *who* або *that*, не *which*.",
+          "Не дублюйте займенник: *the car which I bought*, а не *the car which I bought it*.",
+          "«Чий» — *whose*; *who’s* — це скорочення *who is / who has*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "The woman ___ lives next door is a pilot.",
+          "options": ["who", "which", "what"],
+          "answer": 0,
+          "explanation": "Про людину — *who* (або *that*). *Which* вживається про речі, а *what* після іменника не вживається."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "This is the café ___ we first met.",
+          "options": ["where", "which", "who"],
+          "answer": 0,
+          "explanation": "Місце, де щось відбулося, — *where*. *Which* потребувало б прийменника: *the café which we first met in*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "I have a friend ___ brother is a famous chef.",
+          "options": ["whose", "who’s", "who"],
+          "answer": 0,
+          "explanation": "Значення «чий брат» — *whose*. *Who’s* — скорочення *who is*, що тут не має сенсу."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "The laptop ___ I bought last month has already broken.",
+          "options": ["that", "what", "who"],
+          "answer": 0,
+          "explanation": "Про річ — *that* або *which* (тут займенник можна й пропустити: *The laptop I bought…*). *What* після іменника — помилка."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Is there anything ___ I can do to help?",
+          "options": ["that", "what", "who"],
+          "answer": 0,
+          "explanation": "Після *anything, everything, nothing, something* вживаємо *that* (або пропускаємо займенник), але не *what*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть відносний займенник або прислівник.",
+          "prompt": "Do you remember the day ___ we moved into this apartment?",
+          "answers": ["when", "that", "on which"],
+          "explanation": "Після слова про час — *when* (або *that*, формально — *on which*)."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть відносний займенник.",
+          "prompt": "The people ___ work here are very friendly.",
+          "answers": ["who", "that"],
+          "explanation": "Про людей — *who* або *that*. Пропустити займенник не можна: він тут підмет (*who work*)."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть відносний займенник.",
+          "prompt": "That’s the dog ___ bit my neighbor.",
+          "answers": ["that", "which"],
+          "explanation": "Про тварину — *that* або *which*. Займенник є підметом (*that bit*), тож опускати його не можна."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "The book [[what]] you [[lent]] me [[was]] fascinating.",
+          "answer": 0,
+          "fix": "that",
+          "explanation": "Після іменника — *that* або *which* (чи без займенника): *The book (that) you lent me…*"
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "The house [[which]] I grew up [[in it]] [[has]] been sold.",
+          "answer": 1,
+          "fix": "in",
+          "explanation": "Займенник *which* уже замінює *the house*, тож *it* — зайве дублювання: *the house which I grew up in*."
+        }
+      ]
+    }
+  ]
+}
