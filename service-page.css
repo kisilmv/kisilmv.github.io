@@ -1,6 +1,6 @@
 /* ==========================================================================
    Сторінки напрямів (nmt.html, cambridge.html, it-english.html, business-english.html)
-   і тренажери (nmt-trainer.html, b2-first-trainer.html)
+   і тренажери (nmt-trainer.html, b2-first-trainer.html, c1-advanced-trainer.html)
    Використовує дизайн-токени та компоненти зі styles.css і booking.css
    ========================================================================== */
 
@@ -156,7 +156,7 @@
 }
 
 /* ==========================================================================
-   Тренажери НМТ і B2 First (trn-trainer.html, b2-first-trainer.html)
+   Тренажери НМТ, B2 First і C1 Advanced (nmt-trainer.html, b2-first-trainer.html, c1-advanced-trainer.html)
    Доповнює компоненти з quiz/quiz.css: .quiz-letter, .quiz-verdict, .quiz-note, .quiz-result
    ========================================================================== */
 
@@ -895,7 +895,7 @@
   color: var(--color-heading);
 }
 
-/* Часткове зарахування (Part 4 B2 First) */
+/* Часткове зарахування (Part 4 B2 First і C1 Advanced) */
 .trn-verdict--partial {
   color: var(--color-accent-strong);
 }

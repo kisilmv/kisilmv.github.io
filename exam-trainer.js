@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Рушій тренажерів (НМТ, B2 First).
+ * Рушій тренажерів (НМТ, B2 First, C1 Advanced).
  * Сторінка задає налаштування атрибутами на #trn-app:
  *   data-src          — JSON із варіантами;
  *   data-storage-key  — ключ localStorage;
@@ -207,12 +207,19 @@
     return { points, max, status };
   }
 
-  /* Part 4 B2 First: відповідь ділиться на дві частини, кожна дає 1 бал.
-     Без ключового слова або з довжиною поза межами 2–5 слів — 0 балів. */
+  /* Межі довжини відповіді в Part 4: B2 First — 2–5 слів, C1 Advanced — 3–6 (meta.transformationWords). */
+  function transformationRange() {
+    const range = data && data.meta && data.meta.transformationWords;
+    return range && typeof range.min === 'number' && typeof range.max === 'number' ? range : { min: 2, max: 5 };
+  }
+
+  /* Part 4 (Key word transformation): відповідь ділиться на дві частини, кожна дає 1 бал.
+     Без ключового слова або з довжиною поза встановленими межами — 0 балів. */
   function scoreTransformation(question, raw) {
     const answer = normalize(raw);
     const count = wordCount(answer);
-    if (count < 2 || count > 5) return 0;
+    const range = transformationRange();
+    if (count < range.min || count > range.max) return 0;
     const key = normalize(question.keyword);
     if ((' ' + answer + ' ').indexOf(' ' + key + ' ') === -1) return 0;
     let best = 0;
@@ -673,7 +680,7 @@
     const id = 'trn-input-' + n;
     const label = el('label', 'trn-input-label',
       task.type === 'transformation'
-        ? 'Пропущені слова (від 2 до 5, разом із ' + question.keyword.toUpperCase() + ')'
+        ? 'Пропущені слова (від ' + transformationRange().min + ' до ' + transformationRange().max + ', разом із ' + question.keyword.toUpperCase() + ')'
         : 'Одне слово');
     label.htmlFor = id;
     wrap.appendChild(label);

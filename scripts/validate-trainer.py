@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Перевіряє JSON тренажера (НМТ або B2 First) на відповідність формату іспиту.
+"""Перевіряє JSON тренажера (НМТ, B2 First, C1 Advanced) на відповідність формату іспиту.
 
 Запуск:
   python3 scripts/validate-trainer.py                      # обидва файли з data/
   python3 scripts/validate-trainer.py data/b2-first-trainer.json
 
-Формат визначає поле meta.exam: "nmt-2026", "b2-first" або "level-test".
+Формат визначає поле meta.exam: "nmt-2026", "b2-first", "c1-advanced" або "level-test".
 Повертає код 1 і список помилок, якщо щось не так.
 """
 import json
@@ -14,7 +14,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_FILES = [ROOT / "data" / "nmt-trainer.json", ROOT / "data" / "b2-first-trainer.json", ROOT / "data" / "level-test.json"]
+DEFAULT_FILES = [ROOT / "data" / "nmt-trainer.json", ROOT / "data" / "b2-first-trainer.json",
+                 ROOT / "data" / "c1-advanced-trainer.json", ROOT / "data" / "level-test.json"]
 
 # (частина, тип, номери, кількість варіантів, балів за запитання, зайвих варіантів)
 LAYOUTS = {
@@ -41,6 +42,21 @@ LAYOUTS = {
             ("reading-use-of-english", "multiple-choice", range(31, 37), 4, 2, None),
             ("reading-use-of-english", "gapped-text", range(37, 43), 7, 2, 1),
             ("reading-use-of-english", "multiple-matching", range(43, 53), 0, 1, None),
+        ],
+    },
+    # C1 Advanced Handbook for Teachers, Reading and Use of English
+    "c1-advanced": {
+        "maxScore": 78,
+        "transformationWords": (3, 6),
+        "tasks": [
+            ("reading-use-of-english", "cloze", range(1, 9), 4, 1, None),
+            ("reading-use-of-english", "open-cloze", range(9, 17), 0, 1, None),
+            ("reading-use-of-english", "word-formation", range(17, 25), 0, 1, None),
+            ("reading-use-of-english", "transformation", range(25, 31), 0, 2, None),
+            ("reading-use-of-english", "multiple-choice", range(31, 37), 4, 2, None),
+            ("reading-use-of-english", "multiple-matching", range(37, 41), 0, 2, None),
+            ("reading-use-of-english", "gapped-text", range(41, 47), 7, 2, 1),
+            ("reading-use-of-english", "multiple-matching", range(47, 57), 0, 1, None),
         ],
     },
     # Тест рівня: по 8 завдань на рівні A1, A2, B1, B2, C1
@@ -83,9 +99,9 @@ def word_count(norm):
     return sum(1 + (1 if re.search(r"'[sd]$", w) and len(w) > 2 else 0) for w in norm.split(" "))
 
 
-def score_transformation(question, raw):
+def score_transformation(question, raw, words=(2, 5)):
     answer = normalize(raw)
-    if not 2 <= word_count(answer) <= 5:
+    if not words[0] <= word_count(answer) <= words[1]:
         return 0
     key = normalize(question["keyword"])
     if f" {key} " not in f" {answer} ":
@@ -197,6 +213,7 @@ def check_variant(variant, layout, errors):
                 continue
 
             if exp_type == "transformation":
+                words = layout.get("transformationWords", (2, 5))
                 for field in ("lead", "keyword", "before", "after"):
                     if not q.get(field):
                         errors.append(f"{qw}: немає поля {field}")
@@ -209,14 +226,14 @@ def check_variant(variant, layout, errors):
                     for a in parts[0]:
                         for b in parts[1]:
                             full = normalize(f"{a} {b}")
-                            if not 2 <= word_count(full) <= 5:
-                                errors.append(f"{qw}: «{a} {b}» має {word_count(full)} слів замість 2–5")
+                            if not words[0] <= word_count(full) <= words[1]:
+                                errors.append(f"{qw}: «{a} {b}» має {word_count(full)} слів замість {words[0]}–{words[1]}")
                             if f" {key} " not in f" {full} ":
                                 errors.append(f"{qw}: у «{a} {b}» немає ключового слова")
-                            if score_transformation(q, f"{a} {b}") != 2:
+                            if score_transformation(q, f"{a} {b}", words) != 2:
                                 errors.append(f"{qw}: «{a} {b}» не отримує повних балів")
                 trap = q.get("trap", "")
-                if not trap or score_transformation(q, trap) == 2:
+                if not trap or score_transformation(q, trap, words) == 2:
                     errors.append(f"{qw}: пастка «{trap}» не може бути повною правильною відповіддю")
                 check_explanation(qw, q, errors, f"«{trap}»")
                 continue
@@ -273,6 +290,10 @@ def validate(path):
             errors.append("meta.levels має містити рівні A1–C1 з полями pass і description")
         if not (meta.get("belowLevels") or {}).get("description"):
             errors.append("немає meta.belowLevels")
+    if layout.get("transformationWords"):
+        tw = meta.get("transformationWords") or {}
+        if (tw.get("min"), tw.get("max")) != layout["transformationWords"]:
+            errors.append("meta.transformationWords має бути {min: %d, max: %d}" % layout["transformationWords"])
     if meta.get("maxScore") != layout["maxScore"]:
         errors.append(f"meta.maxScore має бути {layout['maxScore']}")
 

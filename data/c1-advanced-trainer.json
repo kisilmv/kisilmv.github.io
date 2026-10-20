@@ -1,0 +1,2054 @@
+{
+  "version": 1,
+  "meta": {
+    "exam": "c1-advanced",
+    "title": "Тренажер C1 Advanced: Reading and Use of English",
+    "language": "en",
+    "maxScore": 78,
+    "durationMinutes": 90,
+    "transformationWords": {
+      "min": 3,
+      "max": 6
+    },
+    "formatSource": "C1 Advanced Handbook for Teachers (Cambridge University Press & Assessment), Reading and Use of English"
+  },
+  "variants": [
+    {
+      "id": "1",
+      "title": "Варіант 1",
+      "level": "C1",
+      "parts": [
+        {
+          "id": "reading-use-of-english",
+          "title": "Reading and Use of English",
+          "label": "Reading and Use of English",
+          "tasks": [
+            {
+              "id": "part-1",
+              "label": "Part 1",
+              "subtitle": "Multiple-choice cloze",
+              "type": "cloze",
+              "instruction": "For questions 1–8, read the text below and decide which answer (A, B, C or D) best fits each gap.",
+              "passage": {
+                "title": "Back from the Brink",
+                "paragraphs": [
+                  "After an absence of some four hundred years, the Eurasian beaver is once again making its {{1}} felt in British rivers. Hunted to extinction for its fur, the animal was reintroduced on a small scale in the early 2000s, and its return has {{2}} a fierce debate between conservationists and landowners.",
+                  "Supporters describe beavers as nature’s engineers. Their dams hold back water during heavy rain, helping to keep floods at {{3}} in towns further downstream, and create wetlands that {{4}} host to a remarkable variety of wildlife, from dragonflies to otters.",
+                  "Farmers, on the other hand, have {{5}} concern that the same dams can flood valuable farmland, and that beavers fell trees {{6}} of their age or value. The government has now attempted to {{7}} a balance between these competing interests: beavers may be released into the wild, but only under licence, and landowners whose property is damaged will be offered support. Whether this compromise will {{8}} the test of time remains to be seen."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 1,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "attendance"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "presence"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "residence"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "appearance"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Make one’s presence felt — сталий вираз «давати про себе знати, ставати помітним». Пастка — D: appearance вживають у звороті make an appearance («з’явитися»), але з дієприкметником felt воно не поєднується."
+                },
+                {
+                  "number": 2,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "lit"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "fired"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "burst"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "sparked"
+                    }
+                  ],
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Spark a debate — «викликати, розпалити дискусію»: так кажуть про подію, що дає поштовх суперечці. Пастка — A: light означає «запалити» в прямому значенні (вогонь, свічку), а з іменником debate не вживається."
+                },
+                {
+                  "number": 3,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "bay"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "heart"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "hand"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "large"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Keep something at bay — «тримати на відстані, не підпускати»: греблі стримують повені в містах нижче за течією. Пастка — C: at hand означає «під рукою, поруч», і з keep floods цей вираз не має сенсу."
+                },
+                {
+                  "number": 4,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "give"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "make"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "play"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "take"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Play host to — «бути місцем, де щось перебуває чи відбувається»; вираз часто вживають щодо середовищ існування тварин. Пастка — B: make утворює чимало колокацій, але make host to не є сталим виразом."
+                },
+                {
+                  "number": 5,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "told"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "voiced"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "spoken"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "said"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Voice concern — «висловлювати занепокоєння»: дієслово voice тут означає «озвучувати думку». Пастка — C: speak не поєднується з concern як із прямим додатком, можна сказати лише speak about one’s concerns."
+                },
+                {
+                  "number": 6,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "regardless"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "despite"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "however"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "although"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Regardless of — «незалежно від, не зважаючи на»: бобри валять дерева, не зважаючи на їхній вік і цінність. Пастка — B: despite ніколи не вживають із прийменником of, хоча українське «попри» підштовхує до такої помилки."
+                },
+                {
+                  "number": 7,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "make"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "hit"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "beat"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "strike"
+                    }
+                  ],
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Strike a balance — «знайти золоту середину» між протилежними інтересами. Пастка — A: make вживають у багатьох колокаціях (make a decision, make a compromise), але не з balance."
+                },
+                {
+                  "number": 8,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "hold"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "keep"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "stand"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "bear"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Stand the test of time — «витримати перевірку часом». Пастка — D: bear теж означає «витримувати», проте вживається в інших сполуках (bear comparison, bear scrutiny), а не з test of time."
+                }
+              ]
+            },
+            {
+              "id": "part-2",
+              "label": "Part 2",
+              "subtitle": "Open cloze",
+              "type": "open-cloze",
+              "instruction": "For questions 9–16, read the text below and think of the word which best fits each gap. Use only one word in each gap.",
+              "passage": {
+                "title": "The Unwritten Rules of the Queue",
+                "paragraphs": [
+                  "The queue is {{9}} of the most enduring British social rituals. Visitors are often struck by the patience with {{10}} people wait their turn, even when there is no official system in place. Yet researchers argue that queuing has less to do with national character than with a deep-rooted sense of fairness. {{11}} upsets people most, it seems, is not the wait itself but the suspicion that someone else has been served first without good reason.",
+                  "Interestingly, people are prepared to tolerate surprisingly long waits, {{12}} long as they know roughly how long they will be standing there. This is {{13}} many theme parks display estimated waiting times, which are often deliberately exaggerated so that visitors feel pleasantly surprised when they reach the front. In fact, it is not so much the length of the wait that matters {{14}} how it feels: time spent doing nothing seems to pass far more slowly than time spent occupied. {{15}} this reason, lifts in tall buildings are often fitted with mirrors so {{16}} people have something to look at, even if it is only themselves."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 9,
+                  "answers": [
+                    "one"
+                  ],
+                  "trap": "some",
+                  "explanation": "One of the most + прикметник + іменник у множині — «один із найбільш…». Пастка — «some»: some of the most вимагало б дієслова в множині (are), а присудок is стоїть в однині."
+                },
+                {
+                  "number": 10,
+                  "answers": [
+                    "which"
+                  ],
+                  "trap": "that",
+                  "explanation": "Після прийменника with підрядне означальне речення вводить which (щодо неістот): the patience with which. Пастка — «that»: сполучник that не може стояти безпосередньо після прийменника."
+                },
+                {
+                  "number": 11,
+                  "answers": [
+                    "what"
+                  ],
+                  "trap": "that",
+                  "explanation": "What тут означає «те, що»: What upsets people most is… — підрядне речення в ролі підмета. Пастка — «that»: це слово не має значення «те, що», тож речення залишилося б без підмета."
+                },
+                {
+                  "number": 12,
+                  "answers": [
+                    "as",
+                    "so"
+                  ],
+                  "trap": "for",
+                  "explanation": "As long as (so long as) — «за умови, що»: люди готові чекати, якщо знають приблизний час очікування. Пастка — «for»: for long означає «довго» і не вводить умови."
+                },
+                {
+                  "number": 13,
+                  "answers": [
+                    "why"
+                  ],
+                  "trap": "because",
+                  "explanation": "This is why… — «Ось чому…»: речення пояснює, як тематичні парки використовують описану особливість поведінки. Пастка — «because»: This is because означало б, що табло в парках є причиною поведінки людей, а логіка тексту протилежна."
+                },
+                {
+                  "number": 14,
+                  "answers": [
+                    "as"
+                  ],
+                  "trap": "than",
+                  "explanation": "Зворот not so much A as B означає «не стільки A, скільки B»: важить не тривалість очікування, а те, як воно відчувається. Пастка — «than»: після so much у цьому звороті вживають as, а не than."
+                },
+                {
+                  "number": 15,
+                  "answers": [
+                    "for"
+                  ],
+                  "trap": "by",
+                  "explanation": "For this reason — сталий зв’язковий вираз «з цієї причини». Пастка — «by»: by this reason в англійській не вживають, хоча українське «через це» підштовхує шукати інший прийменник."
+                },
+                {
+                  "number": 16,
+                  "answers": [
+                    "that"
+                  ],
+                  "trap": "as",
+                  "explanation": "So that — «щоб»: дзеркала встановлюють, щоб людям було на що подивитися. Пастка — «as»: so as вимагає інфінітива (so as to give), а не підрядного речення з власним підметом people."
+                }
+              ]
+            },
+            {
+              "id": "part-3",
+              "label": "Part 3",
+              "subtitle": "Word formation",
+              "type": "word-formation",
+              "instruction": "For questions 17–24, read the text below. Use the word given in capitals at the end of some of the lines to form a word that fits in the gap in the same line.",
+              "passage": {
+                "title": "Why We Should Talk About Failure",
+                "paragraphs": [
+                  "In most workplaces, admitting a mistake is still regarded as a sign of {{17}}. Employees who are afraid of being {{18}} tend to conceal their errors, which means that the same problems recur and nobody learns from them. A growing body of research, however, suggests that the most {{19}} companies are precisely those in which failure is discussed openly.",
+                  "Some firms have gone as far as holding regular ‘failure meetings’, at which staff describe projects that went wrong. Far from being {{20}}, these sessions are reported to strengthen team spirit. Managers who are willing to share their own mistakes come across as more {{21}}, and junior colleagues become less {{22}} about raising concerns at an early stage.",
+                  "Of course, openness about failure is not the same as {{23}} of carelessness. The aim is to distinguish between mistakes that result from {{24}} behaviour, such as ignoring safety procedures, and those that are the inevitable price of experimentation."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 17,
+                  "stem": "WEAK",
+                  "answers": [
+                    "weakness"
+                  ],
+                  "trap": "weakening",
+                  "explanation": "Після a sign of потрібен іменник: a sign of weakness — «ознака слабкості». Пастка — «weakening»: це «послаблення» як процес, а йдеться про рису характеру."
+                },
+                {
+                  "number": 18,
+                  "stem": "CRITIC",
+                  "answers": [
+                    "criticised",
+                    "criticized"
+                  ],
+                  "trap": "criticism",
+                  "explanation": "Після being потрібна пасивна форма дієслова: afraid of being criticised — «бояться, що їх критикуватимуть». Пастка — «criticism»: іменник тут неможливий, бо працівники не можуть «бути критикою»."
+                },
+                {
+                  "number": 19,
+                  "stem": "INNOVATE",
+                  "answers": [
+                    "innovative",
+                    "innovatory"
+                  ],
+                  "trap": "innovating",
+                  "explanation": "Між the most і companies потрібен прикметник: the most innovative companies — «найбільш інноваційні компанії». Пастка — «innovating»: форму на -ing у цьому значенні не вживають як означення до companies."
+                },
+                {
+                  "number": 20,
+                  "stem": "HUMILIATE",
+                  "answers": [
+                    "humiliating"
+                  ],
+                  "trap": "humiliated",
+                  "explanation": "Far from being humiliating — «аж ніяк не принизливі»: прикметник на -ing описує те, що викликає почуття. Пастка — «humiliated»: форма на -ed описує людину, яка почувається приниженою, а зустрічі нічого не відчувають."
+                },
+                {
+                  "number": 21,
+                  "stem": "APPROACH",
+                  "answers": [
+                    "approachable"
+                  ],
+                  "trap": "approaching",
+                  "explanation": "Approachable — «приступний», тобто такий керівник, до якого легко звернутися. Пастка — «approaching»: це дієприкметник «що наближається», і в цьому контексті він не має сенсу."
+                },
+                {
+                  "number": 22,
+                  "stem": "HESITATE",
+                  "answers": [
+                    "hesitant"
+                  ],
+                  "trap": "hesitating",
+                  "explanation": "Після less і перед about потрібен прикметник: be hesitant about doing something — «не наважуватися щось робити». Пастка — «hesitating»: дієприкметник на -ing не вживають у ролі іменної частини присудка після less."
+                },
+                {
+                  "number": 23,
+                  "stem": "TOLERATE",
+                  "answers": [
+                    "tolerance",
+                    "toleration"
+                  ],
+                  "trap": "tolerant",
+                  "explanation": "Після the same as і перед of потрібен іменник: tolerance of carelessness — «терпимість до недбалості». Пастка — «tolerant»: це прикметник, а конструкція the same as … of вимагає іменника."
+                },
+                {
+                  "number": 24,
+                  "stem": "RESPONSIBLE",
+                  "answers": [
+                    "irresponsible"
+                  ],
+                  "trap": "responsible",
+                  "explanation": "Приклад ignoring safety procedures вимагає негативного значення: irresponsible behaviour — «безвідповідальна поведінка». Пастка — «responsible»: форма граматично правильна, але суперечить змістові, тож потрібен заперечний префікс ir-."
+                }
+              ]
+            },
+            {
+              "id": "part-4",
+              "label": "Part 4",
+              "subtitle": "Key word transformation",
+              "type": "transformation",
+              "instruction": "For questions 25–30, complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Do not change the word given. You must use between three and six words, including the word given.",
+              "questions": [
+                {
+                  "number": 25,
+                  "lead": "People say that the new manager is extremely demanding.",
+                  "keyword": "reputation",
+                  "before": "The new manager",
+                  "after": "extremely demanding.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "has a reputation",
+                          "has the reputation",
+                          "has got a reputation"
+                        ],
+                        [
+                          "for being",
+                          "of being"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "has a reputation to be",
+                  "explanation": "Have a reputation for (of) being — «мати репутацію»; після прийменника вживають герундій. Пастка — «has a reputation to be»: після reputation інфінітив не вживають, тож зараховують лише першу частину відповіді.",
+                  "points": 2
+                },
+                {
+                  "number": 26,
+                  "lead": "I didn’t realise how much work the project would involve, so I agreed to lead it.",
+                  "keyword": "idea",
+                  "before": "Had I",
+                  "after": "much work the project would involve, I would not have agreed to lead it.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "had any idea",
+                          "had an idea",
+                          "had the slightest idea",
+                          "had the faintest idea"
+                        ],
+                        [
+                          "how",
+                          "of how"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "had idea how",
+                  "explanation": "Had I had any idea how much… — умовне речення третього типу з інверсією: «Якби я мав хоч якесь уявлення, скільки…». Пастка — «had idea how»: злічуваний іменник idea потребує означального слова (any, the slightest).",
+                  "points": 2
+                },
+                {
+                  "number": 27,
+                  "lead": "The heavy rain led to the match being postponed.",
+                  "keyword": "put",
+                  "before": "The match",
+                  "after": "to the heavy rain.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "was put off",
+                          "was put back",
+                          "had been put off",
+                          "had been put back"
+                        ],
+                        [
+                          "owing",
+                          "due"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "was put off thanks",
+                  "explanation": "Be put off (put back) — «бути відкладеним», а owing to чи due to вказує причину. Пастка — «was put off thanks»: thanks to зазвичай вживають, коли причина приємна, тому для зливи, що зірвала матч, цей вираз не підходить.",
+                  "points": 2
+                },
+                {
+                  "number": 28,
+                  "lead": "Sarah only agreed to help because her colleagues insisted.",
+                  "keyword": "insistence",
+                  "before": "Sarah only agreed to help",
+                  "after": "her colleagues.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "at the insistence",
+                          "on the insistence",
+                          "because of the insistence",
+                          "owing to the insistence",
+                          "due to the insistence"
+                        ],
+                        [
+                          "of"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "at insistence of",
+                  "explanation": "At the insistence of someone — «на вимогу когось, через чиєсь наполягання». Пастка — «at insistence of»: без означеного артикля the вираз неграматичний, тож зараховують лише другу частину відповіді.",
+                  "points": 2
+                },
+                {
+                  "number": 29,
+                  "lead": "The concert was so popular that all the tickets sold out within an hour.",
+                  "keyword": "popularity",
+                  "before": "Such was",
+                  "after": "that all the tickets sold out within an hour.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "the popularity"
+                        ],
+                        [
+                          "of the concert"
+                        ]
+                      ]
+                    },
+                    {
+                      "parts": [
+                        [
+                          "the concert’s"
+                        ],
+                        [
+                          "popularity"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "the concert so popular",
+                  "explanation": "Інверсія Such was + іменник + that підкреслює міру ознаки: Such was the popularity of the concert that… Пастка — «the concert so popular»: so вимагає прикметника, а після Such was потрібен іменник; до того ж тут немає ключового слова.",
+                  "points": 2
+                },
+                {
+                  "number": 30,
+                  "lead": "I’d prefer you not to mention this to anyone.",
+                  "keyword": "rather",
+                  "before": "I’d",
+                  "after": "mention this to anyone.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "rather you",
+                          "rather that you"
+                        ],
+                        [
+                          "did not"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "rather you not",
+                  "explanation": "Would rather + особа + Past Simple виражає побажання щодо дій іншої людини: I’d rather you didn’t mention it. Пастка — «rather you not»: без допоміжного did конструкція неграматична, тож зараховують лише першу частину.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-5",
+              "label": "Part 5",
+              "subtitle": "Multiple choice",
+              "type": "multiple-choice",
+              "instruction": "You are going to read an extract from a book by a literary translator. For questions 31–36, choose the answer (A, B, C or D) which you think fits best according to the text.",
+              "passage": {
+                "title": "The Invisible Art",
+                "paragraphs": [
+                  "When people discover what I do for a living, their response tends to fall into one of two categories. Some assume that translation is a largely mechanical exercise, a matter of looking words up and slotting them into place, and they ask, not unkindly, whether machines will soon put me out of work. Others regard it as a kind of conjuring trick and want to know how I can possibly ‘become’ another writer. Both reactions, I have come to realise, rest on the same misconception: that a text has a single, fixed meaning which the translator either reproduces faithfully or fails to.",
+                  "My own apprenticeship began, as many do, with a sense of inadequacy. I had spent years studying Polish and could read the poems of Halina Wróbel with ease, or so I thought. Then a small publisher asked me to translate a collection of her early work, and I discovered that understanding a line and recreating it were entirely different undertakings. I would spend an afternoon on a single phrase, producing versions that were accurate yet lifeless, like pressed flowers: every petal in place and nothing of the scent. It was humbling, and for a while I seriously considered abandoning the project.",
+                  "What rescued me was a conversation with an older translator, a gruff, generous man named Tomasz who had rendered half the Polish canon into English. He read my drafts in silence and then asked me a single question: ‘What does the reader of the original feel at this point?’ It sounds obvious, but it changed everything. I had been translating words; he was urging me to translate effects. A pun that made a Polish reader smile might need to become a different pun entirely, or no pun at all but a rhythm that produced the same lift. Fidelity, I began to see, was owed not to the dictionary but to the experience.",
+                  "This freedom carries its own dangers, of course. Once you accept that you may depart from the letter of a text, it becomes tempting to improve on it, to smooth over passages you find clumsy or tone down opinions you find distasteful. I have read translations in which the translator’s voice so dominates that the original author all but disappears. The discipline, then, lies in knowing when to intervene and when to resist the urge, and I am not sure anyone ever masters it entirely.",
+                  "Then there is the question of visibility. For much of the twentieth century, publishers preferred translators to remain unseen; a good translation, the argument went, should read as if it had been written in English, and the translator’s name was often relegated to the small print. Recently the tide has begun to turn. Some publishers now print the translator’s name on the cover, and prizes increasingly reward author and translator jointly. I welcome this, though not without reservations. A translation that constantly draws attention to its own cleverness has failed in a different way from one that pretends no translation has taken place.",
+                  "Machines, incidentally, have become remarkably good at the first kind of translation people imagine — the mechanical kind — and I use them, as most of my colleagues do, to produce rough drafts of technical documents. But the novels and poems I care about are not puzzles with a single solution. They are closer to musical scores, which every performer must interpret anew. A score can be played competently by anyone with sufficient training; what makes a performance memorable is the judgement, taste and occasional daring of the person playing it. That, I suspect, is a part of the job that will remain stubbornly human for some time yet."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 31,
+                  "prompt": "In the first paragraph, the writer suggests that the two typical reactions to her profession",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "reveal more about people’s attitudes to technology than to literature."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "are more flattering than she feels she deserves."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "are based on a shared mistaken belief about how texts work."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "reflect a growing public interest in the work of translators."
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Авторка прямо пише, що обидві реакції «rest on the same misconception» — на уявленні, ніби текст має одне незмінне значення. Пастка — A: машини згадано лише як приклад однієї з реакцій, а не як головну думку абзацу.",
+                  "points": 2
+                },
+                {
+                  "number": 32,
+                  "prompt": "The writer uses the image of ‘pressed flowers’ to convey",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "her frustration at the slow pace of her progress."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "the contrast between literal accuracy and the spirit of the original."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "the fragility of the language used by the poet."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "her admiration for the delicacy of the original poems."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Образ засушених квітів пояснює думку: кожна пелюстка на місці, але аромату немає, тобто переклад точний, проте неживий. Пастка — D: авторка не хвалить делікатність віршів, а говорить про ваду власних перекладів.",
+                  "points": 2
+                },
+                {
+                  "number": 33,
+                  "prompt": "What does the writer suggest about Tomasz’s advice?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "It encouraged her to take fewer risks with wordplay."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "It was difficult to apply to poetry as opposed to prose."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "It contradicted what she had been taught at university."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "It seemed simple but transformed her approach."
+                    }
+                  ],
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Порада Томаша «sounds obvious, but it changed everything» — проста на вигляд, вона докорінно змінила підхід перекладачки. Пастка — A: навпаки, Томаш заохочує ризикувати з грою слів і замінювати один каламбур іншим.",
+                  "points": 2
+                },
+                {
+                  "number": 34,
+                  "prompt": "In the fourth paragraph, the writer admits that",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "the balance between freedom and restraint is hard to achieve."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "most translators are too reluctant to change the original."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "she has occasionally altered texts she disagreed with."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "her early translations were overly influenced by her own style."
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Авторка визнає, що дисципліна полягає у вмінні вчасно втрутитися або втриматися, і сумнівається, що хтось опановує це повністю. Пастка — C: про пом’якшення неприємних думок вона говорить як про загальну спокусу, а не зізнається, що сама так робила.",
+                  "points": 2
+                },
+                {
+                  "number": 35,
+                  "prompt": "What is the writer’s attitude to the recent change in the status of translators?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "She suspects it is driven mainly by commercial motives."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "She is cautiously positive about it."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "She regards it as long overdue and wholly beneficial."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "She fears it will make translators less willing to take risks."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Слова «I welcome this, though not without reservations» свідчать про обережно схвальне ставлення. Пастка — C: застереження щодо перекладів, які хизуються власною дотепністю, не дають змоги назвати її оцінку цілком позитивною.",
+                  "points": 2
+                },
+                {
+                  "number": 36,
+                  "prompt": "Why does the writer compare literary texts to musical scores?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "to explain why machine translation is of no practical use to her"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "to suggest that translators should have a background in the arts"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "to emphasise that interpretation is central to literary translation"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "to argue that every translation of a novel is equally valid"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Партитуру кожен виконавець тлумачить по-своєму, тож порівняння підкреслює, що в літературному перекладі головне — інтерпретація. Пастка — A: авторка не каже, що машинний переклад їй ні до чого, адже сама користується ним для чернеток технічних документів.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-6",
+              "label": "Part 6",
+              "subtitle": "Cross-text multiple matching",
+              "type": "multiple-matching",
+              "instruction": "You are going to read four extracts in which educationalists give their views on the university lecture. For questions 37–40, choose from the experts A–D. The experts may be chosen more than once.",
+              "title": "The Lecture: Relic or Resource?",
+              "stem": "Which expert",
+              "sections": [
+                {
+                  "letter": "A",
+                  "title": "Professor Ruth Okafor",
+                  "paragraphs": [
+                    "Critics who dismiss the lecture as a relic tend to have endured bad ones. At its best, a lecture is not a transfer of information but a demonstration of how an expert thinks: how she weighs evidence, entertains objections and changes her mind in public. Students who witness this are far more likely to attempt it themselves. That, rather than any lack of imagination on the part of universities, is why the format has endured for centuries. Many institutions now record every session, and I have no objection to this as a revision aid. But a recording, however convenient, cannot replicate the sense of occasion of a live event, nor the chance to put a question to the speaker as the argument unfolds."
+                  ]
+                },
+                {
+                  "letter": "B",
+                  "title": "Dr Marcus Hale",
+                  "paragraphs": [
+                    "Let us be honest about why the lecture survives: it is the cheapest way yet devised to teach three hundred students at once, and university finances depend on it. That is not in itself an argument against it. A skilled lecturer can provoke students into questioning assumptions they never knew they held. Where I part company with traditionalists is over recordings. A student who can pause, rewind and look up an unfamiliar term at her own pace often learns more from a recorded lecture than from the live version, where a moment’s distraction means a lost thread. Nor do I accept the fashionable claim that today’s students cannot concentrate. Give them an hour of genuinely compelling material and they will stay with you; give them an hour of slides read aloud and nobody, of any generation, would."
+                  ]
+                },
+                {
+                  "letter": "C",
+                  "title": "Dr Priya Nandakumar",
+                  "paragraphs": [
+                    "The lecture retains a prestige that other teaching methods lack, largely because it is what universities have always done and what parents and employers expect them to do. I do not say this dismissively: at its best, a lecture can open up a subject and send students away eager to argue with it. My concern is a practical one. The students I teach today find it markedly harder to sustain attention than those I taught twenty years ago; constant notifications have shortened the span of concentration they bring to any task. Breaking a lecture into shorter segments, punctuated by discussion, helps. Making recordings available is sensible too, but I would never advise a student to rely on them: something is lost when the speaker cannot see the room and adjust to it."
+                  ]
+                },
+                {
+                  "letter": "D",
+                  "title": "Professor Alan Whitcombe",
+                  "paragraphs": [
+                    "I have lectured for thirty years, and I am increasingly convinced that the format does students a disservice. However engaging the speaker, the structure itself casts the audience as passive recipients, copying down conclusions rather than learning to reach their own. Students arrive at university already struggling to concentrate for long stretches, and an uninterrupted hour of talk asks of them precisely what they find hardest. Why, then, does the lecture persist? Chiefly because it allows one member of staff to teach an entire year group in a single room, which no finance director is keen to give up. Recording lectures and putting them online has not changed this; it has merely made the same passive experience available at any hour."
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "number": 37,
+                  "prompt": "has a different view from the others on whether lectures can encourage students to think for themselves?",
+                  "key": "D",
+                  "trap": "B",
+                  "explanation": "Лише професор Віткомб (D) вважає, що сама структура лекції робить слухачів пасивними й не вчить доходити власних висновків. Пастка — B: Гейл критикує лекції за те, що вони тримаються на економії, але визнає, що вправний лектор спонукає студентів ставити під сумнів власні припущення.",
+                  "points": 2
+                },
+                {
+                  "number": 38,
+                  "prompt": "shares C’s opinion regarding the value of recorded lectures?",
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Окафор (A), як і Нандакумар (C), вважає записи корисним доповненням, яке не замінить живої лекції. Пастка — B: Гейл, навпаки, переконаний, що із записом, який можна зупинити й переглянути, студенти часто засвоюють більше.",
+                  "points": 2
+                },
+                {
+                  "number": 39,
+                  "prompt": "expresses a similar view to D about why lectures have survived for so long?",
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Як і Віткомб (D), Гейл (B) пояснює живучість лекцій фінансами: так найдешевше навчати сотні студентів одночасно. Пастка — C: Нандакумар пов’язує це з престижем і традицією, тобто з очікуваннями батьків і роботодавців, а не з грошима.",
+                  "points": 2
+                },
+                {
+                  "number": 40,
+                  "prompt": "shares D’s opinion about students’ ability to concentrate?",
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Як і Віткомб (D), Нандакумар (C) вважає, що сьогоднішнім студентам важко довго зосереджуватися: на її думку, постійні сповіщення скоротили їхню здатність до концентрації. Пастка — B: Гейл, навпаки, називає це модним перебільшенням і винуватить нудні лекції, а не студентів.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-7",
+              "label": "Part 7",
+              "subtitle": "Gapped text",
+              "type": "gapped-text",
+              "instruction": "You are going to read an article about a journalist who spent a week in a clock-repair workshop. Six paragraphs have been removed from the article. Choose from the paragraphs A–G the one which fits each gap (41–46). There is one extra paragraph which you do not need to use.",
+              "passage": {
+                "title": "Against the Clock",
+                "paragraphs": [
+                  "The workshop is at the end of a cobbled lane in a market town I had never heard of, and from the outside it looks like nothing more than a garage that has seen better days. Inside, however, it is a different world. Every wall is lined with clocks — longcase clocks, carriage clocks, a cuckoo clock with a missing cuckoo — and every one of them is ticking, though no two agree on the time.",
+                  "{{41}}",
+                  "That, at least, was the theory. In practice, my first morning was spent not with any clock but with a single brass wheel no larger than a fingernail, which Edward instructed me to clean using a pointed stick of wood and a dish of solvent. By lunchtime my back ached, my eyes watered and the wheel looked, to my untrained eye, exactly as it had when I started.",
+                  "{{42}}",
+                  "He was right, of course, though it took me until Wednesday to admit it. By then I had progressed from cleaning wheels to dismantling an entire movement, a nineteenth-century French mechanism that had arrived in a shoebox, its parts wrapped in newspaper. Edward laid them out on a white cloth in the order they had come apart, and made me photograph each stage.",
+                  "{{43}}",
+                  "Reassembly was another matter altogether. Wheels that had slipped out with no effort now refused to sit on their pivots; a spring I had removed in seconds took the best part of an hour to persuade back into place. Edward watched without comment, intervening only when I reached for a pair of pliers with more force than judgement.",
+                  "{{44}}",
+                  "It was late on Thursday afternoon when the moment came. I fitted the pendulum, gave it a gentle push and stepped back. For a few seconds, nothing happened. Then, faintly at first and then with growing confidence, the clock began to tick.",
+                  "{{45}}",
+                  "Correcting that took most of Friday, and even then he was not entirely satisfied. But as I packed my bag to leave, he handed me something wrapped in newspaper: the small brass wheel I had cleaned on my first morning.",
+                  "{{46}}"
+                ]
+              },
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "This, he explained, was not fussiness but self-defence. Early in his career he had taken apart a valuable bracket clock without keeping a record, only to find, three days later, that he had no idea how two of the levers fitted together. ‘It took me a month to work it out,’ he said. ‘I’ve photographed everything since.’"
+                },
+                {
+                  "letter": "B",
+                  "text": "Some of the clocks, he admitted, were not worth the cost of repair, but their owners could not bear to part with them. ‘People don’t bring me clocks,’ he said. ‘They bring me their grandparents.’"
+                },
+                {
+                  "letter": "C",
+                  "text": "I would like to report that I received this with calm professional detachment. In truth, I let out a cry that brought Edward’s wife in from the garden, convinced that I had injured myself. Edward himself merely glanced at the clock, listened for a moment and declared that it was running four minutes a day fast."
+                },
+                {
+                  "letter": "D",
+                  "text": "Edward Lyle, who has run the workshop for almost forty years, had agreed to take me on for a week on one condition: that I would not write about clocks without first learning to take one apart and put it back together. ‘Most people think a clock is magic,’ he told me. ‘By Friday, you’ll know it’s just patience.’"
+                },
+                {
+                  "letter": "E",
+                  "text": "‘It’s not from anything valuable,’ he said, a little gruffly. ‘But you might like to keep it. It’ll remind you that most worthwhile things look like no progress at all until, one day, they suddenly work.’"
+                },
+                {
+                  "letter": "F",
+                  "text": "When I showed it to Edward, he held it up to the window and nodded. ‘Good,’ he said. ‘Now you’ve learned the most important thing: that nothing in here happens quickly. The clock has waited fifty years for someone to look at it properly. It can wait a little longer for you.’"
+                },
+                {
+                  "letter": "G",
+                  "text": "‘Never fight it,’ he said quietly, taking the pliers from my hand. ‘If something won’t go, it’s telling you that something else is wrong. Find that first.’ Sure enough, a tiny pin I had overlooked was holding one of the plates a fraction out of line. Once it was removed, everything slid home."
+                }
+              ],
+              "questions": [
+                {
+                  "number": 41,
+                  "key": "D",
+                  "trap": "B",
+                  "explanation": "Наступний абзац починається словами «That, at least, was the theory», а теорія — це обіцянка Едварда, що до п’ятниці журналіст зрозуміє: годинник — це просто терпіння. До того ж саме в абзаці D Едварда вперше представлено на ім’я. Пастка — B: абзац про годинники, з якими власники не можуть розлучитися, теж описує майстерню, але жодної «теорії» в ньому немає.",
+                  "points": 2
+                },
+                {
+                  "number": 42,
+                  "key": "F",
+                  "trap": "E",
+                  "explanation": "Займенник it в абзаці F відсилає до щойно очищеного коліщатка, а думку Едварда про те, що поспіх тут недоречний, підхоплює фраза «He was right, of course». Пастка — E: там теж ідеться про коліщатко, але Едвард дарує його лише наприкінці тижня, коли журналіст збирається додому.",
+                  "points": 2
+                },
+                {
+                  "number": 43,
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "This в абзаці A відсилає до звички Едварда розкладати деталі по порядку й фотографувати кожен етап, а далі пояснено, звідки ця звичка взялася. Пастка — B: абзац B теж передає слова Едварда, проте ніяк не пов’язаний із розбиранням механізму.",
+                  "points": 2
+                },
+                {
+                  "number": 44,
+                  "key": "G",
+                  "trap": "A",
+                  "explanation": "Абзац G продовжує сцену з плоскогубцями: Едвард забирає їх у журналіста й радить шукати причину, а не застосовувати силу. Пастка — A: там теж ідеться про складання механізму, але мова про давню помилку самого Едварда, а не про цю сцену.",
+                  "points": 2
+                },
+                {
+                  "number": 45,
+                  "key": "C",
+                  "trap": "E",
+                  "explanation": "This в абзаці C — це мить, коли годинник нарешті зацокав, а згадка про те, що він поспішає на чотири хвилини на добу, пояснює початок наступного абзацу «Correcting that took most of Friday». Пастка — E: емоції там теж є, проте цей абзац описує подарунок, який Едвард вручає вже на прощання.",
+                  "points": 2
+                },
+                {
+                  "number": 46,
+                  "key": "E",
+                  "trap": "B",
+                  "explanation": "Абзац E завершує історію: Едвард дарує те саме коліщатко з першого ранку, і це повертає читача до думки про терпіння. Пастка — B: слова про годинники, з якими власники не можуть розлучитися, ніяк не пов’язані з подарунком, загорнутим у газету.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-8",
+              "label": "Part 8",
+              "subtitle": "Multiple matching",
+              "type": "multiple-matching",
+              "instruction": "You are going to read an article in which four people describe changing career in mid-life. For questions 47–56, choose from the people (A–D). The people may be chosen more than once.",
+              "title": "Starting Over",
+              "stem": "Which person",
+              "sections": [
+                {
+                  "letter": "A",
+                  "title": "Claire Edwards, from accountant to furniture maker",
+                  "paragraphs": [
+                    "For fifteen years I produced spreadsheets that nobody, as far as I could tell, ever read. Now I make chairs, and at the end of each week there is something solid in the corner of the workshop that wasn’t there on Monday — I can’t overstate how satisfying that is. When I handed in my notice, the partners at the firm genuinely thought I was joking; one of them asked whether I’d been headhunted by a rival and was using ‘carpentry’ as a cover story. Money is tighter, certainly, and there were months in the first year when I wondered whether I’d be able to pay the rent. If I have one regret, it’s that I spent so long telling myself I was too old to start again. I was thirty-one when I first thought about it and forty-four when I finally did it."
+                  ]
+                },
+                {
+                  "letter": "B",
+                  "title": "Raj Mehta, from lawyer to primary school teacher",
+                  "paragraphs": [
+                    "I’d been vaguely dissatisfied for years, but what finally made up my mind was an afternoon spent volunteering at my son’s school. A boy who had been struggling with reading suddenly got it, right there in front of me, and I walked out thinking: that’s what I want to do. My wife had been urging me to retrain for ages, and she took on extra hours so that we could manage on one salary while I did my teaching qualification. What surprised me was how much of my legal training carried over. Explaining a complex contract to an anxious client isn’t so different from explaining long division to an anxious eight-year-old — you learn to break things down and to read people’s faces. Teaching is exhausting, mind you, but I’d been warned about that."
+                  ]
+                },
+                {
+                  "letter": "C",
+                  "title": "Marta Kowalska, from software engineer to midwife",
+                  "paragraphs": [
+                    "I’ll admit I had a rather rose-tinted picture of midwifery before I began. I imagined calm, candlelit births and grateful families, and gave very little thought to the paperwork, the night shifts or the occasions when things go badly wrong. The reality is far tougher. I’d assumed that after years of sitting at a desk, being on my feet would be a welcome change; instead, I finish a twelve-hour shift barely able to stand, and it took my body the best part of a year to adjust. My former colleagues were supportive, if a little puzzled, and several of them still meet me for dinner. Would I go back? Not for a moment. Coding taught me a great deal, but very little of it turned out to be relevant on a labour ward."
+                  ]
+                },
+                {
+                  "letter": "D",
+                  "title": "Owen Price, from banker to chef",
+                  "paragraphs": [
+                    "Everyone warned me that the drop in income would be catastrophic, and I’d prepared myself for years of struggle. In fact, once I’d stopped paying for the expensive suits, the taxis and the lunches that a job in the City seems to demand, the difference was nowhere near as dramatic as I’d expected. The best decision I made was to spend my annual leave working unpaid in a restaurant kitchen before I resigned. Two weeks of fourteen-hour days and a head chef who shouted constantly told me more about whether I was suited to the job than any amount of reading could have done, and I’d urge anyone thinking of a similar move to do the same. My parents, frankly, thought I’d lost my mind, and it was some time before they came round to the idea. The hours are brutal, but I knew that before I started."
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "number": 47,
+                  "prompt": "mentions a financial consequence that proved less serious than anticipated?",
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Оуен готувався до років скрути, але, відмовившись від дорогих костюмів і таксі, побачив, що різниця в доходах «nowhere near as dramatic as I’d expected». Пастка — A: Клер теж пише про брак грошей, але не каже, що труднощі виявилися меншими, ніж вона побоювалася."
+                },
+                {
+                  "number": 48,
+                  "prompt": "describes how former colleagues refused to take the decision seriously at first?",
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Партнери фірми, де працювала Клер, вирішили, що вона жартує, а один навіть запідозрив, що «carpentry» — лише прикриття. Пастка — C: колишні колеги Марти були «a little puzzled», тобто трохи здивовані, але поставилися до її рішення з підтримкою."
+                },
+                {
+                  "number": 49,
+                  "prompt": "admits to having had an unrealistic idea of what the new job would involve?",
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Марта зізнається, що мала «rose-tinted picture» — ідеалізоване уявлення про пологи при свічках і вдячні родини. Пастка — D: Оуена попереджали про труднощі, і він до них готувався, тож нереалістичних очікувань не мав."
+                },
+                {
+                  "number": 50,
+                  "prompt": "was surprised to find that abilities developed earlier remained relevant?",
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Радж пише, що юридична підготовка несподівано знадобилася: пояснювати складний договір клієнтові й ділення в стовпчик дитині — подібні навички. Пастка — C: Марта стверджує протилежне: майже ніщо з програмування не знадобилося їй у пологовій залі."
+                },
+                {
+                  "number": 51,
+                  "prompt": "wishes they had acted on the idea earlier?",
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Клер шкодує, що так довго переконувала себе, ніби застара для змін: думка з’явилася в тридцять один рік, а втілила вона її в сорок чотири. Пастка — B: Радж роками був «vaguely dissatisfied», але не каже, що шкодує про згаяний час."
+                },
+                {
+                  "number": 52,
+                  "prompt": "identifies a specific moment that led to the decision?",
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Рішення Раджа визначив конкретний день: хлопчик, якому важко давалося читання, раптом усе зрозумів у нього на очах. Пастка — A: Клер згадує вік, коли вперше подумала про зміну професії, але не описує події, що її до цього спонукала."
+                },
+                {
+                  "number": 53,
+                  "prompt": "underestimated the physical demands of the new work?",
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Марта сподівалася, що робота на ногах стане приємною зміною після сидіння за столом, а натомість її організм звикав майже рік. Пастка — B: Радж теж називає вчителювання виснажливим, однак його про це попереджали, тож несподіванкою це не стало."
+                },
+                {
+                  "number": 54,
+                  "prompt": "recommends gaining first-hand experience before making a change?",
+                  "key": "D",
+                  "trap": "B",
+                  "explanation": "Оуен провів відпустку на неоплачуваній роботі в ресторанній кухні й радить усім, хто думає про таку зміну, зробити те саме. Пастка — B: Радж справді побував у школі як волонтер, але не радить цього іншим."
+                },
+                {
+                  "number": 55,
+                  "prompt": "takes particular pleasure in the tangible outcome of their work?",
+                  "key": "A",
+                  "trap": "B",
+                  "explanation": "Клер особливо тішить, що наприкінці тижня в майстерні стоїть річ, якої в понеділок ще не було. Пастка — B: Радж бачить успіх учня, але йдеться про мить, яка спонукала його змінити професію, а не про відчутний результат щоденної праці."
+                },
+                {
+                  "number": 56,
+                  "prompt": "received practical help from someone close to them?",
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Дружина Раджа взяла додаткові години роботи, щоб родина прожила на одну зарплату, поки він здобував учительську кваліфікацію. Пастка — D: батьків Оуена теж згадано, але вони не допомагали, а вважали, що він збожеволів."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Варіант 2",
+      "level": "C1",
+      "parts": [
+        {
+          "id": "reading-use-of-english",
+          "title": "Reading and Use of English",
+          "label": "Reading and Use of English",
+          "tasks": [
+            {
+              "id": "part-1",
+              "label": "Part 1",
+              "subtitle": "Multiple-choice cloze",
+              "type": "cloze",
+              "instruction": "For questions 1–8, read the text below and decide which answer (A, B, C or D) best fits each gap.",
+              "passage": {
+                "title": "The Four-Day Week",
+                "paragraphs": [
+                  "When a handful of companies first trialled a four-day working week, many observers {{1}} the idea off as a gimmick that would never survive contact with the real economy. Yet the results of several large-scale trials have given even the sceptics {{2}} for thought. In most cases, output was maintained, while staff reported lower levels of stress and {{3}} fewer days off sick. Employers, for their part, found it easier to {{4}} on to talented staff.",
+                  "Critics, however, have {{5}} questions about how far these findings can be applied, pointing out that most of the companies involved had volunteered to take part and were therefore more {{6}} to succeed than a typical firm. Hospitals, care homes and factories, which must remain open round the {{7}}, present a far greater challenge. For now, at least, the four-day week remains the {{8}} rather than the rule."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 1,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "cast"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "took"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "wrote"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "put"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Write something off as… — «відкинути як безнадійне, не варте уваги»: спостерігачі вирішили, що ідея — лише трюк. Пастка — A: cast off означає «скинути, позбутися» (одягу, кайданів) і не поєднується з as a gimmick."
+                },
+                {
+                  "number": 2,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "food"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "meal"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "reason"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "ground"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Give someone food for thought — сталий вираз «дати привід замислитися». Пастка — C: reason for thought не є сталим виразом, хоча українське «привід» підштовхує саме до цього вибору."
+                },
+                {
+                  "number": 3,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "deeply"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "heavily"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "strongly"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "significantly"
+                    }
+                  ],
+                  "key": "D",
+                  "trap": "B",
+                  "explanation": "Перед вищим ступенем fewer уживають прислівники міри, як-от significantly, considerably чи far. Пастка — B: heavily поєднується з дієсловами й дієприкметниками (rely heavily, heavily influenced), але не з fewer."
+                },
+                {
+                  "number": 4,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "keep"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "hold"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "stay"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "stick"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Hold on to someone — «утримати когось, не відпустити»: компаніям легше втримати цінних працівників. Пастка — A: keep має схоже значення, але сполуки keep on to в англійській немає."
+                },
+                {
+                  "number": 5,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "raised"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "lifted"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "grown"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "risen"
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Raise questions — «порушувати питання»; raise — перехідне дієслово, тож має додаток. Пастка — D: risen — третя форма неперехідного rise, після якого додатка бути не може."
+                },
+                {
+                  "number": 6,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "probable"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "possible"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "likely"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "liable"
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Be likely to succeed — «мати добрі шанси на успіх». Пастка — D: be liable to зазвичай уживають щодо небажаних наслідків (liable to break, liable to flooding), тому з succeed воно не поєднується."
+                },
+                {
+                  "number": 7,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "hour"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "day"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "time"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "clock"
+                    }
+                  ],
+                  "key": "D",
+                  "trap": "B",
+                  "explanation": "Round the clock — «цілодобово»: лікарні й заводи мають працювати без перерви. Пастка — B: day трапляється у виразах all day long чи day and night, а round the day не є сталим виразом."
+                },
+                {
+                  "number": 8,
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "exemption"
+                    },
+                    {
+                      "letter": "B",
+                      "text": "exception"
+                    },
+                    {
+                      "letter": "C",
+                      "text": "anomaly"
+                    },
+                    {
+                      "letter": "D",
+                      "text": "deviation"
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "The exception rather than the rule — сталий вираз «радше виняток, ніж правило». Пастка — A: exemption — це «звільнення» від обов’язку чи податку, а не виняток із загальної закономірності."
+                }
+              ]
+            },
+            {
+              "id": "part-2",
+              "label": "Part 2",
+              "subtitle": "Open cloze",
+              "type": "open-cloze",
+              "instruction": "For questions 9–16, read the text below and think of the word which best fits each gap. Use only one word in each gap.",
+              "passage": {
+                "title": "Why Songs Get Stuck in Our Heads",
+                "paragraphs": [
+                  "Almost everyone has had the experience of a tune playing over and over in their mind, {{9}} hard they try to ignore it. Psychologists refer to this phenomenon {{10}} an ‘earworm’, and surveys suggest that more {{11}} ninety per cent of people experience one at least once a week. Songs with simple melodies and repetitive lyrics are the most likely culprits, {{12}} are those we have heard recently.",
+                  "Curiously, the harder we try to suppress an earworm, {{13}} more persistent it tends to become. One study found that chewing gum can help, as the movement of the jaw appears to interfere with the ‘inner voice’ {{14}} we use to rehearse sounds. Another approach is simply to listen to the song all the way through, {{15}} giving the brain a sense of completion.",
+                  "Earworms, it seems, are rarely a cause for concern; if {{16}}, they suggest a healthy and active memory."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 9,
+                  "answers": [
+                    "however"
+                  ],
+                  "trap": "whatever",
+                  "explanation": "However + прислівник означає «хоч як, як би не»: however hard they try — «хоч як вони намагаються». Пастка — «whatever»: це слово стоїть перед іменником чи підрядним реченням (whatever they do), а не перед прислівником hard."
+                },
+                {
+                  "number": 10,
+                  "answers": [
+                    "as"
+                  ],
+                  "trap": "like",
+                  "explanation": "Refer to something as… — «називати щось певним терміном». Пастка — «like»: like означає «подібно до» і в цій конструкції не вживається."
+                },
+                {
+                  "number": 11,
+                  "answers": [
+                    "than"
+                  ],
+                  "trap": "then",
+                  "explanation": "More than ninety per cent — «понад дев’яносто відсотків»; після more вживають than. Пастка — «then»: це прислівник «тоді, потім», який часто плутають із than через схоже написання."
+                },
+                {
+                  "number": 12,
+                  "answers": [
+                    "as"
+                  ],
+                  "trap": "so",
+                  "explanation": "Після коми as are those означає «так само, як і…» й вимагає інверсії. Пастка — «so»: so are those можливе лише після сполучника and (and so are those), тож одне so в пропуску не підходить."
+                },
+                {
+                  "number": 13,
+                  "answers": [
+                    "the"
+                  ],
+                  "trap": "so",
+                  "explanation": "Конструкція the + вищий ступінь, the + вищий ступінь означає «що…, то…»: the harder we try, the more persistent it becomes. Пастка — «so»: so не утворює такого порівняльного паралелізму."
+                },
+                {
+                  "number": 14,
+                  "answers": [
+                    "that",
+                    "which"
+                  ],
+                  "trap": "what",
+                  "explanation": "Підрядне означальне речення до іменника voice вводить that або which: the inner voice that we use. Пастка — «what»: what має значення «те, що» і не вживається після іменника, до якого відноситься."
+                },
+                {
+                  "number": 15,
+                  "answers": [
+                    "thereby",
+                    "thus"
+                  ],
+                  "trap": "whereby",
+                  "explanation": "Thereby (thus) + форма на -ing означає «тим самим, у такий спосіб»: прослуховування пісні до кінця дає мозку відчуття завершеності. Пастка — «whereby»: це відносне слово «за допомогою якого», і після нього має йти підрядне речення, а не форма на -ing."
+                },
+                {
+                  "number": 16,
+                  "answers": [
+                    "anything"
+                  ],
+                  "trap": "something",
+                  "explanation": "If anything — сталий вираз «якщо вже на те пішло, радше навпаки»: нав’язливі мелодії свідчать не про проблему, а про здорову пам’ять. Пастка — «something»: сполука if something такого значення не має."
+                }
+              ]
+            },
+            {
+              "id": "part-3",
+              "label": "Part 3",
+              "subtitle": "Word formation",
+              "type": "word-formation",
+              "instruction": "For questions 17–24, read the text below. Use the word given in capitals at the end of some of the lines to form a word that fits in the gap in the same line.",
+              "passage": {
+                "title": "Science for Everyone",
+                "paragraphs": [
+                  "Thanks to the internet, members of the public with no formal {{17}} are now making genuine contributions to scientific research. Projects range from counting garden birds to classifying distant galaxies, and the sheer number of {{18}} means that data can be gathered on a scale that would otherwise be {{19}}.",
+                  "Sceptics initially questioned the {{20}} of data collected by amateurs. However, studies comparing volunteers’ observations with those of trained experts have found the differences to be {{21}}, which has largely silenced the critics.",
+                  "The benefits are not only scientific. Participants report a {{22}} sense of curiosity about the natural world, and many speak {{23}} about the satisfaction of contributing to real discoveries. Citizen science has also proved {{24}} effective at engaging people who might otherwise feel that science has little to do with their lives."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 17,
+                  "stem": "QUALIFY",
+                  "answers": [
+                    "qualifications",
+                    "qualification"
+                  ],
+                  "trap": "qualified",
+                  "explanation": "Після no formal потрібен іменник: no formal qualifications — «без офіційної кваліфікації, дипломів». Пастка — «qualified»: це прикметник, і після formal він не може стояти без іменника."
+                },
+                {
+                  "number": 18,
+                  "stem": "PARTICIPATE",
+                  "answers": [
+                    "participants",
+                    "participators"
+                  ],
+                  "trap": "participation",
+                  "explanation": "Після the number of потрібен злічуваний іменник у множині, що позначає людей: participants — «учасники». Пастка — «participation»: «участь» — незлічуваний іменник, тож із the number of він не поєднується."
+                },
+                {
+                  "number": 19,
+                  "stem": "THINK",
+                  "answers": [
+                    "unthinkable"
+                  ],
+                  "trap": "thinkable",
+                  "explanation": "Otherwise підказує, що без волонтерів такий масштаб був би неможливий: unthinkable — «немислимий». Пастка — «thinkable»: слово існує, але дає протилежний зміст."
+                },
+                {
+                  "number": 20,
+                  "stem": "RELY",
+                  "answers": [
+                    "reliability"
+                  ],
+                  "trap": "reliance",
+                  "explanation": "Після the і перед of потрібен іменник зі значенням «надійність»: the reliability of data. Пастка — «reliance»: це «покладання на щось, залежність», і сполука the reliance of data не має сенсу."
+                },
+                {
+                  "number": 21,
+                  "stem": "SIGNIFY",
+                  "answers": [
+                    "insignificant"
+                  ],
+                  "trap": "significant",
+                  "explanation": "Подальші слова «which has largely silenced the critics» показують, що розбіжності були незначні: insignificant. Пастка — «significant»: граматично форма правильна, але суттєві розбіжності лише підсилили б скептиків."
+                },
+                {
+                  "number": 22,
+                  "stem": "RENEW",
+                  "answers": [
+                    "renewed"
+                  ],
+                  "trap": "renewal",
+                  "explanation": "Між a і sense потрібен прикметник: a renewed sense of curiosity — «відроджена цікавість». Пастка — «renewal»: це іменник, і разом із sense він утворює неграматичну сполуку."
+                },
+                {
+                  "number": 23,
+                  "stem": "ENTHUSIASM",
+                  "answers": [
+                    "enthusiastically"
+                  ],
+                  "trap": "enthusiastic",
+                  "explanation": "Дієслово speak потребує прислівника: speak enthusiastically — «говорити із захопленням». Пастка — «enthusiastic»: прикметник не може означувати дієслово."
+                },
+                {
+                  "number": 24,
+                  "stem": "EXCEPTION",
+                  "answers": [
+                    "exceptionally"
+                  ],
+                  "trap": "exceptional",
+                  "explanation": "Перед прикметником effective потрібен прислівник: exceptionally effective — «надзвичайно ефективний». Пастка — «exceptional»: прикметник не може означувати інший прикметник."
+                }
+              ]
+            },
+            {
+              "id": "part-4",
+              "label": "Part 4",
+              "subtitle": "Key word transformation",
+              "type": "transformation",
+              "instruction": "For questions 25–30, complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Do not change the word given. You must use between three and six words, including the word given.",
+              "questions": [
+                {
+                  "number": 25,
+                  "lead": "I’d never have finished the project if you hadn’t helped me.",
+                  "keyword": "but",
+                  "before": "I’d never have finished the project",
+                  "after": "help.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "but for"
+                        ],
+                        [
+                          "your"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "but your",
+                  "explanation": "But for + іменник означає «якби не»: but for your help — «якби не ваша допомога». Пастка — «but your»: без прийменника for сполука неграматична, а відповідь до того ж коротша за три слова.",
+                  "points": 2
+                },
+                {
+                  "number": 26,
+                  "lead": "It’s possible that the delay was caused by a technical fault.",
+                  "keyword": "down",
+                  "before": "The delay may",
+                  "after": "a technical fault.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "have been"
+                        ],
+                        [
+                          "down to"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "have been due to",
+                  "explanation": "Be down to something — «бути спричиненим чимось»; модальне may have been виражає припущення щодо минулого. Пастка — «have been due to»: значення правильне, але без ключового слова down відповідь не зараховують.",
+                  "points": 2
+                },
+                {
+                  "number": 27,
+                  "lead": "Tom wasn’t at all sorry about the mistake he had made.",
+                  "keyword": "anything",
+                  "before": "Tom was",
+                  "after": "about the mistake he had made.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "anything but"
+                        ],
+                        [
+                          "sorry",
+                          "apologetic",
+                          "regretful",
+                          "remorseful"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "nothing but sorry",
+                  "explanation": "Anything but — «аж ніяк не»: Tom was anything but sorry означає, що Том зовсім не шкодував. Пастка — «nothing but sorry»: nothing but означає «лише, тільки», тобто протилежне, і до того ж тут немає ключового слова.",
+                  "points": 2
+                },
+                {
+                  "number": 28,
+                  "lead": "It was wrong of you to say that to her.",
+                  "keyword": "ought",
+                  "before": "You",
+                  "after": "that to her.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "ought not to have"
+                        ],
+                        [
+                          "said"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "ought not to say",
+                  "explanation": "Ought not to have + третя форма дієслова виражає докір щодо минулої дії: «тобі не слід було цього казати». Пастка — «ought not to say»: без have said речення стосується теперішнього чи майбутнього, а не того, що вже сталося.",
+                  "points": 2
+                },
+                {
+                  "number": 29,
+                  "lead": "Lisa is very likely to be promoted this year.",
+                  "keyword": "chance",
+                  "before": "There is every",
+                  "after": "promoted this year.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "chance that Lisa",
+                          "chance Lisa"
+                        ],
+                        [
+                          "will be"
+                        ]
+                      ]
+                    },
+                    {
+                      "parts": [
+                        [
+                          "chance of Lisa"
+                        ],
+                        [
+                          "being"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "chance for Lisa to be",
+                  "explanation": "There is every chance (that) — «є всі підстави вважати, що»; можлива й конструкція every chance of Lisa being promoted. Пастка — «chance for Lisa to be»: сполука chance for someone to do означає «нагода», а не «ймовірність».",
+                  "points": 2
+                },
+                {
+                  "number": 30,
+                  "lead": "I only realised how much I had missed my family when I returned home.",
+                  "keyword": "until",
+                  "before": "It was",
+                  "after": "home that I realised how much I had missed my family.",
+                  "answers": [
+                    {
+                      "parts": [
+                        [
+                          "not until I"
+                        ],
+                        [
+                          "returned",
+                          "had returned",
+                          "got",
+                          "got back",
+                          "came",
+                          "came back",
+                          "went",
+                          "arrived"
+                        ]
+                      ]
+                    }
+                  ],
+                  "trap": "until I returned",
+                  "explanation": "Емфатична конструкція It was not until … that … означає «лише тоді, коли» й підкреслює момент усвідомлення. Пастка — «until I returned»: без not зміст стає протилежним, тож зараховують лише другу частину відповіді.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-5",
+              "label": "Part 5",
+              "subtitle": "Multiple choice",
+              "type": "multiple-choice",
+              "instruction": "You are going to read an article in which a wildlife sound recordist describes her work. For questions 31–36, choose the answer (A, B, C or D) which you think fits best according to the text.",
+              "passage": {
+                "title": "Listening to the Land",
+                "paragraphs": [
+                  "People often assume that the hardest part of my job is finding the animals. It isn’t. The hardest part is finding silence — or rather, finding a place where the sounds of the natural world can be heard without the hum of a distant road, the drone of an aircraft or the thud of music from a passing car. When I started recording, almost thirty years ago, I could reach such places within an hour’s drive of my home. Today, many of the sites I once relied on are lost to me, not because the wildlife has gone, though in some cases it has, but because human noise has crept into every corner of them.",
+                  "There is a common misconception that a recordist simply switches on a microphone and waits. In reality, a single good recording can involve days of preparation: studying maps, visiting a site at different times of day, learning where the wind comes from and which branches creak in it. I have spent entire nights lying in wet heather for the sake of four minutes of usable sound, and I have also spent entire nights lying in wet heather for nothing at all. My partner, who is a patient man, once asked whether I enjoyed it. I told him that ‘enjoy’ was the wrong word, but that I could not imagine doing anything else.",
+                  "What keeps me going is the knowledge that these recordings may outlive the soundscapes they capture. In the archive where I deposit my work, there are recordings from the 1950s of birds that have since vanished from the regions where they were made. Listening to them is a strange experience, rather like reading a letter from someone who has died: the voice is present and vivid, yet it belongs irrevocably to the past. I do not record in order to mourn, but I am conscious that I may be documenting something on the point of disappearing.",
+                  "That said, I am wary of the kind of nature recording that presents the countryside as untouched. Some of my colleagues go to great lengths to edit out every trace of human activity, and the results can be breathtaking. But they are also, in a sense, a fiction. A dawn chorus with a tractor in the background is still a dawn chorus, and arguably a more honest one. I have come to believe that my job is not to preserve an imaginary wilderness, but to document what the land actually sounds like now, imperfections included.",
+                  "This conviction has not always made me popular. A broadcaster once rejected a recording of mine because, as the producer put it, ‘listeners don’t want to hear the motorway.’ I understood the point, but it struck me as a missed opportunity. If people never hear how much noise we have introduced into the natural world, why would they ever think to do anything about it? Recordings that hide the problem, however beautiful, risk making it easier to ignore.",
+                  "Not that I have given up on beauty. Some of my most treasured recordings were made in places where, for a few hours, nothing human could be heard at all: a fjord in northern Norway, a valley in the Carpathians in late October. On such occasions I sometimes forget to check my equipment altogether and simply listen. Those moments are rarer than they used to be, and I have learned not to take them for granted. Perhaps that is the real gift of this work: it has taught me to pay attention, which is a harder discipline than it sounds."
+                ]
+              },
+              "questions": [
+                {
+                  "number": 31,
+                  "prompt": "What point does the writer make in the first paragraph?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "She has had to travel further each year to find suitable animals."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "Noise pollution has reduced the number of places where she can work."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Her early recordings were of better quality than her recent ones."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "Locating wildlife has become harder as habitats have declined."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Авторка пише, що втратила багато місць не тому, що зникли тварини, а через людський шум, який «crept into every corner of them». Пастка — D: зникнення тварин згадано лише мимохідь («though in some cases it has»), а головна причина — шум.",
+                  "points": 2
+                },
+                {
+                  "number": 32,
+                  "prompt": "The writer mentions lying ‘in wet heather’ in order to",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "complain about the physical discomfort she has to endure."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "suggest that her partner disapproves of her working conditions."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "explain why she prefers to record at night."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "illustrate how unpredictable the outcome of her work can be."
+                    }
+                  ],
+                  "key": "D",
+                  "trap": "A",
+                  "explanation": "Повтор фрази про ночі у вологому вересі підкреслює, що такі зусилля іноді дають чотири хвилини запису, а іноді — нічого. Пастка — A: авторка не скаржиться на незручності, а згадує їх, щоб показати непередбачуваність результату.",
+                  "points": 2
+                },
+                {
+                  "number": 33,
+                  "prompt": "How does the writer feel about the archive recordings from the 1950s?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "They evoke a sense of loss despite their immediacy."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "They make her doubt the value of her own work."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "They encourage her to record only endangered species."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "They remind her how much recording technology has improved."
+                    }
+                  ],
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Ці записи нагадують їй лист від людини, якої вже немає: голос живий і виразний, але безповоротно належить минулому. Пастка — C: авторка не каже, що записуватиме лише зникомі види, вона лише усвідомлює, що може фіксувати те, що невдовзі зникне.",
+                  "points": 2
+                },
+                {
+                  "number": 34,
+                  "prompt": "What does the writer imply about colleagues who remove human sounds from their recordings?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "They are more successful commercially than she is."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "Their work lacks technical skill."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "Their recordings give a misleading impression."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "They are unaware of the ethical issues involved."
+                    }
+                  ],
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Авторка називає такі записи «a fiction», тобто вони створюють хибне враження про незайману природу. Пастка — B: про технічну майстерність колег вона відгукується схвально, називаючи результати «breathtaking».",
+                  "points": 2
+                },
+                {
+                  "number": 35,
+                  "prompt": "In the fifth paragraph, the writer argues that",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "broadcasters should employ more specialist producers."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "listeners are more interested in noise pollution than producers believe."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "recordings of motorways have scientific as well as artistic value."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "concealing human noise may discourage action to reduce it."
+                    }
+                  ],
+                  "key": "D",
+                  "trap": "B",
+                  "explanation": "Авторка ставить риторичне запитання: якщо люди ніколи не чують цього шуму, навіщо їм щось із ним робити? Пастка — B: вона не стверджує, що слухачам це цікавіше, ніж думають продюсери, а лише вважає відмову втраченою можливістю.",
+                  "points": 2
+                },
+                {
+                  "number": 36,
+                  "prompt": "What does the writer suggest in the final paragraph?",
+                  "options": [
+                    {
+                      "letter": "A",
+                      "text": "She values perfect silence more than any other sound."
+                    },
+                    {
+                      "letter": "B",
+                      "text": "Her work has given her a skill that she regards as valuable."
+                    },
+                    {
+                      "letter": "C",
+                      "text": "She has become careless about her technical responsibilities."
+                    },
+                    {
+                      "letter": "D",
+                      "text": "She intends to spend more time recording in remote areas."
+                    }
+                  ],
+                  "key": "B",
+                  "trap": "C",
+                  "explanation": "Справжнім даром своєї роботи авторка вважає вміння бути уважною — «a harder discipline than it sounds». Пастка — C: вона справді іноді забуває перевірити обладнання, але це ознака захоплення, а не недбалості.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-6",
+              "label": "Part 6",
+              "subtitle": "Cross-text multiple matching",
+              "type": "multiple-matching",
+              "instruction": "You are going to read four reviews of a book about attention and digital technology. For questions 37–40, choose from the reviews A–D. The reviews may be chosen more than once.",
+              "title": "The Scattered Mind by Leah Corrigan",
+              "stem": "Which reviewer",
+              "sections": [
+                {
+                  "letter": "A",
+                  "title": "Reviewer A",
+                  "paragraphs": [
+                    "Few subjects have been written about as exhaustively as our relationship with our phones, so it is no small achievement that Leah Corrigan has found something genuinely new to say. Her contention — that distraction is not a personal failing but a deliberately engineered feature of the technology — is developed with a freshness that makes familiar debates feel urgent again. She draws on an impressive range of studies, from neuroscience to behavioural economics, and handles them with care. Her prose is lucid and frequently witty. Where the book falters is in its final chapters. Corrigan’s suggestion that we each set aside two phone-free hours a day sounds admirable, but few readers with jobs, children or elderly parents will be in a position to follow it."
+                  ]
+                },
+                {
+                  "letter": "B",
+                  "title": "Reviewer B",
+                  "paragraphs": [
+                    "The Scattered Mind is an elegant, readable book, and Corrigan has a gift for the telling anecdote. Its central claim, however, that technology companies design their products to capture our attention, will hardly come as news to anyone who has followed this debate over the past decade. More troubling is her handling of the research. Corrigan cites studies that support her case at length while passing over, or dismissing in a footnote, those that complicate it. Her proposals, too, are unlikely to survive contact with ordinary life: it is all very well to recommend a ‘digital sabbath’ every weekend, but for many people their phone is how they stay in touch with work and family."
+                  ]
+                },
+                {
+                  "letter": "C",
+                  "title": "Reviewer C",
+                  "paragraphs": [
+                    "Corrigan’s thesis is not a new one — the idea that our attention has become a commodity has been around for some years — but she makes the case with admirable thoroughness. Each claim is supported by carefully presented evidence, and she is scrupulous in acknowledging where the research is inconclusive. It is a pity, then, that the book is such hard going. Sentences heavy with technical terms follow one another for pages at a time, and readers without a background in psychology may struggle to stay the course. Her closing advice, by contrast, is refreshingly down to earth: small, achievable changes, such as switching off notifications, rather than grand renunciations."
+                  ]
+                },
+                {
+                  "letter": "D",
+                  "title": "Reviewer D",
+                  "paragraphs": [
+                    "Anyone who has read the many books on this subject published over the past decade will find little in Corrigan’s central argument that they have not encountered before. What she brings is a lively, engaging style that carries the reader along. Her use of research is less convincing: she leans heavily on a handful of small studies that happen to support her case and says little about the larger body of work that points in other directions. Still, the practical chapters are the book’s strongest. Her suggestions are modest and sensible, and I suspect many readers will find themselves trying at least one of them."
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "number": 37,
+                  "prompt": "has a different opinion from the others about the quality of Corrigan’s writing?",
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Лише рецензент C вважає книжку важкою для читання через нагромадження термінів, тоді як інші хвалять стиль авторки. Пастка — B: рецензент B критикує добір досліджень, а стиль, навпаки, називає «elegant, readable».",
+                  "points": 2
+                },
+                {
+                  "number": 38,
+                  "prompt": "shares B’s view of the way Corrigan uses research evidence?",
+                  "key": "D",
+                  "trap": "C",
+                  "explanation": "Як і рецензент B, рецензент D закидає авторці вибіркове використання досліджень: вона спирається на ті, що підтверджують її тезу, й оминає інші. Пастка — C: рецензент C, навпаки, хвалить ретельно подані докази й чесність щодо непереконливих результатів.",
+                  "points": 2
+                },
+                {
+                  "number": 39,
+                  "prompt": "expresses a similar opinion to A about how practical Corrigan’s recommendations are?",
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Рецензенти A і B вважають поради авторки нереалістичними для людей, які мають роботу й сім’ю. Пастка — D: рецензент D називає практичні розділи найсильнішою частиною книжки, а поради — скромними й розумними.",
+                  "points": 2
+                },
+                {
+                  "number": 40,
+                  "prompt": "has a different view from the others on whether the book’s central argument is original?",
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Лише рецензент A вважає, що авторка сказала щось справді нове, тоді як B, C і D називають її головну тезу давно відомою. Пастка — C: рецензент C хвалить ґрунтовність аргументації, але прямо зазначає, що сама теза не нова.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-7",
+              "label": "Part 7",
+              "subtitle": "Gapped text",
+              "type": "gapped-text",
+              "instruction": "You are going to read an article about a village that set out to reduce light pollution. Six paragraphs have been removed from the article. Choose from the paragraphs A–G the one which fits each gap (41–46). There is one extra paragraph which you do not need to use.",
+              "passage": {
+                "title": "Lights Out",
+                "paragraphs": [
+                  "Ten years ago, if you had stood in the centre of the village of Ellerby on a clear night and looked up, you would have seen perhaps a dozen stars. The rest were drowned out by the orange glow of streetlights, floodlit car parks and the security lamps that seemed to multiply on every new house. Today, on the same spot, you can see the Milky Way.",
+                  "{{41}}",
+                  "Her first attempt to interest her neighbours was not a success. Only six people came to the meeting she organised in the village hall, and two of them, she later discovered, had come mainly for the free biscuits. The others listened politely, agreed that it was a shame about the stars and went home.",
+                  "{{42}}",
+                  "That evening changed everything. Within a month, a working group had been formed, and its members had begun the slow business of persuading the parish council, local businesses and individual householders to change the way they lit their properties.",
+                  "{{43}}",
+                  "Not everyone was won over, of course. A number of residents worried that darker streets would mean more crime, and the owner of the village’s only petrol station initially refused to dim his forecourt lights, arguing that customers would assume he was closed.",
+                  "{{44}}",
+                  "There were also unexpected benefits. The council’s electricity bill fell by almost a third, and an ecologist from the county wildlife trust reported that moths and bats had returned to hedgerows where they had not been recorded for years.",
+                  "{{45}}",
+                  "Last spring, Ellerby was officially recognised as a Dark Sky Community, one of only a handful in the country. Visitors now come from as far away as London to see the stars, bringing welcome trade to the village pub and the two bed-and-breakfasts.",
+                  "{{46}}"
+                ]
+              },
+              "options": [
+                {
+                  "letter": "A",
+                  "text": "Much of the work turned out to be surprisingly simple. Most of the light that obscures the stars is wasted, shining sideways or upwards rather than down onto the ground where it is needed. Fitting shields to existing lamps, or replacing them with downward-facing ones, often meant that streets were just as well lit as before."
+                },
+                {
+                  "letter": "B",
+                  "text": "Ashby is quick to stress that the savings and the wildlife were not part of the original plan. ‘We did it for the stars,’ she says. ‘Everything else was a bonus.’ But it was these practical arguments, she admits, that finally brought the last of the doubters round."
+                },
+                {
+                  "letter": "C",
+                  "text": "The change is largely the work of one woman. Margaret Ashby, a retired physics teacher, moved to Ellerby in 2014 and was dismayed to find that the sky she had hoped to enjoy in retirement was barely darker than the one she had left behind in the city."
+                },
+                {
+                  "letter": "D",
+                  "text": "Astronomers have been warning for decades that light pollution is increasing worldwide, and some estimates suggest that a third of humanity can no longer see the Milky Way from where they live. For years, Ellerby seemed destined to remain part of that statistic."
+                },
+                {
+                  "letter": "E",
+                  "text": "Ashby, now in her seventies, still goes out on clear nights with her telescope. ‘People ask me what we achieved,’ she says. ‘I tell them we gave the village back its sky. It was there all along. We just had to stop hiding it.’"
+                },
+                {
+                  "letter": "F",
+                  "text": "So for her second meeting, Ashby tried a different approach. She borrowed a large telescope, persuaded the council to switch off the streetlights on the green for one night, and invited the whole village to come and look. More than two hundred people turned up."
+                },
+                {
+                  "letter": "G",
+                  "text": "In the end, figures from the local police helped to settle the argument. There had been no rise in crime in the parts of the village where lighting had already been changed, and the petrol station owner, after a trial period, found that his takings were unaffected."
+                }
+              ],
+              "questions": [
+                {
+                  "number": 41,
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Наступний абзац починається з «Her first attempt», тож перед ним має з’явитися жінка, про яку йдеться, — Маргарет Ешбі. Пастка — D: загальна статистика про світлове забруднення логічно продовжує вступ, але після неї займенник her не мав би до кого відсилати.",
+                  "points": 2
+                },
+                {
+                  "number": 42,
+                  "key": "F",
+                  "trap": "B",
+                  "explanation": "Абзац F описує другу зустріч із телескопом, на яку прийшли понад двісті людей, — саме про цей вечір сказано «That evening changed everything». Пастка — B: там теж ідеться про перелом у ставленні мешканців, але через практичні вигоди, які з’явилися значно пізніше.",
+                  "points": 2
+                },
+                {
+                  "number": 43,
+                  "key": "A",
+                  "trap": "G",
+                  "explanation": "Після згадки про те, що робоча група почала переконувати мешканців змінити освітлення, абзац A пояснює, що зробити це було на диво просто. Пастка — G: дані поліції відповідають на побоювання щодо злочинності, а про ці побоювання йдеться лише в наступному абзаці.",
+                  "points": 2
+                },
+                {
+                  "number": 44,
+                  "key": "G",
+                  "trap": "A",
+                  "explanation": "Абзац G відповідає на обидва заперечення з попереднього абзацу: злочинність не зросла, а виторг заправки не зменшився. Пастка — A: технічні подробиці про екрани для ліхтарів не розвіюють побоювань мешканців і власника заправки.",
+                  "points": 2
+                },
+                {
+                  "number": 45,
+                  "key": "B",
+                  "trap": "E",
+                  "explanation": "Абзац B згадує заощадження й повернення дикої природи, тобто менший рахунок за електроенергію й метеликів і кажанів, про яких ідеться перед пропуском. Пастка — E: Ешбі там теж говорить від першої особи, але цей абзац підсумовує всю історію, а не пояснює вигоди.",
+                  "points": 2
+                },
+                {
+                  "number": 46,
+                  "key": "E",
+                  "trap": "D",
+                  "explanation": "Абзац E завершує статтю: Ешбі досі виходить уночі з телескопом і підсумовує, що село повернуло собі небо. Пастка — D: слова про те, що Еллербі, здавалося, приречене лишатися частиною сумної статистики, суперечать щасливому фіналу історії.",
+                  "points": 2
+                }
+              ]
+            },
+            {
+              "id": "part-8",
+              "label": "Part 8",
+              "subtitle": "Multiple matching",
+              "type": "multiple-matching",
+              "instruction": "You are going to read an article in which four adults describe learning a new language. For questions 47–56, choose from the people (A–D). The people may be chosen more than once.",
+              "title": "Never Too Late",
+              "stem": "Which person",
+              "sections": [
+                {
+                  "letter": "A",
+                  "title": "Helen Price, learning Japanese",
+                  "paragraphs": [
+                    "I first tried Japanese in my thirties, using a course on cassette, and gave up after a few weeks when the writing system defeated me. This time I joined a small evening class, and for the first term I hardly opened my mouth: the others seemed so much more fluent, and I was convinced that I would make a fool of myself. What helped was thinking of it as training rather than study. Nobody expects to run a marathon after a fortnight; you go out every day, you do a little more than last time, and one morning you notice it has become easier. Learning kanji is much the same. I’m still slow, but I can now read a menu in Osaka, which felt like a small miracle."
+                  ]
+                },
+                {
+                  "letter": "B",
+                  "title": "David Thompson, learning Ukrainian",
+                  "paragraphs": [
+                    "My partner is from Lviv, and I started learning Ukrainian mainly so that I could talk to her parents without her having to translate everything. I’ve never taken a formal course. Almost everything I know I’ve picked up at family dinners, on the phone with her mother and from watching cartoons with her nephew. He is six, and he has no patience with my mistakes: the first time I got a noun ending wrong he burst out laughing and then carefully explained the right one, as if I were the child. My progress has been slow and uneven, I’ll admit — I can follow a conversation about food far better than one about politics — but every visit I understand a little more."
+                  ]
+                },
+                {
+                  "letter": "C",
+                  "title": "Amira Haddad, learning Italian",
+                  "paragraphs": [
+                    "People assume it must be harder to learn a language at sixty-two, and in some ways it is: new words take longer to stick. But I have advantages I lacked at twenty. I have time, I have no exams to pass, and I’m no longer worried about looking silly, which frees me to try things out. Most of my learning happens on my tablet: an app for vocabulary every morning, Italian radio in the afternoon and an online lesson with a tutor in Bologna twice a week. What I hadn’t expected was how much it would make me look again at my own background. Seeing how Italians talk about family and food made me notice things about the way I was brought up in Lebanon that I had always taken for granted."
+                  ]
+                },
+                {
+                  "letter": "D",
+                  "title": "Kofi Mensah, learning German",
+                  "paragraphs": [
+                    "I started German because my company was opening an office in Hamburg, and I fully expected it to be a grind. In fact, the first few months were exhilarating: within weeks I could order food, ask for directions and hold a simple conversation, far sooner than I’d imagined. Things slowed down considerably once I reached the intermediate stage, and I came close to giving up more than once. That I didn’t is entirely down to my tutor, Frau Becker, who had a knack for making grammar feel like a puzzle rather than a punishment and who never let me skip a lesson without a very good excuse. I use an app now and then, but honestly, it’s the conversations with her that made the difference."
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "number": 47,
+                  "prompt": "feels that their age has brought certain advantages?",
+                  "key": "C",
+                  "trap": "A",
+                  "explanation": "Аміра визнає, що нові слова запам’ятовуються повільніше, але має переваги, яких не мала у двадцять: час, відсутність іспитів і страху здатися смішною. Пастка — A: Гелен теж говорить про власну повільність, проте не вважає вік перевагою."
+                },
+                {
+                  "number": 48,
+                  "prompt": "was initially reluctant to speak in front of others?",
+                  "key": "A",
+                  "trap": "C",
+                  "explanation": "Гелен весь перший семестр майже мовчала, бо боялася виставити себе на посміховисько перед одногрупниками. Пастка — C: Аміра, навпаки, пише, що вже не боїться здатися смішною."
+                },
+                {
+                  "number": 49,
+                  "prompt": "credits a particular person with keeping them motivated?",
+                  "key": "D",
+                  "trap": "C",
+                  "explanation": "Кофі прямо пише, що не кинув навчання лише завдяки репетиторці фрау Беккер. Пастка — C: Аміра теж займається з викладачем із Болоньї, але не стверджує, що саме ця людина підтримує її мотивацію."
+                },
+                {
+                  "number": 50,
+                  "prompt": "has learned mainly through informal contact rather than lessons?",
+                  "key": "B",
+                  "trap": "A",
+                  "explanation": "Девід ніколи не відвідував курсів і вивчив мову за сімейними вечерями, у телефонних розмовах і за мультфільмами. Пастка — A: Гелен спершу вчилася за касетним курсом, а тепер ходить на вечірні заняття, тобто навчається формально."
+                },
+                {
+                  "number": 51,
+                  "prompt": "admits to having abandoned an earlier attempt?",
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Гелен уже пробувала вчити японську, коли їй було за тридцять, і кинула через кілька тижнів, бо не впоралася з письмом. Пастка — D: Кофі не раз був на межі того, щоб здатися, але так і не кинув навчання."
+                },
+                {
+                  "number": 52,
+                  "prompt": "was surprised by how quickly they made progress at first?",
+                  "key": "D",
+                  "trap": "B",
+                  "explanation": "Кофі очікував важкої праці, а вже за кілька тижнів міг замовити їжу й підтримати просту розмову. Пастка — B: Девід, навпаки, називає свій поступ повільним і нерівномірним."
+                },
+                {
+                  "number": 53,
+                  "prompt": "says the language has changed how they see their own upbringing?",
+                  "key": "C",
+                  "trap": "B",
+                  "explanation": "Спостереження за тим, як італійці говорять про родину та їжу, змусило Аміру по-новому поглянути на своє виховання в Лівані. Пастка — B: Девід вивчає мову родини партнерки, але не каже, що це змінило його погляд на власну культуру."
+                },
+                {
+                  "number": 54,
+                  "prompt": "mentions being corrected by a child?",
+                  "key": "B",
+                  "trap": "D",
+                  "explanation": "Шестирічний племінник партнерки засміявся з помилки Девіда в закінченні іменника, а потім пояснив правильну форму. Пастка — D: Кофі допомагала репетиторка, тобто доросла людина, а не дитина."
+                },
+                {
+                  "number": 55,
+                  "prompt": "describes technology as central to the way they learn?",
+                  "key": "C",
+                  "trap": "D",
+                  "explanation": "Аміра щодня працює із застосунком, слухає італійське радіо й двічі на тиждень має онлайн-урок, тож планшет лежить в основі її навчання. Пастка — D: Кофі теж користується застосунком, але лише «now and then», а головну роль відіграли розмови з репетиторкою."
+                },
+                {
+                  "number": 56,
+                  "prompt": "compares learning the language to a physical activity?",
+                  "key": "A",
+                  "trap": "D",
+                  "explanation": "Гелен порівнює вивчення ієрогліфів із підготовкою до марафону: щодня потроху більше, аж одного ранку стає легше. Пастка — D: Кофі порівнює граматику з головоломкою, але це не фізична діяльність."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
