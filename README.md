@@ -15,15 +15,16 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-## Тренажери: НМТ з англійської і B2 First
+## Тренажери: НМТ з англійської, B2 First і C1 Advanced
 
 | Сторінка | Дані | Ключ `localStorage` | Подія Google Analytics |
 |---|---|---|---|
 | `nmt-trainer.html` | `data/nmt-trainer.json` | `nmt-trainer` | `nmt_trainer_complete` |
 | `b2-first-trainer.html` | `data/b2-first-trainer.json` | `b2-first-trainer` | `b2_first_trainer_complete` |
+| `c1-advanced-trainer.html` | `data/c1-advanced-trainer.json` | `c1-advanced-trainer` | `c1_advanced_trainer_complete` |
 | `level-test.html` | `data/level-test.json` | `level-test` | `level_test_complete` |
 
-Обидві сторінки працюють на спільному рушії `exam-trainer.js`; стилі — розділ «Тренажери» в `service-page.css`
+Усі сторінки працюють на спільному рушії `exam-trainer.js`; стилі — розділ «Тренажери» в `service-page.css`
 плюс `quiz/quiz.css`. Сторінка передає рушію налаштування атрибутами `data-src`, `data-storage-key` і `data-event`
 на `#trn-app`; `data-modes="test"` вимикає режим тренування (так працює тест рівня). Код лише відображає завдання з JSON, тому новий варіант додається без змін у коді.
 
@@ -58,6 +59,22 @@ Here are some ideas to get you started:
 У частинах 2–4 `trap` — це типова неправильна відповідь (рядок). Відповідь у Part 4 описують так:
 `{"parts": [["has been", "'s been"], ["learning"]]}`. Повна відповідь — перша частина + друга; кожна частина
 окремо дає 1 бал, як у Cambridge. Без ключового слова або з довжиною поза межами 2–5 слів — 0 балів.
+
+### C1 Advanced, Reading and Use of English (`meta.exam: "c1-advanced"`)
+
+| Частина | `type` | Номери | Відповідь | Бали |
+|---|---|---|---|---|
+| Part 1 | `cloze` | 1–8 | 4 варіанти, `key` | 1 |
+| Part 2 | `open-cloze` | 9–16 | одне слово, усі прийнятні — в `answers` | 1 |
+| Part 3 | `word-formation` | 17–24 | одне слово від `stem`, прийнятні — в `answers` | 1 |
+| Part 4 | `transformation` | 25–30 | як у B2 First, але 3–6 слів | 2 |
+| Part 5 | `multiple-choice` | 31–36 | 4 варіанти, `key` | 2 |
+| Part 6 | `multiple-matching` | 37–40 | чотири тексти різних авторів (`sections` A–D), запитання на зіставлення думок | 2 |
+| Part 7 | `gapped-text` | 41–46 | 7 абзаців (A–G), один зайвий | 2 |
+| Part 8 | `multiple-matching` | 47–56 | розділи тексту `sections` (A–D), літера може повторюватися | 1 |
+
+Межі довжини відповіді в Part 4 рушій бере з `meta.transformationWords` (`{"min": 3, "max": 6}`); якщо поля немає,
+діють межі B2 First (2–5). Разом 78 балів, пробний тест — 90 хвилин.
 Перед порівнянням відповідь зводиться до малих літер, а скорочення розгортаються (didn’t → did not, can’t → cannot).
 
 ### Тест рівня (`meta.exam: "level-test"`)
