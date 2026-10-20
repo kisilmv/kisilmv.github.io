@@ -1,0 +1,1268 @@
+{
+  "level": "C2",
+  "title": "Граматика рівня C2",
+  "description": "Граматика вправного мовця й автора: суб’юнктив, рідкісні типи інверсії, допустові звороти, складні гіпотетичні конструкції, тонкощі модальності, номінативні підрядні, узгодження підмета з присудком, абсолютні звороти, номіналізація та еліпсис.",
+  "topics": [
+    {
+      "id": "subjunctive",
+      "title": "Суб’юнктив",
+      "titleEn": "The subjunctive: mandative and formulaic",
+      "summary": "insist that he be, It is essential that she have; Come what may, Be that as it may.",
+      "theory": {
+        "intro": "Суб’юнктив в англійській — це базова форма дієслова без закінчень і без зсуву часів. Він уживається після слів, що виражають вимогу, рекомендацію чи необхідність, і в низці усталених формул.",
+        "blocks": [
+          {
+            "title": "Після дієслів вимоги й рекомендації",
+            "text": "*insist, demand, recommend, suggest, propose, request, require, urge* + *that* + підмет + базова форма. Заперечення — *not* + базова форма. У британській англійській часто вживають *should* + інфінітив.",
+            "examples": [
+              ["The doctor recommended that he get more rest.", "Лікар порадив йому більше відпочивати."],
+              ["They demanded that she not be informed.", "Вони вимагали, щоб її не повідомляли."]
+            ]
+          },
+          {
+            "title": "Після прикметників і іменників",
+            "text": "*essential, vital, crucial, important, imperative, necessary* + *that*; *the recommendation / requirement / proposal that*.",
+            "examples": [
+              ["It is essential that every passenger have a valid ticket.", "Кожен пасажир неодмінно повинен мати дійсний квиток."]
+            ]
+          },
+          {
+            "title": "Минулий контекст — без зсуву",
+            "text": "Форма не змінюється навіть після дієслова в минулому часі.",
+            "examples": [
+              ["The committee insisted that the report be published.", "Комісія наполягла, щоб звіт оприлюднили."]
+            ]
+          },
+          {
+            "title": "Усталені формули",
+            "text": "*Come what may; Be that as it may; Suffice it to say; So be it; If need be; Heaven forbid; Long live…*",
+            "examples": [
+              ["Come what may, I’ll finish this.", "Хай там що, я це завершу."],
+              ["Suffice it to say, the evening was a disaster.", "Досить сказати, що вечір був провальний."]
+            ]
+          }
+        ],
+        "traps": [
+          "*He insisted that she pays* — помилка: *that she pay* (без *-s*).",
+          "Заперечення — *that he not be*, а не *that he doesn’t be*.",
+          "Після *suggest / recommend* не вживаємо інфінітив з особою: *suggested that we go*, а не *suggested us to go*.",
+          "Суб’юнктив звучить офіційно; у розмові природніше *I suggest we go*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "The doctor recommended that he ___ more rest.",
+          "options": ["get", "gets", "got"],
+          "answer": 0,
+          "explanation": "Після *recommend that* — суб’юнктив, тобто базова форма без *-s* і без зсуву часу: *that he get*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "It is essential that every passenger ___ a valid ticket.",
+          "options": ["have", "has", "had"],
+          "answer": 0,
+          "explanation": "*It is essential that* вимагає суб’юнктива: *every passenger have*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "The committee insisted that the report ___ published immediately.",
+          "options": ["be", "is", "was"],
+          "answer": 0,
+          "explanation": "Суб’юнктив від *be* — *be* для всіх осіб і часів: *that the report be published*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "___ what may, I will finish this marathon.",
+          "options": ["Come", "Comes", "Coming"],
+          "answer": 0,
+          "explanation": "Усталена формула суб’юнктива *Come what may* — «хай там що»."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "She asked that her name ___ mentioned in the article.",
+          "options": ["not be", "not is", "doesn’t be"],
+          "answer": 0,
+          "explanation": "Заперечення в суб’юнктиві — *not* + базова форма: *that her name not be mentioned*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Be that ___ it may, we still need to meet the deadline.",
+          "answers": ["as"],
+          "explanation": "Формула *Be that as it may* — «хай там як, проте»."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "___ it to say, the evening did not go as planned.",
+          "answers": ["suffice"],
+          "explanation": "Формула *Suffice it to say* — «досить сказати, що…»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "The landlord demanded that the tenant ___ (pay) the rent by Friday.",
+          "answers": ["pay"],
+          "explanation": "Після *demand that* — базова форма без *-s* і без зсуву часу: *the tenant pay*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "The manager [[insisted]] that every employee [[attends]] the [[training]] session.",
+          "answer": 1,
+          "fix": "attend",
+          "explanation": "Після *insist that* — суб’юнктив: *every employee attend*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "It is vital that he [[doesn’t miss]] [[the]] flight [[tomorrow]].",
+          "answer": 0,
+          "fix": "not miss",
+          "explanation": "Заперечення в суб’юнктиві будується без *do*: *that he not miss*."
+        }
+      ]
+    },
+    {
+      "id": "advanced-inversion",
+      "title": "Інверсія: рідкісні моделі",
+      "titleEn": "Advanced inversion: so / such, only by, locative inversion",
+      "summary": "So convincing was…, Such was…, Only by…, On the hill stood…, as did her mother.",
+      "theory": {
+        "intro": "Окрім інверсії після заперечних слів, у вишуканому стилі трапляються інші моделі: підсилювальні *so / such*, обставини місця на початку речення, порівняльні звороти з *as / than*.",
+        "blocks": [
+          {
+            "title": "So … that / Such … that",
+            "text": "*So* + прикметник / прислівник + дієслово + підмет + *that*. *Such* + *be* + підмет + *that* («такою була…»).",
+            "examples": [
+              ["So convincing was his argument that nobody objected.", "Його аргумент був настільки переконливий, що ніхто не заперечив."],
+              ["Such was the demand that tickets sold out in minutes.", "Попит був такий великий, що квитки розкупили за кілька хвилин."]
+            ]
+          },
+          {
+            "title": "Only by / Only if / Nowhere / Not a single…",
+            "text": "Інверсія з допоміжним дієсловом у головній частині.",
+            "examples": [
+              ["Only by working together can we solve this.", "Лише разом ми зможемо це розв’язати."],
+              ["Not a single word did she say.", "Вона не сказала ані слова."]
+            ]
+          },
+          {
+            "title": "Інверсія після обставини місця",
+            "text": "Після обставини місця чи напрямку основне дієслово руху або положення стає перед підметом, без допоміжного. Із займенником-підметом інверсії немає.",
+            "examples": [
+              ["On top of the hill stood an old lighthouse.", "На вершині пагорба стояв старий маяк."],
+              ["Here comes the bus. / Here it comes.", "Ось їде автобус. / Ось він їде."]
+            ]
+          },
+          {
+            "title": "as / than + інверсія",
+            "text": "У книжному стилі після *as* і *than* допоміжне дієслово може стояти перед підметом.",
+            "examples": [
+              ["She became a pianist, as did her mother.", "Вона стала піаністкою, як і її мати."]
+            ]
+          }
+        ],
+        "traps": [
+          "Інверсія з *so* потрібна лише тоді, коли *so* + прикметник стоїть на початку: *So tired was I that…*, але *I was so tired that…*",
+          "Із займенником немає інверсії після *here / there*: *Here it comes*, а не *Here comes it*.",
+          "Після обставини місця інверсія буває лише з неперехідними дієсловами руху або положення (*stand, lie, come, go, sit*).",
+          "*Such was* + іменник з артиклем: *Such was the noise that…*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "So convincing ___ that nobody doubted him.",
+          "options": ["was his argument", "his argument was", "his argument"],
+          "answer": 0,
+          "explanation": "*So* + прикметник на початку вимагає інверсії: *So convincing was his argument that…*"
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Such ___ the demand that the tickets sold out in minutes.",
+          "options": ["was", "did", "had"],
+          "answer": 0,
+          "explanation": "Модель *Such was* + підмет + *that* — «такою була…, що…»."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Only by working together ___ solve this problem.",
+          "options": ["can we", "we can", "we will"],
+          "answer": 0,
+          "explanation": "Після *Only by* + *-ing* головна частина інвертується: *can we solve*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "On top of the hill ___ an old lighthouse.",
+          "options": ["stood", "did stand", "it stood"],
+          "answer": 0,
+          "explanation": "Інверсія після обставини місця: дієслово положення стоїть перед підметом без допоміжного — *stood an old lighthouse*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Here ___! Quick, get your bag.",
+          "options": ["it comes", "comes it", "does it come"],
+          "answer": 0,
+          "explanation": "Із займенником-підметом після *here* інверсії немає: *Here it comes*. Порівняйте: *Here comes the bus*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Not a single word ___ she say during the whole meeting.",
+          "answers": ["did"],
+          "explanation": "*Not a single…* на початку речення вимагає інверсії з *did*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне модальне дієслово.",
+          "prompt": "Nowhere ___ you find a more welcoming town.",
+          "answers": ["will", "would", "could", "can"],
+          "explanation": "Після *Nowhere* — інверсія з модальним дієсловом: *Nowhere will you find…*"
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "She was a brilliant pianist, as ___ her mother before her.",
+          "answers": ["was"],
+          "explanation": "Порівняльне *as* з інверсією повторює дієслово першої частини: *as was her mother*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "So [[tired]] [[I was]] that I fell asleep [[on]] the sofa.",
+          "answer": 1,
+          "fix": "was I",
+          "explanation": "*So tired* на початку вимагає інверсії: *So tired was I that…* (або без інверсії: *I was so tired that…*)."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "Only if you [[apply]] early [[you will]] [[get]] a place.",
+          "answer": 1,
+          "fix": "will you",
+          "explanation": "Після *Only if* + підрядне головна частина інвертується: *Only if you apply early will you get a place*."
+        }
+      ]
+    },
+    {
+      "id": "concessive-fronting",
+      "title": "Допустові звороти з винесенням наперед",
+      "titleEn": "Concessive fronting: strange as it may seem, try as she might",
+      "summary": "Adj + as / though, Try as he might, Much as…, For all…, No matter how…",
+      "theory": {
+        "intro": "Щоб сказати «хоч як…», «попри те що…», у книжному стилі виносять уперед прикметник, прислівник або дієслово, а за ним ставлять *as* чи *though*.",
+        "blocks": [
+          {
+            "title": "Прикметник / прислівник + as / though",
+            "text": "*Strange as it may seem…*, *Tired though she was…*. Іменник у цій позиції вживається без артикля. В американській англійській поширений і варіант *As strange as it may seem*.",
+            "examples": [
+              ["Strange as it may seem, the story is true.", "Хоч як дивно це звучить, історія правдива."],
+              ["Child as he was, he understood everything.", "Хоч він і був дитиною, він усе розумів."]
+            ]
+          },
+          {
+            "title": "Дієслово + as + підмет + might / tried",
+            "text": "*Try as he might*, *Hard as they tried*.",
+            "examples": [
+              ["Try as she might, she couldn’t remember his name.", "Хоч як вона силкувалася, не могла пригадати його імені."]
+            ]
+          },
+          {
+            "title": "Much as, for all, no matter",
+            "text": "*Much as* + речення — «хоч і». *For all* + іменник — «попри весь». *No matter how / what / who*, *whatever, however much*.",
+            "examples": [
+              ["Much as I admire him, I can’t agree.", "Хоч я ним і захоплююся, погодитися не можу."],
+              ["For all his wealth, he was unhappy.", "Попри все своє багатство, він був нещасний."]
+            ]
+          }
+        ],
+        "traps": [
+          "Без артикля: *Child as he was*, а не *A child as he was*.",
+          "*Much as* + дієслово стану не в *Continuous*: *Much as I like him*.",
+          "*No matter how* + прикметник: *No matter how hard I try*.",
+          "Після *Try as she might* — *might* або минулий час, а не *could*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "___ as it may seem, the story is true.",
+          "options": ["Strange", "Strangely", "How strange"],
+          "answer": 0,
+          "explanation": "Модель «прикметник + *as*»: *Strange as it may seem* — «хоч як дивно це звучить»."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Try ___, she couldn’t remember his name.",
+          "options": ["as she might", "as she could be", "so she might"],
+          "answer": 0,
+          "explanation": "Усталений зворот *Try as she might* — «хоч як вона старалася»."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "___ I admire his talent, I can’t stand his arrogance.",
+          "options": ["Much as", "As much", "So much"],
+          "answer": 0,
+          "explanation": "*Much as* + речення — «хоч я й…». Інші варіанти не утворюють допустового звороту."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "___ his wealth, he was deeply unhappy.",
+          "options": ["For all", "Despite of", "Although"],
+          "answer": 0,
+          "explanation": "*For all* + іменник — «попри весь». *Although* потребує речення, а *despite of* не існує."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "___ you choose, I’ll support your decision.",
+          "options": ["Whatever", "However", "No matter"],
+          "answer": 0,
+          "explanation": "*Whatever* — «хоч що». *No matter* вимагало б *what*: *No matter what you choose*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Tired ___ she was, she kept working until midnight.",
+          "answers": ["though", "as"],
+          "explanation": "Прикметник + *though / as* + підмет + дієслово: *Tired though she was* — «хоч і втомлена»."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "No matter ___ hard I try, I can’t understand this poem.",
+          "answers": ["how"],
+          "explanation": "*No matter how* + прикметник / прислівник — «хоч як»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "Hard as they ___ (try), they couldn’t fix the engine.",
+          "answers": ["tried"],
+          "explanation": "Розповідь про минуле: *Hard as they tried* — «хоч як вони старалися»."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[Much]] [[as]] I [[am liking]] him, I don’t trust him.",
+          "answer": 2,
+          "fix": "like",
+          "explanation": "*Like* — дієслово стану, у *Continuous* не вживається: *Much as I like him*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[A child]] as he was, he [[understood]] [[the]] gravity of the situation.",
+          "answer": 0,
+          "fix": "Child",
+          "explanation": "Іменник, винесений перед *as*, уживається без артикля: *Child as he was*."
+        }
+      ]
+    },
+    {
+      "id": "hypothetical-advanced",
+      "title": "Гіпотетичні конструкції: складніші випадки",
+      "titleEn": "Advanced hypothetical meaning",
+      "summary": "were to, had it not been for, otherwise, if anything, supposing.",
+      "theory": {
+        "intro": "Гіпотезу можна виразити не лише через *if*: малоймовірне майбутнє передає *were to*, роль умови беруть на себе *otherwise, without, but for*, а короткі звороти *if so, if not, if anything* заміщають цілі речення.",
+        "blocks": [
+          {
+            "title": "were to",
+            "text": "Малоймовірна або делікатно подана гіпотеза про майбутнє; *were* — для всіх осіб.",
+            "examples": [
+              ["If you were to lose your passport, what would you do?", "Якби ти раптом загубив паспорт, що б ти робив?"]
+            ]
+          },
+          {
+            "title": "Умова, виражена іменником",
+            "text": "*If it hadn’t been for / Had it not been for / But for / Without* + іменник.",
+            "examples": [
+              ["Had it not been for the lifeguard, the boy would have drowned.", "Якби не рятувальник, хлопчик потонув би."]
+            ]
+          },
+          {
+            "title": "otherwise",
+            "text": "«Інакше» — умова прихована в попередньому реченні; далі — *would* або *would have*.",
+            "examples": [
+              ["I was wearing a helmet; otherwise I would have been hurt.", "На мені був шолом, інакше я б поранився."]
+            ]
+          },
+          {
+            "title": "if so, if not, if anything, supposing",
+            "text": "*If so / if not* заміщують умову. *If anything* — «якщо вже на те пішло, то навпаки». *Supposing / suppose* — «припустімо».",
+            "examples": [
+              ["Prices won’t fall. If anything, they’ll rise.", "Ціни не впадуть. Радше навпаки, зростуть."],
+              ["Supposing you were offered the job, would you take it?", "Припустімо, тобі запропонують цю роботу. Ти погодишся?"]
+            ]
+          }
+        ],
+        "traps": [
+          "Після *were to* у головній частині — *would*, а не *will*.",
+          "Про минуле — *If it hadn’t been for*; *If it wasn’t for* стосується теперішнього (і звучить розмовно).",
+          "Після *otherwise* із минулим значенням — *would have* + *V3*.",
+          "*Without* + іменник теж може вводити умову: *Without your help, I would have failed*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "If you ___ to lose your passport abroad, what would you do?",
+          "options": ["were", "will", "would"],
+          "answer": 0,
+          "explanation": "Малоймовірна гіпотеза — *If you were to…*, у головній частині *would*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "___ it not been for the lifeguard, the boy would have drowned.",
+          "options": ["Had", "Were", "If"],
+          "answer": 0,
+          "explanation": "*Had it not been for* = *If it hadn’t been for* — «якби не»; ситуація в минулому."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "If it ___ for her quick thinking, we would all have been in trouble.",
+          "options": ["hadn’t been", "wasn’t being", "didn’t be"],
+          "answer": 0,
+          "explanation": "Минула ситуація: *If it hadn’t been for* + іменник."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I was wearing a helmet; ___ I would have been badly hurt.",
+          "options": ["otherwise", "unless", "provided"],
+          "answer": 0,
+          "explanation": "*Otherwise* — «інакше, якби ні»: прихована умова, далі *would have been*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Do you think prices will fall? — No. If ___, they’ll rise.",
+          "options": ["anything", "so", "ever"],
+          "answer": 0,
+          "explanation": "*If anything* — «радше навпаки». *If so* означало б «якщо так», що суперечить змісту."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "___ the government were to cut funding, many schools would close.",
+          "answers": ["if"],
+          "explanation": "Модель *If* + підмет + *were to* + інфінітив — малоймовірна гіпотеза."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Is the museum open on Mondays? If ___, we’ll go on Tuesday.",
+          "answers": ["not"],
+          "explanation": "*If not* заміщує всю умову: «якщо ні (якщо не відчинений)»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "___ (suppose) you were offered the job — would you take it?",
+          "answers": ["supposing", "suppose"],
+          "explanation": "*Supposing / Suppose* — «припустімо» — вводить уявну ситуацію з *Past Simple*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "If he [[were]] [[to]] apologize now, I [[will]] forgive him.",
+          "answer": 2,
+          "fix": "would",
+          "explanation": "Після гіпотези з *were to* у головній частині — *would*: *I would forgive him*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[Without]] your support, I [[would never finish]] the book [[last]] year.",
+          "answer": 1,
+          "fix": "would never have finished",
+          "explanation": "Ідеться про минуле (*last year*), тож *would never have finished*."
+        }
+      ]
+    },
+    {
+      "id": "nuanced-modality",
+      "title": "Тонкощі модальності",
+      "titleEn": "Nuanced modality: putative should, dare, will for habits",
+      "summary": "It’s odd that he should…, How dare you…, That’ll be the courier, can’t help doing.",
+      "theory": {
+        "intro": "На рівні C2 модальні дієслова передають оцінку, здивування, обурення, звичну поведінку та впевнені припущення про теперішнє.",
+        "blocks": [
+          {
+            "title": "Оцінне should",
+            "text": "Після *odd, strange, surprising, a pity, a shame, natural* + *that* — здивування чи оцінка факту. Також у питаннях обурення: *Why should I…?*",
+            "examples": [
+              ["It’s strange that she should leave without a word.", "Дивно, що вона пішла, не сказавши ні слова."],
+              ["Why should I apologize?", "З якого дива мені перепрошувати?"]
+            ]
+          },
+          {
+            "title": "will і would: звичка й припущення",
+            "text": "*will* — упевнене припущення про теперішнє (*That’ll be the courier*) або характерна поведінка (*He will keep interrupting*). *would* — типова поведінка в минулому.",
+            "examples": [
+              ["That’ll be my sister — she said she’d call.", "Це, певно, сестра — вона казала, що подзвонить."]
+            ]
+          },
+          {
+            "title": "dare і need як модальні",
+            "text": "*How dare you…!*, *I dare not…*, *You needn’t…* — без *to* і без *do*.",
+            "examples": [
+              ["How dare you read my letters!", "Як ти смієш читати мої листи!"],
+              ["You needn’t worry.", "Можеш не хвилюватися."]
+            ]
+          },
+          {
+            "title": "Інші звороти",
+            "text": "*can’t help doing* — «не можу не…»; *would have thought* — тактовно висловлена думка; *might / should have known* — докір собі.",
+            "examples": [
+              ["I can’t help feeling we’ve made a mistake.", "Не можу позбутися відчуття, що ми помилилися."],
+              ["You would have thought he’d say thank you.", "Можна було б подумати, що він подякує."]
+            ]
+          }
+        ],
+        "traps": [
+          "*How dare you to…* — помилка: *How dare you say that!*",
+          "*can’t help to do* — помилка: *can’t help doing*.",
+          "*I would have think* — помилка: *I would have thought*.",
+          "Оцінне *should* не означає обов’язку: *It’s odd that he should say that* = «дивно, що він таке сказав»."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "It’s strange that she ___ leave without saying goodbye.",
+          "options": ["should", "would", "must"],
+          "answer": 0,
+          "explanation": "Оцінне *should* після *It’s strange that* виражає здивування фактом, а не обов’язок."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "How ___ you speak to me like that!",
+          "options": ["dare", "need", "do"],
+          "answer": 0,
+          "explanation": "Вигук обурення — *How dare you* + інфінітив без *to*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "There’s someone at the door. — That ___ be the courier; I’m expecting a parcel.",
+          "options": ["’ll", "’d", "shall"],
+          "answer": 0,
+          "explanation": "Упевнене припущення про теперішнє — *will*: *That’ll be the courier*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I can’t help ___ that we’ve made a mistake.",
+          "options": ["feeling", "to feel", "feel"],
+          "answer": 0,
+          "explanation": "*Can’t help* + *-ing* — «не можу не…»."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "You ___ thought he’d be grateful, but he didn’t even say thank you.",
+          "options": ["would have", "will have", "should"],
+          "answer": 0,
+          "explanation": "*You would have thought* — «можна було б подумати» — очікування, яке не справдилося."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть заперечну модальну форму need.",
+          "prompt": "You ___ worry — everything is under control.",
+          "answers": ["needn't", "need not"],
+          "explanation": "Модальне *need* у запереченні — *needn’t* + інфінітив без *to*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне модальне дієслово.",
+          "prompt": "I ___ have known he would be late — he always is.",
+          "answers": ["might", "should"],
+          "explanation": "Докір собі — *I might / should have known* — «я міг би й здогадатися»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне модальне дієслово.",
+          "prompt": "He ___ keep leaving the door open, which drives me mad.",
+          "answers": ["will"],
+          "explanation": "Дратівлива характерна поведінка — наголошене *will*: *He will keep leaving…*"
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "How [[dare you to read]] my [[private]] [[letters]]!",
+          "answer": 0,
+          "fix": "dare you read",
+          "explanation": "Після модального *dare* — інфінітив без *to*: *How dare you read…!*"
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "I [[would have think]] [[that]] he’d [[call]] by now.",
+          "answer": 0,
+          "fix": "would have thought",
+          "explanation": "Після *would have* — третя форма: *would have thought*."
+        }
+      ]
+    },
+    {
+      "id": "nominal-relative",
+      "title": "Номінативні й складні відносні підрядні",
+      "titleEn": "Nominal and complex relative clauses",
+      "summary": "what, whoever, whereby, in which case, by which time, the extent to which.",
+      "theory": {
+        "intro": "Номінативні підрядні (*what you said, whoever wins*) виконують роль іменника. Складні відносні звороти (*whereby, in which case*) роблять текст стислим і формальним.",
+        "blocks": [
+          {
+            "title": "what, whoever, whatever",
+            "text": "*what* = «те, що» (не після іменника!); *whoever* = «той, хто; будь-хто, хто»; *whatever / whichever* = «будь-що / будь-який».",
+            "examples": [
+              ["What you said made sense.", "Те, що ти сказав, мало сенс."],
+              ["Whoever broke the window should own up.", "Хто б не розбив вікно, хай зізнається."]
+            ]
+          },
+          {
+            "title": "whereby, in which case, by which time, at which point",
+            "text": "*whereby* — «за яким, згідно з яким»; *in which case* — «у такому разі»; *by which time* — «а на той час»; *at which point* — «і тоді».",
+            "examples": [
+              ["They introduced a scheme whereby staff can work flexible hours.", "Запровадили систему, за якою працівники можуть мати гнучкий графік."],
+              ["It may rain, in which case we’ll stay in.", "Може піти дощ, і тоді ми лишимося вдома."]
+            ]
+          },
+          {
+            "title": "the extent to which, of which",
+            "text": "Прийменник перед *which*: *the extent / degree to which*, *the speed at which*. Кількісні й означальні звороти: *the most valuable of which*, *the price of which*.",
+            "examples": [
+              ["It’s unclear to what extent the rules will help.", "Незрозуміло, якою мірою правила допоможуть."],
+              ["He owns twenty paintings, the most valuable of which is a Rembrandt.", "Він має двадцять картин, найцінніша з яких — Рембрандт."]
+            ]
+          }
+        ],
+        "traps": [
+          "Після іменника — *which / that*, а не *what*; без іменника — *what*: *I didn’t understand what he said*.",
+          "*Whoever* — підмет (*whoever wins*); *whomever* — офіційний додатковий варіант, нині рідкісний.",
+          "*the extent to which*: прийменник *to* не губіть.",
+          "Прийменник переходить на початок: *a question to which there is no answer*, а не *to that*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "They introduced a system ___ employees can work from home two days a week.",
+          "options": ["whereby", "whereas", "wherever"],
+          "answer": 0,
+          "explanation": "*Whereby* — «за якою, згідно з якою». *Whereas* означає протиставлення."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "The train may be late, ___ case we’ll take a taxi.",
+          "options": ["in which", "in what", "on which"],
+          "answer": 0,
+          "explanation": "Усталений зворот *in which case* — «у такому разі»."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "___ broke the window should own up.",
+          "options": ["Whoever", "Who", "Whomever"],
+          "answer": 0,
+          "explanation": "*Whoever* = «той, хто»; підрядне є підметом речення. *Whomever* — форма додатка."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "It’s hard to say to what ___ the new rules will help.",
+          "options": ["extent", "degree of", "measure"],
+          "answer": 0,
+          "explanation": "Усталений зворот *to what extent* — «якою мірою»."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "She showed me ___ she had written.",
+          "options": ["what", "which", "that"],
+          "answer": 0,
+          "explanation": "Без попереднього іменника «те, що» — *what*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "The museum owns twenty paintings, the most valuable ___ which is by Rembrandt.",
+          "answers": ["of"],
+          "explanation": "*the most valuable of which* — «найцінніша з яких»."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "We arrived at 10 p.m., by ___ time the restaurant had closed.",
+          "answers": ["which"],
+          "explanation": "*by which time* — «а на той час»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "You can invite ___ you like — it’s your party.",
+          "answers": ["whoever", "whomever", "anyone"],
+          "explanation": "«Кого завгодно» — *whoever* (у дуже офіційному стилі *whomever*) або *anyone*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "I didn’t understand [[which]] he [[was saying]], so I [[asked]] him to repeat it.",
+          "answer": 0,
+          "fix": "what",
+          "explanation": "Перед підрядним немає іменника, тож «те, що» — *what*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "This is a question [[to]] [[that]] there is [[no]] simple answer.",
+          "answer": 1,
+          "fix": "which",
+          "explanation": "Після прийменника *that* не вживається: *a question to which there is no simple answer*."
+        }
+      ]
+    },
+    {
+      "id": "concord",
+      "title": "Узгодження підмета з присудком",
+      "titleEn": "Subject–verb agreement",
+      "summary": "neither… nor, a number of і the number of, збірні іменники, news і mathematics.",
+      "theory": {
+        "intro": "Узгодження в англійській часто залежить не від форми слова, а від того, як мовець сприймає підмет: як одне ціле чи як сукупність окремих одиниць.",
+        "blocks": [
+          {
+            "title": "each, every, either, neither",
+            "text": "*each, every, everyone, nobody, either, neither* (як займенники) — з дієсловом в однині.",
+            "examples": [
+              ["Each of the candidates has ten minutes.", "Кожен кандидат має десять хвилин."],
+              ["Everyone has been told.", "Усім повідомили."]
+            ]
+          },
+          {
+            "title": "either … or / neither … nor",
+            "text": "Дієслово узгоджується з ближчим підметом.",
+            "examples": [
+              ["Neither the manager nor the employees were aware.", "Ні менеджер, ні працівники не знали."]
+            ]
+          },
+          {
+            "title": "a number of і the number of",
+            "text": "*a number of* («чимало») + множина; *the number of* («кількість») + однина.",
+            "examples": [
+              ["A number of students have complained.", "Чимало студентів поскаржилися."],
+              ["The number of tourists has risen.", "Кількість туристів зросла."]
+            ]
+          },
+          {
+            "title": "Збірні іменники, «множинні» однини, міри",
+            "text": "*team, family, government, staff*: в американській — переважно однина, у британській часто множина. *police, people* — завжди множина. *news, mathematics, physics, economics* (дисципліна) — однина. Сума чи відстань як одне ціле — однина. *More than one* + однина.",
+            "examples": [
+              ["The police are investigating.", "Поліція розслідує."],
+              ["Ten miles is a long way.", "Десять миль — це далеко."],
+              ["More than one passenger was injured.", "Постраждало більше ніж один пасажир."]
+            ]
+          }
+        ],
+        "traps": [
+          "*The police is* — помилка: *police* завжди вживається з дієсловом у множині.",
+          "*Everyone have* — помилка: *Everyone has*.",
+          "*A number of people is* — помилка: *A number of people are*.",
+          "Українське «більше ніж один» підштовхує до множини, але *More than one student was absent*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Neither the manager nor the employees ___ aware of the problem.",
+          "options": ["were", "was", "is"],
+          "answer": 0,
+          "explanation": "З *neither … nor* дієслово узгоджується з ближчим підметом — *the employees* (множина): *were*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "A number of students ___ complained about the noise.",
+          "options": ["have", "has", "is"],
+          "answer": 0,
+          "explanation": "*A number of* = «чимало», тож множина: *have complained*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "The number of tourists ___ risen sharply.",
+          "options": ["has", "have", "are"],
+          "answer": 0,
+          "explanation": "*The number of* = «кількість» — підмет в однині: *has risen*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Mathematics ___ my favorite subject at school.",
+          "options": ["was", "were", "are"],
+          "answer": 0,
+          "explanation": "Назви дисциплін на *-ics* (*mathematics, physics*) уживаються з дієсловом в однині."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "The police ___ investigating the incident.",
+          "options": ["are", "is", "has"],
+          "answer": 0,
+          "explanation": "*Police* — іменник множини: *The police are investigating*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть потрібну форму be (одне слово).",
+          "prompt": "Ten miles ___ too far to walk in these shoes.",
+          "answers": ["is"],
+          "explanation": "Відстань сприймається як одне ціле — дієслово в однині: *Ten miles is too far*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "Each of the candidates ___ (have) ten minutes to speak.",
+          "answers": ["has"],
+          "explanation": "*Each of* + множина, але дієслово узгоджується з *each* — однина: *has*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть потрібну форму be (одне слово).",
+          "prompt": "Either the twins or their father ___ going to pick you up.",
+          "answers": ["is"],
+          "explanation": "З *either … or* узгоджуємо з ближчим підметом — *their father*: *is*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "Everyone in the office [[have]] [[been]] told [[about]] the changes.",
+          "answer": 0,
+          "fix": "has",
+          "explanation": "*Everyone* граматично однина: *Everyone has been told*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "More than one passenger [[were]] [[injured]] [[in]] the accident.",
+          "answer": 0,
+          "fix": "was",
+          "explanation": "*More than one* + іменник в однині вимагає дієслова в однині: *was injured*."
+        }
+      ]
+    },
+    {
+      "id": "absolute-constructions",
+      "title": "Абсолютні звороти",
+      "titleEn": "Absolute constructions",
+      "summary": "Weather permitting…, The work finished…, With prices rising…, It being a holiday…",
+      "theory": {
+        "intro": "Абсолютний зворот має власний підмет, відмінний від підмета речення, тож не стає «висячим». Він типовий для писемного стилю й часто передає час, причину чи умову.",
+        "blocks": [
+          {
+            "title": "Іменник + дієприкметник",
+            "text": "*The work finished, they went home*; *There being no questions, the meeting closed*; *It being a holiday, the shops were shut*.",
+            "examples": [
+              ["The work finished, they went out to celebrate.", "Коли роботу завершили, вони пішли святкувати."],
+              ["There being no questions, the meeting was closed.", "Оскільки запитань не було, засідання закрили."]
+            ]
+          },
+          {
+            "title": "with + іменник + -ing / V3",
+            "text": "Супутні обставини або причина.",
+            "examples": [
+              ["With prices rising, many families are cutting back.", "Через зростання цін багато родин заощаджують."]
+            ]
+          },
+          {
+            "title": "Усталені вирази",
+            "text": "*Weather permitting, All things considered, Generally speaking, Judging by, Given that, Considering*.",
+            "examples": [
+              ["Weather permitting, we’ll eat outside.", "Якщо дозволить погода, поїмо надворі."],
+              ["All things considered, it was a good year.", "Зваживши все, це був добрий рік."]
+            ]
+          }
+        ],
+        "traps": [
+          "*Weather permits, we’ll…* — помилка: усталений зворот — *Weather permitting*.",
+          "*Being a holiday, the shops were closed* — «висячий» зворот (магазини не є святом); правильно *It being a holiday…*",
+          "У звороті з *with* — *with* + іменник + *-ing*: *with prices rising*.",
+          "Абсолютні звороти звучать книжно; у розмові частіше вживають підрядні речення."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "___, the picnic will take place on Saturday.",
+          "options": ["Weather permitting", "Weather permits", "Permitting weather"],
+          "answer": 0,
+          "explanation": "Усталений абсолютний зворот — *Weather permitting* («якщо дозволить погода»)."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "The work ___, they went out to celebrate.",
+          "options": ["finished", "finishing", "was finished"],
+          "answer": 0,
+          "explanation": "Абсолютний зворот із пасивним значенням: *The work finished* = *When the work was finished*. *Was finished* утворило б окреме речення без сполучника."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "With prices ___ every month, many families are cutting back.",
+          "options": ["rising", "rise", "risen"],
+          "answer": 0,
+          "explanation": "*With* + іменник + *-ing* — супутня обставина в процесі: *with prices rising*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "___ by his accent, he must be from Scotland.",
+          "options": ["Judging", "Judged", "Having judged"],
+          "answer": 0,
+          "explanation": "Усталений зворот *Judging by* — «судячи з»."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "There ___ no more questions, the meeting was closed.",
+          "options": ["being", "been", "was"],
+          "answer": 0,
+          "explanation": "Абсолютний зворот із *there*: *There being no more questions* — «оскільки більше запитань не було»."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "All things ___, it was a successful year.",
+          "answers": ["considered"],
+          "explanation": "Усталений вираз *All things considered* — «зваживши все»."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "Her voice ___ (tremble), she began to read the letter.",
+          "answers": ["trembling"],
+          "explanation": "Абсолютний зворот із власним підметом (*her voice*) і дієприкметником на *-ing*: *Her voice trembling*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "___ that he had no experience, he did remarkably well.",
+          "answers": ["given", "considering"],
+          "explanation": "*Given that / Considering that* — «зважаючи на те, що»."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[Weather permits]], we [[will]] have dinner [[on]] the terrace.",
+          "answer": 0,
+          "fix": "Weather permitting",
+          "explanation": "Абсолютний зворот будується з дієприкметником: *Weather permitting*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[Being]] a holiday, [[the shops]] [[were]] closed.",
+          "answer": 0,
+          "fix": "It being",
+          "explanation": "Без власного підмета зворот «висить»: виходить, що магазини — це свято. Правильно: *It being a holiday, the shops were closed*."
+        }
+      ]
+    },
+    {
+      "id": "nominalisation",
+      "title": "Номіналізація та формальний стиль",
+      "titleEn": "Nominalization and formal register",
+      "summary": "decide → decision, increase in, solution to, owing to.",
+      "theory": {
+        "intro": "В академічному й діловому стилі дії часто передають іменниками: *the decision* замість *they decided*. Текст стає щільнішим і безособовим. Важливо знати віддієслівні іменники та прийменники, що з ними поєднуються.",
+        "blocks": [
+          {
+            "title": "Дієслово → іменник",
+            "text": "*decide → decision, fail → failure, refuse → refusal, arrive → arrival, analyze → analysis, construct → construction, important → importance*.",
+            "examples": [
+              ["Because prices rose, sales fell. → Owing to the rise in prices, sales fell.", "Через зростання цін продажі впали."],
+              ["The committee decided… → The committee’s decision…", "Комісія вирішила… → Рішення комісії…"]
+            ]
+          },
+          {
+            "title": "Іменник + прийменник",
+            "text": "*increase / decrease / rise in*, *demand for*, *solution to*, *effect on*, *reason for*, *access to*, *approach to*.",
+            "examples": [
+              ["There was a sharp increase in applications.", "Кількість заявок різко зросла."],
+              ["We need a solution to this problem.", "Нам потрібне розв’язання цієї проблеми."]
+            ]
+          },
+          {
+            "title": "Прийменникові сполучники",
+            "text": "Номіналізація потребує прийменників, а не сполучників: *owing to / due to / because of* + іменник.",
+            "examples": [
+              ["Owing to the delay, the meeting was postponed.", "Через затримку засідання перенесли."]
+            ]
+          }
+        ],
+        "traps": [
+          "*Because* + іменник — помилка: *because of the delay* або *owing to the delay*.",
+          "Не плутайте прийменники: *increase in prices* (у чому), *increase of 10 %* (на скільки).",
+          "*solution to*, а не *solution of*, коли йдеться про проблему.",
+          "Надмірна номіналізація робить текст важким: зберігайте баланс між іменниками й дієсловами."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "There has been a sharp increase ___ the number of applications.",
+          "options": ["in", "of", "at"],
+          "answer": 0,
+          "explanation": "Зростання чогось — *increase in*. *Increase of* вживають із величиною: *an increase of 10 %*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "The ___ of the bridge took four years.",
+          "options": ["construction", "constructing of", "construct"],
+          "answer": 0,
+          "explanation": "Віддієслівний іменник від *construct* — *construction*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Her ___ to accept the offer surprised everyone.",
+          "options": ["refusal", "refusing", "refuse"],
+          "answer": 0,
+          "explanation": "Іменник від *refuse* — *refusal*; після присвійного займенника потрібен іменник."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Researchers are looking for a solution ___ the problem.",
+          "options": ["to", "for", "of"],
+          "answer": 0,
+          "explanation": "Нормативна сполука — *a solution to a problem*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "___ the delay, the meeting was postponed.",
+          "options": ["Owing to", "Because", "Since"],
+          "answer": 0,
+          "explanation": "Перед іменником потрібен прийменник: *Owing to the delay*. *Because* і *since* вводять речення."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "The ___ (fail) of the project was due to poor planning.",
+          "answers": ["failure"],
+          "explanation": "Іменник від *fail* — *failure*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть прийменник.",
+          "prompt": "The new law will have a significant effect ___ small businesses.",
+          "answers": ["on"],
+          "explanation": "*effect on* — «вплив на»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть прийменник.",
+          "prompt": "There is a growing demand ___ affordable housing.",
+          "answers": ["for"],
+          "explanation": "*demand for* — «попит на»."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "The [[analyze]] of the data [[revealed]] [[several]] unexpected trends.",
+          "answer": 0,
+          "fix": "analysis",
+          "explanation": "Після артикля потрібен іменник: *analyze → analysis*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "Because [[of]] [[prices rose]], sales [[fell]].",
+          "answer": 1,
+          "fix": "the rise in prices",
+          "explanation": "Після *because of* потрібна іменникова група: *Because of the rise in prices, sales fell* (або *Because prices rose…*)."
+        }
+      ]
+    },
+    {
+      "id": "ellipsis",
+      "title": "Еліпсис і заміщення: просунутий рівень",
+      "titleEn": "Advanced ellipsis and substitution",
+      "summary": "I’d love to, do so, that of / those of, than does, when in doubt.",
+      "theory": {
+        "intro": "Вправний мовець уникає повторів: опускає відоме, замінює іменник на *that / those*, дієслівну групу — на *do so* або обірване *to*.",
+        "blocks": [
+          {
+            "title": "Обірване to",
+            "text": "Після *want, love, try, have, would like* і под. можна залишити саме *to*, але не опускати його.",
+            "examples": [
+              ["Would you like to come? — I’d love to.", "Хочеш прийти? — Залюбки."],
+              ["You don’t have to if you don’t want to.", "Можеш не робити цього, якщо не хочеш."]
+            ]
+          },
+          {
+            "title": "that of / those of",
+            "text": "У порівняннях замінюють іменник, щоб зіставляти однорідне.",
+            "examples": [
+              ["The climate of the coast is milder than that of the mountains.", "Клімат узбережжя м’якший, ніж у горах."],
+              ["Salaries here are higher than those in education.", "Зарплати тут вищі, ніж в освіті."]
+            ]
+          },
+          {
+            "title": "do so і допоміжні дієслова",
+            "text": "*do so* — формальна заміна дієслівної групи; *than / as* + допоміжне дієслово.",
+            "examples": [
+              ["He was asked to resign, and he did so the next day.", "Його попросили піти у відставку, і він зробив це наступного дня."],
+              ["She speaks French better than her brother does.", "Вона говорить французькою краще, ніж її брат."]
+            ]
+          },
+          {
+            "title": "Скорочені підрядні",
+            "text": "*if necessary, if possible, when in doubt, while abroad, once inside*.",
+            "examples": [
+              ["When in doubt, ask.", "Якщо сумніваєшся, запитай."]
+            ]
+          }
+        ],
+        "traps": [
+          "*I’d love.* — неповна відповідь; правильно *I’d love to*.",
+          "Порівнюйте однорідне: *The population of Kyiv is larger than that of Lviv*, а не *than Lviv* (в офіційному тексті).",
+          "*those* — для множини: *higher than those in education*.",
+          "*the one of* не замінює *that of*: *larger than that of Paris*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Would you like to join us? — I’d love ___.",
+          "options": ["to", "it", "so"],
+          "answer": 0,
+          "explanation": "Обірване *to* заміщує всю дієслівну групу: *I’d love to (join you)*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "The climate of the coast is milder than ___ of the mountains.",
+          "options": ["that", "this", "those"],
+          "answer": 0,
+          "explanation": "*That of* заміщує іменник в однині (*the climate*), щоб порівнювати однорідне."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "The salaries in this sector are higher than ___ in education.",
+          "options": ["those", "that", "them"],
+          "answer": 0,
+          "explanation": "Іменник у множині (*salaries*) заміщує *those*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "He was asked to resign, and he did ___ the following day.",
+          "options": ["so", "it so", "such"],
+          "answer": 0,
+          "explanation": "Формальне заміщення дієслівної групи — *did so*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "When ___ doubt, ask your supervisor.",
+          "options": ["in", "at", "on"],
+          "answer": 0,
+          "explanation": "Скорочене підрядне *when in doubt* — «у разі сумніву»."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "Bring extra water, if ___.",
+          "answers": ["necessary", "possible", "needed"],
+          "explanation": "Скорочені підрядні: *if necessary / if possible / if needed*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "You don’t have to come if you don’t want ___.",
+          "answers": ["to"],
+          "explanation": "Обірване *to* наприкінці речення: *if you don’t want to*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "task": "Впишіть одне слово.",
+          "prompt": "She speaks French much better than her brother ___.",
+          "answers": ["does"],
+          "explanation": "Допоміжне *does* заміщує *speaks French*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "Would you like to come? — I’d [[love]], but I [[have]] [[an]] exam.",
+          "answer": 0,
+          "fix": "love to",
+          "explanation": "Після *would love* дієслівна група опускається, але *to* лишається: *I’d love to*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "The population of Tokyo is larger than [[the one]] [[of]] [[Paris]].",
+          "answer": 0,
+          "fix": "that",
+          "explanation": "Іменник в однині (*the population*) у порівнянні заміщуємо через *that of*: *larger than that of Paris*. Зворот *the one of* тут не вживається."
+        }
+      ]
+    }
+  ]
+}
