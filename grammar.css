@@ -1,0 +1,328 @@
+/* ==========================================================================
+   Довідник граматики (grammar.html)
+   Картки тем перевикористовують .gr-topic-* і .gr-pill із service-page.css.
+   ========================================================================== */
+
+.grammar-index-page [hidden] {
+  display: none !important;
+}
+
+.gx-search,
+.gx-toc,
+.gx-results,
+.gx-empty {
+  max-width: 52rem;
+}
+
+/* Панель пошуку */
+.gx-search {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.gx-field {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.gx-field > label,
+.gx-field > legend {
+  padding: 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.gx-field input[type="search"] {
+  width: 100%;
+  min-width: 0;
+  min-height: 3rem;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-field-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--fs-md);
+}
+
+.gx-field input[type="search"]:focus {
+  border-color: var(--color-accent);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+.gx-levels legend {
+  margin-bottom: var(--space-2);
+}
+
+.gx-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.gx-chip {
+  position: relative;
+  cursor: pointer;
+}
+
+.gx-chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gx-chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  min-width: 2.75rem;
+  justify-content: center;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  transition: border-color var(--duration) var(--ease), background-color var(--duration) var(--ease);
+}
+
+.gx-chip:hover span {
+  border-color: var(--color-accent);
+}
+
+.gx-chip input:checked + span {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.gx-chip input:focus-visible + span {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.gx-try {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--fs-sm);
+}
+
+.gx-try-label {
+  color: var(--color-text-muted);
+}
+
+.gx-try-btn {
+  padding: 0.25rem var(--space-3);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: none;
+  color: var(--color-accent-strong);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+
+.gx-try-btn:hover {
+  border-style: solid;
+  border-color: var(--color-accent);
+}
+
+.gx-try-btn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.gx-search-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+}
+
+.gx-count,
+.gx-progress-note {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.gx-progress-note {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-weight: 500;
+}
+
+/* Зміст розділів */
+.gx-toc {
+  margin-bottom: var(--space-10);
+}
+
+.gx-toc-title {
+  margin-bottom: var(--space-3);
+  font-size: var(--fs-lg);
+}
+
+.gx-toc-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gx-toc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.375rem var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+}
+
+.gx-toc-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.gx-toc-link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.gx-toc-count {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+/* Розділи */
+.gx-section {
+  scroll-margin-top: calc(var(--header-h) + var(--space-4));
+}
+
+.gx-section + .gx-section {
+  margin-top: var(--space-10);
+}
+
+.gx-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.gx-section-title {
+  margin: 0;
+  font-size: var(--fs-xl);
+}
+
+.gx-route {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.gx-route--inline {
+  padding: 0 0.45rem;
+  font-size: var(--fs-xs);
+}
+
+.gx-section-intro {
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* Картки */
+.gx-card {
+  align-items: center;
+}
+
+.gx-level {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-soft);
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--color-accent-strong);
+}
+
+.gx-topic[data-level^="c"] .gx-level {
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.gx-pill-slot:empty {
+  display: none;
+}
+
+@media (max-width: 30em) {
+  .gx-card {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .gx-card .gr-topic-body {
+    flex-basis: calc(100% - 3.5rem);
+  }
+
+  .gx-pill-slot {
+    margin-left: 3.5rem;
+  }
+}
+
+/* Порожній результат */
+.gx-empty {
+  padding: var(--space-6);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+}
+
+.gx-empty-title {
+  margin-bottom: var(--space-2);
+  font-size: var(--fs-lg);
+}
+
+.gx-empty p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.grammar-index-page .svc-section {
+  max-width: 52rem;
+  margin-top: var(--space-16);
+}
