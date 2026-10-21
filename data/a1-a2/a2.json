@@ -1,0 +1,1708 @@
+{
+  "level": "A2",
+  "title": "Лексика й граматика рівня A2",
+  "description": "Слова й конструкції, з якими можна розповісти про минуле, плани й досвід: подорожі й *Past Simple*, випадки й *Past Continuous*, порівняння, *going to* і *will*, *Present Perfect*, здоров’я й модальні дієслова, кількісні слова, прикметники й прислівники, дієслова з *-ing* і *to*, колокації з *make, do, have, take*.",
+  "topics": [
+    {
+      "id": "travel-past",
+      "title": "Подорожі: Past Simple",
+      "titleEn": "Travel: Past Simple",
+      "summary": "Поїздки й відпустка; правильні й неправильні дієслова, *did / didn’t*, *was / were*, *ago*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Розповідь про поїздку — природний контекст для *Past Simple*: дії завершилися, і ми знаємо, коли саме (*last summer, two days ago*).",
+        "blocks": [
+          {
+            "title": "Слова: подорожі",
+            "text": "*a trip* (поїздка), *a vacation* (відпустка; британською *a holiday*), *a flight* (рейс), *a ticket, a passport, a suitcase, luggage* (багаж, незлічуване), *book a hotel room* (забронювати номер), *pack* (пакувати речі), *arrive* (прибувати), *leave* (від’їжджати), *go sightseeing* (оглядати пам’ятки), *take photos*.",
+            "examples": [
+              [
+                "We booked a hotel near the beach.",
+                "Ми забронювали готель біля пляжу."
+              ],
+              [
+                "Our flight left at six in the morning.",
+                "Наш рейс вилетів о шостій ранку."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: Past Simple",
+            "text": "Правильні дієслова отримують *-ed*: *visit — visited*; *stop — stopped* (подвоєння), *study — studied*, *arrive — arrived*. Неправильні мають власну форму: *go — went, fly — flew, take — took, buy — bought, see — saw, have — had, leave — left, eat — ate*. Заперечення й запитання — з *did*, а основне дієслово повертається до початкової форми: *We didn’t see. Did you go?*",
+            "examples": [
+              [
+                "We flew to Barcelona and stayed there for a week.",
+                "Ми полетіли до Барселони й пробули там тиждень."
+              ],
+              [
+                "Did you take a lot of photos? — Yes, we did.",
+                "Ви багато фотографували? — Так."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: was / were і ago",
+            "text": "Минулий час від *to be*: *I / he / she / it was*, *we / you / they were*. *Ago* ставимо після проміжку часу: *two years ago* — «два роки тому».",
+            "examples": [
+              [
+                "The hotel was clean, but the rooms were small.",
+                "Готель був чистий, але номери малі."
+              ],
+              [
+                "I was in Rome three years ago.",
+                "Я був у Римі три роки тому."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Після *did* і *didn’t* — початкова форма: *Did you go?*, а не *Did you went?*",
+          "«Два роки тому» — *two years ago*, а не *before two years*.",
+          "*Arrive in* — у місто чи країну (*arrive in Paris*), *arrive at* — у конкретне місце (*arrive at the airport*). *Arrive to* — помилка.",
+          "*Luggage* незлічуване: *How much luggage…?*, *a piece of luggage*, але не *luggages*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "We ___ to Spain last summer.",
+          "options": [
+            "went",
+            "go",
+            "have gone"
+          ],
+          "answer": 0,
+          "explanation": "*Last summer* — завершений період у минулому, тому *Past Simple*: *went*. *Present Perfect* із такими маркерами не вживається."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Did you ___ a good time in Rome?",
+          "options": [
+            "have",
+            "had",
+            "has"
+          ],
+          "answer": 0,
+          "explanation": "Після *did* дієслово в початковій формі: *Did you have…?*"
+        },
+        {
+          "id": "3",
+          "type": "error",
+          "prompt": "[[Did]] [[you]] [[saw]] [[the old castle]]?",
+          "answer": 2,
+          "fix": "see",
+          "explanation": "Минулий час уже виражено словом *did*, тому основне дієслово — у початковій формі: *Did you see…?*"
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "We arrived ___ the airport at midnight.",
+          "options": [
+            "at",
+            "to",
+            "in"
+          ],
+          "answer": 0,
+          "explanation": "Прибуваємо в конкретне місце — *arrive at*. *Arrive to* в англійській неможливе."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "You need a ___ to travel to another country, and it has your photo and name in it.",
+          "options": [
+            "passport",
+            "ticket",
+            "suitcase"
+          ],
+          "answer": 0,
+          "explanation": "Документ із фото й ім’ям, потрібний для виїзду за кордон, — *passport*."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "How much ___ do you have? — Just one suitcase.",
+          "options": [
+            "luggage",
+            "luggages",
+            "baggages"
+          ],
+          "answer": 0,
+          "explanation": "*Luggage* незлічуване й не має множини; на це вказує й запитання *How much*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I ___ (not / sleep) well on the plane.",
+          "answers": [
+            "didn't sleep",
+            "did not sleep"
+          ],
+          "explanation": "Заперечення в *Past Simple*: *didn’t* + початкова форма: *didn’t sleep*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "We ___ (stop) at a small café on the way.",
+          "answers": [
+            "stopped"
+          ],
+          "explanation": "*Stop* закінчується на «голосний + приголосний» в наголошеному складі, тому *p* подвоюється: *stopped*."
+        },
+        {
+          "id": "9",
+          "type": "input",
+          "prompt": "My parents ___ (buy) a new suitcase for the trip.",
+          "answers": [
+            "bought"
+          ],
+          "explanation": "*Buy* — неправильне дієслово: *buy — bought — bought*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[We]] [[visited]] [[Paris]] [[before two years]].",
+          "answer": 3,
+          "fix": "two years ago",
+          "explanation": "«Два роки тому» — *two years ago*: слово *ago* стоїть після проміжку часу."
+        }
+      ]
+    },
+    {
+      "id": "what-happened",
+      "title": "Що трапилося: Past Continuous і Past Simple",
+      "titleEn": "What happened: Past Continuous and Past Simple",
+      "summary": "Невеликі пригоди й неприємності; *was / were* + *-ing* як тло, *Past Simple* для події, *when* і *while*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "У розповіді про випадок є тло — що тривало (*I was walking home*), і подія, що його перервала (*when I saw a fox*). Тло — *Past Continuous*, подія — *Past Simple*.",
+        "blocks": [
+          {
+            "title": "Слова: побутові неприємності",
+            "text": "*drop* (упустити), *break — broke* (розбити, зламати), *fall — fell* (упасти), *lose — lost* (загубити), *hurt — hurt* (поранити, забити), *cut — cut* (порізати), *spill* (розлити), *slip* (посковзнутися), *miss the bus* (запізнитися на автобус), *happen* (траплятися).",
+            "examples": [
+              [
+                "I dropped my phone and broke the screen.",
+                "Я впустив телефон і розбив екран."
+              ],
+              [
+                "She slipped on the ice and hurt her arm.",
+                "Вона посковзнулася на льоду й забила руку."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: Past Continuous",
+            "text": "*was / were* + дієслово з *-ing*. Описує дію, що тривала в певний момент минулого: *At eight o’clock I was having dinner*. Запитання: *What were you doing?*",
+            "examples": [
+              [
+                "At nine last night I was watching a movie.",
+                "Учора о дев’ятій вечора я дивився фільм."
+              ],
+              [
+                "They were waiting for the bus.",
+                "Вони чекали на автобус."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: when і while",
+            "text": "Тривала дія — *Past Continuous*, коротка подія, що її перервала, — *Past Simple*. *When* зазвичай вводить коротку подію, *while* — тривалу дію.",
+            "examples": [
+              [
+                "I was cooking when the phone rang.",
+                "Я готував, коли задзвонив телефон."
+              ],
+              [
+                "While we were walking in the park, it started to rain.",
+                "Поки ми гуляли в парку, почався дощ."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Українське «я йшов» може відповідати і *I was walking* (тло), і *I walked* (подія). Питайте себе, чи дія — тло для іншої.",
+          "Дієслова на кшталт *see, know, want* у *Continuous* зазвичай не вживаються: *I saw a friend*, а не *I was seeing a friend*.",
+          "«Що сталося?» — *What happened?*, без *was*: *What was happened?* — помилка.",
+          "*Lose* (загубити) і *loose* (вільний, нещільний) — різні слова."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I ___ dinner when the phone rang.",
+          "options": [
+            "was cooking",
+            "cooked",
+            "am cooking"
+          ],
+          "answer": 0,
+          "explanation": "Приготування вечері тривало й було тлом, а дзвінок його перервав: тло — *Past Continuous*, *was cooking*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "While we ___ in the park, it started to rain.",
+          "options": [
+            "were walking",
+            "was walking",
+            "are walking"
+          ],
+          "answer": 0,
+          "explanation": "*We* у минулому — *were*: *we were walking*. Тривала дія після *while* — *Past Continuous*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "She ___ off her bike and hurt her knee.",
+          "options": [
+            "fell",
+            "was falling",
+            "falls"
+          ],
+          "answer": 0,
+          "explanation": "Падіння — коротка завершена подія, тому *Past Simple*: *fell* (від *fall*)."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "— What ___ you doing at nine last night? — I was watching a movie.",
+          "options": [
+            "were",
+            "did",
+            "was"
+          ],
+          "answer": 0,
+          "explanation": "Запитання про тривалу дію в певний момент минулого — *Past Continuous*: *What were you doing?*"
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Oh no! I ___ my phone, and now the screen is broken.",
+          "options": [
+            "dropped",
+            "lost",
+            "spilled"
+          ],
+          "answer": 0,
+          "explanation": "Екран розбився, бо телефон упустили — *dropped*. Загублений (*lost*) телефон розбитим не побачиш."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "Be careful! The floor is wet and you can ___.",
+          "options": [
+            "slip",
+            "drop",
+            "spill"
+          ],
+          "answer": 0,
+          "explanation": "На мокрій підлозі можна посковзнутися — *slip*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I ___ (lose) my keys yesterday.",
+          "answers": [
+            "lost"
+          ],
+          "explanation": "*Lose* — неправильне дієслово: *lose — lost — lost*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "When I saw him, he ___ (wait) for the bus.",
+          "answers": [
+            "was waiting"
+          ],
+          "explanation": "Він уже чекав, коли я його побачив: тривала дія-тло — *was waiting*."
+        },
+        {
+          "id": "9",
+          "type": "input",
+          "prompt": "What ___ (happen) at the party last night?",
+          "answers": [
+            "happened"
+          ],
+          "explanation": "*Last night* — минулий час: *What happened?* Пасив тут неможливий: не *was happened*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[I]] [[was reading]] [[when]] [[my brother was coming]] home.",
+          "answer": 3,
+          "fix": "my brother came",
+          "explanation": "Повернення брата — коротка подія, що перервала читання, тому *Past Simple*: *my brother came home*."
+        }
+      ]
+    },
+    {
+      "id": "places-comparing",
+      "title": "Міста й місця: ступені порівняння",
+      "titleEn": "Places: comparatives and superlatives",
+      "summary": "Прикметники для опису місць; *-er / -est*, *more / most*, *than*, *as … as*, неправильні форми.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Порівнюючи міста, квартири чи ресторани, ми кажемо «більший, ніж…», «найкращий у місті». Для цього англійська має дві моделі: *-er / -est* і *more / most*.",
+        "blocks": [
+          {
+            "title": "Слова: які бувають місця",
+            "text": "*crowded* (людний), *quiet* (тихий), *noisy* (гучний), *busy* (жвавий), *clean, dirty*, *expensive* (дорогий), *cheap* (дешевий), *modern, old*, *safe, dangerous*, *beautiful, interesting*.",
+            "examples": [
+              [
+                "The city center is busy and noisy.",
+                "Центр міста жвавий і гучний."
+              ],
+              [
+                "Our neighborhood is quiet and safe.",
+                "Наш район тихий і безпечний."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: -er / -est і more / most",
+            "text": "Односкладові прикметники: *cheap — cheaper — the cheapest*; подвоєння: *big — bigger*; *-y* → *-ier*: *busy — busier — the busiest*. Довші: *expensive — more expensive — the most expensive*. Неправильні: *good — better — the best*, *bad — worse — the worst*, *far — farther — the farthest*. Після вищого ступеня — *than*; перед найвищим — *the*.",
+            "examples": [
+              [
+                "The subway is faster than the bus.",
+                "Метро швидше за автобус."
+              ],
+              [
+                "This is the most beautiful park in the city.",
+                "Це найгарніший парк у місті."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: as … as",
+            "text": "Рівність — *as* + прикметник + *as*; нерівність — *not as … as*. Прикметник тут у звичайній формі.",
+            "examples": [
+              [
+                "Our town is not as crowded as the capital.",
+                "Наше містечко не таке людне, як столиця."
+              ],
+              [
+                "The new museum is as interesting as the old one.",
+                "Новий музей такий самий цікавий, як і старий."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Не поєднуйте дві форми: *cheaper* або *more expensive*, але не *more cheaper*.",
+          "«Ніж» — *than*, а не *that* чи *then*.",
+          "«Найкращий у світі / у місті» — *in the world / in the city*, а не *of the world*.",
+          "*Bad — worse — the worst*: форми *badder* не існує."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "The capital is ___ than our town.",
+          "options": [
+            "bigger",
+            "more big",
+            "biger"
+          ],
+          "answer": 0,
+          "explanation": "*Big* — односкладовий, тому *-er*; приголосний після короткого голосного подвоюється: *bigger*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "This is the ___ restaurant in town. Everything is delicious.",
+          "options": [
+            "best",
+            "better",
+            "most good"
+          ],
+          "answer": 0,
+          "explanation": "Найвищий ступінь від *good* — неправильний: *the best*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Is the subway ___ than the bus?",
+          "options": [
+            "faster",
+            "more fast",
+            "fastest"
+          ],
+          "answer": 0,
+          "explanation": "Порівнюємо два види транспорту, після прикметника — *than*, тому вищий ступінь: *faster*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Our street is not as ___ as the city center.",
+          "options": [
+            "busy",
+            "busier",
+            "busiest"
+          ],
+          "answer": 0,
+          "explanation": "У конструкції *as … as* прикметник стоїть у звичайній формі: *not as busy as*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "There are too many people here. It’s very ___.",
+          "options": [
+            "crowded",
+            "quiet",
+            "empty"
+          ],
+          "answer": 0,
+          "explanation": "Забагато людей — отже, людно: *crowded*. *Quiet* — тихо, *empty* — порожньо."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "This hotel is very ___ — only twenty dollars a night!",
+          "options": [
+            "cheap",
+            "expensive",
+            "dirty"
+          ],
+          "answer": 0,
+          "explanation": "Двадцять доларів за ніч — це дешево, *cheap*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "This is the ___ (beautiful) park in the city.",
+          "answers": [
+            "most beautiful"
+          ],
+          "explanation": "*Beautiful* — довгий прикметник, тому найвищий ступінь — *the most beautiful*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "My new apartment is ___ (far) from work than my old one.",
+          "answers": [
+            "farther",
+            "further"
+          ],
+          "explanation": "*Far* має неправильні форми: *farther* або *further*; про відстань обидві правильні."
+        },
+        {
+          "id": "9",
+          "type": "input",
+          "prompt": "Today the weather is ___ (bad) than yesterday.",
+          "answers": [
+            "worse"
+          ],
+          "explanation": "Вищий ступінь від *bad* — *worse*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[This museum]] [[is]] [[more interesting]] [[that the old one]].",
+          "answer": 3,
+          "fix": "than the old one",
+          "explanation": "Після вищого ступеня вживаємо *than*: *more interesting than*."
+        }
+      ]
+    },
+    {
+      "id": "plans",
+      "title": "Плани й прогнози: be going to і will",
+      "titleEn": "Plans and predictions: be going to and will",
+      "summary": "Свята й особисті плани; *be going to* для намірів і прогнозів за ознаками, *will* для рішень у момент мовлення, обіцянок і припущень.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Українське «буду» передає англійською кілька різних форм. *Be going to* — те, що ми вже вирішили, або те, що от-от станеться; *will* — рішення «тут і зараз», обіцянки, пропозиції допомоги й думки про майбутнє.",
+        "blocks": [
+          {
+            "title": "Слова: свята й плани",
+            "text": "*celebrate* (святкувати), *have a party* (влаштувати вечірку), *invite* (запрошувати), *a birthday, a wedding* (весілля), *get married* (одружитися), *visit relatives* (провідати родичів), *stay home* (залишитися вдома), *go on vacation* (поїхати у відпустку).",
+            "examples": [
+              [
+                "We’re going to celebrate Mom’s birthday on Sunday.",
+                "У неділю ми святкуватимемо мамин день народження."
+              ],
+              [
+                "They’re getting married in June.",
+                "Вони одружуються в червні."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: be going to",
+            "text": "*am / is / are going to* + дієслово. Вживаємо для намірів, які вже маємо (*We’re going to visit Grandma*), і для прогнозів, коли бачимо ознаки (*Look at the clouds! It’s going to rain*).",
+            "examples": [
+              [
+                "I’m going to learn to drive this year.",
+                "Цього року я збираюся навчитися водити."
+              ],
+              [
+                "Be careful! You’re going to fall!",
+                "Обережно! Ти зараз упадеш!"
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: will",
+            "text": "*will* (*’ll*) + дієслово без *to*. Рішення в момент мовлення (*I’ll get it!*), пропозиції й обіцянки (*I’ll help you. I’ll call you tomorrow*), припущення, часто з *I think, probably* (*I think it will be sunny*). Заперечення — *won’t*.",
+            "examples": [
+              [
+                "— I’m hungry. — I’ll make you a sandwich.",
+                "— Я голодний. — Зараз зроблю тобі бутерброд."
+              ],
+              [
+                "I promise I won’t be late.",
+                "Обіцяю, що не запізнюся."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Після *will* немає *to*: *It will be sunny*, а не *It will to be sunny*.",
+          "*Be going to* потребує *to*: *We are going to travel*, а не *We are going travel*.",
+          "Про вже домовлені плани (є квитки, час) часто вживають *Present Continuous*: *We’re flying to Lviv on Friday*.",
+          "«Не думаю, що піде дощ» природніше — *I don’t think it will rain*, ніж *I think it won’t rain*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "— The phone is ringing. — OK, I ___ get it.",
+          "options": [
+            "will",
+            "am going to",
+            "going to"
+          ],
+          "answer": 0,
+          "explanation": "Рішення ухвалено просто зараз, у відповідь на ситуацію, тому *will*: *I’ll get it*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Look at those dark clouds! It ___ rain.",
+          "options": [
+            "is going to",
+            "will to",
+            "going to"
+          ],
+          "answer": 0,
+          "explanation": "Прогноз за явними ознаками (темні хмари) — *is going to*. *Will to* неможливе, а *going to* без *is* — неповна форма."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "We ___ visit my grandparents next weekend. We bought the train tickets yesterday.",
+          "options": [
+            "are going to",
+            "will",
+            "going to"
+          ],
+          "answer": 0,
+          "explanation": "План ухвалено заздалегідь (квитки вже куплено) — *are going to*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I promise I ___ call you tomorrow.",
+          "options": [
+            "will",
+            "am going",
+            "going to"
+          ],
+          "answer": 0,
+          "explanation": "Обіцянка — типовий випадок для *will*: *I promise I’ll call you*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "My sister and her boyfriend are going to get ___ in June.",
+          "options": [
+            "married",
+            "marry",
+            "marriage"
+          ],
+          "answer": 0,
+          "explanation": "«Одружитися» — *get married*: після *get* стоїть дієприкметник *married*."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "We’re going to ___ Dad’s fiftieth birthday at a restaurant.",
+          "options": [
+            "celebrate",
+            "invite",
+            "spend"
+          ],
+          "answer": 0,
+          "explanation": "День народження святкують — *celebrate*. *Invite* — запрошують людей, *spend* — проводять час чи витрачають гроші."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "— It’s cold in here. — Wait, I ___ (close) the window.",
+          "answers": [
+            "will close",
+            "'ll close"
+          ],
+          "explanation": "Рішення в момент мовлення й пропозиція допомоги — *will*: *I’ll close the window*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "Anna ___ (have) a party on Saturday. She invited twenty people.",
+          "answers": [
+            "is going to have",
+            "'s going to have",
+            "is having"
+          ],
+          "explanation": "Подію вже сплановано (гостей запрошено), тому *is going to have* або *Present Continuous*: *is having*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[I think]] [[it will]] [[to be]] [[sunny tomorrow]].",
+          "answer": 2,
+          "fix": "be",
+          "explanation": "Після *will* дієслово стоїть без *to*: *it will be sunny*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[We]] [[are going travel]] [[to the mountains]] [[in July]].",
+          "answer": 1,
+          "fix": "are going to travel",
+          "explanation": "Конструкція — *be going to* + дієслово: без *to* вона неповна."
+        }
+      ]
+    },
+    {
+      "id": "experiences",
+      "title": "Життєвий досвід: Present Perfect",
+      "titleEn": "Life experiences: Present Perfect",
+      "summary": "Досвід і нові враження; *have / has* + третя форма, *ever, never, just, already, yet*, *been* і *gone*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "«Ти колись був у Японії?» — тут неважливо, коли саме, важливий сам досвід. Такі речення англійською будуємо в *Present Perfect*. Щойно називаємо час (*last year*), переходимо до *Past Simple*.",
+        "blocks": [
+          {
+            "title": "Слова: досвід і враження",
+            "text": "*travel abroad* (подорожувати за кордон), *try new food* (куштувати нову їжу), *climb a mountain*, *ride a horse — ridden*, *fly — flown*, *meet — met*, *win a prize — won*, *see — seen*, *eat — eaten*, *be — been*.",
+            "examples": [
+              [
+                "I’ve never ridden a horse.",
+                "Я ніколи не їздив верхи."
+              ],
+              [
+                "She has met a lot of interesting people.",
+                "Вона познайомилася з багатьма цікавими людьми."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: Present Perfect",
+            "text": "*have / has* + третя форма дієслова (*visited, seen, eaten*). Досвід — з *ever* (у запитаннях) і *never*. Щойно — *just*, уже — *already*, ще не / вже? — *yet* (у кінці заперечень і запитань).",
+            "examples": [
+              [
+                "Have you ever tried sushi? — Yes, I have.",
+                "Ти колись куштував суші? — Так."
+              ],
+              [
+                "We’ve just eaten.",
+                "Ми щойно поїли."
+              ],
+              [
+                "I haven’t finished yet.",
+                "Я ще не закінчив."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: been і gone; Present Perfect чи Past Simple",
+            "text": "*He has been to Paris* — був і повернувся; *He has gone to Paris* — поїхав і зараз там. Якщо названо завершений час (*yesterday, last year, in June*), потрібен *Past Simple*.",
+            "examples": [
+              [
+                "I’ve been to London twice.",
+                "Я двічі бував у Лондоні."
+              ],
+              [
+                "I went to London last spring.",
+                "Минулої весни я їздив до Лондона."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "З точним минулим часом — *Past Simple*: *I met him yesterday*, а не *I have met him yesterday*.",
+          "«Бувати десь» — *have been to*, а не *have been in*: *Have you been to Japan?*",
+          "*Yet* стоїть у кінці речення: *I haven’t finished yet*.",
+          "Третю форму неправильних дієслів треба знати напам’ять: *fly — flew — flown*, *ride — rode — ridden*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Have you ever ___ to Japan?",
+          "options": [
+            "been",
+            "gone",
+            "went"
+          ],
+          "answer": 0,
+          "explanation": "Досвід відвідування (побував і повернувся) — *have been to*. *Went* — друга форма, після *have* вона неможлива."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "I ___ a horse. I’d like to try one day.",
+          "options": [
+            "have never ridden",
+            "have ever ridden",
+            "has never ridden"
+          ],
+          "answer": 0,
+          "explanation": "Досвіду немає — *never*; з *I* — *have*: *I have never ridden*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "She ___ that movie last weekend.",
+          "options": [
+            "saw",
+            "has seen",
+            "have seen"
+          ],
+          "answer": 0,
+          "explanation": "*Last weekend* — завершений час, тому *Past Simple*: *saw*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "— Is Tom here? — No, he’s ___ to the store. He’ll be back soon.",
+          "options": [
+            "gone",
+            "been",
+            "go"
+          ],
+          "answer": 0,
+          "explanation": "Том пішов і ще не повернувся — *has gone*. *Has been* означало б, що він уже повернувся."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "I haven’t finished my homework ___.",
+          "options": [
+            "yet",
+            "already",
+            "ever"
+          ],
+          "answer": 0,
+          "explanation": "У запереченні в *Present Perfect* «ще не» — *yet*, у кінці речення."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "My dad has ___ a lot of prizes for his photos.",
+          "options": [
+            "won",
+            "earned",
+            "gained"
+          ],
+          "answer": 0,
+          "explanation": "Призи вигравають: *win a prize*, третя форма — *won*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "We ___ (just / eat), so we aren’t hungry.",
+          "answers": [
+            "have just eaten",
+            "'ve just eaten"
+          ],
+          "explanation": "Щойно завершена дія з результатом зараз — *Present Perfect* з *just*: *have just eaten*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "___ you ever tried Thai food?",
+          "answers": [
+            "Have"
+          ],
+          "explanation": "Запитання про досвід у *Present Perfect* починається з *Have*."
+        },
+        {
+          "id": "9",
+          "type": "input",
+          "prompt": "My grandmother ___ (never / fly) on a plane.",
+          "answers": [
+            "has never flown"
+          ],
+          "explanation": "Третя особа однини — *has*; третя форма від *fly* — *flown*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[I]] [[have met]] [[a famous actor]] [[last year]].",
+          "answer": 1,
+          "fix": "met",
+          "explanation": "*Last year* — завершений час у минулому, тож потрібен *Past Simple*: *I met a famous actor last year*."
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "title": "Здоров’я: should, must, have to",
+      "titleEn": "Health: should, must, have to",
+      "summary": "Самопочуття й хвороби; поради з *should*, обов’язок з *must / have to*, різниця між *mustn’t* і *don’t have to*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "У розмові з лікарем чи другом про самопочуття ми описуємо симптоми й даємо поради: «Тобі слід полежати», «Ти мусиш пити ліки». Тут допомагають модальні дієслова.",
+        "blocks": [
+          {
+            "title": "Слова: самопочуття й хвороби",
+            "text": "*a headache, a stomachache, a toothache* (головний, шлунковий, зубний біль), *a sore throat* (біль у горлі), *a cold* (застуда), *the flu* (грип), *a fever* (температура; британською *a temperature*), *a cough* (кашель), *feel sick* (нудити, погано почуватися), *take medicine* (приймати ліки), *see a doctor*, *stay in bed*.",
+            "examples": [
+              [
+                "I have a headache and a sore throat.",
+                "У мене болить голова й горло."
+              ],
+              [
+                "You should take this medicine twice a day.",
+                "Ці ліки слід приймати двічі на день."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: should",
+            "text": "*should* + дієслово без *to* — порада: «слід, варто». Заперечення — *shouldn’t*.",
+            "examples": [
+              [
+                "You should see a doctor.",
+                "Тобі варто піти до лікаря."
+              ],
+              [
+                "You shouldn’t go to work with the flu.",
+                "З грипом не варто йти на роботу."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: must, have to і їхні заперечення",
+            "text": "*must* — сильний обов’язок, часто з погляду мовця; *have to* (*has to*) — обов’язок через правила чи обставини. Заперечення різні за змістом: *mustn’t* — заборонено; *don’t have to* — не обов’язково.",
+            "examples": [
+              [
+                "I have to take these pills every morning.",
+                "Я мушу щоранку пити ці пігулки."
+              ],
+              [
+                "You mustn’t eat before the blood test.",
+                "Перед аналізом крові не можна їсти."
+              ],
+              [
+                "You don’t have to come. It’s not necessary.",
+                "Тобі не обов’язково приходити."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Після *should* і *must* — без *to*: *You should drink*, а не *You should to drink*.",
+          "*Mustn’t* — «не можна», *don’t have to* — «не обов’язково»: це не синоніми.",
+          "Біль і застуда — з артиклем *a*: *I have a cold, a headache*. Але *the flu*.",
+          "*Have to* змінюється за особами: *He has to*, *Does she have to…?*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "You have a fever. You ___ stay in bed.",
+          "options": [
+            "should",
+            "should to",
+            "shoulds"
+          ],
+          "answer": 0,
+          "explanation": "*Should* — модальне дієслово: без *to* і без *-s*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "It’s Sunday, so I ___ get up early. I can sleep late.",
+          "options": [
+            "don’t have to",
+            "mustn’t",
+            "have to"
+          ],
+          "answer": 0,
+          "explanation": "Рано вставати не обов’язково — *don’t have to*. *Mustn’t* означало б заборону."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "You ___ smoke in the hospital. It’s against the rules.",
+          "options": [
+            "mustn’t",
+            "don’t have to",
+            "should"
+          ],
+          "answer": 0,
+          "explanation": "Правила забороняють — *mustn’t*: «не можна»."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I can’t eat or drink anything cold. I have a terrible ___, and I need to see a dentist.",
+          "options": [
+            "toothache",
+            "headache",
+            "stomachache"
+          ],
+          "answer": 0,
+          "explanation": "До стоматолога (*dentist*) ідуть із зубним болем — *toothache*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "I have a ___ throat. It hurts when I speak.",
+          "options": [
+            "sore",
+            "sick",
+            "ill"
+          ],
+          "answer": 0,
+          "explanation": "Біль у горлі — сталий вислів *a sore throat*."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "My brother ___ wear glasses for reading.",
+          "options": [
+            "has to",
+            "have to",
+            "must to"
+          ],
+          "answer": 0,
+          "explanation": "Третя особа однини — *has to*. *Must to* неможливе: після *must* немає *to*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "You look tired. You ___ go to bed early tonight. (should / shouldn’t)",
+          "answers": [
+            "should"
+          ],
+          "explanation": "Порада піти спати раніше, бо людина втомлена, — *should*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "___ you have to take this medicine every day?",
+          "answers": [
+            "Do"
+          ],
+          "explanation": "Запитання з *have to* будуємо через *do / does*: *Do you have to…?*"
+        },
+        {
+          "id": "9",
+          "type": "input",
+          "prompt": "I think I have ___ cold. My nose is running.",
+          "answers": [
+            "a"
+          ],
+          "explanation": "Застуда — *a cold*, з неозначеним артиклем."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[You]] [[should]] [[to drink]] [[a lot of water]].",
+          "answer": 2,
+          "fix": "drink",
+          "explanation": "Після *should* — дієслово без *to*: *You should drink a lot of water*."
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "title": "Кухня: much, many, a lot of, a few, a little",
+      "titleEn": "In the kitchen: much, many, a lot of, a few, a little",
+      "summary": "Упаковки й мірки, кулінарні дієслова; кількісні слова зі злічуваними й незлічуваними іменниками.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Рецепт і список покупок — це кількість: скільки яєць, трохи солі, буханка хліба. Вибір між *much* і *many*, *a few* і *a little* залежить від того, чи можна іменник порахувати.",
+        "blocks": [
+          {
+            "title": "Слова: упаковки й мірки",
+            "text": "*a bottle of water, a can of beans* (бляшанка; британською *a tin*), *a carton of milk* (пакет), *a loaf of bread* (буханка), *a slice of cheese* (скибка), *a piece of cake* (шматок), *a jar of jam* (банка), *a bag of rice*, *a cup of sugar*.",
+            "examples": [
+              [
+                "Can you buy a loaf of bread and a carton of milk?",
+                "Купиш буханку хліба й пакет молока?"
+              ],
+              [
+                "I’d like a piece of cake.",
+                "Я б з’їв шматочок торта."
+              ]
+            ]
+          },
+          {
+            "title": "Слова: кулінарні дієслова",
+            "text": "*boil* (варити у воді), *fry* (смажити), *bake* (пекти в духовці), *cut* (різати), *mix* (змішувати), *add* (додавати), *pour* (наливати).",
+            "examples": [
+              [
+                "Boil the eggs for ten minutes.",
+                "Варіть яйця десять хвилин."
+              ],
+              [
+                "Mix the flour and the sugar, then add the milk.",
+                "Змішайте борошно з цукром, потім додайте молоко."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: кількісні слова",
+            "text": "*many* — зі злічуваними в множині (*many eggs*), *much* — з незлічуваними (*much sugar*); обидва — переважно в запитаннях і запереченнях. У ствердженні частіше *a lot of* — з обома типами. *A few* — кілька (злічувані), *a little* — трохи (незлічувані). Запитання: *How many…? How much…?*",
+            "examples": [
+              [
+                "How many eggs do we need? — Just a few.",
+                "Скільки треба яєць? — Лише кілька."
+              ],
+              [
+                "There isn’t much milk left.",
+                "Молока лишилося небагато."
+              ],
+              [
+                "Add a little salt.",
+                "Додайте трохи солі."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "*Money* незлічуване: *How much money…?*, а не *How many money*.",
+          "*People* — множина, тому *many people* або *a lot of people*, але не *much people*.",
+          "Хліб рахуємо буханками чи скибками: *a loaf of bread, two slices of bread*.",
+          "*A few* і *a little* — «кілька, трохи» (нейтрально); *few* і *little* без артикля — «мало» (з відтінком нестачі)."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "How ___ eggs do we need for the cake?",
+          "options": [
+            "many",
+            "much",
+            "lot"
+          ],
+          "answer": 0,
+          "explanation": "*Eggs* — злічуваний іменник у множині, тому *How many*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "There isn’t ___ sugar left. Can you buy some?",
+          "options": [
+            "much",
+            "many",
+            "a few"
+          ],
+          "answer": 0,
+          "explanation": "*Sugar* незлічуване; у запереченні — *much*. *Many* і *a few* — лише зі злічуваними."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Add ___ salt, but not too much.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": 0,
+          "explanation": "*Salt* незлічуване, тому «трохи» — *a little*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Can you buy a ___ of bread on your way home?",
+          "options": [
+            "loaf",
+            "bottle",
+            "can"
+          ],
+          "answer": 0,
+          "explanation": "Хліб купують буханками — *a loaf of bread*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "I put a ___ of jam on the table.",
+          "options": [
+            "jar",
+            "loaf",
+            "slice"
+          ],
+          "answer": 0,
+          "explanation": "Варення продають у банках — *a jar of jam*."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "___ the potatoes in water for twenty minutes.",
+          "options": [
+            "Boil",
+            "Bake",
+            "Fry"
+          ],
+          "answer": 0,
+          "explanation": "Готувати у воді — *boil*. *Bake* — пекти в духовці, *fry* — смажити на олії."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "How ___ money do you have?",
+          "answers": [
+            "much"
+          ],
+          "explanation": "*Money* — незлічуваний іменник, тому *How much*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "We have a lot of apples, but only ___ oranges — just two or three.",
+          "answers": [
+            "a few"
+          ],
+          "explanation": "Кілька штук злічуваного (*oranges*) — *a few*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[There are]] [[much]] [[people]] [[in the kitchen]].",
+          "answer": 1,
+          "fix": "many",
+          "explanation": "*People* — злічуваний іменник у множині: *many people* або *a lot of people*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[Could you]] [[give me]] [[a piece of]] [[breads]]?",
+          "answer": 3,
+          "fix": "bread",
+          "explanation": "*Bread* незлічуване й не має множини: *a piece of bread*."
+        }
+      ]
+    },
+    {
+      "id": "character",
+      "title": "Характер і почуття: прикметники й прислівники",
+      "titleEn": "Character and feelings: adjectives and adverbs",
+      "summary": "Риси характеру й емоції; прикметник чи прислівник способу дії, *-ly*, *good* і *well*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "«Він добрий» і «Він добре говорить» — англійською це різні слова: *He’s kind* і *He speaks well*. Прикметник описує людину чи предмет, прислівник — те, як виконується дія.",
+        "blocks": [
+          {
+            "title": "Слова: характер і почуття",
+            "text": "Характер: *kind* (добрий), *friendly* (привітний), *polite* (ввічливий), *rude* (грубий), *shy* (сором’язливий), *lazy* (лінивий), *hard-working* (працьовитий), *funny* (кумедний), *patient* (терплячий), *careful* (уважний, обережний). Почуття: *happy, sad, angry, nervous, bored, tired, surprised*.",
+            "examples": [
+              [
+                "My boss is very patient.",
+                "Мій керівник дуже терплячий."
+              ],
+              [
+                "I’m nervous before exams.",
+                "Я нервую перед іспитами."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: прикметник чи прислівник",
+            "text": "Прикметник — біля іменника (*a careful driver*) і після *be, feel, look, seem* (*She looks happy*). Прислівник — біля дієслова, відповідає на запитання «як?»: *She drives carefully*. Утворюється найчастіше з *-ly*: *quick — quickly*, *happy — happily*, *careful — carefully*.",
+            "examples": [
+              [
+                "He is a slow reader. He reads slowly.",
+                "Він повільно читає."
+              ],
+              [
+                "You look tired.",
+                "Ти виглядаєш втомленим."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: неправильні прислівники",
+            "text": "*good — well*, *fast — fast*, *hard — hard*, *late — late*, *early — early*. Обережно: *hardly* означає «ледве», а не «старанно».",
+            "examples": [
+              [
+                "She speaks English very well.",
+                "Вона дуже добре розмовляє англійською."
+              ],
+              [
+                "He works hard.",
+                "Він багато й старанно працює."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "«Добре розмовляє» — *speaks well*, а не *speaks good*.",
+          "Після *feel, look* — прикметник: *I feel bad*, *She looks happy*.",
+          "*He works hard* — працює старанно; *He hardly works* — майже не працює.",
+          "*Friendly* і *lovely* — прикметники, хоч і закінчуються на *-ly*: *a friendly person*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "She always drives very ___.",
+          "options": [
+            "carefully",
+            "careful",
+            "care"
+          ],
+          "answer": 0,
+          "explanation": "Слово описує, як вона водить (дієслово *drives*), тому потрібен прислівник *carefully*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Your English is very ___!",
+          "options": [
+            "good",
+            "well",
+            "goodly"
+          ],
+          "answer": 0,
+          "explanation": "Після *is* стоїть прикметник: *Your English is good*. *Well* — прислівник до дієслова: *You speak well*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "He plays the guitar really ___.",
+          "options": [
+            "well",
+            "good",
+            "goodly"
+          ],
+          "answer": 0,
+          "explanation": "Слово описує, як він грає, тому потрібен прислівник: *plays well*. Форми *goodly* у значенні «добре» немає."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "I feel ___ today. I didn’t sleep at all.",
+          "options": [
+            "tired",
+            "tiredly",
+            "tiring"
+          ],
+          "answer": 0,
+          "explanation": "Після *feel* стоїть прикметник, що описує стан людини: *tired*. *Tiring* — «виснажливий» (про справу)."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "She never says “please” or “thank you.” She’s very ___.",
+          "options": [
+            "rude",
+            "polite",
+            "shy"
+          ],
+          "answer": 0,
+          "explanation": "Хто не каже «будь ласка» й «дякую», той неввічливий — *rude*."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "My little brother doesn’t like meeting new people. He’s ___.",
+          "options": [
+            "shy",
+            "lazy",
+            "funny"
+          ],
+          "answer": 0,
+          "explanation": "Не любить знайомитися з новими людьми — сором’язливий, *shy*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "My colleague works very ___ (hard). She’s always busy.",
+          "answers": [
+            "hard"
+          ],
+          "explanation": "Прислівник від *hard* має ту саму форму: *works hard*. *Hardly* означає «ледве»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "Please speak ___ (quiet). The baby is sleeping.",
+          "answers": [
+            "quietly"
+          ],
+          "explanation": "Описуємо, як говорити, — прислівник: *quietly*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[She]] [[answered]] [[the questions]] [[very quick]].",
+          "answer": 3,
+          "fix": "very quickly",
+          "explanation": "Слово описує дію *answered*, тож потрібен прислівник: *very quickly*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[Our new teacher]] [[is]] [[very patiently]] [[with us]].",
+          "answer": 2,
+          "fix": "very patient",
+          "explanation": "Після *is* стоїть прикметник, що описує людину: *very patient*."
+        }
+      ]
+    },
+    {
+      "id": "likes-wants",
+      "title": "Уподобання й бажання: like, want, would like, enjoy",
+      "titleEn": "Likes and wants: like, want, would like, enjoy",
+      "summary": "Вільний час і плани на вечір; дієслово + *-ing* чи *to*, *Do you like…?* і *Would you like…?*",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Після одних дієслів наступне дієслово стоїть із *-ing* (*enjoy reading*), після інших — з *to* (*want to go*). Цю різницю доводиться запам’ятовувати разом зі словами.",
+        "blocks": [
+          {
+            "title": "Слова: як провести вечір",
+            "text": "*go out* (піти кудись розважитися), *stay in* (залишитися вдома), *eat out* (поїсти в ресторані чи кафе), *go for a walk* (прогулятися), *hang out with friends* (розм. проводити час із друзями), *see a movie*, *go to a concert*.",
+            "examples": [
+              [
+                "Let’s eat out tonight.",
+                "Давай сьогодні повечеряємо десь у місті."
+              ],
+              [
+                "I’m tired. I want to stay in.",
+                "Я втомився. Хочу побути вдома."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: -ing чи to",
+            "text": "*enjoy, finish, don’t mind* + *-ing*: *I enjoy cooking*. *want, would like, decide, hope, plan, need, learn* + *to*: *We decided to stay*. Після *like, love, hate* можливі обидві форми.",
+            "examples": [
+              [
+                "She enjoys hanging out with friends.",
+                "Їй подобається проводити час із друзями."
+              ],
+              [
+                "We decided to go for a walk.",
+                "Ми вирішили прогулятися."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: Do you like…? і Would you like…?",
+            "text": "*Do you like…?* — про смаки загалом: «Тобі подобається…?» *Would you like…?* — пропозиція чи запрошення: «Хочеш…? Чи не бажаєте…?» *I’d like* = *I would like* — ввічливе «я б хотів». Щоб сказати, що хочемо від іншої людини: *want / would like* + особа + *to*: *I want you to come*.",
+            "examples": [
+              [
+                "Do you like jazz? — Yes, I love it.",
+                "Тобі подобається джаз? — Так, дуже."
+              ],
+              [
+                "Would you like to come with us? — I’d love to.",
+                "Хочеш піти з нами? — Залюбки."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "«Я хочу, щоб ти прийшов» — *I want you to come*, а не *I want that you come*.",
+          "*Enjoy* — лише з *-ing*: *I enjoy swimming*, а не *I enjoy to swim*.",
+          "Після *would like* потрібне *to*: *I’d like to go*, а не *I’d like go*.",
+          "Пропонуючи щось, питаємо *Would you like…?*; *Do you like…?* — запитання про смаки."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I really enjoy ___ new recipes.",
+          "options": [
+            "trying",
+            "to try",
+            "try"
+          ],
+          "answer": 0,
+          "explanation": "Після *enjoy* — лише форма з *-ing*: *enjoy trying*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "We want ___ a small house in the country.",
+          "options": [
+            "to buy",
+            "buying",
+            "buy"
+          ],
+          "answer": 0,
+          "explanation": "Після *want* — *to* + дієслово: *want to buy*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "— ___ a cup of tea? — Yes, please.",
+          "options": [
+            "Would you like",
+            "Do you like",
+            "Are you like"
+          ],
+          "answer": 0,
+          "explanation": "Пропозиція — *Would you like…?* Відповідь *Yes, please* підтверджує, що це пропозиція, а не запитання про смаки."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "My parents want me ___ medicine.",
+          "options": [
+            "to study",
+            "study",
+            "that I study"
+          ],
+          "answer": 0,
+          "explanation": "Після *want* + особа — *to*: *want me to study*. Підрядне з *that* після *want* не вживається."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "I don’t want to cook tonight. Let’s ___.",
+          "options": [
+            "eat out",
+            "stay in",
+            "eat in"
+          ],
+          "answer": 0,
+          "explanation": "Не хочемо готувати — йдемо поїсти в кафе чи ресторан: *eat out*. *Stay in* і *eat in* — залишитися вдома."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "It’s a nice day. Let’s go for a ___ in the park.",
+          "options": [
+            "walk",
+            "walking",
+            "to walk"
+          ],
+          "answer": 0,
+          "explanation": "Сталий вислів *go for a walk*: після артикля *a* — іменник *walk*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I’d like ___ (visit) the old town tomorrow.",
+          "answers": [
+            "to visit"
+          ],
+          "explanation": "Після *would like* (*’d like*) — *to* + дієслово: *I’d like to visit*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "My son hates ___ (get) up early.",
+          "answers": [
+            "getting",
+            "to get"
+          ],
+          "explanation": "Після *hate* можливі обидві форми: *hates getting up* і *hates to get up*."
+        },
+        {
+          "id": "9",
+          "type": "input",
+          "prompt": "We decided ___ (stay) home last night.",
+          "answers": [
+            "to stay"
+          ],
+          "explanation": "Після *decide* — *to* + дієслово: *decided to stay*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[I]] [[would like]] [[go]] [[to the concert]] with you.",
+          "answer": 2,
+          "fix": "to go",
+          "explanation": "Після *would like* — *to* + дієслово: *I would like to go*."
+        }
+      ]
+    },
+    {
+      "id": "collocations",
+      "title": "Колокації: make, do, have, take",
+      "titleEn": "Collocations: make, do, have, take",
+      "summary": "Сталі сполуки з *make, do, have, take*, які не перекладаються дослівно, та їхні форми в минулому.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Українському «робити» відповідають і *make*, і *do*; «приймати душ» — *take a shower*, «весело провести час» — *have fun*. Такі сполуки (колокації) треба вчити цілими блоками.",
+        "blocks": [
+          {
+            "title": "Слова: make і do",
+            "text": "*make* — створюємо щось нове або спричиняємо: *make dinner, make a cake, make a mistake, make a phone call, make a decision, make friends, make noise*. *do* — виконуємо роботу, завдання, діяльність: *do homework, do the dishes* (мити посуд), *do the laundry* (прати), *do exercise, do your best*.",
+            "examples": [
+              [
+                "I made a lot of mistakes on the test.",
+                "Я зробив багато помилок у тесті."
+              ],
+              [
+                "Who does the dishes in your family?",
+                "Хто у вас у родині миє посуд?"
+              ]
+            ]
+          },
+          {
+            "title": "Слова: have і take",
+            "text": "*have* — *have breakfast, have a party, have fun* (весело провести час), *have a good time, have a problem*. *take* — *take a photo, take a shower, take a bus / a taxi, take a break* (зробити перерву), *take a test* (складати тест). Успішно скласти іспит — *pass*.",
+            "examples": [
+              [
+                "We had a lot of fun at the beach.",
+                "Ми чудово розважилися на пляжі."
+              ],
+              [
+                "Let’s take a break.",
+                "Зробімо перерву."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: форми в минулому",
+            "text": "Усі чотири дієслова неправильні: *make — made — made*, *do — did — done*, *have — had — had*, *take — took — taken*. Колокація лишається тією самою в будь-якому часі: *I’ve made a decision. She took a lot of photos*.",
+            "examples": [
+              [
+                "He did his homework after dinner.",
+                "Він зробив домашнє завдання після вечері."
+              ],
+              [
+                "Have you taken your driving test yet?",
+                "Ти вже складав іспит із водіння?"
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "«Зробити помилку» — *make a mistake*, а не *do a mistake*.",
+          "«Фотографувати» — *take a photo*, «робити перерву» — *take a break*, хоча українською «робити».",
+          "*Have fun* — весело провести час; *make fun of someone* — глузувати з когось.",
+          "*Take an exam* — складати, *pass an exam* — скласти успішно."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I always ___ mistakes with English articles.",
+          "options": [
+            "make",
+            "do",
+            "take"
+          ],
+          "answer": 0,
+          "explanation": "Сталий вислів — *make a mistake*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Can you help me ___ the dishes?",
+          "options": [
+            "do",
+            "make",
+            "take"
+          ],
+          "answer": 0,
+          "explanation": "«Мити посуд» — *do the dishes*: домашні обов’язки зазвичай поєднуються з *do*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Let’s ___ a photo by the lake.",
+          "options": [
+            "take",
+            "make",
+            "do"
+          ],
+          "answer": 0,
+          "explanation": "«Сфотографувати» — *take a photo*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "We ___ a lot of fun at the party last night.",
+          "options": [
+            "had",
+            "made",
+            "did"
+          ],
+          "answer": 0,
+          "explanation": "«Весело провести час» — *have fun*, у минулому — *had fun*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "I ___ a shower every morning.",
+          "options": [
+            "take",
+            "make",
+            "do"
+          ],
+          "answer": 0,
+          "explanation": "«Приймати душ» — *take a shower* (британською також *have a shower*)."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "Congratulations! You ___ your driving test!",
+          "options": [
+            "passed",
+            "made",
+            "did"
+          ],
+          "answer": 0,
+          "explanation": "Успішно скласти іспит — *pass*. Привітання показує, що результат успішний."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "We need to ___ a decision today.",
+          "answers": [
+            "make"
+          ],
+          "explanation": "«Ухвалити рішення» — *make a decision*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "My son ___ (do) his homework after dinner yesterday.",
+          "answers": [
+            "did"
+          ],
+          "explanation": "*Yesterday* — *Past Simple*; друга форма від *do* — *did*: *did his homework*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[It’s]] [[hard]] [[to do friends]] [[in a new city]].",
+          "answer": 2,
+          "fix": "to make friends",
+          "explanation": "«Заводити друзів» — *make friends*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[Let’s]] [[make]] [[a break]] [[for ten minutes]].",
+          "answer": 1,
+          "fix": "take",
+          "explanation": "«Зробити перерву» — *take a break*."
+        }
+      ]
+    }
+  ]
+}

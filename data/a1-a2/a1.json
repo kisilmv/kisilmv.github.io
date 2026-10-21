@@ -1,0 +1,1730 @@
+{
+  "level": "A1",
+  "title": "Лексика й граматика рівня A1",
+  "description": "Найпотрібніші слова й конструкції для першого року навчання: знайомство й дієслово *to be*, родина й присвійні займенники, зовнішність і *have*, дім і *there is / there are*, розпорядок дня й *Present Simple*, дозвілля, їжа й *some / any*, покупки, місто й *can*, погода й *Present Continuous*.",
+  "topics": [
+    {
+      "id": "meeting-people",
+      "title": "Знайомство: дієслово to be",
+      "titleEn": "Meeting people: the verb to be",
+      "summary": "Привітання, країни й національності, професії; *am / is / are*, *a / an* перед назвою професії.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Перша розмова англійською — це ім’я, країна й професія. Усе це тримається на дієслові *to be* («бути»), яке в українському теперішньому часі ми зазвичай пропускаємо: «Я вчитель» — *I am a teacher*.",
+        "blocks": [
+          {
+            "title": "Слова: привітання й знайомство",
+            "text": "Нейтральні привітання — *Hello*, *Good morning / afternoon / evening*; неформальне — *Hi*. Прощання — *Goodbye*, *Bye*, *See you*. *Good night* кажуть лише на прощання ввечері або перед сном.",
+            "examples": [
+              [
+                "Nice to meet you.",
+                "Приємно познайомитися."
+              ],
+              [
+                "Where are you from? — I’m from Ukraine.",
+                "Звідки ви? — Я з України."
+              ],
+              [
+                "What do you do? — I’m a nurse.",
+                "Ким ви працюєте? — Я медсестра."
+              ]
+            ]
+          },
+          {
+            "title": "Слова: країни й національності",
+            "text": "Назви країн, національностей і мов в англійській завжди пишуть із великої літери: *Ukraine — Ukrainian*, *Poland — Polish*, *Spain — Spanish*, *France — French*, *Germany — German*, *Italy — Italian*, *Japan — Japanese*.",
+            "examples": [
+              [
+                "She’s from Italy. She’s Italian.",
+                "Вона з Італії. Вона італійка."
+              ],
+              [
+                "They speak Ukrainian and English.",
+                "Вони розмовляють українською та англійською."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: am / is / are",
+            "text": "*I am*; *he / she / it is*; *we / you / they are*. Скорочено: *I’m, he’s, she’s, it’s, we’re, you’re, they’re*. Заперечення — *not* після дієслова: *I’m not, she isn’t, they aren’t*. У запитанні дієслово стає перед підметом: *Are you a student?*",
+            "examples": [
+              [
+                "I’m not tired. — Are you hungry? — Yes, I am.",
+                "Я не втомився. — Ти голодний? — Так."
+              ],
+              [
+                "Is he a doctor? — No, he isn’t.",
+                "Він лікар? — Ні."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: a / an перед професією",
+            "text": "В однині перед назвою професії потрібен артикль: *a* — перед приголосним звуком, *an* — перед голосним: *a teacher, a driver, an engineer, an actor*. У множині артикля немає: *They are doctors*.",
+            "examples": [
+              [
+                "My sister is an engineer.",
+                "Моя сестра — інженерка."
+              ],
+              [
+                "We’re students.",
+                "Ми студенти."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "В англійському реченні дієслово-зв’язка обов’язкове: *I am from Ukraine*, а не *I from Ukraine*.",
+          "«Я — вчитель» — *I’m a teacher*: без артикля *a* речення неграматичне.",
+          "Коротка відповідь має дієслово: *Yes, I am* / *No, she isn’t*. Скорочення в кінці відповіді не вживають: *Yes, I’m* — помилка.",
+          "*Good night* — тільки прощання; при зустрічі ввечері кажуть *Good evening*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "My name ___ Olena.",
+          "options": [
+            "is",
+            "am",
+            "are"
+          ],
+          "answer": 0,
+          "explanation": "*My name* — це «воно», третя особа однини, тому *is*. *Am* вживається лише з *I*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "We ___ from Ukraine.",
+          "options": [
+            "are",
+            "is",
+            "am"
+          ],
+          "answer": 0,
+          "explanation": "З *we* (як і з *you*, *they*) дієслово *to be* має форму *are*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Tom is ___.",
+          "options": [
+            "an engineer",
+            "a engineer",
+            "engineer"
+          ],
+          "answer": 0,
+          "explanation": "Перед професією в однині потрібен артикль. *Engineer* починається з голосного звука, тому *an*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "It’s late and you are going to bed. You say: “___!”",
+          "options": [
+            "Good night",
+            "Good evening",
+            "Good morning"
+          ],
+          "answer": 0,
+          "explanation": "*Good night* — побажання на ніч і прощання. *Good evening* — привітання, коли ввечері зустрічаєте когось."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "— Are you a student? — Yes, ___.",
+          "options": [
+            "I am",
+            "I do",
+            "I is"
+          ],
+          "answer": 0,
+          "explanation": "Коротка відповідь повторює дієслово із запитання: *Are you…? — Yes, I am*. *Do* тут не підходить, бо в запитанні його немає; з *I* вживається лише *am*."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "Marco is from Italy. He’s ___.",
+          "options": [
+            "Italian",
+            "Italy",
+            "Italians"
+          ],
+          "answer": 0,
+          "explanation": "*Italy* — назва країни, *Italian* — національність. Про одну людину кажемо *He’s Italian*, без закінчення множини."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "They ___ (not / be) at home. They’re at work.",
+          "answers": [
+            "aren't",
+            "are not"
+          ],
+          "explanation": "Заперечна форма для *they* — *are not*, скорочено *aren’t*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "___ she a teacher? — No, she’s a doctor.",
+          "answers": [
+            "Is"
+          ],
+          "explanation": "У запитанні з *to be* дієслово стає перед підметом: *Is she…?* Для *she* — форма *is*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "Hi! [[I from Poland]], [[and]] [[my name]] [[is Adam]].",
+          "answer": 0,
+          "fix": "I'm from Poland",
+          "explanation": "В англійському реченні не можна пропускати дієслово: «Я з Польщі» — *I’m from Poland*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[My parents]] [[is]] [[doctors]] [[in a big hospital]].",
+          "answer": 1,
+          "fix": "are",
+          "explanation": "*My parents* — множина («вони»), тому *are*: *My parents are doctors*."
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "title": "Родина: присвійні займенники й ’s",
+      "titleEn": "Family: possessive adjectives and ’s",
+      "summary": "Члени родини; *my, your, his, her, its, our, their* і присвійне *’s*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Говорячи про родину, ми постійно вказуємо, чий це родич: «моя сестра», «Олин брат». Для цього в англійській є присвійні займенники та закінчення *’s*.",
+        "blocks": [
+          {
+            "title": "Слова: члени родини",
+            "text": "*mother (mom), father (dad), parents* — мама й тато; *brother, sister, son, daughter, husband, wife*; *grandmother, grandfather, grandparents*; *aunt, uncle*; *cousin* — двоюрідний брат або сестра; *relatives* — родичі загалом. Форми *mom* і *dad* — розмовні й американські; британською — *mum*.",
+            "examples": [
+              [
+                "My mother’s brother is my uncle.",
+                "Брат моєї мами — мій дядько."
+              ],
+              [
+                "I have two cousins.",
+                "У мене двоє двоюрідних братів (або сестер)."
+              ],
+              [
+                "My grandparents live in a village.",
+                "Мої бабуся й дідусь живуть у селі."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: присвійні займенники",
+            "text": "*I — my, you — your, he — his, she — her, it — its, we — our, they — their*. Займенник залежить від того, хто власник, а не від того, що йому належить: *Olena and her brother*, *Ivan and his sister*.",
+            "examples": [
+              [
+                "This is Mark and his wife.",
+                "Це Марк і його дружина."
+              ],
+              [
+                "Our dog is old. Its name is Rex.",
+                "Наш пес старий. Його звати Рекс."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: присвійне ’s",
+            "text": "Щоб сказати, кому щось належить, до імені чи іменника додаємо *’s*: *Anna’s car*, *my sister’s husband*. Якщо слово у множині вже закінчується на *-s*, ставимо лише апостроф: *my parents’ house*.",
+            "examples": [
+              [
+                "This is Anna’s car.",
+                "Це машина Анни."
+              ],
+              [
+                "My parents’ house is near the river.",
+                "Будинок моїх батьків біля річки."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Українського «свій» в англійській немає: «Він любить свою маму» — *He loves his mom*, «Я люблю свою маму» — *I love my mom*.",
+          "Не плутайте *its* (присвійний: «його, її» для предметів і тварин) та *it’s* (= *it is*).",
+          "*Parents* — це лише мама й тато. «Родичі» — *relatives*.",
+          "*The car of Anna* звучить неприродно; про людей кажуть *Anna’s car*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "My mother’s brother is my ___.",
+          "options": [
+            "uncle",
+            "cousin",
+            "nephew"
+          ],
+          "answer": 0,
+          "explanation": "Брат мами чи тата — *uncle*, дядько. *Cousin* — двоюрідний брат чи сестра, *nephew* — племінник."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "My aunt’s son is my ___.",
+          "options": [
+            "cousin",
+            "brother",
+            "uncle"
+          ],
+          "answer": 0,
+          "explanation": "Син тітки — двоюрідний брат, *cousin*. Слово однакове для двоюрідного брата й сестри."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Olena lives with ___ grandmother.",
+          "options": [
+            "her",
+            "his",
+            "she"
+          ],
+          "answer": 0,
+          "explanation": "Власниця — Олена, тобто «вона», тому *her*. *She* — особовий займенник, він не вказує на належність."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "This is Mark, and this is ___ wife, Sara.",
+          "options": [
+            "his",
+            "her",
+            "he’s"
+          ],
+          "answer": 0,
+          "explanation": "Чия дружина? Марка — «його», *his*. *He’s* = *he is*, це не присвійна форма."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "We have a dog. ___ name is Rex.",
+          "options": [
+            "Its",
+            "It’s",
+            "Their"
+          ],
+          "answer": 0,
+          "explanation": "Присвійний займенник для тварини чи предмета — *its*, без апострофа. *It’s* означає *it is*."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "Peter is Lisa’s husband. Lisa is Peter’s ___.",
+          "options": [
+            "wife",
+            "sister",
+            "daughter"
+          ],
+          "answer": 0,
+          "explanation": "Якщо Пітер — чоловік Лізи (*husband*), то Ліза — його дружина, *wife*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "This is ___ (Anna) bike.",
+          "answers": [
+            "Anna's"
+          ],
+          "explanation": "Належність людині передаємо через *’s*: *Anna’s bike* — «велосипед Анни»."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "My parents have a big garden. ___ (they) garden is beautiful.",
+          "answers": [
+            "Their"
+          ],
+          "explanation": "Присвійна форма від *they* — *their*: *their garden*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[My brother Ivan]] [[lives]] [[with her wife]] [[in Lviv]].",
+          "answer": 2,
+          "fix": "with his wife",
+          "explanation": "Власник — Іван, тобто «він», тому *his wife*. Займенник визначає власник, а не слово *wife*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[My parents house]] [[is]] [[very old]] [[and big]].",
+          "answer": 0,
+          "fix": "My parents' house",
+          "explanation": "Належність передаємо апострофом. *Parents* уже закінчується на *-s*, тому пишемо лише апостроф: *my parents’ house*."
+        }
+      ]
+    },
+    {
+      "id": "appearance",
+      "title": "Зовнішність: have / has і прикметники",
+      "titleEn": "Appearance: have / has and adjectives",
+      "summary": "Ріст, волосся, очі; *have / has*, *do / does … have*, вік із *to be*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Щоб описати людину, потрібні прикметники (*tall, short, blond*) і дієслово *have* — «мати»: «У неї блакитні очі» — *She has blue eyes*.",
+        "blocks": [
+          {
+            "title": "Слова: зовнішність",
+            "text": "Ріст: *tall* (високий), *short* (низький). Вік: *young, old*. Волосся (*hair*): *long, short, straight, curly, dark, blond, gray*. Очі (*eyes*): *blue, brown, green, gray*. Також *a beard* (борода), *a mustache* (вуса), *glasses* (окуляри).",
+            "examples": [
+              [
+                "My dad is tall and he has a beard.",
+                "Мій тато високий, і в нього борода."
+              ],
+              [
+                "She has long curly hair.",
+                "У неї довге кучеряве волосся."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: have / has",
+            "text": "*I / you / we / they have*; *he / she / it has*. Заперечення й запитання — з *do / does*, а саме дієслово повертається до форми *have*: *She doesn’t have a car. Does he have glasses?* У британській англійській поширене також *have got*: *She’s got blue eyes*.",
+            "examples": [
+              [
+                "I have green eyes.",
+                "У мене зелені очі."
+              ],
+              [
+                "Does your brother have a beard? — No, he doesn’t.",
+                "У твого брата є борода? — Ні."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: прикметник перед іменником",
+            "text": "Прикметник стоїть перед іменником і не змінюється: *blue eyes* (а не *blues eyes*). Кілька прикметників: розмір чи довжина — потім колір: *long dark hair*.",
+            "examples": [
+              [
+                "He has short gray hair.",
+                "У нього коротке сиве волосся."
+              ],
+              [
+                "She has big brown eyes.",
+                "У неї великі карі очі."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "«Високий» про людину — *tall*, а не *high* (*high* — про гори, стелю, ціни).",
+          "*Hair* (волосся на голові) — незлічуване: *Her hair is long*, а не *Her hairs are long*.",
+          "Вік передаємо через *to be*: «Йому двадцять» — *He is twenty*, а не *He has twenty*.",
+          "Після *does / doesn’t* — лише *have*: *Does she have…?*, а не *Does she has…?*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "My brother ___ blue eyes.",
+          "options": [
+            "has",
+            "have",
+            "is"
+          ],
+          "answer": 0,
+          "explanation": "Підмет *my brother* — «він», третя особа однини, тому *has*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Does your sister ___ long hair?",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "answer": 0,
+          "explanation": "Після *does* дієслово стоїть у початковій формі: *Does she have…?* Закінчення третьої особи вже «забрало» *does*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Her hair ___ very long.",
+          "options": [
+            "is",
+            "are",
+            "have"
+          ],
+          "answer": 0,
+          "explanation": "*Hair* у значенні «волосся на голові» — незлічуваний іменник, тому дієслово в однині: *is*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "My grandfather is old. He ___ seventy-five.",
+          "options": [
+            "is",
+            "has",
+            "have"
+          ],
+          "answer": 0,
+          "explanation": "Вік в англійській передаємо через *to be*: *He is seventy-five* — «Йому сімдесят п’ять»."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "My dad isn’t short. He’s very ___.",
+          "options": [
+            "tall",
+            "high",
+            "long"
+          ],
+          "answer": 0,
+          "explanation": "Про ріст людини кажуть *tall*. *High* — про будівлі, гори, ціни; *long* — про волосся, дорогу, фільм."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "Her hair isn’t dark. It’s ___.",
+          "options": [
+            "blond",
+            "black",
+            "brown"
+          ],
+          "answer": 0,
+          "explanation": "Протилежність темному волоссю — світле, *blond*. *Black* і *brown* — темні кольори."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I ___ (not / have) a beard.",
+          "answers": [
+            "don't have",
+            "do not have"
+          ],
+          "explanation": "Заперечення з *have* утворюємо через *do not / don’t*: *I don’t have a beard*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "___ your teacher have glasses?",
+          "answers": [
+            "Does"
+          ],
+          "explanation": "*Your teacher* — «він» або «вона», третя особа однини, тому запитання починається з *Does*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[She has]] [[a long blond hair]] [[and]] [[green eyes]].",
+          "answer": 1,
+          "fix": "long blond hair",
+          "explanation": "*Hair* — незлічуваний іменник, тому перед ним немає артикля *a*: *She has long blond hair*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[My cousin]] [[have]] [[brown eyes]] [[and short hair]].",
+          "answer": 1,
+          "fix": "has",
+          "explanation": "*My cousin* — одна людина, третя особа однини: *My cousin has brown eyes*."
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "title": "Дім: there is / there are і прийменники місця",
+      "titleEn": "Home: there is / there are and prepositions of place",
+      "summary": "Кімнати й меблі; *there is / there are*, *some / any*, *in, on, under, next to, between*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Коли описуємо квартиру чи кімнату, кажемо, що в ній є: «У кімнаті є стіл». Англійською це конструкція *there is / there are*, а не *in the room is*.",
+        "blocks": [
+          {
+            "title": "Слова: кімнати й меблі",
+            "text": "Житло: *a house* (будинок), *an apartment* (квартира; британською *a flat*). Кімнати: *a kitchen, a bedroom, a bathroom, a living room*. Меблі й речі: *a bed, a sofa, a table, a chair, a desk, a closet* (шафа для одягу; британською *a wardrobe*), *a shelf, a lamp, a mirror, a fridge*.",
+            "examples": [
+              [
+                "We have a small apartment with two bedrooms.",
+                "У нас невелика квартира з двома спальнями."
+              ],
+              [
+                "The fridge is in the kitchen.",
+                "Холодильник на кухні."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: there is / there are",
+            "text": "*There is* (*there’s*) — перед одниною й незлічуваними іменниками, *there are* — перед множиною. Заперечення: *There isn’t a TV. There aren’t any chairs.* Запитання: *Is there a balcony? Are there any shelves?*",
+            "examples": [
+              [
+                "There’s a big mirror in the bathroom.",
+                "У ванній є велике дзеркало."
+              ],
+              [
+                "There are three chairs in the kitchen.",
+                "На кухні три стільці."
+              ],
+              [
+                "Are there any books on the shelf? — No, there aren’t.",
+                "На полиці є книжки? — Ні."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: прийменники місця",
+            "text": "*in* — усередині (*in the box*), *on* — на поверхні (*on the table, on the wall*), *under* — під, *next to* — поруч, *between* — між двома, *behind* — позаду, *in front of* — перед.",
+            "examples": [
+              [
+                "The cat is under the bed.",
+                "Кіт під ліжком."
+              ],
+              [
+                "The lamp is between the sofa and the chair.",
+                "Лампа між диваном і кріслом."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "«У кімнаті є стіл» — *There is a table in the room*, а не *In the room is a table* чи *It is a table in the room*.",
+          "«На стіні» — *on the wall*, але «на фото» — *in the photo*.",
+          "*Next to* і *in front of* — сталі сполуки: *next to the window*, а не *next the window*.",
+          "У запитаннях і запереченнях із множиною вживаємо *any*: *There aren’t any chairs*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "There ___ two bedrooms in our apartment.",
+          "options": [
+            "are",
+            "is",
+            "have"
+          ],
+          "answer": 0,
+          "explanation": "*Two bedrooms* — множина, тому *there are*. *There have* в англійській не вживається."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "___ a big mirror in the bathroom.",
+          "options": [
+            "There’s",
+            "It’s",
+            "Has"
+          ],
+          "answer": 0,
+          "explanation": "Щоб сказати, що десь щось є, вживаємо *there is* (*there’s*). *It’s a mirror* означало б «Це дзеркало»."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "___ there a sofa in the living room?",
+          "options": [
+            "Is",
+            "Are",
+            "Does"
+          ],
+          "answer": 0,
+          "explanation": "*A sofa* — однина, тому запитання *Is there…?*"
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "We cook in the ___.",
+          "options": [
+            "kitchen",
+            "bedroom",
+            "bathroom"
+          ],
+          "answer": 0,
+          "explanation": "Готують на кухні — *in the kitchen*. *Bedroom* — спальня, *bathroom* — ванна кімната."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Put the milk in the ___. It’s hot today.",
+          "options": [
+            "fridge",
+            "closet",
+            "sofa"
+          ],
+          "answer": 0,
+          "explanation": "Молоко в спеку тримають у холодильнику, *fridge*. *Closet* — шафа для одягу."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "The lamp is ___ the sofa and the chair.",
+          "options": [
+            "between",
+            "next",
+            "in"
+          ],
+          "answer": 0,
+          "explanation": "Між двома предметами — *between … and …*. Слово *next* без *to* не вживається як прийменник."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "There ___ (not / be) any chairs in the kitchen.",
+          "answers": [
+            "aren't",
+            "are not"
+          ],
+          "explanation": "*Any chairs* — множина, тому заперечення *there are not*, скорочено *there aren’t*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "There’s a picture ___ the wall.",
+          "answers": [
+            "on"
+          ],
+          "explanation": "Те, що висить на стіні, — *on the wall*: прийменник *on* означає контакт із поверхнею."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[In my room]] [[is]] [[a desk]] [[and a bed]].",
+          "answer": 1,
+          "fix": "there is",
+          "explanation": "Щоб сказати «є», потрібна конструкція *there is*: *In my room there is a desk and a bed* або *There is a desk and a bed in my room*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[There is]] [[three]] [[windows]] [[in the living room]].",
+          "answer": 0,
+          "fix": "There are",
+          "explanation": "*Three windows* — множина, тому *there are*."
+        }
+      ]
+    },
+    {
+      "id": "daily-routine",
+      "title": "Розпорядок дня: Present Simple і прийменники часу",
+      "titleEn": "Daily routine: Present Simple and prepositions of time",
+      "summary": "Щоденні дії; *Present Simple*, закінчення *-s / -es* у третій особі, *do / does*; *at, on, in* з часом.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Розповідь про звичайний день — найкраща практика *Present Simple*: цей час описує те, що повторюється регулярно. Разом із ним потрібні прийменники часу *at, on, in*.",
+        "blocks": [
+          {
+            "title": "Слова: щоденні дії",
+            "text": "*wake up* (прокидатися), *get up* (вставати), *take a shower* (приймати душ), *get dressed* (одягатися), *have breakfast / lunch / dinner* (снідати / обідати / вечеряти), *go to work / school*, *get home* (повертатися додому), *go to bed* (лягати спати).",
+            "examples": [
+              [
+                "I get up at seven o’clock.",
+                "Я встаю о сьомій."
+              ],
+              [
+                "We have dinner at home.",
+                "Ми вечеряємо вдома."
+              ],
+              [
+                "He gets home at six.",
+                "Він повертається додому о шостій."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: Present Simple",
+            "text": "Дієслово в початковій формі; у третій особі однини (*he, she, it*) додаємо *-s*: *works*. Після *-o, -s, -sh, -ch, -x* — *-es*: *goes, watches*. Приголосний + *y* → *-ies*: *study — studies*. Заперечення: *don’t / doesn’t* + початкова форма; запитання: *Do / Does* + підмет + початкова форма.",
+            "examples": [
+              [
+                "She starts work at nine.",
+                "Вона починає роботу о дев’ятій."
+              ],
+              [
+                "He doesn’t drink coffee.",
+                "Він не п’є каву."
+              ],
+              [
+                "Do you walk to work? — Yes, I do.",
+                "Ти ходиш на роботу пішки? — Так."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: at, on, in з часом",
+            "text": "*at* — з годинами й частинами доби: *at seven o’clock, at noon, at night*. *on* — з днями: *on Monday, on Sundays, on the weekend* (британською *at the weekend*). *in* — з частинами дня, місяцями, порами року: *in the morning, in the evening, in July*.",
+            "examples": [
+              [
+                "I read in the evening.",
+                "Я читаю ввечері."
+              ],
+              [
+                "We play tennis on Saturdays.",
+                "Ми граємо в теніс щосуботи."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Після *doesn’t* і *does* закінчення *-s* не ставимо: *She doesn’t work*, а не *She doesn’t works*.",
+          "«Іти додому» — *go home*, без прийменника *to*.",
+          "*In the morning*, *in the evening*, але *at night*.",
+          "Не губіть *-s* у третій особі: *My son goes to school*, а не *My son go*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "My dad ___ up at six o’clock every day.",
+          "options": [
+            "gets",
+            "get",
+            "getting"
+          ],
+          "answer": 0,
+          "explanation": "Регулярна дія — *Present Simple*. *My dad* — третя особа однини, тому *gets*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "We have lunch ___ noon.",
+          "options": [
+            "at",
+            "in",
+            "on"
+          ],
+          "answer": 0,
+          "explanation": "З точним часом, зокрема *noon* (полудень), — прийменник *at*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "I go to the gym ___ Mondays.",
+          "options": [
+            "on",
+            "in",
+            "at"
+          ],
+          "answer": 0,
+          "explanation": "З днями тижня — *on*: *on Monday, on Mondays* (щопонеділка)."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "She ___ coffee in the morning.",
+          "options": [
+            "doesn’t drink",
+            "don’t drink",
+            "doesn’t drinks"
+          ],
+          "answer": 0,
+          "explanation": "Для *she* заперечення — *doesn’t*, після нього дієслово в початковій формі: *doesn’t drink*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "After work, I ___ home and cook dinner.",
+          "options": [
+            "go",
+            "go to",
+            "go at"
+          ],
+          "answer": 0,
+          "explanation": "*Home* після дієслів руху вживається без прийменника: *go home, get home, come home*."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "My sister ___ (study) English every evening.",
+          "answers": [
+            "studies"
+          ],
+          "explanation": "Третя особа однини. Дієслово закінчується на приголосний + *y*, тому *y* змінюється на *ies*: *studies*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "___ your brother work on Saturdays?",
+          "answers": [
+            "Does"
+          ],
+          "explanation": "Запитання в *Present Simple* для третьої особи однини починається з *Does*; дієслово *work* — у початковій формі."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "He ___ (watch) TV after dinner.",
+          "answers": [
+            "watches"
+          ],
+          "explanation": "Після *-ch* у третій особі однини додаємо *-es*: *watches*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[My son]] [[go]] [[to school]] [[at eight o’clock]].",
+          "answer": 1,
+          "fix": "goes",
+          "explanation": "*My son* — третя особа однини, тому *goes* (після *-o* додаємо *-es*)."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[I]] [[usually]] [[read a book]] [[at the evening]].",
+          "answer": 3,
+          "fix": "in the evening",
+          "explanation": "З частинами дня вживаємо *in*: *in the morning, in the afternoon, in the evening*. Виняток — *at night*."
+        }
+      ]
+    },
+    {
+      "id": "free-time",
+      "title": "Дозвілля: прислівники частотності й like + -ing",
+      "titleEn": "Free time: adverbs of frequency and like + -ing",
+      "summary": "Хобі та спорт з *play, go, do*; *always, usually, often, sometimes, never*; *like / love / hate* + *-ing*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Розповідаючи про хобі, ми кажемо, що робимо і як часто: «Я іноді граю в теніс». Тут важливі три речі: правильне дієслово перед назвою заняття, місце прислівника частотності та форма після *like*.",
+        "blocks": [
+          {
+            "title": "Слова: play, go, do",
+            "text": "*play* — ігри з м’ячем і музичні інструменти: *play soccer* (британською *football*), *play tennis, play the guitar*. *go* + *-ing* — заняття з рухом: *go swimming, go running, go shopping*. *do* — індивідуальні вправи й бойові мистецтва: *do yoga, do karate*. Також: *watch movies, listen to music, read books*.",
+            "examples": [
+              [
+                "My brother plays the piano.",
+                "Мій брат грає на піаніно."
+              ],
+              [
+                "We go swimming in the summer.",
+                "Улітку ми ходимо плавати."
+              ],
+              [
+                "I do yoga twice a week.",
+                "Я займаюся йогою двічі на тиждень."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: прислівники частотності",
+            "text": "*always* (завжди), *usually* (зазвичай), *often* (часто), *sometimes* (іноді), *never* (ніколи). Вони стоять перед основним дієсловом, але після *to be*. Запитання — *How often…?*; відповідь — *once / twice / three times a week*.",
+            "examples": [
+              [
+                "I often go to the movies.",
+                "Я часто ходжу в кіно."
+              ],
+              [
+                "She is never late.",
+                "Вона ніколи не запізнюється."
+              ],
+              [
+                "How often do you go running? — Every day.",
+                "Як часто ти бігаєш? — Щодня."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: like / love / hate + -ing",
+            "text": "Після *like, love, hate* про те, що подобається загалом, ставимо дієслово з *-ing*: *I like reading*. В американській англійській так само поширене *like to read*.",
+            "examples": [
+              [
+                "I love dancing.",
+                "Я люблю танцювати."
+              ],
+              [
+                "He hates getting up early.",
+                "Він ненавидить рано вставати."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Перед музичним інструментом потрібен артикль, а *on* не потрібен: *play the guitar*, а не *play on the guitar*.",
+          "«Слухати музику» — *listen to music*: без *to* не можна.",
+          "*Never* уже має заперечне значення, тому друге заперечення зайве: *I never watch TV*, а не *I don’t never watch TV*.",
+          "Прислівник частотності — перед основним дієсловом: *I always go*, а не *I go always*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "I ___ to the movies on weekends.",
+          "options": [
+            "often go",
+            "go often",
+            "often am going"
+          ],
+          "answer": 0,
+          "explanation": "Прислівник частотності стоїть перед основним дієсловом: *I often go*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "She is ___ late for class.",
+          "options": [
+            "never",
+            "not never",
+            "no"
+          ],
+          "answer": 0,
+          "explanation": "*Never* стоїть після *to be* і вже означає заперечення; *not never* — подвійне заперечення, якого англійська не допускає."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "My brother ___ soccer every Saturday.",
+          "options": [
+            "plays",
+            "goes",
+            "does"
+          ],
+          "answer": 0,
+          "explanation": "Ігри з м’ячем — з дієсловом *play*: *play soccer*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "We ___ swimming in the summer.",
+          "options": [
+            "go",
+            "play",
+            "do"
+          ],
+          "answer": 0,
+          "explanation": "Заняття з *-ing*, пов’язані з рухом, — з *go*: *go swimming, go running*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Do you like ___ to music?",
+          "options": [
+            "listening",
+            "listen",
+            "listens"
+          ],
+          "answer": 0,
+          "explanation": "Після *like* — форма з *-ing* (*listening*) або *to* + дієслово. Голої форми *listen* тут бути не може."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "My grandmother ___ yoga twice a week.",
+          "options": [
+            "does",
+            "plays",
+            "goes"
+          ],
+          "answer": 0,
+          "explanation": "Йога, карате, вправи — з дієсловом *do*: *do yoga*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "How ___ do you go running? — Three times a week.",
+          "answers": [
+            "often"
+          ],
+          "explanation": "Запитання про частоту — *How often…?*; відповідь *three times a week* це підтверджує."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "I love ___ (dance).",
+          "answers": [
+            "dancing",
+            "to dance"
+          ],
+          "explanation": "Після *love* — *dancing* або *to dance*: обидва варіанти правильні."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[My friends]] [[play]] [[on the guitar]] [[very well]].",
+          "answer": 2,
+          "fix": "the guitar",
+          "explanation": "Грати на інструменті — *play the guitar*: з артиклем *the* і без *on*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[I]] [[don’t never]] [[watch TV]] [[in the morning]].",
+          "answer": 1,
+          "fix": "never",
+          "explanation": "*Never* уже означає «ні разу», тож заперечення *don’t* зайве: *I never watch TV*."
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Їжа: злічувані й незлічувані іменники, some / any",
+      "titleEn": "Food: countable and uncountable nouns, some / any",
+      "summary": "Продукти й напої; *a / an*, множина, *some* і *any*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Одні продукти можна порахувати (*an apple, two apples*), інші — ні (*bread, milk, rice*). Від цього залежить, чи можна поставити *a / an* і множину та коли вживати *some* чи *any*.",
+        "blocks": [
+          {
+            "title": "Слова: продукти й напої",
+            "text": "Злічувані: *an apple, a banana, an egg, an orange, a sandwich, a potato, a cookie* (печиво; британською *a biscuit*). Незлічувані: *bread, cheese, butter, meat, rice, milk, water, juice, tea, coffee, sugar*. *Fruit* — фрукти загалом, *vegetables* — овочі.",
+            "examples": [
+              [
+                "I eat an apple every day.",
+                "Я щодня з’їдаю яблуко."
+              ],
+              [
+                "We need bread and cheese.",
+                "Нам потрібні хліб і сир."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: злічувані й незлічувані",
+            "text": "Злічувані іменники мають однину з *a / an* і множину: *an egg — three eggs*. Незлічувані не мають ні *a / an*, ні множини: *bread*, а не *a bread* чи *breads*. Щоб порахувати їх, кажуть *a slice of bread, a glass of milk, a cup of tea*.",
+            "examples": [
+              [
+                "Can I have a glass of water?",
+                "Можна склянку води?"
+              ],
+              [
+                "There are two potatoes in the bag.",
+                "У пакеті дві картоплини."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: some / any",
+            "text": "*some* — у ствердних реченнях, з множиною й незлічуваними: *some eggs, some milk*. *any* — у запереченнях і запитаннях: *There isn’t any milk. Do we have any eggs?* У пропозиціях і проханнях — *some*: *Would you like some tea?*",
+            "examples": [
+              [
+                "We need some rice.",
+                "Нам треба трохи рису."
+              ],
+              [
+                "Are there any cookies? — No, there aren’t.",
+                "Є печиво? — Ні."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "«Хліб» — *bread*, незлічуване: *some bread, a loaf of bread*, але не *a bread*.",
+          "*An* ставимо перед голосним звуком: *an egg, an orange, an apple*.",
+          "У запереченні — *any*: *We don’t have any potatoes*, а не *We don’t have some potatoes*.",
+          "Пропонуючи щось, кажемо *some*: *Would you like some coffee?*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Can I have ___ apple, please?",
+          "options": [
+            "an",
+            "a",
+            "some"
+          ],
+          "answer": 0,
+          "explanation": "*Apple* — злічуване в однині й починається з голосного звука, тому *an apple*. *Some* з одниною злічуваного не вживаємо."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "There isn’t ___ milk in the fridge.",
+          "options": [
+            "any",
+            "some",
+            "a"
+          ],
+          "answer": 0,
+          "explanation": "Заперечне речення з незлічуваним іменником — *any*. *Milk* незлічуване, тому *a* неможливе."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "We need ___ bread for breakfast.",
+          "options": [
+            "some",
+            "a",
+            "any"
+          ],
+          "answer": 0,
+          "explanation": "*Bread* незлічуване, тому без *a*. Речення ствердне — *some*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "Are there ___ eggs in the box?",
+          "options": [
+            "any",
+            "a",
+            "an"
+          ],
+          "answer": 0,
+          "explanation": "Запитання з множиною — *any eggs*. Артиклі *a / an* із множиною не вживаються."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Bananas, apples and oranges are ___.",
+          "options": [
+            "fruit",
+            "vegetables",
+            "meat"
+          ],
+          "answer": 0,
+          "explanation": "Банани, яблука й апельсини — фрукти, *fruit*. *Vegetables* — овочі."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "I drink orange ___ every morning.",
+          "options": [
+            "juice",
+            "cheese",
+            "rice"
+          ],
+          "answer": 0,
+          "explanation": "Апельсиновий сік — *orange juice*; *cheese* і *rice* не п’ють."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I have two ___ (sandwich) in my bag.",
+          "answers": [
+            "sandwiches"
+          ],
+          "explanation": "Після *-ch* множину утворюємо закінченням *-es*: *sandwiches*."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "Would you like ___ tea? (some / any)",
+          "answers": [
+            "some"
+          ],
+          "explanation": "У пропозиціях (*Would you like…?*) вживаємо *some*, хоча це запитання: ви очікуєте відповіді «так»."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[I usually]] [[eat]] [[a bread]] [[with cheese]].",
+          "answer": 2,
+          "fix": "bread",
+          "explanation": "*Bread* незлічуване, тому без артикля *a*: *I eat bread with cheese* або *a slice of bread*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[We don’t have]] [[some]] [[potatoes]] [[for dinner]].",
+          "answer": 1,
+          "fix": "any",
+          "explanation": "У запереченнях вживаємо *any*: *We don’t have any potatoes*."
+        }
+      ]
+    },
+    {
+      "id": "clothes-shopping",
+      "title": "Одяг і покупки: this / that / these / those",
+      "titleEn": "Clothes and shopping: this / that / these / those",
+      "summary": "Одяг, кольори, ціни; вказівні займенники, *How much is / are…?*, слова, що вживаються лише в множині.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "У магазині одягу ми весь час показуємо на речі й питаємо ціну: «Скільки коштують ці штани?» Для цього потрібні *this / that / these / those* і правильна форма дієслова.",
+        "blocks": [
+          {
+            "title": "Слова: одяг і кольори",
+            "text": "*a shirt, a T-shirt, a sweater, a dress, a skirt, a jacket, a coat, a hat*; лише в множині: *pants* (штани; британською *trousers*), *jeans, shorts, shoes, socks*. Кольори: *black, white, red, blue, green, yellow, gray, brown*. У магазині: *size* (розмір), *try on* (приміряти), *How much is it?*",
+            "examples": [
+              [
+                "Can I try on this jacket?",
+                "Можна приміряти цю куртку?"
+              ],
+              [
+                "How much are these shoes? — They’re forty dollars.",
+                "Скільки коштують ці черевики? — Сорок доларів."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: this / that / these / those",
+            "text": "*this* (цей) і *that* (той) — з одниною; *these* (ці) і *those* (ті) — з множиною. *This / these* — те, що поруч; *that / those* — те, що далі.",
+            "examples": [
+              [
+                "This dress is nice.",
+                "Ця сукня гарна."
+              ],
+              [
+                "Look at those boots over there!",
+                "Поглянь на ті чоботи он там!"
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: pants, jeans, shorts — лише множина",
+            "text": "Назви одягу з двох частин уживаються лише в множині: *These jeans are new*. Щоб порахувати, кажуть *a pair of jeans* (одні джинси), *two pairs of pants*.",
+            "examples": [
+              [
+                "My pants are too long.",
+                "Мої штани задовгі."
+              ],
+              [
+                "I need a pair of black jeans.",
+                "Мені потрібні чорні джинси."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "«Ці штани / джинси» — *these pants / these jeans are*, а не *this pants is*.",
+          "Британською *pants* означає спідню білизну; у Британії штани — *trousers*.",
+          "Ціну питаємо з дієсловом *be*: *How much is this shirt?*, *How much are these shoes?*",
+          "«Приміряти» — *try on*: *Can I try it on?*"
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "How much ___ these shoes?",
+          "options": [
+            "are",
+            "is",
+            "does"
+          ],
+          "answer": 0,
+          "explanation": "*These shoes* — множина, тому *How much are…?*"
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "___ jeans are too big for me.",
+          "options": [
+            "These",
+            "This",
+            "That"
+          ],
+          "answer": 0,
+          "explanation": "*Jeans* завжди в множині, тому вказівний займенник — *these*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "Look at ___ coat over there! It’s beautiful.",
+          "options": [
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": 0,
+          "explanation": "Одна річ (*a coat, it’s*), що далеко (*over there*), — *that*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "It’s cold today. Put on your ___.",
+          "options": [
+            "coat",
+            "shorts",
+            "T-shirt"
+          ],
+          "answer": 0,
+          "explanation": "У холод одягають пальто, *coat*. *Shorts* і *T-shirt* — літній одяг."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "You wear ___ on your feet.",
+          "options": [
+            "shoes",
+            "gloves",
+            "hats"
+          ],
+          "answer": 0,
+          "explanation": "На ногах — взуття, *shoes*. *Gloves* — рукавички, *hats* — капелюхи."
+        },
+        {
+          "id": "6",
+          "type": "choice",
+          "prompt": "These pants ___ too long.",
+          "options": [
+            "are",
+            "is",
+            "be"
+          ],
+          "answer": 0,
+          "explanation": "*Pants* — іменник лише в множині, тому дієслово *are*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "How much ___ this T-shirt?",
+          "answers": [
+            "is"
+          ],
+          "explanation": "*This T-shirt* — однина, тому *How much is…?*"
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "I’d like to try on ___ (ті) shoes in the window.",
+          "answers": [
+            "those"
+          ],
+          "explanation": "«Ті» з множиною — *those*: *those shoes*."
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[These]] [[dress]] [[is]] [[very nice]].",
+          "answer": 0,
+          "fix": "This",
+          "explanation": "*Dress is* — однина, тому вказівний займенник *this*. *These* вживається лише з множиною."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[My new jeans]] [[is]] [[blue]] [[and very comfortable]].",
+          "answer": 1,
+          "fix": "are",
+          "explanation": "*Jeans* — завжди множина, тому *are*: *My new jeans are blue*."
+        }
+      ]
+    },
+    {
+      "id": "town",
+      "title": "Місто: can / can’t і наказовий спосіб",
+      "titleEn": "Around town: can / can’t and imperatives",
+      "summary": "Місця в місті й напрямки; *can / can’t*, наказовий спосіб, запитання *Where is…?*",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Щоб зорієнтуватися в незнайомому місті, треба знати назви місць, уміти спитати дорогу й зрозуміти відповідь: *Turn left. Go straight ahead.* А *can* допомагає сказати, що можна, а чого не можна.",
+        "blocks": [
+          {
+            "title": "Слова: місця в місті",
+            "text": "*a bank, a post office, a pharmacy* (аптека; британською *a chemist’s*), *a supermarket, a train station, a bus stop, a park, a museum, a hospital, a library* (бібліотека), *a bookstore* (книгарня), *a restaurant*. Напрямки: *turn left / right, go straight ahead, on the corner, across from* (навпроти; британською *opposite*).",
+            "examples": [
+              [
+                "The pharmacy is on the corner.",
+                "Аптека на розі."
+              ],
+              [
+                "Go straight ahead and turn left at the bank.",
+                "Ідіть прямо й поверніть ліворуч біля банку."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: can / can’t",
+            "text": "*can* + дієслово без *to*: уміння (*She can swim*), можливість і дозвіл (*You can park here*). Форма однакова для всіх осіб — без *-s*. Заперечення: *can’t* (*cannot*). Запитання: *Can I pay by card?*",
+            "examples": [
+              [
+                "You can’t take photos in the museum.",
+                "У музеї не можна фотографувати."
+              ],
+              [
+                "Can you help me? — Sure.",
+                "Можете мені допомогти? — Звісно."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: наказовий спосіб",
+            "text": "Наказ, інструкція чи порада — дієслово в початковій формі без підмета: *Turn right. Take the bus.* Заперечення — *Don’t*: *Don’t turn here.* Ввічливо: *Excuse me, where is the bank?*",
+            "examples": [
+              [
+                "Take the second street on the left.",
+                "Поверніть на другу вулицю ліворуч."
+              ],
+              [
+                "Don’t cross the street here.",
+                "Не переходьте тут вулицю."
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Після *can* не буває *to* і *-s*: *She can swim*, а не *She can to swim* чи *She cans swim*.",
+          "У запитанні про місце дієслово стоїть перед підметом: *Where is the bank?* У непрямому запитанні, навпаки, прямий порядок: *Can you tell me where the bank is?*",
+          "*Library* — бібліотека, а книгарня — *bookstore*.",
+          "Заборона — *Don’t* + дієслово: *Don’t park here*, а не *Not park here*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "You can buy medicine at the ___.",
+          "options": [
+            "pharmacy",
+            "library",
+            "post office"
+          ],
+          "answer": 0,
+          "explanation": "Ліки продають в аптеці, *pharmacy*. *Library* — бібліотека, *post office* — пошта."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "You can borrow books from the ___.",
+          "options": [
+            "library",
+            "bank",
+            "supermarket"
+          ],
+          "answer": 0,
+          "explanation": "*Borrow* — брати на час; книжки беруть у бібліотеці, *library*."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "My grandfather ___ swim very well.",
+          "options": [
+            "can",
+            "cans",
+            "can to"
+          ],
+          "answer": 0,
+          "explanation": "*Can* не має закінчення *-s* і вживається без *to*: *He can swim*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "___ right at the bank, and the museum is on the left.",
+          "options": [
+            "Turn",
+            "Turns",
+            "To turn"
+          ],
+          "answer": 0,
+          "explanation": "Інструкція — наказовий спосіб: дієслово в початковій формі без підмета, *Turn right*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "Excuse me, where ___ the train station?",
+          "options": [
+            "is",
+            "are",
+            "does"
+          ],
+          "answer": 0,
+          "explanation": "*The train station* — однина, тому *Where is…?*"
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Sorry, I ___ (not / can) find the bus stop.",
+          "answers": [
+            "can't",
+            "cannot"
+          ],
+          "explanation": "Заперечна форма — *cannot* (пишемо разом) або скорочено *can’t*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "___ (not / park) here! It’s a hospital entrance.",
+          "answers": [
+            "Don't park",
+            "Do not park"
+          ],
+          "explanation": "Заборона — наказовий спосіб із *Don’t*: *Don’t park here!*"
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "___ I pay by card here?",
+          "answers": [
+            "Can",
+            "Could",
+            "May"
+          ],
+          "explanation": "Прохання дозволу — *Can I…?* (найуживаніше), ввічливіше — *Could I…?* або *May I…?*"
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[She]] [[can]] [[speaks]] [[three languages]].",
+          "answer": 2,
+          "fix": "speak",
+          "explanation": "Після *can* дієслово в початковій формі, без *-s*: *She can speak*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[Excuse me]], [[where]] [[the post office is]]?",
+          "answer": 2,
+          "fix": "is the post office",
+          "explanation": "У прямому запитанні дієслово стоїть перед підметом: *Where is the post office?*"
+        }
+      ]
+    },
+    {
+      "id": "weather-now",
+      "title": "Погода й «зараз»: Present Continuous",
+      "titleEn": "Weather and now: Present Continuous",
+      "summary": "Погода й пори року; *am / is / are* + *-ing*, правопис форм з *-ing*.",
+      "theory": {
+        "title": "Слова й правило",
+        "intro": "Коли дивимося у вікно й кажемо «Іде дощ» або «Діти грають у дворі», ми описуємо те, що відбувається саме зараз. Для цього потрібен *Present Continuous*.",
+        "blocks": [
+          {
+            "title": "Слова: погода й пори року",
+            "text": "Прикметники: *sunny, cloudy, rainy, windy, snowy, hot, warm, cool, cold*. Дієслова: *It’s raining. It’s snowing.* Пори року: *spring, summer, fall* (британською *autumn*), *winter*. Про погоду завжди кажуть із *it*: *It’s cold today*.",
+            "examples": [
+              [
+                "It’s sunny but cold.",
+                "Сонячно, але холодно."
+              ],
+              [
+                "In the fall, it’s often rainy.",
+                "Восени часто дощить."
+              ]
+            ]
+          },
+          {
+            "title": "Граматика: Present Continuous",
+            "text": "*am / is / are* + дієслово з *-ing*. Описує дію в момент мовлення; маркери — *now, right now, at the moment, Look!, Listen!* Заперечення: *She isn’t sleeping.* Запитання: *What are you doing?*",
+            "examples": [
+              [
+                "Look! It’s snowing.",
+                "Дивись! Іде сніг."
+              ],
+              [
+                "What are you doing? — I’m cooking.",
+                "Що ти робиш? — Готую."
+              ]
+            ]
+          },
+          {
+            "title": "Правопис: -ing",
+            "text": "Зазвичай просто додаємо *-ing*: *read — reading*. Німе *-e* зникає: *make — making, dance — dancing*. Короткий наголошений склад «приголосний — голосний — приголосний» подвоює останню літеру: *swim — swimming, sit — sitting, run — running*.",
+            "examples": [
+              [
+                "The children are swimming in the lake.",
+                "Діти плавають в озері."
+              ],
+              [
+                "Why are you sitting on the floor?",
+                "Чому ти сидиш на підлозі?"
+              ]
+            ]
+          }
+        ],
+        "traps": [
+          "Не пропускайте *am / is / are*: *She is reading*, а не *She reading*.",
+          "Безособові речення про погоду потребують *it*: «Холодно» — *It’s cold*, «Іде дощ» — *It’s raining*.",
+          "*It rains a lot in the fall* — загалом (*Present Simple*); *It’s raining now* — зараз (*Present Continuous*).",
+          "*Children* — множина: *The children are playing*."
+        ]
+      },
+      "items": [
+        {
+          "id": "1",
+          "type": "choice",
+          "prompt": "Take an umbrella. It ___.",
+          "options": [
+            "is raining",
+            "rains",
+            "rain"
+          ],
+          "answer": 0,
+          "explanation": "Дощ іде зараз, тому *Present Continuous*: *It is raining*."
+        },
+        {
+          "id": "2",
+          "type": "choice",
+          "prompt": "Listen! Somebody ___ the piano.",
+          "options": [
+            "is playing",
+            "plays",
+            "playing"
+          ],
+          "answer": 0,
+          "explanation": "*Listen!* вказує, що дія відбувається зараз: *is playing*. Без *is* форма *playing* не може бути присудком."
+        },
+        {
+          "id": "3",
+          "type": "choice",
+          "prompt": "It’s very ___ today. Hold your hat!",
+          "options": [
+            "windy",
+            "sunny",
+            "hot"
+          ],
+          "answer": 0,
+          "explanation": "Капелюх тримають, коли вітряно, — *windy*."
+        },
+        {
+          "id": "4",
+          "type": "choice",
+          "prompt": "In ___, the leaves turn yellow and red.",
+          "options": [
+            "the fall",
+            "the spring",
+            "the summer"
+          ],
+          "answer": 0,
+          "explanation": "Листя жовтіє восени. Американською осінь — *fall*, британською — *autumn*."
+        },
+        {
+          "id": "5",
+          "type": "choice",
+          "prompt": "___ cold today. Wear a warm jacket.",
+          "options": [
+            "It’s",
+            "Is",
+            "It has"
+          ],
+          "answer": 0,
+          "explanation": "Про погоду кажемо з формальним підметом *it*: *It’s cold*. Без *it* речення неграматичне."
+        },
+        {
+          "id": "6",
+          "type": "input",
+          "prompt": "Look! The children ___ (swim) in the lake.",
+          "answers": [
+            "are swimming",
+            "'re swimming"
+          ],
+          "explanation": "*Children* — множина, тому *are*; у *swim* подвоюємо *m*: *swimming*."
+        },
+        {
+          "id": "7",
+          "type": "input",
+          "prompt": "I can’t talk now. I ___ (drive).",
+          "answers": [
+            "am driving",
+            "'m driving"
+          ],
+          "explanation": "Дія зараз — *am driving*. Німе *-e* перед *-ing* зникає."
+        },
+        {
+          "id": "8",
+          "type": "input",
+          "prompt": "— What ___ you doing? — I’m making dinner.",
+          "answers": [
+            "are"
+          ],
+          "explanation": "Запитання в *Present Continuous*: *What are you doing?*"
+        },
+        {
+          "id": "9",
+          "type": "error",
+          "prompt": "[[My sister]] [[reading]] [[a book]] [[in the yard]] right now.",
+          "answer": 1,
+          "fix": "is reading",
+          "explanation": "У *Present Continuous* обов’язкове допоміжне дієслово: *My sister is reading*."
+        },
+        {
+          "id": "10",
+          "type": "error",
+          "prompt": "[[It’s]] [[snowing]], [[and]] [[the children is playing]] outside.",
+          "answer": 3,
+          "fix": "the children are playing",
+          "explanation": "*Children* — множина від *child*, тому *are playing*."
+        }
+      ]
+    }
+  ]
+}

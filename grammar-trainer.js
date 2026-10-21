@@ -4,6 +4,7 @@
  * Граматичний тренажер B1–C2.
  * Налаштування — атрибути на #gr-app:
  *   data-base         — тека з JSON рівнів (b1.json, b2.json, c1.json, c2.json);
+ *   data-levels       — коди рівнів через кому (типово b1,b2,c1,c2; для A1–A2 — a1,a2);
  *   data-version      — мітка для оновлення кешу JSON;
  *   data-storage-key  — ключ localStorage;
  *   data-event        — подія Google Analytics після завершення спроби.
@@ -15,7 +16,6 @@
  * Відповіді нікуди не надсилаються: прогрес зберігається лише в localStorage.
  */
 (function () {
-  const LEVELS = ['b1', 'b2', 'c1', 'c2'];
   const TEST_SIZE = 20;
   const MASTERED = 0.8; // частка правильних, з якої тема вважається засвоєною
   const TYPE_TASKS = {
@@ -27,6 +27,8 @@
   const $ = (id) => document.getElementById(id);
   const app = $('gr-app');
   if (!app) return;
+
+  const LEVELS = (app.dataset.levels || 'b1,b2,c1,c2').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
 
   const config = {
     base: app.dataset.base || 'data/grammar/',
@@ -377,7 +379,7 @@
   function renderTheory(theory) {
     const box = el('article', 'gr-theory');
     if (!theory) return box;
-    box.appendChild(el('h3', 'gr-theory-title', 'Правило'));
+    box.appendChild(el('h3', 'gr-theory-title', theory.title || 'Правило'));
     if (theory.intro) box.appendChild(rich(el('p', 'gr-theory-intro'), theory.intro));
     (theory.blocks || []).forEach((block) => {
       const section = el('section', 'gr-block');

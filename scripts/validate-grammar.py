@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Перевіряє JSON граматичного тренажера (data/grammar/*.json).
+"""Перевіряє JSON граматичного тренажера B1–C2 (data/grammar/*.json)
+і лексико-граматичного тренажера A1–A2 (data/a1-a2/*.json): обидва працюють на grammar-trainer.js.
 
 Запуск:
-  python3 scripts/validate-grammar.py                  # усі рівні
+  python3 scripts/validate-grammar.py                  # усі рівні обох тренажерів
   python3 scripts/validate-grammar.py data/grammar/b2.json
 
 Перевіряє структуру тем і завдань, ключі відповідей, пропуски й фрагменти,
@@ -16,9 +17,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data" / "grammar"
-PAGE = ROOT / "grammar-trainer.html"
-LEVELS = ["b1", "b2", "c1", "c2"]
+# Тека з JSON → сторінка з картками рівнів і перелік рівнів.
+SETS = [
+    (ROOT / "data" / "grammar", ROOT / "grammar-trainer.html", ["b1", "b2", "c1", "c2"]),
+    (ROOT / "data" / "a1-a2", ROOT / "a1-a2-trainer.html", ["a1", "a2"]),
+]
 
 ITEMS_PER_TOPIC = 10
 SEGMENT_RE = re.compile(r"\[\[([^\]]+)\]\]")
@@ -193,23 +196,28 @@ def check_level(path):
     return level, len(topics), sum(len(t.get("items", [])) for t in topics)
 
 
-def check_page(counts):
-    if not PAGE.exists():
+def check_page(page, counts):
+    if not page.exists():
+        err(page.name, "сторінки немає")
         return
-    html = PAGE.read_text(encoding="utf-8")
+    html = page.read_text(encoding="utf-8")
     for level, n_topics, _ in counts:
         m = re.search(rf'data-level-progress="{level}" data-topics="(\d+)"', html)
         if not m:
-            err(PAGE.name, f"немає картки рівня {level}")
+            err(page.name, f"немає картки рівня {level}")
         elif int(m.group(1)) != n_topics:
-            err(PAGE.name, f"рівень {level}: у картці data-topics={m.group(1)}, а тем {n_topics}")
+            err(page.name, f"рівень {level}: у картці data-topics={m.group(1)}, а тем {n_topics}")
 
 
 def main():
-    files = [Path(a) for a in sys.argv[1:]] or [DATA / f"{lv}.json" for lv in LEVELS]
-    counts = [c for c in (check_level(f) for f in files) if c]
-    if not sys.argv[1:]:
-        check_page(counts)
+    if sys.argv[1:]:
+        counts = [c for c in (check_level(Path(a)) for a in sys.argv[1:]) if c]
+    else:
+        counts = []
+        for data, page, levels in SETS:
+            part = [c for c in (check_level(data / f"{lv}.json") for lv in levels) if c]
+            check_page(page, part)
+            counts += part
     if errors:
         print("Знайдено помилки:")
         for e in errors:
