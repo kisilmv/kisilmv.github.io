@@ -105,11 +105,17 @@ python3 scripts/validate-trainer.py
 Відповіді нікуди не надсилаються: прогрес і найкращі результати зберігаються лише в `localStorage`,
 а в Google Analytics після завершення спроби йде тільки подія з `variant_id` і `mode`.
 
-## Граматичний тренажер B1–C2
+## Граматичний тренажер B1–C2 і лексико-граматичний тренажер A1–A2
 
 | Сторінка | Дані | Рушій | Ключ `localStorage` | Подія Google Analytics |
 |---|---|---|---|---|
 | `grammar-trainer.html` | `data/grammar/b1.json`, `b2.json`, `c1.json`, `c2.json` | `grammar-trainer.js` | `grammar-trainer` | `grammar_trainer_complete` |
+| `a1-a2-trainer.html` | `data/a1-a2/a1.json`, `a2.json` | `grammar-trainer.js` | `a1-a2-trainer` | `a1_a2_trainer_complete` |
+
+Обидві сторінки працюють на одному рушії; перелік рівнів задає атрибут `data-levels` на `#gr-app`
+(типово `b1,b2,c1,c2`, на сторінці A1–A2 — `a1,a2`). Тема A1–A2 поєднує лексичне поле з граматичним явищем:
+перший блок теорії — тематична лексика з перекладом, далі — правило. Заголовок блоку теорії задає необов’язкове
+поле `theory.title` (типово «Правило», в A1–A2 — «Слова й правило»).
 
 Стилі — розділ «Граматичний тренажер» наприкінці `service-page.css`. Рушій вантажить лише JSON обраного рівня.
 Кожна тема має власну адресу, яку можна давати студентам: `grammar-trainer.html#b2/reported-speech`;
