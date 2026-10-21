@@ -1,0 +1,578 @@
+{
+  "_note": "Розділи довідника grammar.html. Кожна тема тренажерів (data/a1-a2/*.json, data/grammar/*.json) має належати рівно одному розділу: scripts/build-grammar.js зупиниться з помилкою, якщо тему пропущено або вказано двічі. keywords — загальні синоніми розділу (за ними знаходиться весь розділ-маршрут); topicKeywords — синоніми й формули окремої теми (вага як у назви теми). Після змін запустіть: node scripts/build-grammar.js",
+  "sections": [
+    {
+      "id": "basics",
+      "title": "Базові конструкції: to be, have, there is",
+      "intro": "Перші опорні дієслова й звороти, без яких не збудувати жодного речення.",
+      "keywords": [
+        "базові конструкції",
+        "бути",
+        "мати",
+        "basics"
+      ],
+      "topics": [
+        "a1/meeting-people",
+        "a1/appearance",
+        "a1/home"
+      ],
+      "topicKeywords": {
+        "a1/meeting-people": [
+          "am is are",
+          "бути"
+        ],
+        "a1/appearance": [
+          "have got",
+          "has got",
+          "мати"
+        ],
+        "a1/home": [
+          "є",
+          "прийменники"
+        ]
+      }
+    },
+    {
+      "id": "present",
+      "title": "Теперішні часи",
+      "intro": "Звичні дії й те, що відбувається зараз: від Present Simple до вибору між простим і тривалим часом.",
+      "keywords": [
+        "теперішній час",
+        "теперішні часи",
+        "present",
+        "часи",
+        "tenses"
+      ],
+      "topics": [
+        "a1/daily-routine",
+        "a1/free-time",
+        "a1/weather-now",
+        "b1/present-simple-continuous"
+      ],
+      "topicKeywords": {
+        "a1/daily-routine": [
+          "do does",
+          "простий час"
+        ],
+        "a1/free-time": [
+          "always usually often",
+          "частотність",
+          "like doing"
+        ],
+        "a1/weather-now": [
+          "now",
+          "зараз",
+          "тривалий час",
+          "am doing"
+        ],
+        "b1/present-simple-continuous": [
+          "простий чи тривалий",
+          "дієслова стану",
+          "state verbs"
+        ]
+      }
+    },
+    {
+      "id": "past",
+      "title": "Минулі часи",
+      "intro": "Розповідь про минуле: Past Simple, тривалий фон, передминулий час і звички в минулому.",
+      "keywords": [
+        "минулий час",
+        "минулі часи",
+        "past",
+        "часи",
+        "tenses"
+      ],
+      "topics": [
+        "a2/travel-past",
+        "a2/what-happened",
+        "b1/past-simple-continuous",
+        "b2/narrative-tenses",
+        "b2/used-to-be-used-to"
+      ],
+      "topicKeywords": {
+        "a2/travel-past": [
+          "did",
+          "-ed",
+          "неправильні дієслова",
+          "irregular verbs",
+          "was were"
+        ],
+        "a2/what-happened": [
+          "was doing",
+          "when while"
+        ],
+        "b2/narrative-tenses": [
+          "передминулий",
+          "had done",
+          "had been doing",
+          "оповідні часи"
+        ],
+        "b2/used-to-be-used-to": [
+          "звички в минулому",
+          "get used to"
+        ]
+      }
+    },
+    {
+      "id": "present-perfect",
+      "title": "Present Perfect",
+      "intro": "Час, якого немає в українській: досвід, результат, дія, що триває досі.",
+      "keywords": [
+        "теперішній доконаний",
+        "перфект",
+        "present perfect",
+        "have done",
+        "часи",
+        "tenses"
+      ],
+      "topics": [
+        "a2/experiences",
+        "b1/present-perfect-past-simple",
+        "b2/present-perfect-continuous"
+      ],
+      "topicKeywords": {
+        "a2/experiences": [
+          "ever never",
+          "досвід",
+          "been to"
+        ],
+        "b1/present-perfect-past-simple": [
+          "already yet just",
+          "since for"
+        ],
+        "b2/present-perfect-continuous": [
+          "have been doing",
+          "how long"
+        ]
+      }
+    },
+    {
+      "id": "future",
+      "title": "Майбутнє",
+      "intro": "Плани, прогнози й домовленості, а також майбутнє з погляду минулого.",
+      "keywords": [
+        "майбутній час",
+        "майбутнє",
+        "future",
+        "часи",
+        "tenses"
+      ],
+      "topics": [
+        "a2/plans",
+        "b1/future-forms",
+        "b2/future-continuous-perfect",
+        "c1/future-in-the-past"
+      ],
+      "topicKeywords": {
+        "a2/plans": [
+          "will",
+          "going to",
+          "прогноз",
+          "плани"
+        ],
+        "b1/future-forms": [
+          "домовленості",
+          "shall"
+        ],
+        "b2/future-continuous-perfect": [
+          "will have done",
+          "will be doing"
+        ],
+        "c1/future-in-the-past": [
+          "was going to",
+          "would"
+        ]
+      }
+    },
+    {
+      "id": "modals",
+      "title": "Модальні дієслова",
+      "intro": "Уміння, обов’язок, порада, дозвіл, здогад — від can до найтонших відтінків модальності.",
+      "keywords": [
+        "модальні дієслова",
+        "modal verbs",
+        "modals",
+        "модальність"
+      ],
+      "topics": [
+        "a1/town",
+        "a2/health",
+        "b1/modals",
+        "b2/modals-deduction",
+        "c1/advanced-modals",
+        "c2/nuanced-modality"
+      ],
+      "topicKeywords": {
+        "a1/town": [
+          "can",
+          "imperative",
+          "наказовий спосіб"
+        ],
+        "a2/health": [
+          "порада",
+          "обов'язок"
+        ],
+        "b1/modals": [
+          "заборона",
+          "уміння",
+          "mustn't",
+          "don't have to",
+          "may might"
+        ],
+        "b2/modals-deduction": [
+          "здогад",
+          "deduction",
+          "must have",
+          "might have",
+          "can't have"
+        ],
+        "c1/advanced-modals": [
+          "needn't have",
+          "should have"
+        ]
+      }
+    },
+    {
+      "id": "conditionals",
+      "title": "Умовні речення, wish і нереальність",
+      "intro": "Реальні й нереальні умови, жаль і побажання, суб’юнктив.",
+      "keywords": [
+        "умовні речення",
+        "умовний спосіб",
+        "conditionals",
+        "if",
+        "якби",
+        "нереальне"
+      ],
+      "topics": [
+        "b1/conditionals",
+        "b2/conditionals-third-mixed",
+        "b2/wishes",
+        "c1/unreal-past",
+        "c1/inverted-conditionals",
+        "c2/hypothetical-advanced",
+        "c2/subjunctive"
+      ],
+      "topicKeywords": {
+        "b1/conditionals": [
+          "zero first second",
+          "нульовий",
+          "перший",
+          "другий"
+        ],
+        "b2/conditionals-third-mixed": [
+          "третій",
+          "змішаний",
+          "third",
+          "mixed",
+          "if i had known"
+        ],
+        "b2/wishes": [
+          "жаль",
+          "побажання"
+        ],
+        "c1/unreal-past": [
+          "would rather",
+          "it's time",
+          "as if"
+        ],
+        "c1/inverted-conditionals": [
+          "had i known",
+          "should you",
+          "were i",
+          "unless",
+          "provided"
+        ],
+        "c2/subjunctive": [
+          "кон'юнктив",
+          "insist that"
+        ],
+        "c2/hypothetical-advanced": [
+          "hypothetical",
+          "suppose"
+        ]
+      }
+    },
+    {
+      "id": "passive",
+      "title": "Пасивний стан",
+      "intro": "Коли важлива дія, а не виконавець: від основ до безособового пасиву.",
+      "keywords": [
+        "пасив",
+        "пасивний стан",
+        "passive voice",
+        "passive"
+      ],
+      "topics": [
+        "b1/passive-basics",
+        "b2/passive-causative",
+        "c1/impersonal-passive"
+      ],
+      "topicKeywords": {
+        "b1/passive-basics": [
+          "be done",
+          "was done"
+        ],
+        "b2/passive-causative": [
+          "каузатив",
+          "causative",
+          "get something done"
+        ],
+        "c1/impersonal-passive": [
+          "it is said",
+          "is believed",
+          "безособовий"
+        ]
+      }
+    },
+    {
+      "id": "reported",
+      "title": "Непряма мова",
+      "intro": "Як переказати чужі слова, запитання й прохання.",
+      "keywords": [
+        "непряма мова",
+        "reported speech",
+        "indirect speech",
+        "said told",
+        "asked",
+        "узгодження часів",
+        "sequence of tenses"
+      ],
+      "topics": [
+        "b2/reported-speech"
+      ],
+      "topicKeywords": {}
+    },
+    {
+      "id": "verb-patterns",
+      "title": "Герундій та інфінітив",
+      "intro": "Що ставити після дієслова: -ing чи to, і коли від цього змінюється значення.",
+      "keywords": [
+        "герундій",
+        "інфінітив",
+        "gerund",
+        "infinitive",
+        "-ing",
+        "verb patterns"
+      ],
+      "topics": [
+        "a2/likes-wants",
+        "b1/gerund-infinitive",
+        "b2/verb-patterns"
+      ],
+      "topicKeywords": {
+        "a2/likes-wants": [
+          "would like",
+          "enjoy"
+        ],
+        "b2/verb-patterns": [
+          "remember stop try",
+          "зміна значення"
+        ]
+      }
+    },
+    {
+      "id": "nouns",
+      "title": "Іменники, артиклі й слова кількості",
+      "intro": "Злічуване й незлічуване, some і any, присвійність, вказівні слова й артиклі.",
+      "keywords": [
+        "іменник",
+        "іменники",
+        "nouns"
+      ],
+      "topics": [
+        "a1/family",
+        "a1/food",
+        "a1/clothes-shopping",
+        "a2/kitchen",
+        "b1/quantifiers",
+        "b2/articles"
+      ],
+      "topicKeywords": {
+        "a1/family": [
+          "possessive",
+          "my your",
+          "'s",
+          "присвійні"
+        ],
+        "a1/food": [
+          "countable",
+          "uncountable",
+          "some any",
+          "злічувані",
+          "незлічувані"
+        ],
+        "a1/clothes-shopping": [
+          "вказівні займенники",
+          "demonstratives"
+        ],
+        "a2/kitchen": [
+          "кількість",
+          "quantifiers",
+          "much many"
+        ],
+        "b1/quantifiers": [
+          "quantifiers",
+          "few little",
+          "each every"
+        ],
+        "b2/articles": [
+          "a an the",
+          "означений",
+          "неозначений",
+          "the"
+        ]
+      }
+    },
+    {
+      "id": "adjectives",
+      "title": "Прикметники, прислівники й колокації",
+      "intro": "Порівняння, різниця між прикметником і прислівником, усталені сполучення з make, do, have, take.",
+      "keywords": [
+        "прикметник",
+        "прислівник",
+        "adjectives",
+        "adverbs"
+      ],
+      "topics": [
+        "a2/places-comparing",
+        "a2/character",
+        "a2/collocations"
+      ],
+      "topicKeywords": {
+        "a2/places-comparing": [
+          "comparative",
+          "superlative",
+          "ступені порівняння",
+          "порівняння",
+          "-er -est",
+          "more most"
+        ],
+        "a2/character": [
+          "-ly",
+          "прикметник чи прислівник"
+        ],
+        "a2/collocations": [
+          "make do",
+          "have take",
+          "словосполучення"
+        ]
+      }
+    },
+    {
+      "id": "relative",
+      "title": "Підрядні означальні",
+      "intro": "Who, which, that, whose — і складніші номінативні підрядні.",
+      "keywords": [
+        "підрядні означальні",
+        "relative clauses",
+        "підрядні речення",
+        "who which that"
+      ],
+      "topics": [
+        "b1/relative-clauses",
+        "b2/relative-clauses-advanced",
+        "c2/nominal-relative"
+      ],
+      "topicKeywords": {
+        "b2/relative-clauses-advanced": [
+          "whose",
+          "whom"
+        ],
+        "c2/nominal-relative": [
+          "what",
+          "whatever",
+          "whoever"
+        ]
+      }
+    },
+    {
+      "id": "emphasis",
+      "title": "Інверсія, підсилення й еліпсис",
+      "intro": "Як виділити головне, уникнути повторів і звучати по-книжному.",
+      "keywords": [
+        "підсилення",
+        "emphasis",
+        "стилістика"
+      ],
+      "topics": [
+        "c1/inversion",
+        "c1/cleft-sentences",
+        "c1/emphasis-substitution",
+        "c2/advanced-inversion",
+        "c2/ellipsis"
+      ],
+      "topicKeywords": {
+        "c1/inversion": [
+          "never have i",
+          "not only",
+          "hardly",
+          "inversion"
+        ],
+        "c1/cleft-sentences": [
+          "it is that",
+          "what i need is",
+          "cleft"
+        ],
+        "c1/emphasis-substitution": [
+          "do so",
+          "substitution",
+          "заміщення"
+        ],
+        "c2/advanced-inversion": [
+          "inversion"
+        ],
+        "c2/ellipsis": [
+          "ellipsis"
+        ]
+      }
+    },
+    {
+      "id": "formal",
+      "title": "Складне речення й формальний стиль",
+      "intro": "Дієприкметникові й абсолютні звороти, допустовість, узгодження, номіналізація.",
+      "keywords": [
+        "формальний стиль",
+        "formal style",
+        "академічний стиль",
+        "academic"
+      ],
+      "topics": [
+        "c1/participle-clauses",
+        "c1/concession-contrast",
+        "c2/concessive-fronting",
+        "c2/concord",
+        "c2/absolute-constructions",
+        "c2/nominalisation"
+      ],
+      "topicKeywords": {
+        "c1/participle-clauses": [
+          "having done",
+          "participle"
+        ],
+        "c1/concession-contrast": [
+          "although",
+          "though",
+          "despite",
+          "however",
+          "whereas"
+        ],
+        "c2/concessive-fronting": [
+          "much as",
+          "try as"
+        ],
+        "c2/concord": [
+          "agreement",
+          "subject verb agreement"
+        ],
+        "c2/absolute-constructions": [
+          "absolute"
+        ],
+        "c2/nominalisation": [
+          "nominalization"
+        ]
+      }
+    }
+  ]
+}
