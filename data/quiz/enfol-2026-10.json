@@ -1,0 +1,187 @@
+{
+  "id": "enfol-2026-10",
+  "month": "October 2026",
+  "postsUrl": "https://t.me/enfol/1819",
+  "results": [
+    { "min": 12, "text": "A hat trick and then some — every answer was a home run. The C2 inversion held no secrets for you." },
+    { "min": 10, "text": "Excellent work — no dearth of knowledge here. Check the explanations for the one or two that slipped." },
+    { "min": 7, "text": "A solid result. The upper-level items (inversion, balk, dearth) are worth another look." },
+    { "min": 4, "text": "A fair start. Don’t be daunted — reread the explanations and try again; the second attempt is usually much better." },
+    { "min": 0, "text": "This month’s set was a challenge. Go back through the October posts on @enfol and give the quiz another go." }
+  ],
+  "questions": [
+    {
+      "level": "B1",
+      "topic": "-ing vs -ed adjectives",
+      "prompt": "Before my first day at the new job, I felt completely ___ by the size of the company.",
+      "options": ["daunting", "daunted", "daunt", "dauntingly"],
+      "correct": 1,
+      "note": "<b>Daunted</b> = feeling that something is too big or too difficult for you. The <i>-ed</i> form describes how a person feels; the <i>-ing</i> form describes the thing that causes the feeling: <i>The company was daunting. I was daunted.</i>",
+      "why": [
+        "<b>Daunting</b> describes the thing, not the person: <i>a daunting task</i>. <i>I felt daunting</i> would mean that you frightened other people. It works exactly like <i>boring</i> and <i>bored</i>.",
+        null,
+        "<b>Daunt</b> is the base verb (<i>Nothing daunts her</i>). After <i>felt</i> you need an adjective, so use the participle <i>daunted</i>.",
+        "<b>Dauntingly</b> is an adverb: it describes an adjective (<i>a dauntingly long list</i>). After <i>felt</i> you need an adjective, not an adverb."
+      ]
+    },
+    {
+      "level": "B1",
+      "topic": "Money words",
+      "prompt": "Out of the blue, the bank returned €400 in old fees. What a lovely ___!",
+      "options": ["windfall", "rainfall", "payday", "bargain"],
+      "correct": 0,
+      "note": "<b>Windfall</b> = money you get suddenly and did not expect. The word first meant fruit blown down by the wind — free to pick up. Common partners: <i>a tax windfall, an unexpected windfall, windfall profits</i>.",
+      "why": [
+        null,
+        "<b>Rainfall</b> is the amount of rain that falls in a place. It also ends in <i>-fall</i>, but it is a weather word, not a money word.",
+        "<b>Payday</b> is the day you receive your salary — money you expect and work for. Here the money came out of the blue.",
+        "A <b>bargain</b> is something you buy for less than its usual price. Here nobody bought anything; the money simply arrived."
+      ]
+    },
+    {
+      "level": "B1+",
+      "topic": "Sports idioms",
+      "prompt": "Ana scored three goals in one match — her first ___ of the season.",
+      "options": ["home run", "hat trick", "three-pointer", "top hat"],
+      "correct": 1,
+      "note": "A <b>hat trick</b> is three goals by one player in one game, or more generally three successes in a row. It comes from cricket, where a bowler who did this could win a new hat.",
+      "why": [
+        "A <b>home run</b> comes from baseball and means one big, clear success. It is a single hit, not three goals, and it sounds very American.",
+        null,
+        "A <b>three-pointer</b> is a single basketball shot worth three points. It is one shot in a different sport, not three goals.",
+        "A <b>top hat</b> is a tall, formal hat. It contains the word <i>hat</i>, but it is just clothing, not a sports idiom."
+      ]
+    },
+    {
+      "level": "B1+",
+      "topic": "Compound adjectives",
+      "prompt": "We stayed in a small ___ hotel — the owners lived on the top floor and cooked breakfast themselves.",
+      "options": ["families-owned", "owned-family", "family-owned", "family-owning"],
+      "correct": 2,
+      "note": "Noun + past participle makes a compact adjective: <b>family-owned</b> = owned by a family. Keep the hyphen before a noun: <i>battery-powered, home-cooked, snow-covered</i>.",
+      "why": [
+        "The first part never takes <i>-s</i>, even when the meaning is plural: <i>a family-owned shop</i>, not <i>families-owned</i>.",
+        "The order is fixed: noun first, then the participle. <i>Owned-family</i> is not a word, and it sounds like a family that someone owns.",
+        null,
+        "The <i>-ing</i> form gives an active meaning: a <i>family-owning</i> hotel would be a hotel that owns a family. The hotel is owned, so use the past participle <i>owned</i>."
+      ]
+    },
+    {
+      "level": "B2",
+      "topic": "Office verbs",
+      "prompt": "The meeting was moved from Friday to Monday morning, so everyone ___ to finish their slides over the weekend.",
+      "options": ["squabbled", "scrambled", "scribbled", "stumbled"],
+      "correct": 1,
+      "note": "<b>Scramble to do something</b> = hurry to do something in a rush, usually because time is short.",
+      "why": [
+        "<b>Squabble</b> means to argue about something small (<i>squabble over the front seat</i>). It takes <i>over/about</i>, not <i>to</i> + verb, and nobody is arguing here.",
+        null,
+        "<b>Scribble</b> means to write quickly and carelessly (<i>scribble a note</i>). It needs an object and is about handwriting, not about hurrying to finish work.",
+        "<b>Stumble</b> means to almost fall while walking, or to make mistakes when speaking (<i>stumble over a word</i>). It does not mean hurrying."
+      ]
+    },
+    {
+      "level": "B2",
+      "topic": "A native-speaker trap",
+      "prompt": "A burst pipe ___ havoc in the basement while we were away.",
+      "options": ["wrecked", "wreaked", "caused a", "broke"],
+      "correct": 1,
+      "note": "<b>Wreak havoc</b> /riːk ˈhævək/ = cause a lot of damage and confusion. <i>Wreak</i> is an old verb that rhymes with <i>week</i>; today it lives mainly in this phrase.",
+      "why": [
+        "A very common mistake, even among native speakers. <b>Wreck</b> does mean “destroy”, but you wreck <i>a thing</i> (<i>wreck the car</i>); the fixed phrase is <i>wreak havoc</i>.",
+        null,
+        "<i>Cause havoc</i> is correct English, but <b>havoc</b> is uncountable and takes no article: not <i>a havoc</i>, just <i>havoc</i>.",
+        "<b>Break</b> does not combine with <i>havoc</i>. You can <i>break a pipe</i>, but you <i>wreak</i> or <i>cause</i> havoc."
+      ]
+    },
+    {
+      "level": "B2+",
+      "topic": "Inversion after not only",
+      "prompt": "___ late for the interview, he also forgot his CV.",
+      "options": ["Not only he was", "Not only was he", "Not only did he be", "Not only were he"],
+      "correct": 1,
+      "note": "When a sentence opens with <b>not only</b>, the helping verb moves in front of the subject, just as in a question. With <i>be</i>, the verb <i>be</i> itself moves: <i>Not only was he late…</i>",
+      "why": [
+        "This is statement word order. After <i>not only</i> at the start, invert: <i>Not only was he…</i> Normal order is fine only when <i>not only</i> sits inside the sentence: <i>He was not only late…</i>",
+        null,
+        "<i>Be</i> never needs <i>do</i> to invert: it moves to the front on its own, as in <i>Was he late?</i>, not <i>Did he be late?</i>",
+        "The inversion is right, but the verb must agree with the subject: <i>he was</i>, so <i>was he</i>. <i>Were he</i> appears only in formal conditionals (<i>Were he here, …</i>)."
+      ]
+    },
+    {
+      "level": "B2+",
+      "topic": "let alone",
+      "prompt": "Which sentence uses <i>let alone</i> correctly?",
+      "options": [
+        "He can boil an egg, let alone cook dinner.",
+        "He can’t boil an egg, let alone cooking dinner.",
+        "He can’t cook dinner, let alone boil an egg.",
+        "He can’t boil an egg, let alone cook dinner."
+      ],
+      "correct": 3,
+      "note": "<b>Let alone</b> = and certainly not. Three things must be right: the first part is negative, the idea after <i>let alone</i> is bigger and even less likely, and both parts match in form (verb after verb: <i>boil … cook</i>).",
+      "why": [
+        "The first part must be negative. <i>He can boil an egg</i> is positive, so <i>let alone</i> has nothing to build on.",
+        "Both parts must match: <i>boil</i> is a base verb, so the second part needs one too — <i>cook</i>, not <i>cooking</i>.",
+        "The order is reversed. The smaller, easier thing comes first and the bigger one after <i>let alone</i>. Cooking dinner is harder than boiling an egg, not the other way round.",
+        null
+      ]
+    },
+    {
+      "level": "C1",
+      "topic": "Verb + preposition",
+      "prompt": "Most buyers loved the flat but ___ the price and walked away.",
+      "options": ["jumped at", "balked at", "stuck at", "balked on"],
+      "correct": 1,
+      "note": "<b>Balk at something</b> /bɔːk/ = refuse because it feels too expensive, too risky or too much. It rhymes with <i>talk</i> and <i>walk</i>: the <i>l</i> is silent. The spelling <i>baulk</i> appears in older British texts.",
+      "why": [
+        "<b>Jump at</b> means to accept something eagerly (<i>jump at the chance</i>) — the opposite. Buyers who jumped at the price would not walk away.",
+        null,
+        "<b>Stick at</b> means to keep working hard at something difficult (<i>stick at your English</i>). It does not describe refusing a price.",
+        "Right verb, wrong preposition. <i>Balk</i> combines with <b>at</b>: <i>balk at the cost, balk at the idea, balk at paying</i>."
+      ]
+    },
+    {
+      "level": "C1",
+      "topic": "Formal vocabulary",
+      "prompt": "The report warns of a ___ of qualified nurses in rural hospitals.",
+      "options": ["death", "wealth", "dearth", "shortness"],
+      "correct": 2,
+      "note": "<b>A dearth of something</b> /dɜːθ/ = too little of it; very few. It rhymes with <i>earth</i> and belongs to reports, articles and formal speech. With friends, say <i>not enough</i> or <i>a shortage of</i>.",
+      "why": [
+        "<b>Death</b> /deθ/ looks almost the same, but it means the end of life. The two words differ by one letter and one vowel sound.",
+        "<b>A wealth of</b> means a lot of something (<i>a wealth of experience</i>) — the opposite. A report would not <i>warn</i> about having plenty of nurses.",
+        null,
+        "<b>Shortness</b> describes being short in length or time (<i>shortness of breath</i>). For too few of something, use <i>a shortage of</i> or <i>a dearth of</i>."
+      ]
+    },
+    {
+      "level": "C2",
+      "topic": "Inversion after so + adjective",
+      "prompt": "___ that the airport cancelled every morning flight.",
+      "options": ["So thick the fog was", "So thick was the fog", "Such thick was the fog", "So thick did the fog be"],
+      "correct": 1,
+      "note": "In literary English, <b>so + adjective</b> can move to the front for effect. Then the verb comes before the subject: <i>So thick was the fog that…</i> Keep the <i>that</i> clause — it carries the result. In everyday speech, say <i>The fog was so thick that…</i>",
+      "why": [
+        "With <i>so</i> + adjective at the front, the subject and verb must swap: <i>was the fog</i>, not <i>the fog was</i>.",
+        null,
+        "<b>Such</b> goes with a noun (<i>such thick fog that…</i>), not with an adjective on its own. Before a bare adjective, use <i>so</i>.",
+        "<i>Be</i> inverts on its own and never takes <i>do</i>: <i>was the fog</i>, not <i>did the fog be</i>."
+      ]
+    },
+    {
+      "level": "C2",
+      "topic": "Idioms of support",
+      "prompt": "When the mayor ___ the project, the money appeared within a week.",
+      "options": ["threw her weight around", "threw the weight behind", "threw her weight behind", "pulled her weight behind"],
+      "correct": 2,
+      "note": "<b>Throw your weight behind something</b> = support it with all your power and influence. The weight belongs to the subject: <i>she threw her weight behind it, they threw their weight behind it</i>.",
+      "why": [
+        "<b>Throw your weight around</b> is a real idiom, but it means using your power in a bossy, unpleasant way. It takes no object, so it cannot be followed by <i>the project</i>.",
+        "The idiom needs a possessive that matches the subject: <i>her weight</i>. <i>The weight</i> breaks the fixed phrase.",
+        null,
+        "<b>Pull your weight</b> means to do your fair share of work in a team (<i>Everyone must pull their weight</i>). It does not combine with <i>behind</i>."
+      ]
+    }
+  ]
+}
