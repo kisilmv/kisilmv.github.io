@@ -102,7 +102,7 @@
   add({ id: 'm1', type: 'match', family: 'label', kicker: 'The map · Check the doors',
     needs: [C_AS, 'attacker'],
     prompt: 'GradeBook’s attack surface: how could an attacker <b>exploit</b> each door (1–4)? One option (a–e) is extra.',
-    left: ['1 search box', '2 /grades/1043', '4 teachers’ login', '5 old library'],
+    left: ['search box', '/grades/1043', 'teachers’ login', 'old library'],
     right: ['type code, not text', 'use a known flaw', 'read the password table', 'guess passwords', 'change the number'] });
   /* ======================= DOOR 1 · THE SEARCH BOX ======================= */
   add({ id: 'sB', type: 'end', kicker: 'Door 1 · The search box', title: 'What if the input is code?', text: 'Injection: the classic unlocked door' });
@@ -171,7 +171,7 @@
     needs: [R1, C_INJ, 'cross-site scripting (XSS)', 'parameterized query'],
     prompt: 'Link each <b>if</b> (1–4) to its result. One (a–e) is extra.',
     left: ['If input goes into the query,', 'If the query uses parameters,', 'If comments hold scripts (cross-site scripting),', 'If we test the form before launch,'],
-    right: ['we’ll catch the flaw.', 'the input stays data.', 'the server deletes it.', 'the database runs code.', 'browsers run the script.'] });
+    right: ['the flaw is caught.', 'the input stays data.', 'the server deletes it.', 'the database runs code.', 'browsers run the script.'] });
   add({ id: 'r3a', type: 'content', kicker: 'The text · The Door Nobody Locked · ¶3 · 1/2', title: 'The classic door',
     items: [RD('The classic unlocked door is injection. <b>[A]</b> If an application builds a database query by pasting the user’s input directly into it, an attacker can type SQL code instead of a name, and the database will run it. <b>[B]</b> The same mistake in a web page leads to cross-site scripting, in which a script typed into a comment field runs in other visitors’ browsers. <b>[C]</b>')] });
   add({ id: 'in1', type: 'mcq', family: 'insert', kicker: 'The text · ¶3 · Where does it go?', needs: [C_INJ],
@@ -333,7 +333,7 @@
       SM('<b>Fix:</b> <i>Please add…; otherwise, …</i>') +
         K('The developer will argue. Answer: <i>Logging in is authentication; it doesn’t check…</i>')] });
   /* ======================= DOOR 3 · THE PASSWORD TABLE ======================= */
-  add({ id: 'sD', type: 'end', kicker: 'Door 3 · The password table', title: 'What if someone steals the database?', text: 'What we found: GradeBook stores passwords in a way that a thief could reverse quickly.' });
+  add({ id: 'sD', type: 'end', kicker: 'Door 3 · The password table', title: 'What if someone steals the database?', text: 'What we found: GradeBook stores passwords in a way that a thief could guess quickly.' });
 
   add({ id: 'v12', type: 'content', reveal: true, kicker: 'Door 3 · What is stored · 1/2', title: 'Readable or not?',
     items: [
@@ -351,7 +351,7 @@
       K('Ukrainian «шифрувати паролі» in a spec = <b>hash</b> passwords.')] });
   add({ id: 'hc1', type: 'gap', family: 'scenario', kicker: 'Door 3 · Check the idea', needs: [C_HASH],
     instruction: 'One word: <b>hash</b> or <b>encrypt</b>?',
-    prompt: 'GradeBook must show the last four digits of a saved card again later. So it must ___ the card numbers.', placeholder: 'one word' });
+    prompt: 'The dean’s office must print each graduate’s passport number on the diploma later. So GradeBook must ___ the passport numbers.', placeholder: 'one word' });
   add({ id: 'v14', type: 'content', reveal: true, kicker: 'Door 3 · How passwords are stored', title: 'Salt and a slow hash',
     teaches: [C_SALT],
     items: [
@@ -369,8 +369,8 @@
 
   add({ id: 'v15', type: 'content', reveal: true, kicker: 'Door 3 · The attacker’s side', title: 'Cracking and compromising',
     items: [
-      TM('to crack', '/kræk/', 'зламати (пароль, геш)', 'to find the password behind a hash by guessing very fast. Not <b>break</b> (= damage, stop working).'),
-      TM('to compromise', '/ˈkɑːmprəmaɪz/', 'зламати, скомпрометувати', 'to break the security of an account or system and take control of it.'),
+      TM('to crack', '/kræk/', 'підібрати (пароль, геш)', 'to find the password behind a hash by guessing very fast. Not <b>break</b> (= damage, stop working).'),
+      TM('to compromise', '/ˈkɑːmprəmaɪz/', 'скомпрометувати', 'to break the security of an account or system and take control of it.'),
       K('bcrypt /ˈbiːkrɪpt/ · Argon2 /ˈɑːrɡɑːn tuː/ — slow hash functions')] });
   add({ id: 'sc3', type: 'mcq', family: 'scenario', kicker: 'Door 3 · Check the idea', needs: [C_HASH, C_SALT],
     prompt: 'After the fix, GradeBook salts every password and hashes it with bcrypt. Then an attacker steals the table. <b>Can the attacker read the passwords?</b>',
@@ -389,7 +389,7 @@
     right: ['guess a password fast', 'stop something working', 'two-way, with a key', 'give a user rights', 'one way only'] });
 
   add({ id: 'pe1', type: 'mcq', family: 'post-edit', kicker: 'Door 3 · Fix the machine translation · 1/3', needs: [C_HASH],
-    prompt: K('Example: «Я ввімкнув MFA» → I <s>included</s> MFA → I <b>turned on</b> MFA.<br>') +
+    prompt: K('Example: «Сайт зламали» → The site was <s>broken</s> → The site was <b>hacked</b>.<br>') +
       'A spec says: «Ми шифруємо паролі користувачів.»<br>MT: <b>We encrypt users’ passwords.</b><br>Tap the wrong part.',
     options: ['We', 'encrypt', 'users’ passwords'] });
   add({ id: 'pe2', type: 'gap', family: 'post-edit', kicker: 'Door 3 · Fix the machine translation · 2/3', needs: ['concept: log in is not authorize'],
@@ -439,7 +439,7 @@
       TM('multi-factor authentication (MFA)', '/ˌmʌlti ˌfæktər ɔːˌθentɪˈkeɪʃn/', 'багатофакторна автентифікація', 'you log in with two different things: something you <b>know</b> (a password) and something you <b>have</b> (your phone). A stolen password alone is not enough.'),
       SS('Like a bank card: the card (you have) + the PIN (you know). An <b>app</b> code is safer than an <b>SMS</b> code: SMS codes can be stolen if someone takes over your phone number.')] });
   add({ id: 'sc5', type: 'mcq', family: 'scenario', kicker: 'Door 4 · Check the idea', needs: [C_MFA, 'compromise'],
-    prompt: 'A teacher uses her GradeBook password on a shopping site too. That site is <b>compromised</b>, and her password leaks. MFA is on in GradeBook. <b>What happens when the attacker tries it?</b>',
+    prompt: 'A teacher uses her GradeBook password on a shopping site too. That site is <b>compromised</b>, and her password leaks. Multi-factor authentication is on in GradeBook. <b>What happens when the attacker tries it?</b>',
     options: ['The attacker logs in and changes grades.', 'The attacker logs in, but can only read grades.', 'The attacker also needs the code from her phone.'] });
   /* ---------- Grammar 3 · second conditional ---------- */
   add({ id: 'g3a', type: 'content', reveal: true, kicker: 'Grammar · Rule 3 · 1/3', title: 'Imagine it: what would happen if…?',
@@ -461,7 +461,7 @@
   add({ id: 'g3c', type: 'match', family: 'form', kicker: 'Door 4 · Rule 3 · 1/3', needs: [R3, 'phishing', 'password manager'],
     prompt: 'Join the halves (1–3). Watch the type: real or imagined? One ending (a–d) is extra.',
     left: ['If someone stole a teacher’s password,', 'If a phishing email works,', 'If I were the team lead,'],
-    right: ['attackers can log in.', 'I’d require password managers.', 'they will change grades.', 'they could change grades.'] });
+    right: ['attackers can log in.', 'I’d require password managers.', 'I’ll require password managers.', 'they could change grades.'] });
   add({ id: 'g3d', type: 'gap', family: 'form', kicker: 'Door 4 · Rule 3 · 2/3', needs: [R3, C_MFA],
     instruction: 'Put the verb in the correct form. <b>Example:</b> If we <b>had</b> (have) more time, we would test more.',
     prompt: 'If we ___ (turn on) MFA for teachers, a stolen password wouldn’t be enough.', placeholder: 'two words' });
@@ -529,7 +529,7 @@
 
   add({ id: 'nm1', type: 'content', reveal: true, family: 'numbers', kicker: 'The text · Say the numbers · One student at a time',
     title: 'Read one line aloud. The next student reads the next line.',
-    items: [SM('<b>March 2017</b>'), SM('<b>147 million</b> people'), SM('up to <b>$700 million</b>'), SM('<b>99.9%</b>'), SM('since <b>2003</b>')] });
+    items: [SM('<b>March 2017</b>'), SM('<b>147 million</b> people'), SM('up to <b>$700 million</b>'), SM('<b>99.9%</b> (MFA, Microsoft, 2019)'), SM('since <b>2003</b>')] });
 
   /* ---------- Grammar 4 · third conditional and should have ---------- */
   add({ id: 'g4a', type: 'content', reveal: true, kicker: 'Grammar · Rule 4 · 1/2', title: '«Якби»: now or then?',
@@ -550,10 +550,9 @@
   add({ id: 'g4c', type: 'gap', family: 'form', kicker: 'Door 5 · Rule 4 · 1/2', needs: [R4, 'patch'],
     instruction: 'Put the verb in the correct form. <b>Example:</b> If they <b>had tested</b> (test) the form, they would have found the flaw.',
     prompt: 'If the company ___ (patch) the server in March, the attackers wouldn’t have gotten in.' + K('<br>gotten — AmE · BrE got'), placeholder: 'two words' });
-  add({ id: 'g4d', type: 'gap', family: 'form', kicker: 'Door 5 · Rule 4 · 2/2', needs: [R4, 'certificate'],
-    instruction: 'Put the verb in the correct form.',
-    prompt: 'If somebody ___ (notice) the expired certificate, the attack wouldn’t have gone unnoticed for weeks.', placeholder: 'two words' });
-
+  add({ id: 'g4d', type: 'mcq', family: 'error', kicker: 'Door 5 · Rule 4 · 2/2 · Find the mistake', needs: [R4, 'certificate'],
+    prompt: '<b>If somebody would have noticed the expired certificate, the attack wouldn’t have gone unnoticed.</b><br>Tap the wrong part.',
+    options: ['If somebody would have noticed', 'the expired certificate,', 'the attack wouldn’t have gone unnoticed.'] });
   add({ id: 'g4e', type: 'mcq', family: 'transform', kicker: 'Door 5 · Same meaning', needs: [R4, 'plain text', 'to hash'],
     prompt: '“The passwords <b>weren’t hashed</b>, so they <b>were exposed</b> in plain text.” <b>Same meaning?</b>' + K('<br>they = the passwords'),
     options: [
@@ -611,21 +610,24 @@
   add({ id: 'a1b', type: 'content', reveal: true, kicker: 'Listening · Words from the audio · 2/2', title: 'Spoken English',
     items: [
       SM('AmE <b>first floor</b> = the floor at street level (Ukrainian «перший поверх»). In BrE, it has another name.'),
-      SM('Fillers: <b>you know</b>, <b>basically</b>, <b>kind of like</b>, <b>we gotta</b> = we have got to')] });
+      SM('Fillers: <b>you know</b>, <b>basically</b>, <b>kind of like</b>. Listen for one more informal phrase.')] });
   add({ id: 'a2', type: 'content', reveal: true, kicker: 'Listening · While you listen', title: 'Three questions',
     items: [SM('<b>1.</b> What are attackers <b>compared to</b>?'), SM('<b>2.</b> What everyday action is threat modeling <b>like</b>?'),
       SM('<b>3.</b> What is the <b>ultimate backstop</b>?'),
       K('The voice says “threat modeling” unclearly: listen for the idea, not the word.')] });
   add({ id: 'a3', type: 'end', kicker: 'Listening · 1st time', title: '🎧 Listen', text: 'Answer the three questions in your head.' });
-  add({ id: 'L1', type: 'mcq', family: 'tfng', kicker: 'After listening · True, false or not given? · 1/3', needs: ['backstop'],
+  add({ id: 'L1', type: 'mcq', family: 'tfng', kicker: 'After listening · True, false or not given? · 1/2', needs: ['backstop'],
     prompt: K('Example: “The audio mentions Equifax.” → <b>True</b>.<br>') + '<b>The speaker says injection is still the number-one threat.</b>',
     options: ['True', 'False', 'Not given'] });
-  add({ id: 'L1b', type: 'mcq', family: 'tfng', kicker: 'After listening · True, false or not given? · 2/3', needs: [],
-    prompt: '<b>The speaker says the Equifax attackers used a password they had stolen.</b>',
+  add({ id: 'L1b', type: 'mcq', family: 'tfng', kicker: 'After listening · True, false or not given? · 2/2', needs: [],
+    prompt: '<b>The speaker says how long the attackers stayed in Equifax’s network.</b>',
     options: ['True', 'False', 'Not given'] });
-  add({ id: 'L1c', type: 'mcq', family: 'tfng', kicker: 'After listening · True, false or not given? · 3/3', needs: ['backstop'],
-    prompt: '<b>The speaker says MFA is the ultimate backstop.</b>',
-    options: ['True', 'False', 'Not given'] });
+  add({ id: 'L1c', type: 'gap', family: 'tfng', kicker: 'After listening · Details · 1/2', needs: [],
+    instruction: 'One word (with a hyphen) from the audio.',
+    prompt: 'Threat modeling is way cheaper than dealing with a ___ later.', placeholder: 'one word' });
+  add({ id: 'L1d', type: 'gap', family: 'tfng', kicker: 'After listening · Details · 2/2', needs: ['bug bounty program'],
+    instruction: 'Two words from the audio.',
+    prompt: 'The last question: will your next ___ uncover your blind spots before the bad guys do?', placeholder: 'two words' });
   add({ id: 'L2', type: 'gap', family: 'variety', kicker: 'After listening · AmE or BrE?', needs: [],
     instruction: 'The speaker checks the windows on the <b>first floor</b> (AmE). One word.',
     prompt: 'In British English, the same floor is the ___ floor.', placeholder: 'one word' });
@@ -697,7 +699,7 @@
     items: [
       SS('<b>1. Protect:</b> prescriptions · card payments'),
       SS('<b>2. Threat:</b> the pharmacist reuses her password → fake prescriptions'),
-      SS('<b>3. Protections:</b> card data goes to the payment provider · MFA for staff'),
+      SS('<b>3. Protections:</b> card data goes to the payment provider (the company that handles card payments) · MFA for staff'),
       SS('<b>4. Lesson + action:</b> an old <b>plugin</b> (a small add-on) is two versions behind → patch it this week')] });
   add({ id: 'end', type: 'end', kicker: 'Unit 4 · Web Application Security',
     title: 'Find the unlocked doors first.', text: 'Before an attacker tries the handle.' });
