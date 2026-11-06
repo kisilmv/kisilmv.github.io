@@ -5,7 +5,7 @@
     "selfAuthorPrefixes": ["Кісіль", "Kisil"]
   },
   "source": "https://kisilmv.blogspot.com/p/blog-page_13.html",
-  "updated": "2026-10-15",
+  "updated": "2026-11-06",
   "types": {
     "article": "Статті у фахових виданнях і журналах",
     "conference": "Матеріали конференцій",
@@ -22,6 +22,24 @@
     "methodology": "Методика викладання англійської"
   },
   "publications": [
+    {
+      "id": "pub-66",
+      "sourceNo": 66,
+      "type": "article",
+      "marked": true,
+      "authors": ["Кісіль М. В."],
+      "title": "The translation-studies dimension of ontologising terminological definitions: term equivalence under concept-system incommensurability",
+      "parallelTitle": "Перекладознавчий вимір онтологізації термінологічної дефініції: еквівалентність терміна за неспівмірності поняттєвих систем",
+      "container": "Наукові записки. Серія: Філологічні науки",
+      "year": 2026,
+      "issue": "Вип. 3 (218), т. 1",
+      "apaNumbering": "3(218)",
+      "pages": "17–24",
+      "doi": "10.32782/2522-4077-2026-218-2",
+      "url": null,
+      "language": ["en"],
+      "topics": ["terminology", "translation"]
+    },
     {
       "id": "pub-65",
       "sourceNo": 65,
