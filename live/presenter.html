@@ -23,6 +23,9 @@
   .timer { font-variant-numeric: tabular-nums; font-weight: 700; }
   .timer.run { color: var(--accent); }
   .tbtn { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 6px 12px; font-weight: 600; }
+  .tbtn kbd { font: 11px/1 var(--sans); padding: 3px 5px; border-radius: 5px; background: var(--surface-2); color: var(--ink-2); margin-left: 4px; }
+  .tbtn.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .tbtn.on kbd { background: rgba(255,255,255,.2); color: #fff; }
 
   /* ---- основна сітка ---- */
   .grid { display: grid; grid-template-columns: 200px minmax(380px, 40vw) minmax(360px, 1fr); min-height: 0; }
@@ -106,6 +109,34 @@
   .gate button { margin-top: 12px; background: var(--accent); color: #fff; border: 0; border-radius: 12px; padding: 14px 22px; font-weight: 700; font-size: 17px; }
   .gate .err { color: var(--no); }
   .bar button.danger { color: var(--no); }
+
+  /* ---- дошка: тимчасовий текст/зображення на екранах ---- */
+  .bdx { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(0,0,0,.45); }
+  .bdx[hidden] { display: none; }
+  .bdx-box { width: min(980px, 94vw); max-height: 92vh; overflow-y: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; display: grid; grid-template-columns: 1fr 230px; gap: 16px 20px; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+  .bdx-box h2 { grid-column: 1 / -1; margin: 0; font-size: 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .bdx-box h2 small { font-weight: 500; color: var(--ink-2); font-size: 13px; }
+  .bdx-l { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  #bdText { font: 18px/1.45 var(--sans); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-height: 150px; resize: vertical; }
+  .bdx-hint { font-size: 13px; color: var(--ink-2); line-height: 1.45; margin: 0; }
+  .bdx-drop { border: 2px dashed var(--line); border-radius: 12px; padding: 12px; display: flex; gap: 12px; align-items: center; min-height: 88px; color: var(--ink-2); font-size: 14px; }
+  .bdx-drop.over { border-color: var(--accent); background: var(--accent-soft); }
+  .bdx-drop img { max-height: 120px; max-width: 220px; border-radius: 8px; object-fit: contain; background: var(--bg); }
+  .bdx-drop .sp { flex: 1; }
+  .bdx-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .bdx-row input[type=url] { flex: 1; min-width: 180px; font: 14px var(--sans); padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+  .bdx button { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 8px 13px; font-weight: 600; }
+  .bdx button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .bdx button.danger { color: var(--no); }
+  .bdx-r { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+  .bdx-pv { position: relative; width: 195px; height: 390px; overflow: hidden; border: 4px solid var(--surface-2); border-radius: 22px; background: var(--bg); }
+  .bdx-pv .screen { position: absolute; top: 0; left: 0; width: 390px; height: 780px; transform: scale(.5); transform-origin: 0 0; }
+  .bdx-recent { grid-column: 1 / -1; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; font-size: 13px; color: var(--ink-2); }
+  .bdx-recent button { font-size: 13px; font-weight: 500; padding: 5px 10px; max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bdx-act { grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--line); padding-top: 12px; }
+  .bdx-act .sp { flex: 1; }
+  .bdx-act kbd { font: 11px/1 var(--sans); padding: 3px 5px; border-radius: 5px; background: rgba(127,127,127,.2); }
+  #bdErr { color: var(--no); font-size: 13px; }
 </style>
 <script src="firebase-config.js"></script>
 <script src="assets/qrcode.min.js"></script>
@@ -115,6 +146,7 @@
 <header class="top">
   <div class="brand" id="brand">Пульт викладача</div>
   <div class="room">Кімната <b id="roomCode">····</b> <button class="tbtn" id="bQR" title="Великий QR-код на екран (Q)">QR</button></div>
+  <button class="tbtn" id="bBoard" title="Тимчасовий текст або зображення поверх слайда на всіх телефонах і проєкторі (W). Зображення можна просто вставити: Ctrl+V">📌 Дошка <kbd>W</kbd></button>
   <span class="pill" title="Підключені студенти"><span class="dot" id="conn"></span><span id="count">0</span> 👥</span>
   <button class="pill timer" id="timer" title="Таймер: T — старт/пауза, подвійний клік — скинути">00:00</button>
   <span class="pill" id="pos">– / –</span>
@@ -171,6 +203,35 @@
   </div>
 </div>
 
+<div class="bdx" id="bdx" hidden>
+  <div class="bdx-box" role="dialog" aria-label="Дошка">
+    <h2><span>📌 Дошка — тимчасово поверх слайда</span><small>лишається на екранах, доки ви її не приберете, навіть після переходу на інший слайд</small></h2>
+    <div class="bdx-l">
+      <textarea id="bdText" placeholder="Текст для студентів: слово, приклад, підказка, посилання, завдання…&#10;**жирний**, *курсив*, нові рядки зберігаються"></textarea>
+      <div class="bdx-drop" id="bdDrop">
+        <img id="bdImgPv" alt="" hidden>
+        <span id="bdDropTxt">Зображення: перетягніть сюди, вставте Ctrl+V (знімок екрана, скопійована картинка) або</span>
+        <span class="sp"></span>
+        <button id="bdPick" type="button">Вибрати файл</button>
+        <button id="bdImgDel" type="button" class="danger" hidden>Прибрати фото</button>
+        <input type="file" id="bdFile" accept="image/*" hidden>
+      </div>
+      <div class="bdx-row"><input type="url" id="bdUrl" placeholder="або адреса зображення https://…"><button id="bdUrlOk" type="button">Взяти</button></div>
+      <p class="bdx-hint">Зображення стискається тут, на ноутбуці (до ~1600 px), і йде на телефони один раз. Ключ, який студенти ще не мають бачити, сюди не ставте: дошку бачать усі одразу.</p>
+      <span id="bdErr"></span>
+    </div>
+    <div class="bdx-r"><div class="lbl">Так побачать телефони</div><div class="bdx-pv"><div class="screen" id="bdPv"></div></div></div>
+    <div class="bdx-recent" id="bdRecent"></div>
+    <div class="bdx-act">
+      <button id="bdShow" class="primary" type="button">Показати на екранах <kbd>Ctrl+Enter</kbd></button>
+      <button id="bdOff" type="button" class="danger">Прибрати з екранів</button>
+      <button id="bdNew" type="button">Очистити поле</button>
+      <span class="sp"></span>
+      <button id="bdClose" type="button">Закрити <kbd>Esc</kbd></button>
+    </div>
+  </div>
+</div>
+
 <div class="overlay" id="gate">
   <div class="gate" id="gateBox"><h1>Пульт викладача</h1><p>Завантаження…</p></div>
 </div>
@@ -202,7 +263,7 @@
   const screenUrl = joinUrl + '&view=screen';
 
   const P = { idx: 0, step: 0, revealed: false, locked: false, blackout: false, shared: false, responses: {}, count: 0,
-    roster: {}, present: [], walls: {} }; // walls: slideId → [{u, v}] — схвалене для показу, без імен
+    roster: {}, present: [], walls: {}, board: null }; // board: { text, img, t } — дошка, що зараз на екранах // walls: slideId → [{u, v}] — схвалене для показу, без імен
   let T = null, slides = [], TEACH = {}, keysMissing = false;
 
   /* ---- таймер ---- */
@@ -462,6 +523,8 @@
       results: P.shared ? results() : null, locked: P.locked, mode: 'preview', interactive: false,
       wall: (P.walls[s.id] || []).map((x) => x.v),
     }));
+    const bh = LS.boardHtml(P.board);
+    if (bh) $('cur').insertAdjacentHTML('beforeend', `<div class="board mode-preview"><div class="bd-head"><span>📌 Від викладача</span><button type="button">До слайда ↓</button></div><div class="bd-body">${bh}</div></div>`);
     const n = slides[P.idx + 1];
     if (n) $('next').replaceChildren(LS.render(n, { step: 99, mode: 'preview' }));
     else $('next').innerHTML = '<section class="slide"><div class="s-sub">Кінець уроку</div></section>';
@@ -493,7 +556,8 @@
     $('bNext').disabled = P.idx === slides.length - 1 && P.step >= sc;
     const B = (on, t, w) => `<span class="badge${w ? ' warn' : ''}${on ? ' on' : ''}">${t}</span>`;
     $('badges').innerHTML = (keysMissing ? '<span class="badge warn on">Ключів немає: натисніть «Ключі ⬆»</span>' : '') +
-      B(P.revealed, 'Відповідь відкрито') + B(P.locked, 'Приймання закрито', 1) + B(P.shared, 'Результати на телефонах') + B(P.blackout, 'Телефони притемнено', 1) + B(wn > 0, `На екрані відповідей: ${wn}`);
+      B(P.revealed, 'Відповідь відкрито') + B(P.locked, 'Приймання закрито', 1) + B(P.shared, 'Результати на телефонах') + B(P.blackout, 'Телефони притемнено', 1) + B(wn > 0, `На екрані відповідей: ${wn}`) + B(!!P.board, '📌 Дошка на екранах');
+    $('bBoard').classList.toggle('on', !!P.board);
     layout();
   }
 
@@ -511,6 +575,118 @@
   }
   $('bQR').onclick = () => toggleQR();
   $('qrOverlay').onclick = () => toggleQR(false);
+
+  /* ---- дошка ---- */
+  const BD = { img: '' };            // чернетка: текст у #bdText, зображення тут
+  const RKEY = 'ls-board-recent';
+  const bdOpen = () => !$('bdx').hidden;
+  const bdErr = (t) => { $('bdErr').textContent = t || ''; };
+  function bdDraft() { return { text: $('bdText').value.replace(/\s+$/, ''), img: BD.img || null }; }
+  function bdRenderDraft() {
+    const d = bdDraft(), h = LS.boardHtml(d);
+    $('bdImgPv').hidden = !BD.img; if (BD.img) $('bdImgPv').src = BD.img;
+    $('bdImgDel').hidden = !BD.img; $('bdDropTxt').hidden = !!BD.img;
+    $('bdPv').innerHTML = h ? `<div class="board mode-preview"><div class="bd-head"><span>📌 Від викладача</span><button type="button">До слайда ↓</button></div><div class="bd-body">${h}</div></div>`
+      : '<section class="slide"><div class="s-sub">Порожньо: додайте текст або зображення</div></section>';
+    $('bdShow').firstChild.textContent = P.board ? 'Оновити на екранах ' : 'Показати на екранах ';
+    $('bdOff').disabled = !P.board;
+    const rec = LS.store.get(RKEY) || [];
+    $('bdRecent').innerHTML = rec.length ? 'Нещодавні: ' + rec.map((r, i) => `<button type="button" data-r="${i}" title="${LS.esc(r.text || 'зображення')}">${r.img ? '🖼 ' : ''}${LS.esc((r.text || 'зображення').slice(0, 40))}</button>`).join('') : '';
+  }
+  function bdToggle(force) {
+    const show = force !== undefined ? force : !bdOpen();
+    $('bdx').hidden = !show;
+    if (!show && document.activeElement && document.activeElement.closest('#bdx')) document.activeElement.blur();
+    if (show) { bdErr(''); bdRenderDraft(); setTimeout(() => $('bdText').focus(), 0); }
+  }
+  function bdRemember(d) {
+    let rec = (LS.store.get(RKEY) || []).filter((r) => !(r.text === d.text && r.img === d.img));
+    rec.unshift({ text: d.text, img: d.img && d.img.length < 450000 ? d.img : null });
+    LS.store.set(RKEY, rec.slice(0, 6));
+  }
+  async function bdShow() {
+    const d = bdDraft();
+    if (!LS.boardHtml(d)) { bdErr('Немає що показувати: додайте текст або зображення.'); return; }
+    const b = { text: d.text || null, img: d.img || null, t: Date.now() };
+    try { await T.setBoard(b); } catch (e) { console.error(e); bdErr('Не вдалося показати: ' + e.message); return; }
+    P.board = b; bdRemember(d); bdToggle(false); renderAll();
+  }
+  async function bdOff() {
+    try { await T.setBoard(null); } catch (e) { console.error(e); alert('Не вдалося прибрати дошку: ' + e.message); return; }
+    P.board = null; if (bdOpen()) bdRenderDraft(); renderAll();
+  }
+  // стиснути зображення до ≤ ~1600 px і ≤ ~400 КБ (рядок data:), щоб телефони отримали його швидко
+  function bdCompress(blob) {
+    return new Promise((res, rej) => {
+      const url = URL.createObjectURL(blob), im = new Image();
+      im.onload = () => {
+        URL.revokeObjectURL(url);
+        let w = im.naturalWidth, h = im.naturalHeight, max = 1600, q = 0.86, out = '';
+        if (!w || !h) { rej(new Error('Порожнє зображення')); return; }
+        for (let i = 0; i < 8; i++) {
+          const k = Math.min(1, max / Math.max(w, h)), c = document.createElement('canvas');
+          c.width = Math.round(w * k); c.height = Math.round(h * k);
+          const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(im, 0, 0, c.width, c.height);
+          out = c.toDataURL('image/jpeg', q);
+          if (out.length <= 400000) break;
+          if (q > 0.62) q -= 0.12; else max = Math.round(max * 0.8);
+        }
+        res(out);
+      };
+      im.onerror = () => { URL.revokeObjectURL(url); rej(new Error('Цей файл не вдалося відкрити як зображення')); };
+      im.src = url;
+    });
+  }
+  async function bdTakeBlob(blob) {
+    if (!blob || !/^image\//.test(blob.type)) { bdErr('Це не зображення.'); return; }
+    bdErr('Стискаю зображення…');
+    try { BD.img = await bdCompress(blob); bdErr(''); } catch (e) { bdErr(e.message); }
+    if (!bdOpen()) bdToggle(true); else bdRenderDraft();
+  }
+  function bdTakeUrl(u) {
+    u = String(u || '').trim();
+    if (!/^https:\/\//i.test(u) || !LS.safeImg(u)) { bdErr('Потрібна повна адреса зображення, що починається з https://'); return; }
+    BD.img = u; bdErr('Зображення за адресою: якщо сайт не дозволяє вбудовування, телефони його не покажуть — тоді краще скопіювати саму картинку й вставити Ctrl+V.');
+    $('bdUrl').value = ''; bdRenderDraft();
+  }
+  $('bBoard').onclick = () => bdToggle();
+  $('bdClose').onclick = () => bdToggle(false);
+  $('bdx').onclick = (e) => { if (e.target === $('bdx')) bdToggle(false); };
+  $('bdShow').onclick = bdShow;
+  $('bdOff').onclick = bdOff;
+  $('bdNew').onclick = () => { $('bdText').value = ''; BD.img = ''; bdErr(''); bdRenderDraft(); $('bdText').focus(); };
+  $('bdText').oninput = bdRenderDraft;
+  $('bdText').onkeydown = (e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); bdShow(); } };
+  $('bdPick').onclick = () => $('bdFile').click();
+  $('bdFile').onchange = () => { const f = $('bdFile').files[0]; $('bdFile').value = ''; if (f) bdTakeBlob(f); };
+  $('bdImgDel').onclick = () => { BD.img = ''; bdRenderDraft(); };
+  $('bdUrlOk').onclick = () => bdTakeUrl($('bdUrl').value);
+  $('bdUrl').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); bdTakeUrl($('bdUrl').value); } };
+  $('bdRecent').onclick = (e) => {
+    const b = e.target.closest('button[data-r]'); if (!b) return;
+    const r = (LS.store.get(RKEY) || [])[+b.dataset.r]; if (!r) return;
+    $('bdText').value = r.text || ''; BD.img = r.img || ''; bdRenderDraft();
+  };
+  const drop = $('bdDrop');
+  drop.ondragover = (e) => { e.preventDefault(); drop.classList.add('over'); };
+  drop.ondragleave = () => drop.classList.remove('over');
+  drop.ondrop = (e) => {
+    e.preventDefault(); drop.classList.remove('over');
+    const f = Array.from(e.dataTransfer.files || []).find((x) => /^image\//.test(x.type));
+    if (f) { bdTakeBlob(f); return; }
+    const u = e.dataTransfer.getData('text/uri-list') || e.dataTransfer.getData('text/plain');
+    if (u) bdTakeUrl(u.split('\n')[0]);
+  };
+  // Ctrl+V із картинкою в буфері — будь-де на пульті: відкриває дошку з цим зображенням
+  document.addEventListener('paste', (e) => {
+    if (!T || !slides.length) return;
+    const it = Array.from((e.clipboardData && e.clipboardData.items) || []).find((x) => x.kind === 'file' && /^image\//.test(x.type));
+    if (it) { e.preventDefault(); bdTakeBlob(it.getAsFile()); return; }
+    if (!bdOpen() && !e.target.closest('input,textarea')) {
+      const t = e.clipboardData && e.clipboardData.getData('text/plain');
+      if (t) { e.preventDefault(); bdToggle(true); $('bdText').value = t; bdRenderDraft(); }
+    }
+  });
 
   /* ---- кнопки й клавіші ---- */
   $('bNext').onclick = next; $('bPrev').onclick = prev;
@@ -609,9 +785,12 @@
   };
 
   document.addEventListener('keydown', (e) => {
-    if (!T || !slides.length || e.target.closest('input,textarea') || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (!T || !slides.length) return;
+    if (bdOpen()) { if (e.key === 'Escape') { e.preventDefault(); bdToggle(false); } return; } // поки відкрита дошка, клавіші керування вимкнено
+    if (e.target.closest('input,textarea') || e.ctrlKey || e.metaKey || e.altKey) return;
     const k = e.key;
     let done = true;
+    if (k === 'w' || k === 'W' || k === 'ц' || k === 'Ц') { e.preventDefault(); bdToggle(true); return; }
     if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(k)) next();
     else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k)) prev();
     else if (k === 'Home') go(0, 0);
@@ -686,6 +865,7 @@
       P.count = n; P.present = ids; $('count').textContent = n; renderResponses();
     });
     T.onRoster((ro) => { P.roster = ro; renderResponses(); });
+    if (resume && resume.board && LS.boardHtml(resume.board)) { P.board = resume.board; $('bdText').value = resume.board.text || ''; BD.img = resume.board.img || ''; }
     if (resume && resume.slide >= 0 && resume.slide < slides.length) {
       go(resume.slide, Math.min(resume.step || 0, LS.stepCount(slides[resume.slide])));
     } else {

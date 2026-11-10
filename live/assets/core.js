@@ -115,6 +115,20 @@
     return `<div class="wall"><div class="wall-h">Відповіді групи</div>${w.map((v) => `<div class="wall-i">${LS.esc(v)}</div>`).join('')}</div>`;
   }
 
+  /* ---------- «дошка»: тимчасовий текст і/або зображення від викладача поверх слайда ----------
+     board: { text, img, t } — img: data:image/… (стиснене на пульті) або https-адреса */
+  LS.safeImg = (u) => (typeof u === 'string' && (/^data:image\/(png|jpe?g|webp|gif);base64,/i.test(u) || /^https:\/\/[^\s"'<>]+$/i.test(u)) ? u : '');
+  LS.boardHtml = (b) => {
+    if (!b) return '';
+    const text = String(b.text || '').trim();
+    const img = LS.safeImg(b.img);
+    if (!text && !img) return '';
+    // **жирний** і *курсив*; переноси рядків зберігає CSS (pre-wrap)
+    const t = LS.esc(text).replace(/\*\*([^*\n]+)\*\*/g, '<b>$1</b>').replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<i>$2</i>');
+    const size = text.length <= 40 ? ' is-big' : text.length <= 160 ? ' is-mid' : '';
+    return (img ? `<img class="bd-img" src="${LS.esc(img)}" alt="">` : '') + (text ? `<div class="bd-text${img ? '' : size}">${t}</div>` : '');
+  };
+
   LS.render = (slide, ctx) => {
     ctx = Object.assign({ step: 99, mode: 'phone', interactive: false }, ctx || {});
     ctx.canAnswer = ctx.interactive && !ctx.locked && !ctx.revealed;
@@ -309,7 +323,9 @@
       waitUser: () => waitUser(auth),
       signIn: () => auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((r) => r.user),
       signOut: () => auth.signOut(),
-      setState: (s) => base.child('state').set(s),
+      // update, а не set: окремий вузол state/board (дошка) не пересилається з кожним кроком
+      setState: (s) => base.child('state').update(s),
+      setBoard: (b) => base.child('state/board').set(b || null),
       onPresence: (cb) => base.child('presence').on('value', (s) => cb(s.numChildren(), Object.keys(s.val() || {})), (e) => console.warn(e)),
       onRoster: (cb) => base.child('roster').on('value', (s) => cb(s.val() || {}), (e) => console.warn(e)),
       getAllResponses: () => base.child('responses').once('value').then((x) => x.val() || {}),
@@ -390,7 +406,8 @@
       waitUser: async () => ({ email: 'демо-режим', demo: true }),
       signIn: async () => ({ email: 'демо-режим', demo: true }),
       signOut: async () => {},
-      setState: async (s) => { state = JSON.parse(JSON.stringify(s)); bc.postMessage({ k: 'state', s: state }); },
+      setState: async (s) => { const b = state && state.board; state = JSON.parse(JSON.stringify(s)); if (b) state.board = b; bc.postMessage({ k: 'state', s: state }); },
+      setBoard: async (b) => { if (!state) return; if (b) state.board = JSON.parse(JSON.stringify(b)); else delete state.board; bc.postMessage({ k: 'state', s: state }); },
       onPresence: (cb) => { presCb = cb; },
       onRoster: (cb) => { rosterCb = cb; cb(Object.assign({}, roster)); },
       getAllResponses: async () => JSON.parse(JSON.stringify(resp)),

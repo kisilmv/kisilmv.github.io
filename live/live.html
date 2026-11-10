@@ -90,6 +90,8 @@
   </nav>
 </div>
 
+<div class="board" id="board" hidden><div class="bd-head"><span>📌 Від викладача</span><button id="bdHide" type="button">До слайда ↓</button></div><div class="bd-body" id="bdBody"></div></div>
+<button class="bd-chip" id="bdChip" type="button" hidden>📌 Дошка</button>
 <div class="cover" id="blackout" hidden><div><div class="big">👀</div><p>Подивіться на викладача</p></div></div>
 <div class="cover" id="wait" hidden><div><div class="big">⏳</div><p id="waitMsg">Підключення до заняття…</p><small id="waitSub"></small></div></div>
 <div class="cover" id="nameGate" hidden>
@@ -207,6 +209,7 @@
     $('lt').textContent = LESSON.title || 'Заняття';
     $('lp').innerHTML = (isScreen ? `<span class="roomtag">${room}</span> · ` : '') + `${idx + 1}/${slides.length}`;
     $('blackout').hidden = !state.blackout;
+    renderBoard();
 
     // навігація
     $('bPrev').disabled = idx === 0;
@@ -215,6 +218,26 @@
     if (isLive) { b.className = 'is-live'; b.textContent = '● Наживо'; }
     else { b.className = 'is-behind'; b.textContent = `● Наживо: слайд ${live + 1} →`; }
   }
+
+  // дошка: тимчасовий текст/зображення викладача поверх будь-якого слайда.
+  // На телефоні її можна згорнути до значка; нова дошка (інший t) знову розгортається.
+  let boardShownT = null, boardFolded = false;
+  function renderBoard() {
+    const b = state && !state.ended ? state.board : null;
+    const html = LS.boardHtml(b);
+    const el = $('board');
+    if (!html) { el.hidden = true; $('bdChip').hidden = true; boardShownT = null; boardFolded = false; return; }
+    if (b.t !== boardShownT) {
+      boardShownT = b.t; boardFolded = false;
+      el.className = 'board mode-' + (isScreen ? 'screen' : 'phone');
+      $('bdBody').innerHTML = html;
+      $('bdBody').scrollTop = 0;
+    }
+    el.hidden = boardFolded;
+    $('bdChip').hidden = !boardFolded || isScreen;
+  }
+  $('bdHide').onclick = () => { boardFolded = true; renderBoard(); };
+  $('bdChip').onclick = () => { boardFolded = false; renderBoard(); };
 
   async function respond(slideId, v) {
     mine[slideId] = v; LS.store.set(KEY, mine);
@@ -228,6 +251,7 @@
     // завершене або давно покинуте заняття: не показувати, просити новий QR
     if (s.ended || (s.t && Date.now() - s.t > 6 * 60 * 60 * 1000)) {
       state = null; $('blackout').hidden = true;
+      renderBoard();
       wait('Заняття завершено', 'Щоб приєднатися до нового заняття, проскануйте QR-код на екрані викладача.');
       return;
     }

@@ -199,3 +199,56 @@ svg.m-links .ghost path { stroke: var(--ink-2); stroke-dasharray: 4 6; stroke-wi
 .mode-screen .m-wrap { gap: 0 90px; }
 .mode-screen .m-l, .mode-screen .m-r { font-size: 20px; min-height: 48px; }
 .mode-screen.slide--match .s-prompt { font-size: clamp(22px, 2.3vw, 36px); }
+
+/* ---------- «дошка»: тимчасове повідомлення викладача поверх слайда ---------- */
+.board {
+  position: fixed; inset: 0; z-index: 8; display: flex; flex-direction: column;
+  background: var(--bg); color: var(--ink); font-family: var(--sans);
+  animation: boardIn .25s ease-out;
+}
+.board[hidden] { display: none; }
+@keyframes boardIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.bd-head {
+  flex: none; display: flex; align-items: center; gap: 10px;
+  padding: calc(12px + env(safe-area-inset-top)) 16px 10px; border-bottom: 1px solid var(--line);
+  font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
+}
+.bd-head span { flex: 1; }
+.bd-head button {
+  font: inherit; font-size: 14px; letter-spacing: normal; text-transform: none; font-weight: 600;
+  color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; min-height: 40px; padding: 0 12px; cursor: pointer;
+}
+.bd-body {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  display: flex; flex-direction: column; gap: 16px;
+  padding: 20px 18px calc(24px + env(safe-area-inset-bottom));
+}
+.bd-body > :first-child { margin-top: auto; }   /* по центру, але без обрізання верху, коли вміст довший за екран */
+.bd-body > :last-child { margin-bottom: auto; }
+.bd-img { display: block; flex: none; max-width: 100%; max-height: 62vh; margin: 0 auto; object-fit: contain; border-radius: 12px; background: var(--surface); }
+.bd-text { white-space: pre-wrap; overflow-wrap: break-word; font-size: 21px; line-height: 1.45; }
+.bd-text.is-mid { font-size: 25px; }
+.bd-text.is-big { font-size: 34px; font-family: var(--serif); text-align: center; line-height: 1.2; }
+.bd-text b { color: var(--accent); }
+/* згорнута дошка на телефоні — значок, що повертає її */
+.bd-chip {
+  position: fixed; z-index: 8; right: 12px; top: calc(56px + env(safe-area-inset-top));
+  font: 600 14px/1 var(--sans); color: #fff; background: var(--accent); border: 0; border-radius: 999px;
+  padding: 11px 14px; box-shadow: 0 4px 16px rgba(0,0,0,.25); cursor: pointer;
+}
+.bd-chip[hidden] { display: none; }
+/* проєктор: великий шрифт, без кнопки згортання */
+.board.mode-screen .bd-head { font-size: 18px; padding: 16px 28px; }
+.board.mode-screen .bd-head button { display: none; }
+.board.mode-screen .bd-body { padding: 3vh 5vw; }
+.board.mode-screen .bd-img { max-height: 72vh; }
+/* проєктор, зображення + текст: поруч, а не одне під одним */
+.board.mode-screen .bd-body:has(.bd-img):has(.bd-text) { flex-direction: row; align-items: center; gap: 4vw; }
+.board.mode-screen .bd-body:has(.bd-img):has(.bd-text) > * { margin: 0; }
+.board.mode-screen .bd-body:has(.bd-img):has(.bd-text) .bd-img { max-width: 56%; max-height: 80vh; }
+.board.mode-screen .bd-body:has(.bd-img):has(.bd-text) .bd-text { flex: 1; min-width: 0; max-height: 80vh; overflow-y: auto; }
+.board.mode-screen .bd-text { font-size: clamp(24px, 2.6vw, 44px); }
+.board.mode-screen .bd-text.is-mid { font-size: clamp(30px, 3.4vw, 56px); }
+.board.mode-screen .bd-text.is-big { font-size: clamp(44px, 5.5vw, 96px); }
+/* мініатюра на пульті: усередині рамки телефона, а не на весь пульт */
+.board.mode-preview { position: absolute; }
