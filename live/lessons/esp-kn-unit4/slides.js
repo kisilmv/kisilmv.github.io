@@ -4,7 +4,7 @@ window.LESSON = {
  "id": "esp-kn-unit4",
  "title": "Unit 4 · Web Application Security",
  "audience": "КН · 2nd year · B1+/B2 · Computer Science (web technologies) · group, students on phones",
- "concept": "Тиждень Дани. Наскрізна лінія — один поганий тиждень студентки КН Дани (Львів): понеділок — фішинговий лист (лексика, колокації, Правило 1, попередження); вівторок — без доступу (фразові дієслова, пастки, словотвір, наголос); середа — чужі оцінки 1044 (автентифікація/авторизація на рівні користувача, Правило 2, ланцюжок перефразування, звіт про ваду, регістр); четвер — новини про Equifax (текст у 7 частинах, числа, Правило 3, розкриття ставки, голосування); п’ятниця — що пішло не так (Правило 4, ідіоми, AmE/BrE, переказ тижня); субота — подкаст; підсумок — допомогти другові в чотири ходи. Техніка — на рівні користувача; кожне завдання — мовне. Викладач лише слухає й виправляє.",
+ "concept": "Тиждень Дани. Наскрізна лінія — один поганий тиждень студентки КН Дани (Львів): понеділок — фішинговий лист (лексика, колокації, тривожні сигнали, попередження); вівторок — без доступу (фразові дієслова, пастки, Правило 1: wish + past, словотвір, наголос); середа — чужі оцінки 1044 (автентифікація/авторизація на рівні користувача, звіт про ваду, регістр, одна проблема — три читачі); четвер — новини про Equifax (текст у 7 частинах, числа, розкриття ставки, Правило 2: wish / if only + past perfect, голосування); п’ятниця — що пішло не так (Правило 3: змішані умовні, Правило 4: інверсія Had… / Should…, ідіоми, AmE/BrE, переказ тижня); підсумок — допомогти другові в чотири ходи. Техніка — на рівні користувача; кожне завдання — мовне. Викладач лише слухає й виправляє.",
  "known": [
   "email",
   "password",
@@ -150,7 +150,7 @@ window.LESSON = {
    "items": [
     "<span style=\"display:block;font-size:18px;line-height:1.45\">Dana is a second-year computer science student in Lviv.</span>",
     "<span style=\"display:block;font-size:18px;line-height:1.45\">On Sunday night, everything is fine: her email, her bank app, her grades.</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">By Thursday, someone has <b>broken into</b> her email. This week is the story of how it happened and what she learned.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">On Tuesday morning, she can’t get into her email: someone has <b>broken into</b> it. This week is the story of how it happened and what she learned.</span>",
     "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to break into (an account) — зламати (обліковий запис), проникнути в нього</span>"
    ]
   },
@@ -218,10 +218,10 @@ window.LESSON = {
     "You ___ a scam to IT."
    ],
    "right": [
-    "make",
+    "push",
     "report",
     "click",
-    "do",
+    "write",
     "reset",
     "open"
    ]
@@ -261,123 +261,9 @@ window.LESSON = {
    "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: “Dear user” → a red flag.<br></span>Ivan got a similar email. Which line is <b>not</b> a red flag?",
    "options": [
     "Act now, or you will lose your files!",
-    "Hi Ivan, your lab report is due on Friday.",
     "Dear customer, confirm you card details.",
-    "Reset your password here within 1 hour!"
-   ]
-  },
-  {
-   "id": "g1a",
-   "type": "content",
-   "reveal": true,
-   "kicker": "Grammar · Rule 1 · 1/2",
-   "title": "Always true: zero conditional",
-   "teaches": [
-    "rule: zero and first conditional"
-   ],
-   "items": [
-    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>present</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>present</b></span></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>something that always happens: a fact, or how a system works<br><i>If you click a fake link, you land on a fake page.</i></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">when</span>here “when” = “if”<br><i>When you type a wrong password five times, the site locks your account.</i></span>"
-   ]
-  },
-  {
-   "id": "g1b",
-   "type": "content",
-   "reveal": true,
-   "kicker": "Grammar · Rule 1 · 2/2",
-   "title": "One likely result: first conditional",
-   "teaches": [
-    "rule: zero and first conditional"
-   ],
-   "items": [
-    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>present</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>will</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>verb</b></span></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>one real situation now and its likely result in the future<br><i>If Dana clicks this link, she will lose her password.</i></span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ If she <b>clicks</b> …<br>❌ <s>If she <b>will click</b> …</s></span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">After <b>if</b>: present, not <i>will</i>, just like after <i>when</i> and <i>as soon as</i>.</span>"
-   ]
-  },
-  {
-   "id": "g1c",
-   "type": "gap",
-   "family": "form",
-   "kicker": "Rule 1 · Form · 1/2",
-   "needs": [
-    "rule: zero and first conditional",
-    "to open an attachment"
-   ],
-   "instruction": "Example: If you ___ (type) the wrong code, the app shows an error. → type",
-   "prompt": "If someone ___ (open) this attachment, the virus will start.",
-   "placeholder": "one word"
-  },
-  {
-   "id": "g1d",
-   "type": "gap",
-   "family": "form",
-   "kicker": "Rule 1 · Form · 2/2",
-   "needs": [
-    "rule: zero and first conditional",
-    "to report (an email)"
-   ],
-   "instruction": "Use the negative.",
-   "prompt": "If Dana ___ (not / report) the email, other students will get it too.",
-   "placeholder": "two words"
-  },
-  {
-   "id": "g1e",
-   "type": "mcq",
-   "family": "error",
-   "kicker": "Rule 1 · Find the mistake",
-   "needs": [
-    "rule: zero and first conditional",
-    "to click (on) a link",
-    "fake"
-   ],
-   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: If it <s>will rain</s>, … → If it <b>rains</b>, …<br></span><b>If you will click the link, you will see a fake page.</b><br>Tap the wrong part.",
-   "options": [
-    "If you will click",
-    "the link,",
-    "you will see",
-    "a fake page."
-   ]
-  },
-  {
-   "id": "g1f",
-   "type": "match",
-   "family": "cause",
-   "kicker": "Rule 1 · Cause and result",
-   "needs": [
-    "rule: zero and first conditional",
-    "to open an attachment",
-    "to report (an email)",
-    "phishing"
-   ],
-   "prompt": "Join the halves (1–4). One ending (a–e) is extra.<span class=\"muted\" style=\"font-size:15px;line-height:1.35\"><br>reuse — use again</span>",
-   "left": [
-    "If you reuse one password,",
-    "If the address looks strange,",
-    "If you report a phishing email,",
-    "If you open a strange attachment,"
-   ],
-   "right": [
-    "IT can warn others.",
-    "a virus may start.",
-    "one leak opens everything.",
-    "don’t click anything.",
-    "it gets stronger."
-   ]
-  },
-  {
-   "id": "say1",
-   "type": "content",
-   "reveal": true,
-   "family": "translate",
-   "kicker": "Say it in English",
-   "title": "Якщо ви відкриєте це вкладення, на ваш комп’ютер потрапить вірус.",
-   "items": [
-    "<b>If you open this attachment, your computer will get a virus.</b>",
-    "<span style=\"display:block;font-size:18px;line-height:1.4\">💬 Якщо ти спізнишся, я піду без тебе.</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.4\">→ <i>If you’re late, I’ll leave without you.</i></span>"
+    "Reset your password here within 1 hour!",
+    "Hi Ivan, your lab report is due on Friday."
    ]
   },
   {
@@ -421,8 +307,7 @@ window.LESSON = {
    "items": [
     "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to break into / to hack into</b> <span class=\"muted\">/ˌbreɪk ˈɪntuː/</span><br>зламати, проникнути</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Someone broke into her account on Monday night.</i></span>",
     "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to find out</b> <span class=\"muted\">/ˌfaɪnd ˈaʊt/</span><br>дізнатися, з’ясувати</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>She found out on Tuesday morning.</i></span>",
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to back up</b> <span class=\"muted\">/ˌbæk ˈʌp/</span><br>створити резервну копію</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Back up your photos, just in case.</i></span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to back up (verb) → a backup (noun)</span>"
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to give away (a password)</b> <span class=\"muted\">/ˌɡɪv əˈweɪ/</span><br>видати, розголосити</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Never give away your password, not even to “IT”.</i></span>"
    ]
   },
   {
@@ -434,19 +319,19 @@ window.LESSON = {
     "to log in / to log out",
     "to break into / to hack into",
     "to find out",
-    "to back up"
+    "to give away (a password)"
    ],
    "prompt": "Which word (a–e) completes each verb (1–4)? One is extra.",
    "left": [
     "Dana couldn’t log ___.",
     "Someone broke ___ her email.",
     "She found ___ on Tuesday.",
-    "I always back ___ my photos."
+    "Never give ___ your password."
    ],
    "right": [
     "out",
     "into",
-    "up",
+    "away",
     "in",
     "over"
    ]
@@ -494,11 +379,11 @@ window.LESSON = {
    "family": "trap",
    "kicker": "Tuesday · Choose the word · 1/2",
    "needs": [],
-   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: “Never tell anyone your ___.” → password<br></span>A fire in the server room is a ___ problem, not a hacker problem.",
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: “Never tell anyone your bank ___.” → PIN<br></span>A fire in the server room is a ___ problem, not a hacker problem.",
    "options": [
+    "password",
     "security",
-    "safety",
-    "password"
+    "safety"
    ]
   },
   {
@@ -523,7 +408,7 @@ window.LESSON = {
    "kicker": "Tuesday · Choose the word · 2/2",
    "needs": [],
    "instruction": "Choose and change the form: crack / break.",
-   "prompt": "With a fast computer, a short password can be ___ in minutes.",
+   "prompt": "The update ___ my app: it doesn’t open anymore.",
    "placeholder": "one word"
   },
   {
@@ -571,21 +456,80 @@ window.LESSON = {
    "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: PHOtograph → phoTOgraphy: the stress moves.<br></span>Where is the stress in <b>security</b>?",
    "options": [
     "SEcurity",
-    "seCUrity",
     "secuRIty",
-    "securiTY"
+    "securiTY",
+    "seCUrity"
    ]
   },
   {
-   "id": "t14",
+   "id": "g1a",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 1",
+   "title": "I wish I could log in",
+   "teaches": [
+    "rule: wish + past (now)"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>I wish / If only</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>past simple</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">now</span>a wish about now: the real situation is different<br><i>I wish I could log in. (= but I can’t)</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">were</span>with “be”: were for all persons (“was” is informal)<br><i>I wish it were Sunday again.</i></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ I wish I <b>knew</b> …<br>❌ <s>I wish I <b>know</b> …</s></span>"
+   ]
+  },
+  {
+   "id": "g1b",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 1 · Form",
+   "needs": [
+    "rule: wish + past (now)",
+    "to log in / to log out"
+   ],
+   "instruction": "Example: I don’t know the code. → I wish I ___ (know) it. → knew",
+   "prompt": "Dana can’t open her email. She thinks: “I wish I ___ (can) log in.”",
+   "placeholder": "one word"
+  },
+  {
+   "id": "g1c",
+   "type": "mcq",
+   "family": "error",
+   "kicker": "Rule 1 · Find the mistake",
+   "needs": [
+    "rule: wish + past (now)"
+   ],
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: I wish I <s>am</s> at home. → I wish I <b>were</b> at home.<br></span><b>If only I have a different password for each site!</b><br>Tap the wrong part.",
+   "options": [
+    "If only",
+    "I have",
+    "a different password",
+    "for each site!"
+   ]
+  },
+  {
+   "id": "g1d",
    "type": "open",
    "family": "personal",
-   "kicker": "Tuesday · Your turn",
+   "kicker": "Rule 1 · Your turn",
    "needs": [
-    "to break into / to hack into"
+    "rule: wish + past (now)"
    ],
-   "prompt": "Which account would be the worst to lose? One sentence:<br><b>“If someone broke into my …, they could …”</b>",
-   "placeholder": "If someone broke into my …"
+   "prompt": "One true sentence about your phone, laptop or apps:<br><b>“I wish my … , because …”</b>",
+   "placeholder": "I wish my …"
+  },
+  {
+   "id": "sx1",
+   "type": "content",
+   "reveal": true,
+   "family": "translate",
+   "kicker": "Tuesday · Say it in English · One student per line",
+   "title": "Two wishes",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">💬 Шкода, що я не пам’ятаю новий пароль.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>I wish I could remember my new password.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">💬 Якби ж то сьогодні була неділя!</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>If only it were Sunday today!</i></span>"
+   ]
   },
   {
    "id": "w0",
@@ -636,115 +580,17 @@ window.LESSON = {
    "placeholder": "one word"
   },
   {
-   "id": "g2a",
-   "type": "content",
-   "reveal": true,
-   "kicker": "Grammar · Rule 2 · 1/2",
-   "title": "unless = if … not",
-   "teaches": [
-    "rule: unless · as long as · otherwise"
-   ],
-   "items": [
-    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>unless</b></span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>=</b></span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>if … not</b></span></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>after <b>unless</b>, the verb is positive<br><i>You can’t see a grade unless it is yours.</i></span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ unless it <b>is</b> yours<br>❌ <s>unless it <b>isn’t</b> yours</s></span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">= You can’t see a grade if it isn’t yours.</span>"
-   ]
-  },
-  {
-   "id": "g2b",
-   "type": "content",
-   "reveal": true,
-   "kicker": "Grammar · Rule 2 · 2/2",
-   "title": "as long as · otherwise",
-   "teaches": [
-    "rule: unless · as long as · otherwise"
-   ],
-   "items": [
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">as long as</span>= only if, on condition that<br><i>The portal is safe as long as it checks every page.</i></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">otherwise</span>= if not, then …; a new sentence, or after “;”<br><i>Fix the page today. Otherwise, everyone will see everyone’s grades.</i></span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">provided that = as long as, but more formal</span>"
-   ]
-  },
-  {
-   "id": "g2c",
-   "type": "mcq",
-   "family": "transform",
-   "kicker": "Rule 2 · Same meaning",
-   "needs": [
-    "rule: unless · as long as · otherwise",
-    "permission"
-   ],
-   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: If it doesn’t rain, we’ll go. → We’ll go unless it rains.<br></span>“If you don’t have permission, the page stays closed.” Same meaning?",
-   "options": [
-    "The page stays closed unless you don’t have permission.",
-    "The page stays closed unless you have permission.",
-    "The page stays closed as long as you have permission."
-   ]
-  },
-  {
-   "id": "g2d",
+   "id": "w3b",
    "type": "gap",
-   "family": "cause",
-   "kicker": "Rule 2 · Complete · 1/3",
+   "family": "define",
+   "kicker": "Wednesday · Check the word",
    "needs": [
-    "rule: unless · as long as · otherwise"
+    "authentication",
+    "authorization"
    ],
-   "instruction": "Use: as long as · otherwise · unless · when",
-   "prompt": "Ivan’s grades are private, so Dana shouldn’t see them ___ he shares them.",
-   "placeholder": "one or three words"
-  },
-  {
-   "id": "g2e",
-   "type": "gap",
-   "family": "cause",
-   "kicker": "Rule 2 · Complete · 2/3",
-   "needs": [
-    "rule: unless · as long as · otherwise",
-    "to report (an email)"
-   ],
-   "instruction": "Use: as long as · otherwise · unless · when",
-   "prompt": "Report the problem to IT today; ___, someone could change the grades.",
-   "placeholder": "one or three words"
-  },
-  {
-   "id": "g2f",
-   "type": "gap",
-   "family": "cause",
-   "kicker": "Rule 2 · Complete · 3/3",
-   "needs": [
-    "rule: unless · as long as · otherwise",
-    "to log in / to log out"
-   ],
-   "instruction": "Use: as long as · otherwise · unless · when",
-   "prompt": "The portal keeps you logged in ___ you don’t close the browser.",
-   "placeholder": "one or three words"
-  },
-  {
-   "id": "say2",
-   "type": "content",
-   "reveal": true,
-   "family": "translate",
-   "kicker": "Say it in English",
-   "title": "Сторінка закрита, якщо це не ваші оцінки.",
-   "items": [
-    "<b>The page is closed unless the grades are yours.</b>",
-    "<span style=\"display:block;font-size:18px;line-height:1.4\">💬 Я не прийду, якщо ти мене не попросиш.</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.4\">→ <i>I won’t come unless you ask me.</i></span>"
-   ]
-  },
-  {
-   "id": "w4",
-   "type": "content",
-   "reveal": true,
-   "kicker": "Wednesday · Paraphrase chain · One student at a time",
-   "title": "One rule, three ways",
-   "format": "paraphrase",
-   "items": [
-    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Portal rule</span>A student sees a grade page only if it is his or her own.</span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\">Student 1: … <b>unless</b> …<br>Student 2: … <b>as long as</b> …<br>Student 3: … ; <b>otherwise</b>, …</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Next rules: (a) A teacher changes grades only if the course is hers. (b) The portal accepts a password only if it has 12 characters.</span>"
-   ]
+   "instruction": "authentication or authorization?",
+   "prompt": "A safe portal checks that /grades/1044 is not Dana’s. This step is ___.",
+   "placeholder": "one word"
   },
   {
    "id": "w5",
@@ -753,7 +599,7 @@ window.LESSON = {
    "kicker": "Wednesday · Dana writes to IT",
    "title": "A bug report",
    "items": [
-    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">To: it-help@university.edu · Subject: Students can see other students’ grades</span>Hello,<br>I found a problem on the grade portal.<br><b>Steps:</b> 1. Log in. 2. Open /grades/1043. 3. Change the number to 1044.<br><b>Expected:</b> an error message.<br><b>Actual:</b> I can see another student’s grades.<br>Best regards,<br>Dana Koval, group KN-24</span>",
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">To: it-help@univ.edu.ua · Subject: Students can see other students’ grades</span>Hello,<br>I found a problem on the grade portal.<br><b>Steps:</b> 1. Log in. 2. Open /grades/1043. 3. Change the number to 1044.<br><b>Expected:</b> an error message.<br><b>Actual:</b> I can see another student’s grades.<br>Best regards,<br>Dana Koval, group KN-24</span>",
     "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Steps · Expected · Actual: the three parts of a bug report. Steps are short orders: Log in. Open … Change …</span>"
    ]
   },
@@ -765,9 +611,9 @@ window.LESSON = {
    "needs": [],
    "prompt": "Ivan wrote his own report. Which step breaks the style of “Steps”?",
    "options": [
-    "1. Log in as a student.",
-    "2. Open my grades page.",
-    "3. Then I was changing the number.",
+    "1. Then I was logging in.",
+    "2. Open the grades page.",
+    "3. Change the number.",
     "4. Press Enter."
    ]
   },
@@ -780,14 +626,27 @@ window.LESSON = {
    "prompt": "Match each message (1–3) to its reader. One reader (a–d) is extra.<span class=\"muted\" style=\"font-size:15px;line-height:1.35\"><br>heads-up — a quick warning</span>",
    "left": [
     "lol I can see ur grades 😅",
-    "Dear Sir or Madam, I am writing to report a problem.",
+    "Dear Dean Petrenko, I am writing to report a problem.",
     "Hi, quick heads-up: the portal shows other people’s grades."
    ],
    "right": [
     "the dean (formal)",
-    "a newspaper",
+    "an app store review",
     "Ivan, a friend",
     "a friendly teacher"
+   ]
+  },
+  {
+   "id": "w4",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Wednesday · One problem, three readers · One student per reader",
+   "title": "Say it three ways",
+   "format": "paraphrase",
+   "items": [
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">The problem</span>The portal shows other students’ grades.</span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\">To Ivan: <b>Guess what! …</b> 😅<br>To a teacher you know: <b>Hi, quick heads-up: …</b><br>To the dean: <b>Dear Dean Petrenko, I am writing to let you know that …</b></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Next problems: (a) The portal accepts very short passwords. (b) The login page doesn’t work on phones.</span>"
    ]
   },
   {
@@ -899,95 +758,93 @@ window.LESSON = {
    "placeholder": "two words"
   },
   {
-   "id": "g3a",
+   "id": "g2a",
    "type": "content",
    "reveal": true,
-   "kicker": "Grammar · Rule 3 · 1/2",
-   "title": "Imagine it: second conditional",
+   "kicker": "Grammar · Rule 2 · 1/2",
+   "title": "If only I hadn’t…",
    "teaches": [
-    "rule: second conditional"
+    "rule: wish · if only + past perfect"
    ],
    "items": [
-    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>past</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>would</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>verb</b></span></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>an imagined situation now or in the future: not real, or not likely<br><i>What would happen if someone used this form in a strange way?</i></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">note</span>past form, but no past meaning<br><i>If I had a million dollars, … = now, not yesterday</i></span>"
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>I wish / If only</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>had + V3</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">the past</span>a regret: it happened, and now it is too late<br><i>I wish I hadn’t used the same password.</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">about others</span>complaining about what someone did or didn’t do<br><i>If only GameZone had told us sooner!</i></span>"
    ]
   },
   {
-   "id": "g3b",
+   "id": "g2b",
    "type": "content",
    "reveal": true,
-   "kicker": "Grammar · Rule 3 · 2/2",
-   "title": "Advice: If I were you",
+   "kicker": "Grammar · Rule 2 · 2/2",
+   "title": "Now or then?",
    "teaches": [
-    "rule: second conditional"
+    "rule: wish · if only + past perfect"
    ],
    "items": [
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">advice</span>If I were you, I’d … (“were” for all persons)<br><i>If I were you, I’d change all my passwords today.</i></span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ If I <b>were</b> you<br>❌ <s>If I <b>would be</b> you</s></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">real or imagined?</span>If I lose my phone, I’ll … (it can happen) · If I lost my phone, I’d … (I don’t think it will)</span>"
+    "<table class=\"gt\" style=\"width:100%;border-collapse:collapse;font-size:16px;line-height:1.35\"><tr><th style=\"text-align:left;color:var(--ink-2);font-weight:600;padding:4px;border-bottom:2px solid var(--line)\">about now (Rule 1)</th><th style=\"text-align:left;color:var(--ink-2);font-weight:600;padding:4px;border-bottom:2px solid var(--line)\">about the past (Rule 2)</th></tr><tr><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">I wish I <b>knew</b>.</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">I wish I <b>had known</b>.</td></tr><tr><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">If only it <b>were</b> …</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">If only it <b>had been</b> …</td></tr><tr><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">I wish I <b>could</b> …</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">I wish I <b>had been able to</b> …</td></tr></table>",
+    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ I wish I <b>hadn’t clicked</b>.<br>❌ <s>I wish I <b>wouldn’t have clicked</b>.</s></span>"
    ]
   },
   {
-   "id": "g3c",
-   "type": "gap",
-   "family": "form",
-   "kicker": "Rule 3 · Form",
-   "needs": [
-    "rule: second conditional"
-   ],
-   "instruction": "Example: If I ___ (have) more time, I’d learn Python. → had",
-   "prompt": "If someone ___ (steal) your phone, could they read your email?",
-   "placeholder": "one word"
-  },
-  {
-   "id": "g3d",
-   "type": "mcq",
-   "family": "error",
-   "kicker": "Rule 3 · Find the mistake",
-   "needs": [
-    "rule: second conditional"
-   ],
-   "prompt": "<b>If I would be you, I would change the password today.</b><br>Tap the wrong part.",
-   "options": [
-    "If I would be you,",
-    "I would change",
-    "the password today."
-   ]
-  },
-  {
-   "id": "g3e",
+   "id": "g2c",
    "type": "match",
    "family": "cause",
-   "kicker": "Rule 3 · Real or imagined?",
+   "kicker": "Rule 2 · Now or then?",
    "needs": [
-    "rule: zero and first conditional",
-    "rule: second conditional"
+    "rule: wish + past (now)",
+    "rule: wish · if only + past perfect"
    ],
-   "prompt": "Join the halves (1–3). Watch the form. One ending (a–d) is extra.",
+   "prompt": "Which wish (a–d) fits each situation (1–3)? One wish is wrong English.",
    "left": [
-    "If Dana changes her passwords today,",
-    "If Dana were a hacker,",
-    "If I were Dana,"
+    "Dana can’t log in now.",
+    "She used one password in 2022.",
+    "GameZone wrote a month late."
    ],
    "right": [
-    "I’d warn my friends.",
-    "she will knows tricks.",
-    "she’ll stop the attackers.",
-    "she’d know such tricks."
+    "If only they’d told us!",
+    "I wish I wouldn’t use it.",
+    "I wish I could log in.",
+    "I wish I hadn’t used it."
    ]
   },
   {
-   "id": "say3",
+   "id": "g2d",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 2 · Form · 1/2",
+   "needs": [
+    "rule: wish · if only + past perfect",
+    "to sign up"
+   ],
+   "instruction": "Example: I didn’t save the file. → I wish I ___ (save) it. → had saved",
+   "prompt": "Dana thinks: “I wish I ___ (sign up) for GameZone with a different password.”",
+   "placeholder": "two or three words"
+  },
+  {
+   "id": "g2e",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 2 · Form · 2/2",
+   "needs": [
+    "rule: wish · if only + past perfect"
+   ],
+   "instruction": "If only + had + V3.",
+   "prompt": "If only GameZone ___ (tell) us about the breach in May!",
+   "placeholder": "two words"
+  },
+  {
+   "id": "sx2",
    "type": "content",
    "reveal": true,
    "family": "translate",
-   "kicker": "Say it in English",
-   "title": "На твоєму місці я змінив би всі паролі сьогодні.",
+   "kicker": "Thursday · Say it in English · One student per line",
+   "title": "Too late",
    "items": [
-    "<b>If I were you, I’d change all my passwords today.</b>",
-    "<span style=\"display:block;font-size:18px;line-height:1.4\">💬 На твоєму місці я б узяв парасольку.</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.4\">→ <i>If I were you, I’d take an umbrella.</i></span>"
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">💬 Шкода, що я відкрила те вкладення.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>I wish I hadn’t opened that attachment.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">💬 Якби ж то ти сказав мені раніше!</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>If only you had told me earlier!</i></span>"
    ]
   },
   {
@@ -995,8 +852,8 @@ window.LESSON = {
    "type": "content",
    "kicker": "Thursday · The Door Nobody Locked · 4/7",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">The classic unlocked door is injection. If an application pastes a user’s words straight into a command for its database, an attacker can type a piece of code instead of a name, and the database will run it. The defense is well known: the app keeps the user’s data and its own commands apart. Injection has appeared in every edition of the OWASP Top 10, the best-known list of web application risks, since the first one in 2003.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">injection — ін’єкція (впровадження коду) · edition — видання, випуск</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The classic unlocked door is injection: an attacker types a command into a box that should hold a name, and a careless app obeys it. Injection has been on the OWASP Top 10, the best-known list of web application risks, since the first edition in 2003.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">injection — ін’єкція (впровадження коду) · to obey — слухатися · edition — видання, випуск</span>"
    ]
   },
   {
@@ -1030,9 +887,9 @@ window.LESSON = {
    "prompt": "Which day of Dana’s week is the same problem as the invoice in 5/7?",
    "options": [
     "Monday: the fake email",
+    "Thursday: GameZone",
     "Tuesday: locked out",
-    "Wednesday: grade 1044",
-    "Thursday: GameZone"
+    "Wednesday: grade 1044"
    ]
   },
   {
@@ -1045,7 +902,7 @@ window.LESSON = {
     "concept: multi-factor authentication"
    ],
    "items": [
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>multi-factor authentication (MFA)</b> <span class=\"muted\">/ˌmʌlti ˌfæktər ɔːˌθentɪˈkeɪʃn/</span><br>багатофакторна автентифікація</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>a password + one more thing, for example a code on your phone. Also called two-step login.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>multi-factor authentication (MFA)</b> <span class=\"muted\">/ˌmʌlti ˌfæktər ɔːˌθentɪˈkeɪʃn/</span><br>багатофакторна автентифікація</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>a password + one more thing, for example a code on your phone. Also called two-factor authentication (2FA).</i></span>",
     "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to compromise (an account)</b> <span class=\"muted\">/ˈkɑːmprəmaɪz/</span><br>скомпрометувати, зламати</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>An account is compromised when someone else gets into it.</i></span>"
    ]
   },
@@ -1067,7 +924,7 @@ window.LESSON = {
     "multi-factor authentication (MFA)"
    ],
    "instruction": "One word from text 6/7.",
-   "prompt": "With MFA, a stolen password alone is not ___.",
+   "prompt": "With MFA, a stolen password alone is ___.",
    "placeholder": "one word"
   },
   {
@@ -1075,8 +932,8 @@ window.LESSON = {
    "type": "content",
    "kicker": "Thursday · The Door Nobody Locked · 7/7",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">No web application is perfectly secure. Every new form, feature and library adds to the attack surface — all the places where someone can try to get in — and new vulnerabilities are published every day. What matters is how quickly the unlocked doors are found, ideally by the team itself, through code reviews, penetration tests and bug bounty programs, before an attacker tries the handle.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">penetration test — тест на проникнення · bug bounty program — програма винагород за знайдені вади · handle — ручка (дверей)</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">No web application is perfectly secure, and new weak points are found every day. What matters is how quickly the unlocked doors are found — ideally by the team itself, before an attacker tries the handle.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">weak point — слабке місце · handle — ручка (дверей)</span>"
    ]
   },
   {
@@ -1084,13 +941,15 @@ window.LESSON = {
    "type": "mcq",
    "family": "odd",
    "kicker": "Thursday · Odd one out",
-   "needs": [],
-   "prompt": "Which one does <b>not</b> help a team find its unlocked doors first?",
+   "needs": [
+    "to reset a password"
+   ],
+   "prompt": "Which verb does <b>not</b> go with <b>a password</b>?",
    "options": [
-    "code reviews",
-    "penetration tests",
-    "more new features",
-    "bug bounty programs"
+    "reset",
+    "crack",
+    "open",
+    "change"
    ]
   },
   {
@@ -1102,7 +961,7 @@ window.LESSON = {
    "prompt": "Which habit protects a student best? Vote.",
    "options": [
     "a different password for every site",
-    "two-step login (MFA)",
+    "two-factor authentication (2FA)",
     "never clicking links in emails",
     "updating apps quickly"
    ]
@@ -1115,9 +974,7 @@ window.LESSON = {
    "title": "Why that one?",
    "format": "justify-ranking",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>Most of us chose …, mainly because if …, …</b></span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>I’d put … second, as long as …</b></span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>… is useful, but unless …, it won’t help much.</b></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>Most of us chose …: if more students had used it, fewer accounts would be hacked now.</b><br><b>I wish everyone …</b><br><b>Had I known about … earlier, I’d have …</b></span>",
     "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Reasons: one leak → all your accounts · fake links look real · old apps have known flaws · a stolen password alone is not enough</span>"
    ]
   },
@@ -1129,18 +986,81 @@ window.LESSON = {
    "text": "Looking back at the week"
   },
   {
+   "id": "g3a",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 3 · 1/2",
+   "title": "Past cause, result now",
+   "teaches": [
+    "rule: mixed conditionals"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>had + V3</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>would</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>verb</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">mixed</span>something in the past → a result <b>now</b><br><i>If Dana had used different passwords, she wouldn’t be so worried now.</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">compare</span>result then: … she wouldn’t <b>have lost</b> her email · result now: … she wouldn’t <b>be</b> so worried</span>"
+   ]
+  },
+  {
+   "id": "g3b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 3 · 2/2",
+   "title": "Who you are, what you did",
+   "teaches": [
+    "rule: mixed conditionals"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>past</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>would have</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>V3</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">mixed</span>something always true about a person → a result in the past<br><i>If Dana were more careful, she wouldn’t have reused her password.</i></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Ukrainian «якби» again: ask about each half, “now or then?”</span>"
+   ]
+  },
+  {
+   "id": "g3c",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 3 · Form",
+   "needs": [
+    "rule: mixed conditionals"
+   ],
+   "instruction": "Example: If I had slept more, I ___ (not / be) tired now. → wouldn’t be",
+   "prompt": "If GameZone had protected its passwords, Dana ___ (not / have to) change all her passwords today.",
+   "placeholder": "three words"
+  },
+  {
+   "id": "g3d",
+   "type": "match",
+   "family": "cause",
+   "kicker": "Rule 3 · Now or then?",
+   "needs": [
+    "rule: mixed conditionals"
+   ],
+   "prompt": "Join the halves (1–3). Watch the time. One ending (a–d) is extra.",
+   "left": [
+    "If she had turned on MFA in 2022,",
+    "If she weren’t so busy,",
+    "If the university had checked the portal,"
+   ],
+   "right": [
+    "she’d have read GameZone’s email sooner.",
+    "she wouldn’t have to change passwords today.",
+    "Ivan’s grades would be private now.",
+    "she won’t be safe."
+   ]
+  },
+  {
    "id": "g4a",
    "type": "content",
    "reveal": true,
    "kicker": "Grammar · Rule 4 · 1/2",
-   "title": "«Якби» about the past",
+   "title": "Had she known…",
    "teaches": [
-    "rule: third conditional · should have"
+    "rule: inversion · had · should"
    ],
    "items": [
-    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>had + V3</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>would have</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>V3</b></span></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>the past: it happened, and we can’t change it<br><i>If Dana had used a different password, the attackers wouldn’t have gotten in.</i></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">trap</span>«якби» = now (Rule 3) or the past (Rule 4): English must choose<br><i>If the server were patched … (now) · If the server had been patched … (in 2017)</i></span>"
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>Had</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>subject</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>V3</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>would have …</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">formal</span>= If she had known … — no “if”: had comes first<br><i>Had the server been patched in March, the attackers would have found the door locked.</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">where</span>news, reports, formal emails<br><i>Had GameZone acted sooner, millions of passwords would have been safe.</i></span>"
    ]
   },
   {
@@ -1148,40 +1068,42 @@ window.LESSON = {
    "type": "content",
    "reveal": true,
    "kicker": "Grammar · Rule 4 · 2/2",
-   "title": "should have: a past mistake",
+   "title": "Should you…: formal warnings",
    "teaches": [
-    "rule: third conditional · should have"
+    "rule: inversion · had · should"
    ],
    "items": [
-    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>should have</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>V3</b></span></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">criticism</span>= it was a good idea, but nobody did it<br><i>Equifax should have patched the portal in March.</i></span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ If they <b>had patched</b> …<br>❌ <s>If they <b>would have patched</b> …</s></span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">V3: patch → patched · use → used · get → gotten (AmE) / got (BrE) · tell → told</span>"
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>Should</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>you</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>verb</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>please …</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">formal</span>= If you … (it may happen)<br><i>Should you get a strange email, please report it to IT.</i></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ <b>Had she</b> checked …<br>❌ <s><b>If had she</b> checked …</s></span>"
    ]
   },
   {
    "id": "g4c",
-   "type": "gap",
-   "family": "form",
-   "kicker": "Rule 4 · Form · 1/3",
+   "type": "mcq",
+   "family": "transform",
+   "kicker": "Rule 4 · The formal version",
    "needs": [
-    "rule: third conditional · should have"
+    "rule: inversion · had · should"
    ],
-   "instruction": "Example: If I ___ (know), I would have told you. → had known",
-   "prompt": "If Dana ___ (use) a different password, the attackers wouldn’t have gotten in.",
-   "placeholder": "two words"
+   "prompt": "“If the portal had been tested, nobody would have seen Ivan’s grades.” Which is the formal version?",
+   "options": [
+    "Had the portal been tested, …",
+    "Had been the portal tested, …",
+    "If had the portal been tested, …"
+   ]
   },
   {
    "id": "g4d",
    "type": "gap",
-   "family": "form",
-   "kicker": "Rule 4 · Form · 2/3",
+   "family": "genre",
+   "kicker": "Rule 4 · A university notice",
    "needs": [
-    "rule: third conditional · should have"
+    "rule: inversion · had · should"
    ],
-   "instruction": "should have + V3.",
-   "prompt": "GameZone ___ (should / tell) users about the breach sooner.",
-   "placeholder": "three words"
+   "instruction": "One word. The notice is formal.",
+   "prompt": "📢 ___ you notice anything strange on the portal, please write to it-help@univ.edu.ua.",
+   "placeholder": "one word"
   },
   {
    "id": "g4e",
@@ -1189,39 +1111,28 @@ window.LESSON = {
    "family": "error",
    "kicker": "Rule 4 · Find the mistake",
    "needs": [
-    "rule: third conditional · should have",
-    "to patch"
+    "rule: inversion · had · should"
    ],
-   "prompt": "<b>If GameZone would have patched its site, the passwords wouldn’t have been stolen.</b><br>Tap the wrong part.",
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: Had I known yesterday, I <s>would tell</s> you then. → I <b>would have told</b> you then.<br></span><b>Had GameZone told us sooner, we would change our passwords last month.</b><br>Tap the wrong part.",
    "options": [
-    "If GameZone would have patched",
-    "its site,",
-    "the passwords wouldn’t have been stolen."
+    "Had GameZone",
+    "told us sooner,",
+    "we",
+    "would change our passwords last month."
    ]
   },
   {
-   "id": "g4f",
-   "type": "gap",
-   "family": "transform",
-   "kicker": "Rule 4 · Form · 3/3",
-   "needs": [
-    "rule: third conditional · should have"
-   ],
-   "instruction": "Same meaning. “Nobody noticed the old certificate, so the attack went unnoticed.”",
-   "prompt": "If somebody ___ the old certificate, the attack wouldn’t have gone unnoticed.",
-   "placeholder": "two words"
-  },
-  {
-   "id": "say4",
+   "id": "sx3",
    "type": "content",
    "reveal": true,
    "family": "translate",
-   "kicker": "Say it in English",
-   "title": "Якби Дана мала різні паролі, зловмисники не потрапили б у її пошту.",
+   "kicker": "Friday · Say it in English · One student per line",
+   "title": "Formal and mixed",
    "items": [
-    "<b>If Dana had had different passwords, the attackers wouldn’t have gotten into her email.</b>",
-    "<span style=\"display:block;font-size:18px;line-height:1.4\">💬 Якби ти мене попередив, я б не прийшов.</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.4\">→ <i>If you had warned me, I wouldn’t have come.</i></span>"
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">💬 Якби ти тоді послухав мене, ти б зараз не мав проблем.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>If you had listened to me, you wouldn’t have problems now.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">📢 Якщо ви забудете пароль, натисніть «Reset».</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Should you forget your password, click “Reset.”</i></span>"
    ]
   },
   {
@@ -1231,9 +1142,9 @@ window.LESSON = {
    "kicker": "Friday · Idioms",
    "title": "Too late!",
    "items": [
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to close the barn door after the horse is out</b> <span class=\"muted\">/bɑːrn/</span><br>зачиняти стайню, коли коня вже вкрали (запізно)</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>A new password a year after the leak? That’s closing the barn door …</i></span>",
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>better safe than sorry</b> <span class=\"muted\">/ˌseɪf ðən ˈsɑːri/</span><br>краще перестрахуватися</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Back it up: better safe than sorry.</i></span>",
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to learn the hard way</b> <span class=\"muted\">/ˈhɑːrd weɪ/</span><br>навчитися на гіркому досвіді</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Dana learned it the hard way.</i></span>"
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to close the barn door after the horse is out</b> <span class=\"muted\">/bɑːrn/</span><br>зачиняти стайню, коли коня вже вкрали (запізно)</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>BrE: shut the stable door after the horse has bolted</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>better safe than sorry</b> <span class=\"muted\">/ˌseɪf ðən ˈsɑːri/</span><br>краще перестрахуватися</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Take an umbrella: better safe than sorry.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to learn the hard way</b> <span class=\"muted\">/ˈhɑːrd weɪ/</span><br>навчитися на гіркому досвіді</span>"
    ]
   },
   {
@@ -1257,19 +1168,15 @@ window.LESSON = {
   },
   {
    "id": "f2b",
-   "type": "mcq",
+   "type": "gap",
    "family": "idiom",
    "kicker": "Friday · Which idiom?",
    "needs": [
-    "to learn the hard way",
-    "better safe than sorry"
+    "to learn the hard way"
    ],
-   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: “I always lock my bike, even for a minute.” → Better safe than sorry!<br></span>“I lost all my photos last year, so now I back up everything.” I …",
-   "options": [
-    "closed the barn door.",
-    "learned the hard way.",
-    "was better safe than sorry."
-   ]
+   "instruction": "One word. Example: I always lock my bike, even for a minute. Better safe than ___. → sorry",
+   "prompt": "I lost all my photos last year, so now I save them twice. I learned it the ___ way.",
+   "placeholder": "one word"
   },
   {
    "id": "f3",
@@ -1279,148 +1186,80 @@ window.LESSON = {
    "title": "Tell it with regret",
    "format": "narrate",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\">On …, she … . Luckily, she didn’t … .<br><b>If she had …, she wouldn’t have …</b><br><b>She should have …</b></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\">On …, she … . Luckily, she didn’t … .<br><b>She wishes she had …</b> · <b>If only …</b><br><b>If she had …, she wouldn’t be … now.</b></span>",
     "<span style=\"display:block;font-size:18px;line-height:1.45\">Mon — a fake email; she didn’t click<br>Tue — locked out of her email<br>Wed — saw Ivan’s grades; wrote to IT<br>Thu — GameZone breach; the same password<br>Fri — changed all passwords; turned on MFA</span>"
    ]
   },
   {
-   "id": "a0",
-   "type": "end",
-   "kicker": "Saturday",
-   "title": "A podcast",
-   "text": "Dana listens to “The Brief”"
-  },
-  {
-   "id": "a1",
+   "id": "wr0",
    "type": "content",
-   "reveal": true,
-   "kicker": "Saturday · Words from the audio · 1/2",
-   "title": "Three expressions",
+   "kicker": "Friday · Word race",
+   "title": "The week in words",
    "items": [
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to jiggle a doorknob</b> <span class=\"muted\">/ˈdʒɪɡl ə ˈdɔːrnɑːb/</span><br>смикати дверну ручку</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>to check if a door is locked · BrE door handle</i></span>",
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to slip inside</b> <span class=\"muted\">/ˌslɪp ɪnˈsaɪd/</span><br>прослизнути всередину</span>",
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>a blind spot</b> <span class=\"muted\">/ˈblaɪnd spɑːt/</span><br>сліпа зона</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>something you don’t notice</i></span>"
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">Three quick gaps, then a match. Answer as fast as you can!</span>"
    ]
   },
   {
-   "id": "a2",
-   "type": "content",
-   "reveal": true,
-   "kicker": "Saturday · Words from the audio · 2/2",
-   "title": "Spoken English",
-   "items": [
-    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>a backstop</b> <span class=\"muted\">/ˈbækstɑːp/</span><br>запобіжник, остання лінія захисту</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>the last thing that stops a problem</i></span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">spoken</span>you know · basically · kind of like · way cheaper = much cheaper · we gotta = we have got to</span>",
-    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">AmE ↔ BrE</span>vacation ↔ holiday · first floor ↔ ground floor</span>"
-   ]
-  },
-  {
-   "id": "a3",
-   "type": "content",
-   "reveal": true,
-   "kicker": "Saturday · While you listen",
-   "title": "Three questions",
-   "items": [
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">1. Attackers are compared to people who … what?</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">2. Threat modeling is kind of like … what?</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">3. What is the “ultimate backstop”?</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">A computer voice reads it: it says “threat modeling” badly, like “DREP modeling”.</span>"
-   ]
-  },
-  {
-   "id": "a4",
-   "type": "end",
-   "kicker": "Saturday · 1st time",
-   "title": "🎧 Listen",
-   "text": "Think about the three questions"
-  },
-  {
-   "id": "a5",
-   "type": "mcq",
-   "family": "gist",
-   "kicker": "After listening · 1/3",
-   "needs": [
-    "to jiggle a doorknob"
-   ],
-   "prompt": "Attackers are compared to people who …",
-   "options": [
-    "pick locks with special tools.",
-    "jiggle doorknobs.",
-    "break windows at night."
-   ]
-  },
-  {
-   "id": "a6",
-   "type": "mcq",
-   "family": "gist",
-   "kicker": "After listening · 2/3",
-   "needs": [],
-   "prompt": "Threat modeling is kind of like …",
-   "options": [
-    "putting in an alarm after a break-in.",
-    "changing all the locks every year.",
-    "checking your first-floor windows before a vacation."
-   ]
-  },
-  {
-   "id": "a7",
+   "id": "wr1",
    "type": "gap",
-   "family": "gist",
-   "kicker": "After listening · 3/3",
+   "family": "race",
+   "kicker": "Word race · 1/3",
    "needs": [
-    "multi-factor authentication (MFA)",
-    "a backstop"
+    "phishing"
    ],
-   "instruction": "The full name or the short form.",
-   "prompt": "The ultimate backstop is ___.",
-   "placeholder": "MFA …"
-  },
-  {
-   "id": "a8",
-   "type": "end",
-   "kicker": "Saturday · 2nd time",
-   "title": "🎧 Listen again",
-   "text": "Listen for the details"
-  },
-  {
-   "id": "a9",
-   "type": "gap",
-   "family": "detail",
-   "kicker": "After listening · Details",
-   "needs": [],
-   "instruction": "One word (with a hyphen) from the audio.",
-   "prompt": "Threat modeling is way cheaper than dealing with a ___ later.",
+   "instruction": "One word.",
+   "prompt": "A fake email that tries to steal your password is called ___.",
    "placeholder": "one word"
   },
   {
-   "id": "a10",
-   "type": "match",
-   "family": "register",
-   "kicker": "After listening · Spoken → written",
-   "needs": [],
-   "prompt": "Match each spoken phrase (1–3) with its written form. One (a–d) is extra.",
-   "left": [
-    "way cheaper",
-    "we gotta talk",
-    "kind of like"
+   "id": "wr2",
+   "type": "gap",
+   "family": "race",
+   "kicker": "Word race · 2/3",
+   "needs": [
+    "permission"
    ],
-   "right": [
-    "we must discuss",
-    "similar to",
-    "much cheaper",
-    "in the past"
-   ]
+   "instruction": "One word.",
+   "prompt": "Dana had no ___ to see Ivan’s grades, but the portal showed them.",
+   "placeholder": "one word"
   },
   {
-   "id": "a11",
-   "type": "open",
-   "family": "personal",
-   "kicker": "After listening · Your blind spot",
+   "id": "wr3",
+   "type": "gap",
+   "family": "race",
+   "kicker": "Word race · 3/3",
    "needs": [
-    "a blind spot"
+    "multi-factor authentication (MFA)"
    ],
-   "prompt": "The podcast ends with a question about blind spots. What is <b>your</b> blind spot online? One sentence:<br><b>“My blind spot is probably …, because I …”</b>",
-   "placeholder": "My blind spot is probably …"
+   "instruction": "Three letters.",
+   "prompt": "A password plus a code on your phone is called ___.",
+   "placeholder": "three letters"
+  },
+  {
+   "id": "wr4",
+   "type": "match",
+   "family": "define",
+   "kicker": "Word race · Match",
+   "needs": [
+    "to be locked out",
+    "to break into / to hack into",
+    "to patch",
+    "to compromise (an account)"
+   ],
+   "prompt": "Match each word (1–4) with its meaning. One meaning (a–e) is extra.",
+   "left": [
+    "to be locked out",
+    "to break into",
+    "to patch",
+    "compromised"
+   ],
+   "right": [
+    "someone else got in",
+    "to fix a known flaw",
+    "to tell a secret",
+    "can’t log in",
+    "to get in illegally"
+   ]
   },
   {
    "id": "k0",
@@ -1465,10 +1304,10 @@ window.LESSON = {
    "kicker": "Keyword drill · 3/3 · One student per set",
    "title": "Sets 5–6",
    "items": [
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>5.</b> unless / account / have / MFA / stolen / password / be / enough</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Unless an account has MFA, a stolen password is enough.</i></span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>6.</b> if / server / patch / March / breach / prevent</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>If the server had been patched in March, the breach would have been prevented.</i></span>"
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>5.</b> had / Dana / turn on / MFA / stolen / password / be / useless</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Had Dana turned on MFA, the stolen password would have been useless.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>6.</b> had / server / patch / March / breach / prevent</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Had the server been patched in March, the breach would have been prevented.</i></span>"
    ]
   },
   {
@@ -1487,8 +1326,8 @@ window.LESSON = {
    "format": "instruct",
    "items": [
     "<span style=\"display:block;font-size:18px;line-height:1.45\">A friend has a problem. Four students, <b>one move each</b>.</span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>1. What happened:</b> Yesterday, …<br><b>2. The mistake:</b> … should have … · If … had …, … wouldn’t have …</span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>3. What to do now:</b> If I were you, I’d … · Don’t …!<br><b>4. From now on:</b> … unless … · … as long as … · Otherwise, …</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>1. What happened:</b> Yesterday, …<br><b>2. The regret:</b> I bet he/she wishes … · If only …</span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>3. Now:</b> If he/she had …, he/she wouldn’t be … now.<br><b>4. Advice:</b> If I were him/her, I’d … · Should it happen again, …</span>"
    ]
   },
   {
@@ -1499,8 +1338,8 @@ window.LESSON = {
    "title": "How it sounds",
    "items": [
     "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Example · Oleh</span>Oleh got a text: “Your parcel is waiting. Pay 2 dollars here.” He paid with his card.</span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.48\"><b>1.</b> Yesterday, Oleh got a fake text about a parcel, and he paid with his card.<br><b>2.</b> He should have checked the sender. If he had looked at the link, he wouldn’t have paid.</span>",
-    "<span style=\"display:block;font-size:17px;line-height:1.48\"><b>3.</b> If I were him, I’d call the bank right now. Don’t wait!<br><b>4.</b> From now on, don’t pay unless you know the sender; otherwise, you’ll lose more money.</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\"><b>1.</b> Yesterday, Oleh got a fake text about a parcel, and he paid with his card.<br><b>2.</b> I bet he wishes he had checked the sender. If only he had looked at the link!</span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.48\"><b>3.</b> If he hadn’t paid, he wouldn’t be so worried about his card now.<br><b>4.</b> If I were him, I’d call the bank right now. Should it happen again, he’d better just delete the text.</span>"
    ]
   },
   {
@@ -1510,7 +1349,7 @@ window.LESSON = {
    "title": "Marta: one password",
    "items": [
     "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Card A · Marta</span>Marta uses <b>marta2005</b> for everything: email, bank, Instagram. Yesterday her Instagram was hacked, and now strangers send messages from her account.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Words: reuse · reset · break into · MFA · a different password for every site</span>"
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Words: reset · break into · locked out · MFA · a different password for every site</span>"
    ]
   },
   {
@@ -1529,8 +1368,8 @@ window.LESSON = {
    "kicker": "Final task · Card C",
    "title": "Andrii: the free game",
    "items": [
-    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Card C · Andrii</span>Andrii downloaded a “free” copy of a paid game from a strange site. Now his laptop is slow, and his browser opens ads by itself. His photos are not backed up.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Words: a scam · a virus · back up · update · as long as</span>"
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Card C · Andrii</span>Andrii downloaded a “free” copy of a paid game from a strange site. Now his laptop is slow, and his browser opens ads by itself.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Words: a scam · a virus · update · fake · Should it happen again</span>"
    ]
   },
   {
