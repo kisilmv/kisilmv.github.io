@@ -1,738 +1,1544 @@
-/* =========================================================================
-   Unit 4 · Web Application Security: Thinking Like an Attacker
-   ESP · Комп'ютерні науки, 2 курс · B1+/B2 · group
-   ПУБЛІЧНА частина: те, що бачать студенти. Нотатки й ключі — у teacher.js.
-   Задум: «Аудит перед запуском: п'ять дверей». Наскрізний кейс — вигаданий
-   університетський портал оцінок GradeBook, який запускається за два тижні.
-   Група — команда аудиторів: карта дверей (поверхня атаки) → двері 1: пошукове
-   поле (ін'єкції; умовні 0/1) → двері 2: /grades/1044 (автентифікація ≠
-   авторизація, глибокий розбір; unless / as long as / otherwise) → двері 3:
-   таблиця паролів (геш ≠ шифрування, сіль) → двері 4: вхід викладачів (фішинг,
-   MFA; другий тип) → двері 5: стара бібліотека (Equifax; третій тип, should have)
-   → аудіо The Brief → як знаходити двері першими (моделювання загроз) →
-   keyword drill → вердикт і брифінг для декана. Меж занять у презентації немає.
-   ========================================================================= */
-(function () {
-  const ID = 'esp-kn-unit4';
-  const K = (s) => '<span class="muted" style="font-size:15px;line-height:1.35">' + s + '</span>';
-  const RD = (h) => '<span style="display:block;font-size:17px;line-height:1.42">' + h + '</span>';
-  const SS = (h) => '<span style="display:block;font-size:16px;line-height:1.4">' + h + '</span>';
-  const SM = (h) => '<span style="display:block;font-size:18px;line-height:1.45">' + h + '</span>';
-  const term = (en, ipa, uk) => '<span style="display:block;font-size:19px;line-height:1.35"><b>' + en + '</b> <span class="muted">' + ipa + '</span><br>' + uk + '</span>';
-  // рядок механізму: що термін РОБИТЬ
-  const TM = (en, ipa, uk, mech) => term(en, ipa, uk) + '<span style="display:block;font-size:17px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:6px">' + mech + '</span>';
-  const MECH = (h) => '<span style="display:block;font-size:17px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px">' + h + '</span>';
-  const EV = (en, uk) => [
-    '<span style="display:block;font-size:18px;line-height:1.4">💬 ' + uk + '</span>',
-    '<span style="display:block;font-size:18px;line-height:1.4">→ <i>' + en + '</i></span>'];
-  const HAVE = ['door.jpg', 'lead.jpg', 'servers.jpg', 'windows.jpg', 'review.jpg', 'client.jpg', 'briefing.jpg'];
-  const PH = (f, alt, pos, h) => HAVE.includes(f) ? '<img src="lessons/' + ID + '/' + f + '" alt="' + alt + '" style="display:block;width:100%;height:' + (h || 130) + 'px;object-fit:cover;object-position:' + (pos || '50% 50%') + ';border-radius:16px;margin-bottom:12px">' : '';
-  // картка-документ: коментар рев'ю, бюлетень, лист
-  const CARD = (head, body) => '<span style="display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:17px;line-height:1.45">' +
-    '<span style="display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px">' + head + '</span>' + body + '</span>';
-  const MONO = (s) => '<span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px">' + s + '</span>';
-  // граматичні блоки
-  const FX = (...p) => '<span class="fx" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px">' +
-    p.map((x) => x === '+' || x === ',' ? '<span style="color:var(--ink-2)">' + x + '</span>' : '<span style="background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px"><b>' + x + '</b></span>').join('') + '</span>';
-  const GT = (head, rows) => '<table class="gt" style="width:100%;border-collapse:collapse;font-size:16px;line-height:1.35">' +
-    '<tr>' + head.map((h) => '<th style="text-align:left;color:var(--ink-2);font-weight:600;padding:4px;border-bottom:2px solid var(--line)">' + h + '</th>').join('') + '</tr>' +
-    rows.map((r) => '<tr>' + r.map((c) => '<td style="padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top">' + c + '</td>').join('') + '</tr>').join('') + '</table>';
-  const RC = (badge, rule, ex) => '<span class="rc" style="display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4">' +
-    '<span style="display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px">' + badge + '</span>' + rule + (ex ? '<br><i>' + ex + '</i>' : '') + '</span>';
-  const OKNO = (ok, no) => '<span style="display:block;font-size:17px;line-height:1.5">✅ ' + ok + '<br>❌ <s>' + no + '</s></span>';
-  const SVG = (vb, label, body) => '<svg viewBox="' + vb + '" width="100%" style="max-width:340px;display:block" role="img" aria-label="' + label + '">' + body + '</svg>';
-  const BOX = (x, y, w, h, fill) => '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="9" fill="' + (fill || 'var(--surface-2)') + '" stroke="var(--line)"/>';
-  const TX = (x, y, t, o) => '<text x="' + x + '" y="' + y + '" font-size="' + ((o && o.s) || 14) + '" fill="' + ((o && o.c) || 'var(--ink)') + '"' + (o && o.m ? ' text-anchor="middle"' : '') + (o && o.b ? ' font-weight="700"' : '') + (o && o.mono ? ' font-family="ui-monospace,Menlo,monospace"' : '') + '>' + t + '</text>';
-  const AR = (x1, y1, x2, y2, c) => '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="' + (c || 'var(--ink-2)') + '" stroke-width="2" marker-end="url(#ah)"/>';
-  const DEFS = '<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--ink-2)"/></marker></defs>';
-
-  const S = [];
-  const add = (o) => S.push(o);
-  // «Say it in English»: українське технічне речення → еталон → 💬 розмовне → еталон
-  const SAY = (id, uk, en, evEn, evUk) => add({ id, type: 'content', reveal: true, family: 'translate',
-    kicker: 'Say it in English', title: uk, items: ['<b>' + en + '</b>', ...EV(evEn, evUk)] });
-
-  // Мітки правил і понять (для check_lesson.js; рушій їх ігнорує)
-  const R1 = 'rule: zero and first conditional', R2 = 'rule: unless · as long as · otherwise',
-    R3 = 'rule: second conditional', R4 = 'rule: third conditional · should have';
-  const C_AS = 'concept: attack surface', C_INJ = 'concept: SQL injection', C_AA = 'concept: authentication vs authorization',
-    C_BAC = 'concept: broken access control', C_HASH = 'concept: hash vs encrypt', C_SALT = 'concept: salt and slow hashing',
-    C_MFA = 'concept: multi-factor authentication', C_DEP = 'concept: dependency and patching';
-
-  /* ======================= THE CASE ======================= */
-  add({ id: 'title', type: 'title', kicker: 'Unit 4 · English for Computer Science',
-    title: 'Web Application Security', subtitle: 'A security audit: five doors before launch' });
-
-  add({ id: 'c1', type: 'content', reveal: true, kicker: 'The case · GradeBook', title: 'Two weeks before launch',
-    items: [
-      SM('A student team has built <b>GradeBook</b>: students see their grades, teachers enter them. It goes live in <b>two weeks</b>: 9,000 students, 600 teachers.'),
-      SM('The dean asks: <b>“Is it safe?”</b> You are the <b>audit team</b>: check every door before someone else does.'),
-      K('grade — оцінка · go live — запрацювати · dean — декан · audit — перевірка')] });
-  add({ id: 'c2', type: 'content', reveal: true, kicker: 'The case · How to look', title: 'Think like an attacker',
-    items: [
-      PH('door.jpg', 'A heavy vault door left open while a hooded figure reaches inside', '50% 45%', 90) +
-        TM('attacker', '/əˈtækər/', 'зловмисник, нападник', 'a person who tries to get into a system without permission, to steal, change or break something.'),
-      SM('Attackers rarely need brilliant tricks. Far more often, they look for <b>doors that nobody locked</b>.'),
-      K('A “door” here = any place where someone can get into the system.')] });
-  add({ id: 'c3', type: 'mcq', poll: true, kicker: 'The case · Place your bet',
-    prompt: 'Your guess. Which weak point do security testers find <b>most often</b> in web apps today?' + K('<br>No wrong answers yet: we will check later.'),
-    options: ['a brand-new trick nobody knows', 'code typed into a form', 'a page that shows data to the wrong user', 'a password typed into a fake website'] });
-
-  /* ======================= THE MAP OF DOORS ======================= */
-  add({ id: 'sA', type: 'end', kicker: 'The map', title: 'Where could someone get in?', text: 'Four words first, then the map of GradeBook' });
-
-  add({ id: 'v1', type: 'content', reveal: true, kicker: 'The map · Words for the audit · 1/2', title: 'Weak points',
-    items: [
-      TM('flaw', '/flɔː/', 'вада, хиба', 'any mistake or weak point in a design or in code.'),
-      TM('vulnerability', '/ˌvʌlnərəˈbɪləti/', 'вразливість', 'a flaw that an attacker can actually use to get in or do damage. Every vulnerability is a flaw; not every flaw is a vulnerability.')] });
-  add({ id: 'v2', type: 'content', reveal: true, kicker: 'The map · Words for the audit · 2/2', title: 'Using a weak point',
-    teaches: [C_AS],
-    items: [
-      TM('to exploit', '/ɪkˈsplɔɪt/', 'використати (вразливість)', 'to use a vulnerability on purpose: “They exploited a flaw in the login form.”'),
-      TM('attack surface', '/əˈtæk ˌsɜːrfəs/', 'поверхня атаки', 'all the places where someone can try to get in: every form, URL and file upload, and every library you use. Each new feature makes it bigger.')] });
-  add({ id: 'v3', type: 'content', reveal: true, kicker: 'The map · GradeBook’s weak points', title: 'Five doors to check',
-    items: [
-      SVG('0 0 320 206', 'GradeBook: five places to check, numbered in the order of the audit', DEFS +
-        TX(10, 14, 'the internet', { s: 13, c: 'var(--ink-2)' }) +
-        [['1', 'search box', 22], ['2', '/grades/1043', 59], ['3', 'password table', 96], ['4', 'teachers’ login', 133], ['5', 'old library', 170]].map(([n, t, y]) =>
-          BOX(10, y, 150, 30) + TX(22, y + 20, n, { b: 1, c: 'var(--accent)' }) + TX(40, y + 20, t, { s: 14, mono: t.startsWith('/') }) + AR(162, y + 15, 214, 108)).join('') +
-        BOX(216, 78, 96, 60, 'var(--accent-soft)') + TX(264, 104, 'GradeBook', { m: 1, b: 1 }) + TX(264, 124, 'grades data', { m: 1, s: 13, c: 'var(--ink-2)' })),
-      SM('<b>1, 2, 4</b>: places where people send data in. <b>5</b>: someone else’s code inside GradeBook. <b>3</b>: what an attacker gets <b>if</b> they get in.'),
-      SM('The audit checks them in this order: <b>is each door locked?</b>')] });
-  add({ id: 'm1', type: 'match', family: 'label', kicker: 'The map · Check the doors',
-    needs: [C_AS, 'attacker'],
-    prompt: 'GradeBook’s attack surface: how could an attacker <b>exploit</b> each door (1–4)? One option (a–e) is extra.',
-    left: ['search box', '/grades/1043', 'teachers’ login', 'old library'],
-    right: ['type code, not text', 'use a known flaw', 'read the password table', 'guess passwords', 'change the number'] });
-  /* ======================= DOOR 1 · THE SEARCH BOX ======================= */
-  add({ id: 'sB', type: 'end', kicker: 'Door 1 · The search box', title: 'What if the input is code?', text: 'Injection: the classic unlocked door' });
-
-  add({ id: 'v4', type: 'content', reveal: true, kicker: 'Door 1 · Injection · 1/4', title: 'Data or a command?',
-    teaches: [C_INJ],
-    items: [
-      TM('SQL injection', '/ˌes kjuː ˈel ɪnˌdʒekʃn/', 'SQL-ін’єкція', 'an attack in which someone types database code (SQL) into a form, and the app sends it to the database, which runs it.'),
-      K('SQL /ˌes kjuː ˈel/ or /ˈsiːkwəl/ — Structured Query Language, the language of databases · query — запит')] });
-  add({ id: 'v5', type: 'content', reveal: true, kicker: 'Door 1 · Injection · 2/4', title: 'How it works',
-    items: [
-      SVG('0 0 320 196', 'An app pastes user input into a database query', DEFS +
-        TX(10, 18, 'GradeBook builds this query:', { s: 13, c: 'var(--ink-2)' }) +
-        BOX(10, 26, 300, 34) + TX(20, 48, "...WHERE name = '<tspan fill=\"var(--accent)\" font-weight=\"700\">INPUT</tspan>'", { mono: 1, s: 14 }) +
-        TX(10, 86, 'A student types:  Anna', { s: 14 }) + TX(26, 106, "→ name = 'Anna'  → Anna’s grades", { s: 13, mono: 1, c: 'var(--ok)' }) +
-        TX(10, 136, "An attacker types:  x' OR '1'='1", { s: 14 }) + TX(26, 156, "→ name = 'x' OR '1'='1'", { s: 13, mono: 1, c: 'var(--no)' }) +
-        TX(26, 178, '→ always true: EVERY student’s grades', { s: 13, c: 'var(--no)' })),
-      SM('GradeBook <b>pastes</b> the input into its command.'),
-      SM('The database can’t tell the student’s name from the attacker’s code. It runs everything.')] });
-
-  add({ id: 'ic1', type: 'gap', family: 'cause', kicker: 'Door 1 · Check the idea', needs: [C_INJ],
-    instruction: 'One word.',
-    prompt: 'GradeBook pastes the input into its query, so the database runs the attacker’s ___.', placeholder: 'one word' });
-  add({ id: 'v6', type: 'content', reveal: true, kicker: 'Door 1 · Injection · 3/4', title: 'The main lock',
-    items: [
-      TM('parameterized query', '/pəˈræmətəraɪzd ˈkwɪri/', 'параметризований запит', 'the command and the user’s data travel <b>separately</b>, so the data is never run as code.'),
-      K('Think of a paper form with boxes: whatever you write in the “Name” box stays a name, even if it looks like an order.')] });
-  add({ id: 'v6b', type: 'content', reveal: true, kicker: 'Door 1 · Injection · 4/4', title: 'A second layer',
-    items: [
-      TM('input validation', '/ˈɪnpʊt ˌvælɪˈdeɪʃn/', 'перевірка вхідних даних', 'the server checks that each input looks right (a grade is 1–100) and rejects the rest. Useful, but not enough alone.'),
-      SM('Checks in the <b>browser</b> can be skipped: an attacker can send requests straight to the server with a script.')] });
-  add({ id: 'sc1', type: 'mcq', family: 'scenario', kicker: 'Door 1 · Check the idea',
-    needs: [C_INJ, 'input validation'],
-    prompt: 'GradeBook checks input only with JavaScript in the <b>browser</b>. An attacker sends requests with a script, <b>without a browser</b>. <b>What checks the input?</b>',
-    options: ['The browser checks it anyway.', 'Nothing checks it.', 'The database rejects bad input.'] });
-  add({ id: 'v7', type: 'content', reveal: true, kicker: 'Door 1 · The same mistake on a page', title: 'Cross-site scripting',
-    items: [
-      TM('cross-site scripting (XSS)', '/ˌkrɔːs saɪt ˈskrɪptɪŋ/', 'міжсайтовий скриптинг', 'someone types a script into a comment field; the site shows it to other visitors, their browsers run it, and it can steal their login session.'),
-      SM('SQL injection attacks the <b>database</b>. XSS attacks the <b>other users</b>.'),
-      K('XSS, not CSS: CSS already meant style sheets.')] });
-  /* ---------- Grammar 1 · how the system works vs what will happen ---------- */
-  add({ id: 'g1a', type: 'content', reveal: true, kicker: 'Grammar · Rule 1 · 1/2', title: 'How the system works: always',
-    teaches: [R1],
-    items: [
-      FX('If', '+', 'present', ',', 'present'),
-      RC('zero', 'a rule of the system: it happens <b>every time</b>.', 'If the app pastes input into a query, the database runs it.'),
-      RC('zero', '<i>when</i> works here too.', 'When a student logs in, GradeBook shows their grades.')] });
-  add({ id: 'g1b', type: 'content', reveal: true, kicker: 'Grammar · Rule 1 · 2/2', title: 'One likely result in the future',
-    items: [
-      FX('If', '+', 'present', ',', 'will / can / may', '+', 'V'),
-      RC('first', 'a real possibility: what <b>will</b> happen if…', 'If we don’t fix the search box, someone will find it.'),
-      RC('trap', 'After <b>if</b>: present, never <b>will</b>.'),
-      OKNO('If we fix it…', 'If we will fix it…')] });
-
-  add({ id: 'g1c', type: 'gap', family: 'form', kicker: 'Door 1 · Rule 1 · 1/3', needs: [R1],
-    instruction: 'Put the verb in the correct form. <b>Example:</b> If a request <b>comes</b> (come) from a robot, the server blocks it.',
-    prompt: 'If a student ___ (enter) the wrong password five times, GradeBook locks the account for fifteen minutes.', placeholder: 'one word' });
-  add({ id: 'g1d', type: 'gap', family: 'form', kicker: 'Door 1 · Rule 1 · 2/3', needs: [R1],
-    instruction: 'Put the verb in the correct form.',
-    prompt: 'If we ___ (not / update) the search code this week, the scanner will flag it again.' + K('<br>scanner — a tool that checks code for known flaws'), placeholder: 'two words' });
-  add({ id: 'g1e', type: 'gap', family: 'form', kicker: 'Door 1 · Rule 1 · 3/3', needs: [R1, 'input validation'],
-    instruction: 'Put the verb in the correct form (passive).',
-    prompt: 'If the input ___ (not / check) on the server, an attacker will be able to inject SQL code.', placeholder: 'two or three words' });
-
-  add({ id: 'ca1', type: 'match', family: 'cause', kicker: 'Door 1 · Cause and effect',
-    needs: [R1, C_INJ, 'cross-site scripting (XSS)', 'parameterized query'],
-    prompt: 'Link each <b>if</b> (1–4) to its result. One (a–e) is extra.',
-    left: ['If input goes into the query,', 'If the query uses parameters,', 'If comments hold scripts (cross-site scripting),', 'If we test the form before launch,'],
-    right: ['the flaw is caught.', 'the input stays data.', 'the server deletes it.', 'the database runs code.', 'browsers run the script.'] });
-  add({ id: 'r3a', type: 'content', kicker: 'The text · The Door Nobody Locked · ¶3 · 1/2', title: 'The classic door',
-    items: [RD('The classic unlocked door is injection. <b>[A]</b> If an application builds a database query by pasting the user’s input directly into it, an attacker can type SQL code instead of a name, and the database will run it. <b>[B]</b> The same mistake in a web page leads to cross-site scripting, in which a script typed into a comment field runs in other visitors’ browsers. <b>[C]</b>')] });
-  add({ id: 'in1', type: 'mcq', family: 'insert', kicker: 'The text · ¶3 · Where does it go?', needs: [C_INJ],
-    prompt: K('Example: “I woke up. [A] I made coffee. [B]” → “Then I drank it.” goes at B.<br>') +
-      'Where does this sentence fit best: A, B or C?<br><b>“To the database, the attacker’s code looks exactly like the app’s own.”</b>',
-    options: ['A', 'B', 'C'] });
-  add({ id: 'r3b', type: 'content', kicker: 'The text · ¶3 · 2/2', title: 'The known defense',
-    items: [RD('The defense is well known: input is validated on the server, and queries are built with parameters so that user data is never treated as code. Injection has appeared in every edition of the OWASP Top 10, the best-known list of critical web application risks, since the first one in 2003.'),
-      K('OWASP /ˈoʊwɑːsp/ — Open Worldwide Application Security Project · edition — видання')] });
-
-  add({ id: 'sp1', type: 'content', reveal: true, family: 'ladder', format: 'explain', kicker: 'Door 1 · Speak · One at a time',
-    title: 'Explain it three times',
-    items: [
-      SM('<b>To a developer:</b> <i>“The search code pastes the input into the SQL query, so…”</i>'),
-      SM('<b>To the dean:</b> <i>“If someone types a command into the search box, …”</i>'),
-      SM('<b>To your grandmother:</b> <i>“Think of a form where someone writes an order instead of a name, and the clerk…”</i>')] });
-  /* ======================= DOOR 2 · THE GRADES PAGE (deep dive) ======================= */
-  add({ id: 'sC', type: 'end', kicker: 'Door 2 · The grades page', title: 'Who are you? And is this yours?', text: 'The deep dive of the audit' });
-
-  add({ id: 'v8', type: 'content', reveal: true, kicker: 'Door 2 · Two questions · 1/2', title: 'Two different checks',
-    teaches: [C_AA],
-    items: [
-      TM('authentication', '/ɔːˌθentɪˈkeɪʃn/', 'автентифікація', 'checking <b>who you are</b>: a password, a fingerprint, a code from your phone.'),
-      TM('authorization', '/ˌɔːθərəˈzeɪʃn/', 'авторизація (перевірка прав)', 'checking <b>what you are allowed to do</b>: see this page? change this grade?')] });
-  add({ id: 'v9', type: 'content', reveal: true, kicker: 'Door 2 · Two questions · 2/2', title: 'A word that tricks Ukrainian speakers',
-    teaches: ['concept: log in is not authorize'],
-    items: [
-      SM('«Авторизуватися» often means “to enter a site”. In English, that is <b>log in</b> or <b>sign in</b>.') + OKNO('I <b>logged in</b> with my email.', 'I authorized with my email.'),
-      SM('<b>Authorize</b> = give or check rights: <i>Only the admin can authorize new teachers.</i>'),
-      K('Airport: the passport check = authentication; the boarding pass for <b>this</b> flight = authorization.')] });
-  add({ id: 'aa1', type: 'gap', family: 'define', kicker: 'Door 2 · Check the idea', needs: [C_AA],
-    instruction: 'One word: authentication or authorization?',
-    prompt: 'GradeBook asks for your password and a code from your phone. It is checking who you are: this is ___.', placeholder: 'one word' });
-
-  add({ id: 'v10', type: 'content', reveal: true, kicker: 'Door 2 · What the server remembers', title: 'Sessions and rights',
-    items: [
-      TM('session', '/ˈseʃn/', 'сеанс', 'after you log in, the server remembers you for a while; every request after that carries a session ID, so you don’t log in again.'),
-      TM('permission', '/pərˈmɪʃn/', 'дозвіл, право доступу', 'the right to do one thing: view a report, edit a grade, delete a course.')] });
-  add({ id: 'dd1', type: 'content', reveal: true, kicker: 'Door 2 · Deep dive · 1/2', title: 'One request, step by step',
-    teaches: [C_BAC],
-    items: [
-      SVG('0 0 320 222', 'A request for grade report 1044 passes two checks on the server', DEFS +
-        BOX(10, 4, 300, 30) + TX(20, 24, 'Maria’s browser:  GET /grades/1044', { s: 14, mono: 1 }) + AR(160, 34, 160, 50) +
-        BOX(10, 52, 300, 44) + TX(20, 70, '① Who are you?', { b: 1 }) + TX(20, 88, 'session ID → Maria  ✓ authentication', { s: 13, c: 'var(--ok)' }) + AR(160, 96, 160, 112) +
-        BOX(10, 114, 300, 44) + TX(20, 132, '② Is report 1044 Maria’s?', { b: 1 }) + TX(20, 150, 'no, it is Ivan’s  ✗ authorization', { s: 13, c: 'var(--no)' }) + AR(160, 158, 160, 174) +
-        BOX(10, 176, 300, 42, 'var(--accent-soft)') + TX(20, 194, '403 Forbidden', { b: 1, mono: 1 }) + TX(20, 211, 'Maria sees nothing of Ivan’s', { s: 13, c: 'var(--ink-2)' })),
-      SM('Maria changes her report number in the URL, <b>1043</b>, to <b>1044</b>. <b>①</b> Her session: it is Maria. <b>②</b> Is 1044 hers? No.'),
-      SM('<b>403 Forbidden</b>: “I know who you are, and you may not see this.”')] });
-  add({ id: 'dd2', type: 'content', reveal: true, kicker: 'Door 2 · Deep dive · 2/2', title: 'GradeBook skips step ②',
-    items: [
-      SM('GradeBook asks <b>only</b> question ①. Maria is logged in, so it sends report 1044: <b>Ivan’s grades</b>.'),
-      TM('broken access control', '/ˌbroʊkən ˈækses kənˌtroʊl/', 'вади керування доступом', 'the app checks who you are, but not what you may see or do. Any logged-in user can read other people’s data.'),
-      K('<b>broken</b> here = doesn’t work properly. Logging in is not a key to every room: it only proves who you are.')] });
-  add({ id: 'sc2', type: 'mcq', family: 'scenario', kicker: 'Door 2 · Check the idea',
-    needs: [C_BAC, C_AA],
-    prompt: 'A teacher is logged in. She changes <b>/course/12/edit</b> to <b>/course/13/edit</b> and edits a colleague’s course. <b>What failed?</b>',
-    options: ['authentication: the server didn’t check who she is', 'SQL injection in the URL', 'authorization: the server didn’t check her permissions'] });
-
-  add({ id: 'v11', type: 'content', reveal: true, kicker: 'Door 2 · The cure', title: 'Only what you really need',
-    items: [
-      TM('access control', '/ˈækses kənˌtroʊl/', 'керування доступом', 'all the rules that decide who may do what, checked <b>on the server</b> for <b>every</b> request.'),
-      TM('least privilege', '/ˌliːst ˈprɪvəlɪdʒ/', 'принцип найменших привілеїв', 'each user and each service gets only the access it really needs: a student sees only their own grades.')] });
-  add({ id: 'sq0', type: 'match', family: 'sequence', kicker: 'Door 2 · Check the order', needs: [C_BAC],
-    prompt: 'In an app with working <b>access control</b>, what happens 1st, 2nd, 3rd? One step (a–d) is extra.',
-    left: ['1st', '2nd', '3rd'],
-    right: ['server checks the owner', 'browser sends the request', 'server re-checks the password', 'server checks the session'] });
-
-  add({ id: 'df1', type: 'gap', family: 'define', kicker: 'Door 2 · Name the principle',
-    needs: ['least privilege'],
-    instruction: 'Name the principle. <b>Example:</b> checking who you are → <b>authentication</b>.',
-    prompt: 'GradeBook’s email robot can send emails, but it cannot read or change grades. This follows the principle of ___.', placeholder: 'two words' });
-
-  add({ id: 'bet2', type: 'content', reveal: true, kicker: 'The case · Your bet vs the evidence', title: 'So which weak point is number one?',
-    items: [
-      SM('Your bet: what did most of you choose? <b>OWASP Top 10, 2025</b>, the best-known list of flaws found in web apps, says:'),
-      SM('<b>#1</b>: broken access control, the door we just checked. Injection was #1 for years; in 2025 it is <b>#5</b>: frameworks now help to lock that door.'),
-      K('Careful: the list ranks flaws <b>in apps</b>. Many real attacks start with a stolen password instead: that is Door 4.')] });
-  add({ id: 'ab1', type: 'mcq', family: 'abbr', kicker: 'Say it like an engineer · 1/2', needs: [],
-    prompt: K('Example: “API” is read letter by letter: A-P-I.<br>') + 'How do engineers usually say <b>OWASP</b>?',
-    options: ['“OH-wasp”, as one word', 'O-W-A-S-P, letter by letter', '“oh-WASP”, stress on WASP'] });
-  add({ id: 'ab2', type: 'content', reveal: true, family: 'abbr', kicker: 'Say it like an engineer · 2/2 · One student at a time',
-    title: 'Read one line aloud. The next student reads the next line.',
-    items: [SM('<b>SQL</b> → “S-Q-L” or “sequel”'), SM('<b>XSS</b> → “X-S-S” or “cross-site scripting”'), SM('<b>URL</b> → “U-R-L”'),
-      SM('<b>403</b> → “four-oh-three”'), SM('<b>/grades/1044</b> → “slash grades slash ten forty-four”')] });
-
-  add({ id: 'r4a', type: 'content', kicker: 'The text · ¶4 · 1/2', title: 'A quieter problem',
-    items: [RD('Yet in the 2025 edition, first place goes to a quieter problem: broken access control. Authentication answers the question “Who are you?”; authorization answers “What are you allowed to do?” Many applications ask only the first question.')] });
-  add({ id: 'r4b', type: 'content', kicker: 'The text · ¶4 · 2/2', title: 'The invoice',
-    items: [RD('Imagine a user who opens /invoices/1043, changes the number to 1044 and receives somebody else’s invoice. The application has checked who the user is, but not whether the invoice belongs to them. The cure is to check permissions on the server for every request and to follow the principle of least privilege: each user and each service gets only the access it really needs.'),
-      K('invoice — рахунок-фактура')] });
-
-  /* ---------- Grammar 2 · unless / as long as / otherwise ---------- */
-  add({ id: 'mp1', type: 'match', family: 'label', kicker: 'The text · ¶4 · The same flaw in GradeBook', needs: [C_BAC],
-    prompt: 'The text talks about invoices. What is the same thing in GradeBook (a–d)? One is extra.',
-    left: ['/invoices/1043', 'somebody else’s invoice', 'check permissions'],
-    right: ['Ivan’s grades', 'check the owner', '/grades/1043', 'check the password'] });
-
-  add({ id: 'g2a', type: 'content', reveal: true, kicker: 'Grammar · Rule 2 · 1/2', title: 'unless = if … not',
-    teaches: [R2],
-    items: [
-      FX('unless', '+', 'positive verb'),
-      RC('unless', 'already contains <b>not</b>, so the verb after it is positive.', 'The server rejects the request unless the report belongs to the user.'),
-      OKNO('unless it belongs to you', 'unless it doesn’t belong to you')] });
-  add({ id: 'g2b', type: 'content', reveal: true, kicker: 'Grammar · Rule 2 · 2/2', title: 'More ways to set a condition',
-    items: [
-      RC('as long as', '= only if; only while this is true', 'A session stays open as long as you are active.'),
-      RC('provided that', 'the same, more formal (rules)', 'Teachers may export grades provided that the course is theirs.'),
-      RC('otherwise', 'after ; or a period: the result if the condition fails', 'Check the owner; otherwise, anyone can read any report.')] });
-  add({ id: 'tr1', type: 'mcq', family: 'transform', kicker: 'Door 2 · Rule 2 · Same meaning', needs: [R2],
-    prompt: K('Example: If it doesn’t rain, we’ll go. → We’ll go <b>unless</b> it rains.<br>') +
-      '“If a teacher <b>doesn’t own</b> the course, she <b>can’t edit</b> it.” <b>Same meaning?</b>',
-    options: ['She can’t edit it unless she doesn’t own it.', 'She can edit it unless she owns it.', 'She can’t edit it unless she owns it.'] });
-  const BANK2 = 'Use: <b>as long as · otherwise · unless · until</b> (one is extra).';
-  SAY('say2', 'Сервер відхиляє запит, якщо звіт не належить користувачеві.',
-    'The server rejects the request unless the report belongs to the user.',
-    'I won’t come unless you invite me.', 'Я не прийду, якщо ти мене не запросиш.');
-
-  add({ id: 'g2c', type: 'gap', family: 'form', kicker: 'Door 2 · Rule 2 · 1/3', needs: [R2],
-    instruction: BANK2, prompt: 'A teacher can’t change a grade ___ the course is hers.', placeholder: 'one word' });
-  add({ id: 'g2d', type: 'gap', family: 'form', kicker: 'Door 2 · Rule 2 · 2/3', needs: [R2, 'session'],
-    instruction: BANK2, prompt: 'A session stays open ___ the student is active; after 30 idle minutes, it closes.', placeholder: 'one to three words' });
-  add({ id: 'g2e', type: 'gap', family: 'form', kicker: 'Door 2 · Rule 2 · 3/3', needs: [R2],
-    instruction: BANK2, prompt: 'Add the ownership check today; ___, grades will leak on day one.', placeholder: 'one word' });
-
-  add({ id: 'pr1', type: 'content', reveal: true, family: 'relay', format: 'paraphrase', kicker: 'Door 2 · Paraphrase chain · One student at a time',
-    title: 'Say the same rule three ways',
-    items: [
-      CARD('The rule', 'If a user isn’t the owner of a report, the server says no.'),
-      SM('<b>Student 1</b>, with <b>unless</b>: <i>The server says no unless…</i>'),
-      SM('<b>Student 2</b>, with <b>as long as</b>: <i>The server shows a report only as long as…</i>'),
-      SM('<b>Student 3</b>, with <b>otherwise</b>: <i>The server must check the owner; otherwise, …</i>')] });
-
-  /* ---------- Code review ---------- */
-  const LN = (who, t) => SM('<b>' + who + ':</b> ' + t);
-  const LN2 = (a, b) => SM('<b>' + a[0] + ':</b> ' + a[1] + '<br><b>' + b[0] + ':</b> ' + b[1]);
-  add({ id: 'cr1', type: 'content', reveal: true, kicker: 'Door 2 · A code review of the grades page · 1/2',
-    items: [
-      PH('review.jpg', 'Two developers reviewing code together at one monitor', '50% 40%', 56) + LN2(['Oksana', 'I’ve looked at your pull request. The grades page works, but there’s a problem.'], ['Taras', 'What kind of problem?']),
-      LN('Oksana', 'If I’m logged in and change the report ID in the URL, I can see someone else’s grades.'),
-      LN('Taras', 'Seriously? But the user has to be logged in to open the page.')] });
-  add({ id: 'cr2', type: 'content', reveal: true, kicker: 'Door 2 · A code review of the grades page · 2/2',
-    items: [
-      LN2(['Oksana', 'Right: you check who the user is, but not whether the report is theirs.'], ['Taras', 'Oh, I see. So that’s authentication without authorization.']),
-      LN('Oksana', 'Exactly. If this had gone to production, we’d have exposed student data on day one.'),
-      LN('Taras', 'Good catch. I’ll add an ownership check and a test for it before I push again.') +
-        K('good catch — добре, що помітила · push — надіслати зміни · ownership check — перевірка власника')] });
-  add({ id: 'gn1', type: 'mcq', family: 'genre', kicker: 'Door 2 · The review comment', needs: [C_BAC, R2],
-    prompt: 'A good review comment says <b>the risk</b>, <b>when it happens</b> and <b>the fix</b>.<br><b>Which comment does all three?</b>',
-    options: [
-      'This page is insecure. Please rewrite it.',
-      'Great work, but I don’t like the URL.',
-      'Any logged-in user can open any report by changing the ID. Please add an ownership check; otherwise, grades leak.'] });
-
-  add({ id: 'sp2', type: 'content', reveal: true, format: 'warn', kicker: 'Door 2 · Speak · One student at a time',
-    title: 'Review it. The teacher is the developer.',
-    items: [
-      CARD('Pull request #58 · “Download my grades (PDF)”', MONO('/grades/pdf?id=1043') + ' · logged in ✓ · owner ✗'),
-      SM('<b>Risk:</b> <i>If someone changes the ID, they can…</i><br><b>Safe only if:</b> <i>It’s only safe as long as…</i>'),
-      SM('<b>Fix:</b> <i>Please add…; otherwise, …</i>') +
-        K('The developer will argue. Answer: <i>Logging in is authentication; it doesn’t check…</i>')] });
-  /* ======================= DOOR 3 · THE PASSWORD TABLE ======================= */
-  add({ id: 'sD', type: 'end', kicker: 'Door 3 · The password table', title: 'What if someone steals the database?', text: 'What we found: GradeBook stores passwords in a way that a thief could guess quickly.' });
-
-  add({ id: 'v12', type: 'content', reveal: true, kicker: 'Door 3 · What is stored · 1/2', title: 'Readable or not?',
-    items: [
-      TM('credentials', '/krəˈdenʃlz/', 'облікові дані', 'what you use to log in: usually a username and a password.'),
-      TM('plain text', '/ˌpleɪn ˈtekst/', 'відкритий (незашифрований) текст', 'data stored as normal, readable letters: anyone who sees the table can read every password.')] });
-  add({ id: 'v13', type: 'content', reveal: true, kicker: 'Door 3 · What is stored · 2/2', title: 'Encrypt or hash?',
-    teaches: [C_HASH],
-    items: [
-      TM('encryption', '/ɪnˈkrɪpʃn/', 'шифрування', 'scrambles data with a key. With the key, you can turn it back: good for card numbers the system must read again.'),
-      TM('to hash', '/hæʃ/', 'гешувати', 'turns a password into a fixed-length string that <b>cannot be turned back</b>. At login, the server hashes the typed password and compares.')] });
-  add({ id: 'v13b', type: 'content', reveal: true, kicker: 'Door 3 · Encrypt or hash? · Two pictures', title: 'A box and a grinder',
-    items: [
-      SM('🔒 <b>Encryption</b> = a locked box: with the key, you open it again.'),
-      SM('🥩 <b>Hashing</b> = a meat grinder: you can’t turn mince back into steak, but the same steak always gives the same mince.'),
-      K('Ukrainian «шифрувати паролі» in a spec = <b>hash</b> passwords.')] });
-  add({ id: 'hc1', type: 'gap', family: 'scenario', kicker: 'Door 3 · Check the idea', needs: [C_HASH],
-    instruction: 'One word: <b>hash</b> or <b>encrypt</b>?',
-    prompt: 'The dean’s office must print each graduate’s passport number on the diploma later. So GradeBook must ___ the passport numbers.', placeholder: 'one word' });
-  add({ id: 'v14', type: 'content', reveal: true, kicker: 'Door 3 · How passwords are stored', title: 'Salt and a slow hash',
-    teaches: [C_SALT],
-    items: [
-      SVG('0 0 320 176', 'A password and a random salt go into a slow hash function; only the hash is stored', DEFS +
-        BOX(10, 6, 130, 32) + TX(20, 27, 'kitten7', { mono: 1 }) + TX(146, 27, '+', { b: 1 }) +
-        BOX(166, 6, 144, 32) + TX(176, 27, 'salt: x9Qp', { mono: 1 }) +
-        AR(160, 40, 160, 56) + BOX(70, 58, 180, 34, 'var(--accent-soft)') + TX(160, 80, 'bcrypt (slow on purpose)', { m: 1, s: 13, b: 1 }) +
-        AR(160, 92, 160, 108) + BOX(10, 110, 300, 32) + TX(20, 131, 'stored: $2b$12$x9Qp…Hq7 (salt + hash)', { mono: 1, s: 13 }) +
-        TX(10, 166, 'Login: same salt + typed password → same hash? ✓', { s: 13, c: 'var(--ink-2)' })),
-      TM('salt', '/sɔːlt/', 'сіль', 'a random value added to each password before hashing, so two students with “qwerty123” get different hashes.'),
-      SM('<b>Slow on purpose</b>: one check is fast for you; billions of guesses become far too slow.')] });
-  add({ id: 'sc4', type: 'gap', family: 'scenario', kicker: 'Door 3 · Check the idea', needs: [C_SALT],
-    instruction: 'One word.',
-    prompt: 'Two students both use “qwerty123”. With a salt, their hashes are ___.', placeholder: 'one word' });
-
-  add({ id: 'v15', type: 'content', reveal: true, kicker: 'Door 3 · The attacker’s side', title: 'Cracking and compromising',
-    items: [
-      TM('to crack', '/kræk/', 'підібрати (пароль, геш)', 'to find the password behind a hash by guessing very fast. Not <b>break</b> (= damage, stop working).'),
-      TM('to compromise', '/ˈkɑːmprəmaɪz/', 'скомпрометувати', 'to break the security of an account or system and take control of it.'),
-      K('bcrypt /ˈbiːkrɪpt/ · Argon2 /ˈɑːrɡɑːn tuː/ — slow hash functions')] });
-  add({ id: 'sc3', type: 'mcq', family: 'scenario', kicker: 'Door 3 · Check the idea', needs: [C_HASH, C_SALT],
-    prompt: 'After the fix, GradeBook salts every password and hashes it with bcrypt. Then an attacker steals the table. <b>Can the attacker read the passwords?</b>',
-    options: ['Not directly: they can only guess, very slowly.', 'Yes, if they also steal the encryption key.', 'Yes: a hash is just a password written in code.'] });
-  add({ id: 'tp1', type: 'content', reveal: true, kicker: 'Door 3 · Words that trick you', title: 'Three pairs',
-    items: [
-      GT(['say', 'not', 'because'], [
-        ['<b>hash</b> passwords', 'encrypt', 'a hash can’t be turned back'],
-        ['<b>crack</b> a password', 'break', 'break = damage, stop working'],
-        ['<b>password</b>', 'parole', 'parole = early release from prison']]),
-      K('«пароль» = password · «зламати пароль» = crack · «шифрувати паролі» = hash')] });
-
-  add({ id: 'tm1', type: 'match', family: 'trap', kicker: 'Door 3 · Which verb?', needs: [C_HASH, 'crack'],
-    prompt: 'What does each verb (1–4) do? One option (a–e) is extra.',
-    left: ['hash', 'encrypt', 'crack', 'break'],
-    right: ['guess a password fast', 'stop something working', 'two-way, with a key', 'give a user rights', 'one way only'] });
-
-  add({ id: 'pe1', type: 'mcq', family: 'post-edit', kicker: 'Door 3 · Fix the machine translation · 1/3', needs: [C_HASH],
-    prompt: K('Example: «Сайт зламали» → The site was <s>broken</s> → The site was <b>hacked</b>.<br>') +
-      'A spec says: «Ми шифруємо паролі користувачів.»<br>MT: <b>We encrypt users’ passwords.</b><br>Tap the wrong part.',
-    options: ['We', 'encrypt', 'users’ passwords'] });
-  add({ id: 'pe2', type: 'gap', family: 'post-edit', kicker: 'Door 3 · Fix the machine translation · 2/3', needs: ['concept: log in is not authorize'],
-    instruction: '«Після авторизації студент бачить свої оцінки.»<br>MT: After <s>authorizing</s>, the student sees their grades. Correct it.',
-    prompt: 'After ___, the student sees their grades.', placeholder: 'two words' });
-  add({ id: 'pe3', type: 'gap', family: 'post-edit', kicker: 'Door 3 · Fix the machine translation · 3/3', needs: ['crack'],
-    instruction: '«Короткий пароль зламують за кілька хвилин.»<br>MT: A short password is <s>broken</s> in minutes. Correct it.',
-    prompt: 'A short password is ___ in minutes.', placeholder: 'one word' });
-
-  add({ id: 'r5a', type: 'content', kicker: 'The text · ¶5 · 1/2', title: 'Passwords deserve special care',
-    items: [RD('A well-built site never stores them in plain text, and it does not simply encrypt them either. Instead, each password is combined with a random salt and hashed with a deliberately slow algorithm such as bcrypt or Argon2. Unless an attacker has enormous computing power, stolen hashes of strong passwords are practically useless.'),
-      K('deliberately — навмисно · computing power — обчислювальна потужність')] });
-
-  add({ id: 'rt1', type: 'gap', family: 'trap', kicker: 'The text · ¶5 · Check', needs: [C_HASH],
-    instruction: 'One word from the text.',
-    prompt: 'A well-built site never stores passwords in plain text, and it does not simply ___ them either.', placeholder: 'one word' });
-  SAY('say3', 'Паролі не шифрують, а гешують із сіллю.',
-    'Passwords aren’t encrypted; they’re hashed with a salt.',
-    'You don’t boil green tea; you brew it.', 'Зелений чай не варять, а заварюють.');
-
-  add({ id: 'wf1', type: 'gap', family: 'wordform', kicker: 'Door 3 · Word forms · 1/3', needs: ['encryption'],
-    instruction: 'Change the word in brackets. <b>Example:</b> Account (secure) → account <b>security</b>.',
-    prompt: 'Card numbers are protected with strong ___ (encrypt).', placeholder: 'one word' });
-  add({ id: 'wf2', type: 'gap', family: 'wordform', kicker: 'Door 3 · Word forms · 2/3', needs: ['input validation'],
-    instruction: 'Change the word in brackets.',
-    prompt: 'Input ___ (validate) must happen on the server, not only in the browser.', placeholder: 'one word' });
-  add({ id: 'wf3', type: 'gap', family: 'wordform', kicker: 'Door 3 · Word forms · 3/3', needs: ['vulnerability'],
-    instruction: 'Change the word in brackets.',
-    prompt: 'The scanner found a critical ___ (vulnerable) in the search code.', placeholder: 'one word' });
-
-  /* ======================= DOOR 4 · THE TEACHERS’ LOGIN ======================= */
-  add({ id: 'sE', type: 'end', kicker: 'Door 4 · The teachers’ login', title: 'What if a password is stolen?', text: 'The door that a hash cannot lock' });
-
-  add({ id: 'ps1', type: 'open', family: 'personal', kicker: 'Door 4 · You first',
-    prompt: PH('lead.jpg', 'A worried young woman looking at a red warning on her phone', '50% 40%', 90) +
-      'An email says: <b>“Your credentials were found in a list of stolen passwords.”</b><br>What do you do <b>first</b>? One sentence:<br>' +
-      K('First, I’d change… / turn on… / check…'),
-    placeholder: 'First, I’d…' });
-
-  add({ id: 'v16', type: 'content', reveal: true, kicker: 'Door 4 · How passwords get stolen', title: 'Bait and a better habit',
-    items: [
-      TM('phishing', '/ˈfɪʃɪŋ/', 'фішинг', 'a fake email or website that tricks you into typing your password. Like fishing: the email is the bait.'),
-      TM('password manager', '/ˈpæswɜːrd ˌmænɪdʒər/', 'менеджер паролів', 'an app that creates a long, different password for every site and remembers them all.')] });
-  add({ id: 'v17', type: 'content', reveal: true, kicker: 'Door 4 · The lock that still works', title: 'Two things, not one',
-    teaches: [C_MFA],
-    items: [
-      TM('multi-factor authentication (MFA)', '/ˌmʌlti ˌfæktər ɔːˌθentɪˈkeɪʃn/', 'багатофакторна автентифікація', 'you log in with two different things: something you <b>know</b> (a password) and something you <b>have</b> (your phone). A stolen password alone is not enough.'),
-      SS('Like a bank card: the card (you have) + the PIN (you know). An <b>app</b> code is safer than an <b>SMS</b> code: SMS codes can be stolen if someone takes over your phone number.')] });
-  add({ id: 'sc5', type: 'mcq', family: 'scenario', kicker: 'Door 4 · Check the idea', needs: [C_MFA, 'compromise'],
-    prompt: 'A teacher uses her GradeBook password on a shopping site too. That site is <b>compromised</b>, and her password leaks. Multi-factor authentication is on in GradeBook. <b>What happens when the attacker tries it?</b>',
-    options: ['The attacker logs in and changes grades.', 'The attacker logs in, but can only read grades.', 'The attacker also needs the code from her phone.'] });
-  /* ---------- Grammar 3 · second conditional ---------- */
-  add({ id: 'g3a', type: 'content', reveal: true, kicker: 'Grammar · Rule 3 · 1/3', title: 'Imagine it: what would happen if…?',
-    teaches: [R3],
-    items: [
-      FX('If', '+', 'past simple', ',', 'would / could / might', '+', 'V'),
-      RC('second', 'a past form, but <b>not</b> past time: a situation we imagine, now or in the future.', 'If someone stole a teacher’s password, they could change grades.')] });
-  add({ id: 'g3a2', type: 'content', reveal: true, kicker: 'Grammar · Rule 3 · 2/3', title: 'Two jobs of the second conditional',
-    items: [
-      RC('security question', 'the question security teams ask:', 'What would happen if someone uploaded a script instead of a photo?'),
-      RC('advice', '<b>were</b> for all persons:', 'If I were you, I’d turn on MFA.')] });
-  add({ id: 'g3b', type: 'content', reveal: true, kicker: 'Grammar · Rule 3 · 3/3', title: 'How likely do you think it is?',
-    items: [
-      GT(['', 'the speaker thinks…', 'example'], [
-        ['<b>first</b>', 'it really happens', 'If a password <b>leaks</b>, an attacker <b>can</b> log in.'],
-        ['<b>second</b>', 'it is a scenario we imagine', 'If someone <b>got</b> into an account, they <b>would</b> see grades.']]),
-      SM('The choice is not only grammar: it shows how real you think the danger is.')] });
-
-  add({ id: 'g3c', type: 'match', family: 'form', kicker: 'Door 4 · Rule 3 · 1/3', needs: [R3, 'phishing', 'password manager'],
-    prompt: 'Join the halves (1–3). Watch the type: real or imagined? One ending (a–d) is extra.',
-    left: ['If someone stole a teacher’s password,', 'If a phishing email works,', 'If I were the team lead,'],
-    right: ['attackers can log in.', 'I’d require password managers.', 'I’ll require password managers.', 'they could change grades.'] });
-  add({ id: 'g3d', type: 'gap', family: 'form', kicker: 'Door 4 · Rule 3 · 2/3', needs: [R3, C_MFA],
-    instruction: 'Put the verb in the correct form. <b>Example:</b> If we <b>had</b> (have) more time, we would test more.',
-    prompt: 'If we ___ (turn on) MFA for teachers, a stolen password wouldn’t be enough.', placeholder: 'two words' });
-  add({ id: 'g3e', type: 'mcq', family: 'error', kicker: 'Door 4 · Rule 3 · 3/3 · Find the mistake', needs: [R3],
-    prompt: K('Example: If it <s>will rain</s>, we’ll stay home. → If it <b>rains</b>, …<br>') +
-      '<b>If I would be you, I would change the password today.</b><br>Tap the wrong part.',
-    options: ['If I would be you,', 'I would change', 'the password today'] });
-
-  add({ id: 'dl1', type: 'content', reveal: true, kicker: 'Door 4 · The dean’s office · 1/2',
-    items: [
-      PH('client.jpg', 'A developer with a laptop explaining something to a business client', '50% 35%', 44) +
-        LN('Manager', 'Our teachers hate extra steps. Do we really need two-factor login?'),
-      LN('Developer', 'I understand. But if a teacher’s password leaks from another site, an attacker can simply log in here.'),
-      LN2(['Manager', 'Surely our teachers use different passwords?'], ['Developer', 'Many reuse the same password, unfortunately. And if someone got into a teacher’s account, they could change grades.']) +
-        K('surely — хіба ж (чекаю на згоду)')] });
-  add({ id: 'dl2', type: 'content', reveal: true, kicker: 'Door 4 · The dean’s office · 2/2',
-    items: [
-      LN('Developer', 'We could keep it optional for students, provided that we turn on two-factor login for all teachers. I’d also recommend an authenticator app instead of SMS codes.'),
-      LN2(['Manager', 'That sounds reasonable, as long as the login stays quick.'], ['Developer', 'It will. Trusted devices are remembered for thirty days.']),
-      LN('Manager', 'Fine. But if complaints start coming in, let’s review it.') +
-        K('authenticator app — застосунок-автентифікатор')] });
-  add({ id: 'co1', type: 'match', family: 'colloc', kicker: 'Door 4 · Words that go together', needs: [C_MFA, 'password manager'],
-    prompt: 'Which words (a–e) go with each verb (1–4) in the dialogue? One is extra.',
-    left: ['turn on', 'reuse', 'remember', 'review'],
-    right: ['the decision', 'trusted devices', 'the same password', 'the hash function', 'two-factor login'] });
-
-  add({ id: 'sp3', type: 'content', reveal: true, format: 'persuade', kicker: 'Door 4 · Hot seat · The teacher is the manager',
-    title: 'Answer each objection',
-    items: [
-      SS('<b>1.</b> “Our teachers hate extra steps.”<br>→ <i>I understand, but if…, an attacker can…</i>'),
-      SS('<b>2.</b> “Nobody would attack a grades website.”<br>→ <i>If someone got into…, they could…</i>'),
-      SS('<b>3.</b> “SMS codes are easier.”<br>→ <i>I’d recommend an app instead, provided that…</i>'),
-      SS('<b>4.</b> “What if teachers complain?”<br>→ <i>Let’s review it after a month; otherwise, …</i>')] });
-  /* ======================= DOOR 5 · THE OLD LIBRARY ======================= */
-  add({ id: 'sF', type: 'end', kicker: 'Door 5 · The old library', title: 'The door nobody locked', text: 'What we found: a library in GradeBook is two versions behind. A true story shows why that matters.' });
-
-  add({ id: 'v18', type: 'content', reveal: true, kicker: 'Door 5 · Someone else’s code', title: 'Dependencies and patches',
-    teaches: [C_DEP],
-    items: [
-      TM('dependency', '/dɪˈpendənsi/', 'залежність (стороння бібліотека)', 'someone else’s code (a library or a framework) that your app uses. If it has a vulnerability, your app has it too.'),
-      TM('to patch', '/pætʃ/', 'залатати, встановити виправлення', 'to install a fix for a known flaw. The fix itself is a <b>patch</b>.')] });
-  add({ id: 'v19', type: 'content', reveal: true, kicker: 'Door 5 · When it goes wrong', title: 'Breach and certificate',
-    items: [
-      TM('data breach', '/ˈdeɪtə briːtʃ/', 'злам (порушення захисту) даних', 'an attack in which someone gets into a system and takes data. A <b>leak</b> is data exposed by mistake, often with no attacker.'),
-      TM('certificate', '/sərˈtɪfɪkət/', 'сертифікат', 'a digital file that a server or a security device needs to work with encrypted traffic. It has an end date: then it <b>expires</b>.')] });
-  add({ id: 'nu1', type: 'gap', family: 'nuance', kicker: 'Door 5 · Breach or leak?', needs: ['data breach'],
-    instruction: 'Choose and type: <b>breach</b> or <b>leak</b>.',
-    prompt: 'A GradeBook admin saves all grades in a <b>public</b> folder by mistake. No attacker is involved. This is a ___.', placeholder: 'one word' });
-
-  add({ id: 'r1a', type: 'content', kicker: 'The text · ¶1 · 1/3', title: 'March 2017',
-    items: [PH('servers.jpg', 'A row of server racks with green lights and one red light', '50% 50%', 80) +
-      RD('In March 2017, the team behind Apache Struts, a popular framework for Java web applications, published a fix for a critical vulnerability. Any server that still ran an old version could be taken over with a single, specially crafted request, and attacks began almost immediately.'),
-      K('Apache Struts /əˈpætʃi strʌts/ · Java /ˈdʒɑːvə/ · specially crafted — спеціально сформований')] });
-  add({ id: 'r1b', type: 'content', kicker: 'The text · ¶1 · 2/3', title: 'One portal',
-    items: [RD('At Equifax, one of the three largest credit reporting agencies in the United States, an order to update was sent out, but one online portal was never patched. In mid-May, attackers found it and got in. By the time the intrusion was discovered at the end of July, the personal data of about 147 million people had been stolen.'),
-      K('Equifax /ˈekwɪfæks/ · credit reporting agency — кредитне бюро · intrusion — вторгнення')] });
-  add({ id: 'r1c', type: 'content', kicker: 'The text · ¶1 · 3/3', title: 'Entirely preventable',
-    items: [RD('The attack went unnoticed partly because a security certificate on a traffic-inspection device had expired long before, so encrypted traffic was not being checked. The company later agreed to pay up to 700 million dollars in a settlement, and a US congressional report described the breach as entirely preventable.'),
-      K('settlement — мирова угода · congressional report — звіт Конгресу')] });
-
-  add({ id: 'sq1', type: 'match', family: 'sequence', kicker: 'The text · ¶1 · Put the events in order', needs: ['patch', 'data breach'],
-    prompt: 'What happened 1st, 2nd…? One event (a–e) did <b>not</b> happen.',
-    left: ['1st', '2nd', '3rd', '4th'],
-    right: ['the breach is discovered', 'portal patched in March', 'Equifax agrees to pay', 'a fix is published', 'attackers get in'] });
-
-  add({ id: 'nm1', type: 'content', reveal: true, family: 'numbers', kicker: 'The text · Say the numbers · One student at a time',
-    title: 'Read one line aloud. The next student reads the next line.',
-    items: [SM('<b>March 2017</b>'), SM('<b>147 million</b> people'), SM('up to <b>$700 million</b>'), SM('<b>99.9%</b> (MFA, Microsoft, 2019)'), SM('since <b>2003</b>')] });
-
-  /* ---------- Grammar 4 · third conditional and should have ---------- */
-  add({ id: 'g4a', type: 'content', reveal: true, kicker: 'Grammar · Rule 4 · 1/2', title: '«Якби»: now or then?',
-    teaches: [R4],
-    items: [
-      SM('Ukrainian «якби сервер оновили» can be about <b>now</b> or about <b>March 2017</b>. English must choose.'),
-      GT(['time', 'English'], [
-        ['now (imagine)', 'If the server <b>were</b> patched, we <b>would</b> sleep better.'],
-        ['the past (too late)', 'If the server <b>had been</b> patched in March, the breach <b>would not have</b> happened.']]),
-      FX('If', '+', 'had + V3', ',', 'would have', '+', 'V3')] });
-  add({ id: 'g4b', type: 'content', reveal: true, kicker: 'Grammar · Rule 4 · 2/2', title: 'Looking back at a mistake',
-    items: [
-      RC('third', 'a past that did not happen: the postmortem of an incident.', 'If Equifax had patched the portal, the attackers would have found the door locked.'),
-      RC('should have', '+ V3: criticism or regret about the past.', 'They should have checked every server.'),
-      RC('trap', 'no <b>would</b> after <b>if</b>.'),
-      OKNO('If they had patched…', 'If they would have patched…')] });
-
-  add({ id: 'g4c', type: 'gap', family: 'form', kicker: 'Door 5 · Rule 4 · 1/2', needs: [R4, 'patch'],
-    instruction: 'Put the verb in the correct form. <b>Example:</b> If they <b>had tested</b> (test) the form, they would have found the flaw.',
-    prompt: 'If the company ___ (patch) the server in March, the attackers wouldn’t have gotten in.' + K('<br>gotten — AmE · BrE got'), placeholder: 'two words' });
-  add({ id: 'g4d', type: 'mcq', family: 'error', kicker: 'Door 5 · Rule 4 · 2/2 · Find the mistake', needs: [R4, 'certificate'],
-    prompt: '<b>If somebody would have noticed the expired certificate, the attack wouldn’t have gone unnoticed.</b><br>Tap the wrong part.',
-    options: ['If somebody would have noticed', 'the expired certificate,', 'the attack wouldn’t have gone unnoticed.'] });
-  add({ id: 'g4e', type: 'mcq', family: 'transform', kicker: 'Door 5 · Same meaning', needs: [R4, 'plain text', 'to hash'],
-    prompt: '“The passwords <b>weren’t hashed</b>, so they <b>were exposed</b> in plain text.” <b>Same meaning?</b>' + K('<br>they = the passwords'),
-    options: [
-      'If they were hashed, they wouldn’t be exposed.',
-      'If they would have been hashed, they wouldn’t have been exposed.',
-      'If they had been hashed, they wouldn’t have been exposed.'] });
-  add({ id: 'g4f', type: 'gap', family: 'form', kicker: 'Door 5 · should have', needs: [R4],
-    instruction: '<b>Example:</b> We didn’t back up the data. → We <b>should have backed up</b> the data.',
-    prompt: 'They didn’t test the login form properly. → They ___ the login form properly.', placeholder: 'three words' });
-
-  add({ id: 'g4g', type: 'gap', family: 'genre', kicker: 'Door 5 · The postmortem', needs: [R4, 'patch'],
-    instruction: 'A postmortem lists lessons with <b>should have</b> + V3. Complete the card.',
-    prompt: CARD('Postmortem · Lessons learned', '1. We should have checked every dependency on every server.<br>2. We should have ___ the portal within 48 hours.'), placeholder: 'one word' });
-
-  SAY('say5', 'Якби компанія встановила виправлення в березні, зламу не сталося б.',
-    'If the company had installed the patch in March, the breach wouldn’t have happened.',
-    'If I had left earlier, I wouldn’t have been late.', 'Якби я вийшов раніше, я б не запізнився.');
-
-  /* ======================= FINDING THE DOORS FIRST ======================= */
-  add({ id: 'sG', type: 'end', kicker: 'Finding the doors first', title: 'Before the attacker tries the handle', text: 'Three ways a team finds its own unlocked doors' });
-
-  add({ id: 'v20', type: 'content', reveal: true, kicker: 'Finding the doors first · 1/2', title: 'Imagine the attack',
-    items: [
-      TM('threat', '/θret/', 'загроза', 'anything that could hurt the system: an attacker, a phishing email, a mistake by an admin.'),
-      TM('threat modeling', '/ˈθret ˌmɑːdəlɪŋ/', 'моделювання загроз', 'before building a feature, the team asks “What would happen if someone used this in a way we didn’t expect?” and plans the defense. AmE modeling · BrE modelling')] });
-  add({ id: 'v21', type: 'content', reveal: true, kicker: 'Finding the doors first · 2/2', title: 'Invite the attack',
-    items: [
-      TM('penetration test', '/ˌpenəˈtreɪʃn test/', 'тест на проникнення', 'the company hires security experts to attack its own app, with permission, and report what they find.'),
-      TM('bug bounty program', '/ˈbʌɡ ˌbaʊnti ˌproʊɡræm/', 'програма винагород за вразливості', 'the company pays anyone who finds a vulnerability and reports it. The finders are <b>ethical hackers</b>.')] });
-  add({ id: 'r2', type: 'content', kicker: 'The text · ¶2 and ¶6', title: 'How teams find the doors',
-    items: [RD('When they design a new feature, security teams ask questions such as: What would happen if someone used this form in a way we did not expect? This practice is known as threat modeling, and it is much cheaper than a breach.'),
-      RD('Every new dependency, form and API endpoint adds to the attack surface. What matters is how quickly the unlocked doors are found, ideally by the team itself, through code reviews, penetration tests and bug bounty programs, before an attacker tries the handle.')] });
-
-  add({ id: 'od1', type: 'mcq', family: 'odd', kicker: 'Finding the doors first · Odd one out', needs: ['threat modeling', 'penetration test', 'bug bounty program', 'data breach'],
-    prompt: 'Which one does <b>not</b> help a team find its unlocked doors <b>before</b> an attacker?',
-    options: ['threat modeling', 'a penetration test', 'a data breach', 'a bug bounty program'] });
-  add({ id: 'tp2', type: 'gap', family: 'trap', kicker: 'Finding the doors first · hacker or attacker?', needs: ['bug bounty program'],
-    instruction: 'Choose and type. <b>Example:</b> Two-factor login improves account (security / safety) → <b>security</b>.',
-    prompt: 'GradeBook will pay ethical ___ (hackers / attackers) to test the site before launch.', placeholder: 'one word' });
-
-  add({ id: 'sp4', type: 'content', reveal: true, format: 'speculate', kicker: 'Threat modeling · One student per feature',
-    title: 'What would happen if…?',
-    items: [
-      SM('Like checking your windows before a vacation. The teacher opens <b>one feature</b>:') +
-        SS('📷 photo upload (a script instead of a photo?) · 🔗 “Share my grades” link (who else can open it?) · 🔑 “Forgot password?” (100 emails?) · 📄 ' + MONO('/grades/pdf?id=1043')) ,
-      SM('<i>What would happen if someone…? Then they could… So we… unless / as long as…</i>') +
-        K('Example: What would happen if someone asked for 100 resets? I’d get 100 emails. So resets work only as long as there are fewer than three an hour.')] });
-  /* ======================= LISTENING · THE BRIEF ======================= */
-  add({ id: 'a0', type: 'end', kicker: 'Listening · The Brief', title: 'The same story, told for listeners', text: 'Equifax, access control, passwords' });
-  add({ id: 'a1', type: 'content', reveal: true, kicker: 'Listening · Words from the audio · 1/2', title: 'Three expressions',
-    items: [
-      TM('to jiggle a doorknob', '/ˈdʒɪɡl ə ˈdɔːrnɑːb/', 'смикати дверну ручку', 'to try the handle to see if a door is unlocked. AmE <b>doorknob</b> · BrE door handle'),
-      TM('backstop', '/ˈbækstɑːp/', 'остання лінія захисту', 'the last protection that still works when everything else fails.'),
-      TM('blind spot', '/ˈblaɪnd spɑːt/', 'сліпа зона', 'a weak point that you do not see yourself.')] });
-  add({ id: 'a1b', type: 'content', reveal: true, kicker: 'Listening · Words from the audio · 2/2', title: 'Spoken English',
-    items: [
-      SM('AmE <b>first floor</b> = the floor at street level (Ukrainian «перший поверх»). In BrE, it has another name.'),
-      SM('Fillers: <b>you know</b>, <b>basically</b>, <b>kind of like</b>. Listen for one more informal phrase.')] });
-  add({ id: 'a2', type: 'content', reveal: true, kicker: 'Listening · While you listen', title: 'Three questions',
-    items: [SM('<b>1.</b> What are attackers <b>compared to</b>?'), SM('<b>2.</b> What everyday action is threat modeling <b>like</b>?'),
-      SM('<b>3.</b> What is the <b>ultimate backstop</b>?'),
-      K('The voice says “threat modeling” unclearly: listen for the idea, not the word.')] });
-  add({ id: 'a3', type: 'end', kicker: 'Listening · 1st time', title: '🎧 Listen', text: 'Answer the three questions in your head.' });
-  add({ id: 'L1', type: 'mcq', family: 'tfng', kicker: 'After listening · True, false or not given? · 1/2', needs: ['backstop'],
-    prompt: K('Example: “The audio mentions Equifax.” → <b>True</b>.<br>') + '<b>The speaker says injection is still the number-one threat.</b>',
-    options: ['True', 'False', 'Not given'] });
-  add({ id: 'L1b', type: 'mcq', family: 'tfng', kicker: 'After listening · True, false or not given? · 2/2', needs: [],
-    prompt: '<b>The speaker says how long the attackers stayed in Equifax’s network.</b>',
-    options: ['True', 'False', 'Not given'] });
-  add({ id: 'L1c', type: 'gap', family: 'tfng', kicker: 'After listening · Details · 1/2', needs: [],
-    instruction: 'One word (with a hyphen) from the audio.',
-    prompt: 'Threat modeling is way cheaper than dealing with a ___ later.', placeholder: 'one word' });
-  add({ id: 'L1d', type: 'gap', family: 'tfng', kicker: 'After listening · Details · 2/2', needs: ['bug bounty program'],
-    instruction: 'Two words from the audio.',
-    prompt: 'The last question: will your next ___ uncover your blind spots before the bad guys do?', placeholder: 'two words' });
-  add({ id: 'L2', type: 'gap', family: 'variety', kicker: 'After listening · AmE or BrE?', needs: [],
-    instruction: 'The speaker checks the windows on the <b>first floor</b> (AmE). One word.',
-    prompt: 'In British English, the same floor is the ___ floor.', placeholder: 'one word' });
-  add({ id: 'aL', type: 'match', family: 'define', kicker: 'After listening · Words from the audio', needs: ['to jiggle a doorknob', 'backstop', 'blind spot'],
-    prompt: 'What does each expression (1–3) mean? One option (a–d) is extra.',
-    left: ['to jiggle a doorknob', 'backstop', 'blind spot'],
-    right: ['a weakness nobody sees', 'a very strong lock', 'to test a door', 'the final safety net'] });
-  add({ id: 'a4', type: 'end', kicker: 'Listening · 2nd time', title: '🎧 Listen again', text: 'Now listen for how it sounds: spoken, not written.' });
-  add({ id: 'L5', type: 'mcq', family: 'register', kicker: 'After listening · Spoken or written?', needs: [],
-    prompt: 'Which sentence sounds <b>spoken</b>, not written?',
-    options: ['Passwords deserve special care.', 'Finally, we gotta talk passwords.', 'No web application is perfectly secure.'] });
-
-  /* ======================= KEYWORD DRILL ======================= */
-  add({ id: 'kw0', type: 'end', kicker: 'Keyword drill · The text in six sentences', title: 'Build the sentence from the key words',
-    text: 'One student per set. Then the class says the target sentence.' });
-  const KW = [
-    ['fix · critical · flaw · publish · one · server · never · patch', 'A <b>fix</b> for the <b>critical flaw</b> was <b>published</b>, but <b>one server</b> was <b>never patched</b>.'],
-    ['attacker · rarely · need · clever · trick · look for · door · nobody · lock', '<b>Attackers rarely need clever tricks</b>; they <b>look for doors nobody</b> has <b>locked</b>.'],
-    ['what · happen · if · someone · use · form · way · not · expect', '<b>What would happen if someone used</b> this <b>form</b> in a <b>way</b> we <b>didn’t expect</b>?'],
-    ['application · check · who · user · not · whether · invoice · belong', 'The <b>application checked who</b> the <b>user</b> was, but <b>not whether</b> the <b>invoice belonged</b> to them.'],
-    ['unless · attacker · have · enormous · computing power · stolen · hash · useless', '<b>Unless</b> an <b>attacker has enormous computing power</b>, <b>stolen hashes</b> are almost <b>useless</b>.'],
-    ['if · server · patch · March · breach · prevent', '<b>If</b> the <b>server</b> had been <b>patched</b> in <b>March</b>, the <b>breach</b> would have been <b>prevented</b>.']];
-  const kw = (n, a, b) => add({ id: 'kw' + n, type: 'content', reveal: true, family: 'retell-cue', kicker: 'Keyword drill · ' + n + '/3 · One student at a time',
-    title: 'Two sets', items: [SM('<b>' + (a + 1) + '.</b> ' + KW[a][0]), SM('→ ' + KW[a][1]), SM('<b>' + (b + 1) + '.</b> ' + KW[b][0]), SM('→ ' + KW[b][1])] });
-  kw(1, 0, 1);
-  kw(2, 2, 3);
-  add({ id: 'kwq', type: 'mcq', poll: true, kicker: 'Keyword drill · Halfway', prompt: 'What was <b>hardest</b> so far?',
-    options: ['the passive (was published)', 'the type of condition', 'word order: who the user was', 'articles: a / the'] });
-  kw(3, 4, 5);
-
-  /* ======================= THE VERDICT ======================= */
-  add({ id: 'fin0', type: 'end', kicker: 'The verdict', title: 'Brief the dean', text: 'What we found, and what to fix first' });
-
-  add({ id: 'fin1', type: 'content', reveal: true, kicker: 'The verdict · The audit board', title: 'Five doors: what we found',
-    items: [
-      GT(['door', 'found', 'fix'], [
-        ['1 search', 'input in the query', 'parameters'],
-        ['2 grades', 'no owner check', 'check each request'],
-        ['3 passwords', 'fast hash, no salt', 'bcrypt + salt'],
-        ['4 login', 'password only', 'MFA for teachers'],
-        ['5 library', 'two versions behind', 'patch it']]),
-      K('The dean has time for <b>one</b> fix before launch; the rest come in the first month.')] });
-  add({ id: 'fin2', type: 'mcq', poll: true, kicker: 'The verdict · Decision board', prompt: 'Which door do we lock <b>first</b>?',
-    options: ['2 grades page', '4 teachers’ login', '5 old library', '1 search box'] });
-  add({ id: 'fin3', type: 'content', reveal: true, format: 'justify-ranking', kicker: 'The verdict · Defend the vote · One student at a time',
-    title: 'Most of you chose one door. Say why.',
-    items: [
-      SM('<i>We’d lock door … first, mainly because…</i>'),
-      SM('Reasons: <b>9,000 students’ data</b> · <b>easy to exploit</b> · <b>a real incident shows it</b> · <b>cheap to fix</b>'),
-      SM('<b>Next student:</b> argue for a different door: <i>I see the point, but if we left door … open, …</i>')] });
-
-  add({ id: 'rg1', type: 'mcq', family: 'register', kicker: 'The verdict · Who is listening?', needs: [C_INJ, 'parameters'],
-    prompt: 'The dean has <b>no technical background</b>. Which sentence fits her?',
-    options: [
-      'Right now, someone could type a command into the search box and read every student’s grades.',
-      'The search code concatenates unsanitized input into SQL.',
-      'We must sanitize inputs and use prepared statements.'] });
-
-  add({ id: 'fin4', type: 'content', reveal: true, format: 'brief', kicker: 'Final task · Four moves · One student per move',
-    title: 'Brief the dean',
-    items: [
-      PH('briefing.jpg', 'A young developer presenting a shield-and-lock sketch on a whiteboard to a manager', '50% 40%', 56) +
-        SS('<b>1. Protect:</b> <i>The most valuable thing in GradeBook is…</i>'),
-      SS('<b>2. Threats:</b> <i>If an attacker got into a teacher’s account, they could…</i>'),
-      SS('<b>3. Protections:</b> <i>A grade can’t be changed unless… · It stays safe as long as…</i>'),
-      SS('<b>4. Lesson + action:</b> <i>If Equifax had patched…, … I’d strongly recommend… Otherwise, …</i>')] });
-  add({ id: 'fin5', type: 'content', reveal: true, format: 'brief', round2: true, kicker: 'Final task · Round 2 · One student per move',
-    title: 'Same four moves: an online pharmacy',
-    items: [
-      SS('<b>1. Protect:</b> prescriptions · card payments'),
-      SS('<b>2. Threat:</b> the pharmacist reuses her password → fake prescriptions'),
-      SS('<b>3. Protections:</b> card data goes to the payment provider (the company that handles card payments) · MFA for staff'),
-      SS('<b>4. Lesson + action:</b> an old <b>plugin</b> (a small add-on) is two versions behind → patch it this week')] });
-  add({ id: 'end', type: 'end', kicker: 'Unit 4 · Web Application Security',
-    title: 'Find the unlocked doors first.', text: 'Before an attacker tries the handle.' });
-
-  window.LESSON = {
-    id: ID,
-    title: 'Unit 4 · Web Application Security',
-    audience: 'КН · 2nd year · B1+/B2 · Computer Science (web technologies) · group, students on phones',
-    concept: 'Аудит перед запуском: п’ять дверей. Наскрізний кейс — вигаданий портал оцінок GradeBook за два тижні до запуску; група — аудитори. Двері: пошукове поле (ін’єкції) → /grades/1044 (вади керування доступом, глибокий розбір зі схемою запиту) → таблиця паролів (геш ≠ шифрування, сіль) → вхід викладачів (фішинг, MFA) → стара бібліотека (Equifax, текст роздатки як докази) → як знаходити двері першими → вердикт і брифінг для декана. Фірмові ходи: ставка на «двері № 1» з розбором за OWASP 2025, аукціон помилок, дошка рішень.',
-    known: ['code', 'test', 'server', 'database', 'website', 'user', 'bug', 'update', 'app', 'data', 'team', 'password', 'account',
-      'email', 'link', 'log in', 'library', 'traffic', 'pull request', 'production', 'browser', 'request', 'form', 'script', 'URL', 'framework', 'parameters'],
-    wordlistExtra: [
-      { after: 'c1', term: 'grade', ipa: '/ɡreɪd/', uk: 'оцінка', note: 'AmE; BrE also mark' },
-      { after: 'c1', term: 'dean', ipa: '/diːn/', uk: 'декан' },
-      { after: 'c1', term: 'audit', ipa: '/ˈɔːdɪt/', uk: 'аудит, перевірка' },
-      { after: 'v2', term: 'an exploit (noun)', ipa: '/ˈeksplɔɪt/', uk: 'експлойт (код атаки)', note: 'stress shift: the verb is /ɪkˈsplɔɪt/' },
-      { after: 'dd1', term: '403 Forbidden', ipa: '/ˌfɔːr oʊ ˈθriː fərˈbɪdn/', uk: 'код HTTP «заборонено»' },
-      { after: 'bet2', term: 'OWASP', ipa: '/ˈoʊwɑːsp/', uk: 'OWASP', note: 'Open Worldwide Application Security Project; read as one word' },
-      { after: 'r4b', term: 'invoice', ipa: '/ˈɪnvɔɪs/', uk: 'рахунок-фактура' },
-      { after: 'cr2', term: 'good catch', ipa: '/ˌɡʊd ˈkætʃ/', uk: 'добре, що помітив(-ла)', note: 'informal' },
-      { after: 'cr2', term: 'to push (changes)', ipa: '/pʊʃ/', uk: 'надіслати зміни в репозиторій' },
-      { after: 'cr2', term: 'ownership check', ipa: '/ˈoʊnərʃɪp tʃek/', uk: 'перевірка власника' },
-      { after: 'dl1', term: 'surely', ipa: '/ˈʃʊrli/', uk: 'хіба ж, напевно ж', note: 'expects agreement' },
-      { after: 'dl2', term: 'authenticator app', ipa: '/ɔːˈθentɪkeɪtər æp/', uk: 'застосунок-автентифікатор' },
-      { after: 'dl2', term: 'trusted device', ipa: '/ˌtrʌstɪd dɪˈvaɪs/', uk: 'довірений пристрій' },
-      { after: 'v19', term: 'leak', ipa: '/liːk/', uk: 'витік (через помилку)', note: 'vs breach: a leak needs no attacker' },
-      { after: 'r1b', term: 'intrusion', ipa: '/ɪnˈtruːʒn/', uk: 'вторгнення' },
-      { after: 'r1c', term: 'settlement', ipa: '/ˈsetlmənt/', uk: 'мирова угода' },
-      { after: 'v21', term: 'ethical hacker', ipa: '/ˌeθɪkl ˈhækər/', uk: 'етичний хакер', note: 'fixed phrase; in reports a criminal is an attacker' },
-      { after: 'a1b', term: 'first floor (AmE) · ground floor (BrE)', ipa: '/ˌfɜːrst ˈflɔːr/ · /ˌɡraʊnd ˈflɔːr/', uk: 'перший поверх', note: 'BrE first floor = AmE second floor' },
-      { after: 'a1b', term: 'we gotta', ipa: '/wi ˈɡɑːtə/', uk: 'мусимо', note: 'informal spoken = we have got to' },
-      { after: 'fin5', term: 'plugin', ipa: '/ˈplʌɡɪn/', uk: 'плагін' }
-    ],
-    slides: S
-  };
-})();
+/* Unit 4 (КН) · Web Application Security · «Тиждень Дани»
+   ПУБЛІЧНА частина (бачать студенти). Нотатки й ключі — у teacher.js (не публікується). */
+window.LESSON = {
+ "id": "esp-kn-unit4",
+ "title": "Unit 4 · Web Application Security",
+ "audience": "КН · 2nd year · B1+/B2 · Computer Science (web technologies) · group, students on phones",
+ "concept": "Тиждень Дани. Наскрізна лінія — один поганий тиждень студентки КН Дани (Львів): понеділок — фішинговий лист (лексика, колокації, Правило 1, попередження); вівторок — без доступу (фразові дієслова, пастки, словотвір, наголос); середа — чужі оцінки 1044 (автентифікація/авторизація на рівні користувача, Правило 2, ланцюжок перефразування, звіт про ваду, регістр); четвер — новини про Equifax (текст у 7 частинах, числа, Правило 3, розкриття ставки, голосування); п’ятниця — що пішло не так (Правило 4, ідіоми, AmE/BrE, переказ тижня); субота — подкаст; підсумок — допомогти другові в чотири ходи. Техніка — на рівні користувача; кожне завдання — мовне. Викладач лише слухає й виправляє.",
+ "known": [
+  "email",
+  "password",
+  "link",
+  "account",
+  "phone",
+  "app",
+  "website",
+  "site",
+  "student",
+  "grade",
+  "grades",
+  "teacher",
+  "code",
+  "data",
+  "message",
+  "online",
+  "internet",
+  "friend",
+  "university",
+  "news",
+  "company",
+  "server",
+  "number",
+  "game",
+  "photo",
+  "photos",
+  "bank",
+  "computer",
+  "problem",
+  "virus",
+  "browser",
+  "page",
+  "click",
+  "attack",
+  "attacker",
+  "attackers",
+  "hacker",
+  "IT",
+  "Wi-Fi",
+  "framework",
+  "feature",
+  "library",
+  "error",
+  "card",
+  "leak",
+  "protect",
+  "safe",
+  "week",
+  "report",
+  "portal"
+ ],
+ "wordlistExtra": [
+  {
+   "after": "m5",
+   "term": "urgent",
+   "ipa": "/ˈɜːrdʒənt/",
+   "uk": "терміновий"
+  },
+  {
+   "after": "t10",
+   "term": "insecure",
+   "ipa": "/ˌɪnsɪˈkjʊr/",
+   "uk": "небезпечний, ненадійний"
+  },
+  {
+   "after": "t10",
+   "term": "protection",
+   "ipa": "/prəˈtekʃn/",
+   "uk": "захист"
+  },
+  {
+   "after": "g2b",
+   "term": "as long as",
+   "ipa": "/əz ˈlɔːŋ əz/",
+   "uk": "за умови, що; доки"
+  },
+  {
+   "after": "g2b",
+   "term": "otherwise",
+   "ipa": "/ˈʌðərwaɪz/",
+   "uk": "інакше"
+  },
+  {
+   "after": "g2b",
+   "term": "unless",
+   "ipa": "/ənˈles/",
+   "uk": "якщо не"
+  },
+  {
+   "after": "w7",
+   "term": "a heads-up",
+   "ipa": "/ˈhedz ʌp/",
+   "uk": "коротке попередження",
+   "note": "informal"
+  },
+  {
+   "after": "h7",
+   "term": "threat modeling",
+   "ipa": "/ˈθret ˌmɑːdəlɪŋ/",
+   "uk": "моделювання загроз",
+   "note": "BrE modelling"
+  },
+  {
+   "after": "h9",
+   "term": "injection",
+   "ipa": "/ɪnˈdʒekʃn/",
+   "uk": "ін’єкція, впровадження коду"
+  },
+  {
+   "after": "h16",
+   "term": "penetration test",
+   "ipa": "/ˌpenəˈtreɪʃn test/",
+   "uk": "тест на проникнення"
+  },
+  {
+   "after": "h16",
+   "term": "bug bounty program",
+   "ipa": "/ˈbʌɡ ˌbaʊnti ˌproʊɡræm/",
+   "uk": "програма винагород за знайдені вади"
+  },
+  {
+   "after": "a9",
+   "term": "a break-in",
+   "ipa": "/ˈbreɪk ɪn/",
+   "uk": "проникнення, пограбування (оселі)"
+  }
+ ],
+ "slides": [
+  {
+   "id": "title",
+   "type": "title",
+   "kicker": "Unit 4 · English for Computer Science",
+   "title": "Web Application Security",
+   "subtitle": "Dana’s bad week"
+  },
+  {
+   "id": "i1",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Dana’s week · Sunday night",
+   "title": "Meet Dana",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">Dana is a second-year computer science student in Lviv.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">On Sunday night, everything is fine: her email, her bank app, her grades.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">By Thursday, someone has <b>broken into</b> her email. This week is the story of how it happened and what she learned.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to break into (an account) — зламати (обліковий запис), проникнути в нього</span>"
+   ]
+  },
+  {
+   "id": "i2",
+   "type": "mcq",
+   "poll": true,
+   "kicker": "Dana’s week · Place your bet",
+   "prompt": "Your bet: how did someone get into Dana’s email?<span class=\"muted\" style=\"font-size:15px;line-height:1.35\"><br>No wrong answers yet. We check on Thursday.</span>",
+   "options": [
+    "They guessed her password.",
+    "She typed it on a fake page.",
+    "She used the same password on another site.",
+    "Her phone got a virus."
+   ]
+  },
+  {
+   "id": "m0",
+   "type": "end",
+   "kicker": "Monday",
+   "title": "The email",
+   "text": "A message that looks real"
+  },
+  {
+   "id": "m1",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Monday · Words 1/2",
+   "title": "A fake message",
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>phishing</b> <span class=\"muted\">/ˈfɪʃɪŋ/</span><br>фішинг</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>a fake email or text that tries to get your password or money</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>a scam</b> <span class=\"muted\">/skæm/</span><br>шахрайство, ошуканство</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>You won a free iPhone? It’s a scam.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>fake</b> <span class=\"muted\">/feɪk/</span><br>підроблений, фальшивий</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>a fake email · a fake login page</i></span>"
+   ]
+  },
+  {
+   "id": "m2",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Monday · Words 2/2",
+   "title": "What you do with an email",
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to click (on) a link</b> <span class=\"muted\">/klɪk/</span><br>натиснути на посилання</span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to open an attachment</b> <span class=\"muted\">/əˈtætʃmənt/</span><br>відкрити вкладення (файл у листі)</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>The attachment was a virus.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to reset a password</b> <span class=\"muted\">/ˌriːˈset/</span><br>скинути й змінити пароль</span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to report (an email)</b> <span class=\"muted\">/rɪˈpɔːrt/</span><br>повідомити про (лист), поскаржитися</span>"
+   ]
+  },
+  {
+   "id": "m3",
+   "type": "match",
+   "family": "colloc",
+   "kicker": "Monday · Which verb?",
+   "needs": [
+    "to click (on) a link",
+    "to open an attachment",
+    "to reset a password",
+    "to report (an email)"
+   ],
+   "prompt": "Which verb (a–f) fits each sentence (1–4)? Two verbs are extra.",
+   "left": [
+    "You ___ on a link.",
+    "You ___ an attachment.",
+    "You ___ your password.",
+    "You ___ a scam to IT."
+   ],
+   "right": [
+    "make",
+    "report",
+    "click",
+    "do",
+    "reset",
+    "open"
+   ]
+  },
+  {
+   "id": "m4",
+   "type": "content",
+   "kicker": "Monday · 8:14 a.m.",
+   "title": "Dana’s inbox",
+   "items": [
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">From: University IT Service &lt;it-service@univ-account-check.com&gt; · 8:14 a.m.</span><b>URGENT: Your account will be closed</b><br><br>Dear user,<br>We detected unusual activity on you account. If you do not confirm your password within 24 hours, your account will be deleted.<br>Click here to confirm: <u>univ-login-check.net</u><br><br>Thank you,<br>IT Team</span>"
+   ]
+  },
+  {
+   "id": "m5",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Monday · Read the email like a teacher",
+   "title": "Red flags",
+   "teaches": [
+    "concept: phishing red flags"
+   ],
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>a red flag</b> <span class=\"muted\">/ˌred ˈflæɡ/</span><br>тривожний сигнал</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>a sign that something is wrong</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">🚩 <b>Dear user</b> — a real service knows your name.<br>🚩 <b>URGENT · within 24 hours</b> — pressure: they don’t want you to think.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">🚩 <b>on you account</b> — a mistake in the English.<br>🚩 The address and the link are not the university’s site.</span>"
+   ]
+  },
+  {
+   "id": "m6",
+   "type": "mcq",
+   "family": "genre",
+   "kicker": "Monday · Spot it",
+   "needs": [
+    "a red flag"
+   ],
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: “Dear user” → a red flag.<br></span>Ivan got a similar email. Which line is <b>not</b> a red flag?",
+   "options": [
+    "Act now, or you will lose your files!",
+    "Hi Ivan, your lab report is due on Friday.",
+    "Dear customer, confirm you card details.",
+    "Reset your password here within 1 hour!"
+   ]
+  },
+  {
+   "id": "g1a",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 1 · 1/2",
+   "title": "Always true: zero conditional",
+   "teaches": [
+    "rule: zero and first conditional"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>present</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>present</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>something that always happens: a fact, or how a system works<br><i>If you click a fake link, you land on a fake page.</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">when</span>here “when” = “if”<br><i>When you type a wrong password five times, the site locks your account.</i></span>"
+   ]
+  },
+  {
+   "id": "g1b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 1 · 2/2",
+   "title": "One likely result: first conditional",
+   "teaches": [
+    "rule: zero and first conditional"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>present</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>will</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>verb</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>one real situation now and its likely result in the future<br><i>If Dana clicks this link, she will lose her password.</i></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ If she <b>clicks</b> …<br>❌ <s>If she <b>will click</b> …</s></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">After <b>if</b>: present, not <i>will</i>, just like after <i>when</i> and <i>as soon as</i>.</span>"
+   ]
+  },
+  {
+   "id": "g1c",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 1 · Form · 1/2",
+   "needs": [
+    "rule: zero and first conditional",
+    "to open an attachment"
+   ],
+   "instruction": "Example: If you ___ (type) the wrong code, the app shows an error. → type",
+   "prompt": "If someone ___ (open) this attachment, the virus will start.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "g1d",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 1 · Form · 2/2",
+   "needs": [
+    "rule: zero and first conditional",
+    "to report (an email)"
+   ],
+   "instruction": "Use the negative.",
+   "prompt": "If Dana ___ (not / report) the email, other students will get it too.",
+   "placeholder": "two words"
+  },
+  {
+   "id": "g1e",
+   "type": "mcq",
+   "family": "error",
+   "kicker": "Rule 1 · Find the mistake",
+   "needs": [
+    "rule: zero and first conditional",
+    "to click (on) a link",
+    "fake"
+   ],
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: If it <s>will rain</s>, … → If it <b>rains</b>, …<br></span><b>If you will click the link, you will see a fake page.</b><br>Tap the wrong part.",
+   "options": [
+    "If you will click",
+    "the link,",
+    "you will see",
+    "a fake page."
+   ]
+  },
+  {
+   "id": "g1f",
+   "type": "match",
+   "family": "cause",
+   "kicker": "Rule 1 · Cause and result",
+   "needs": [
+    "rule: zero and first conditional",
+    "to open an attachment",
+    "to report (an email)",
+    "phishing"
+   ],
+   "prompt": "Join the halves (1–4). One ending (a–e) is extra.<span class=\"muted\" style=\"font-size:15px;line-height:1.35\"><br>reuse — use again</span>",
+   "left": [
+    "If you reuse one password,",
+    "If the address looks strange,",
+    "If you report a phishing email,",
+    "If you open a strange attachment,"
+   ],
+   "right": [
+    "IT can warn others.",
+    "a virus may start.",
+    "one leak opens everything.",
+    "don’t click anything.",
+    "it gets stronger."
+   ]
+  },
+  {
+   "id": "say1",
+   "type": "content",
+   "reveal": true,
+   "family": "translate",
+   "kicker": "Say it in English",
+   "title": "Якщо ви відкриєте це вкладення, на ваш комп’ютер потрапить вірус.",
+   "items": [
+    "<b>If you open this attachment, your computer will get a virus.</b>",
+    "<span style=\"display:block;font-size:18px;line-height:1.4\">💬 Якщо ти спізнишся, я піду без тебе.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.4\">→ <i>If you’re late, I’ll leave without you.</i></span>"
+   ]
+  },
+  {
+   "id": "s1a",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Monday · Warn Dana · One student at a time",
+   "title": "Don’t click it!",
+   "format": "warn",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>Don’t …!</b> If you …, you’ll …<br><b>Whatever you do, don’t …</b><br><b>Before you …, check …</b></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: Don’t open the attachment! If you open it, you’ll get a virus.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>Cues</b> — one student per cue:<br>1. the link in the email<br>2. her password on that site<br>3. the sender’s address<br>4. report it to IT</span>"
+   ]
+  },
+  {
+   "id": "t0",
+   "type": "end",
+   "kicker": "Tuesday",
+   "title": "Locked out",
+   "text": "Dana can’t get into her email"
+  },
+  {
+   "id": "t1",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Tuesday · Phrasal verbs 1/2",
+   "title": "In and out",
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to log in / to log out</b> <span class=\"muted\">/ˌlɔːɡ ˈɪn/</span><br>увійти / вийти (з облікового запису)</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Dana logs in with her email and password.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to sign up</b> <span class=\"muted\">/ˌsaɪn ˈʌp/</span><br>зареєструватися</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>She signed up for a game site in 2022.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to be locked out</b> <span class=\"muted\">/ˌlɑːkt ˈaʊt/</span><br>не мати змоги увійти (доступ заблоковано)</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Her password didn’t work, and she was locked out.</i></span>"
+   ]
+  },
+  {
+   "id": "t2",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Tuesday · Phrasal verbs 2/2",
+   "title": "Trouble and help",
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to break into / to hack into</b> <span class=\"muted\">/ˌbreɪk ˈɪntuː/</span><br>зламати, проникнути</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Someone broke into her account on Monday night.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to find out</b> <span class=\"muted\">/ˌfaɪnd ˈaʊt/</span><br>дізнатися, з’ясувати</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>She found out on Tuesday morning.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to back up</b> <span class=\"muted\">/ˌbæk ˈʌp/</span><br>створити резервну копію</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Back up your photos, just in case.</i></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to back up (verb) → a backup (noun)</span>"
+   ]
+  },
+  {
+   "id": "t3",
+   "type": "match",
+   "family": "colloc",
+   "kicker": "Tuesday · Which particle?",
+   "needs": [
+    "to log in / to log out",
+    "to break into / to hack into",
+    "to find out",
+    "to back up"
+   ],
+   "prompt": "Which word (a–e) completes each verb (1–4)? One is extra.",
+   "left": [
+    "Dana couldn’t log ___.",
+    "Someone broke ___ her email.",
+    "She found ___ on Tuesday.",
+    "I always back ___ my photos."
+   ],
+   "right": [
+    "out",
+    "into",
+    "up",
+    "in",
+    "over"
+   ]
+  },
+  {
+   "id": "t4",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Tuesday · Phrasal verbs · Form",
+   "needs": [
+    "to be locked out",
+    "to sign up"
+   ],
+   "instruction": "Change the form. Example: She ___ (sign up) last year. → signed up",
+   "prompt": "Dana tried her password three times, and then she ___ (be / lock out).",
+   "placeholder": "three words"
+  },
+  {
+   "id": "t5",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Tuesday · Words that trick you · 1/2",
+   "title": "security ≠ safety · password ≠ parole",
+   "items": [
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">security</span>protection from people who attack on purpose<br><i>account security · a security team</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">safety</span>protection from accidents<br><i>road safety · fire safety</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">password ≠ parole</span>«пароль» = <b>password</b> · <b>parole</b> = умовно-дострокове звільнення<br><i>Enter your password.</i></span>"
+   ]
+  },
+  {
+   "id": "t6",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Tuesday · Words that trick you · 2/2",
+   "title": "«Авторизуватися» · «зламати»",
+   "items": [
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">log in</span>«авторизуватися» in everyday Ukrainian = <b>log in</b> / <b>sign in</b><br><i>I logged in to my account.</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">crack</span>to find a password by guessing millions of times<br><i>A short password is cracked in minutes.</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">break</span>to damage or stop working<br><i>The update broke my app.</i></span>"
+   ]
+  },
+  {
+   "id": "t7",
+   "type": "mcq",
+   "family": "trap",
+   "kicker": "Tuesday · Choose the word · 1/2",
+   "needs": [],
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: “Never tell anyone your ___.” → password<br></span>A fire in the server room is a ___ problem, not a hacker problem.",
+   "options": [
+    "security",
+    "safety",
+    "password"
+   ]
+  },
+  {
+   "id": "t8",
+   "type": "mcq",
+   "family": "post-edit",
+   "kicker": "Tuesday · Fix the machine translation",
+   "needs": [
+    "to log in / to log out"
+   ],
+   "prompt": "«Я не можу авторизуватися в пошті.»<br>MT: <b>I can’t authorize in my email.</b><br>Tap the wrong part.",
+   "options": [
+    "I can’t",
+    "authorize in",
+    "my email."
+   ]
+  },
+  {
+   "id": "t9",
+   "type": "gap",
+   "family": "trap",
+   "kicker": "Tuesday · Choose the word · 2/2",
+   "needs": [],
+   "instruction": "Choose and change the form: crack / break.",
+   "prompt": "With a fast computer, a short password can be ___ in minutes.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "t10",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Tuesday · Word families",
+   "title": "One root, many words",
+   "items": [
+    "<table class=\"gt\" style=\"width:100%;border-collapse:collapse;font-size:16px;line-height:1.35\"><tr><th style=\"text-align:left;color:var(--ink-2);font-weight:600;padding:4px;border-bottom:2px solid var(--line)\">noun</th><th style=\"text-align:left;color:var(--ink-2);font-weight:600;padding:4px;border-bottom:2px solid var(--line)\">adjective</th><th style=\"text-align:left;color:var(--ink-2);font-weight:600;padding:4px;border-bottom:2px solid var(--line)\">opposite</th></tr><tr><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">protection</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">protective</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">—</td></tr><tr><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">security</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">secure</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">insecure</td></tr><tr><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">safety</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">safe</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">unsafe</td></tr><tr><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">vulnerability</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">vulnerable</td><td style=\"padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top\">—</td></tr></table><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Verbs: to protect · to secure</span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>vulnerable</b> <span class=\"muted\">/ˈvʌlnərəbl/</span><br>вразливий (якого легко атакувати)</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">-tion, -ity → nouns · in-, un- → opposites</span>"
+   ]
+  },
+  {
+   "id": "t11",
+   "type": "gap",
+   "family": "wordform",
+   "kicker": "Tuesday · Word forms · 1/2",
+   "needs": [
+    "vulnerable"
+   ],
+   "instruction": "Example: Strong passwords give better ___ (protect). → protection",
+   "prompt": "Free Wi-Fi in a café can be ___ (secure), so don’t log in to your bank there.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "t12",
+   "type": "gap",
+   "family": "wordform",
+   "kicker": "Tuesday · Word forms · 2/2",
+   "needs": [
+    "vulnerable"
+   ],
+   "instruction": "Change the form.",
+   "prompt": "The test found a serious ___ (vulnerable) in the game site.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "t13",
+   "type": "mcq",
+   "family": "stress",
+   "kicker": "Tuesday · Say it right",
+   "needs": [],
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: PHOtograph → phoTOgraphy: the stress moves.<br></span>Where is the stress in <b>security</b>?",
+   "options": [
+    "SEcurity",
+    "seCUrity",
+    "secuRIty",
+    "securiTY"
+   ]
+  },
+  {
+   "id": "t14",
+   "type": "open",
+   "family": "personal",
+   "kicker": "Tuesday · Your turn",
+   "needs": [
+    "to break into / to hack into"
+   ],
+   "prompt": "Which account would be the worst to lose? One sentence:<br><b>“If someone broke into my …, they could …”</b>",
+   "placeholder": "If someone broke into my …"
+  },
+  {
+   "id": "w0",
+   "type": "end",
+   "kicker": "Wednesday",
+   "title": "Grade 1044",
+   "text": "A page that shows too much"
+  },
+  {
+   "id": "w1",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Wednesday · The grade portal",
+   "title": "Someone else’s grades",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">Dana logs in to the university grade portal. Her page is <b>/grades/1043</b>.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">She types <b>1044</b> by mistake and sees <b>Ivan’s</b> grades.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">The site checked <b>who</b> she is. It didn’t check <b>what she may see</b>.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Like a hotel key card that opens every room, not only yours.</span>"
+   ]
+  },
+  {
+   "id": "w2",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Wednesday · Two checks",
+   "title": "Who are you? What may you do?",
+   "teaches": [
+    "concept: authentication vs authorization"
+   ],
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>authentication</b> <span class=\"muted\">/ɔːˌθentɪˈkeɪʃn/</span><br>автентифікація</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>checks who you are: a password, a code on your phone</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>authorization</b> <span class=\"muted\">/ˌɔːθərəˈzeɪʃn/</span><br>авторизація (перевірка прав)</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>checks what you are allowed to see or do</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>permission</b> <span class=\"muted\">/pərˈmɪʃn/</span><br>дозвіл, право</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Dana has permission to see her grades, not Ivan’s.</i></span>"
+   ]
+  },
+  {
+   "id": "w3",
+   "type": "gap",
+   "family": "define",
+   "kicker": "Wednesday · Check the word",
+   "needs": [
+    "authentication",
+    "authorization"
+   ],
+   "instruction": "authentication or authorization?",
+   "prompt": "The portal asks for Dana’s password. This step is ___.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "g2a",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 2 · 1/2",
+   "title": "unless = if … not",
+   "teaches": [
+    "rule: unless · as long as · otherwise"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>unless</b></span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>=</b></span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>if … not</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>after <b>unless</b>, the verb is positive<br><i>You can’t see a grade unless it is yours.</i></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ unless it <b>is</b> yours<br>❌ <s>unless it <b>isn’t</b> yours</s></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">= You can’t see a grade if it isn’t yours.</span>"
+   ]
+  },
+  {
+   "id": "g2b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 2 · 2/2",
+   "title": "as long as · otherwise",
+   "teaches": [
+    "rule: unless · as long as · otherwise"
+   ],
+   "items": [
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">as long as</span>= only if, on condition that<br><i>The portal is safe as long as it checks every page.</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">otherwise</span>= if not, then …; a new sentence, or after “;”<br><i>Fix the page today. Otherwise, everyone will see everyone’s grades.</i></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">provided that = as long as, but more formal</span>"
+   ]
+  },
+  {
+   "id": "g2c",
+   "type": "mcq",
+   "family": "transform",
+   "kicker": "Rule 2 · Same meaning",
+   "needs": [
+    "rule: unless · as long as · otherwise",
+    "permission"
+   ],
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: If it doesn’t rain, we’ll go. → We’ll go unless it rains.<br></span>“If you don’t have permission, the page stays closed.” Same meaning?",
+   "options": [
+    "The page stays closed unless you don’t have permission.",
+    "The page stays closed unless you have permission.",
+    "The page stays closed as long as you have permission."
+   ]
+  },
+  {
+   "id": "g2d",
+   "type": "gap",
+   "family": "cause",
+   "kicker": "Rule 2 · Complete · 1/3",
+   "needs": [
+    "rule: unless · as long as · otherwise"
+   ],
+   "instruction": "Use: as long as · otherwise · unless · when",
+   "prompt": "Ivan’s grades are private, so Dana shouldn’t see them ___ he shares them.",
+   "placeholder": "one or three words"
+  },
+  {
+   "id": "g2e",
+   "type": "gap",
+   "family": "cause",
+   "kicker": "Rule 2 · Complete · 2/3",
+   "needs": [
+    "rule: unless · as long as · otherwise",
+    "to report (an email)"
+   ],
+   "instruction": "Use: as long as · otherwise · unless · when",
+   "prompt": "Report the problem to IT today; ___, someone could change the grades.",
+   "placeholder": "one or three words"
+  },
+  {
+   "id": "g2f",
+   "type": "gap",
+   "family": "cause",
+   "kicker": "Rule 2 · Complete · 3/3",
+   "needs": [
+    "rule: unless · as long as · otherwise",
+    "to log in / to log out"
+   ],
+   "instruction": "Use: as long as · otherwise · unless · when",
+   "prompt": "The portal keeps you logged in ___ you don’t close the browser.",
+   "placeholder": "one or three words"
+  },
+  {
+   "id": "say2",
+   "type": "content",
+   "reveal": true,
+   "family": "translate",
+   "kicker": "Say it in English",
+   "title": "Сторінка закрита, якщо це не ваші оцінки.",
+   "items": [
+    "<b>The page is closed unless the grades are yours.</b>",
+    "<span style=\"display:block;font-size:18px;line-height:1.4\">💬 Я не прийду, якщо ти мене не попросиш.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.4\">→ <i>I won’t come unless you ask me.</i></span>"
+   ]
+  },
+  {
+   "id": "w4",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Wednesday · Paraphrase chain · One student at a time",
+   "title": "One rule, three ways",
+   "format": "paraphrase",
+   "items": [
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Portal rule</span>A student sees a grade page only if it is his or her own.</span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\">Student 1: … <b>unless</b> …<br>Student 2: … <b>as long as</b> …<br>Student 3: … ; <b>otherwise</b>, …</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Next rules: (a) A teacher changes grades only if the course is hers. (b) The portal accepts a password only if it has 12 characters.</span>"
+   ]
+  },
+  {
+   "id": "w5",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Wednesday · Dana writes to IT",
+   "title": "A bug report",
+   "items": [
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">To: it-help@university.edu · Subject: Students can see other students’ grades</span>Hello,<br>I found a problem on the grade portal.<br><b>Steps:</b> 1. Log in. 2. Open /grades/1043. 3. Change the number to 1044.<br><b>Expected:</b> an error message.<br><b>Actual:</b> I can see another student’s grades.<br>Best regards,<br>Dana Koval, group KN-24</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Steps · Expected · Actual: the three parts of a bug report. Steps are short orders: Log in. Open … Change …</span>"
+   ]
+  },
+  {
+   "id": "w6",
+   "type": "mcq",
+   "family": "genre",
+   "kicker": "Wednesday · Spot the style",
+   "needs": [],
+   "prompt": "Ivan wrote his own report. Which step breaks the style of “Steps”?",
+   "options": [
+    "1. Log in as a student.",
+    "2. Open my grades page.",
+    "3. Then I was changing the number.",
+    "4. Press Enter."
+   ]
+  },
+  {
+   "id": "w7",
+   "type": "match",
+   "family": "register",
+   "kicker": "Wednesday · Who is it for?",
+   "needs": [],
+   "prompt": "Match each message (1–3) to its reader. One reader (a–d) is extra.<span class=\"muted\" style=\"font-size:15px;line-height:1.35\"><br>heads-up — a quick warning</span>",
+   "left": [
+    "lol I can see ur grades 😅",
+    "Dear Sir or Madam, I am writing to report a problem.",
+    "Hi, quick heads-up: the portal shows other people’s grades."
+   ],
+   "right": [
+    "the dean (formal)",
+    "a newspaper",
+    "Ivan, a friend",
+    "a friendly teacher"
+   ]
+  },
+  {
+   "id": "h0",
+   "type": "end",
+   "kicker": "Thursday",
+   "title": "The news",
+   "text": "Dana reads about the biggest unlocked door"
+  },
+  {
+   "id": "h1",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · Before you read",
+   "title": "Words for the story",
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>a breach</b> <span class=\"muted\">/briːtʃ/</span><br>злам, витік даних через атаку</span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to patch</b> <span class=\"muted\">/pætʃ/</span><br>встановити виправлення («залатати»)</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>a patch = a small fix for a known flaw</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>a settlement</b> <span class=\"muted\">/ˈsetlmənt/</span><br>мирова угода (з виплатою грошей)</span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>preventable</b> <span class=\"muted\">/prɪˈventəbl/</span><br>якому можна було запобігти</span>"
+   ]
+  },
+  {
+   "id": "h2",
+   "type": "content",
+   "kicker": "Thursday · The Door Nobody Locked · 1/7",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">In March 2017, the team behind Apache Struts, a popular tool for building web applications, published a fix for a critical vulnerability. Any server that still ran an old version could be taken over with a single request, and attacks began almost immediately. At Equifax, one of the three largest credit reporting agencies in the United States, an order to update was sent out — but one online portal was never patched.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">credit reporting agency — кредитне бюро (зберігає дані про кредити людей)</span>"
+   ]
+  },
+  {
+   "id": "h3",
+   "type": "content",
+   "kicker": "Thursday · The Door Nobody Locked · 2/7",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">In mid-May, attackers found it and got in. By the time the intrusion was discovered at the end of July, the personal data of about 147 million people had been stolen. The company later agreed to pay up to 700 million dollars in a settlement, and a US congressional report described the breach as entirely preventable: if the server had been patched in March, the attackers would have found the door locked.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">intrusion — вторгнення · congressional — Конгресу США</span>"
+   ]
+  },
+  {
+   "id": "h4",
+   "type": "match",
+   "family": "sequence",
+   "kicker": "Thursday · In what order?",
+   "needs": [
+    "to patch"
+   ],
+   "prompt": "What happened 1st, 2nd, 3rd, 4th? One event (a–e) did not happen.",
+   "left": [
+    "1st",
+    "2nd",
+    "3rd",
+    "4th"
+   ],
+   "right": [
+    "Attackers got in.",
+    "A fix was published.",
+    "Equifax found the attack.",
+    "Equifax paid a settlement.",
+    "Equifax deleted the data."
+   ]
+  },
+  {
+   "id": "h5",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · Say the numbers · One student per line",
+   "title": "Numbers aloud",
+   "family": "numbers",
+   "items": [
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: 2,500 → two thousand five hundred. No “s”: thousand, million.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>March 2017</b></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>about 147 million people</b></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>up to $700 million</b></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>more than 99.9 percent</b></span>"
+   ]
+  },
+  {
+   "id": "h6",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · Back to Dana",
+   "title": "So how did they get in?",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">On Thursday, Dana gets another email — a real one this time.</span>",
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">From: GameZone · Security notice</span>We are sorry to tell you that our site was <b>breached</b> last month. Your password may have been stolen.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">Dana signed up for GameZone in 2022 with <b>the same password</b> as her email. The attackers just tried it — and it worked.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Your bet on Sunday: who chose C? 🎯</span>"
+   ]
+  },
+  {
+   "id": "h7",
+   "type": "content",
+   "kicker": "Thursday · The Door Nobody Locked · 3/7",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The lesson is uncomfortable. Attackers rarely need brilliant tricks; far more often, they look for doors that nobody locked. That is why security teams practice thinking like an attacker. When they design a new feature, they ask questions such as: What would happen if someone used this form in a way we did not expect? What if a user were not who they claimed to be? This practice is known as threat modeling, and it is much cheaper than a breach.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">threat — загроза · to claim — стверджувати</span>"
+   ]
+  },
+  {
+   "id": "h8",
+   "type": "gap",
+   "family": "define",
+   "kicker": "Thursday · Find it in 3/7",
+   "needs": [],
+   "instruction": "Two words from text 3/7.",
+   "prompt": "imagining in advance how someone could attack your app → ___",
+   "placeholder": "two words"
+  },
+  {
+   "id": "g3a",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 3 · 1/2",
+   "title": "Imagine it: second conditional",
+   "teaches": [
+    "rule: second conditional"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>past</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>would</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>verb</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>an imagined situation now or in the future: not real, or not likely<br><i>What would happen if someone used this form in a strange way?</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">note</span>past form, but no past meaning<br><i>If I had a million dollars, … = now, not yesterday</i></span>"
+   ]
+  },
+  {
+   "id": "g3b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 3 · 2/2",
+   "title": "Advice: If I were you",
+   "teaches": [
+    "rule: second conditional"
+   ],
+   "items": [
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">advice</span>If I were you, I’d … (“were” for all persons)<br><i>If I were you, I’d change all my passwords today.</i></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ If I <b>were</b> you<br>❌ <s>If I <b>would be</b> you</s></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">real or imagined?</span>If I lose my phone, I’ll … (it can happen) · If I lost my phone, I’d … (I don’t think it will)</span>"
+   ]
+  },
+  {
+   "id": "g3c",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 3 · Form",
+   "needs": [
+    "rule: second conditional"
+   ],
+   "instruction": "Example: If I ___ (have) more time, I’d learn Python. → had",
+   "prompt": "If someone ___ (steal) your phone, could they read your email?",
+   "placeholder": "one word"
+  },
+  {
+   "id": "g3d",
+   "type": "mcq",
+   "family": "error",
+   "kicker": "Rule 3 · Find the mistake",
+   "needs": [
+    "rule: second conditional"
+   ],
+   "prompt": "<b>If I would be you, I would change the password today.</b><br>Tap the wrong part.",
+   "options": [
+    "If I would be you,",
+    "I would change",
+    "the password today."
+   ]
+  },
+  {
+   "id": "g3e",
+   "type": "match",
+   "family": "cause",
+   "kicker": "Rule 3 · Real or imagined?",
+   "needs": [
+    "rule: zero and first conditional",
+    "rule: second conditional"
+   ],
+   "prompt": "Join the halves (1–3). Watch the form. One ending (a–d) is extra.",
+   "left": [
+    "If Dana changes her passwords today,",
+    "If Dana were a hacker,",
+    "If I were Dana,"
+   ],
+   "right": [
+    "I’d warn my friends.",
+    "she will knows tricks.",
+    "she’ll stop the attackers.",
+    "she’d know such tricks."
+   ]
+  },
+  {
+   "id": "say3",
+   "type": "content",
+   "reveal": true,
+   "family": "translate",
+   "kicker": "Say it in English",
+   "title": "На твоєму місці я змінив би всі паролі сьогодні.",
+   "items": [
+    "<b>If I were you, I’d change all my passwords today.</b>",
+    "<span style=\"display:block;font-size:18px;line-height:1.4\">💬 На твоєму місці я б узяв парасольку.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.4\">→ <i>If I were you, I’d take an umbrella.</i></span>"
+   ]
+  },
+  {
+   "id": "h9",
+   "type": "content",
+   "kicker": "Thursday · The Door Nobody Locked · 4/7",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The classic unlocked door is injection. If an application pastes a user’s words straight into a command for its database, an attacker can type a piece of code instead of a name, and the database will run it. The defense is well known: the app keeps the user’s data and its own commands apart. Injection has appeared in every edition of the OWASP Top 10, the best-known list of web application risks, since the first one in 2003.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">injection — ін’єкція (впровадження коду) · edition — видання, випуск</span>"
+   ]
+  },
+  {
+   "id": "h10",
+   "type": "mcq",
+   "family": "tfng",
+   "kicker": "Thursday · True, false or not given?",
+   "needs": [],
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: “Equifax is in the US.” → True (1/7).<br></span><b>Injection is a new kind of attack.</b>",
+   "options": [
+    "True",
+    "False",
+    "Not given"
+   ]
+  },
+  {
+   "id": "h11",
+   "type": "content",
+   "kicker": "Thursday · The Door Nobody Locked · 5/7",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Yet in the 2025 edition, first place goes to a quieter problem: broken access control. Authentication answers the question “Who are you?”; authorization answers “What are you allowed to do?” Many applications ask only the first question. Imagine a user who opens /invoices/1043, changes the number to 1044 and receives somebody else’s invoice. The cure is to check permissions for every request and to give each user only the access they really need.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">invoice — рахунок · cure — ліки, засіб</span>"
+   ]
+  },
+  {
+   "id": "h12",
+   "type": "mcq",
+   "family": "scenario",
+   "kicker": "Thursday · Text and story",
+   "needs": [],
+   "prompt": "Which day of Dana’s week is the same problem as the invoice in 5/7?",
+   "options": [
+    "Monday: the fake email",
+    "Tuesday: locked out",
+    "Wednesday: grade 1044",
+    "Thursday: GameZone"
+   ]
+  },
+  {
+   "id": "h13",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · Before 6/7",
+   "title": "Two more words",
+   "teaches": [
+    "concept: multi-factor authentication"
+   ],
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>multi-factor authentication (MFA)</b> <span class=\"muted\">/ˌmʌlti ˌfæktər ɔːˌθentɪˈkeɪʃn/</span><br>багатофакторна автентифікація</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>a password + one more thing, for example a code on your phone. Also called two-step login.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to compromise (an account)</b> <span class=\"muted\">/ˈkɑːmprəmaɪz/</span><br>скомпрометувати, зламати</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>An account is compromised when someone else gets into it.</i></span>"
+   ]
+  },
+  {
+   "id": "h14",
+   "type": "content",
+   "kicker": "Thursday · The Door Nobody Locked · 6/7",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Passwords deserve special care. A well-built site never keeps them as readable text. Instead, it turns each password into a scrambled code that cannot be turned back. Still, the best protection is to make a stolen password useless on its own. Microsoft has estimated that an account with multi-factor authentication is more than 99.9 percent less likely to be compromised.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">scrambled — перемішаний, нечитабельний · to estimate — оцінювати</span>"
+   ]
+  },
+  {
+   "id": "h15",
+   "type": "gap",
+   "family": "tfng",
+   "kicker": "Thursday · Check 6/7",
+   "needs": [
+    "multi-factor authentication (MFA)"
+   ],
+   "instruction": "One word from text 6/7.",
+   "prompt": "With MFA, a stolen password alone is not ___.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "h16",
+   "type": "content",
+   "kicker": "Thursday · The Door Nobody Locked · 7/7",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">No web application is perfectly secure. Every new form, feature and library adds to the attack surface — all the places where someone can try to get in — and new vulnerabilities are published every day. What matters is how quickly the unlocked doors are found, ideally by the team itself, through code reviews, penetration tests and bug bounty programs, before an attacker tries the handle.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">penetration test — тест на проникнення · bug bounty program — програма винагород за знайдені вади · handle — ручка (дверей)</span>"
+   ]
+  },
+  {
+   "id": "h17",
+   "type": "mcq",
+   "family": "odd",
+   "kicker": "Thursday · Odd one out",
+   "needs": [],
+   "prompt": "Which one does <b>not</b> help a team find its unlocked doors first?",
+   "options": [
+    "code reviews",
+    "penetration tests",
+    "more new features",
+    "bug bounty programs"
+   ]
+  },
+  {
+   "id": "h18",
+   "type": "mcq",
+   "poll": true,
+   "kicker": "Thursday · Vote",
+   "needs": [],
+   "prompt": "Which habit protects a student best? Vote.",
+   "options": [
+    "a different password for every site",
+    "two-step login (MFA)",
+    "never clicking links in emails",
+    "updating apps quickly"
+   ]
+  },
+  {
+   "id": "h19",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · Defend the vote · One student at a time",
+   "title": "Why that one?",
+   "format": "justify-ranking",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>Most of us chose …, mainly because if …, …</b></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>I’d put … second, as long as …</b></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>… is useful, but unless …, it won’t help much.</b></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Reasons: one leak → all your accounts · fake links look real · old apps have known flaws · a stolen password alone is not enough</span>"
+   ]
+  },
+  {
+   "id": "f0",
+   "type": "end",
+   "kicker": "Friday",
+   "title": "What went wrong",
+   "text": "Looking back at the week"
+  },
+  {
+   "id": "g4a",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 4 · 1/2",
+   "title": "«Якби» about the past",
+   "teaches": [
+    "rule: third conditional · should have"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>If</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>had + V3</b></span><span style=\"color:var(--ink-2)\">,</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>would have</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>V3</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">rule</span>the past: it happened, and we can’t change it<br><i>If Dana had used a different password, the attackers wouldn’t have gotten in.</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">trap</span>«якби» = now (Rule 3) or the past (Rule 4): English must choose<br><i>If the server were patched … (now) · If the server had been patched … (in 2017)</i></span>"
+   ]
+  },
+  {
+   "id": "g4b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Grammar · Rule 4 · 2/2",
+   "title": "should have: a past mistake",
+   "teaches": [
+    "rule: third conditional · should have"
+   ],
+   "items": [
+    "<span class=\"fx\" style=\"display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:17px\"><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>should have</b></span><span style=\"color:var(--ink-2)\">+</span><span style=\"background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:3px 9px\"><b>V3</b></span></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">criticism</span>= it was a good idea, but nobody did it<br><i>Equifax should have patched the portal in March.</i></span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.5\">✅ If they <b>had patched</b> …<br>❌ <s>If they <b>would have patched</b> …</s></span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">V3: patch → patched · use → used · get → gotten (AmE) / got (BrE) · tell → told</span>"
+   ]
+  },
+  {
+   "id": "g4c",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 4 · Form · 1/3",
+   "needs": [
+    "rule: third conditional · should have"
+   ],
+   "instruction": "Example: If I ___ (know), I would have told you. → had known",
+   "prompt": "If Dana ___ (use) a different password, the attackers wouldn’t have gotten in.",
+   "placeholder": "two words"
+  },
+  {
+   "id": "g4d",
+   "type": "gap",
+   "family": "form",
+   "kicker": "Rule 4 · Form · 2/3",
+   "needs": [
+    "rule: third conditional · should have"
+   ],
+   "instruction": "should have + V3.",
+   "prompt": "GameZone ___ (should / tell) users about the breach sooner.",
+   "placeholder": "three words"
+  },
+  {
+   "id": "g4e",
+   "type": "mcq",
+   "family": "error",
+   "kicker": "Rule 4 · Find the mistake",
+   "needs": [
+    "rule: third conditional · should have",
+    "to patch"
+   ],
+   "prompt": "<b>If GameZone would have patched its site, the passwords wouldn’t have been stolen.</b><br>Tap the wrong part.",
+   "options": [
+    "If GameZone would have patched",
+    "its site,",
+    "the passwords wouldn’t have been stolen."
+   ]
+  },
+  {
+   "id": "g4f",
+   "type": "gap",
+   "family": "transform",
+   "kicker": "Rule 4 · Form · 3/3",
+   "needs": [
+    "rule: third conditional · should have"
+   ],
+   "instruction": "Same meaning. “Nobody noticed the old certificate, so the attack went unnoticed.”",
+   "prompt": "If somebody ___ the old certificate, the attack wouldn’t have gone unnoticed.",
+   "placeholder": "two words"
+  },
+  {
+   "id": "say4",
+   "type": "content",
+   "reveal": true,
+   "family": "translate",
+   "kicker": "Say it in English",
+   "title": "Якби Дана мала різні паролі, зловмисники не потрапили б у її пошту.",
+   "items": [
+    "<b>If Dana had had different passwords, the attackers wouldn’t have gotten into her email.</b>",
+    "<span style=\"display:block;font-size:18px;line-height:1.4\">💬 Якби ти мене попередив, я б не прийшов.</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.4\">→ <i>If you had warned me, I wouldn’t have come.</i></span>"
+   ]
+  },
+  {
+   "id": "f1",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Friday · Idioms",
+   "title": "Too late!",
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to close the barn door after the horse is out</b> <span class=\"muted\">/bɑːrn/</span><br>зачиняти стайню, коли коня вже вкрали (запізно)</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>A new password a year after the leak? That’s closing the barn door …</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>better safe than sorry</b> <span class=\"muted\">/ˌseɪf ðən ˈsɑːri/</span><br>краще перестрахуватися</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Back it up: better safe than sorry.</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to learn the hard way</b> <span class=\"muted\">/ˈhɑːrd weɪ/</span><br>навчитися на гіркому досвіді</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>Dana learned it the hard way.</i></span>"
+   ]
+  },
+  {
+   "id": "f2",
+   "type": "match",
+   "family": "variety",
+   "kicker": "Friday · AmE → BrE",
+   "needs": [],
+   "prompt": "Match each American form (1–3) with the BrE one. One (a–d) is extra.",
+   "left": [
+    "would have gotten",
+    "first floor (street level)",
+    "vacation"
+   ],
+   "right": [
+    "ground floor",
+    "second floor",
+    "would have got",
+    "holiday"
+   ]
+  },
+  {
+   "id": "f2b",
+   "type": "mcq",
+   "family": "idiom",
+   "kicker": "Friday · Which idiom?",
+   "needs": [
+    "to learn the hard way",
+    "better safe than sorry"
+   ],
+   "prompt": "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Example: “I always lock my bike, even for a minute.” → Better safe than sorry!<br></span>“I lost all my photos last year, so now I back up everything.” I …",
+   "options": [
+    "closed the barn door.",
+    "learned the hard way.",
+    "was better safe than sorry."
+   ]
+  },
+  {
+   "id": "f3",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Friday · Dana’s week · One student per day",
+   "title": "Tell it with regret",
+   "format": "narrate",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\">On …, she … . Luckily, she didn’t … .<br><b>If she had …, she wouldn’t have …</b><br><b>She should have …</b></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">Mon — a fake email; she didn’t click<br>Tue — locked out of her email<br>Wed — saw Ivan’s grades; wrote to IT<br>Thu — GameZone breach; the same password<br>Fri — changed all passwords; turned on MFA</span>"
+   ]
+  },
+  {
+   "id": "a0",
+   "type": "end",
+   "kicker": "Saturday",
+   "title": "A podcast",
+   "text": "Dana listens to “The Brief”"
+  },
+  {
+   "id": "a1",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Saturday · Words from the audio · 1/2",
+   "title": "Three expressions",
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to jiggle a doorknob</b> <span class=\"muted\">/ˈdʒɪɡl ə ˈdɔːrnɑːb/</span><br>смикати дверну ручку</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>to check if a door is locked · BrE door handle</i></span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>to slip inside</b> <span class=\"muted\">/ˌslɪp ɪnˈsaɪd/</span><br>прослизнути всередину</span>",
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>a blind spot</b> <span class=\"muted\">/ˈblaɪnd spɑːt/</span><br>сліпа зона</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>something you don’t notice</i></span>"
+   ]
+  },
+  {
+   "id": "a2",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Saturday · Words from the audio · 2/2",
+   "title": "Spoken English",
+   "items": [
+    "<span style=\"display:block;font-size:19px;line-height:1.35\"><b>a backstop</b> <span class=\"muted\">/ˈbækstɑːp/</span><br>запобіжник, остання лінія захисту</span><span style=\"display:block;font-size:16px;line-height:1.4;border-left:3px solid var(--line);padding-left:9px;margin-top:5px\"><i>the last thing that stops a problem</i></span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">spoken</span>you know · basically · kind of like · way cheaper = much cheaper · we gotta = we have got to</span>",
+    "<span class=\"rc\" style=\"display:block;border-left:4px solid var(--accent);padding:2px 0 2px 10px;font-size:17px;line-height:1.4\"><span style=\"display:inline-block;background:var(--accent);color:var(--surface);border-radius:8px;padding:0 8px;font-size:13px;font-weight:700;margin-right:6px\">AmE ↔ BrE</span>vacation ↔ holiday · first floor ↔ ground floor</span>"
+   ]
+  },
+  {
+   "id": "a3",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Saturday · While you listen",
+   "title": "Three questions",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">1. Attackers are compared to people who … what?</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">2. Threat modeling is kind of like … what?</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">3. What is the “ultimate backstop”?</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">A computer voice reads it: it says “threat modeling” badly, like “DREP modeling”.</span>"
+   ]
+  },
+  {
+   "id": "a4",
+   "type": "end",
+   "kicker": "Saturday · 1st time",
+   "title": "🎧 Listen",
+   "text": "Think about the three questions"
+  },
+  {
+   "id": "a5",
+   "type": "mcq",
+   "family": "gist",
+   "kicker": "After listening · 1/3",
+   "needs": [
+    "to jiggle a doorknob"
+   ],
+   "prompt": "Attackers are compared to people who …",
+   "options": [
+    "pick locks with special tools.",
+    "jiggle doorknobs.",
+    "break windows at night."
+   ]
+  },
+  {
+   "id": "a6",
+   "type": "mcq",
+   "family": "gist",
+   "kicker": "After listening · 2/3",
+   "needs": [],
+   "prompt": "Threat modeling is kind of like …",
+   "options": [
+    "putting in an alarm after a break-in.",
+    "changing all the locks every year.",
+    "checking your first-floor windows before a vacation."
+   ]
+  },
+  {
+   "id": "a7",
+   "type": "gap",
+   "family": "gist",
+   "kicker": "After listening · 3/3",
+   "needs": [
+    "multi-factor authentication (MFA)",
+    "a backstop"
+   ],
+   "instruction": "The full name or the short form.",
+   "prompt": "The ultimate backstop is ___.",
+   "placeholder": "MFA …"
+  },
+  {
+   "id": "a8",
+   "type": "end",
+   "kicker": "Saturday · 2nd time",
+   "title": "🎧 Listen again",
+   "text": "Listen for the details"
+  },
+  {
+   "id": "a9",
+   "type": "gap",
+   "family": "detail",
+   "kicker": "After listening · Details",
+   "needs": [],
+   "instruction": "One word (with a hyphen) from the audio.",
+   "prompt": "Threat modeling is way cheaper than dealing with a ___ later.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "a10",
+   "type": "match",
+   "family": "register",
+   "kicker": "After listening · Spoken → written",
+   "needs": [],
+   "prompt": "Match each spoken phrase (1–3) with its written form. One (a–d) is extra.",
+   "left": [
+    "way cheaper",
+    "we gotta talk",
+    "kind of like"
+   ],
+   "right": [
+    "we must discuss",
+    "similar to",
+    "much cheaper",
+    "in the past"
+   ]
+  },
+  {
+   "id": "a11",
+   "type": "open",
+   "family": "personal",
+   "kicker": "After listening · Your blind spot",
+   "needs": [
+    "a blind spot"
+   ],
+   "prompt": "The podcast ends with a question about blind spots. What is <b>your</b> blind spot online? One sentence:<br><b>“My blind spot is probably …, because I …”</b>",
+   "placeholder": "My blind spot is probably …"
+  },
+  {
+   "id": "k0",
+   "type": "end",
+   "kicker": "Keyword drill",
+   "title": "The text in six sentences",
+   "text": "Example: Dana / sign up / game site / 2022 → Dana signed up for a game site in 2022."
+  },
+  {
+   "id": "k1",
+   "type": "content",
+   "reveal": true,
+   "family": "retell-cue",
+   "kicker": "Keyword drill · 1/3 · One student per set",
+   "title": "Sets 1–2",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>1.</b> fix / critical / flaw / publish / one / server / never / patch</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>A fix for the critical flaw was published, but one server was never patched.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>2.</b> attacker / rarely / need / clever / trick / look for / door / nobody / lock</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Attackers rarely need clever tricks; they look for doors nobody has locked.</i></span>"
+   ]
+  },
+  {
+   "id": "k2",
+   "type": "content",
+   "reveal": true,
+   "family": "retell-cue",
+   "kicker": "Keyword drill · 2/3 · One student per set",
+   "title": "Sets 3–4",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>3.</b> what / happen / if / someone / use / form / way / not / expect</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>What would happen if someone used this form in a way we didn’t expect?</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>4.</b> application / check / who / user / not / whether / invoice / belong</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>The application checked who the user was, but not whether the invoice belonged to them.</i></span>"
+   ]
+  },
+  {
+   "id": "k3",
+   "type": "content",
+   "reveal": true,
+   "family": "retell-cue",
+   "kicker": "Keyword drill · 3/3 · One student per set",
+   "title": "Sets 5–6",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>5.</b> unless / account / have / MFA / stolen / password / be / enough</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Unless an account has MFA, a stolen password is enough.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>6.</b> if / server / patch / March / breach / prevent</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>If the server had been patched in March, the breach would have been prevented.</i></span>"
+   ]
+  },
+  {
+   "id": "x0",
+   "type": "end",
+   "kicker": "Sunday",
+   "title": "Help a friend",
+   "text": "Four moves, four students, one story"
+  },
+  {
+   "id": "x1",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Final task · How it works",
+   "title": "Four moves",
+   "format": "instruct",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">A friend has a problem. Four students, <b>one move each</b>.</span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>1. What happened:</b> Yesterday, …<br><b>2. The mistake:</b> … should have … · If … had …, … wouldn’t have …</span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.45;background:var(--accent-soft);border-radius:10px;padding:5px 10px\"><b>3. What to do now:</b> If I were you, I’d … · Don’t …!<br><b>4. From now on:</b> … unless … · … as long as … · Otherwise, …</span>"
+   ]
+  },
+  {
+   "id": "x2",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Final task · Example",
+   "title": "How it sounds",
+   "items": [
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Example · Oleh</span>Oleh got a text: “Your parcel is waiting. Pay 2 dollars here.” He paid with his card.</span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.48\"><b>1.</b> Yesterday, Oleh got a fake text about a parcel, and he paid with his card.<br><b>2.</b> He should have checked the sender. If he had looked at the link, he wouldn’t have paid.</span>",
+    "<span style=\"display:block;font-size:17px;line-height:1.48\"><b>3.</b> If I were him, I’d call the bank right now. Don’t wait!<br><b>4.</b> From now on, don’t pay unless you know the sender; otherwise, you’ll lose more money.</span>"
+   ]
+  },
+  {
+   "id": "x3",
+   "type": "content",
+   "kicker": "Final task · Card A",
+   "title": "Marta: one password",
+   "items": [
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Card A · Marta</span>Marta uses <b>marta2005</b> for everything: email, bank, Instagram. Yesterday her Instagram was hacked, and now strangers send messages from her account.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Words: reuse · reset · break into · MFA · a different password for every site</span>"
+   ]
+  },
+  {
+   "id": "x4",
+   "type": "content",
+   "kicker": "Final task · Card B",
+   "title": "Sofia: the bank email",
+   "items": [
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Card B · Sofia</span>Sofia got an email “from her bank”: “Your card is blocked. Log in here.” She typed her password on the page. An hour later, 3,000 hryvnias were gone.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Words: phishing · a fake page · a red flag · report · log in</span>"
+   ]
+  },
+  {
+   "id": "x5",
+   "type": "content",
+   "kicker": "Final task · Card C",
+   "title": "Andrii: the free game",
+   "items": [
+    "<span style=\"display:block;border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:8px 11px;font-size:16px;line-height:1.45\"><span style=\"display:block;font-size:13px;color:var(--ink-2);margin-bottom:3px\">Card C · Andrii</span>Andrii downloaded a “free” copy of a paid game from a strange site. Now his laptop is slow, and his browser opens ads by itself. His photos are not backed up.</span>",
+    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Words: a scam · a virus · back up · update · as long as</span>"
+   ]
+  },
+  {
+   "id": "end",
+   "type": "end",
+   "kicker": "Unit 4 · Web Application Security",
+   "title": "Better safe than sorry.",
+   "text": "Lock your doors before someone tries the handle."
+  }
+ ]
+};
