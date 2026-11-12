@@ -654,7 +654,7 @@ window.LESSON = {
    "type": "end",
    "kicker": "Thursday",
    "title": "The news",
-   "text": "Dana reads about the biggest unlocked door"
+   "text": "Dana reads about the biggest unlocked door. Struts, SQL, bcrypt, OWASP are just names: you don’t need to know how they work."
   },
   {
    "id": "h1",
@@ -672,19 +672,49 @@ window.LESSON = {
   {
    "id": "h2",
    "type": "content",
-   "kicker": "Thursday · The Door Nobody Locked · 1/7",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 1/7 · 1/2",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">In March 2017, the team behind Apache Struts, a popular tool for building web applications, published a fix for a critical vulnerability. Any server that still ran an old version could be taken over with a single request, and attacks began almost immediately. At Equifax, one of the three largest credit reporting agencies in the United States, an order to update was sent out — but one online portal was never patched.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">credit reporting agency — кредитне бюро (зберігає дані про кредити людей)</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">In March 2017, the team behind Apache Struts, a popular framework for Java web applications, published a fix for a critical vulnerability. Any server that still ran an old version could be taken over with a single, specially crafted request, and attacks began almost immediately.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">framework — інструмент для створення застосунків · crafted — спеціально виготовлений · credit reporting agency — кредитне бюро</span>"
+   ]
+  },
+  {
+   "id": "h2b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 1/7 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">At Equifax, one of the three largest credit reporting agencies in the United States, an order to update was sent out — but one online portal was never patched.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> A fix for a serious problem came out, but Equifax didn’t install it on one website.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Виправлення вийшло, але Equifax не встановила його на одному сайті.</span>"
    ]
   },
   {
    "id": "h3",
    "type": "content",
-   "kicker": "Thursday · The Door Nobody Locked · 2/7",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 2/7 · 1/3",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">In mid-May, attackers found it and got in. By the time the intrusion was discovered at the end of July, the personal data of about 147 million people had been stolen. The company later agreed to pay up to 700 million dollars in a settlement, and a US congressional report described the breach as entirely preventable: if the server had been patched in March, the attackers would have found the door locked.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">intrusion — вторгнення · congressional — Конгресу США</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">In mid-May, attackers found it and got in. By the time the intrusion was discovered at the end of July, the personal data of about 147 million people had been stolen. The attack went unnoticed partly because a security certificate on a traffic-inspection device had expired long before, so encrypted traffic was not being checked.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">intrusion — вторгнення · to expire — закінчитися (про термін дії) · congressional — Конгресу США</span>"
+   ]
+  },
+  {
+   "id": "h3b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 2/7 · 2/3",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The company later agreed to pay up to 700 million dollars in a settlement, and a US congressional report described the breach as entirely preventable: if the server had been patched in March, the attackers would have found the door locked.</span>"
+   ]
+  },
+  {
+   "id": "h3c",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 2/7 · 3/3",
+   "items": [
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Attackers used the old problem and stole the data of 147 million people. Nobody noticed for weeks. It could have been prevented.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Зловмисники скористалися старою вадою й викрали дані 147 млн людей; цьому можна було запобігти.</span>"
    ]
   },
   {
@@ -741,10 +771,21 @@ window.LESSON = {
   {
    "id": "h7",
    "type": "content",
-   "kicker": "Thursday · The Door Nobody Locked · 3/7",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 3/7 · 1/2",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">The lesson is uncomfortable. Attackers rarely need brilliant tricks; far more often, they look for doors that nobody locked. That is why security teams practice thinking like an attacker. When they design a new feature, they ask questions such as: What would happen if someone used this form in a way we did not expect? What if a user were not who they claimed to be? This practice is known as threat modeling, and it is much cheaper than a breach.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">threat — загроза · to claim — стверджувати</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The lesson is uncomfortable. Attackers rarely need brilliant tricks; far more often, they look for doors that nobody locked. That is why security teams practice thinking like an attacker. When they design a new feature, they ask questions such as: What would happen if someone used this form in a way we did not expect?</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">threat — загроза · to claim — стверджувати</span>"
+   ]
+  },
+  {
+   "id": "h7b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 3/7 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">What if a user were not who they claimed to be? This practice is known as threat modeling, and it is much cheaper than a breach.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Attackers look for easy mistakes, so good teams imagine attacks before they build anything.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Зловмисники шукають прості помилки, тож команди заздалегідь уявляють атаки.</span>"
    ]
   },
   {
@@ -850,10 +891,30 @@ window.LESSON = {
   {
    "id": "h9",
    "type": "content",
-   "kicker": "Thursday · The Door Nobody Locked · 4/7",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 4/7 · 1/3",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">The classic unlocked door is injection: an attacker types a command into a box that should hold a name, and a careless app obeys it. Injection has been on the OWASP Top 10, the best-known list of web application risks, since the first edition in 2003.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">injection — ін’єкція (впровадження коду) · to obey — слухатися · edition — видання, випуск</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The classic unlocked door is injection. If an application builds a database query by pasting the user’s input directly into it, an attacker can type SQL code instead of a name, and the database will run it.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">injection — ін’єкція · query — запит · input — те, що вводить користувач · edition — видання</span>"
+   ]
+  },
+  {
+   "id": "h9b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 4/7 · 2/3",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The same mistake in a web page leads to cross-site scripting, in which a script typed into a comment field runs in other visitors’ browsers. The defense is well known: input is validated on the server, and queries are built with parameters so that user data is never treated as code.</span>"
+   ]
+  },
+  {
+   "id": "h9c",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 4/7 · 3/3",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Injection has appeared in every edition of the OWASP Top 10, the best-known list of critical web application risks, since the first one in 2003.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Some apps run whatever people type into a form. The safe way is to keep what people type apart from the app’s own commands.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Деякі застосунки виконують усе, що введено у форму; безпечно — тримати введене окремо від команд.</span>"
    ]
   },
   {
@@ -872,10 +933,21 @@ window.LESSON = {
   {
    "id": "h11",
    "type": "content",
-   "kicker": "Thursday · The Door Nobody Locked · 5/7",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 5/7 · 1/2",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">Yet in the 2025 edition, first place goes to a quieter problem: broken access control. Authentication answers the question “Who are you?”; authorization answers “What are you allowed to do?” Many applications ask only the first question. Imagine a user who opens /invoices/1043, changes the number to 1044 and receives somebody else’s invoice. The cure is to check permissions for every request and to give each user only the access they really need.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">invoice — рахунок · cure — ліки, засіб</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Yet in the 2025 edition, first place goes to a quieter problem: broken access control. ” Many applications ask only the first question. Imagine a user who opens /invoices/1043, changes the number to 1044 and receives somebody else’s invoice. The application has checked who the user is, but not whether the invoice belongs to them.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">invoice — рахунок · cure — ліки, засіб · least privilege — найменші привілеї</span>"
+   ]
+  },
+  {
+   "id": "h11b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 5/7 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The cure is to check permissions on the server for every request and to follow the principle of least privilege: each user and each service gets only the access it really needs.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Many sites check who you are, but not what you are allowed to see. That’s Dana’s Wednesday.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Багато сайтів перевіряють, хто ви, але не перевіряють, що вам можна бачити.</span>"
    ]
   },
   {
@@ -909,31 +981,73 @@ window.LESSON = {
   {
    "id": "h14",
    "type": "content",
-   "kicker": "Thursday · The Door Nobody Locked · 6/7",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 6/7 · 1/2",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">Passwords deserve special care. A well-built site never keeps them as readable text. Instead, it turns each password into a scrambled code that cannot be turned back. Still, the best protection is to make a stolen password useless on its own. Microsoft has estimated that an account with multi-factor authentication is more than 99.9 percent less likely to be compromised.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">scrambled — перемішаний, нечитабельний · to estimate — оцінювати</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Passwords deserve special care. A well-built site never stores them in plain text, and it does not simply encrypt them either. Instead, each password is combined with a random salt and hashed with a deliberately slow algorithm such as bcrypt or Argon2. Unless an attacker has enormous computing power, stolen hashes of strong passwords are practically useless.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">plain text — читабельний текст · salt — випадкова «сіль» · deliberately — навмисно · insufficient — недостатній</span>"
+   ]
+  },
+  {
+   "id": "h14b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 6/7 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Still, the best protection is to make a stolen password insufficient on its own. 9 percent less likely to be compromised.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Good sites scramble passwords so nobody can read them. A second step at login protects you even if your password is stolen.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Добрі сайти «перемішують» паролі, а другий крок входу захищає, навіть якщо пароль украдено.</span>"
    ]
   },
   {
    "id": "h15",
    "type": "gap",
-   "family": "tfng",
+   "family": "wordform",
    "kicker": "Thursday · Check 6/7",
    "needs": [
     "multi-factor authentication (MFA)"
    ],
-   "instruction": "One word from text 6/7.",
-   "prompt": "With MFA, a stolen password alone is ___.",
+   "instruction": "One word from text 6/7 (the opposite of “sufficient”).",
+   "prompt": "The best protection is to make a stolen password ___ on its own.",
    "placeholder": "one word"
   },
   {
    "id": "h16",
    "type": "content",
-   "kicker": "Thursday · The Door Nobody Locked · 7/7",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 7/7 · 1/2",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">No web application is perfectly secure, and new weak points are found every day. What matters is how quickly the unlocked doors are found — ideally by the team itself, before an attacker tries the handle.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">weak point — слабке місце · handle — ручка (дверей)</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">No web application is perfectly secure. Every new dependency, form and API endpoint adds to the attack surface, and new vulnerabilities are published every day. What matters is how quickly the unlocked doors are found — ideally by the team itself, through code reviews, penetration tests and bug bounty programs, before an attacker tries the handle.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">dependency — стороння бібліотека · attack surface — усі місця, де можна спробувати проникнути · penetration test — тест на проникнення · bug bounty program — винагорода за знайдені вади</span>"
+   ]
+  },
+  {
+   "id": "h16b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Thursday · The Door Nobody Locked · 7/7 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> No site is perfect. Teams should find their own weak points before attackers do.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Ідеальних сайтів немає; команди мають знаходити слабкі місця раніше за зловмисників.</span>"
+   ]
+  },
+  {
+   "id": "hh",
+   "type": "match",
+   "family": "headline",
+   "kicker": "Thursday · Headlines",
+   "needs": [],
+   "prompt": "Which headline (a–e) fits each part of the text (1–4)? One is extra.",
+   "left": [
+    "text 2/7",
+    "text 3/7",
+    "text 5/7",
+    "text 6/7"
+   ],
+   "right": [
+    "Think like a thief",
+    "Passwords need care",
+    "One unlocked portal",
+    "Who may see what?",
+    "Faster servers"
    ]
   },
   {
@@ -1264,22 +1378,16 @@ window.LESSON = {
   {
    "id": "k0",
    "type": "end",
-   "kicker": "Keyword drill",
-   "title": "The text in six sentences",
-   "text": "Example: Dana / sign up / game site / 2022 → Dana signed up for a game site in 2022."
+   "kicker": "Retell the text",
+   "title": "The short version",
+   "text": "Read it once, then retell it from key words"
   },
   {
    "id": "k1",
    "type": "content",
-   "reveal": true,
-   "family": "retell-cue",
-   "kicker": "Keyword drill · 1/3 · One student per set",
-   "title": "Sets 1–2",
+   "kicker": "Retell the text · The short version",
    "items": [
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>1.</b> fix / critical / flaw / publish / one / server / never / patch</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>A fix for the critical flaw was published, but one server was never patched.</i></span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>2.</b> attacker / rarely / need / clever / trick / look for / door / nobody / lock</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Attackers rarely need clever tricks; they look for doors nobody has locked.</i></span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">In 2017, a fix for a serious flaw was published, but Equifax never patched one server. Attackers got in and stole the data of 147 million people. Had the server been patched in March, the door would have been locked. Attackers rarely need clever tricks: they look for doors nobody has locked. Some apps run what people type into a form; others check who you are, but not what you may see. Good sites never keep passwords as readable text, and two-factor authentication makes a stolen password useless. No app is perfectly secure, so teams should find their unlocked doors before attackers do.</span>"
    ]
   },
   {
@@ -1287,13 +1395,13 @@ window.LESSON = {
    "type": "content",
    "reveal": true,
    "family": "retell-cue",
-   "kicker": "Keyword drill · 2/3 · One student per set",
-   "title": "Sets 3–4",
+   "kicker": "Retell the text · 1/3 · One student per line",
+   "title": "Lines 1–2",
    "items": [
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>3.</b> what / happen / if / someone / use / form / way / not / expect</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>What would happen if someone used this form in a way we didn’t expect?</i></span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>4.</b> application / check / who / user / not / whether / invoice / belong</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>The application checked who the user was, but not whether the invoice belonged to them.</i></span>"
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>1.</b> 2017 / fix / publish / Equifax / never / patch / server</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>In 2017, a fix was published, but Equifax never patched one server.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>2.</b> attacker / get in / steal / data / 147 million</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Attackers got in and stole the data of 147 million people.</i></span>"
    ]
   },
   {
@@ -1301,13 +1409,27 @@ window.LESSON = {
    "type": "content",
    "reveal": true,
    "family": "retell-cue",
-   "kicker": "Keyword drill · 3/3 · One student per set",
-   "title": "Sets 5–6",
+   "kicker": "Retell the text · 2/3 · One student per line",
+   "title": "Lines 3–4",
    "items": [
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>5.</b> had / Dana / turn on / MFA / stolen / password / be / useless</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Had Dana turned on MFA, the stolen password would have been useless.</i></span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>6.</b> had / server / patch / March / breach / prevent</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Had the server been patched in March, the breach would have been prevented.</i></span>"
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>3.</b> had / server / patch / March / door / lock</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Had the server been patched in March, the door would have been locked.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>4.</b> some apps / run / type / form · others / check / who / not / what / see</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Some apps run what people type into a form; others check who you are, but not what you may see.</i></span>"
+   ]
+  },
+  {
+   "id": "k4",
+   "type": "content",
+   "reveal": true,
+   "family": "retell-cue",
+   "kicker": "Retell the text · 3/3 · One student per line",
+   "title": "Lines 5–6",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>5.</b> good sites / never / keep / password / readable · 2FA / stolen password / useless</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Good sites never keep passwords as readable text, and 2FA makes a stolen password useless.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>6.</b> no app / secure · team / find / weak points / first</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>No app is perfectly secure, so teams should find their weak points first.</i></span>"
    ]
   },
   {

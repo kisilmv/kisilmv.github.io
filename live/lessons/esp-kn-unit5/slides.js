@@ -164,7 +164,7 @@ window.LESSON = {
    "type": "end",
    "kicker": "The story",
    "title": "An app that closed",
-   "text": "Something like email A happened — to Apollo, in 2023"
+   "text": "Something like email A happened — to Apollo, in 2023. REST, JSON, GET, webhooks are just names: you don’t need to know how they work."
   },
   {
    "id": "s1",
@@ -204,50 +204,163 @@ window.LESSON = {
    ]
   },
   {
-   "id": "r1",
+   "id": "p1",
    "type": "content",
-   "kicker": "Breaking the Contract · 1/3",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 1/10 · 1/2",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">Open Apollo, a popular app for reading Reddit on the iPhone, and you see posts, pictures and comments. None of them live on your phone, and none of them live on Apollo’s own servers. Every time you scroll, the app sends a request to Reddit through its API, and Reddit sends the posts back. Every API is a promise about how such a conversation will go: what you may ask for, how to ask, and what you will get.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Reddit — a huge forum website · a request — запит · to scroll — гортати</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Open Apollo, a popular app for reading Reddit on the iPhone, and you see posts, pictures and comments. None of them live on your phone, and none of them live on Apollo’s own servers. Every time you scroll, the app sends a request to Reddit through its API, and Reddit sends the posts back.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">Reddit — a huge forum website · a request — запит · to scroll — гортати · third-party — сторонній</span>"
+   ]
+  },
+  {
+   "id": "p1b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 1/10 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Apollo is a third-party app: Reddit is the provider. Every API is a promise about how such a conversation will go: what you may ask for, how to ask, and what you will get.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Apollo shows Reddit’s posts, but it gets them from Reddit every time. The API is a promise about how they talk.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Apollo щоразу бере дописи в Reddit через API; API — це обіцянка про те, як вони спілкуються.</span>"
    ]
   },
   {
    "id": "r1q",
    "type": "gap",
    "family": "detail",
-   "kicker": "Breaking the Contract · Check 1/3",
+   "kicker": "Breaking the Contract · Check 1/10",
    "needs": [],
    "instruction": "One word from the text.",
    "prompt": "Every API is a ___ about how such a conversation will go.",
    "placeholder": "one word"
   },
   {
-   "id": "r2",
+   "id": "p2",
    "type": "content",
-   "kicker": "Breaking the Contract · 2/3",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 2/10 · 1/3",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">In April 2023, Reddit announced that it would start charging for its API, which had been free for years. At the end of May, Christian Selig, the developer of Apollo, learned what that meant: 12,000 dollars per 50 million requests. Apollo made about seven billion requests a month — a bill of about 20 million dollars a year.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to charge for — брати плату за · a bill — рахунок</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">A typical REST API (the most common style of web API) has a set of endpoints, such as /r/pics/hot.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">REST, HTTP, GET, POST, PUT, PATCH, DELETE, JSON are just names: you don’t need to know how they work · endpoint — адреса · response — відповідь · payload — дані у відповіді · an API key — секретний код застосунку</span>"
+   ]
+  },
+  {
+   "id": "p2b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 2/10 · 2/3",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The client sends a request with an HTTP method — GET to read a resource, POST to create one, PUT or PATCH to change it, DELETE to remove it — and the server returns a response with a status code and, usually, a JSON payload.</span>"
+   ]
+  },
+  {
+   "id": "p2c",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 2/10 · 3/3",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Every request carries the app’s API key, so Reddit always knows which app is calling.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Apps ask for data in fixed ways, like ordering from a menu. The answer comes with a short code and the data. Every request shows which app is asking.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Застосунки просять дані за сталими правилами, як із меню; кожен запит показує, хто питає.</span>"
+   ]
+  },
+  {
+   "id": "p2q",
+   "type": "mcq",
+   "family": "define",
+   "kicker": "Breaking the Contract · Check 2/10",
+   "needs": [],
+   "prompt": "Which word in 2/10 means “the answer that comes back”?",
+   "options": [
+    "request",
+    "response",
+    "endpoint",
+    "method"
+   ]
+  },
+  {
+   "id": "p3",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 3/10 · 1/3",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Rules work in both directions. Since July 2023, Reddit’s free plan lets a small app send about 100 requests a minute: that is the rate limit. A big app like Apollo needs far more — and has to pay.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">a free plan — безкоштовний тариф · a rate limit — ліміт запитів · to throttle — сповільнювати · to cache — зберігати копію · pagination — посторінкове завантаження</span>"
+   ]
+  },
+  {
+   "id": "p3b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 3/10 · 2/3",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">If a client sends more, the server throttles it and returns 429 Too Many Requests; a well-written client waits and retries later. A good client also caches posts it has already loaded and uses pagination, asking for 25 posts at a time, never for the whole site.</span>"
+   ]
+  },
+  {
+   "id": "p3c",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 3/10 · 3/3",
+   "items": [
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Both sides have rules. A small app may ask about 100 times a minute; a big app must pay. A polite app waits, saves what it has, and never asks for everything at once.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Правила діють для обох: мала програма — близько 100 запитів на хвилину, велика — платить, ввічлива — чекає й не просить усе одразу.</span>"
+   ]
+  },
+  {
+   "id": "p3q",
+   "type": "gap",
+   "family": "wordform",
+   "kicker": "Breaking the Contract · Check 3/10",
+   "needs": [],
+   "instruction": "One word from 3/10: re- + try.",
+   "prompt": "A well-written client waits and ___ later.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "p4",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 4/10 · 1/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">In April 2023, Reddit announced that it would start charging for its API, which had been free for years. At the end of May, Christian Selig, the developer of Apollo, learned what that meant: 12,000 dollars per 50 million requests. Apollo made about seven billion requests a month — a bill of about 20 million dollars a year.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to charge for — брати плату за · a bill — рахунок</span>"
+   ]
+  },
+  {
+   "id": "p4b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 4/10 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Reddit started to ask for money. For Apollo, the bill was about 20 million dollars a year.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Reddit почав брати гроші; для Apollo рахунок становив близько 20 млн доларів на рік.</span>"
    ]
   },
   {
    "id": "r2q",
    "type": "gap",
    "family": "numbers",
-   "kicker": "Breaking the Contract · Check 2/3",
+   "kicker": "Breaking the Contract · Check 4/10",
    "needs": [],
    "instruction": "One word from the text. Then say the whole number aloud.",
    "prompt": "Apollo made about seven ___ requests a month.",
    "placeholder": "one word"
   },
   {
-   "id": "r3",
+   "id": "p5",
    "type": "content",
-   "kicker": "Breaking the Contract · 3/3",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 5/10 · 1/2",
    "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">The new prices started on July 1, about a month later. Selig did not have to close the app — in theory, he could have paid — but the price was far too high for him, and Apollo shut down on June 30. Reddit had every right to change its prices; what developers objected to most was the speed. A month is not enough to rebuild a business.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to shut down — закритися · to object (to) — заперечувати (проти)</span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The new prices started on July 1, about a month later. Selig did not have to close the app — in theory, he could have paid — but he could not afford it, and Apollo shut down on June 30. Reddit had every right to change its prices; what developers objected to most was the speed.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to shut down — закритися · to object (to) — заперечувати (проти)</span>"
+   ]
+  },
+  {
+   "id": "p5b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 5/10 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">A month is not enough to rebuild a business.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Apollo closed because the price was too high. People were angry mostly about the speed: only one month.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Apollo закрився через зависоку ціну; найбільше обурила швидкість — лише місяць.</span>"
    ]
   },
   {
@@ -256,9 +369,9 @@ window.LESSON = {
    "family": "para",
    "kicker": "Breaking the Contract · Which part?",
    "needs": [],
-   "instruction": "Type 1, 2 or 3.",
+   "instruction": "Type a number from 1 to 5.",
    "prompt": "The part that says what developers did not like most is part ___.",
-   "placeholder": "1, 2 or 3"
+   "placeholder": "1–5"
   },
   {
    "id": "rq2",
@@ -509,6 +622,85 @@ window.LESSON = {
    ]
   },
   {
+   "id": "p6",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 6/10 · 1/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The documentation sets the rules. Every request must include an API key. A client must not send more than 100 requests a minute. With pagination, a client may ask for up to 100 posts at a time, but it does not have to: the default is 25.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">documentation — документація · the default — значення за замовчуванням · RFC 2119 — just a name</span>"
+   ]
+  },
+  {
+   "id": "p6b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 6/10 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Many API documents borrow their wording from RFC 2119, a short document from 1997 that defines exactly what MUST, SHOULD and MAY mean.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> The documentation is the rulebook: what you must do, must not do and may do.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Документація — це звід правил: що треба, чого не можна і що можна робити.</span>"
+   ]
+  },
+  {
+   "id": "p6q",
+   "type": "gap",
+   "family": "detail",
+   "kicker": "Breaking the Contract · Check 6/10",
+   "needs": [],
+   "instruction": "One word from the text.",
+   "prompt": "A client may ask for up to 100 posts at a time, but it does not ___ to.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "p7",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 7/10 · 1/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The provider has obligations too. Thousands of developers have written code that expects a field called “price” to be a number. If the provider renames that field or turns it into text, all that code breaks overnight. Such a change is called a breaking change, and good API teams take it almost as seriously as a security flaw.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">obligations — обов’язки · a field — поле (у даних)</span>"
+   ]
+  },
+  {
+   "id": "p7b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 7/10 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> The provider has rules too. If it changes even one name, thousands of apps can stop working at once.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Постачальник теж має обов’язки: зміниш одну назву — і тисячі застосунків перестануть працювати.</span>"
+   ]
+  },
+  {
+   "id": "p7q",
+   "type": "gap",
+   "family": "detail",
+   "kicker": "Breaking the Contract · Check 7/10",
+   "needs": [],
+   "instruction": "One word from the text.",
+   "prompt": "Such a change is called a ___ change, and good API teams take it seriously.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "p8",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 8/10 · 1/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Compare Reddit with Stripe, the payment company. In a 2017 blog post, Stripe’s engineers wrote that every version of their API had kept working since 2011. Each account is pinned to the version that is current when it makes its first request, and versions are named by date.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">pinned to — прив’язаний до · current — чинний · to upgrade — перейти на нову версію</span>"
+   ]
+  },
+  {
+   "id": "p8b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 8/10 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">When Stripe makes a breaking change, it releases a new version, and old clients do not have to upgrade until they are ready.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Stripe keeps old versions working, so old apps can change when they are ready.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Stripe не вимикає старі версії, тож старі застосунки переходять тоді, коли готові.</span>"
+   ]
+  },
+  {
    "id": "o1b",
    "type": "gap",
    "family": "colloc",
@@ -534,15 +726,6 @@ window.LESSON = {
    "placeholder": "one word"
   },
   {
-   "id": "o2",
-   "type": "content",
-   "kicker": "Breaking the Contract · Stripe",
-   "items": [
-    "<span style=\"display:block;font-size:17px;line-height:1.48\">Compare Reddit with Stripe, the online payments company. In a 2017 blog post, Stripe’s engineers wrote that every version of their API since 2011 still worked. When Stripe makes a breaking change, it releases a new version, and old apps do not have to move to it until they are ready.</span>",
-    "<span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to release — випустити · a version — версія</span>"
-   ]
-  },
-  {
    "id": "o3",
    "type": "mcq",
    "family": "tfng",
@@ -555,6 +738,25 @@ window.LESSON = {
     "True",
     "False",
     "Not given"
+   ]
+  },
+  {
+   "id": "p9",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 9/10 · 1/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Adding a new endpoint or field is allowed at any time, because such changes are backward compatible: existing code keeps working. Stripe also sends webhooks when a payment succeeds, so clients do not need to keep asking. acacia, that may include them.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">backward compatible — сумісний зі старим · webhooks — just a name: Stripe messages your app · a major release — великий випуск</span>"
+   ]
+  },
+  {
+   "id": "p9b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 9/10 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Adding new things is safe. Stripe also tells apps when a payment succeeds, so they don’t have to keep asking. Big changes come only twice a year.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Додавати нове безпечно; Stripe сам повідомляє про оплату, а великі зміни — лише двічі на рік.</span>"
    ]
   },
   {
@@ -621,6 +823,36 @@ window.LESSON = {
    "needs": [],
    "instruction": "Change the form: a noun.",
    "prompt": "Turn on ___ (notify) so you know about every change.",
+   "placeholder": "one word"
+  },
+  {
+   "id": "p10",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 10/10 · 1/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">The basic rules for API teams are simple. You must never remove or rename a field without a new version. When you deprecate an endpoint, you should announce it months in advance and give a clear sunset date. You had better keep a changelog, or clients will discover your changes the hard way.</span><span class=\"muted\" style=\"font-size:15px;line-height:1.35\">to discover — виявити · the hard way — на гіркому досвіді</span>"
+   ]
+  },
+  {
+   "id": "p10b",
+   "type": "content",
+   "reveal": true,
+   "kicker": "Breaking the Contract · 10/10 · 2/2",
+   "items": [
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">And remember that an API is not just code: it is a contract with people who have built their work on top of yours.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;border-left:4px solid var(--ok);padding-left:9px\"><b>In plain words:</b> Don’t remove things without a new version, warn early, keep a list of changes. An API is a promise to people.</span>",
+    "<span style=\"display:block;font-size:16px;line-height:1.4;color:var(--ink-2)\">🇺🇦 <b>Коротко:</b> Не прибирай без нової версії, попереджай заздалегідь, веди журнал змін: API — обіцянка людям.</span>"
+   ]
+  },
+  {
+   "id": "p10q",
+   "type": "gap",
+   "family": "detail",
+   "kicker": "Breaking the Contract · Check 10/10",
+   "needs": [],
+   "instruction": "One word from the text.",
+   "prompt": "An API is not just code: it is a ___ with people.",
    "placeholder": "one word"
   },
   {
@@ -869,22 +1101,16 @@ window.LESSON = {
   {
    "id": "k0",
    "type": "end",
-   "kicker": "Rebuild the timeline",
-   "title": "The story from key words",
-   "text": "Example: Apollo / shut down / June 30 → Apollo shut down on June 30."
+   "kicker": "Retell the text",
+   "title": "The short version",
+   "text": "Read it once, then retell it from key words"
   },
   {
    "id": "k1",
    "type": "content",
-   "reveal": true,
-   "family": "retell-cue",
-   "kicker": "Rebuild the timeline · 1/2 · One student per date",
-   "title": "April and May",
+   "kicker": "Retell the text · The short version",
    "items": [
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>April:</b> Reddit / say / it / charge / API</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>In April, Reddit said it would charge for its API.</i></span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>End of May:</b> Selig / learn / price / 12,000 dollars / 50 million / requests</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>At the end of May, Selig learned the price: 12,000 dollars per 50 million requests.</i></span>"
+    "<span style=\"display:block;font-size:17px;line-height:1.48\">Apps like Apollo get their data from other companies through an API. An API is a promise: what you may ask for and what you will get. In April 2023, Reddit said it would charge for its API. With a bill of 20 million dollars a year, on June 29 Apollo was about to shut down. When Stripe makes a breaking change, it releases a new version, and old apps don’t have to move. Good API teams announce changes in advance and keep a changelog.</span>"
    ]
   },
   {
@@ -892,13 +1118,41 @@ window.LESSON = {
    "type": "content",
    "reveal": true,
    "family": "retell-cue",
-   "kicker": "Rebuild the timeline · 2/2 · One student per date",
-   "title": "June and July",
+   "kicker": "Retell the text · 1/3 · One student per line",
+   "title": "Lines 1–2",
    "items": [
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>June 29:</b> Apollo / about / shut down</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>On June 29, Apollo was about to shut down.</i></span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>July 1:</b> new prices / start / Apollo / already / gone</span>",
-    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>On July 1, the new prices started, but Apollo was already gone.</i></span>"
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>1.</b> apps / Apollo / get / data / other companies / API</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Apps like Apollo get their data from other companies through an API.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>2.</b> API / promise / what / ask for / what / get</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>An API is a promise: what you may ask for and what you will get.</i></span>"
+   ]
+  },
+  {
+   "id": "k3",
+   "type": "content",
+   "reveal": true,
+   "family": "retell-cue",
+   "kicker": "Retell the text · 2/3 · One student per line",
+   "title": "Lines 3–4",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>3.</b> April 2023 / Reddit / say / charge / API</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>In April 2023, Reddit said it would charge for its API.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>4.</b> bill / 20 million / June 29 / Apollo / about / shut down</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>With a bill of 20 million dollars a year, on June 29 Apollo was about to shut down.</i></span>"
+   ]
+  },
+  {
+   "id": "k4",
+   "type": "content",
+   "reveal": true,
+   "family": "retell-cue",
+   "kicker": "Retell the text · 3/3 · One student per line",
+   "title": "Lines 5–6",
+   "items": [
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>5.</b> Stripe / breaking change / new version / old apps / not have to / move</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>When Stripe makes a breaking change, it releases a new version, and old apps don’t have to move.</i></span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\"><b>6.</b> good teams / announce / in advance / changelog</span>",
+    "<span style=\"display:block;font-size:18px;line-height:1.45\">→ <i>Good API teams announce changes in advance and keep a changelog.</i></span>"
    ]
   },
   {
