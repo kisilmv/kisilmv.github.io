@@ -147,6 +147,7 @@ function book_(body) {
 
   if (name.length < 2) return fail_('invalid', 'Вкажіть, будь ласка, ім’я.');
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail_('invalid', 'Перевірте адресу електронної пошти.');
+  if (hasEmailTypo_(email)) return fail_('invalid', 'Схоже, в адресі електронної пошти одруківка (наприклад, «.con» замість «.com»). Перевірте її, бо інакше лист не дійде.');
 
   const ev = findEvent_(body.key);
   const minStart = Date.now() + CONFIG.MIN_LEAD_HOURS * 3600 * 1000;
@@ -279,6 +280,7 @@ function lead_(body) {
 
   if (name.length < 2) return fail_('invalid', 'Вкажіть, будь ласка, ім’я.');
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail_('invalid', 'Перевірте адресу електронної пошти.');
+  if (hasEmailTypo_(email)) return fail_('invalid', 'Схоже, в адресі електронної пошти одруківка (наприклад, «.con» замість «.com»). Перевірте її, бо інакше лист не дійде.');
   if (message.length < 10) return fail_('invalid', 'Напишіть повідомлення (щонайменше 10 символів).');
 
   sendTeacher_('✉️ Повідомлення з сайту: ' + topic + ' — ' + name, [
@@ -480,6 +482,17 @@ function buildIcs_(ev) {
     'END:VEVENT',
     'END:VCALENDAR'
   ].join('\r\n');
+}
+
+/* Доменні зони, яких не існує, і типові одруківки в gmail.com / ukr.net */
+const TYPO_TLDS_ = ['con', 'cpm', 'comm', 'vom', 'xom', 'ocm', 'coom', 'cim', 'nte', 'ner', 'nett'];
+const TYPO_DOMAINS_ = ['gmail.cm', 'gmail.co', 'gmail.om', 'gmail.ua', 'gmail.com.ua', 'gmial.com', 'gmai.com',
+  'gamil.com', 'gnail.com', 'gmaill.com', 'gmali.com', 'gmeil.com', 'gmil.com', 'gmal.com', 'gimail.com',
+  'ukr.nt', 'ukr.met', 'ukr.bet', 'urk.net', 'ukrnet.com', 'ukr.net.ua'];
+
+function hasEmailTypo_(email) {
+  const domain = email.slice(email.lastIndexOf('@') + 1);
+  return TYPO_DOMAINS_.indexOf(domain) >= 0 || TYPO_TLDS_.indexOf(domain.slice(domain.lastIndexOf('.') + 1)) >= 0;
 }
 
 function clean_(value, max) {

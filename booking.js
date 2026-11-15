@@ -27,6 +27,37 @@ const CANCEL_MIN_HOURS = 1;
   const fmtDate = (d) => new Intl.DateTimeFormat('uk-UA', { timeZone: BOOKING_TZ, day: 'numeric', month: 'long' }).format(d);
   const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
+  /* ---------- Перевірка email на типові одруківки ---------- */
+  const EMAIL_DOMAINS = ['gmail.com', 'ukr.net', 'i.ua', 'meta.ua', 'outlook.com', 'hotmail.com', 'yahoo.com', 'icloud.com', 'proton.me', 'nung.edu.ua'];
+  const DOMAIN_TYPOS = {
+    'gmail.con': 'gmail.com', 'gmail.cm': 'gmail.com', 'gmail.co': 'gmail.com', 'gmail.om': 'gmail.com',
+    'gmail.comm': 'gmail.com', 'gmail.cpm': 'gmail.com', 'gmail.vom': 'gmail.com', 'gmail.xom': 'gmail.com',
+    'gmail.ocm': 'gmail.com', 'gmail.coom': 'gmail.com', 'gmail.c0m': 'gmail.com', 'gmail.ua': 'gmail.com',
+    'gmail.com.ua': 'gmail.com', 'gmial.com': 'gmail.com', 'gmai.com': 'gmail.com', 'gamil.com': 'gmail.com',
+    'gnail.com': 'gmail.com', 'gmaill.com': 'gmail.com', 'gmali.com': 'gmail.com', 'gmeil.com': 'gmail.com',
+    'gmil.com': 'gmail.com', 'gmal.com': 'gmail.com', 'gimail.com': 'gmail.com', 'g.mail.com': 'gmail.com',
+    'ukr.ner': 'ukr.net', 'ukr.nt': 'ukr.net', 'ukr.met': 'ukr.net', 'ukr.bet': 'ukr.net', 'urk.net': 'ukr.net',
+    'ukrnet.com': 'ukr.net', 'ukr.net.ua': 'ukr.net', 'outlok.com': 'outlook.com', 'outlook.con': 'outlook.com',
+    'hotmail.con': 'hotmail.com', 'hotmal.com': 'hotmail.com', 'yahoo.con': 'yahoo.com', 'yaho.com': 'yahoo.com',
+    'icloud.con': 'icloud.com', 'iclod.com': 'icloud.com'
+  };
+  /* Доменні зони, яких не існує, але які часто з’являються через одруківку */
+  const TLD_TYPOS = { con: 'com', cpm: 'com', comm: 'com', vom: 'com', xom: 'com', ocm: 'com', coom: 'com', cim: 'com', nte: 'net', ner: 'net', nett: 'net' };
+
+  /** Повертає виправлену адресу, якщо в домені схоже на одруківку, інакше ''. */
+  function suggestEmail(email) {
+    const at = email.lastIndexOf('@');
+    if (at < 1) return '';
+    const local = email.slice(0, at);
+    const domain = email.slice(at + 1).toLowerCase();
+    if (EMAIL_DOMAINS.indexOf(domain) >= 0) return '';
+    if (DOMAIN_TYPOS[domain]) return local + '@' + DOMAIN_TYPOS[domain];
+    const dot = domain.lastIndexOf('.');
+    const tld = domain.slice(dot + 1);
+    if (dot > 0 && TLD_TYPOS[tld]) return local + '@' + domain.slice(0, dot + 1) + TLD_TYPOS[tld];
+    return '';
+  }
+
   function describeSlot(startIso, endIso) {
     const s = new Date(startIso);
     const e = new Date(endIso);
@@ -220,6 +251,35 @@ const CANCEL_MIN_HOURS = 1;
       if (!success.hidden) loadSlots();
     });
 
+    const emailInput = $('b-email');
+    const emailHint = $('b-email-hint');
+    function hideEmailHint() { emailHint.hidden = true; emailHint.textContent = ''; emailHint.dataset.fixed = ''; }
+    function showEmailHint(fixed) {
+      if (!emailHint.hidden && emailHint.dataset.fixed === fixed) return;
+      emailHint.dataset.fixed = fixed;
+      emailHint.textContent = '';
+      emailHint.append('Можливо, ви мали на увазі ');
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'email-hint-fix';
+      btn.textContent = fixed;
+      btn.addEventListener('click', () => {
+        emailInput.value = fixed;
+        hideEmailHint();
+        formStatus.textContent = '';
+        emailInput.focus();
+      });
+      emailHint.append(btn, '?');
+      emailHint.hidden = false;
+    }
+    emailInput.addEventListener('blur', () => {
+      const fixed = suggestEmail(emailInput.value.trim());
+      if (fixed) showEmailHint(fixed); else hideEmailHint();
+    });
+    emailInput.addEventListener('input', () => {
+      if (!emailHint.hidden && !suggestEmail(emailInput.value.trim())) hideEmailHint();
+    });
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = $('b-name').value.trim();
@@ -233,6 +293,13 @@ const CANCEL_MIN_HOURS = 1;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
         formStatus.textContent = 'Перевірте адресу електронної пошти.';
+        $('b-email').focus();
+        return;
+      }
+      const fixed = suggestEmail(email);
+      if (fixed) {
+        showEmailHint(fixed);
+        formStatus.textContent = 'Схоже, в адресі одруківка — на неї не дійде лист із посиланням на Zoom.';
         $('b-email').focus();
         return;
       }
