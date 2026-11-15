@@ -333,3 +333,20 @@
   opacity: 0.6;
   cursor: progress;
 }
+
+/* Підказка про одруківку в email */
+.booking-dialog .field-hint {
+  margin: 0.4rem 0 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+.booking-dialog .email-hint-fix {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: underline;
+  cursor: pointer;
+}

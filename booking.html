@@ -167,7 +167,8 @@
         </div>
         <div class="field">
           <label for="b-email">Email <span class="required" aria-hidden="true">*</span></label>
-          <input id="b-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required>
+          <input id="b-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required aria-describedby="b-email-hint">
+          <p class="field-hint" id="b-email-hint" aria-live="polite" hidden></p>
         </div>
         <div class="field">
           <label for="b-note">Коментар (необов’язково)</label>
