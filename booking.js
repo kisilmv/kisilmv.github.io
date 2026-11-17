@@ -184,7 +184,7 @@ const CANCEL_MIN_HOURS = 1;
       if (!slots.length) {
         status.textContent = '';
         daysEl.innerHTML = '<div class="slot-empty"><p><b>Наразі всі слоти зайняті.</b></p>' +
-          '<p>Нові з’являються регулярно — зазирніть пізніше або <a href="index.html#contacts">напишіть мені</a>, і я підберу час.</p></div>';
+          '<p>Час може звільнитися, якщо хтось скасує заняття, тож натисніть «Оновити» трохи згодом або <a href="index.html#contacts">напишіть мені</a>, і я підберу час.</p></div>';
         return;
       }
 
